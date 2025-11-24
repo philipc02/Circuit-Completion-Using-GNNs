@@ -28,7 +28,7 @@ class Batch(Data):
         Additionally, creates assignment batch vectors for each key in
         :obj:`follow_batch`."""
 
-        keys = [set(data.keys) for data in data_list]
+        keys = [set(data.keys()) for data in data_list]
         keys = list(set.union(*keys))
         assert 'batch' not in keys
 
@@ -49,7 +49,7 @@ class Batch(Data):
             cumsum['assignment_index_3'] = torch.LongTensor([[0], [0]])
         batch.batch = []
         for i, data in enumerate(data_list):
-            for key in data.keys:
+            for key in data.keys():
                 item = data[key]
                 if torch.is_tensor(item) and item.dtype != torch.bool:
                     item = item + cumsum[key]
@@ -101,7 +101,7 @@ class Batch(Data):
         if num_nodes is None:
             batch.batch = None
 
-        for key in batch.keys:
+        for key in batch.keys():
             item = batch[key][0]
             if torch.is_tensor(item):
                 batch[key] = torch.cat(batch[key],
@@ -133,7 +133,7 @@ class Batch(Data):
                 ('Cannot reconstruct data list from batch because the batch '
                  'object was not created using Batch.from_data_list()'))
 
-        keys = [key for key in self.keys if key[-5:] != 'batch']
+        keys = [key for key in self.keys() if key[-5:] != 'batch']
         cumsum = {key: 0 for key in keys}
         if 'assignment_index_2' in keys:
             cumsum['assignment_index_2'] = torch.LongTensor([[0], [0]])

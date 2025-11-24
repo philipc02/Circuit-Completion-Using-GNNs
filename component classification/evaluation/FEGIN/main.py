@@ -72,7 +72,7 @@ for dataset_name in file_names:
     parser.add_argument('--emb_size', type=int, default=250)
 
     # Training settings.
-    parser.add_argument('--epochs', type=int, default=250)
+    parser.add_argument('--epochs', type=int, default=100)
     parser.add_argument('--batch_size', type=int, default=128)
     parser.add_argument('--lr', type=float, default=1E-2)
     parser.add_argument('--lr_decay_factor', type=float, default=0.5)
