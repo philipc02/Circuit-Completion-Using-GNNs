@@ -163,7 +163,7 @@ class FEGIN(torch.nn.Module):
         self.lin2.reset_parameters()
         # self.lin3.reset_parameters()
 
-    def forward(self, data,des):
+    def forward(self, data):
         x, edge_index, batch = data.x, data.edge_index, data.batch
         # Not using subgraph embeddings as we dont use nested subgraphs
         # emb = des.x
@@ -173,7 +173,7 @@ class FEGIN(torch.nn.Module):
         for conv in self.convs:
             x = conv(x, edge_index)
             xs += [x]
-        x = torch.cat(xs[1:], dim=-1)
+        # x = torch.cat(xs[1:], dim=-1)
         # print(x.shape)
         x = global_mean_pool(torch.cat(xs, dim=1), batch)
         # x = global_sort_pool(x, batch, self.k)
@@ -192,10 +192,10 @@ class FEGIN(torch.nn.Module):
         # x = self.conv1d2(x).relu()
         # print(x.shape)
         # x = self.mlp(x)  
-        x = F.relu(self.lin1(x)).relu()
+        x = F.relu(self.lin1(x))
         x = F.dropout(x, p=0.5, training=self.training)
-        x = self.lin2(x).relu()
-        # x = self.lin3(x).relu()
+        x = F.relu(self.lin2(x))
+        x = F.relu(self.lin3(x))
         x = self.lin4(x)
         # x = self.lin3(x)
         return F.log_softmax(x, dim=1)

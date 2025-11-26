@@ -223,8 +223,21 @@ def trainFEGIN( dataset,dataset_name,
     
     count = 1
     print("cross validation without val set")
+
+    # Check if this is pin-level dataset (has "_pin_level" in name)
+    is_pin_level = "_pin_level" in dataset_name
     
-    if os.path.isfile('data/'+dataset_name+'_netlsd_train.pt'):
+    if is_pin_level:
+        # Pin-level: No NetLSD, create dummy descriptors
+        train_dataset = [d for d in dataset if d.set =='train']
+        test_dataset = [d for d in dataset if d.set =='test']
+        
+        # Create dummy descriptors (not used but needed for zip)
+        train_des = [Data(x=torch.zeros(1, 1), edge_index=d.edge_index, y=d.y) 
+                     for d in train_dataset]
+        test_des = [Data(x=torch.zeros(1, 1), edge_index=d.edge_index, y=d.y) 
+                    for d in test_dataset]
+    elif os.path.isfile('data/'+dataset_name+'_netlsd_train.pt'):
         train_des = torch.load('data/'+dataset_name+'_netlsd_train.pt')
         test_des = torch.load('data/'+dataset_name+'_netlsd_test.pt')
         train_dataset = [d for d in dataset if d.set =='train']
@@ -276,9 +289,16 @@ def trainFEGIN( dataset,dataset_name,
         test_losses, accs, durations,f1_list = [], [], [],[]
         for epoch in range(epochs):
             
-            train_loss = train_FEGIN(model, optimizer, train_loader,train_loader_des,device)
-            test_losses.append(eval_loss_FEGIN(model, test_loader,test_loader_des, device))
-            f1_ = eval_acc_FEGIN(model, test_loader,test_loader_des, device)
+            if is_pin_level:
+                train_loss = train_FEGIN_pin_level(model, optimizer, train_loader, device)
+            else:
+                train_loss = train_FEGIN(model, optimizer, train_loader, train_loader_des, device)
+            if is_pin_level:
+                test_losses.append(eval_loss_FEGIN_pin_level(model, test_loader, device))
+                f1_ = eval_acc_FEGIN_pin_level(model, test_loader, device)
+            else:
+                test_losses.append(eval_loss_FEGIN(model, test_loader, test_loader_des, device))
+                f1_ = eval_acc_FEGIN(model, test_loader, test_loader_des, device)
             # accs.append(auc)
             f1_list.append(f1_)
             eval_info = {
@@ -371,6 +391,21 @@ def train(model, optimizer, loader, device):
         optimizer.step()
     return total_loss / len(loader.dataset)
 
+def train_FEGIN_pin_level(model, optimizer, loader, device):
+    # Training function for pin-level FEGIN (no NetLSD)
+    model.train()
+
+    total_loss = 0
+    for data in loader:
+        optimizer.zero_grad()
+        data = data.to(device)
+        out = model(data)  # No des parameter
+        loss = F.cross_entropy(out, data.y.view(-1))
+        loss.backward()
+        total_loss += loss.item() * num_graphs(data)
+        optimizer.step()
+    return total_loss / len(loader.dataset)
+
 def train_FEGIN(model, optimizer, loader,des_loader, device):
     model.train()
 
@@ -430,6 +465,21 @@ def eval_acc_FEGIN(model, loader, des_loader,device):
         # correct += pred.eq(data.y.view(-1)).sum().item()
     return np.mean(f1_list)
 
+def eval_acc_FEGIN_pin_level(model, loader, device):
+    # Evaluation function for pin-level FEGIN (no NetLSD)
+    model.eval()
+    f1_list = []
+    
+    for data in loader:
+        data = data.to(device)
+        with torch.no_grad():
+            pred = model(data).max(1)[1]  # No des parameter
+        
+        f1 = f1_score(data.y.view(-1).cpu().numpy(), pred.cpu().numpy(), average="weighted")
+        f1_list.append(f1)
+
+    return np.mean(f1_list)
+
 def eval_loss(model, loader, device):
     model.eval()
 
@@ -451,5 +501,18 @@ def eval_loss_FEGIN(model, loader,des_loader,device):
         with torch.no_grad():
             out = model(data,des)
         # loss += F.nll_loss(out, data.y.view(-1), reduction='sum').item()
+        loss += F.cross_entropy(out, data.y.view(-1), reduction='sum').item()
+    return loss / len(loader.dataset)
+
+
+def eval_loss_FEGIN_pin_level(model, loader, device):
+    # Loss evaluation function for pin-level FEGIN (no NetLSD)
+    model.eval()
+
+    loss = 0
+    for data in loader:
+        data = data.to(device)
+        with torch.no_grad():
+            out = model(data)  # No des parameter
         loss += F.cross_entropy(out, data.y.view(-1), reduction='sum').item()
     return loss / len(loader.dataset)
