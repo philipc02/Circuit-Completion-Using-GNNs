@@ -9,6 +9,7 @@ import random
 import torch
 import numpy as np
 from kernel.datasets import get_dataset,get_circuit_dataset,MyOwnDataset
+from kernel.pin_level_dataset import PinLevelDataset
 from kernel.train_eval import cross_validation_with_val_set
 from kernel.train_eval import cross_validation_without_val_set
 from kernel.train_eval import trainFEGIN
@@ -158,11 +159,19 @@ for dataset_name in file_names:
             log = "Using {} layers, {} hidden units, h = {}".format(num_layers, hidden, h)
             print(log)
             logger(log)
-            dataset = MyOwnDataset("data/",dataset_name,
-                h, 
-                args.node_label, 
-                args.use_rd, 
-                args.max_nodes_per_hop)
+            if args.model == "FEGIN":
+                # Use pin-level dataset
+                dataset = PinLevelDataset("data/", "ltspice_demos_pin_level",
+                    h, 
+                    args.max_nodes_per_hop,
+                    args.node_label, 
+                    args.use_rd)
+            else:
+                dataset = MyOwnDataset("data/",dataset_name,
+                    h, 
+                    args.node_label, 
+                    args.use_rd, 
+                    args.max_nodes_per_hop)
             print("dataset loaded",dataset.num_features,dataset.num_classes,len(dataset))
             if args.model=="FEGIN":
                 model = Net(dataset, num_layers, hidden, args.emb_size,args.node_label!='no', args.use_rd)

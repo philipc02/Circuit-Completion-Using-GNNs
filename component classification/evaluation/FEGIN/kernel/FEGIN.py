@@ -96,17 +96,22 @@ class NestedGIN(torch.nn.Module):
 
 
 class FEGIN(torch.nn.Module):
-    def __init__(self, dataset, num_layers, hidden,emb_size, *args, **kwargs):
+    def __init__(self, dataset, num_layers, hidden,emb_size, use_z=False, use_rd=False):
         super(FEGIN, self).__init__()
+        self.use_z = use_z
+        self.use_rd = use_rd
         # k = 0.6
         # if k < 1:  # Transform percentile to number.
         #     num_nodes = sorted([data.num_nodes for data in dataset])
         #     k = num_nodes[int(math.ceil(k * len(num_nodes))) - 1]
         #     k = max(10, k)
         # self.k = int(k)
+        input_dim = dataset.num_features
+        if self.use_z or self.use_rd:
+            input_dim += 8
         self.conv1 = GINConv(
             Sequential(
-                Linear(dataset.num_features, hidden),
+                Linear(input_dim, hidden),
                 ReLU(),
                 Linear(hidden, hidden),
                 ReLU(),
@@ -139,7 +144,7 @@ class FEGIN(torch.nn.Module):
         # hidden_dim = (self.k*hidden*(num_layers-1)) + emb_size
         # print(hidden_dim)
         # self.mlp = MLP([hidden_dim,64, dataset.num_classes], dropout=0.5, batch_norm=False)
-        self.lin1 = Linear(num_layers * hidden+emb_size, hidden*2)
+        self.lin1 = Linear(num_layers * hidden, hidden*2)
         # self.lin2 = Linear(hidden, hidden)
         # self.lin1 = torch.nn.Linear(num_layers * hidden, hidden)
         self.lin2 = Linear(hidden*2, hidden)
@@ -147,6 +152,10 @@ class FEGIN(torch.nn.Module):
         self.lin4 = Linear(hidden, dataset.num_classes)
 
     def reset_parameters(self):
+        if self.use_rd:
+            self.rd_projection.reset_parameters()
+        if self.use_z:
+            self.z_embedding.reset_parameters()
         self.conv1.reset_parameters()
         for conv in self.convs:
             conv.reset_parameters()
@@ -156,7 +165,8 @@ class FEGIN(torch.nn.Module):
 
     def forward(self, data,des):
         x, edge_index, batch = data.x, data.edge_index, data.batch
-        emb = des.x
+        # Not using subgraph embeddings as we dont use nested subgraphs
+        # emb = des.x
         # print(batch)
         x = self.conv1(x, edge_index)
         xs = [x]
@@ -168,8 +178,11 @@ class FEGIN(torch.nn.Module):
         x = global_mean_pool(torch.cat(xs, dim=1), batch)
         # x = global_sort_pool(x, batch, self.k)
         # print(x.shape)
-        emb = torch.reshape(emb,(x.shape[0],-1))
-        x = torch.cat((x,emb),1)
+
+        # Leaving out as we dont use subgraph embeddings
+        # emb = torch.reshape(emb,(x.shape[0],-1))
+        # x = torch.cat((x,emb),1)
+        
         # x = F.normalize(x, 0.5, dim = 0)
         # x = x.unsqueeze(1)
         # x = torch.reshape(x,(x.shape[0],x.shape[2]))
