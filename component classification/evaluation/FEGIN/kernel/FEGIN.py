@@ -47,10 +47,10 @@ class NestedGIN(torch.nn.Module):
         self.lin2 = Linear(hidden, dataset.num_classes)
 
     def reset_parameters(self):
-        '''if self.use_rd:
+        if self.use_rd:
             self.rd_projection.reset_parameters()
         if self.use_z:
-            self.z_embedding.reset_parameters()'''
+            self.z_embedding.reset_parameters()
         self.conv1.reset_parameters()
         for conv in self.convs:
             conv.reset_parameters()
@@ -152,10 +152,10 @@ class FEGIN(torch.nn.Module):
         self.lin4 = Linear(hidden, dataset.num_classes)
 
     def reset_parameters(self):
-        if self.use_rd:
+        '''if self.use_rd:
             self.rd_projection.reset_parameters()
         if self.use_z:
-            self.z_embedding.reset_parameters()
+            self.z_embedding.reset_parameters()'''
         self.conv1.reset_parameters()
         for conv in self.convs:
             conv.reset_parameters()
