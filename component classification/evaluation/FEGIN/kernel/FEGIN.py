@@ -18,7 +18,8 @@ class NestedGIN(torch.nn.Module):
             self.z_embedding = torch.nn.Embedding(1000, 8)
         input_dim = dataset.num_features
         if self.use_z or self.use_rd:
-            input_dim += 8
+            print("ENTERED")
+            # input_dim += 8
 
         self.conv1 = GINConv(
             Sequential(
