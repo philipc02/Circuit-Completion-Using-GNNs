@@ -41,7 +41,7 @@ def warn_with_traceback(message, category, filename, lineno, file=None, line=Non
 
 warnings.showwarning = warn_with_traceback
 
-file_names = ['ltspice_examples','ltspice_demos','kicad_github']
+file_names = ['ltspice_demos_pin_level']
 for dataset_name in file_names:
 # General settings.
     parser = argparse.ArgumentParser(description='GNN for component identification in netlists')
