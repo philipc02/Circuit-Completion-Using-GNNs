@@ -86,13 +86,19 @@ class PinLevelDataset(InMemoryDataset):
         # Convert pin-level graph to PyG Data object
         if G.number_of_nodes() == 0:
             return None
+        
+        # Enhanced node features - 16 dimensions instead of 10 by adding node degrees
             
         # Create node features
         node_features = []
         node_mapping = {node: idx for idx, node in enumerate(G.nodes())}
+
+         # Node degrees for additional structural information
+        degrees = dict(G.degree())
         
         for node, attr in G.nodes(data=True):
-            feat = np.zeros(10, dtype=np.float32)  # Feature vector
+            # feat = np.zeros(10, dtype=np.float32)  # Feature vector
+            feat = np.zeros(16, dtype=np.float32)
             
             node_type = attr.get('type', '')
             comp_type = attr.get('comp_type', '')
@@ -101,18 +107,25 @@ class PinLevelDataset(InMemoryDataset):
             # Encode node type
             if node_type in {'component', 'subcircuit'}:
                 feat[0] = 1.0
+                feat[1] = degrees[node] / 10.0  # Normalized degree
                 # Encode component type
                 if comp_type in ['R', 'C', 'V', 'X']:
                     comp_idx = ['R', 'C', 'V', 'X'].index(comp_type)
-                    feat[1 + comp_idx] = 1.0
+                    feat[2 + comp_idx] = 1.0
             elif node_type == 'pin':
-                feat[5] = 1.0
+                feat[6] = 1.0
+                feat[7] = degrees[node] / 5.0  # Normalized degree
                 # Encode pin type
                 if pin_type in ['1', '2', 'pos', 'neg']:
                     pin_idx = ['1', '2', 'pos', 'neg'].index(pin_type)
-                    feat[6 + pin_idx] = 1.0
+                    feat[8 + pin_idx] = 1.0
             elif node_type == 'net':
-                feat[9] = 1.0
+                feat[12] = 1.0
+                feat[13] = degrees[node] / 20.0  # Normalized degree
+                # Additional: is this net connected to multiple components?
+                connected_comps = [n for n in G.neighbors(node) 
+                                if G.nodes[n].get('type') in {'component', 'subcircuit'}]
+                feat[14] = len(connected_comps) / 5.0
                 
             node_features.append(feat)
         
