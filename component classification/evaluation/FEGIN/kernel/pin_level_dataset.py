@@ -44,10 +44,10 @@ class PinLevelDataset(InMemoryDataset):
         print("loading pin-level data now!")
 
         # Load the dataset created by preparation script
-        with open(f'data/{self.name}_pin_level_GC.pkl', 'rb') as f:
+        with open(f'data/{self.name}_GC.pkl', 'rb') as f:
             dataset_dict = pickle.load(f)
         
-        with open(f'data/{self.name}_pin_level_label_mapping.pkl', 'rb') as f:
+        with open(f'data/{self.name}_label_mapping.pkl', 'rb') as f:
             label_mapping = pickle.load(f)
         
         data_list = []
