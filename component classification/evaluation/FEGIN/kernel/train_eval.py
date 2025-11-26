@@ -228,6 +228,7 @@ def trainFEGIN( dataset,dataset_name,
     is_pin_level = "_pin_level" in dataset_name
     
     if is_pin_level:
+        print("IS PIN LEVEL")
         # Pin-level: No NetLSD, create dummy descriptors
         train_dataset = [d for d in dataset if d.set =='train']
         test_dataset = [d for d in dataset if d.set =='test']
@@ -238,6 +239,7 @@ def trainFEGIN( dataset,dataset_name,
         test_des = [Data(x=torch.zeros(1, 1), edge_index=d.edge_index, y=d.y) 
                     for d in test_dataset]
     elif os.path.isfile('data/'+dataset_name+'_netlsd_train.pt'):
+        print("IS NOT PIN LEVEL")
         train_des = torch.load('data/'+dataset_name+'_netlsd_train.pt')
         test_des = torch.load('data/'+dataset_name+'_netlsd_test.pt')
         train_dataset = [d for d in dataset if d.set =='train']

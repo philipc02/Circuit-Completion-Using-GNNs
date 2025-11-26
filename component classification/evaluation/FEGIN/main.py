@@ -160,6 +160,7 @@ for dataset_name in file_names:
             print(log)
             logger(log)
             if args.model == "FEGIN":
+                print("PIN LEVEL DATASET")
                 # Use pin-level dataset
                 dataset = PinLevelDataset("data/", "ltspice_demos_pin_level",
                     h, 
@@ -167,6 +168,7 @@ for dataset_name in file_names:
                     args.node_label, 
                     args.use_rd)
             else:
+                print("NOT PIN LEVEL DATASET")
                 dataset = MyOwnDataset("data/",dataset_name,
                     h, 
                     args.node_label, 
