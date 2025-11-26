@@ -239,7 +239,7 @@ def trainFEGIN( dataset,dataset_name,
         test_des = [Data(x=torch.zeros(1, 1), edge_index=d.edge_index, y=d.y) 
                     for d in test_dataset]
     elif os.path.isfile('data/'+dataset_name+'_netlsd_train.pt'):
-        print("IS NOT PIN LEVEL")
+        print("IS NOT PIN LEVEL", dataset_name)
         train_des = torch.load('data/'+dataset_name+'_netlsd_train.pt')
         test_des = torch.load('data/'+dataset_name+'_netlsd_test.pt')
         train_dataset = [d for d in dataset if d.set =='train']
