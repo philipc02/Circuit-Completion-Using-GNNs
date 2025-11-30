@@ -25,6 +25,7 @@ from kernel.global_attention import GlobalAttentionNet
 from kernel.set2set import Set2SetNet
 from kernel.sort_pool import SortPool
 import warnings
+from fegin_experiment_tracker import FEGINExperimentTracker
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -110,6 +111,29 @@ for dataset_name in file_names:
         f.write(cmd_input)
     print('Command line input: ' + cmd_input + ' is saved.')
 
+    tracker = FEGINExperimentTracker(
+        experiment_name=args.save_appendix if args.save_appendix else "default",
+        dataset_name=dataset_name,
+        model_name=args.model
+    )
+    config_dict = {
+        'dataset': dataset_name,
+        'model': args.model,
+        'layers': args.layers,
+        'hiddens': args.hiddens,
+        'h': args.h,
+        'node_label': args.node_label,
+        'use_rd': args.use_rd,
+        'epochs': args.epochs,
+        'batch_size': args.batch_size,
+        'lr': args.lr,
+        'lr_decay_factor': args.lr_decay_factor,
+        'lr_decay_step_size': args.lr_decay_step_size,
+        'emb_size': args.emb_size,
+        'seed': args.seed
+    }
+    tracker.log_config(config_dict)
+
     
     datasets = [args.data]
     if args.search:
@@ -155,6 +179,7 @@ for dataset_name in file_names:
             combinations = zip(layers, hiddens, hs)
         else:
             combinations = product(layers, hiddens, hs)
+        training_log = []
         for num_layers, hidden, h in combinations:
             log = "Using {} layers, {} hidden units, h = {}".format(num_layers, hidden, h)
             print(log)
@@ -177,7 +202,7 @@ for dataset_name in file_names:
             print("dataset loaded",dataset.num_features,dataset.num_classes,len(dataset))
             if args.model=="FEGIN":
                 model = Net(dataset, num_layers, hidden, args.emb_size,args.node_label!='no', args.use_rd)
-                loss, f1,f1_std = trainFEGIN(
+                loss, f1,f1_std, fegin_results = trainFEGIN(
                     dataset,dataset_name,
                     model,
                     folds=3,
@@ -188,7 +213,16 @@ for dataset_name in file_names:
                     lr_decay_step_size=args.lr_decay_step_size,
                     weight_decay=0,
                     device=device, 
-                    logger=logger)
+                    logger=logger, 
+                    tracker=tracker)
+                tracker.log_test_results(
+                    test_acc=fegin_results['best_acc'],
+                    test_f1_weighted=fegin_results['best_f1_weighted'],
+                    test_f1_macro=fegin_results['best_f1_macro'],
+                    all_preds=fegin_results['predictions'],
+                    all_labels=fegin_results['labels'],
+                    class_names=['R', 'C', 'V', 'X']
+                )
             else:
                 model = Net(dataset, num_layers, hidden, args.node_label!='no', args.use_rd)
                 loss, auc, auc_std,f1,f1_std = cross_val_method(

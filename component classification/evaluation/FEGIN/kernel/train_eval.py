@@ -218,7 +218,8 @@ def trainFEGIN( dataset,dataset_name,
                 lr_decay_step_size,
                 weight_decay,
                 device, 
-                logger=None):
+                logger=None,
+                tracker=None):
 
     
     count = 1
@@ -270,6 +271,9 @@ def trainFEGIN( dataset,dataset_name,
     t_start = time.perf_counter()
     # print(len(train_dataset), len(train_des), len(test_dataset), len(test_des))
     test_losses_itr, accs_itr, f1_itr = [], [], []
+    best_f1 = 0
+    best_epoch = 0
+    training_log = []
     for i in range(10):
         print(f'##################ITERATION #{i} ****************************************')
         model.to(device).reset_parameters()
@@ -303,6 +307,14 @@ def trainFEGIN( dataset,dataset_name,
                 f1_ = eval_acc_FEGIN(model, test_loader, test_loader_des, device)
             # accs.append(auc)
             f1_list.append(f1_)
+            if tracker:
+                tracker.log_training_metrics(epoch, train_loss, test_losses[-1], 0, f1_list[-1])
+            if f1_ > best_f1:
+                best_f1 = f1_
+                best_epoch = epoch
+                if tracker:
+                    tracker.save_model(model, f"best_model_iter_{i}.pth")
+                all_preds, all_labels = get_detailed_predictions(model, test_loader, device)
             eval_info = {
                 'epoch': epoch,
                 'train_loss': train_loss,
@@ -314,11 +326,17 @@ def trainFEGIN( dataset,dataset_name,
             log = ' epoch: %d, train_loss: %0.4f, test_loss: %0.4f, test_f1: %0.4f' % (epoch,
                 eval_info["train_loss"], eval_info["test_loss"],eval_info["test_f1"]
             )
+            training_log.append(log)
             # pbar.set_description(log)
             print(log)
             if epoch % lr_decay_step_size == 0:
                 for param_group in optimizer.param_groups:
                     param_group['lr'] = lr_decay_factor * param_group['lr']
+
+        if tracker:
+            tracker.log_training_log(training_log)
+            tracker.metrics['best_epoch'] = best_epoch
+
         test_losses_itr.append(np.min(test_losses))
         # accs_itr.append(np.max(accs))
         f1_itr.append(np.max(f1_list))
@@ -332,7 +350,24 @@ def trainFEGIN( dataset,dataset_name,
     durations.append(t_end - t_start)
 
     #return loss.mean().item(), acc_final.item(), acc[:, -1].std().item()
-    return np.mean(test_losses), np.mean(f1_itr), np.std(f1_itr)
+    return (np.mean(test_losses), np.mean(f1_itr), np.std(f1_itr), 
+            {'best_f1_weighted': best_f1, 'best_acc': 0, 'best_f1_macro': best_f1,
+             'predictions': all_preds, 'labels': all_labels})
+
+def get_detailed_predictions(model, loader, device):
+    model.eval()
+    all_preds = []
+    all_labels = []
+    
+    for data in loader:
+        data = data.to(device)
+        with torch.no_grad():
+            out = model(data)
+            preds = out.max(1)[1]
+            all_preds.append(preds.cpu())
+            all_labels.append(data.y.view(-1).cpu())
+    
+    return torch.cat(all_preds), torch.cat(all_labels)
 
 
 def k_fold(dataset, folds):
