@@ -333,15 +333,16 @@ def trainFEGIN( dataset,dataset_name,
                 for param_group in optimizer.param_groups:
                     param_group['lr'] = lr_decay_factor * param_group['lr']
 
-        if tracker:
-            tracker.save_training_log(training_log)
-            tracker.metrics['best_epoch'] = best_epoch
 
         test_losses_itr.append(np.min(test_losses))
         # accs_itr.append(np.max(accs))
         f1_itr.append(np.max(f1_list))
     if logger is not None:
         logger(log)
+
+    if tracker:
+            tracker.save_training_log(training_log)
+            tracker.metrics['best_epoch'] = best_epoch
 
     if torch.cuda.is_available():
         torch.cuda.synchronize()
