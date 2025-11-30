@@ -276,6 +276,11 @@ def trainFEGIN( dataset,dataset_name,
     training_log = []
     for i in range(10):
         print(f'##################ITERATION #{i} ****************************************')
+
+        # start new iteration in tracker
+        if tracker:
+            tracker.start_new_iteration(i)
+
         model.to(device).reset_parameters()
         optimizer = Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
 

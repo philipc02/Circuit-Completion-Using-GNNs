@@ -20,7 +20,7 @@ class FEGINExperimentTracker:
         self.metrics = {
             'train_loss': [], 'val_loss': [], 'val_acc': [], 'val_f1': [],
             'test_acc': None, 'test_f1': None, 'test_f1_macro': None,
-            'best_epoch': None, 'config': {}
+            'best_epoch': None, 'config': {}, 'current_iteration': 0, 'iteration_metrics': {}
         }
         
         (self.experiment_dir / "models").mkdir(exist_ok=True)
@@ -36,20 +36,51 @@ class FEGINExperimentTracker:
             for key, value in config_dict.items():
                 f.write(f"{key}: {value}\n")
 
+    def start_new_iteration(self, iteration_num):
+        # start tracking new iteration
+        self.metrics['current_iteration'] = iteration_num
+        self.metrics['iteration_metrics'][iteration_num] = {
+            'train_loss': [], 'val_loss': [], 'val_acc': [], 'val_f1': []
+        }
+
     def log_metrics(self, epoch, train_loss, val_loss, val_acc, val_f1):
+        current_iter = self.metrics['current_iteration']
+        # store in iteration specific metrics
+        self.metrics['iteration_metrics'][current_iter]['train_loss'].append(float(train_loss))
+        self.metrics['iteration_metrics'][current_iter]['val_loss'].append(float(val_loss))
+        self.metrics['iteration_metrics'][current_iter]['val_acc'].append(float(val_acc))
+        self.metrics['iteration_metrics'][current_iter]['val_f1'].append(float(val_f1))
+        
         self.metrics['train_loss'].append(float(train_loss))
         self.metrics['val_loss'].append(float(val_loss))
         self.metrics['val_acc'].append(float(val_acc))
         self.metrics['val_f1'].append(float(val_f1))
         
-        metrics_df = pd.DataFrame({
-            'epoch': list(range(epoch + 1)),
-            'train_loss': self.metrics['train_loss'],
-            'val_loss': self.metrics['val_loss'], 
-            'val_acc': self.metrics['val_acc'],
-            'val_f1': self.metrics['val_f1']
-        })
-        metrics_df.to_csv(self.experiment_dir / "metrics.csv", index=False)
+        self.save_metrics_to_csv()
+
+    def save_metrics_to_csv(self):
+        # global metrics
+        if len(self.metrics['train_loss']) > 0:
+            global_metrics_df = pd.DataFrame({
+                'global_epoch': list(range(len(self.metrics['train_loss']))),
+                'train_loss': self.metrics['train_loss'],
+                'val_loss': self.metrics['val_loss'], 
+                'val_acc': self.metrics['val_acc'],
+                'val_f1': self.metrics['val_f1']
+            })
+            global_metrics_df.to_csv(self.experiment_dir / "metrics_global.csv", index=False)
+        
+        # per-iteration metrics
+        for iter_num, metrics in self.metrics['iteration_metrics'].items():
+            if len(metrics['train_loss']) > 0:
+                iter_df = pd.DataFrame({
+                    'epoch': list(range(len(metrics['train_loss']))),
+                    'train_loss': metrics['train_loss'],
+                    'val_loss': metrics['val_loss'],
+                    'val_acc': metrics['val_acc'],
+                    'val_f1': metrics['val_f1']
+                })
+                iter_df.to_csv(self.experiment_dir / f"metrics_iteration_{iter_num}.csv", index=False)
 
     def log_test_results(self, test_acc, test_f1_weighted, test_f1_macro, all_preds, all_labels, class_names):
         self.metrics['test_acc'] = float(test_acc)
