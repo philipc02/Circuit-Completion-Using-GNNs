@@ -308,7 +308,7 @@ def trainFEGIN( dataset,dataset_name,
             # accs.append(auc)
             f1_list.append(f1_)
             if tracker:
-                tracker.log_training_metrics(epoch, train_loss, test_losses[-1], 0, f1_list[-1])
+                tracker.log_metrics(epoch, train_loss, test_losses[-1], 0, f1_list[-1])
             if f1_ > best_f1:
                 best_f1 = f1_
                 best_epoch = epoch
