@@ -334,7 +334,7 @@ def trainFEGIN( dataset,dataset_name,
                     param_group['lr'] = lr_decay_factor * param_group['lr']
 
         if tracker:
-            tracker.log_training_log(training_log)
+            tracker.save_training_log(training_log)
             tracker.metrics['best_epoch'] = best_epoch
 
         test_losses_itr.append(np.min(test_losses))
