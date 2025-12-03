@@ -25,7 +25,7 @@ class BaseCircuitDataset(InMemoryDataset):
         graph_folder = f"graphs_{self.name}/graphs_{self.representation}"
         
         # Load dataset splits
-        with open(f'data/{self.name}_dataset_splits.pkl', 'rb') as f:
+        with open(f'data/{self.name}_dataset.pkl', 'rb') as f:
             dataset_info = pickle.load(f)
         
         data_list = []
