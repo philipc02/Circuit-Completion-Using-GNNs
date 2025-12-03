@@ -29,30 +29,63 @@ class BaseCircuitDataset(InMemoryDataset):
             dataset_info = pickle.load(f)
         
         data_list = []
-        
-        # Load and convert graphs
-        for split in ['train', 'test']:
-            files = dataset_info[f'{split}_files']
+        # Get the mapping
+        circuit_to_files = dataset_info['circuit_to_files']
+
+        # Process training circuits
+        for circuit_name in dataset_info['train_circuits']:
+            # Get actual filename for this circuit in representation
+            rep_files = circuit_to_files.get(circuit_name, {})
+            graph_file = rep_files.get(self.representation)  # actual filename
             
-            for graph_file in files:
-                graph_path = os.path.join(graph_folder, graph_file)
-                
-                if not os.path.exists(graph_path):
-                    print(f"Warning: {graph_path} not found")
-                    continue
-                
-                with open(graph_path, 'rb') as f:
-                    G = pickle.load(f)
-                
-                # Get masked examples for this circuit
-                examples = self.create_masked_examples_from_circuit(G, graph_file)
-                
-                for example in examples:
-                    data = self.convert_graph_to_pyg(example['masked_graph'])
-                    if data is not None:
-                        data.y = torch.tensor([example['label_idx']], dtype=torch.long)
-                        data.set = split
-                        data_list.append(data)
+            if not graph_file:
+                print(f"Warning: No file found for circuit '{circuit_name}' in {self.representation}")
+                continue
+            
+            graph_path = os.path.join(graph_folder, graph_file)
+            
+            if not os.path.exists(graph_path):
+                print(f"Warning: {graph_path} not found")
+                continue
+            
+            with open(graph_path, 'rb') as f:
+                G = pickle.load(f)
+            
+            # Get masked examples from this circuit
+            examples = self.create_masked_examples_from_circuit(G, graph_file)
+            
+            for example in examples:
+                data = self.convert_graph_to_pyg(example['masked_graph'])
+                if data is not None:
+                    data.y = torch.tensor([example['label_idx']], dtype=torch.long)
+                    data.set = 'train'
+                    data_list.append(data)
+        
+
+        # Process test circuits
+        for circuit_name in dataset_info['test_circuits']:
+            rep_files = circuit_to_files.get(circuit_name, {})
+            graph_file = rep_files.get(self.representation)
+            
+            if not graph_file:
+                continue
+            
+            graph_path = os.path.join(graph_folder, graph_file)
+            
+            if not os.path.exists(graph_path):
+                continue
+            
+            with open(graph_path, 'rb') as f:
+                G = pickle.load(f)
+            
+            examples = self.create_masked_examples_from_circuit(G, graph_file)
+            
+            for example in examples:
+                data = self.convert_graph_to_pyg(example['masked_graph'])
+                if data is not None:
+                    data.y = torch.tensor([example['label_idx']], dtype=torch.long)
+                    data.set = 'test'
+                    data_list.append(data)
         
         print(f"Loaded {len(data_list)} examples ({self.representation})")
         
