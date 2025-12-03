@@ -22,7 +22,7 @@ class BaseCircuitDataset(InMemoryDataset):
         print(f"Loading {self.representation} representation data...")
         
         # Load the pre-parsed graphs
-        graph_folder = f"graphs_{self.name}/graphs_{self.representation}"
+        graph_folder = f"../../../../graph_parsers/graphs_{self.name}/graphs_{self.representation}"
         
         # Load dataset splits
         with open(f'data/{self.name}_dataset.pkl', 'rb') as f:
