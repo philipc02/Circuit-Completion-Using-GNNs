@@ -26,6 +26,10 @@ from kernel.set2set import Set2SetNet
 from kernel.sort_pool import SortPool
 import warnings
 from fegin_experiment_tracker import FEGINExperimentTracker
+from kernel.dataset_component_component import ComponentComponentDataset
+from kernel.dataset_component_net import ComponentNetDataset
+from kernel.dataset_component_pin import ComponentPinDataset
+from kernel.dataset_component_pin_net import ComponentPinNetDataset
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -42,16 +46,21 @@ def warn_with_traceback(message, category, filename, lineno, file=None, line=Non
 
 warnings.showwarning = warn_with_traceback
 
-file_names = ['ltspice_demos_pin_level']
-for dataset_name in file_names:
+# file_names = ['ltspice_demos_pin_level']
+# for dataset_name in file_names:
+def main():
 # General settings.
     parser = argparse.ArgumentParser(description='GNN for component identification in netlists')
-    parser.add_argument('--data', type=str, default=dataset_name)
+    parser.add_argument('--data', type=str, default='ltspice_demos',
+                        help='Dataset name (e.g., ltspice_demos)')
     parser.add_argument('--clean', action='store_true', default=False,
                         help='use a cleaned version of dataset by removing isomorphism')
     parser.add_argument('--no_val', action='store_true', default=True,
                         help='if True, do not use validation set, but directly report best\
                         test performance.')
+    parser.add_argument('--representation', type=str, default='component_pin_net',
+                        choices=['component_component', 'component_net', 'component_pin', 'component_pin_net'],
+                        help='Circuit representation to use')
 
     # GNN settings.
     parser.add_argument('--model', type=str, default='FEGIN', 
@@ -92,6 +101,7 @@ for dataset_name in file_names:
                         help='if True, reprocess data')
     parser.add_argument('--cpu', action='store_true', default=False, help='use cpu')
     args = parser.parse_args()
+    dataset_name = args.data
 
     torch.manual_seed(args.seed)
     if torch.cuda.is_available():
@@ -118,6 +128,7 @@ for dataset_name in file_names:
     )
     config_dict = {
         'dataset': dataset_name,
+        'representation': args.representation,
         'model': args.model,
         'layers': args.layers,
         'hiddens': args.hiddens,
@@ -185,15 +196,26 @@ for dataset_name in file_names:
             print(log)
             logger(log)
             if args.model == "FEGIN":
-                print("PIN LEVEL DATASET")
-                # Use pin-level dataset
-                dataset = PinLevelDataset("data/", "ltspice_demos_pin_level",
-                    h, 
-                    args.max_nodes_per_hop,
-                    args.node_label, 
-                    args.use_rd)
+                print(f"Loading {args.representation} representation dataset")
+    
+                dataset_classes = {
+                    'component_component': ComponentComponentDataset,
+                    'component_net': ComponentNetDataset,
+                    'component_pin': ComponentPinDataset,
+                    'component_pin_net': ComponentPinNetDataset,
+                }
+                
+                dataset_class = dataset_classes[args.representation]
+                dataset = dataset_class(
+                    root="data/",
+                    name=dataset_name,
+                    representation=args.representation,
+                    h=args.h,
+                    max_nodes_per_hop=args.max_nodes_per_hop,
+                    node_label=args.node_label,
+                    use_rd=args.use_rd
+                )
             else:
-                print("NOT PIN LEVEL DATASET")
                 dataset = MyOwnDataset("data/",dataset_name,
                     h, 
                     args.node_label, 
@@ -257,4 +279,3 @@ for dataset_name in file_names:
     print(cmd_input[:-1])
     print(log)
     logger(log)
-    break

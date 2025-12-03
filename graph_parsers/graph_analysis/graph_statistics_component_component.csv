@@ -1,0 +1,10 @@
+;num_nodes;num_edges;average_shortest_path_length;density;net_to_component_ratio;pin_to_component_ratio;avg_connections_per_net;num_nodes_component;num_components_V;num_components_R;num_components_X;num_components_C
+mean;11,260115606936417;46,95375722543353;1,861271676300578;0,7825846975633742;0,0;0,0;0,0;11,260115606936417;1,6242774566473988;4,572254335260116;1,3121387283236994;3,7514450867052025
+
+
+# Global component class frequencies
+component_type;count;relative_frequency_percent
+R;791;40,605749486652975
+C;649;33,31622176591375
+V;281;14,425051334702257
+X;227;11,652977412731007
