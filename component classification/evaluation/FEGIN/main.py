@@ -279,3 +279,6 @@ def main():
     print(cmd_input[:-1])
     print(log)
     logger(log)
+
+if __name__ == "__main__":
+    main()
