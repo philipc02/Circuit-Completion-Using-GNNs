@@ -63,6 +63,6 @@ class ComponentPinDataset(BaseCircuitDataset):
             edge_index = torch.empty((2, 0), dtype=torch.long)
             edge_attr = torch.empty((0, 2), dtype=torch.float)
         
-        x = torch.tensor(node_features, dtype=torch.float)
+        x = torch.tensor(np.array(node_features), dtype=torch.float)
         
         return Data(x=x, edge_index=edge_index, edge_attr=edge_attr)

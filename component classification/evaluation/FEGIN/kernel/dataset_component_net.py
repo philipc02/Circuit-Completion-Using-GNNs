@@ -46,6 +46,6 @@ class ComponentNetDataset(BaseCircuitDataset):
         else:
             edge_index = torch.empty((2, 0), dtype=torch.long)
         
-        x = torch.tensor(node_features, dtype=torch.float)
+        x = torch.tensor(np.array(node_features), dtype=torch.float)
         
         return Data(x=x, edge_index=edge_index)

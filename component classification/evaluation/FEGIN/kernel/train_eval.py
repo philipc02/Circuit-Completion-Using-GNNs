@@ -253,7 +253,7 @@ def trainFEGIN( dataset,dataset_name,
         train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
         test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
         
-        test_losses, f1_list = [], [], [],[]
+        test_losses, f1_list = [], []
         for epoch in range(epochs):
             
             model.train()
