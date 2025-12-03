@@ -8,7 +8,7 @@ def extract_circuit_name(filename):
         filename = filename[:-8]
     
     # Remove representation suffixes
-    representations = ["component_component", "component_net", "component_pin", "component_pin_net"]
+    representations = ["component_component", "component_net", "component_pin", "star_filtered"]  #component_pin_net graphs have old naming scheme, using this workaround for now to not have to parse again
     
     for rep in representations:
         if filename.endswith(f"_{rep}"):
