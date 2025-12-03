@@ -33,7 +33,7 @@ class BaseCircuitDataset(InMemoryDataset):
         circuit_to_files = dataset_info['circuit_to_files']
 
         # Process training circuits
-        for circuit_name in dataset_info['train_circuits']:
+        for circuit_name in dataset_info['train_files']:
             # Get actual filename for this circuit in representation
             rep_files = circuit_to_files.get(circuit_name, {})
             graph_file = rep_files.get(self.representation)  # actual filename
@@ -63,7 +63,7 @@ class BaseCircuitDataset(InMemoryDataset):
         
 
         # Process test circuits
-        for circuit_name in dataset_info['test_circuits']:
+        for circuit_name in dataset_info['test_files']:
             rep_files = circuit_to_files.get(circuit_name, {})
             graph_file = rep_files.get(self.representation)
             
