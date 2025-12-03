@@ -40,7 +40,7 @@ def prepare_all_datasets():
             base = f
             for r in representations:
                 if f.endswith(f"_{r}.gpickle"):
-                    base = f[:-len(f"_{r}.gpickle") - 1]  # -1 for underscore
+                    base = f[:-len(f"_{r}.gpickle")]
                     break
             else:
                 base = f[:-8]  # Remove .gpickle
