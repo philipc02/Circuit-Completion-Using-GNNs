@@ -37,6 +37,8 @@ class ComponentPinNetDataset(BaseCircuitDataset):
             elif node_type == 'net':
                 feat[13] = 1.0  # node type: net
                 feat[14] = degrees[node] / 20.0
+
+            node_features.append(feat)
         
         # Edges with attributes
         # TODO: integrate edge attributes into message passing in model
