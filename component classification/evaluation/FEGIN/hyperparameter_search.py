@@ -56,7 +56,7 @@ def run_experiment(representation, params, output_dir):
     os.makedirs(exp_dir, exist_ok=True)
     
     cmd = [
-        'python', 'main.py',
+        'python3', 'main.py',
         '--data', 'ltspice_demos',
         '--representation', representation,
         '--model', 'FEGIN',
