@@ -5,6 +5,13 @@ from torch_geometric.data import Data
 
 
 class ComponentNetDataset(BaseCircuitDataset):
+    @property
+    def num_features(self):
+        return 3
+
+    @property 
+    def num_classes(self):
+        return 4
     # Dataset for component-net representation
     def convert_graph_to_pyg(self, G):
         if G.number_of_nodes() == 0:
