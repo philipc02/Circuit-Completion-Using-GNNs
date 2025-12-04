@@ -29,23 +29,20 @@ REPRESENTATIONS = [
     'component_pin_net'
 ]
 
-def parse_results_from_log(log_file):
-    # parse F1 score from log file
-    if not os.path.exists(log_file):
-        return None
-    
+def parse_results_from_stdout(stdout_text):
+    # parse F1 score from stdout
     best_f1 = None
     f1_std = None
     
-    with open(log_file, 'r') as f:
-        for line in f:
-            if 'Best result - f1:' in line:
-                # Parse line example 'Best result - f1:0.634 ± 0.015, with 4 layers and 32 hidden units and h = 2'
-                parts = line.split('f1:')[1].split('±')
-                if len(parts) == 2:
-                    best_f1 = float(parts[0].strip())
-                    f1_std = float(parts[1].split(',')[0].strip())  # standard deviation -> extract from line as well
-                break
+    lines = stdout_text.split('\n')
+    for line in lines:
+        if 'Best result - f1:' in line:
+            # Parse line example 'Best result - f1:0.634 ± 0.015, with 4 layers and 32 hidden units and h = 2'
+            parts = line.split('f1:')[1].split('±')
+            if len(parts) == 2:
+                best_f1 = float(parts[0].strip())
+                f1_std = float(parts[1].split(',')[0].strip())  # standard deviation -> extract from line as well
+            break
     
     return best_f1, f1_std
 
@@ -92,8 +89,7 @@ def run_experiment(representation, params, output_dir):
             f.write("\n\nSTDERR:\n")
             f.write(result.stderr)
         
-        log_file = os.path.join('results', f"model_FEGIN_dataset_ltspice_demos", 'log.txt')
-        best_f1, f1_std = parse_results_from_log(log_file)
+        best_f1, f1_std = parse_results_from_stdout(result.stdout)
         
         elapsed = time.time() - start_time
         
