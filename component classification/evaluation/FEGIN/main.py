@@ -236,7 +236,8 @@ def main():
                     weight_decay=0,
                     device=device, 
                     logger=logger, 
-                    tracker=tracker)
+                    tracker=tracker,
+                    representation=args.representation)
                 tracker.log_test_results(
                     test_acc=fegin_results['best_acc'],
                     test_f1_weighted=fegin_results['best_f1_weighted'],
