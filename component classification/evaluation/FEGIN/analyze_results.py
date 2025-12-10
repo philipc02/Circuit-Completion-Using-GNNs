@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-def load_results(results_dir='hyperparameter_search'):
+def load_results(results_dir='hyperparameter_search_round3'):
     with open(os.path.join(results_dir, 'all_results.json'), 'r') as f:
         all_results = json.load(f)
     
@@ -33,7 +33,7 @@ def create_comparison_chart(best_results, output_dir='analysis'):
     
     x_pos = np.arange(len(reps))
     # Map representations against theur best f1 scores
-    bars = ax1.bar(x_pos, f1_scores, yerr=f1_stds, capsize=10, alpha=0.8, color=['#1f77b4', '#ac386a', '#2ca02c', '#d62728'])
+    bars = ax1.bar(x_pos, f1_scores, capsize=10, alpha=0.8, color=['#1f77b4', '#ac386a', '#2ca02c', '#d62728'])
     
     ax1.set_xlabel('Representation', fontsize=12)
     ax1.set_ylabel('F1 Score', fontsize=12)
@@ -70,10 +70,9 @@ def create_comparison_chart(best_results, output_dir='analysis'):
     
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, 'representation_comparison.png'), dpi=300, bbox_inches='tight')
-    plt.savefig(os.path.join(output_dir, 'representation_comparison.pdf'), bbox_inches='tight')
     plt.show()
     
-    print("Comparison chart saved to analysis/representation_comparison.png")
+    print("Comparison chart saved to analysis_round3/representation_comparison.png")
 
 def create_parameter_analysis(all_results, output_dir='analysis'):
     os.makedirs(output_dir, exist_ok=True)
@@ -83,11 +82,21 @@ def create_parameter_analysis(all_results, output_dir='analysis'):
         if result.get('success') and result.get('f1') is not None:
             row = {
                 'representation': result['representation'],
-                'f1': result['f1'],
-                'f1_std': result['f1_std'],
-                'elapsed': result['elapsed']
+                'f1': float(result['f1']),
+                'f1_std': float(result['f1_std']),
+                'elapsed': float(result['elapsed'])
             }
-            row.update(result['params'])
+            # Convert all parameter values to appropriate types
+            params = result['params']
+            row.update({
+                'layers': int(params['layers']),
+                'hiddens': int(params['hiddens']),
+                'batch_size': int(params['batch_size']),
+                'lr': float(params['lr']),
+                'emb_size': int(params['emb_size']),
+                'epochs': int(params['epochs']),
+                'h': int(params['h'])
+            })
             df_data.append(row)
     
     df = pd.DataFrame(df_data)
@@ -95,59 +104,6 @@ def create_parameter_analysis(all_results, output_dir='analysis'):
     if df.empty:
         print("No successful results to analyze")
         return
-    
-    # Parameter effect by representation
-    fig, axes = plt.subplots(2, 3, figsize=(15, 10))
-    axes = axes.flatten()
-    
-    parameters = ['layers', 'hiddens', 'batch_size', 'lr', 'emb_size']
-    param_names = ['Layers', 'Hidden', 'Batch Size', 'Learning Rate', 'Emb Size']
-    
-    for idx, (param, param_name) in enumerate(zip(parameters, param_names)):
-        ax = axes[idx]
-        
-        for rep in df['representation'].unique():
-            rep_data = df[df['representation'] == rep]
-            if param == 'lr':
-                # Log scale for learning rate
-                x = np.log10(rep_data[param])
-                ax.set_xlabel(f'log10({param_name})')
-            else:
-                x = rep_data[param]
-                ax.set_xlabel(param_name)
-            
-            y = rep_data['f1']
-            
-            # Scatter plot
-            ax.scatter(x, y, alpha=0.6, label=rep.replace('_', ' ').title(), s=50)
-            
-            # Trend line
-            if len(x) > 1:
-                z = np.polyfit(x, y, 1)
-                p = np.poly1d(z)
-                ax.plot(np.sort(x), p(np.sort(x)), alpha=0.5, linewidth=2)
-        
-        ax.set_ylabel('F1 score')
-        ax.set_title(f'Effect of {param_name} on f1 score')
-        ax.grid(True, alpha=0.3)
-        if idx == 0:
-            ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
-    
-    # Training time vs f1
-    ax = axes[5]
-    for rep in df['representation'].unique():
-        rep_data = df[df['representation'] == rep]
-        ax.scatter(rep_data['elapsed']/60, rep_data['f1'], alpha=0.6, 
-                  label=rep.replace('_', ' ').title(), s=50)
-    ax.set_xlabel('Training time (minutes)')
-    ax.set_ylabel('F1 score')
-    ax.set_title('Training time vs f1 score')
-    ax.grid(True, alpha=0.3)
-    
-    plt.tight_layout()
-    plt.savefig(os.path.join(output_dir, 'parameter_effects.png'), dpi=300)
-    plt.savefig(os.path.join(output_dir, 'parameter_effects.pdf'))
-    plt.show()
     
     # Heatmap of best parameters (only combination of layers and hidden channels, can be done for other combinations too)
     fig, axes = plt.subplots(2, 2, figsize=(14, 10))
@@ -179,7 +135,6 @@ def create_parameter_analysis(all_results, output_dir='analysis'):
     
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, 'heatmaps.png'), dpi=300)
-    plt.savefig(os.path.join(output_dir, 'heatmaps.pdf'))
     plt.show()
 
 
@@ -200,6 +155,11 @@ def paramter_effects(all_results, output_dir='analysis'):
     if df.empty:
         return
     
+    numeric_cols = ['layers', 'hiddens', 'batch_size', 'lr', 'emb_size', 'f1', 'f1_std']
+    for col in numeric_cols:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors='coerce')
+    
     # For each representation: analyze parameter effects
     for rep in df['representation'].unique():
         rep_data = df[df['representation'] == rep]
@@ -215,6 +175,8 @@ def paramter_effects(all_results, output_dir='analysis'):
             
             # Group by parameter value
             grouped = rep_data.groupby(param)['f1'].agg(['mean', 'std', 'count'])
+            # Sort by parameter value
+            grouped.index = pd.to_numeric(grouped.index, errors='coerce')
             grouped = grouped.sort_index()
             
             x = grouped.index
@@ -232,7 +194,8 @@ def paramter_effects(all_results, output_dir='analysis'):
                 ax.text(xi, yi + 0.005, f'n={count}', ha='center', va='bottom', fontsize=8)
         
         ax = axes[5]
-        ax.scatter(rep_data['batch_size'], rep_data['f1'], alpha=0.7, s=50)
+        sorted_data = rep_data.sort_values('batch_size')
+        ax.scatter(sorted_data['batch_size'], sorted_data['f1'], alpha=0.7, s=50)
         ax.set_xlabel('Batch size')
         ax.set_ylabel('F1 score')
         ax.set_title(f'{rep}: Batch size vs f1')
@@ -241,15 +204,14 @@ def paramter_effects(all_results, output_dir='analysis'):
         plt.suptitle(f'Parameter analysis: {rep.replace("_", " ").title()}', fontsize=16, fontweight='bold')
         plt.tight_layout()
         plt.savefig(os.path.join(output_dir, f'parameter_effects_{rep}.png'), dpi=300)
-        plt.savefig(os.path.join(output_dir, f'parameter_effects{rep}.pdf'))
         plt.show()
 
 def main():
-    output_dir = 'analysis'
+    output_dir = 'analysis_round3'
     os.makedirs(output_dir, exist_ok=True)
     
     print("Loading results...")
-    all_results, best_results = load_results('hyperparameter_search')
+    all_results, best_results = load_results('hyperparameter_search_round3')
     
     print("Creating visualizations...")
     create_comparison_chart(best_results, output_dir)
