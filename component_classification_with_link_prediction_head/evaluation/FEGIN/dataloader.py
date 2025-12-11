@@ -10,22 +10,26 @@ string_classes = (str, bytes)
 from torch_geometric.data import Batch
 
 def multitask_collate(batch):
-    for i, item in enumerate(batch):
-        print(f"Batch item {i}: type={type(item)}, length={len(item) if hasattr(item, '__len__') else 'N/A'}")
-    data_list = []
-    candidate_edges_list = []
-    edge_labels_list = []
+    all_data = []
+    all_cand_edges = []
+    all_edge_labels = []
 
-    for data, cand_edges, edge_labels in batch:
-        data_list.append(data)
-        candidate_edges_list.append(cand_edges)
-        edge_labels_list.append(edge_labels)
+    for item in batch:
+        if isinstance(item, dict):
+            all_data.append(item['data'])
+            all_cand_edges.append(item['candidate_edges'])
+            all_edge_labels.append(item['edge_labels'])
+        else:  # tuple style
+            data, cand_edges, edge_labels = item
+            all_data.append(data)
+            all_cand_edges.append(cand_edges)
+            all_edge_labels.append(edge_labels)
 
-    batch_graph = Batch.from_data_list(data_list)
-    batch_graph.candidate_edges = candidate_edges_list
-    batch_graph.edge_labels = edge_labels_list
-
-    return batch_graph
+    # Collate the PyG data objects
+    from torch_geometric.data import Batch
+    data_batch = Batch.from_data_list(all_data)
+    
+    return data_batch, all_cand_edges, all_edge_labels
 
 
 class DataLoader(torch.utils.data.DataLoader):
