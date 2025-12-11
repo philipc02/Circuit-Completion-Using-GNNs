@@ -30,10 +30,10 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         self.edge_labels = loaded['edge_labels']
 
     def __getitem__(self, idx):
-        data, cand_edges, edge_labels = self.get(idx)  # PyG Data object
-        data.candidate_edges = cand_edges
-        data.edge_labels = edge_labels
-        return data
+        data = self.get(idx)  # gets the PyG Data object from InMemoryDataset
+        cand_edges = self.candidate_edges[idx]
+        edge_labels = self.edge_labels[idx]
+        return data, cand_edges, edge_labels
     
     @property
     def processed_file_names(self):
