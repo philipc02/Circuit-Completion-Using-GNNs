@@ -15,20 +15,12 @@ def multitask_collate(batch):
     all_edge_labels = []
 
     for item in batch:
-        if isinstance(item, dict):
-            all_data.append(item['data'])
-            all_cand_edges.append(item['candidate_edges'])
-            all_edge_labels.append(item['edge_labels'])
-        else:  # tuple style
-            data, cand_edges, edge_labels = item
-            all_data.append(data)
-            all_cand_edges.append(cand_edges)
-            all_edge_labels.append(edge_labels)
+        # item is a PyG Data object with attributes
+        all_data.append(item)
+        all_cand_edges.append(item.candidate_edges)
+        all_edge_labels.append(item.edge_labels)
 
-    # Collate the PyG data objects
-    from torch_geometric.data import Batch
     data_batch = Batch.from_data_list(all_data)
-    
     return data_batch, all_cand_edges, all_edge_labels
 
 
