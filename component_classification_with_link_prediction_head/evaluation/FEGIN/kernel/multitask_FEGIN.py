@@ -99,10 +99,10 @@ class MultiTaskFEGIN(torch.nn.Module):
     
     def forward(self, data, candidate_edges=None, task='both'):
         # task: 'classification', 'link_prediction', or 'both'
-        # candidate_edges: tensor of shape [2, num_candidates] for link predictions
+        # candidate_edges: tensors of shape [2, num_candidates] for link predictions
         # returns for classification: log_softmax predictions
-        # for link_prediction: edge scores
-        # for both: tuple of (classification_output, edge_scores)
+        # for link_prediction: list of edge scores
+        # for both: tuple of (classification_output, list of edge_scores)
 
         x, edge_index, batch = data.x, data.edge_index, data.batch
         
@@ -117,10 +117,46 @@ class MultiTaskFEGIN(torch.nn.Module):
         
         elif task == 'link_prediction':
             # Predict edges for new component
-            if candidate_edges is None:
-                raise ValueError("candidate_edges must be provided for link prediction task")
-            edge_scores = self.predict_edges(node_embeddings, candidate_edges, batch)
-            return edge_scores
+            edge_scores_list = []
+            if candidate_edges is not None:
+                # Get batch indices for each node
+                batch_size = batch.max().item() + 1
+                batch_node_indices = []
+                
+                # Get node indices for each graph in batch
+                for i in range(batch_size):
+                    batch_node_indices.append((batch == i).nonzero(as_tuple=True)[0])
+                
+                # Process candidate edges for each graph
+                for i, (candidate_edges_i, node_indices) in enumerate(zip(candidate_edges, batch_node_indices)):
+                    if candidate_edges_i is not None and len(candidate_edges_i) > 0:
+                        # Adjust indices to be within this graphs node indices
+                        # First get node embeddings for this graph
+                        graph_node_embeddings = node_embeddings[node_indices]
+                        
+                        # Create mapping from original indices to local indices
+                        local_mapping = {orig_idx.item(): j for j, orig_idx in enumerate(node_indices)}
+                        
+                        # Convert candidate edges to local indices
+                        local_edges = []
+                        for j in range(candidate_edges_i.shape[1]):
+                            src = candidate_edges_i[0, j].item()
+                            dst = candidate_edges_i[1, j].item()
+                            if src in local_mapping and dst in local_mapping:
+                                local_edges.append([local_mapping[src], local_mapping[dst]])
+                        
+                        if local_edges:
+                            local_edges_tensor = torch.tensor(local_edges, device=x.device).t()
+                            # Predict edges
+                            src_emb = graph_node_embeddings[local_edges_tensor[0]]
+                            dst_emb = graph_node_embeddings[local_edges_tensor[1]]
+                            edge_features = torch.cat([src_emb, dst_emb], dim=1)
+                            scores = self.edge_predictor(edge_features).squeeze(-1)
+                            edge_scores_list.append(torch.sigmoid(scores))
+                        else:
+                            edge_scores_list.append(torch.tensor([], device=x.device))
+                else:
+                    edge_scores_list.append(torch.tensor([], device=x.device))
         
         else:  # both tasks
             # Component classification
@@ -128,12 +164,49 @@ class MultiTaskFEGIN(torch.nn.Module):
             logits = self.node_classifier(graph_embeddings)
             class_output = F.log_softmax(logits, dim=1)
             
-            # Link prediction
-            if candidate_edges is None:
-                raise ValueError("candidate_edges must be provided for link prediction task")
-            edge_scores = self.predict_edges(node_embeddings, candidate_edges, batch)
-            
-            return class_output, edge_scores
+            # Link prediction - process each graph in batch separately
+            edge_scores_list = []
+            if candidate_edges is not None:
+                # Get batch indices for each node
+                batch_size = batch.max().item() + 1
+                batch_node_indices = []
+                
+                # Get node indices for each graph in batch
+                for i in range(batch_size):
+                    batch_node_indices.append((batch == i).nonzero(as_tuple=True)[0])
+                
+                # Process candidate edges for each graph
+                for i, (candidate_edges_i, node_indices) in enumerate(zip(candidate_edges, batch_node_indices)):
+                    if candidate_edges_i is not None and len(candidate_edges_i) > 0:
+                        # Adjust indices to be within this graphs node indices
+                        # First get the node embeddings for this graph
+                        graph_node_embeddings = node_embeddings[node_indices]
+                        
+                        # Create mapping from original indices to local indices
+                        local_mapping = {orig_idx.item(): j for j, orig_idx in enumerate(node_indices)}
+                        
+                        # Convert candidate edges to local indices
+                        local_edges = []
+                        for j in range(candidate_edges_i.shape[1]):
+                            src = candidate_edges_i[0, j].item()
+                            dst = candidate_edges_i[1, j].item()
+                            if src in local_mapping and dst in local_mapping:
+                                local_edges.append([local_mapping[src], local_mapping[dst]])
+                        
+                        if local_edges:
+                            local_edges_tensor = torch.tensor(local_edges, device=x.device).t()
+                            # Predict edges
+                            src_emb = graph_node_embeddings[local_edges_tensor[0]]
+                            dst_emb = graph_node_embeddings[local_edges_tensor[1]]
+                            edge_features = torch.cat([src_emb, dst_emb], dim=1)
+                            scores = self.edge_predictor(edge_features).squeeze(-1)
+                            edge_scores_list.append(torch.sigmoid(scores))
+                        else:
+                            edge_scores_list.append(torch.tensor([], device=x.device))
+                    else:
+                        edge_scores_list.append(torch.tensor([], device=x.device))
+                
+                return class_output, edge_scores_list
     
     def predict_edges(self, node_embeddings, candidate_edges, batch):
         # predict edge scores for candidate edges.
