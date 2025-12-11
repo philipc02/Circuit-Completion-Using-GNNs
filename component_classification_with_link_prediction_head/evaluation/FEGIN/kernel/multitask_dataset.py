@@ -207,7 +207,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         
         node_features = self.get_node_features(G, self.representation)
         
-        x = torch.tensor(node_features, dtype=torch.float)
+        x = torch.tensor(np.array(node_features), dtype=torch.float)
 
         representation = self.representation
         if representation == "component_component":
