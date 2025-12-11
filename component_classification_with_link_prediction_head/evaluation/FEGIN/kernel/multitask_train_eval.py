@@ -4,7 +4,7 @@ from torch.optim import Adam
 import numpy as np
 from sklearn.metrics import roc_auc_score,f1_score, accuracy_score
 from sklearn.utils import shuffle
-from dataloader import DataLoader
+from dataloader import DataLoader, multitask_collate
 import time
 
 
@@ -154,8 +154,8 @@ def train_multitask_fegin(dataset, dataset_name, model, epochs, batch_size, lr,
         if torch.cuda.is_available():
             torch.cuda.synchronize()
         
-        train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-        test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+        train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, collate_fn=multitask_collate)
+        test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, collate_fn=multitask_collate)
         
         for epoch in range(epochs):
             train_metrics = train_multitask_epoch( model, optimizer, train_loader, device, lambda_node, lambda_edge)

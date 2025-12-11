@@ -82,7 +82,8 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         if self.pre_transform is not None:
             data_list = [self.pre_transform(data) for data in data_list]
         
-        data, slices = self.collate(data_list)
+        pure_data_list = [tpl[0] for tpl in data_list]  # keep ONLY the PyG Data for saving
+        data, slices = self.collate(pure_data_list)
         torch.save((data, slices), self.processed_paths[0])
     
     def create_multitask_examples(self, G, graph_name, split):
@@ -109,14 +110,14 @@ class MultiTaskCircuitDataset(InMemoryDataset):
             # Generate candidate edges (postive and negative) and labels (1, 0)
             candidate_edges, edge_labels = self.generate_candidate_edges(G_masked, true_connections, removed_nodes)
             
-            data = self.convert_graph_to_pyg(G_masked, candidate_edges, edge_labels)
+            data = self.convert_graph_to_pyg(G_masked)
             
             if data is not None:
                 data.y = torch.tensor([comp_type_to_idx[comp_type]], dtype=torch.long)
                 data.set = split
                 data.target_component = comp_node
                 data.comp_type = comp_type
-                examples.append(data)
+                examples.append((data, candidate_edges, edge_labels))
         
         return examples
     
@@ -197,7 +198,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         
         return candidate_edges, edge_labels
     
-    def convert_graph_to_pyg(self, G, candidate_edges, edge_labels):
+    def convert_graph_to_pyg(self, G):
         if G.number_of_nodes() == 0:
             return None
         
@@ -299,11 +300,6 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                 edge_attr = torch.empty((0, 2), dtype=torch.float)
             
             data = Data(x=x, edge_index=edge_index, edge_attr=edge_attr)
-
-
-        
-        data.candidate_edges = candidate_edges
-        data.edge_labels = edge_labels
         
         return data
     

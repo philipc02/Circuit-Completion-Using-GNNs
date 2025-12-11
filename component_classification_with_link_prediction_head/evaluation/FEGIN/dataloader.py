@@ -7,6 +7,33 @@ import collections.abc as container_abcs
 int_classes = int
 string_classes = (str, bytes)
 
+from torch_geometric.data import Batch
+
+def multitask_collate(batch):
+    """
+    batch = [
+        (Data, candidate_edges, edge_labels),
+        (Data, candidate_edges, edge_labels),
+        ...
+    ]
+    """
+
+    data_list = []
+    candidate_edges_list = []
+    edge_labels_list = []
+
+    for data, cand_edges, edge_labels in batch:
+        data_list.append(data)
+        candidate_edges_list.append(cand_edges)
+        edge_labels_list.append(edge_labels)
+
+    batch_graph = Batch.from_data_list(data_list)
+
+    batch_graph.candidate_edges = candidate_edges_list
+    batch_graph.edge_labels = edge_labels_list
+
+    return batch_graph
+
 
 class DataLoader(torch.utils.data.DataLoader):
     r"""Data loader which merges data objects from a
