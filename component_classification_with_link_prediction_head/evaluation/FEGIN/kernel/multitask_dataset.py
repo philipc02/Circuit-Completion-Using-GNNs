@@ -406,21 +406,5 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                     feat[14] = degrees[node] / 20.0
 
                 node_features.append(feat)
-
-
-
-        node_data = G.nodes[node]
-        node_type = node_data.get('type', 'unknown')
         
-        # Create one-hot encoding for node type
-        type_mapping = {'component': 0, 'pin': 1, 'net': 2}
-        type_idx = type_mapping.get(node_type, 0)
-        
-        # Basic feature: one-hot encoding of type
-        features = [0.0] * 3
-        features[type_idx] = 1.0
-        
-        # Add degree as feature
-        features.append(float(G.degree(node)))
-        
-        return features
+        return node_features
