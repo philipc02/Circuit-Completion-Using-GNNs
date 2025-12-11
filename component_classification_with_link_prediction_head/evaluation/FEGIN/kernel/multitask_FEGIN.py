@@ -97,8 +97,9 @@ class MultiTaskFEGIN(torch.nn.Module):
         node_embeddings = torch.cat(xs, dim=-1)
         return node_embeddings
     
-    def forward(self, data, task='both'):
+    def forward(self, data, candidate_edges=None, task='both'):
         # task: 'classification', 'link_prediction', or 'both'
+        # candidate_edges: tensor of shape [2, num_candidates] for link predictions
         # returns for classification: log_softmax predictions
         # for link_prediction: edge scores
         # for both: tuple of (classification_output, edge_scores)
@@ -116,7 +117,9 @@ class MultiTaskFEGIN(torch.nn.Module):
         
         elif task == 'link_prediction':
             # Predict edges for new component
-            edge_scores = self.predict_edges(node_embeddings, data)
+            if candidate_edges is None:
+                raise ValueError("candidate_edges must be provided for link prediction task")
+            edge_scores = self.predict_edges(node_embeddings, candidate_edges, batch)
             return edge_scores
         
         else:  # both tasks
@@ -126,23 +129,25 @@ class MultiTaskFEGIN(torch.nn.Module):
             class_output = F.log_softmax(logits, dim=1)
             
             # Link prediction
-            edge_scores = self.predict_edges(node_embeddings, data)
+            if candidate_edges is None:
+                raise ValueError("candidate_edges must be provided for link prediction task")
+            edge_scores = self.predict_edges(node_embeddings, candidate_edges, batch)
             
             return class_output, edge_scores
     
-    def predict_edges(self, node_embeddings, data):
+    def predict_edges(self, node_embeddings, candidate_edges, batch):
+        # predict edge scores for candidate edges.
+        # node_embeddings: [num_nodes, emb_size]
+        # candidate_edges: [2, num_candidates]
+        # batch: [num_nodes] batch assignment
         # returns edge_scores: Probability scores for each candidate edge [num_candidates]
 
-        if not hasattr(data, 'candidate_edges'):
-            return None
-        
-        candidate_edges = data.candidate_edges  # [2, num_candidates]
         
         # Get embeddings for source and destination nodes
-        src_embeddings = node_embeddings[candidate_edges[0]]  # [num_candidates, hidden_dim]
-        dst_embeddings = node_embeddings[candidate_edges[1]]  # [num_candidates, hidden_dim]
+        src_embeddings = node_embeddings[candidate_edges[0]]  # [num_candidates, emb_size]
+        dst_embeddings = node_embeddings[candidate_edges[1]]  # [num_candidates, emb_size]
         # Concatenate source and destination embeddings -> edge feature
-        edge_features = torch.cat([src_embeddings, dst_embeddings], dim=-1)
+        edge_features = torch.cat([src_embeddings, dst_embeddings], dim=1)
         # Predict edge probability
         edge_scores = self.edge_predictor(edge_features).squeeze(-1)
         
