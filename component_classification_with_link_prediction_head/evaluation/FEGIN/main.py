@@ -30,6 +30,9 @@ from kernel.dataset_component_component import ComponentComponentDataset
 from kernel.dataset_component_net import ComponentNetDataset
 from kernel.dataset_component_pin import ComponentPinDataset
 from kernel.dataset_component_pin_net import ComponentPinNetDataset
+from kernel.multitask_FEGIN import MultiTaskFEGIN
+from kernel.multitask_train_eval import train_multitask_fegin
+from kernel.multitask_dataset import MultiTaskCircuitDataset
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -50,7 +53,7 @@ warnings.showwarning = warn_with_traceback
 # for dataset_name in file_names:
 def main():
 # General settings.
-    parser = argparse.ArgumentParser(description='GNN for component identification in netlists')
+    parser = argparse.ArgumentParser(description='GNN for component identification and link prediction')
     parser.add_argument('--data', type=str, default='ltspice_demos',
                         help='Dataset name (e.g., ltspice_demos)')
     parser.add_argument('--clean', action='store_true', default=False,
@@ -63,9 +66,8 @@ def main():
                         help='Circuit representation to use')
 
     # GNN settings.
-    parser.add_argument('--model', type=str, default='FEGIN', 
-                        help='GCN, GraphSAGE, GIN, GAT, FEGIN,NestedGCN, NestedGraphSAGE, \
-                        NestedGIN, and NestedGAT')
+    parser.add_argument('--model', type=str, default='FEGIN', choices=['FEGIN', 'MultiTaskFEGIN'],
+                        help='Model architecture')
     parser.add_argument('--layers', type=int, default=4)
     parser.add_argument('--hiddens', type=int, default=32)
     parser.add_argument('--h', type=int, default=2, help='the height of rooted subgraph \
@@ -81,6 +83,14 @@ def main():
                         specify num of RW steps here')
     parser.add_argument('--max_nodes_per_hop', type=int, default=None)
     parser.add_argument('--emb_size', type=int, default=250)
+
+    # Multi-task specific settings
+    parser.add_argument('--lambda_node', type=float, default=1.0,
+                        help='Weight for component classification loss')
+    parser.add_argument('--lambda_edge', type=float, default=1.0,
+                        help='Weight for link prediction loss')
+    parser.add_argument('--neg_sampling_ratio', type=float, default=1.0,
+                        help='Ratio of negative to positive edge samples')
 
     # Training settings.
     parser.add_argument('--epochs', type=int, default=100)
@@ -143,7 +153,20 @@ def main():
         'emb_size': args.emb_size,
         'seed': args.seed
     }
+    if args.model == 'MultiTaskFEGIN':
+        config_dict.update({
+            'lambda_node': args.lambda_node,
+            'lambda_edge': args.lambda_edge,
+            'neg_sampling_ratio': args.neg_sampling_ratio
+        })
     tracker.log_config(config_dict)
+
+    def logger(info):
+        f = open(os.path.join(args.res_dir, 'log.txt'), 'a')
+        print(info, file=f)
+    device = torch.device(
+        'cuda' if torch.cuda.is_available() and not args.cpu else 'cpu'
+    )
 
     
     datasets = [args.data]
@@ -168,12 +191,7 @@ def main():
     else:
         nets = [eval(args.model)]
 
-    def logger(info):
-        f = open(os.path.join(args.res_dir, 'log.txt'), 'a')
-        print(info, file=f)
-    device = torch.device(
-        'cuda' if torch.cuda.is_available() and not args.cpu else 'cpu'
-    )
+    
     # device = 'cpu'### only for GAT and nestedGAT
     if args.no_val:
         cross_val_method = cross_validation_without_val_set
@@ -195,7 +213,18 @@ def main():
             log = "Using {} layers, {} hidden units, h = {}".format(num_layers, hidden, h)
             print(log)
             logger(log)
-            if args.model == "FEGIN":
+            if args.model == 'MultiTaskFEGIN':
+                dataset = MultiTaskCircuitDataset(
+                    root="data/",
+                    name=dataset_name,
+                    representation=args.representation,
+                    h=args.h,
+                    max_nodes_per_hop=args.max_nodes_per_hop,
+                    node_label=args.node_label,
+                    use_rd=args.use_rd,
+                    neg_sampling_ratio=args.neg_sampling_ratio
+                )
+            elif args.model == "FEGIN":
                 print(f"Loading {args.representation} representation dataset")
     
                 dataset_classes = {
@@ -222,7 +251,36 @@ def main():
                     args.use_rd, 
                     args.max_nodes_per_hop)
             print("dataset loaded",dataset.num_features,dataset.num_classes,len(dataset))
-            if args.model=="FEGIN":
+            if args.model == 'MultiTaskFEGIN':
+                model = MultiTaskFEGIN(dataset, args.layers, args.hiddens, args.emb_size, args.node_label!='no', args.use_rd, lambda_node=args.lambda_node, lambda_edge=args.lambda_edge)
+                results = train_multitask_fegin(
+                    dataset,
+                    dataset_name,
+                    model,
+                    epochs=args.epochs,
+                    batch_size=args.batch_size,
+                    lr=args.lr,
+                    lr_decay_factor=args.lr_decay_factor,
+                    lr_decay_step_size=args.lr_decay_step_size,
+                    weight_decay=0,
+                    device=device,
+                    logger=logger,
+                    tracker=tracker,
+                    representation=args.representation,
+                    lambda_node=args.lambda_node,
+                    lambda_edge=args.lambda_edge
+                )
+                tracker.log_test_results(
+                    test_acc=results['best_acc'],
+                    test_f1_weighted=results['best_node_f1_weighted'],
+                    test_f1_macro=results['best_node_f1_macro'],
+                    all_preds=results['predictions'],
+                    all_labels=results['labels'],
+                    class_names=['R', 'C', 'V', 'X']
+                )
+                tracker.log_custom_metric('best_edge_f1', results['best_edge_f1'])
+                tracker.log_custom_metric('best_combined_score', results['best_combined_score'])
+            elif args.model=="FEGIN":
                 model = Net(dataset, num_layers, hidden, args.emb_size,args.node_label!='no', args.use_rd)
                 loss, f1,f1_std, fegin_results = trainFEGIN(
                     dataset,dataset_name,
@@ -246,6 +304,9 @@ def main():
                     all_labels=fegin_results['labels'],
                     class_names=['R', 'C', 'V', 'X']
                 )
+                if f1 > best_result[1]:
+                    best_result = (loss,f1,f1_std)
+                    best_hyper = (num_layers, hidden, h)
             else:
                 model = Net(dataset, num_layers, hidden, args.node_label!='no', args.use_rd)
                 loss, auc, auc_std,f1,f1_std = cross_val_method(
@@ -260,11 +321,16 @@ def main():
                     weight_decay=0,
                     device=device, 
                     logger=logger)
-            if f1 > best_result[1]:
-                best_result = (loss,f1,f1_std)
-                best_hyper = (num_layers, hidden, h)
+                if f1 > best_result[1]:
+                    best_result = (loss,f1,f1_std)
+                    best_hyper = (num_layers, hidden, h)
             
 
+            print("========================FINAL RESULTS================================")
+            print(f"Component Classification F1: {results['best_node_f1_weighted']:.4f}")
+            print(f"Link Prediction F1: {results['best_edge_f1']:.4f}")
+            print(f"Combined Score: {results['best_combined_score']:.4f}")
+        '''
         desc = 'f1:{:.3f} ± {:.3f}'.format(
             best_result[1], best_result[2]
         )
@@ -275,6 +341,7 @@ def main():
         logger(log)
         results += ['{} - {}: {}'.format(dataset_name, model.__class__.__name__, desc)]
         # break
+        '''
         
     log = '-----\n{}'.format('\n'.join(results))
     print(cmd_input[:-1])

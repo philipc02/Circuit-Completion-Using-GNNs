@@ -20,7 +20,7 @@ class FEGINExperimentTracker:
         self.metrics = {
             'train_loss': [], 'val_loss': [], 'val_acc': [], 'val_f1': [],
             'test_acc': None, 'test_f1': None, 'test_f1_macro': None,
-            'best_epoch': None, 'config': {}, 'current_iteration': 0, 'iteration_metrics': {}
+            'best_epoch': None, 'config': {}, 'current_iteration': 0, 'iteration_metrics': {}, 'edge_f1' : None, 'edge_auc' : None
         }
         
         (self.experiment_dir / "models").mkdir(exist_ok=True)
@@ -56,6 +56,12 @@ class FEGINExperimentTracker:
         self.metrics['val_acc'].append(float(val_acc))
         self.metrics['val_f1'].append(float(val_f1))
         
+        self.save_metrics_to_csv()
+
+    def log_custom_metric(self, metric, value, epoch):
+        current_iter = self.metrics['current_iteration']
+        # store in iteration specific metrics
+        self.metrics['iteration_metrics'][current_iter][metric].append(float(value))
         self.save_metrics_to_csv()
 
     def save_metrics_to_csv(self):

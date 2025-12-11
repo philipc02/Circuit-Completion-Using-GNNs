@@ -48,7 +48,6 @@ class ComponentPinNetDataset(BaseCircuitDataset):
             node_features.append(feat)
         
         # Edges with attributes
-        # TODO: integrate edge attributes into message passing in model
         edges = []
         edge_attrs = []
         
