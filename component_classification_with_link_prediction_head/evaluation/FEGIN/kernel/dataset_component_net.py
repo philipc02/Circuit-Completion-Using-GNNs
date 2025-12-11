@@ -26,19 +26,18 @@ class ComponentNetDataset(BaseCircuitDataset):
             node_type = attr.get('type', '')
             comp_type = attr.get('comp_type', '')
             
-            feat = np.zeros(3, dtype=np.float32)
+            feat = np.zeros(8, dtype=np.float32)
             
             if node_type == 'component':
                 feat[0] = 1.0  # node type: component
+                feat[1] = degrees[node] / 10.0
                 if comp_type in ['R', 'C', 'V', 'X']:
                     comp_idx = ['R', 'C', 'V', 'X'].index(comp_type)
-                    feat[1] = comp_idx / 4.0
+                    feat[2 + comp_idx] = 1.0
             else:  # net node
-                feat[0] = 0.0  # node type: net
-                feat[1] = -1.0  # no component type
-            
-            feat[2] = degrees[node] / 20.0  # Normalized degree
-            
+                feat[6] = 1.0  # node type: net
+                feat[7] = degrees[node] / 20.0
+                            
             node_features.append(feat)
         
         # Edges
