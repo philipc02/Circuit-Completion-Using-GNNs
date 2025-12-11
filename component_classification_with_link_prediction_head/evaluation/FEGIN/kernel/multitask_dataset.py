@@ -205,9 +205,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         node_features = []
         node_mapping = {node: i for i, node in enumerate(G.nodes())}
         
-        for node in G.nodes():
-            feature = self.get_node_features(G, node, self.representation)
-            node_features.append(feature)
+        node_features = self.get_node_features(G, self.representation)
         
         x = torch.tensor(node_features, dtype=torch.float)
 
@@ -303,7 +301,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         
         return data
     
-    def get_node_features(self, G, node, representation):
+    def get_node_features(self, G, representation):
         if G.number_of_nodes() == 0:
                 return None
         
