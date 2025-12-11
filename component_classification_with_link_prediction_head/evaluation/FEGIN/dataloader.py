@@ -10,14 +10,8 @@ string_classes = (str, bytes)
 from torch_geometric.data import Batch
 
 def multitask_collate(batch):
-    """
-    batch = [
-        (Data, candidate_edges, edge_labels),
-        (Data, candidate_edges, edge_labels),
-        ...
-    ]
-    """
-
+    for i, item in enumerate(batch):
+        print(f"Batch item {i}: type={type(item)}, length={len(item) if hasattr(item, '__len__') else 'N/A'}")
     data_list = []
     candidate_edges_list = []
     edge_labels_list = []
@@ -28,7 +22,6 @@ def multitask_collate(batch):
         edge_labels_list.append(edge_labels)
 
     batch_graph = Batch.from_data_list(data_list)
-
     batch_graph.candidate_edges = candidate_edges_list
     batch_graph.edge_labels = edge_labels_list
 

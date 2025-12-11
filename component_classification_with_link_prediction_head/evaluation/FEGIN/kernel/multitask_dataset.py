@@ -82,8 +82,26 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         if self.pre_transform is not None:
             data_list = [self.pre_transform(data) for data in data_list]
         
-        data, slices = self.collate(data_list)
-        torch.save((data, slices), self.processed_paths[0])
+        # Store all three elements for each example
+        all_data = []
+        all_candidate_edges = []
+        all_edge_labels = []
+
+        for data_item, cand_edges, edge_labels in data_list:
+            all_data.append(data_item)
+            all_candidate_edges.append(cand_edges)
+            all_edge_labels.append(edge_labels)
+
+        # Collate the PyG Data objects
+        data, slices = self.collate(all_data)
+
+        # Save everything together
+        torch.save({
+            'data': data,
+            'slices': slices,
+            'candidate_edges': all_candidate_edges,
+            'edge_labels': all_edge_labels
+        }, self.processed_paths[0])
     
     def create_multitask_examples(self, G, graph_name, split):
         # examples with both classification labels and edge prediction targets
