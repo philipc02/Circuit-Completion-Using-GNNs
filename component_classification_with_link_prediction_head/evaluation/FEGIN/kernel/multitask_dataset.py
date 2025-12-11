@@ -223,7 +223,6 @@ class MultiTaskCircuitDataset(InMemoryDataset):
             else:
                 edge_index = torch.empty((2, 0), dtype=torch.long)
             
-            x = torch.tensor(np.array(node_features), dtype=torch.float)
             data = Data(x=x, edge_index=edge_index)
         elif representation == "component_net":            
             # Edges
@@ -238,7 +237,6 @@ class MultiTaskCircuitDataset(InMemoryDataset):
             else:
                 edge_index = torch.empty((2, 0), dtype=torch.long)
             
-            x = torch.tensor(np.array(node_features), dtype=torch.float)
             data = Data(x=x, edge_index=edge_index)
         elif representation == "component_pin":
             edges = []
@@ -264,7 +262,6 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                 edge_index = torch.empty((2, 0), dtype=torch.long)
                 edge_attr = torch.empty((0, 2), dtype=torch.float)
             
-            x = torch.tensor(np.array(node_features), dtype=torch.float)
             data = Data(x=x, edge_index=edge_index, edge_attr=edge_attr)
         elif representation == "component_pin_net":
             # Edges with attributes
@@ -291,7 +288,6 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                 edge_index = torch.empty((2, 0), dtype=torch.long)
                 edge_attr = torch.empty((0, 2), dtype=torch.float)
             
-            x = torch.tensor(np.array(node_features), dtype=torch.float)
             data = Data(x=x, edge_index=edge_index, edge_attr=edge_attr)
 
 
