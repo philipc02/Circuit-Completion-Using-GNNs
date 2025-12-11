@@ -21,7 +21,19 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         self.neg_sampling_ratio = neg_sampling_ratio  # ratio of negative to positive samples
         
         super().__init__(root, transform, pre_transform, pre_filter)
-        self.data, self.slices = torch.load(self.processed_paths[0])
+        # self.data, self.slices = torch.load(self.processed_paths[0])
+
+        loaded = torch.load(self.processed_paths[0])
+        self.data = loaded['data']
+        self.slices = loaded['slices']
+        self.candidate_edges = loaded['candidate_edges']
+        self.edge_labels = loaded['edge_labels']
+
+    def __getitem__(self, idx):
+        data = self.get(idx)  # gets the PyG Data object from InMemoryDataset
+        cand_edges = self.candidate_edges[idx]
+        edge_labels = self.edge_labels[idx]
+        return data, cand_edges, edge_labels
     
     @property
     def processed_file_names(self):
