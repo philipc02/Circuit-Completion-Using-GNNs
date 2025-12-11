@@ -207,7 +207,17 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         
         node_features = self.get_node_features(G, self.representation)
         
-        x = torch.tensor(np.array(node_features), dtype=torch.float)
+        try:
+            x = torch.tensor(np.array(node_features), dtype=torch.float)
+        except Exception as e:
+            # If conversion fails, dump debug info to help locate ragged vectors.
+            print("ERROR: failed to convert node_features list to numpy array. Debug info:")
+            for i, feat in enumerate(node_features):
+                try:
+                    print(f"  node {i}: type={type(feat)}, shape={getattr(feat, 'shape', None)}")
+                except Exception:
+                    print(f"  node {i}: unable to inspect feature")
+            raise
 
         representation = self.representation
         if representation == "component_component":
