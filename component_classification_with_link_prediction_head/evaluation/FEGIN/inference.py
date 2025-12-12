@@ -7,6 +7,7 @@ from torch_geometric.data import Data, Batch
 from torch_geometric.loader import DataLoader
 from kernel.multitask_FEGIN import MultiTaskFEGIN
 from kernel.multitask_dataset import MultiTaskCircuitDataset
+from pathlib import Path
 
 def load_trained_model(model_path, dataset, device='cuda'):
     model = MultiTaskFEGIN(
@@ -388,6 +389,6 @@ if __name__ == "__main__":
     print(f"Using device: {device}")
     
     # Path to trained model
-    model_path = "fegin_experiments\\ltspice_demos_MultiTaskFEGIN__20251212110220_20251212_110220\\models\\best_multitask_model_iter_2.pth"
+    model_path = Path("fegin_experiments") / "ltspice_demos_MultiTaskFEGIN__20251212110220_20251212_110220" / "models" / "best_multitask_model_iter_2.pth"
     demo_with_sample_circuit(model_path, device)
 
