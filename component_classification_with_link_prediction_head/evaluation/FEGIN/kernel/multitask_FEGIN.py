@@ -161,8 +161,8 @@ class MultiTaskFEGIN(torch.nn.Module):
                                 src_emb = graph_node_embeddings[src]
                             dst_emb = graph_node_embeddings[dst]
 
-                            edge_feature = torch.cat([src_emb, dst_emb], dim=1)
-                            score = self.edge_predictor(edge_feature).squeeze(-1)
+                            edge_feature = torch.cat([src_emb, dst_emb], dim=0)
+                            score = self.edge_predictor(edge_feature).squeeze(0)
                             scores.append(torch.sigmoid(score).squeeze())
 
                         if scores:
