@@ -35,7 +35,7 @@ def train_multitask_epoch(model, optimizer, loader, device, lambda_node=1.0, lam
         optimizer.zero_grad()
         
         # Forward pass for both tasks
-        class_output, edge_scores_list = model(data, candidate_edges=candidate_edges_list, task='both')
+        class_output, edge_scores_list = model(data, candidate_edges=candidate_edges_list, task='both', teacher_forcing=True)
         
         # Component classification loss
         node_loss = F.cross_entropy(class_output, data.y.view(-1))
@@ -105,7 +105,7 @@ def eval_multitask(model, loader, device):
                 edge_labels_list = [el.to(device) for el in edge_labels_list]
             
             # Get predictions
-            class_output, edge_scores_list = model(data, candidate_edges=candidate_edges_list, task='both')
+            class_output, edge_scores_list = model(data, candidate_edges=candidate_edges_list, task='both', teacher_forcing=False)  # No teacher forcing during evaluation
             
             # Classification metrics
             node_loss = F.cross_entropy(class_output, data.y.view(-1), reduction='sum')

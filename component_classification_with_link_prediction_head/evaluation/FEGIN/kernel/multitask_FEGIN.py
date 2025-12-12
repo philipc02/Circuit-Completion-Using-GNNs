@@ -61,6 +61,12 @@ class MultiTaskFEGIN(torch.nn.Module):
             ReLU(),
             Linear(hidden, dataset.num_classes)
         )
+
+        # Component type embedding for link prediction
+        self.comp_type_embedding = torch.nn.Embedding(
+            dataset.num_classes,  # 4 component types: R, C, V, X
+            num_layers * hidden   # Same dimension as node embeddings
+        )
         
         # Link prediction head
         # Takes concatenated node embeddings and predicts edge probability
@@ -97,7 +103,7 @@ class MultiTaskFEGIN(torch.nn.Module):
         node_embeddings = torch.cat(xs, dim=-1)
         return node_embeddings
     
-    def forward(self, data, candidate_edges=None, task='both'):
+    def forward(self, data, candidate_edges=None, task='both', teacher_forcing=True):
         # task: 'classification', 'link_prediction', or 'both'
         # candidate_edges: tensors of shape [2, num_candidates] for link predictions
         # returns for classification: log_softmax predictions
@@ -121,6 +127,13 @@ class MultiTaskFEGIN(torch.nn.Module):
             graph_embeddings = global_mean_pool(node_embeddings, batch)
             logits = self.node_classifier(graph_embeddings)
             class_output = F.log_softmax(logits, dim=1)
+
+            # During training with teacher forcing: use true labels
+            # During evaluation or inference: use predicted labels
+            if teacher_forcing and self.training and hasattr(data, 'y'):
+                comp_type_indices = data.y.view(-1)
+            else:
+                comp_type_indices = class_output.max(1)[1]
             
             # Link prediction - process each graph in batch separately
             if candidate_edges is not None:
@@ -140,36 +153,27 @@ class MultiTaskFEGIN(torch.nn.Module):
                         # Adjust indices to be within this graphs node indices
                         # First get the node embeddings for this graph
                         graph_node_embeddings = node_embeddings[node_indices]
-                        graph_node_features = x[node_indices]
-                    
-                        # Create virtual node embedding (mean of component nodes)
-                        component_mask = graph_node_features[:, 0] > 0.5
-                        if component_mask.sum() > 0:
-                            virtual_embedding = graph_node_embeddings[component_mask].mean(dim=0)
-                        else:
-                            virtual_embedding = graph_node_embeddings.mean(dim=0)
+                        # Get component type embedding for this graph
+                        comp_type_idx = comp_type_indices[i]
+                        comp_type_emb = self.comp_type_embedding(comp_type_idx)
 
                         scores  = []
                         
                         for j in range(candidate_edges_i.shape[1]):
                             src = candidate_edges_i[0, j].item()
                             dst = candidate_edges_i[1, j].item()
-
-                            # Always use virtual embedding as source (since src is always -1)
-                            src_emb = virtual_embedding
                             
-                            # Check if destination is valid
-                            if 0 <= dst < len(graph_node_embeddings):
+                            # src should be -1 (virtual node), dst is the candidate node
+                            if src == -1 and 0 <= dst < len(graph_node_embeddings):
                                 dst_emb = graph_node_embeddings[dst]
-                            else:
-                                # If invalid -> use zero vector (or virtual embedding)
-                                # Shouldn't happen if dataset is correct
-                                dst_emb = torch.zeros_like(virtual_embedding, device=x.device)
                                 
-                            edge_feature = torch.cat([src_emb, dst_emb], dim=0)
-                            edge_feature = edge_feature.unsqueeze(0)  # Add batch dimension
-                            score = self.edge_predictor(edge_feature).squeeze()
-                            scores.append(torch.sigmoid(score))
+                                edge_feature = torch.cat([comp_type_emb, dst_emb], dim=0)
+                                edge_feature = edge_feature.unsqueeze(0)  # Add batch dimension
+                                score = self.edge_predictor(edge_feature).squeeze()
+                                scores.append(torch.sigmoid(score))
+                            else:
+                                # Skip invalid edges
+                                continue
 
                         if scores:
                             edge_scores_list.append(torch.stack(scores))
@@ -177,13 +181,16 @@ class MultiTaskFEGIN(torch.nn.Module):
                             edge_scores_list.append(torch.tensor([], device=x.device))
                     else:
                         edge_scores_list.append(torch.tensor([], device=x.device))
-            else:
-                edge_scores_list.append(torch.tensor([], device=x.device))
                 
-            if task == 'link_prediction':
-                return edge_scores_list
+                if task == 'link_prediction':
+                    return edge_scores_list
+                else:
+                    return class_output, edge_scores_list
             else:
-                return class_output, edge_scores_list
+                if task == 'link_prediction':
+                    return [torch.tensor([], device=x.device) for _ in range(batch_size)]
+                else:
+                    return class_output, [torch.tensor([], device=x.device) for _ in range(batch_size)]
     
     def predict_edges(self, node_embeddings, candidate_edges, batch):
         # predict edge scores for candidate edges.
