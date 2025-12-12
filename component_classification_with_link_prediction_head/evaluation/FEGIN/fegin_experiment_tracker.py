@@ -20,7 +20,7 @@ class FEGINExperimentTracker:
         self.metrics = {
             'train_loss': [], 'val_loss': [], 'val_acc': [], 'val_f1': [],
             'test_acc': None, 'test_f1': None, 'test_f1_macro': None,
-            'best_epoch': None, 'config': {}, 'current_iteration': 0, 'iteration_metrics': {}, 'edge_f1' : None, 'edge_auc' : None
+            'best_epoch': None, 'config': {}, 'current_iteration': 0, 'iteration_metrics': {}, 'edge_f1' : [], 'edge_auc' : [], 'combined_score' : []
         }
         
         (self.experiment_dir / "models").mkdir(exist_ok=True)
@@ -64,6 +64,24 @@ class FEGINExperimentTracker:
         self.metrics['iteration_metrics'][current_iter][metric].append(float(value))
         self.save_metrics_to_csv()
 
+    def log_best_scores(self, best_edge_f1, best_combined_score):
+        # best scores from entire training run
+        self.metrics['best_edge_f1'] = float(best_edge_f1)
+        self.metrics['best_combined_score'] = float(best_combined_score)
+        
+        # Save to separate file
+        with open(self.experiment_dir / "best_scores.json", 'w') as f:
+            json.dump({
+                'best_edge_f1': float(best_edge_f1),
+                'best_combined_score': float(best_combined_score)
+            }, f, indent=2)
+        
+        summary_file = self.experiment_dir / "results_summary.txt"
+        if summary_file.exists():
+            with open(summary_file, 'a') as f:
+                f.write(f"Best Edge F1: {best_edge_f1:.4f}\n")
+                f.write(f"Best Combined Score: {best_combined_score:.4f}\n")
+
     def save_metrics_to_csv(self):
         # global metrics
         if len(self.metrics['train_loss']) > 0:
@@ -79,13 +97,18 @@ class FEGINExperimentTracker:
         # per-iteration metrics
         for iter_num, metrics in self.metrics['iteration_metrics'].items():
             if len(metrics['train_loss']) > 0:
-                iter_df = pd.DataFrame({
+                iter_data ={
                     'epoch': list(range(len(metrics['train_loss']))),
                     'train_loss': metrics['train_loss'],
                     'val_loss': metrics['val_loss'],
                     'val_acc': metrics['val_acc'],
                     'val_f1': metrics['val_f1']
-                })
+                }
+                # Add any custom metrics if they exist
+                for metric_name in ['edge_f1', 'edge_auc', 'combined_score']:
+                    if metric_name in metrics and len(metrics[metric_name]) > 0:
+                        iter_data[metric_name] = metrics[metric_name]
+                iter_df = pd.DataFrame(iter_data)
                 iter_df.to_csv(self.experiment_dir / f"metrics_iteration_{iter_num}.csv", index=False)
 
     def log_test_results(self, test_acc, test_f1_weighted, test_f1_macro, all_preds, all_labels, class_names):

@@ -278,8 +278,7 @@ def main():
                     all_labels=results['labels'],
                     class_names=['R', 'C', 'V', 'X']
                 )
-                tracker.log_custom_metric('best_edge_f1', results['best_edge_f1'])
-                tracker.log_custom_metric('best_combined_score', results['best_combined_score'])
+                tracker.log_best_scores(results['best_edge_f1'], results['best_combined_score'])
             elif args.model=="FEGIN":
                 model = Net(dataset, num_layers, hidden, args.emb_size,args.node_label!='no', args.use_rd)
                 loss, f1,f1_std, fegin_results = trainFEGIN(
