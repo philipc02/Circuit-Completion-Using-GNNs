@@ -20,7 +20,7 @@ class FEGINExperimentTracker:
         self.metrics = {
             'train_loss': [], 'val_loss': [], 'val_acc': [], 'val_f1': [],
             'test_acc': None, 'test_f1': None, 'test_f1_macro': None,
-            'best_epoch': None, 'config': {}, 'current_iteration': 0, 'iteration_metrics': {}, 'edge_f1' : [], 'edge_auc' : [], 'combined_score' : []
+            'best_epoch': None, 'config': {}, 'current_iteration': 0, 'iteration_metrics': {}, 'edge_f1' : [], 'edge_auc' : [], 'edge_precision' : [], 'edge_recall' : [], 'combined_score' : []
         }
         
         (self.experiment_dir / "models").mkdir(exist_ok=True)
@@ -40,7 +40,7 @@ class FEGINExperimentTracker:
         # start tracking new iteration
         self.metrics['current_iteration'] = iteration_num
         self.metrics['iteration_metrics'][iteration_num] = {
-            'train_loss': [], 'val_loss': [], 'val_acc': [], 'val_f1': [], 'edge_f1' : [], 'edge_auc' : [], 'combined_score' : []
+            'train_loss': [], 'val_loss': [], 'val_acc': [], 'val_f1': [], 'edge_f1' : [], 'edge_auc' : [], 'edge_precision' : [], 'edge_recall' : [], 'combined_score' : []
         }
 
     def log_metrics(self, epoch, train_loss, val_loss, val_acc, val_f1):
