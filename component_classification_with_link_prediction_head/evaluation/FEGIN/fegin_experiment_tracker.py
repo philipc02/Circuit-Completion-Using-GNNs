@@ -40,7 +40,7 @@ class FEGINExperimentTracker:
         # start tracking new iteration
         self.metrics['current_iteration'] = iteration_num
         self.metrics['iteration_metrics'][iteration_num] = {
-            'train_loss': [], 'val_loss': [], 'val_acc': [], 'val_f1': []
+            'train_loss': [], 'val_loss': [], 'val_acc': [], 'val_f1': [], 'edge_f1' : [], 'edge_auc' : [], 'combined_score' : []
         }
 
     def log_metrics(self, epoch, train_loss, val_loss, val_acc, val_f1):
@@ -62,6 +62,7 @@ class FEGINExperimentTracker:
         current_iter = self.metrics['current_iteration']
         # store in iteration specific metrics
         self.metrics['iteration_metrics'][current_iter][metric].append(float(value))
+        self.metrics[metric].append(float(value))
         self.save_metrics_to_csv()
 
     def log_best_scores(self, best_edge_f1, best_combined_score):
