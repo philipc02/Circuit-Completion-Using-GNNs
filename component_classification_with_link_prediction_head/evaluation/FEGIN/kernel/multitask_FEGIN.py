@@ -141,8 +141,6 @@ class MultiTaskFEGIN(torch.nn.Module):
                         # First get the node embeddings for this graph
                         graph_node_embeddings = node_embeddings[node_indices]
                         graph_node_features = x[node_indices]
-
-                        local_mapping = {orig_idx.item(): j for j, orig_idx in enumerate(node_indices)}
                     
                         # Create virtual node embedding (mean of component nodes)
                         component_mask = graph_node_features[:, 0] > 0.5
@@ -151,35 +149,27 @@ class MultiTaskFEGIN(torch.nn.Module):
                         else:
                             virtual_embedding = graph_node_embeddings.mean(dim=0)
 
-                        local_edges  = []
+                        scores  = []
                         
                         for j in range(candidate_edges_i.shape[1]):
                             src = candidate_edges_i[0, j].item()
                             dst = candidate_edges_i[1, j].item()
-                            
-                            if src == -1:  # Virtual node
-                                # dst must be valid
-                                if dst in local_mapping:
-                                    local_edges.append((-1, local_mapping[dst]))
-                            else:
-                                if src in local_mapping and dst in local_mapping:
-                                    local_edges.append((local_mapping[src], local_mapping[dst]))
 
-                        if local_edges:
-                            # Process edges
-                            scores = []
-                            for src_local, dst_local in local_edges:
-                                if src_local == -1:  # Virtual node
-                                    src_emb = virtual_embedding
-                                else:
-                                    src_emb = graph_node_embeddings[src_local]
+                            # Always use virtual embedding as source (since src is always -1)
+                            src_emb = virtual_embedding
+                            
+                            # Check if destination is valid
+                            if 0 <= dst < len(graph_node_embeddings):
+                                dst_emb = graph_node_embeddings[dst]
+                            else:
+                                # If invalid -> use zero vector (or virtual embedding)
+                                # Shouldn't happen if dataset is correct
+                                dst_emb = torch.zeros_like(virtual_embedding, device=x.device)
                                 
-                                dst_emb = graph_node_embeddings[dst_local]
-                                
-                                edge_feature = torch.cat([src_emb, dst_emb], dim=0)
-                                edge_feature = edge_feature.unsqueeze(0)  # Add batch dimension
-                                score = self.edge_predictor(edge_feature).squeeze()
-                                scores.append(torch.sigmoid(score))
+                            edge_feature = torch.cat([src_emb, dst_emb], dim=0)
+                            edge_feature = edge_feature.unsqueeze(0)  # Add batch dimension
+                            score = self.edge_predictor(edge_feature).squeeze()
+                            scores.append(torch.sigmoid(score))
 
                         if scores:
                             edge_scores_list.append(torch.stack(scores))
