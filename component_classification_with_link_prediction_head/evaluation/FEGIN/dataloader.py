@@ -35,7 +35,28 @@ def multitask_collate(batch):
 
     data_batch = Batch.from_data_list(all_data)
     print(f"  Batched graph total nodes: {data_batch.num_nodes}")
-    return data_batch, all_cand_edges, all_edge_labels
+
+    # Now we need to adjust candidate edge indices for batching offset
+    # Calculate cumulative node counts for offset
+    node_counts = [data.num_nodes for data in all_data]
+    cumulative_offsets = [0]
+    for count in node_counts:
+        cumulative_offsets.append(cumulative_offsets[-1] + count)
+    
+    # Adjust candidate edges for each graph
+    adjusted_candidate_edges = []
+    for i, (cand_edges, offset) in enumerate(zip(all_cand_edges, cumulative_offsets[:-1])):
+        if cand_edges is not None and cand_edges.shape[1] > 0:
+            # Add offset to convert from local to batched indices
+            adjusted = cand_edges.clone()
+            adjusted[0, :] += offset  # Adjust source indices
+            adjusted[1, :] += offset  # Adjust destination indices
+            adjusted_candidate_edges.append(adjusted)
+            print(f"  Adjusted Graph {i}: offset={offset}, first edge after adjustment: {adjusted[:, 0].tolist()}")
+        else:
+            adjusted_candidate_edges.append(cand_edges)
+
+    return data_batch, adjusted_candidate_edges, all_edge_labels
 
 
 class DataLoader(torch.utils.data.DataLoader):

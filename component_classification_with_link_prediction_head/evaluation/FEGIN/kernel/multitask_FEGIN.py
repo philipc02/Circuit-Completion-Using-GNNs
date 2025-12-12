@@ -182,6 +182,7 @@ class MultiTaskFEGIN(torch.nn.Module):
 
                     print(f"Debug - Graph {i}: candidate_edges_i shape: {candidate_edges_i.shape if candidate_edges_i is not None else 'None'}, "
                   f"node_indices len: {len(node_indices)}")
+                    print(f"Debug - Graph {i}: node_indices first 5: {node_indices[:5].tolist() if len(node_indices) > 5 else node_indices.tolist()}, last 5: {node_indices[-5:].tolist() if len(node_indices) > 5 else node_indices.tolist()}")
                     if candidate_edges_i is not None and len(candidate_edges_i) > 0:
                         # Adjust indices to be within this graphs node indices
                         # First get the node embeddings for this graph
