@@ -365,7 +365,7 @@ def demo_with_sample_circuit(model_path, device='cuda'):
     print(f"Loaded model from: {model_path}")
     
     # Load sample circuit graph
-    graph_path = "../../graph_parsers/graphs_ltspice_demos/graphs_component_pin_net/LT1002_TA10_star_filtered.gpickle"
+    graph_path = "../../../graph_parsers/graphs_ltspice_demos/graphs_component_pin_net/LT1002_TA10_star_filtered.gpickle"
     
     if os.path.exists(graph_path):
         with open(graph_path, 'rb') as f:
