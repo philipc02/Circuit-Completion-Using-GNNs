@@ -16,9 +16,17 @@ def multitask_collate(batch):
 
     for item in batch:
         # item is a PyG Data object with attributes
-        all_data.append(item)
-        all_cand_edges.append(item.candidate_edges)
-        all_edge_labels.append(item.edge_labels)
+        data_copy = item.clone()
+        cand_edges = data_copy.candidate_edges
+        edge_labels = data_copy.edge_labels
+
+        # Remove these attributes to avoid batching issues
+        del data_copy.candidate_edges
+        del data_copy.edge_labels
+
+        all_data.append(data_copy)
+        all_cand_edges.append(cand_edges)
+        all_edge_labels.append(edge_labels)
 
     data_batch = Batch.from_data_list(all_data)
     return data_batch, all_cand_edges, all_edge_labels
