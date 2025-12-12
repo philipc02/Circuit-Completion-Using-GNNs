@@ -14,12 +14,12 @@ def multitask_collate(batch):
     all_cand_edges = []
     all_edge_labels = []
 
-    print(f"Debug collate - Batch size: {len(batch)}")
+    # print(f"Debug collate - Batch size: {len(batch)}")
 
     for i, item in enumerate(batch):
-        print(f"  Graph {i}: num_nodes={item.num_nodes}, candidate_edges shape={item.candidate_edges.shape if item.candidate_edges is not None else 'None'}")
-        if item.candidate_edges is not None and item.candidate_edges.shape[1] > 0:
-            print(f"    First edge: {item.candidate_edges[:, 0].tolist()}, min idx: {item.candidate_edges.min().item()}, max idx: {item.candidate_edges.max().item()}")
+        # print(f"  Graph {i}: num_nodes={item.num_nodes}, candidate_edges shape={item.candidate_edges.shape if item.candidate_edges is not None else 'None'}")
+        # if item.candidate_edges is not None and item.candidate_edges.shape[1] > 0:
+            # print(f"    First edge: {item.candidate_edges[:, 0].tolist()}, min idx: {item.candidate_edges.min().item()}, max idx: {item.candidate_edges.max().item()}")
         # item is a PyG Data object with attributes
         data_copy = item.clone()
         cand_edges = data_copy.candidate_edges
@@ -34,7 +34,7 @@ def multitask_collate(batch):
         all_edge_labels.append(edge_labels)
 
     data_batch = Batch.from_data_list(all_data)
-    print(f"  Batched graph total nodes: {data_batch.num_nodes}")
+    # print(f"  Batched graph total nodes: {data_batch.num_nodes}")
 
     # Now we need to adjust candidate edge indices for batching offset
     # Calculate cumulative node counts for offset
@@ -52,7 +52,7 @@ def multitask_collate(batch):
             adjusted[0, :] += offset  # Adjust source indices
             adjusted[1, :] += offset  # Adjust destination indices
             adjusted_candidate_edges.append(adjusted)
-            print(f"  Adjusted Graph {i}: offset={offset}, first edge after adjustment: {adjusted[:, 0].tolist()}")
+            # print(f"  Adjusted Graph {i}: offset={offset}, first edge after adjustment: {adjusted[:, 0].tolist()}")
         else:
             adjusted_candidate_edges.append(cand_edges)
 
