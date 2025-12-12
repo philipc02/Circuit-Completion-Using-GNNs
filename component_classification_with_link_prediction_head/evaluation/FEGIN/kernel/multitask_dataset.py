@@ -14,7 +14,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
 
     
     def __init__(self, root, name, representation, h, max_nodes_per_hop, 
-                 node_label, use_rd, neg_sampling_ratio=1.0, 
+                 node_label, use_rd, neg_sampling_ratio=5.0, 
                  transform=None, pre_transform=None, pre_filter=None):
         self.representation = representation
         self.h,self.max_nodes_per_hop, self.node_label, self.use_rd,self.name = h,max_nodes_per_hop, node_label, use_rd,name

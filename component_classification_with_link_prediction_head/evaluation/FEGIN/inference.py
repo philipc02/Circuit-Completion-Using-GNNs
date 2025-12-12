@@ -129,9 +129,12 @@ def predict_component_completion(model, original_graph, representation='componen
 
                 print(f"  Edge predictions shape: {edge_scores_np.shape}")
                 print(f"  Edge scores min/max: {edge_scores_np.min():.3f}/{edge_scores_np.max():.3f}")
+
+                # FIX 1: Use adaptive threshold based on score distribution
+                # Instead of fixed 0.5, use percentile-based threshold
                 
                 # Get top-k connection candidates
-                k = min(5, len(edge_scores_np))
+                k = min(10, len(edge_scores_np))
                 top_indices = np.argsort(edge_scores_np)[-k:][::-1]
                 
                 print(f"  Top {k} connection candidates:")
@@ -146,7 +149,10 @@ def predict_component_completion(model, original_graph, representation='componen
                     print(f"    {rank}. Node {original_node} ({node_type}{'/'+node_comp_type if node_comp_type else ''}) "
                           f"score = {edge_scores_np[idx]:.3f} {truth_label}")
                 
-                threshold = 0.5
+                # threshold = 0.5
+                # Statistical threshold (mean + std)
+                threshold = edge_scores_np.mean() + 0.5 * edge_scores_np.std()
+                print(f"  Statistical threshold: {threshold:.3f}")
                 predicted_connections = [node_list[i] for i, score in enumerate(edge_scores_np) if score > threshold]
                 
                 # True connections that are still in the masked graph
@@ -182,21 +188,15 @@ def predict_component_completion(model, original_graph, representation='componen
     accuracy = correct_count / len(results) if results else 0
     print(f"Component type accuracy: {accuracy:.1%} ({correct_count}/{len(results)})")
 
-    if results and 'predicted_connections' in results[0]:
-        all_tp, all_fp, all_fn = 0, 0, 0
-        for r in results:
-            pred_set = set(r['predicted_connections'])
-            true_set = set(r['true_connections'])
-            all_tp += len(pred_set & true_set)
-            all_fp += len(pred_set - true_set)
-            all_fn += len(true_set - pred_set)
+    if results:
+        avg_precision = np.mean([r['precision'] for r in results])
+        avg_recall = np.mean([r['recall'] for r in results])
+        avg_f1 = np.mean([r['f1'] for r in results])
         
-        overall_precision = all_tp / (all_tp + all_fp) if (all_tp + all_fp) > 0 else 0
-        overall_recall = all_tp / (all_tp + all_fn) if (all_tp + all_fn) > 0 else 0
-        overall_f1 = 2 * overall_precision * overall_recall / (overall_precision + overall_recall) if (overall_precision + overall_recall) > 0 else 0
-        
-        print(f"Link Prediction Overall:")
-        print(f"  Precision: {overall_precision:.3f}, Recall: {overall_recall:.3f}, F1: {overall_f1:.3f}")
+        print(f"Link Prediction Average:")
+        print(f"  Precision: {avg_precision:.3f}")
+        print(f"  Recall: {avg_recall:.3f}") 
+        print(f"  F1: {avg_f1:.3f}")
     
     return results
 
