@@ -121,8 +121,10 @@ def predict_component_completion(model, original_graph, representation='componen
                 virtual_comp_embedding,
                 existing_node_indices
             )
+
+            predicted_connections = []
             
-            if edge_scores and len(edge_scores) > 0:
+            if edge_scores is not None and len(edge_scores) > 0:
                 edge_scores_np = edge_scores.cpu().numpy()
 
                 print(f"  Edge predictions shape: {edge_scores_np.shape}")
@@ -142,10 +144,10 @@ def predict_component_completion(model, original_graph, representation='componen
                     is_true_connection = original_node in true_connections
                     truth_label = "✓" if is_true_connection else "✗"
                     print(f"    {rank}. Node {original_node} ({node_type}{'/'+node_comp_type if node_comp_type else ''}) "
-                          f"score = {edge_scores[idx]:.3f} {truth_label}")
+                          f"score = {edge_scores_np[idx]:.3f} {truth_label}")
                 
                 threshold = 0.5
-                predicted_connections = [node_list[i] for i, score in enumerate(edge_scores) if score > threshold]
+                predicted_connections = [node_list[i] for i, score in enumerate(edge_scores_np) if score > threshold]
                 
                 # True connections that are still in the masked graph
                 valid_true_conn = [c for c in true_connections if c in node_mapping]
@@ -171,7 +173,7 @@ def predict_component_completion(model, original_graph, representation='componen
                 'predicted_type': predicted_type,
                 'correct': correct_type,
                 'true_connections': list(true_connections),
-                'predicted_connections': predicted_connections if 'predicted_connections' in locals() else []
+                'predicted_connections': predicted_connections
             })
     
     # Summary
