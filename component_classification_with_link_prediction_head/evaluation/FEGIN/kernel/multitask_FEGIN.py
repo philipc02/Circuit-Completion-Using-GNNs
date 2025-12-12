@@ -243,12 +243,19 @@ class MultiTaskFEGIN(torch.nn.Module):
         num_existing = len(existing_node_indices)
         
         # Repeat new component embedding for each potential connection
+        # new_comp_embedding: [128] -> unsqueeze to [1, 128] -> repeat to [3, 128] for emb_size = 128
         new_comp_repeated = new_component_embedding.unsqueeze(0).repeat(num_existing, 1)
+        # Result: [[comp_emb], [comp_emb], [comp_emb]]  (3 copies)
         existing_embeddings = node_embeddings[existing_node_indices]
+        # Result: [[node_A_emb], [node_B_emb], [node_C_emb]]
+        # Each edge feature = [comp_emb || node_emb]
         edge_features = torch.cat([new_comp_repeated, existing_embeddings], dim=-1)
+        # Result shape: [3, 256] (128 + 128)
         # Predict edges
         edge_scores = self.edge_predictor(edge_features).squeeze(-1)
+        # Result: [3] with raw scores
         
+        # Result: [3] with values 0-1 (probability of connection)
         return torch.sigmoid(edge_scores)
 
     def __repr__(self):

@@ -103,22 +103,39 @@ def predict_component_completion(model, original_graph, representation='componen
             
             print(f"  Predicted component type: {predicted_type}")
             print(f"  Prediction confidence: {torch.exp(class_output[0, predicted_class]):.3f}")
+
+            node_embeddings = model.encode(data_batch.x, data_batch.edge_index)
+
+            # virtual component embedding based on predicted type
+            # average of all component embeddings
+            component_mask = data_batch.x[:, 0] == 1.0
+            if component_mask.sum() > 0:
+                virtual_comp_embedding = node_embeddings[component_mask].mean(dim=0)
+            else:
+                virtual_comp_embedding = node_embeddings.mean(dim=0)
             
             # Edge predictions (connection scores)
-            edge_scores_list = model(data_batch, candidate_edges=candidate_edges_list, task='link_prediction')
+            existing_node_indices = torch.arange(len(node_mapping), device=device)
+            edge_scores = model.decode_edges_for_new_component(
+                node_embeddings, 
+                virtual_comp_embedding,
+                existing_node_indices
+            )
             
-            if edge_scores_list and len(edge_scores_list[0]) > 0:
-                edge_scores = edge_scores_list[0].cpu().numpy()
+            if edge_scores and len(edge_scores) > 0:
+                edge_scores_np = edge_scores.cpu().numpy()
+
+                print(f"  Edge predictions shape: {edge_scores_np.shape}")
+                print(f"  Edge scores min/max: {edge_scores_np.min():.3f}/{edge_scores_np.max():.3f}")
                 
                 # Get top-k connection candidates
-                k = min(5, len(edge_scores))
-                top_indices = np.argsort(edge_scores)[-k:][::-1]
+                k = min(5, len(edge_scores_np))
+                top_indices = np.argsort(edge_scores_np)[-k:][::-1]
                 
                 print(f"  Top {k} connection candidates:")
                 for rank, idx in enumerate(top_indices, 1):
                     node_list = list(node_mapping.keys())
-                    node_idx = list(node_mapping.values()).index(idx)
-                    original_node = node_list[node_idx]
+                    original_node = node_list[idx]
 
                     node_type = G_masked.nodes[original_node].get('type', 'unknown')
                     node_comp_type = G_masked.nodes[original_node].get('comp_type', '')
