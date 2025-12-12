@@ -155,8 +155,8 @@ class MultiTaskFEGIN(torch.nn.Module):
                             edge_scores_list.append(torch.sigmoid(scores))
                         else:
                             edge_scores_list.append(torch.tensor([], device=x.device))
-                else:
-                    edge_scores_list.append(torch.tensor([], device=x.device))
+                    else:
+                        edge_scores_list.append(torch.tensor([], device=x.device))
 
                 return edge_scores_list
         

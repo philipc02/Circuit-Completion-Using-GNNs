@@ -108,7 +108,15 @@ class FEGINExperimentTracker:
                 # Add any custom metrics if they exist
                 for metric_name in ['edge_f1', 'edge_auc', 'combined_score']:
                     if metric_name in metrics and len(metrics[metric_name]) > 0:
-                        iter_data[metric_name] = metrics[metric_name]
+                        # Pad with None values if custom metric has fewer entries
+                        if len(metrics[metric_name]) < len(metrics['train_loss']):
+                            padded_metric = metrics[metric_name] + [None] * (len(metrics['train_loss']) - len(metrics[metric_name]))
+                            iter_data[metric_name] = padded_metric
+                        elif len(metrics[metric_name]) == len(metrics['train_loss']):
+                            iter_data[metric_name] = metrics[metric_name]
+                        # If custom metric has more entries truncate
+                        else:
+                            iter_data[metric_name] = metrics[metric_name][:len(metrics['train_loss'])]
                 iter_df = pd.DataFrame(iter_data)
                 iter_df.to_csv(self.experiment_dir / f"metrics_iteration_{iter_num}.csv", index=False)
 

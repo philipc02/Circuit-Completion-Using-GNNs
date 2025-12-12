@@ -201,7 +201,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         num_pos = len(valid_connections)
         pos_edges = []
         for conn in valid_connections:
-            pos_edges.append([node_mapping[conn], -1])  # -1 as placeholder, replaced with connection to actual new component node during inference
+            pos_edges.append([node_mapping[conn], node_mapping[conn]])  # self loop as placeholder, replaced with connection to actual new component node during inference
         
         # Negative samples
         num_neg = int(num_pos * self.neg_sampling_ratio)
@@ -215,7 +215,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         
         neg_edges = []
         for node in neg_samples:
-            neg_edges.append([node_mapping[node], -1])  # -1 as placeholder, replaced with connection to actual new component node during inference
+            neg_edges.append([node_mapping[node], node_mapping[node]])  # self loop as placeholder, replaced with connection to actual new component node during inference
         
         # Combine positive and negative samples
         all_edges = pos_edges + neg_edges
