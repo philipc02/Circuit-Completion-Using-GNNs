@@ -64,24 +64,19 @@ def predict_component_completion(model, original_graph, representation='componen
         if G_masked.number_of_nodes() < 2:
             print("  Not enough nodes after masking, skipping...")
             continue
-
-        # Step 2: Get true connections for evaluation
-        true_connections = get_component_connections(original_graph, target_component, representation)
         
-        # Step 3: Convert masked graph to PyG Data
+        # Step 2: Convert masked graph to PyG Data
         data = convert_graph_to_pyg(G_masked, representation)
         if data is None:
             continue
         
-        # Step 4: Create candidate edges from virtual node to all existing nodes
+        # Step 3: Create candidate edges
         node_mapping = {node: i for i, node in enumerate(G_masked.nodes())}
         candidate_edges = []
-
-        virtual_node_idx = len(node_mapping)
         
         for node in G_masked.nodes():
             idx = node_mapping[node]
-            candidate_edges.append([virtual_node_idx, idx])
+            candidate_edges.append([idx, idx]) # self loops, edge prediction model basically predicts if a loop should be 'labeled' with 1 (= "node has a connection to the missing node") or 0 (="node does not have a connection to the missing node") 
         
         if candidate_edges:
             candidate_edges_tensor = torch.tensor(candidate_edges, dtype=torch.long).t()
@@ -89,7 +84,7 @@ def predict_component_completion(model, original_graph, representation='componen
         else:
             candidate_edges_list = [torch.empty((2, 0), dtype=torch.long)]
         
-        # Step 5: Prepare batch (single graph)
+        # Step 4: Prepare batch (single graph)
         data_batch = Batch.from_data_list([data])
         data_batch = data_batch.to(device)
         
@@ -103,73 +98,26 @@ def predict_component_completion(model, original_graph, representation='componen
             
             print(f"  Predicted component type: {predicted_type}")
             print(f"  Prediction confidence: {torch.exp(class_output[0, predicted_class]):.3f}")
-
-            node_embeddings = model.encode(data_batch.x, data_batch.edge_index)
-
-            # virtual component embedding based on predicted type
-            # average of all component embeddings
-            component_mask = data_batch.x[:, 0] == 1.0
-            if component_mask.sum() > 0:
-                virtual_comp_embedding = node_embeddings[component_mask].mean(dim=0)
-            else:
-                virtual_comp_embedding = node_embeddings.mean(dim=0)
             
             # Edge predictions (connection scores)
-            existing_node_indices = torch.arange(len(node_mapping), device=device)
-            edge_scores = model.decode_edges_for_new_component(
-                node_embeddings, 
-                virtual_comp_embedding,
-                existing_node_indices
-            )
-
-            predicted_connections = []
+            edge_scores_list = model(data_batch, candidate_edges=candidate_edges_list, task='link_prediction')
             
-            if edge_scores is not None and len(edge_scores) > 0:
-                edge_scores_np = edge_scores.cpu().numpy()
-
-                print(f"  Edge predictions shape: {edge_scores_np.shape}")
-                print(f"  Edge scores min/max: {edge_scores_np.min():.3f}/{edge_scores_np.max():.3f}")
-
-                # FIX 1: Use adaptive threshold based on score distribution
-                # Instead of fixed 0.5, use percentile-based threshold
+            if edge_scores_list and len(edge_scores_list[0]) > 0:
+                edge_scores = edge_scores_list[0].cpu().numpy()
                 
                 # Get top-k connection candidates
-                k = min(10, len(edge_scores_np))
-                top_indices = np.argsort(edge_scores_np)[-k:][::-1]
+                k = min(10, len(edge_scores))
+                top_indices = np.argsort(edge_scores)[-k:][::-1]
                 
                 print(f"  Top {k} connection candidates:")
                 for rank, idx in enumerate(top_indices, 1):
-                    node_list = list(node_mapping.keys())
-                    original_node = node_list[idx]
-
-                    node_type = G_masked.nodes[original_node].get('type', 'unknown')
-                    node_comp_type = G_masked.nodes[original_node].get('comp_type', '')
-                    is_true_connection = original_node in true_connections
-                    truth_label = "✓" if is_true_connection else "✗"
-                    print(f"    {rank}. Node {original_node} ({node_type}{'/'+node_comp_type if node_comp_type else ''}) "
-                          f"score = {edge_scores_np[idx]:.3f} {truth_label}")
-                
-                # threshold = 0.5
-                # Statistical threshold (mean + std)
-                threshold = edge_scores_np.mean() + 0.5 * edge_scores_np.std()
-                print(f"  Statistical threshold: {threshold:.3f}")
-                predicted_connections = [node_list[i] for i, score in enumerate(edge_scores_np) if score > threshold]
-                
-                # True connections that are still in the masked graph
-                valid_true_conn = [c for c in true_connections if c in node_mapping]
-                
-                tp = len(set(predicted_connections) & set(valid_true_conn))  # true positives
-                fp = len(set(predicted_connections) - set(valid_true_conn))  # false positives
-                fn = len(set(valid_true_conn) - set(predicted_connections))  # false negatices
-                
-                precision = tp / (tp + fp) if (tp + fp) > 0 else 0
-                recall = tp / (tp + fn) if (tp + fn) > 0 else 0
-                f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
-                
-                print(f"  Link Prediction Stats:")
-                print(f"    True connections: {len(valid_true_conn)}")
-                print(f"    Predicted connections: {len(predicted_connections)}")
-                print(f"    Precision: {precision:.3f}, Recall: {recall:.3f}, F1: {f1:.3f}")
+                    node_idx = list(node_mapping.keys())[list(node_mapping.values()).index(idx)]
+                    node_type = G_masked.nodes[node_idx].get('type', 'unknown')
+                    node_comp_type = G_masked.nodes[node_idx].get('comp_type', '')
+                    score = edge_scores[idx]
+                    
+                    print(f"    {rank}. Node {node_idx} ({node_type}{'/'+node_comp_type if node_comp_type else ''}): "
+                          f"score = {score:.3f}")
             
             # Check if prediction for component classification is correct
             correct_type = (predicted_type == actual_type)
@@ -177,9 +125,7 @@ def predict_component_completion(model, original_graph, representation='componen
                 'target_node': target_component,
                 'actual_type': actual_type,
                 'predicted_type': predicted_type,
-                'correct': correct_type,
-                'true_connections': list(true_connections),
-                'predicted_connections': predicted_connections
+                'correct': correct_type
             })
     
     # Summary
@@ -187,33 +133,8 @@ def predict_component_completion(model, original_graph, representation='componen
     correct_count = sum(1 for r in results if r['correct'])
     accuracy = correct_count / len(results) if results else 0
     print(f"Component type accuracy: {accuracy:.1%} ({correct_count}/{len(results)})")
-
-    if results:
-        avg_precision = np.mean([r['precision'] for r in results])
-        avg_recall = np.mean([r['recall'] for r in results])
-        avg_f1 = np.mean([r['f1'] for r in results])
-        
-        print(f"Link Prediction Average:")
-        print(f"  Precision: {avg_precision:.3f}")
-        print(f"  Recall: {avg_recall:.3f}") 
-        print(f"  F1: {avg_f1:.3f}")
     
     return results
-
-def get_component_connections(G, comp_node, representation):
-    connections = set()
-    
-    if representation in ["component_component", "component_net"]:
-        connections = set(G.neighbors(comp_node))
-    elif representation in ["component_pin", "component_pin_net"]:
-        pin_nodes = [n for n in G.neighbors(comp_node) 
-                    if G.nodes[n].get('type') == 'pin']
-        for pin in pin_nodes:
-            for neighbor in G.neighbors(pin):
-                if neighbor != comp_node:
-                    connections.add(neighbor)
-    
-    return connections
 
 def convert_graph_to_pyg(G, representation):
     if G.number_of_nodes() == 0:
@@ -470,4 +391,3 @@ if __name__ == "__main__":
     # Path to trained model
     model_path = Path("fegin_experiments") / "ltspice_demos_MultiTaskFEGIN__20251212110220_20251212_110220" / "models" / "best_multitask_model_iter_2.pth"
     demo_with_sample_circuit(model_path, device)
-

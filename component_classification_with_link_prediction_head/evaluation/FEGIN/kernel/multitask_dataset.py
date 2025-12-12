@@ -14,7 +14,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
 
     
     def __init__(self, root, name, representation, h, max_nodes_per_hop, 
-                 node_label, use_rd, neg_sampling_ratio=1.0, 
+                 node_label, use_rd, neg_sampling_ratio=5.0, 
                  transform=None, pre_transform=None, pre_filter=None):
         self.representation = representation
         self.h,self.max_nodes_per_hop, self.node_label, self.use_rd,self.name = h,max_nodes_per_hop, node_label, use_rd,name
@@ -200,9 +200,8 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         # Represented as edges from 'virtual new component node' to existing nodes
         num_pos = len(valid_connections)
         pos_edges = []
-        new_comp_idx = len(node_mapping)  # Virtual new component node
         for conn in valid_connections:
-            pos_edges.append([new_comp_idx, node_mapping[conn]])
+            pos_edges.append([node_mapping[conn], node_mapping[conn]])  # self loop as placeholder, replaced with connection to actual new component node during inference
         
         # Negative samples
         num_neg = int(num_pos * self.neg_sampling_ratio)
@@ -216,7 +215,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         
         neg_edges = []
         for node in neg_samples:
-            neg_edges.append([new_comp_idx, node_mapping[node]])
+            neg_edges.append([node_mapping[node], node_mapping[node]])  # self loop as placeholder, replaced with connection to actual new component node during inference
         
         # Combine positive and negative samples
         all_edges = pos_edges + neg_edges
