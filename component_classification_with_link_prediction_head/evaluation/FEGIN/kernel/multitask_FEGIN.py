@@ -136,11 +136,13 @@ class MultiTaskFEGIN(torch.nn.Module):
                 for i, (candidate_edges_i, node_indices) in enumerate(zip(candidate_edges, batch_node_indices)):
 
 
-                    if candidate_edges_i is not None and len(candidate_edges_i) > 0:
+                    if candidate_edges_i is not None and candidate_edges_i.shape[1] > 0:
                         # Adjust indices to be within this graphs node indices
                         # First get the node embeddings for this graph
                         graph_node_embeddings = node_embeddings[node_indices]
                         graph_node_features = x[node_indices]
+
+                        local_mapping = {orig_idx.item(): j for j, orig_idx in enumerate(node_indices)}
                     
                         # Create virtual node embedding (mean of component nodes)
                         component_mask = graph_node_features[:, 0] > 0.5
@@ -149,21 +151,35 @@ class MultiTaskFEGIN(torch.nn.Module):
                         else:
                             virtual_embedding = graph_node_embeddings.mean(dim=0)
 
-                        scores = []
+                        local_edges  = []
                         
                         for j in range(candidate_edges_i.shape[1]):
                             src = candidate_edges_i[0, j].item()
                             dst = candidate_edges_i[1, j].item()
-
+                            
                             if src == -1:  # Virtual node
-                                src_emb = virtual_embedding
+                                # dst must be valid
+                                if dst in local_mapping:
+                                    local_edges.append((-1, local_mapping[dst]))
                             else:
-                                src_emb = graph_node_embeddings[src]
-                            dst_emb = graph_node_embeddings[dst]
+                                if src in local_mapping and dst in local_mapping:
+                                    local_edges.append((local_mapping[src], local_mapping[dst]))
 
-                            edge_feature = torch.cat([src_emb, dst_emb], dim=0)
-                            score = self.edge_predictor(edge_feature).squeeze(0)
-                            scores.append(torch.sigmoid(score).squeeze())
+                        if local_edges:
+                            # Process edges
+                            scores = []
+                            for src_local, dst_local in local_edges:
+                                if src_local == -1:  # Virtual node
+                                    src_emb = virtual_embedding
+                                else:
+                                    src_emb = graph_node_embeddings[src_local]
+                                
+                                dst_emb = graph_node_embeddings[dst_local]
+                                
+                                edge_feature = torch.cat([src_emb, dst_emb], dim=0)
+                                edge_feature = edge_feature.unsqueeze(0)  # Add batch dimension
+                                score = self.edge_predictor(edge_feature).squeeze()
+                                scores.append(torch.sigmoid(score))
 
                         if scores:
                             edge_scores_list.append(torch.stack(scores))
@@ -171,11 +187,13 @@ class MultiTaskFEGIN(torch.nn.Module):
                             edge_scores_list.append(torch.tensor([], device=x.device))
                     else:
                         edge_scores_list.append(torch.tensor([], device=x.device))
+            else:
+                edge_scores_list.append(torch.tensor([], device=x.device))
                 
-                if task == 'link_prediction':
-                    return edge_scores_list
-                else:
-                    return class_output, edge_scores_list
+            if task == 'link_prediction':
+                return edge_scores_list
+            else:
+                return class_output, edge_scores_list
     
     def predict_edges(self, node_embeddings, candidate_edges, batch):
         # predict edge scores for candidate edges.
