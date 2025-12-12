@@ -179,6 +179,9 @@ class MultiTaskFEGIN(torch.nn.Module):
                 
                 # Process candidate edges for each graph
                 for i, (candidate_edges_i, node_indices) in enumerate(zip(candidate_edges, batch_node_indices)):
+
+                    print(f"Debug - Graph {i}: candidate_edges_i shape: {candidate_edges_i.shape if candidate_edges_i is not None else 'None'}, "
+                  f"node_indices len: {len(node_indices)}")
                     if candidate_edges_i is not None and len(candidate_edges_i) > 0:
                         # Adjust indices to be within this graphs node indices
                         # First get the node embeddings for this graph
@@ -192,8 +195,11 @@ class MultiTaskFEGIN(torch.nn.Module):
                         for j in range(candidate_edges_i.shape[1]):
                             src = candidate_edges_i[0, j].item()
                             dst = candidate_edges_i[1, j].item()
+                            print(f"  Edge {j}: src={src}, dst={dst}, src in mapping: {src in local_mapping}, dst in mapping: {dst in local_mapping}")
                             if src in local_mapping and dst in local_mapping:
                                 local_edges.append([local_mapping[src], local_mapping[dst]])
+
+                        print(f"  Found {len(local_edges)} valid edges")
                         
                         if local_edges:
                             local_edges_tensor = torch.tensor(local_edges, device=x.device).t()
@@ -203,6 +209,7 @@ class MultiTaskFEGIN(torch.nn.Module):
                             edge_features = torch.cat([src_emb, dst_emb], dim=1)
                             scores = self.edge_predictor(edge_features).squeeze(-1)
                             edge_scores_list.append(torch.sigmoid(scores))
+                            print(f"  Edge scores shape: {edge_scores_list[-1].shape}")
                         else:
                             edge_scores_list.append(torch.tensor([], device=x.device))
                     else:
