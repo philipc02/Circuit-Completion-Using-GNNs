@@ -126,6 +126,8 @@ def predict_component_completion(model, original_graph, representation='componen
                 if len(edge_scores) != len(node_mapping):
                     print(f"  WARNING: Expected {len(node_mapping)} scores, got {len(edge_scores)}")
 
+########################################
+
                 all_labels = []
                 node_list = list(node_mapping.keys())
                 
@@ -159,7 +161,8 @@ def predict_component_completion(model, original_graph, representation='componen
                 precision_opt = tp / (tp + fp) if (tp + fp) > 0 else 0
                 recall_opt = tp / (tp + fn) if (tp + fn) > 0 else 0
                 f1_opt = 2 * precision_opt * recall_opt / (precision_opt + recall_opt + 1e-10) if (precision_opt + recall_opt) > 0 else 0
-                
+###############################
+
                 print(f"  Optimal threshold: {optimal_threshold:.3f}")
                 print(f"  F1 at optimal threshold: {f1_opt:.3f}")
                 print(f"  Precision/Recall at optimal: {precision_opt:.3f}/{recall_opt:.3f}")
