@@ -1,0 +1,20 @@
+{
+  "dataset": "ltspice_demos",
+  "representation": "component_pin_net",
+  "model": "MultiTaskFEGIN",
+  "layers": 4,
+  "hiddens": 32,
+  "h": 2,
+  "node_label": "spd",
+  "use_rd": false,
+  "epochs": 100,
+  "batch_size": 32,
+  "lr": 0.01,
+  "lr_decay_factor": 0.5,
+  "lr_decay_step_size": 50,
+  "emb_size": 128,
+  "seed": 1,
+  "lambda_node": 1.0,
+  "lambda_edge": 1.0,
+  "neg_sampling_ratio": 1.0
+}
