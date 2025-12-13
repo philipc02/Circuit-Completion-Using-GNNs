@@ -126,8 +126,43 @@ def predict_component_completion(model, original_graph, representation='componen
                 if len(edge_scores) != len(node_mapping):
                     print(f"  WARNING: Expected {len(node_mapping)} scores, got {len(edge_scores)}")
 
-                # FIX 1: Use adaptive threshold based on score distribution
-                # Instead of fixed 0.5, use percentile-based threshold
+                all_labels = []
+                node_list = list(node_mapping.keys())
+                
+                for node in node_list:
+                    is_true_connection = node in true_connections
+                    all_labels.append(1 if is_true_connection else 0)
+                
+                all_labels = np.array(all_labels)
+                
+                # Calculate auc
+                try:
+                    auc_score = roc_auc_score(all_labels, edge_scores)
+                    print(f"  AUC-ROC: {auc_score:.3f}")
+                except ValueError as e:
+                    print(f"  AUC-ROC calculation failed: {e}")
+                    auc_score = 0.5
+
+                precision, recall, thresholds = precision_recall_curve(all_labels, edge_scores)
+    
+                # Find threshold that maximizes f1
+                f1_scores = 2 * (precision[:-1] * recall[:-1]) / (precision[:-1] + recall[:-1] + 1e-10)
+                optimal_idx = np.argmax(f1_scores) if len(f1_scores) > 0 else 0
+                optimal_threshold = thresholds[optimal_idx] if optimal_idx < len(thresholds) else 0.5
+                
+                predicted_binary = (edge_scores > optimal_threshold).astype(int)
+
+                tp = ((predicted_binary == 1) & (all_labels == 1)).sum()
+                fp = ((predicted_binary == 1) & (all_labels == 0)).sum()
+                fn = ((predicted_binary == 0) & (all_labels == 1)).sum()
+                
+                precision_opt = tp / (tp + fp) if (tp + fp) > 0 else 0
+                recall_opt = tp / (tp + fn) if (tp + fn) > 0 else 0
+                f1_opt = 2 * precision_opt * recall_opt / (precision_opt + recall_opt + 1e-10) if (precision_opt + recall_opt) > 0 else 0
+                
+                print(f"  Optimal threshold: {optimal_threshold:.3f}")
+                print(f"  F1 at optimal threshold: {f1_opt:.3f}")
+                print(f"  Precision/Recall at optimal: {precision_opt:.3f}/{recall_opt:.3f}")
                 
                 # Get top-k connection candidates
                 k = min(10, len(edge_scores))
