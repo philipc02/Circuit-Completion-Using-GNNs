@@ -8,6 +8,8 @@ from torch_geometric.loader import DataLoader
 from kernel.multitask_FEGIN import MultiTaskFEGIN
 from kernel.multitask_dataset import MultiTaskCircuitDataset
 from pathlib import Path
+from sklearn.metrics import roc_auc_score, precision_recall_curve
+
 
 def load_trained_model(model_path, dataset, device='cuda'):
     model = MultiTaskFEGIN(
@@ -77,11 +79,11 @@ def predict_component_completion(model, original_graph, representation='componen
         node_mapping = {node: i for i, node in enumerate(G_masked.nodes())}
         candidate_edges = []
 
-        virtual_node_idx = len(node_mapping)
+        VIRTUAL_NODE_IDX = -1
         
         for node in G_masked.nodes():
             idx = node_mapping[node]
-            candidate_edges.append([virtual_node_idx, idx])
+            candidate_edges.append([VIRTUAL_NODE_IDX, idx])
         
         if candidate_edges:
             candidate_edges_tensor = torch.tensor(candidate_edges, dtype=torch.long).t()
@@ -104,38 +106,32 @@ def predict_component_completion(model, original_graph, representation='componen
             print(f"  Predicted component type: {predicted_type}")
             print(f"  Prediction confidence: {torch.exp(class_output[0, predicted_class]):.3f}")
 
-            node_embeddings = model.encode(data_batch.x, data_batch.edge_index)
-
-            # virtual component embedding based on predicted type
-            # average of all component embeddings
-            component_mask = data_batch.x[:, 0] == 1.0
-            if component_mask.sum() > 0:
-                virtual_comp_embedding = node_embeddings[component_mask].mean(dim=0)
-            else:
-                virtual_comp_embedding = node_embeddings.mean(dim=0)
-            
-            # Edge predictions (connection scores)
-            existing_node_indices = torch.arange(len(node_mapping), device=device)
-            edge_scores = model.decode_edges_for_new_component(
-                node_embeddings, 
-                virtual_comp_embedding,
-                existing_node_indices
+            edge_scores_list = model(
+                data_batch, 
+                candidate_edges=candidate_edges_list, 
+                task='link_prediction',
+                teacher_forcing=False  # Use predicted type, not true type
             )
+
 
             predicted_connections = []
             
-            if edge_scores is not None and len(edge_scores) > 0:
-                edge_scores_np = edge_scores.cpu().numpy()
+            if edge_scores_list and len(edge_scores_list[0]) > 0:
+                edge_scores = edge_scores_list[0].cpu().numpy()
 
-                print(f"  Edge predictions shape: {edge_scores_np.shape}")
-                print(f"  Edge scores min/max: {edge_scores_np.min():.3f}/{edge_scores_np.max():.3f}")
+                print(f"  Edge predictions shape: {edge_scores.shape}")
+                print(f"  Edge scores min/max: {edge_scores.min():.3f}/{edge_scores.max():.3f}")
+                print(f"  Edge scores mean/std: {edge_scores.mean():.3f}/{edge_scores.std():.3f}")
+
+                if len(edge_scores) != len(node_mapping):
+                    print(f"  WARNING: Expected {len(node_mapping)} scores, got {len(edge_scores)}")
 
                 # FIX 1: Use adaptive threshold based on score distribution
                 # Instead of fixed 0.5, use percentile-based threshold
                 
                 # Get top-k connection candidates
-                k = min(10, len(edge_scores_np))
-                top_indices = np.argsort(edge_scores_np)[-k:][::-1]
+                k = min(10, len(edge_scores))
+                top_indices = np.argsort(edge_scores)[-k:][::-1]
                 
                 print(f"  Top {k} connection candidates:")
                 for rank, idx in enumerate(top_indices, 1):
@@ -147,13 +143,13 @@ def predict_component_completion(model, original_graph, representation='componen
                     is_true_connection = original_node in true_connections
                     truth_label = "✓" if is_true_connection else "✗"
                     print(f"    {rank}. Node {original_node} ({node_type}{'/'+node_comp_type if node_comp_type else ''}) "
-                          f"score = {edge_scores_np[idx]:.3f} {truth_label}")
+                          f"score = {edge_scores[idx]:.3f} {truth_label}")
                 
                 # threshold = 0.5
                 # Statistical threshold (mean + std)
-                threshold = edge_scores_np.mean() + 0.5 * edge_scores_np.std()
+                threshold = edge_scores.mean() + 0.5 * edge_scores.std()
                 print(f"  Statistical threshold: {threshold:.3f}")
-                predicted_connections = [node_list[i] for i, score in enumerate(edge_scores_np) if score > threshold]
+                predicted_connections = [node_list[i] for i, score in enumerate(edge_scores) if score > threshold]
                 
                 # True connections that are still in the masked graph
                 valid_true_conn = [c for c in true_connections if c in node_mapping]
@@ -169,6 +165,7 @@ def predict_component_completion(model, original_graph, representation='componen
                 print(f"  Link Prediction Stats:")
                 print(f"    True connections: {len(valid_true_conn)}")
                 print(f"    Predicted connections: {len(predicted_connections)}")
+                print(f"    True Positives: {tp}, False Positives: {fp}, False Negatives: {fn}")
                 print(f"    Precision: {precision:.3f}, Recall: {recall:.3f}, F1: {f1:.3f}")
             
             # Check if prediction for component classification is correct
@@ -179,7 +176,10 @@ def predict_component_completion(model, original_graph, representation='componen
                 'predicted_type': predicted_type,
                 'correct': correct_type,
                 'true_connections': list(true_connections),
-                'predicted_connections': predicted_connections
+                'predicted_connections': predicted_connections,
+                'precision': precision if 'precision' in locals() else 0,
+                'recall': recall if 'recall' in locals() else 0,
+                'f1': f1 if 'f1' in locals() else 0
             })
     
     # Summary

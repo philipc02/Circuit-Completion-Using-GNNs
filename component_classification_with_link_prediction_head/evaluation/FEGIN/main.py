@@ -278,7 +278,7 @@ def main():
                     all_labels=results['labels'],
                     class_names=['R', 'C', 'V', 'X']
                 )
-                tracker.log_best_scores(results['best_edge_f1'], results['best_combined_score'])
+                tracker.log_best_scores(results['best_edge_auc'], results['best_combined_score'])
             elif args.model=="FEGIN":
                 model = Net(dataset, num_layers, hidden, args.emb_size,args.node_label!='no', args.use_rd)
                 loss, f1,f1_std, fegin_results = trainFEGIN(
@@ -327,7 +327,7 @@ def main():
 
             print("========================FINAL RESULTS================================")
             print(f"Component Classification F1: {results['best_node_f1_weighted']:.4f}")
-            print(f"Link Prediction F1: {results['best_edge_f1']:.4f}")
+            print(f"Link Prediction AUC: {results['best_edge_auc']:.4f}")
             print(f"Combined Score: {results['best_combined_score']:.4f}")
         '''
         desc = 'f1:{:.3f} ± {:.3f}'.format(
