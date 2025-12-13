@@ -161,11 +161,25 @@ def predict_component_completion(model, original_graph, representation='componen
                 precision_opt = tp / (tp + fp) if (tp + fp) > 0 else 0
                 recall_opt = tp / (tp + fn) if (tp + fn) > 0 else 0
                 f1_opt = 2 * precision_opt * recall_opt / (precision_opt + recall_opt + 1e-10) if (precision_opt + recall_opt) > 0 else 0
-###############################
 
                 print(f"  Optimal threshold: {optimal_threshold:.3f}")
                 print(f"  F1 at optimal threshold: {f1_opt:.3f}")
                 print(f"  Precision/Recall at optimal: {precision_opt:.3f}/{recall_opt:.3f}")
+
+                # For comparison
+                predicted_binary_05 = (edge_scores > 0.5).astype(int)
+                tp_05 = ((predicted_binary_05 == 1) & (all_labels == 1)).sum()
+                fp_05 = ((predicted_binary_05 == 1) & (all_labels == 0)).sum()
+                fn_05 = ((predicted_binary_05 == 0) & (all_labels == 1)).sum()
+                
+                precision_05 = tp_05 / (tp_05 + fp_05) if (tp_05 + fp_05) > 0 else 0
+                recall_05 = tp_05 / (tp_05 + fn_05) if (tp_05 + fn_05) > 0 else 0
+                f1_05 = 2 * precision_05 * recall_05 / (precision_05 + recall_05 + 1e-10) if (precision_05 + recall_05) > 0 else 0
+                
+                print(f"  F1 at 0.5 threshold: {f1_05:.3f}")
+                print(f"  Precision/Recall at 0.5: {precision_05:.3f}/{recall_05:.3f}")
+
+#######################################
                 
                 # Get top-k connection candidates
                 k = min(10, len(edge_scores))
@@ -183,28 +197,6 @@ def predict_component_completion(model, original_graph, representation='componen
                     print(f"    {rank}. Node {original_node} ({node_type}{'/'+node_comp_type if node_comp_type else ''}) "
                           f"score = {edge_scores[idx]:.3f} {truth_label}")
                 
-                # threshold = 0.5
-                # Statistical threshold (mean + std)
-                threshold = edge_scores.mean() + 0.5 * edge_scores.std()
-                print(f"  Statistical threshold: {threshold:.3f}")
-                predicted_connections = [node_list[i] for i, score in enumerate(edge_scores) if score > threshold]
-                
-                # True connections that are still in the masked graph
-                valid_true_conn = [c for c in true_connections if c in node_mapping]
-                
-                tp = len(set(predicted_connections) & set(valid_true_conn))  # true positives
-                fp = len(set(predicted_connections) - set(valid_true_conn))  # false positives
-                fn = len(set(valid_true_conn) - set(predicted_connections))  # false negatices
-                
-                precision = tp / (tp + fp) if (tp + fp) > 0 else 0
-                recall = tp / (tp + fn) if (tp + fn) > 0 else 0
-                f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
-                
-                print(f"  Link Prediction Stats:")
-                print(f"    True connections: {len(valid_true_conn)}")
-                print(f"    Predicted connections: {len(predicted_connections)}")
-                print(f"    True Positives: {tp}, False Positives: {fp}, False Negatives: {fn}")
-                print(f"    Precision: {precision:.3f}, Recall: {recall:.3f}, F1: {f1:.3f}")
             
             # Check if prediction for component classification is correct
             correct_type = (predicted_type == actual_type)
@@ -215,9 +207,12 @@ def predict_component_completion(model, original_graph, representation='componen
                 'correct': correct_type,
                 'true_connections': list(true_connections),
                 'predicted_connections': predicted_connections,
-                'precision': precision if 'precision' in locals() else 0,
-                'recall': recall if 'recall' in locals() else 0,
-                'f1': f1 if 'f1' in locals() else 0
+                'auc': auc_score,
+                'f1_optimal': f1_opt,
+                'f1_05': f1_05,
+                'precision_optimal': precision_opt,
+                'recall_optimal': recall_opt,
+                'optimal_threshold': optimal_threshold
             })
     
     # Summary
@@ -227,14 +222,20 @@ def predict_component_completion(model, original_graph, representation='componen
     print(f"Component type accuracy: {accuracy:.1%} ({correct_count}/{len(results)})")
 
     if results:
-        avg_precision = np.mean([r['precision'] for r in results])
-        avg_recall = np.mean([r['recall'] for r in results])
-        avg_f1 = np.mean([r['f1'] for r in results])
+        avg_auc = np.mean([r['auc'] for r in results])
+        avg_f1_opt = np.mean([r['f1_optimal'] for r in results])
+        avg_f1_05 = np.mean([r['f1_05'] for r in results])
+        avg_precision_opt = np.mean([r['precision_optimal'] for r in results])
+        avg_recall_opt = np.mean([r['recall_optimal'] for r in results])
         
-        print(f"Link Prediction Average:")
-        print(f"  Precision: {avg_precision:.3f}")
-        print(f"  Recall: {avg_recall:.3f}") 
-        print(f"  F1: {avg_f1:.3f}")
+        print(f"\nLink Prediction Average (across {len(results)} components):")
+        print(f"  AUC-ROC: {avg_auc:.3f} (primary metric)")
+        print(f"\n  At optimal threshold:")
+        print(f"    F1: {avg_f1_opt:.3f}")
+        print(f"    Precision: {avg_precision_opt:.3f}")
+        print(f"    Recall: {avg_recall_opt:.3f}")
+        print(f"\n  At 0.5 threshold:")
+        print(f"    F1: {avg_f1_05:.3f}")
     
     return results
 
