@@ -168,9 +168,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                         continue
                     
                     # Generate candidate edges from node to all nets
-                    candidate_edges, edge_labels = self.generate_candidate_edges(
-                        G_pin_masked, comp_node, target_net
-                    )
+                    candidate_edges, edge_labels = self.generate_candidate_edges(G_pin_masked, comp_node, target_net)
                     
                     pin_data = self.convert_graph_to_pyg(G_pin_masked)
                     if pin_data is not None:
