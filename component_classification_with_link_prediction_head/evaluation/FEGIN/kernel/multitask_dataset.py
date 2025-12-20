@@ -169,7 +169,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                     
                     # Generate candidate edges from node to all nets
                     candidate_edges, edge_labels = self.generate_candidate_edges(
-                        G_pin_masked, comp_node, [target_net]
+                        G_pin_masked, comp_node, target_net
                     )
                     
                     pin_data = self.convert_graph_to_pyg(G_pin_masked)
@@ -255,6 +255,8 @@ class MultiTaskCircuitDataset(InMemoryDataset):
     def generate_candidate_edges(self, G_masked, target_net):
         # returns candidate_edges: [2, num_candidates] tensor with node pairs
         # and edge_labels: [num_candidates] to differentiate positice and negative edges
+
+        target_net = [target_net]
 
         node_mapping = {node: i for i, node in enumerate(G_masked.nodes())}
                 
