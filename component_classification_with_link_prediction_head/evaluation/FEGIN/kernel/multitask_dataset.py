@@ -168,7 +168,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                         continue
                     
                     # Generate candidate edges from node to all nets
-                    candidate_edges, edge_labels = self.generate_candidate_edges(G_pin_masked, comp_node, target_net)
+                    candidate_edges, edge_labels = self.generate_candidate_edges(G_pin_masked, target_net)
                     
                     pin_data = self.convert_graph_to_pyg(G_pin_masked)
                     if pin_data is not None:
@@ -264,10 +264,10 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         VIRTUAL_NODE_IDX = -1
         
         # Positive samples
-        # Represented as edges from 'virtual new component node' to existing nodes
+        # Represented as edges from 'virtual new pin node of component node' to existing nodes
         num_pos = len(target_net)
         pos_edges = []
-        new_comp_idx = len(node_mapping)  # Virtual new component node
+        new_comp_idx = len(node_mapping)  # Virtual new pin node of component node
         for conn in target_net:
             pos_edges.append([VIRTUAL_NODE_IDX, node_mapping[conn]])
         
