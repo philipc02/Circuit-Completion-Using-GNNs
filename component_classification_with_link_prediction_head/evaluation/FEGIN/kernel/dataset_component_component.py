@@ -6,7 +6,7 @@ from torch_geometric.data import Data
 class ComponentComponentDataset(BaseCircuitDataset):
     @property
     def num_features(self):
-        return 2
+        return 6
 
     @property 
     def num_classes(self):
