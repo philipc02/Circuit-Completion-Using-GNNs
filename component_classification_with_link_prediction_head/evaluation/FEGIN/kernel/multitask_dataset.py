@@ -32,14 +32,8 @@ class MultiTaskCircuitDataset(InMemoryDataset):
 
     def __getitem__(self, idx):
         data = super().__getitem__(idx)  # gets the PyG Data object
-        if hasattr(data, 'pin_position'):
-            # This is a pin prediction example
-            data.candidate_edges = self.candidate_edges[idx]
-            data.edge_labels = self.edge_labels[idx]
-        else:
-            # This is a classification example
-            data.candidate_edges = None
-            data.edge_labels = None
+        data.candidate_edges = self.candidate_edges[idx]
+        data.edge_labels = self.edge_labels[idx]
         return data
 
 
@@ -115,11 +109,11 @@ class MultiTaskCircuitDataset(InMemoryDataset):
             all_candidate_edges.append(None)  # No edges for classification
             all_edge_labels.append(None)      # No labels for classification
         
-        # Pin prediction examples
-        for pin_data, cand_edges, edge_labels in example_dict['pin_predictions']:
-            all_data.append(pin_data)
-            all_candidate_edges.append(cand_edges)
-            all_edge_labels.append(edge_labels)
+            # Pin prediction examples
+            for pin_data, cand_edges, edge_labels in example_dict['pin_predictions']:
+                all_data.append(pin_data)
+                all_candidate_edges.append(cand_edges)
+                all_edge_labels.append(edge_labels)
 
         # Collate the PyG Data objects
         data, slices = self.collate(all_data)
