@@ -211,7 +211,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         
         # Remove only this pin as we want to find all connection between pin and other net nodes
         G_masked.remove_node(target_pin)
-        G_masked.remove_nodes_from(list(nx.isolates(G_masked)))
+        # G_masked.remove_nodes_from(list(nx.isolates(G_masked)))
         
         if G_masked.number_of_nodes() == 0:
             return None
