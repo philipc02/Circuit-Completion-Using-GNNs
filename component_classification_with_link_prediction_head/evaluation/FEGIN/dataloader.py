@@ -9,6 +9,50 @@ string_classes = (str, bytes)
 
 from torch_geometric.data import Batch
 
+def multitask_dual_collate(batch):
+    if isinstance(batch[0], dict):
+        # Separate examples for classification and pin level link prediction 
+        class_batch = []
+        pin_batch = []
+        pin_positions = []
+        
+        for item in batch:
+            # Classification example
+            class_data, _, _ = item['classification']
+            class_batch.append(class_data)
+            
+            # Pin prediction examples
+            for pin_data, cand_edges, edge_labels in item['pin_predictions']:
+                pin_batch.append(pin_data)
+                # Store candidate edges and labels
+                pin_data.candidate_edges = cand_edges
+                pin_data.edge_labels = edge_labels
+                pin_positions.append(pin_data.pin_position.item() if hasattr(pin_data, 'pin_position') else 0)
+        
+        # Batch classification examples
+        class_batch = Batch.from_data_list(class_batch)
+        
+        # Batch pin examples
+        if pin_batch:
+            pin_batch = Batch.from_data_list(pin_batch)
+            # Extract candidate edges and labels
+            pin_candidate_edges = [d.candidate_edges for d in pin_batch.to_data_list()]
+            pin_edge_labels = [d.edge_labels for d in pin_batch.to_data_list()]
+            pin_positions = torch.tensor(pin_positions, dtype=torch.long)
+        else:
+            pin_batch = None
+            pin_candidate_edges = None
+            pin_edge_labels = None
+            pin_positions = None
+        
+        return {
+            'classification': (class_batch, None, None),
+            'pin_prediction': (pin_batch, pin_candidate_edges, pin_edge_labels, pin_positions)
+        }
+    else:
+        # Fallback to original collate
+        return multitask_collate(batch)
+
 def multitask_collate(batch):
     all_data = []
     all_cand_edges = []

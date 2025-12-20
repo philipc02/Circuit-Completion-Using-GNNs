@@ -14,12 +14,13 @@ class MultiTaskCircuitDataset(InMemoryDataset):
 
     
     def __init__(self, root, name, representation, h, max_nodes_per_hop, 
-                 node_label, use_rd, neg_sampling_ratio=5.0, 
+                 node_label, use_rd, neg_sampling_ratio=5.0, max_pins=2,
                  transform=None, pre_transform=None, pre_filter=None):
         self.representation = representation
         self.h,self.max_nodes_per_hop, self.node_label, self.use_rd,self.name = h,max_nodes_per_hop, node_label, use_rd,name
         self.neg_sampling_ratio = neg_sampling_ratio  # ratio of negative to positive samples
-        
+        self.max_pins = max_pins
+
         super().__init__(root, transform, pre_transform, pre_filter)
         # self.data, self.slices = torch.load(self.processed_paths[0])
 
@@ -128,29 +129,95 @@ class MultiTaskCircuitDataset(InMemoryDataset):
             comp_type = G.nodes[comp_node].get('comp_type')
             if comp_type not in comp_type_to_idx:
                 continue
-            
-            # Get nodes that should connect to this component (positives)
-            true_connections = self.get_component_connections(G, comp_node)
-            
-            # For pin-based representations: remove component and its pins, otherwise jsut nodes
-            G_masked, removed_nodes = self.create_masked_graph_with_tracking(G, comp_node)
-            
-            if G_masked is None or G_masked.number_of_nodes() < 2:
+
+            # TASK 1: Component Classification (mask component + ALL pins)
+            G_class_masked = self.mask_for_classification(G, comp_node)
+            if G_class_masked is None or G_class_masked.number_of_nodes() < 2:
                 continue
             
-            # Generate candidate edges (postive and negative) and labels (1, 0)
-            candidate_edges, edge_labels = self.generate_candidate_edges(G_masked, true_connections, removed_nodes)
+            # Get all pins of this component
+            pin_nodes = [n for n in G.neighbors(comp_node) 
+                        if G.nodes[n].get('type') == 'pin']
+            pin_nodes.sort(key=lambda n: G.nodes[n].get('pin', ''))
             
-            data = self.convert_graph_to_pyg(G_masked)
-            
-            if data is not None:
-                data.y = torch.tensor([comp_type_to_idx[comp_type]], dtype=torch.long)
-                data.set = split
-                data.target_component = comp_node
-                data.comp_type = comp_type
-                examples.append((data, candidate_edges, edge_labels))
+            # Create classification example
+            class_data = self.convert_graph_to_pyg(G_class_masked)
+            if class_data is not None:
+                class_data.y = torch.tensor([comp_type_to_idx[comp_type]], dtype=torch.long)
+                class_data.set = split
+                class_data.target_component = comp_node
+                class_data.comp_type = comp_type
+
+            # TASK 2: Pin Connection Prediction (one example per pin)
+                pin_examples = []
+                for pin_idx, pin_node in enumerate(pin_nodes):
+                    if pin_idx >= self.max_pins:  # Only handle up to max_pins
+                        break
+                    
+                    # Get the net this pin should connect to
+                    connected_nets = [n for n in G.neighbors(pin_node) if G.nodes[n].get('type') == 'net']
+                    
+                    if not connected_nets:
+                        continue
+                    
+                    target_net = connected_nets[0]  # For our current format just one net should be connected to each pin 
+                    
+                    # Create graph with only this pin masked
+                    G_pin_masked = self.mask_for_pin_prediction(G, comp_node, pin_node)
+                    if G_pin_masked is None or G_pin_masked.number_of_nodes() < 2:
+                        continue
+                    
+                    # Generate candidate edges from node to all nets
+                    candidate_edges, edge_labels = self.generate_candidate_edges(
+                        G_pin_masked, comp_node, [target_net]
+                    )
+                    
+                    pin_data = self.convert_graph_to_pyg(G_pin_masked)
+                    if pin_data is not None:
+                        # Copy classification info
+                        pin_data.y = torch.tensor([comp_type_to_idx[comp_type]], dtype=torch.long)
+                        pin_data.set = split
+                        pin_data.target_component = comp_node
+                        pin_data.comp_type = comp_type
+                        pin_data.pin_position = torch.tensor([pin_idx], dtype=torch.long)  # NEW
+                        pin_data.pin_target = target_net  # For evaluation
+                        
+                        pin_examples.append((pin_data, candidate_edges, edge_labels))
+                
+                # Store as a single example with classification + pin predictions
+                examples.append({
+                    'classification': (class_data, None, None),  # No edges for classification
+                    'pin_predictions': pin_examples
+                })
         
         return examples
+    
+    def mask_for_classification(self, G, comp_node):
+        # Mask component and ALL its pins for classification
+        G_masked = G.copy()
+        removed_nodes = [comp_node]
+        
+        pin_nodes = [n for n in G.neighbors(comp_node) if G.nodes[n].get('type') == 'pin']
+        removed_nodes.extend(pin_nodes)
+        
+        G_masked.remove_nodes_from(removed_nodes)
+        G_masked.remove_nodes_from(list(nx.isolates(G_masked)))
+        
+        if G_masked.number_of_nodes() == 0:
+            return None
+        return G_masked
+    
+    def mask_for_pin_prediction(self, G, comp_node, target_pin):
+        # Mask only specific pin for connection prediction
+        G_masked = G.copy()
+        
+        # Remove only this pin as we want to find all connection between pin and other net nodes
+        G_masked.remove_node(target_pin)
+        G_masked.remove_nodes_from(list(nx.isolates(G_masked)))
+        
+        if G_masked.number_of_nodes() == 0:
+            return None
+        return G_masked
     
     def get_component_connections(self, G, comp_node):
         connections = set()
@@ -185,31 +252,29 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         
         return G_masked, set(removed_nodes)
     
-    def generate_candidate_edges(self, G_masked, true_connections, removed_nodes):
+    def generate_candidate_edges(self, G_masked, target_net):
         # returns candidate_edges: [2, num_candidates] tensor with node pairs
         # and edge_labels: [num_candidates] to differentiate positice and negative edges
 
         node_mapping = {node: i for i, node in enumerate(G_masked.nodes())}
-        
-        valid_connections = [node for node in true_connections if node in node_mapping and node not in removed_nodes]
-        
-        if len(valid_connections) == 0:
+                
+        if len(target_net) == 0:
             return torch.zeros((2, 0), dtype=torch.long), torch.zeros(0, dtype=torch.float)
         
         VIRTUAL_NODE_IDX = -1
         
         # Positive samples
         # Represented as edges from 'virtual new component node' to existing nodes
-        num_pos = len(valid_connections)
+        num_pos = len(target_net)
         pos_edges = []
         new_comp_idx = len(node_mapping)  # Virtual new component node
-        for conn in valid_connections:
+        for conn in target_net:
             pos_edges.append([VIRTUAL_NODE_IDX, node_mapping[conn]])
         
         # Negative samples
         num_neg = int(num_pos * self.neg_sampling_ratio)
         all_nodes = list(G_masked.nodes())
-        negative_candidates = [n for n in all_nodes if n not in valid_connections]
+        negative_candidates = [n for n in all_nodes if n not in target_net]
         
         if len(negative_candidates) > num_neg:
             neg_samples = np.random.choice(negative_candidates, num_neg, replace=False)

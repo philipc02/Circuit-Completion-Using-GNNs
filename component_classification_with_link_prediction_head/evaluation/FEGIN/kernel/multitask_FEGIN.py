@@ -16,7 +16,7 @@ class MultiTaskFEGIN(torch.nn.Module):
     - Link prediction head (edge-level)
     """
     def __init__(self, dataset, num_layers, hidden, emb_size, use_z=False, use_rd=False, 
-                 lambda_node=1.0, lambda_edge=1.0):
+                 lambda_node=1.0, lambda_edge=1.0, max_pins=2):
         super(MultiTaskFEGIN, self).__init__()
         self.use_z = use_z
         self.use_rd = use_rd
@@ -78,6 +78,25 @@ class MultiTaskFEGIN(torch.nn.Module):
             ReLU(),
             Linear(hidden, 1)
         )
+
+        self.max_pins = max_pins # 2 for R, C, V
+
+        # Add pin position embeddings (for pin-specific predictions)
+        self.pin_position_embedding = torch.nn.Embedding(
+            max_pins,
+            num_layers * hidden
+        )
+
+        # Separate edge predictors for each pin position
+        self.pin_edge_predictors = torch.nn.ModuleList([
+            torch.nn.Sequential(
+                Linear(2 * num_layers * hidden, hidden * 2),  
+                torch.nn.Dropout(0.3),
+                Linear(hidden * 2, hidden),
+                ReLU(),
+                Linear(hidden, 1)
+            ) for _ in range(max_pins)
+        ])
     
     def reset_parameters(self):
         self.conv1.reset_parameters()
@@ -103,7 +122,7 @@ class MultiTaskFEGIN(torch.nn.Module):
         node_embeddings = torch.cat(xs, dim=-1)
         return node_embeddings
     
-    def forward(self, data, candidate_edges=None, task='both', teacher_forcing=True):
+    def forward(self, data, candidate_edges=None, task='both', teacher_forcing=True, pin_position=None):
         # task: 'classification', 'link_prediction', or 'both'
         # candidate_edges: tensors of shape [2, num_candidates] for link predictions
         # returns for classification: log_softmax predictions
@@ -157,6 +176,14 @@ class MultiTaskFEGIN(torch.nn.Module):
                         comp_type_idx = comp_type_indices[i]
                         comp_type_emb = self.comp_type_embedding(comp_type_idx)
 
+                        # Get pin position embedding
+                        if pin_position is not None and i < len(pin_position):
+                            pin_pos = pin_position[i]
+                            pin_emb = self.pin_position_embedding(torch.tensor([pin_pos], device=x.device))
+                        else:
+                            # Default to pin 0 if not specified
+                            pin_emb = self.pin_position_embedding(torch.tensor([0], device=x.device))
+
                         scores  = []
                         
                         for j in range(candidate_edges_i.shape[1]):
@@ -167,9 +194,14 @@ class MultiTaskFEGIN(torch.nn.Module):
                             if src == -1 and 0 <= dst < len(graph_node_embeddings):
                                 dst_emb = graph_node_embeddings[dst]
                                 
-                                edge_feature = torch.cat([comp_type_emb, dst_emb], dim=0)
+                                edge_feature = torch.cat([comp_type_emb, pin_emb, dst_emb], dim=0)
                                 edge_feature = edge_feature.unsqueeze(0)  # Add batch dimension
-                                score = self.edge_predictor(edge_feature).squeeze()
+                                if pin_position is not None and i < len(pin_position):
+                                    pred_idx = min(pin_position[i], self.max_pins - 1)
+                                    score = self.pin_edge_predictors[pred_idx](edge_feature).squeeze()
+                                else:
+                                    # Use first predictor as default
+                                    score = self.pin_edge_predictors[0](edge_feature).squeeze()
                                 scores.append(torch.sigmoid(score))
                             else:
                                 # Skip invalid edges
