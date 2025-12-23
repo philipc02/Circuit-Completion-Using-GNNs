@@ -62,7 +62,7 @@ def train_multitask_epoch(model, optimizer, loader, device, lambda_node=1.0, lam
             if candidate_edges_list is not None:
                 # Move each tensor in the list to device
                 candidate_edges_list = [ce.to(device) if ce is not None else None for ce in candidate_edges_list]
-                edge_labels_list = [el.to(device) if el is not None else None for el in edge_labels]
+                edge_labels_list = [el.to(device) if el is not None else None for el in edge_labels_list]
             
             optimizer.zero_grad()
             
