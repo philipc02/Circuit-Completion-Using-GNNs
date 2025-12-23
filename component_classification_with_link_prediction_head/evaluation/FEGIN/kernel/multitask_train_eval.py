@@ -35,7 +35,7 @@ def train_multitask_epoch(model, optimizer, loader, device, lambda_node=1.0, lam
                 pin_data = pin_data.to(device)
                 if cand_edges is not None:
                     cand_edges = [ce.to(device) if ce is not None else None for ce in candidate_edges_list]
-                    edge_labels = [el.to(device) for el in edge_labels]
+                    edge_labels = [el.to(device) if el is not None else None for el in edge_labels]
                     pin_positions = pin_positions.to(device)
                 
                 # Forward for pin predictions
@@ -62,7 +62,7 @@ def train_multitask_epoch(model, optimizer, loader, device, lambda_node=1.0, lam
             if candidate_edges_list is not None:
                 # Move each tensor in the list to device
                 candidate_edges_list = [ce.to(device) if ce is not None else None for ce in candidate_edges_list]
-                edge_labels_list = [el.to(device) for el in edge_labels_list]
+                edge_labels_list = [el.to(device) if el is not None else None for el in edge_labels]
             
             optimizer.zero_grad()
             
@@ -96,7 +96,7 @@ def train_multitask_epoch(model, optimizer, loader, device, lambda_node=1.0, lam
             if candidate_edges_list is not None:
                 # Move each tensor in the list to device
                 candidate_edges_list = [ce.to(device) if ce is not None else None for ce in candidate_edges_list]
-                edge_labels_list = [el.to(device) for el in edge_labels_list]
+                edge_labels_list = [el.to(device) if el is not None else None for el in edge_labels]
             
             optimizer.zero_grad()
             
@@ -173,7 +173,7 @@ def eval_multitask(model, loader, device):
                     pin_data = pin_data.to(device)
                     if cand_edges is not None:
                         cand_edges = [ce.to(device) if ce is not None else None for ce in candidate_edges_list]
-                        edge_labels = [el.to(device) for el in edge_labels]
+                        edge_labels = [el.to(device) if el is not None else None for el in edge_labels]
                         pin_positions = pin_positions.to(device)
                     
                     edge_scores_list = model(
@@ -194,7 +194,7 @@ def eval_multitask(model, loader, device):
                 if candidate_edges_list is not None:
                     # Move each tensor in the list to device
                     candidate_edges_list = [ce.to(device) if ce is not None else None for ce in candidate_edges_list]
-                    edge_labels_list = [el.to(device) for el in edge_labels_list]
+                    edge_labels_list = [el.to(device) if el is not None else None for el in edge_labels]
                 
                 # Get predictions
                 class_output, edge_scores_list = model(data, candidate_edges=candidate_edges_list, task='both', teacher_forcing=False)  # No teacher forcing during evaluation
@@ -207,7 +207,7 @@ def eval_multitask(model, loader, device):
                 if candidate_edges_list is not None:
                     # Move each tensor in the list to device
                     candidate_edges_list = [ce.to(device) if ce is not None else None for ce in candidate_edges_list]
-                    edge_labels_list = [el.to(device) for el in edge_labels_list]
+                    edge_labels_list = [el.to(device) if el is not None else None for el in edge_labels]
                 
                 # Get predictions
                 class_output, edge_scores_list = model(data, candidate_edges=candidate_edges_list, task='both', teacher_forcing=False)  # No teacher forcing during evaluation
