@@ -49,8 +49,26 @@ def multitask_dual_collate(batch):
             'pin_prediction': (pin_batch, pin_candidate_edges_list, pin_edge_labels_list, pin_positions)
         }
     else:
-        # Fallback to original collate
-        return multitask_collate(batch)
+        all_data = []
+        all_cand_edges = []
+        all_edge_labels = []
+        
+        for item in batch:
+            data_copy = item.clone()
+            cand_edges = getattr(item, 'candidate_edges', None)
+            edge_labels = getattr(item, 'edge_labels', None)
+            
+            if hasattr(data_copy, 'candidate_edges'):
+                del data_copy.candidate_edges
+            if hasattr(data_copy, 'edge_labels'):
+                del data_copy.edge_labels
+            
+            all_data.append(data_copy)
+            all_cand_edges.append(cand_edges)
+            all_edge_labels.append(edge_labels)
+        
+        data_batch = Batch.from_data_list(all_data)
+        return data_batch, all_cand_edges, all_edge_labels
 
 def multitask_collate(batch):
     all_data = []
