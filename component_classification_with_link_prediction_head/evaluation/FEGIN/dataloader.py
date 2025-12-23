@@ -66,12 +66,18 @@ def multitask_collate(batch):
             # print(f"    First edge: {item.candidate_edges[:, 0].tolist()}, min idx: {item.candidate_edges.min().item()}, max idx: {item.candidate_edges.max().item()}")
         # item is a PyG Data object with attributes
         data_copy = item.clone()
-        cand_edges = data_copy.candidate_edges
-        edge_labels = data_copy.edge_labels
+        #cand_edges = data_copy.candidate_edges
+        #edge_labels = data_copy.edge_labels
+        cand_edges = getattr(data_copy, 'candidate_edges', None)
+        edge_labels = getattr(data_copy, 'edge_labels', None)
 
         # Remove these attributes to avoid batching issues
-        del data_copy.candidate_edges
-        del data_copy.edge_labels
+        #del data_copy.candidate_edges
+        #del data_copy.edge_labels
+        if hasattr(data_copy, 'candidate_edges'):
+            del data_copy.candidate_edges
+        if hasattr(data_copy, 'edge_labels'):
+            del data_copy.edge_labels
 
         all_data.append(data_copy)
         all_cand_edges.append(cand_edges)
