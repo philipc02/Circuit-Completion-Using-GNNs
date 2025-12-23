@@ -14,6 +14,8 @@ def multitask_dual_collate(batch):
         # Separate examples for classification and pin level link prediction 
         class_batch = []
         pin_batch = []
+        pin_candidate_edges_list = []
+        pin_edge_labels_list = []
         pin_positions = []
         
         for item in batch:
@@ -25,8 +27,8 @@ def multitask_dual_collate(batch):
             for pin_data, cand_edges, edge_labels in item['pin_predictions']:
                 pin_batch.append(pin_data)
                 # Store candidate edges and labels
-                pin_data.candidate_edges = cand_edges
-                pin_data.edge_labels = edge_labels
+                pin_candidate_edges_list.append(cand_edges)
+                pin_edge_labels_list.append(edge_labels)
                 pin_positions.append(pin_data.pin_position.item() if hasattr(pin_data, 'pin_position') else 0)
         
         # Batch classification examples
@@ -35,19 +37,16 @@ def multitask_dual_collate(batch):
         # Batch pin examples
         if pin_batch:
             pin_batch = Batch.from_data_list(pin_batch)
-            # Extract candidate edges and labels
-            pin_candidate_edges = [d.candidate_edges for d in pin_batch.to_data_list()]
-            pin_edge_labels = [d.edge_labels for d in pin_batch.to_data_list()]
             pin_positions = torch.tensor(pin_positions, dtype=torch.long)
         else:
             pin_batch = None
-            pin_candidate_edges = None
-            pin_edge_labels = None
+            pin_candidate_edges_list = None
+            pin_edge_labels_list = None
             pin_positions = None
         
         return {
             'classification': (class_batch, None, None),
-            'pin_prediction': (pin_batch, pin_candidate_edges, pin_edge_labels, pin_positions)
+            'pin_prediction': (pin_batch, pin_candidate_edges_list, pin_edge_labels_list, pin_positions)
         }
     else:
         # Fallback to original collate
