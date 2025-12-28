@@ -51,7 +51,7 @@ def train_multitask_epoch(model, optimizer, loader, device, lambda_node=1.0, lam
         optimizer.zero_grad()
         
         # Forward
-        class_output, all_edge_scores = model(class_data=class_data, pin_data_list=pins_per_example, candidate_edges_list=candidate_edges_per_example, task='both', teacher_forcing=True, pin_positions=pin_positions_per_example)
+        class_output, all_edge_scores = model(class_data=class_data, pin_data_list=pins_per_example, candidate_edges_list=candidate_edges_per_example, task='both', teacher_forcing=True, pin_position=pin_positions_per_example)
         
         # Component classification loss
         node_loss = F.cross_entropy(class_output, class_data.y.view(-1))
@@ -136,7 +136,7 @@ def eval_multitask(model, loader, device):
                         edge_labels_per_example.append([])
                         pin_positions_per_example.append([])
                     
-                class_output, all_edge_scores = model(class_data=class_data, pin_data_list=pins_per_example, candidate_edges_list=candidate_edges_per_example, task='both', teacher_forcing=False, pin_positions=pin_positions_per_example)
+                class_output, all_edge_scores = model(class_data=class_data, pin_data_list=pins_per_example, candidate_edges_list=candidate_edges_per_example, task='both', teacher_forcing=False, pin_position=pin_positions_per_example)
                     
                 # Classification metrics
                 node_loss = F.cross_entropy(class_output, class_data.y.view(-1), reduction='sum')
