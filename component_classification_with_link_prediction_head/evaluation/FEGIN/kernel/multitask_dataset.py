@@ -12,6 +12,8 @@ class MultiTaskCircuitDataset(InMemoryDataset):
     # Generate candidate edges for link prediction
     # Label which edges should exist based on original graph (positive, negative)
 
+    num_classes = 4  # R, C, V, X
+
     
     def __init__(self, root, name, representation, h, max_nodes_per_hop, 
                  node_label, use_rd, neg_sampling_ratio=5.0, max_pins=2, split='train',
@@ -21,8 +23,8 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         self.neg_sampling_ratio = neg_sampling_ratio  # ratio of negative to positive samples
         self.max_pins = max_pins
         self.split = split
-        self.num_classes = 4  # R, C, V, X
-        self.num_features = self.get_num_features(representation)
+        self._num_classes = 4  # R, C, V, X
+        self._num_features = self.get_num_features(representation)
 
         super().__init__(root, transform, pre_transform, pre_filter)
         # self.data, self.slices = torch.load(self.processed_paths[0])
@@ -51,13 +53,14 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         
         self.num_examples = len(self.class_data)
 
-    def get_num_features(self, representation):
-        if representation == "component_component":
+    @property
+    def num_features(self):
+        if self.representation == "component_component":
             return 6
-        elif representation == "component_net":
+        elif self.representation == "component_net":
             return 8
-        else:
-            return 16 # component_pin, component_pin_net or anything else
+        else:  # component_pin, component_pin_net or anything else
+            return 16
 
     def __len__(self):
         return self.num_examples
