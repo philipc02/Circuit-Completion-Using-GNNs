@@ -25,16 +25,25 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         # self.data, self.slices = torch.load(self.processed_paths[0])
 
         loaded = torch.load(self.processed_paths[0])
-        self.data = loaded['data']
-        self.slices = loaded['slices']
-        self.candidate_edges = loaded['candidate_edges']
-        self.edge_labels = loaded['edge_labels']
+        self.class_data = loaded['class_data']          
+        self.pin_predictions = loaded['pin_predictions'] 
+        self.candidate_edges = loaded['candidate_edges'] 
+        self.edge_labels = loaded['edge_labels']         
+        self.pin_positions = loaded['pin_positions']     
+        self.num_examples = loaded['num_examples']
+
+    def __len__(self):
+        return self.num_examples
 
     def __getitem__(self, idx):
-        data = super().__getitem__(idx)  # gets the PyG Data object
-        data.candidate_edges = self.candidate_edges[idx]
-        data.edge_labels = self.edge_labels[idx]
-        return data
+        # Return a dictionary with all elements for this example
+        return {
+            'classification': self.class_data[idx],
+            'pin_predictions': self.pin_predictions[idx],
+            'candidate_edges': self.candidate_edges[idx],
+            'edge_labels': self.edge_labels[idx],
+            'pin_positions': self.pin_positions[idx]
+        }
 
 
     
@@ -50,7 +59,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         with open(f'data/{self.name}_dataset.pkl', 'rb') as f:
             dataset_info = pickle.load(f)
         
-        data_list = []
+        examples_list = []
         circuit_to_files = dataset_info['circuit_to_files']
         
         # Process training circuits
@@ -69,7 +78,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                 G = pickle.load(f)
             
             examples = self.create_multitask_examples(G, graph_file, 'train')
-            data_list.extend(examples)
+            examples_list.extend(examples)
         
         # Process test circuits
         for circuit_name in dataset_info['test_files']:
@@ -87,43 +96,43 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                 G = pickle.load(f)
             
             examples = self.create_multitask_examples(G, graph_file, 'test')
-            data_list.extend(examples)
+            examples_list.extend(examples)
         
-        print(f"Created {len(data_list)} multi-task examples ({self.representation})")
+        print(f"Created {len(examples_list)} multi-task examples ({self.representation})")
         
         if self.pre_filter is not None:
-            data_list = [data for data in data_list if self.pre_filter(data)]
+            examples_list = [example for example in examples_list if self.pre_filter(example)]
         
         if self.pre_transform is not None:
-            data_list = [self.pre_transform(data) for data in data_list]
+            examples_list = [self.pre_transform(example) for example in examples_list]
         
-        # Store all three elements for each example
-        all_data = []
+        # - class_data (single graph)
+        # - pin_predictions (list of graphs)
+        # - candidate_edges (list of tensors)
+        # - edge_labels (list of tensors)
+        # - pin_positions (list of indices)
+        
+        all_class_data = []
+        all_pin_predictions = []  
         all_candidate_edges = []
-        all_edge_labels = []
+        all_edge_labels = []    
+        all_pin_positions = []
 
-        for example_dict in data_list:
-            # Classification example
-            class_data, _, _ = example_dict['classification']
-            all_data.append(class_data)
-            all_candidate_edges.append(None)  # No edges for classification
-            all_edge_labels.append(None)      # No labels for classification
-        
-            # Pin prediction examples
-            for pin_data, cand_edges, edge_labels in example_dict['pin_predictions']:
-                all_data.append(pin_data)
-                all_candidate_edges.append(cand_edges)
-                all_edge_labels.append(edge_labels)
-
-        # Collate the PyG Data objects
-        data, slices = self.collate(all_data)
+        for example_dict in examples_list:
+            all_class_data.append(example_dict['classification'])
+            all_pin_predictions.append(example_dict['pin_predictions'])
+            all_candidate_edges.append(example_dict['candidate_edges'])
+            all_edge_labels.append(example_dict['edge_labels'])
+            all_pin_positions.append(example_dict['pin_positions'])
 
         # Save everything together
         torch.save({
-            'data': data,
-            'slices': slices,
-            'candidate_edges': all_candidate_edges,
-            'edge_labels': all_edge_labels
+            'class_data': all_class_data,          # List of Data objects
+            'pin_predictions': all_pin_predictions, # List of lists of Data objects
+            'candidate_edges': all_candidate_edges, # List of lists of tensors
+            'edge_labels': all_edge_labels,         # List of lists of tensors
+            'pin_positions': all_pin_positions,     # List of lists of indices
+            'num_examples': len(all_class_data)
         }, self.processed_paths[0])
     
     def create_multitask_examples(self, G, graph_name, split):
@@ -187,6 +196,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                 
                 pin_data = self.convert_graph_to_pyg(G_pin_masked)
                 if pin_data is not None:
+                    pin_data.pin_position = torch.tensor([pin_idx], dtype=torch.long)
                     pin_predictions.append(pin_data)
                     all_candidate_edges.append(candidate_edges)
                     all_edge_labels.append(edge_labels)
