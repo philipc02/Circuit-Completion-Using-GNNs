@@ -23,8 +23,6 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         self.neg_sampling_ratio = neg_sampling_ratio  # ratio of negative to positive samples
         self.max_pins = max_pins
         self.split = split
-        self._num_classes = 4  # R, C, V, X
-        self._num_features = self.get_num_features(representation)
 
         super().__init__(root, transform, pre_transform, pre_filter)
         # self.data, self.slices = torch.load(self.processed_paths[0])
