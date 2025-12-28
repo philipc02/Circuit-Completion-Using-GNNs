@@ -266,7 +266,6 @@ def main():
                     args.node_label, 
                     args.use_rd, 
                     args.max_nodes_per_hop)
-            print("dataset loaded",dataset.num_features,dataset.num_classes,len(dataset))
             if args.model == 'MultiTaskFEGIN':
                 model = MultiTaskFEGIN(train_dataset, args.layers, args.hiddens, args.emb_size, args.node_label!='no', args.use_rd, lambda_node=args.lambda_node, lambda_edge=args.lambda_edge, max_pins=2)
                 results = train_multitask_fegin(
