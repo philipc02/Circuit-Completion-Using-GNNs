@@ -279,7 +279,7 @@ def eval_multitask(model, loader, device):
     return results, all_preds, all_labels
 
 
-def train_multitask_fegin(dataset, dataset_name, model, epochs, batch_size, lr, 
+def train_multitask_fegin(train_dataset, test_dataset, dataset_name, model, epochs, batch_size, lr, 
                           lr_decay_factor, lr_decay_step_size, weight_decay, 
                           device, logger=None, tracker=None, representation=None,
                           lambda_node=1.0, lambda_edge=1.0):  # loss for component classification adn link prediction currently being weighted evenly
@@ -287,12 +287,9 @@ def train_multitask_fegin(dataset, dataset_name, model, epochs, batch_size, lr,
 
     print(f"Training Multi-Task FEGIN on {representation} representation")
     print(f"Loss weights: lamda_node ={lambda_node}, lambda_edge ={lambda_edge}")
-    
-    train_dataset = [d for d in dataset if d.set == 'train']
-    test_dataset = [d for d in dataset if d.set == 'test']
-    
     print(f"Train: {len(train_dataset)}, Test: {len(test_dataset)}")
-    train_dataset = shuffle(train_dataset, random_state=42)
+
+    from sklearn.utils import shuffle
     
     t_start = time.perf_counter()
     

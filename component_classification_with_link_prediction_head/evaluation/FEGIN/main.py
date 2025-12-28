@@ -214,7 +214,8 @@ def main():
             print(log)
             logger(log)
             if args.model == 'MultiTaskFEGIN':
-                dataset = MultiTaskCircuitDataset(
+                # dictionary
+                train_dataset = MultiTaskCircuitDataset(
                     root="data/",
                     name=dataset_name,
                     representation=args.representation,
@@ -223,8 +224,22 @@ def main():
                     node_label=args.node_label,
                     use_rd=args.use_rd,
                     neg_sampling_ratio=args.neg_sampling_ratio,
-                    max_pins=2
+                    max_pins=2,
+                    split='train'
                 )
+                test_dataset = MultiTaskCircuitDataset(
+                    root="data/",
+                    name=dataset_name,
+                    representation=args.representation,
+                    h=args.h,
+                    max_nodes_per_hop=args.max_nodes_per_hop,
+                    node_label=args.node_label,
+                    use_rd=args.use_rd,
+                    neg_sampling_ratio=args.neg_sampling_ratio,
+                    max_pins=2,
+                    split='test'
+                )
+                print(f"Train: {len(train_dataset)}, Test: {len(test_dataset)}")
             elif args.model == "FEGIN":
                 print(f"Loading {args.representation} representation dataset")
     
@@ -253,11 +268,12 @@ def main():
                     args.max_nodes_per_hop)
             print("dataset loaded",dataset.num_features,dataset.num_classes,len(dataset))
             if args.model == 'MultiTaskFEGIN':
-                model = MultiTaskFEGIN(dataset, args.layers, args.hiddens, args.emb_size, args.node_label!='no', args.use_rd, lambda_node=args.lambda_node, lambda_edge=args.lambda_edge, max_pins=2)
+                model = MultiTaskFEGIN(train_dataset, args.layers, args.hiddens, args.emb_size, args.node_label!='no', args.use_rd, lambda_node=args.lambda_node, lambda_edge=args.lambda_edge, max_pins=2)
                 results = train_multitask_fegin(
-                    dataset,
-                    dataset_name,
-                    model,
+                    train_dataset=train_dataset,
+                    test_dataset=test_dataset,
+                    dataset_name=dataset_name,
+                    model=model,
                     epochs=args.epochs,
                     batch_size=args.batch_size,
                     lr=args.lr,

@@ -14,24 +14,41 @@ class MultiTaskCircuitDataset(InMemoryDataset):
 
     
     def __init__(self, root, name, representation, h, max_nodes_per_hop, 
-                 node_label, use_rd, neg_sampling_ratio=5.0, max_pins=2,
+                 node_label, use_rd, neg_sampling_ratio=5.0, max_pins=2, split='train',
                  transform=None, pre_transform=None, pre_filter=None):
         self.representation = representation
         self.h,self.max_nodes_per_hop, self.node_label, self.use_rd,self.name = h,max_nodes_per_hop, node_label, use_rd,name
         self.neg_sampling_ratio = neg_sampling_ratio  # ratio of negative to positive samples
         self.max_pins = max_pins
+        self.split = split
 
         super().__init__(root, transform, pre_transform, pre_filter)
         # self.data, self.slices = torch.load(self.processed_paths[0])
 
         loaded = torch.load(self.processed_paths[0])
-        self.class_data = loaded['class_data']          
-        self.pin_predictions = loaded['pin_predictions'] 
-        self.candidate_edges = loaded['candidate_edges'] 
-        self.edge_labels = loaded['edge_labels']         
-        self.pin_positions = loaded['pin_positions']     
-        self.num_examples = loaded['num_examples']
-
+        all_class_data = loaded['class_data']
+        all_pin_predictions = loaded['pin_predictions']
+        all_candidate_edges = loaded['candidate_edges']
+        all_edge_labels = loaded['edge_labels']
+        all_pin_positions = loaded['pin_positions']
+        
+        # Filter by split
+        self.class_data = []
+        self.pin_predictions = []
+        self.candidate_edges = []
+        self.edge_labels = []
+        self.pin_positions = []
+        
+        for i in range(len(all_class_data)):
+            if hasattr(all_class_data[i], 'set') and all_class_data[i].set == split:
+                self.class_data.append(all_class_data[i])
+                self.pin_predictions.append(all_pin_predictions[i])
+                self.candidate_edges.append(all_candidate_edges[i])
+                self.edge_labels.append(all_edge_labels[i])
+                self.pin_positions.append(all_pin_positions[i])
+        
+        self.num_examples = len(self.class_data)
+        
     def __len__(self):
         return self.num_examples
 
