@@ -7,14 +7,7 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 
 class MultiTaskFEGIN(torch.nn.Module):
-    """
-    Multi-task FEGIN for simultaneous component classification and link prediction.
-    
-    Architecture:
-    - Shared GNN encoder (GIN layers)
-    - Component classification head (node-level)
-    - Link prediction head (edge-level)
-    """
+
     def __init__(self, dataset, num_layers, hidden, emb_size, use_z=False, use_rd=False, 
                  lambda_node=1.0, lambda_edge=1.0, max_pins=2):
         super(MultiTaskFEGIN, self).__init__()
@@ -67,17 +60,6 @@ class MultiTaskFEGIN(torch.nn.Module):
             dataset.num_classes,  # 4 component types: R, C, V, X
             num_layers * hidden   # Same dimension as node embeddings
         )
-        
-        # Link prediction head
-        # Takes concatenated node embeddings and predicts edge probability
-        self.edge_predictor = torch.nn.Sequential(
-            Linear(2 * num_layers * hidden, hidden * 2),
-            ReLU(),
-            torch.nn.Dropout(0.3),
-            Linear(hidden * 2, hidden),
-            ReLU(),
-            Linear(hidden, 1)
-        )
 
         self.max_pins = max_pins # 2 for R, C, V
 
@@ -90,7 +72,8 @@ class MultiTaskFEGIN(torch.nn.Module):
         # Separate edge predictors for each pin position
         self.pin_edge_predictors = torch.nn.ModuleList([
             torch.nn.Sequential(
-                Linear(2 * num_layers * hidden, hidden * 2),  
+                Linear(3 * num_layers * hidden, hidden * 2),
+                ReLU(),
                 torch.nn.Dropout(0.3),
                 Linear(hidden * 2, hidden),
                 ReLU(),
@@ -106,10 +89,11 @@ class MultiTaskFEGIN(torch.nn.Module):
         for layer in self.node_classifier:
             if hasattr(layer, 'reset_parameters'):
                 layer.reset_parameters()
-        
-        for layer in self.edge_predictor:
-            if hasattr(layer, 'reset_parameters'):
-                layer.reset_parameters()
+
+        for predictor in self.pin_edge_predictors:
+            for layer in predictor:
+                if hasattr(layer, 'reset_parameters'):
+                    layer.reset_parameters()
     
     def encode(self, x, edge_index):
         x = self.conv1(x, edge_index)
@@ -122,148 +106,126 @@ class MultiTaskFEGIN(torch.nn.Module):
         node_embeddings = torch.cat(xs, dim=-1)
         return node_embeddings
     
-    def forward(self, data, candidate_edges=None, task='both', teacher_forcing=True, pin_position=None):
+    def forward(self, class_data, pin_data_list=None, candidate_edges_list=None, task='both', teacher_forcing=True, pin_position=None):
+        # class_data: Graph with component+all pins masked (for classification)
+        # pin_data_list: List of Graph with only one pin masked (for link prediction)
         # task: 'classification', 'link_prediction', or 'both'
-        # candidate_edges: tensors of shape [2, num_candidates] for link predictions
+        # candidate_edges_list: list of tensors of shape [2, num_candidates] for link predictions
         # returns for classification: log_softmax predictions
         # for link_prediction: list of edge scores
         # for both: tuple of (classification_output, list of edge_scores)
 
-        x, edge_index, batch = data.x, data.edge_index, data.batch
-        
-        # Get node embeddings from shared encoder
-        node_embeddings = self.encode(x, edge_index)
         
         if task == 'classification':
+            x, edge_index, batch = class_data.x, class_data.edge_index, class_data.batch
+        
+            # Get node embeddings from shared encoder
+            node_embeddings = self.encode(x, edge_index)
             # Pool to graph level for component classification
             graph_embeddings = global_mean_pool(node_embeddings, batch)
             logits = self.node_classifier(graph_embeddings)
             return F.log_softmax(logits, dim=1)
         
-        if task == 'link_prediction' or task == 'both':
-            edge_scores_list = []
-            # Component classification
-            graph_embeddings = global_mean_pool(node_embeddings, batch)
-            logits = self.node_classifier(graph_embeddings)
+        elif task == 'link_prediction':
+            all_edge_scores = []
+
+            for i, (pin_data, cand_edges) in enumerate(zip(pin_data_list, candidate_edges_list)):
+
+                x_pin, edge_index_pin, batch_pin = pin_data.x, pin_data.edge_index, pin_data.batch
+            
+                # Get node embeddings from shared encoder
+                node_emb_pin = self.encode(x_pin, edge_index_pin)
+
+                # During training with teacher forcing: use true labels
+                # During evaluation or inference: use predicted labels
+                if teacher_forcing and self.training and hasattr(class_data, 'y'):
+                    comp_type_indices = class_data.y.view(-1)[0] # same for all pins
+                else:
+                    comp_type_indices = class_output.max(1)[1][0]
+
+                pin_pos = pin_position[i] if pin_position is not None else i
+
+                # Process candidate edges
+                edge_scores = self.process_candidate_edges(node_emb_pin, batch_pin, comp_type_indices, cand_edges, pin_pos)
+                all_edge_scores.append(edge_scores)
+            
+            return all_edge_scores
+        
+        elif task == 'both':
+            # 1. CLASSIFCATION
+            x_class, edge_index_class, batch_class = class_data.x, class_data.edge_index, class_data.batch
+            node_emb_class = self.encode(x_class, edge_index_class)
+            graph_emb_class  = global_mean_pool(node_emb_class, batch_class)
+            logits = self.node_classifier(graph_emb_class)
             class_output = F.log_softmax(logits, dim=1)
 
-            # During training with teacher forcing: use true labels
-            # During evaluation or inference: use predicted labels
-            if teacher_forcing and self.training and hasattr(data, 'y'):
-                comp_type_indices = data.y.view(-1)
-            else:
-                comp_type_indices = class_output.max(1)[1]
-            
-            # Link prediction - process each graph in batch separately
-            if candidate_edges is not None:
-                # Get batch indices for each node
-                batch_size = batch.max().item() + 1
-                batch_node_indices = []
+            # 2. MULTIPLE PIN PREDICTIONS
+            all_edge_scores = []
+            # Process each example's pins
+            for example_idx, (example_pin_data, example_cand_edges) in enumerate(zip(pin_data_list, candidate_edges_list)):
+                if not example_pin_data:  # Empty list
+                    all_edge_scores.append([])
+                    continue
+                    
+                example_edge_scores = []
                 
-                # Get node indices for each graph in batch
-                for i in range(batch_size):
-                    batch_node_indices.append((batch == i).nonzero(as_tuple=True)[0])
-                
-                # Process candidate edges for each graph
-                for i, (candidate_edges_i, node_indices) in enumerate(zip(candidate_edges, batch_node_indices)):
-
-
-                    if candidate_edges_i is not None and candidate_edges_i.shape[1] > 0:
-                        # Adjust indices to be within this graphs node indices
-                        # First get the node embeddings for this graph
-                        graph_node_embeddings = node_embeddings[node_indices]
-                        # Get component type embedding for this graph
-                        comp_type_idx = comp_type_indices[i]
-                        comp_type_emb = self.comp_type_embedding(comp_type_idx)
-
-                        # Get pin position embedding
-                        if pin_position is not None and i < len(pin_position):
-                            pin_pos = pin_position[i]
-                            pin_emb = self.pin_position_embedding(torch.tensor([pin_pos], device=x.device))
-                        else:
-                            # Default to pin 0 if not specified
-                            pin_emb = self.pin_position_embedding(torch.tensor([0], device=x.device))
-
-                        scores  = []
-                        
-                        for j in range(candidate_edges_i.shape[1]):
-                            src = candidate_edges_i[0, j].item()
-                            dst = candidate_edges_i[1, j].item()
-                            
-                            # src should be -1 (virtual node), dst is the candidate node
-                            if src == -1 and 0 <= dst < len(graph_node_embeddings):
-                                dst_emb = graph_node_embeddings[dst]
-                                
-                                edge_feature = torch.cat([comp_type_emb, pin_emb, dst_emb], dim=0)
-                                edge_feature = edge_feature.unsqueeze(0)  # Add batch dimension
-                                if pin_position is not None and i < len(pin_position):
-                                    pred_idx = min(pin_position[i], self.max_pins - 1)
-                                    score = self.pin_edge_predictors[pred_idx](edge_feature).squeeze()
-                                else:
-                                    # Use first predictor as default
-                                    score = self.pin_edge_predictors[0](edge_feature).squeeze()
-                                scores.append(torch.sigmoid(score))
-                            else:
-                                # Skip invalid edges
-                                continue
-
-                        if scores:
-                            edge_scores_list.append(torch.stack(scores))
-                        else:
-                            edge_scores_list.append(torch.tensor([], device=x.device))
+                # Process each pin in this example
+                for pin_idx, (pin_data, cand_edges) in enumerate(zip(example_pin_data, example_cand_edges)):
+                    x_pin, edge_index_pin, batch_pin = pin_data.x, pin_data.edge_index, pin_data.batch
+                    node_emb_pin = self.encode(x_pin, edge_index_pin)
+                    
+                    if teacher_forcing and self.training and hasattr(class_data, 'y'):
+                        comp_type_idx = class_data.y.view(-1)[example_idx]
                     else:
-                        edge_scores_list.append(torch.tensor([], device=x.device))
+                        comp_type_idx = class_output.max(1)[1][example_idx]
+                    
+                    if pin_position and example_idx < len(pin_position) and pin_idx < len(pin_position[example_idx]):
+                        pin_pos = pin_position[example_idx][pin_idx]
+                    else:
+                        pin_pos = pin_idx
+                    
+                    edge_scores = self.process_candidate_edges_single_pin(
+                        node_emb_pin, batch_pin, comp_type_idx, cand_edges, pin_pos
+                    )
+                    example_edge_scores.append(edge_scores)
+            
+                all_edge_scores.append(example_edge_scores)
+
+            return class_output, all_edge_scores
+
+    def process_candidate_edges_single_pin(self, node_embeddings, batch, comp_type_idx, candidate_edges, pin_pos):
+        if candidate_edges is None or candidate_edges.shape[1] == 0:
+            return torch.tensor([], device=node_embeddings.device)
+        
+        batch_size = batch.max().item() + 1
+        if batch_size != 1:
+            # Shouldnt happen
+            node_indices = (batch == 0).nonzero(as_tuple=True)[0]
+            graph_node_embeddings = node_embeddings[node_indices]
+        else:
+            graph_node_embeddings = node_embeddings
+        
+        comp_type_emb = self.comp_type_embedding(torch.tensor([comp_type_idx], device=node_embeddings.device)).unsqueeze(0)
                 
-                if task == 'link_prediction':
-                    return edge_scores_list
-                else:
-                    return class_output, edge_scores_list
-            else:
-                if task == 'link_prediction':
-                    return [torch.tensor([], device=x.device) for _ in range(batch_size)]
-                else:
-                    return class_output, [torch.tensor([], device=x.device) for _ in range(batch_size)]
-    
-    def predict_edges(self, node_embeddings, candidate_edges, batch):
-        # predict edge scores for candidate edges.
-        # node_embeddings: [num_nodes, emb_size]
-        # candidate_edges: [2, num_candidates]
-        # batch: [num_nodes] batch assignment
-        # returns edge_scores: Probability scores for each candidate edge [num_candidates]
-
-        
-        # Get embeddings for source and destination nodes
-        src_embeddings = node_embeddings[candidate_edges[0]]  # [num_candidates, emb_size]
-        dst_embeddings = node_embeddings[candidate_edges[1]]  # [num_candidates, emb_size]
-        # Concatenate source and destination embeddings -> edge feature
-        edge_features = torch.cat([src_embeddings, dst_embeddings], dim=1)
-        # Predict edge probability
-        edge_scores = self.edge_predictor(edge_features).squeeze(-1)
-        
-        return torch.sigmoid(edge_scores)
-    
-    def decode_edges_for_new_component(self, node_embeddings, new_component_embedding, 
-                                       existing_node_indices):
-        # Predict which existing nodes new component should connect to -> during inference/test time
-        # return edge_scores: Probability of connection to each existing node
-
-        num_existing = len(existing_node_indices)
-        
-        # Repeat new component embedding for each potential connection
-        # new_comp_embedding: [128] -> unsqueeze to [1, 128] -> repeat to [3, 128] for emb_size = 128
-        new_comp_repeated = new_component_embedding.unsqueeze(0).repeat(num_existing, 1)
-        # Result: [[comp_emb], [comp_emb], [comp_emb]]  (3 copies)
-        existing_embeddings = node_embeddings[existing_node_indices]
-        # Result: [[node_A_emb], [node_B_emb], [node_C_emb]]
-        # Each edge feature = [comp_emb || node_emb]
-        edge_features = torch.cat([new_comp_repeated, existing_embeddings], dim=-1)
-        # Result shape: [3, 256] (128 + 128)
-        # Predict edges
-        edge_scores = self.edge_predictor(edge_features).squeeze(-1)
-        # Result: [3] with raw scores
-        
-        # Result: [3] with values 0-1 (probability of connection)
-        return torch.sigmoid(edge_scores)
+        pin_emb = self.pin_position_embedding(torch.tensor([pin_pos], device=node_embeddings.device)).unsqueeze(0)
+                
+        scores = []
+        for j in range(candidate_edges.shape[1]):
+            src = candidate_edges[0, j].item()
+            dst = candidate_edges[1, j].item()
+                    
+            if src == -1 and 0 <= dst < len(graph_node_embeddings):
+                dst_emb = graph_node_embeddings[dst].unsqueeze(0)
+                edge_feature = torch.cat([comp_type_emb, pin_emb, dst_emb], dim=1)
+                
+                pred_idx = min(pin_pos, self.max_pins - 1)
+                score = self.pin_edge_predictors[pred_idx](edge_feature).squeeze()
+                scores.append(torch.sigmoid(score))
+                
+        if scores:
+            return torch.stack(scores)
+        else:
+            return torch.tensor([], device=node_embeddings.device)
 
     def __repr__(self):
         return self.__class__.__name__

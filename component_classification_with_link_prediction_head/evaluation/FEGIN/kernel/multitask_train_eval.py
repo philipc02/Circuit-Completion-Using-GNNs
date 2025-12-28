@@ -18,109 +18,56 @@ def train_multitask_epoch(model, optimizer, loader, device, lambda_node=1.0, lam
     num_batches = 0
 
     for batch in loader:
-        if isinstance(batch, dict):
-            # Classification loss
-            class_data, _, _ = batch['classification']
-            class_data = class_data.to(device)
-            
-            # Forward for classification
-            class_output = model(class_data, task='classification')
-            node_loss = F.cross_entropy(class_output, class_data.y.view(-1))
-            
-            # Pin prediction loss
-            pin_data, cand_edges, edge_labels, pin_positions = batch['pin_prediction']
-            edge_loss = torch.tensor(0.0, device=device)
-            
-            if pin_data is not None:
-                pin_data = pin_data.to(device)
-                if cand_edges is not None:
-                    cand_edges = [ce.to(device) if ce is not None else None for ce in candidate_edges_list]
-                    edge_labels = [el.to(device) if el is not None else None for el in edge_labels]
-                    pin_positions = pin_positions.to(device)
-                
-                # Forward for pin predictions
-                edge_scores_list = model(
-                    pin_data, 
-                    candidate_edges=cand_edges, 
-                    task='link_prediction',
-                    pin_position=pin_positions
-                )
-                
-                # Calculate edge loss
-                num_edges = 0
-                for edge_scores, edge_labels_batch in zip(edge_scores_list, edge_labels):
-                    if len(edge_scores) > 0 and len(edge_labels_batch) > 0:
-                        edge_loss += F.binary_cross_entropy(edge_scores, edge_labels_batch.float(), reduction='sum')
-                        num_edges += len(edge_scores)
-                
-                if num_edges > 0:
-                    edge_loss = edge_loss / num_edges
-        elif isinstance(batch, tuple):
-            data, candidate_edges_list, edge_labels_list = batch
+        # unpack batch
+        class_data = batch['class_data'].to(device)
+        pin_data = batch['pin_data'].to(device)
+        candidate_edges = [ce.to(device) if ce is not None else None for ce in batch['candidate_edges']]
+        edge_labels = [el.to(device) if el is not None else None for el in batch['edge_labels']]
+        pin_positions = batch['pin_positions'].to(device)
+        batch_indices = batch['batch_indices'].to(device)
 
-            data = data.to(device)
-            if candidate_edges_list is not None:
-                # Move each tensor in the list to device
-                candidate_edges_list = [ce.to(device) if ce is not None else None for ce in candidate_edges_list]
-                edge_labels_list = [el.to(device) if el is not None else None for el in edge_labels_list]
-            
-            optimizer.zero_grad()
-            
-            # Forward pass for both tasks
-            class_output, edge_scores_list = model(data, candidate_edges=candidate_edges_list, task='both', teacher_forcing=True)
-            
-            # Component classification loss
-            node_loss = F.cross_entropy(class_output, data.y.view(-1))
-            
-            # Link prediction loss
-            if edge_labels_list is not None and edge_scores_list is not None:
-                # Combine all edge losses from the batch
-                edge_loss = torch.tensor(0.0, device=device)
-                num_edges = 0
-                
-                for edge_scores, edge_labels in zip(edge_scores_list, edge_labels_list):
-                    if len(edge_scores) > 0 and len(edge_labels) > 0:
-                        edge_loss += F.binary_cross_entropy(edge_scores, edge_labels.float(), reduction='sum')
-                        num_edges += len(edge_scores)
-                
-                if num_edges > 0:
-                    edge_loss = edge_loss / num_edges
-            else:
-                edge_loss = torch.tensor(0.0).to(device)
-        else:
-            data = batch
-            candidate_edges_list = getattr(data, 'candidate_edges', None)
-            edge_labels_list = getattr(data, 'edge_labels', None)
+        num_examples = class_data.batch.max().item() + 1
+        pins_per_example = []
+        candidate_edges_per_example = []
+        edge_labels_per_example = []
+        pin_positions_per_example = []
         
-            data = data.to(device)
-            if candidate_edges_list is not None:
-                # Move each tensor in the list to device
-                candidate_edges_list = [ce.to(device) if ce is not None else None for ce in candidate_edges_list]
-                edge_labels_list = [el.to(device) if el is not None else None for el in edge_labels]
+        for example_idx in range(num_examples):
+            # Find all pins belonging to example
+            mask = (batch_indices == example_idx)
+            pin_indices = mask.nonzero(as_tuple=True)[0]
             
-            optimizer.zero_grad()
-            
-            # Forward pass for both tasks
-            class_output, edge_scores_list = model(data, candidate_edges=candidate_edges_list, task='both', teacher_forcing=True)
-            
-            # Component classification loss
-            node_loss = F.cross_entropy(class_output, data.y.view(-1))
-            
-            # Link prediction loss
-            if edge_labels_list is not None and edge_scores_list is not None:
-                # Combine all edge losses from the batch
-                edge_loss = torch.tensor(0.0, device=device)
-                num_edges = 0
-                
-                for edge_scores, edge_labels in zip(edge_scores_list, edge_labels_list):
-                    if len(edge_scores) > 0 and len(edge_labels) > 0:
-                        edge_loss += F.binary_cross_entropy(edge_scores, edge_labels.float(), reduction='sum')
-                        num_edges += len(edge_scores)
-                
-                if num_edges > 0:
-                    edge_loss = edge_loss / num_edges
+            if len(pin_indices) > 0:
+                pins_per_example.append([pin_data[i] for i in pin_indices.tolist()])
+                candidate_edges_per_example.append([candidate_edges[i] for i in pin_indices.tolist()])
+                edge_labels_per_example.append([edge_labels[i] for i in pin_indices.tolist()])
+                pin_positions_per_example.append([pin_positions[i] for i in pin_indices.tolist()])
             else:
-                edge_loss = torch.tensor(0.0).to(device)
+                pins_per_example.append([])
+                candidate_edges_per_example.append([])
+                edge_labels_per_example.append([])
+                pin_positions_per_example.append([])
+
+        optimizer.zero_grad()
+        
+        # Forward
+        class_output, all_edge_scores = model(class_data=class_data, pin_data_list=pins_per_example, candidates_edges_list=candidate_edges_per_example, task='both', teacher_forcing=True, pin_positions=pin_positions_per_example)
+        
+        # Component classification loss
+        node_loss = F.cross_entropy(class_output, class_data.y.view(-1))
+        
+        # Link prediction loss
+        edge_loss = torch.tensor(0.0, device=device)
+        
+        total_edge_count = 0
+        for example_edge_scores, example_edge_labels in zip(all_edge_scores, edge_labels_per_example):
+            for edge_scores, edge_labels_batch in zip(example_edge_scores, example_edge_labels):
+                if edge_scores is not None and edge_labels_batch is not None and len(edge_scores) > 0 and len(edge_labels_batch) > 0:
+                    edge_loss += F.binary_cross_entropy(edge_scores, edge_labels_batch.float(), reduction='sum')
+                    total_edge_count += len(edge_scores)
+        
+        if total_edge_count > 0:
+            edge_loss = edge_loss / total_edge_count
         
         # Combined loss
         loss = lambda_node * node_loss + lambda_edge * edge_loss
@@ -134,9 +81,9 @@ def train_multitask_epoch(model, optimizer, loader, device, lambda_node=1.0, lam
         num_batches += 1
     
     return {
-        'total_loss': total_loss / num_batches,
-        'node_loss': total_node_loss / num_batches,
-        'edge_loss': total_edge_loss / num_batches
+        'total_loss': total_loss / max(num_batches, 1),
+        'node_loss': total_node_loss / max(num_batches, 1),
+        'edge_loss': total_edge_loss / max(num_batches, 1)
     }
 
 
@@ -156,37 +103,69 @@ def eval_multitask(model, loader, device):
     
     with torch.no_grad():
         for batch in loader:
-            if isinstance(batch, dict):
-                # Classification evaluation
-                class_data, _, _ = batch['classification']
-                class_data = class_data.to(device)
+            if isinstance(batch, dict) and 'batch_indices' in batch:
+                # New format with multiple pins per component
+                class_data = batch['class_data'].to(device)
+                pin_data = batch['pin_data'].to(device)
+                candidate_edges = [ce.to(device) if ce is not None else None 
+                                  for ce in batch['candidate_edges']]
+                edge_labels = [el.to(device) if el is not None else None 
+                              for el in batch['edge_labels']]
+                pin_positions = batch['pin_positions'].to(device)
+                batch_indices = batch['batch_indices'].to(device)
+
+                num_examples = class_data.batch.max().item() + 1
+                pins_per_example = []
+                candidate_edges_per_example = []
+                edge_labels_per_example = []
+                pin_positions_per_example = []
                 
-                class_output = model(class_data, task='classification')
-                class_preds = class_output.max(1)[1]
+                for example_idx in range(num_examples):
+                    # Find all pins belonging to example
+                    mask = (batch_indices == example_idx)
+                    pin_indices = mask.nonzero(as_tuple=True)[0]
+                    
+                    if len(pin_indices) > 0:
+                        pins_per_example.append([pin_data[i] for i in pin_indices.tolist()])
+                        candidate_edges_per_example.append([candidate_edges[i] for i in pin_indices.tolist()])
+                        edge_labels_per_example.append([edge_labels[i] for i in pin_indices.tolist()])
+                        pin_positions_per_example.append([pin_positions[i] for i in pin_indices.tolist()])
+                    else:
+                        pins_per_example.append([])
+                        candidate_edges_per_example.append([])
+                        edge_labels_per_example.append([])
+                        pin_positions_per_example.append([])
+                    
+                class_output, all_edge_scores = model(class_data=class_data, pin_data_list=pins_per_example, candidates_edges_list=candidate_edges_per_example, task='both', teacher_forcing=False, pin_positions=pin_positions_per_example)
+                    
+                # Classification metrics
+                node_loss = F.cross_entropy(class_output, class_data.y.view(-1), reduction='sum')
+                preds = class_output.max(1)[1]
                 
-                all_preds.extend(class_preds.cpu().numpy())
+                all_preds.extend(preds.cpu().numpy())
                 all_labels.extend(class_data.y.view(-1).cpu().numpy())
+                total_node_loss += node_loss.item()
                 
-                # Pin prediction evaluation
-                pin_data, cand_edges, edge_labels, pin_positions = batch['pin_prediction']
-                if pin_data is not None:
-                    pin_data = pin_data.to(device)
-                    if cand_edges is not None:
-                        cand_edges = [ce.to(device) if ce is not None else None for ce in candidate_edges_list]
-                        edge_labels = [el.to(device) if el is not None else None for el in edge_labels]
-                        pin_positions = pin_positions.to(device)
-                    
-                    edge_scores_list = model(
-                        pin_data,
-                        candidate_edges=cand_edges,
-                        task='link_prediction',
-                        pin_position=pin_positions
-                    )
-                    
-                    for edge_scores, edge_labels_batch in zip(edge_scores_list, edge_labels):
-                        if len(edge_scores) > 0 and len(edge_labels_batch) > 0:
+                # Link prediction metrics - collect ALL edge predictions
+                batch_edge_loss = torch.tensor(0.0, device=device)
+                total_edge_count = 0
+                
+                for example_idx, (example_edge_scores, example_edge_labels) in enumerate(zip(all_edge_scores, edge_labels_per_example)):
+                    for pin_idx, (edge_scores, edge_labels_batch) in enumerate(zip(example_edge_scores, example_edge_labels)):
+                        if edge_scores is not None and edge_labels_batch is not None and len(edge_scores) > 0 and len(edge_labels_batch) > 0:
+                            # Calculate loss for this pin
+                            batch_edge_loss += F.binary_cross_entropy(edge_scores, edge_labels_batch.float(), reduction='sum')
+                            total_edge_count += len(edge_scores)
+                            
+                            # Collect predictions for metrics
                             all_edge_preds.extend(edge_scores.cpu().numpy())
                             all_edge_labels.extend(edge_labels_batch.cpu().numpy())
+                
+                if total_edge_count > 0:
+                    batch_edge_loss = batch_edge_loss / total_edge_count
+                    total_edge_loss += batch_edge_loss.item()
+                
+                num_batches += 1
             elif isinstance(batch, tuple):
                 data, candidate_edges_list, edge_labels_list = batch
 
@@ -194,51 +173,73 @@ def eval_multitask(model, loader, device):
                 if candidate_edges_list is not None:
                     # Move each tensor in the list to device
                     candidate_edges_list = [ce.to(device) if ce is not None else None for ce in candidate_edges_list]
-                    edge_labels_list = [el.to(device) if el is not None else None for el in edge_labels]
+                    edge_labels_list = [el.to(device) if el is not None else None for el in edge_labels_list]
                 
                 # Get predictions
                 class_output, edge_scores_list = model(data, candidate_edges=candidate_edges_list, task='both', teacher_forcing=False)  # No teacher forcing during evaluation
+                # Classification metrics
+                node_loss = F.cross_entropy(class_output, data.y.view(-1), reduction='sum')
+                preds = class_output.max(1)[1]
+                
+                all_preds.extend(preds.cpu().numpy())
+                all_labels.extend(data.y.view(-1).cpu().numpy())
+                total_node_loss += node_loss.item()
+                
+                # Link prediction metrics
+                batch_edge_loss = torch.tensor(0.0, device=device)
+                if edge_labels_list is not None and edge_scores_list is not None:
+                    num_edges = 0
+                    
+                    for edge_scores, edge_labels in zip(edge_scores_list, edge_labels_list):
+                        if edge_scores is not None and edge_labels is not None and len(edge_scores) > 0 and len(edge_labels) > 0:
+                            batch_edge_loss += F.binary_cross_entropy(edge_scores, edge_labels.float(), reduction='sum')
+                            all_edge_preds.extend(edge_scores.cpu().numpy())
+                            all_edge_labels.extend(edge_labels.cpu().numpy())
+                            num_edges += len(edge_scores)
+                    
+                    if num_edges > 0:
+                        batch_edge_loss = batch_edge_loss / num_edges
+                        total_edge_loss += batch_edge_loss.item()
+                
+                num_batches += 1
             else:
                 data = batch
                 candidate_edges_list = getattr(data, 'candidate_edges', None)
                 edge_labels_list = getattr(data, 'edge_labels', None)
-            
+                
                 data = data.to(device)
                 if candidate_edges_list is not None:
-                    # Move each tensor in the list to device
                     candidate_edges_list = [ce.to(device) if ce is not None else None for ce in candidate_edges_list]
-                    edge_labels_list = [el.to(device) if el is not None else None for el in edge_labels]
+                    edge_labels_list = [el.to(device) if el is not None else None for el in edge_labels_list]
                 
                 # Get predictions
-                class_output, edge_scores_list = model(data, candidate_edges=candidate_edges_list, task='both', teacher_forcing=False)  # No teacher forcing during evaluation
-            
-            # Classification metrics
-            node_loss = F.cross_entropy(class_output, data.y.view(-1), reduction='sum')
-            preds = class_output.max(1)[1]
-            
-            all_preds.extend(preds.cpu().numpy())
-            all_labels.extend(data.y.view(-1).cpu().numpy())
-            total_node_loss += node_loss.item()
-            
-            # Link prediction metrics
-            batch_edge_loss = torch.tensor(0.0, device=device)
-            if edge_labels_list is not None and edge_scores_list is not None:
-                # Combine all edge losses from the batch
-                num_edges = 0
+                class_output, edge_scores_list = model(data, candidate_edges=candidate_edges_list, task='both', teacher_forcing=False)
                 
-                for edge_scores, edge_labels in zip(edge_scores_list, edge_labels_list):
-                    if len(edge_scores) > 0 and len(edge_labels) > 0:
-                        batch_edge_loss += F.binary_cross_entropy(edge_scores, edge_labels.float(), reduction='sum')
-                        all_edge_preds.extend(edge_scores.cpu().numpy())
-                        all_edge_labels.extend(edge_labels.cpu().numpy())
-                        num_edges += len(edge_scores)
+                # Classification metrics
+                node_loss = F.cross_entropy(class_output, data.y.view(-1), reduction='sum')
+                preds = class_output.max(1)[1]
                 
-                if num_edges > 0:
-                    batch_edge_loss = batch_edge_loss / num_edges
-                    total_edge_loss += batch_edge_loss.item()
-            
-            
-            num_batches += 1
+                all_preds.extend(preds.cpu().numpy())
+                all_labels.extend(data.y.view(-1).cpu().numpy())
+                total_node_loss += node_loss.item()
+                
+                # Link prediction metrics
+                batch_edge_loss = torch.tensor(0.0, device=device)
+                if edge_labels_list is not None and edge_scores_list is not None:
+                    num_edges = 0
+                    
+                    for edge_scores, edge_labels in zip(edge_scores_list, edge_labels_list):
+                        if edge_scores is not None and edge_labels is not None and len(edge_scores) > 0 and len(edge_labels) > 0:
+                            batch_edge_loss += F.binary_cross_entropy(edge_scores, edge_labels.float(), reduction='sum')
+                            all_edge_preds.extend(edge_scores.cpu().numpy())
+                            all_edge_labels.extend(edge_labels.cpu().numpy())
+                            num_edges += len(edge_scores)
+                    
+                    if num_edges > 0:
+                        batch_edge_loss = batch_edge_loss / num_edges
+                        total_edge_loss += batch_edge_loss.item()
+                
+                num_batches += 1
     
     # Calculate metrics
     results = {
@@ -317,8 +318,8 @@ def train_multitask_fegin(dataset, dataset_name, model, epochs, batch_size, lr,
         if torch.cuda.is_available():
             torch.cuda.synchronize()
         
-        train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, collate_fn=multitask_collate)
-        test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, collate_fn=multitask_collate)
+        train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, collate_fn=multitask_dual_collate)
+        test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, collate_fn=multitask_dual_collate)
         
         for epoch in range(epochs):
             train_metrics = train_multitask_epoch( model, optimizer, train_loader, device, lambda_node, lambda_edge)

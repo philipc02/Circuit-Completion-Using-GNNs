@@ -10,65 +10,65 @@ string_classes = (str, bytes)
 from torch_geometric.data import Batch
 
 def multitask_dual_collate(batch):
-    if isinstance(batch[0], dict):
-        # Separate examples for classification and pin level link prediction 
-        class_batch = []
-        pin_batch = []
-        pin_candidate_edges_list = []
-        pin_edge_labels_list = []
-        pin_positions = []
-        
-        for item in batch:
-            # Classification example
-            class_data, _, _ = item['classification']
-            class_batch.append(class_data)
-            
-            # Pin prediction examples
-            for pin_data, cand_edges, edge_labels in item['pin_predictions']:
-                pin_batch.append(pin_data)
-                # Store candidate edges and labels
-                pin_candidate_edges_list.append(cand_edges)
-                pin_edge_labels_list.append(edge_labels)
-                pin_positions.append(pin_data.pin_position.item() if hasattr(pin_data, 'pin_position') else 0)
-        
-        # Batch classification examples
-        class_batch = Batch.from_data_list(class_batch)
-        
-        # Batch pin examples
-        if pin_batch:
-            pin_batch = Batch.from_data_list(pin_batch)
-            pin_positions = torch.tensor(pin_positions, dtype=torch.long)
+    # batch item is dict with 'classification' (Data object -> component + all pin masked)
+    # and 'pin_predictions' (list of Data pbjects -> one pin masked), 'candidate_edges' and 'edge_labels' as lists of tensors
+    # 'pin_positions' list of pin indices
+
+    class_batch = []
+    all_pin_data = []         # Flattened list of all pin graphs
+    all_cand_edges = []       # Flattened list of all candidate edges
+    all_edge_labels = []      # Flattened list of all edge labels
+    pin_positions = []        # Flattened list of all pin positions
+    batch_indices = [] 
+    
+    for batch_idx, item in enumerate(batch):
+        # Classification example
+        class_batch.append(item['classification'])
+        class_batch.append(item['pin_prediction'])
+        # Add each pin prediction for this component
+        num_pins = len(item['pin_predictions'])
+        for i in range(num_pins):
+            all_pin_data.append(item['pin_predictions'][i])
+            all_cand_edges.append(item['candidate_edges'][i])
+            all_edge_labels.append(item['edge_labels'][i])
+            pin_positions.append(item['pin_positions'][i])
+            batch_indices.append(batch_idx)
+
+    
+    # Batch examples
+    class_batch = Batch.from_data_list(class_batch)
+    pin_batch = Batch.from_data_list(all_pin_data)
+    pin_positions = torch.tensor(pin_positions, dtype=torch.long)
+
+    # Adjusted cand edge indices for batching
+    adjusted_cand_edges = []
+    node_counts = [data.num_nodes for data in all_pin_data]
+    cumulative_offsets = [0]
+    for count in node_counts:
+        cumulative_offsets.append(cumulative_offsets[-1] + count)
+    
+    # TODO
+    for i, (cand_edges, offset) in enumerate(zip(all_cand_edges, cumulative_offsets[:-1])):
+        if cand_edges is not None and cand_edges.shape[1] > 0:
+            adjusted = cand_edges.clone()
+            adjusted[0, :] += offset
+            adjusted[1, :] += offset
+            adjusted_cand_edges.append(adjusted)
         else:
-            pin_batch = None
-            pin_candidate_edges_list = None
-            pin_edge_labels_list = None
-            pin_positions = None
-        
-        return {
-            'classification': (class_batch, None, None),
-            'pin_prediction': (pin_batch, pin_candidate_edges_list, pin_edge_labels_list, pin_positions)
-        }
-    else:
-        all_data = []
-        all_cand_edges = []
-        all_edge_labels = []
-        
-        for item in batch:
-            data_copy = item.clone()
-            cand_edges = getattr(item, 'candidate_edges', None)
-            edge_labels = getattr(item, 'edge_labels', None)
-            
-            if hasattr(data_copy, 'candidate_edges'):
-                del data_copy.candidate_edges
-            if hasattr(data_copy, 'edge_labels'):
-                del data_copy.edge_labels
-            
-            all_data.append(data_copy)
-            all_cand_edges.append(cand_edges)
-            all_edge_labels.append(edge_labels)
-        
-        data_batch = Batch.from_data_list(all_data)
-        return data_batch, all_cand_edges, all_edge_labels
+            adjusted_cand_edges.append(cand_edges)
+
+    # Store batch indices to reconstruct which pins belong to which component
+    batch_indices_tensor = torch.tensor(batch_indices, dtype=torch.long)
+    
+    return {
+        'class_data': class_batch,
+        'pin_data': pin_batch,
+        'candidate_edges': adjusted_cand_edges,
+        'edge_labels': all_edge_labels,
+        'pin_positions': pin_positions,
+        'batch_indices': batch_indices_tensor,
+        'num_pins_per_example': torch.tensor([len(item['pin_predictions']) for item in batch], dtype=torch.long)
+    }
 
 def multitask_collate(batch):
     all_data = []

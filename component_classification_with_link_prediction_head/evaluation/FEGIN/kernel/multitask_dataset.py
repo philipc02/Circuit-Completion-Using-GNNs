@@ -143,57 +143,62 @@ class MultiTaskCircuitDataset(InMemoryDataset):
             if G_class_masked is None or G_class_masked.number_of_nodes() < 2:
                 continue
             
+            # Create classification example
+            class_data = self.convert_graph_to_pyg(G_class_masked)
+            if class_data is None:
+                continue
+
+            class_data.set = split
+            class_data.y = torch.tensor([comp_type_to_idx[comp_type]], dtype=torch.long)
+            class_data.target_component = comp_node
+            class_data.comp_type = comp_type
+
+            # TASK 2: Pin Connection Prediction (one example per pin)
+                        
             # Get all pins of this component
             pin_nodes = [n for n in G.neighbors(comp_node) 
                         if G.nodes[n].get('type') == 'pin']
             pin_nodes.sort(key=lambda n: G.nodes[n].get('pin', ''))
-            
-            # Create classification example
-            class_data = self.convert_graph_to_pyg(G_class_masked)
-            if class_data is not None:
-                class_data.y = torch.tensor([comp_type_to_idx[comp_type]], dtype=torch.long)
-                class_data.set = split
-                class_data.target_component = comp_node
-                class_data.comp_type = comp_type
 
-            # TASK 2: Pin Connection Prediction (one example per pin)
-                pin_examples = []
-                for pin_idx, pin_node in enumerate(pin_nodes):
-                    if pin_idx >= self.max_pins:  # Only handle up to max_pins
-                        break
-                    
-                    # Get the net this pin should connect to
-                    connected_nets = [n for n in G.neighbors(pin_node) if G.nodes[n].get('type') == 'net']
-                    
-                    if not connected_nets:
-                        continue
-                    
-                    target_net = connected_nets[0]  # For our current format just one net should be connected to each pin 
-                    
-                    # Create graph with only this pin masked
-                    G_pin_masked = self.mask_for_pin_prediction(G, comp_node, pin_node)
-                    if G_pin_masked is None or G_pin_masked.number_of_nodes() < 2:
-                        continue
-                    
-                    # Generate candidate edges from node to all nets
-                    candidate_edges, edge_labels = self.generate_candidate_edges(G_pin_masked, target_net)
-                    
-                    pin_data = self.convert_graph_to_pyg(G_pin_masked)
-                    if pin_data is not None:
-                        # Copy classification info
-                        pin_data.y = torch.tensor([comp_type_to_idx[comp_type]], dtype=torch.long)
-                        pin_data.set = split
-                        pin_data.target_component = comp_node
-                        pin_data.comp_type = comp_type
-                        pin_data.pin_position = torch.tensor([pin_idx], dtype=torch.long)  # NEW
-                        pin_data.pin_target = target_net  # For evaluation
-                        
-                        pin_examples.append((pin_data, candidate_edges, edge_labels))
+            pin_predictions = []
+            all_candidate_edges = []
+            all_edge_labels = []
+            pin_positions = []
+
+            for pin_idx, pin_node in enumerate(pin_nodes):
+                if pin_idx >= self.max_pins:  # Only handle up to max_pins
+                    break
                 
-                # Store as a single example with classification + pin predictions
+                # Get the net this pin should connect to
+                connected_nets = [n for n in G.neighbors(pin_node) if G.nodes[n].get('type') == 'net']
+                
+                if not connected_nets:
+                    continue
+                
+                target_net = connected_nets[0]  # For our current format just one net should be connected to each pin 
+                
+                # Create graph with only this pin masked
+                G_pin_masked = self.mask_for_pin_prediction(G, comp_node, pin_node)
+                if G_pin_masked is None or G_pin_masked.number_of_nodes() < 2:
+                    continue
+                
+                # Generate candidate edges from node to all nets
+                candidate_edges, edge_labels = self.generate_candidate_edges(G_pin_masked, target_net)
+                
+                pin_data = self.convert_graph_to_pyg(G_pin_masked)
+                if pin_data is not None:
+                    pin_predictions.append(pin_data)
+                    all_candidate_edges.append(candidate_edges)
+                    all_edge_labels.append(edge_labels)
+                    pin_positions.append(pin_idx)
+                    
+            if pin_predictions:
                 examples.append({
-                    'classification': (class_data, None, None),  # No edges for classification
-                    'pin_predictions': pin_examples
+                    'classification': class_data,
+                    'pin_predictions': pin_predictions,  # LIST of pin graphs
+                    'candidate_edges': all_candidate_edges,  # LIST of candidate edges
+                    'edge_labels': all_edge_labels,  # LIST of edge labels
+                    'pin_positions': pin_positions  # LIST of pin positions
                 })
         
         return examples
