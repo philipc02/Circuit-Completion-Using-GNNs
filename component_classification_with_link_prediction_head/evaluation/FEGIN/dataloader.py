@@ -24,7 +24,7 @@ def multitask_dual_collate(batch):
     for batch_idx, item in enumerate(batch):
         # Classification example
         class_batch.append(item['classification'])
-        class_batch.append(item['pin_prediction'])
+        class_batch.append(item['pin_predictions'])
         # Add each pin prediction for this component
         num_pins = len(item['pin_predictions'])
         for i in range(num_pins):
