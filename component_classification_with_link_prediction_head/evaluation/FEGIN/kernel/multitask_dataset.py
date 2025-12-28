@@ -21,6 +21,8 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         self.neg_sampling_ratio = neg_sampling_ratio  # ratio of negative to positive samples
         self.max_pins = max_pins
         self.split = split
+        self.num_classes = 4  # R, C, V, X
+        self.num_features = self.get_num_features(representation)
 
         super().__init__(root, transform, pre_transform, pre_filter)
         # self.data, self.slices = torch.load(self.processed_paths[0])
@@ -48,7 +50,15 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                 self.pin_positions.append(all_pin_positions[i])
         
         self.num_examples = len(self.class_data)
-        
+
+    def get_num_features(self, representation):
+        if representation == "component_component":
+            return 6
+        elif representation == "component_net":
+            return 8
+        else:
+            return 16 # component_pin, component_pin_net or anything else
+
     def __len__(self):
         return self.num_examples
 
