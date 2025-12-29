@@ -213,9 +213,9 @@ class MultiTaskFEGIN(torch.nn.Module):
             else:
                 graph_node_embeddings = node_embeddings
         
-        comp_type_emb = self.comp_type_embedding(torch.tensor([comp_type_idx], device=node_embeddings.device)).unsqueeze(0)
+        comp_type_emb = self.comp_type_embedding(torch.tensor([comp_type_idx], device=node_embeddings.device))
                 
-        pin_emb = self.pin_position_embedding(torch.tensor([pin_pos], device=node_embeddings.device)).unsqueeze(0)
+        pin_emb = self.pin_position_embedding(torch.tensor([pin_pos], device=node_embeddings.device))
                 
         scores = []
         for j in range(candidate_edges.shape[1]):
