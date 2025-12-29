@@ -194,16 +194,24 @@ class MultiTaskFEGIN(torch.nn.Module):
             return class_output, all_edge_scores
 
     def process_candidate_edges_single_pin(self, node_embeddings, batch, comp_type_idx, candidate_edges, pin_pos):
+        print(f"DEBUG: batch is {batch}, type: {type(batch)}")
+        if batch is not None:
+            print(f"DEBUG: batch values: {batch}")
+        
         if candidate_edges is None or candidate_edges.shape[1] == 0:
             return torch.tensor([], device=node_embeddings.device)
         
-        batch_size = batch.max().item() + 1
-        if batch_size != 1:
-            # Shouldnt happen
-            node_indices = (batch == 0).nonzero(as_tuple=True)[0]
-            graph_node_embeddings = node_embeddings[node_indices]
-        else:
+        if batch is None:
+            # Single graph case - all embeddings belong to one graph
             graph_node_embeddings = node_embeddings
+        else:
+            batch_size = batch.max().item() + 1
+            if batch_size != 1:
+                # Shouldnt happen
+                node_indices = (batch == 0).nonzero(as_tuple=True)[0]
+                graph_node_embeddings = node_embeddings[node_indices]
+            else:
+                graph_node_embeddings = node_embeddings
         
         comp_type_emb = self.comp_type_embedding(torch.tensor([comp_type_idx], device=node_embeddings.device)).unsqueeze(0)
                 
