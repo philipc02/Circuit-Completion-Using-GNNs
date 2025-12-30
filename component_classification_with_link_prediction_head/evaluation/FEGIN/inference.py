@@ -47,7 +47,7 @@ def predict_component_completion(model, original_graph, representation='componen
     
     results = []
     
-    for target_component in component_nodes[:3]:
+    for target_component in component_nodes[:6]:
         print(f"\n---Predicting component type at node: {target_component}---")
         
         actual_type = original_graph.nodes[target_component].get('comp_type', 'Unknown')
