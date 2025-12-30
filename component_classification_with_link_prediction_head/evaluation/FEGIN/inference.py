@@ -9,6 +9,8 @@ from kernel.multitask_FEGIN import MultiTaskFEGIN
 from kernel.multitask_dataset import MultiTaskCircuitDataset
 from pathlib import Path
 from sklearn.metrics import roc_auc_score, precision_recall_curve
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 
 def load_trained_model(model_path, dataset, device='cuda'):
@@ -20,7 +22,8 @@ def load_trained_model(model_path, dataset, device='cuda'):
         use_z=False,
         use_rd=False,
         lambda_node=1.0,
-        lambda_edge=1.0
+        lambda_edge=1.0,
+        max_pins=2
     )
     
     checkpoint = torch.load(model_path, map_location=device)
@@ -33,8 +36,7 @@ def load_trained_model(model_path, dataset, device='cuda'):
 def predict_component_completion(model, original_graph, representation='component_pin_net', device='cuda'):
     print("********************COMPONENT COMPLETION INFERENCE***********************")
     
-    # Step 1: Create masked graph
-    # For demonstration: remove one component at time and predict
+    # TASK 1: COMPONENT CLASSIFICATION
     
     component_nodes = [node for node, attr in original_graph.nodes(data=True) 
                       if attr.get('type') == 'component']
@@ -58,6 +60,7 @@ def predict_component_completion(model, original_graph, representation='componen
         if representation in ["component_pin", "component_pin_net"]:
             pin_nodes = [node for node in G_masked.neighbors(target_component) 
                         if G_masked.nodes[node].get('type') == 'pin']
+            pin_nodes.sort(key=lambda n: original_graph.nodes[n].get('pin', ''))
             removed_nodes.extend(pin_nodes)
         
         G_masked.remove_nodes_from(removed_nodes)
@@ -67,14 +70,12 @@ def predict_component_completion(model, original_graph, representation='componen
             print("  Not enough nodes after masking, skipping...")
             continue
 
-        # Step 2: Get true connections for evaluation
-        true_connections = get_component_connections(original_graph, target_component, representation)
         
-        # Step 3: Convert masked graph to PyG Data
         data = convert_graph_to_pyg(G_masked, representation)
         if data is None:
             continue
         
+        '''
         # Step 4: Create candidate edges from virtual node to all existing nodes
         node_mapping = {node: i for i, node in enumerate(G_masked.nodes())}
         candidate_edges = []
@@ -90,12 +91,12 @@ def predict_component_completion(model, original_graph, representation='componen
             candidate_edges_list = [candidate_edges_tensor]
         else:
             candidate_edges_list = [torch.empty((2, 0), dtype=torch.long)]
+            '''
         
-        # Step 5: Prepare batch (single graph)
         data_batch = Batch.from_data_list([data])
         data_batch = data_batch.to(device)
         
-        # Step 5: Run inference
+        # Run inference
         with torch.no_grad():
             class_output = model(data_batch, task='classification')
             predicted_class = class_output.max(1)[1].item()
@@ -106,153 +107,206 @@ def predict_component_completion(model, original_graph, representation='componen
             print(f"  Predicted component type: {predicted_type}")
             print(f"  Prediction confidence: {torch.exp(class_output[0, predicted_class]):.3f}")
 
-            edge_scores_list = model(
-                data_batch, 
-                candidate_edges=candidate_edges_list, 
-                task='link_prediction',
-                teacher_forcing=False  # Use predicted type, not true type
-            )
+            correct_type = (predicted_type == actual_type)
 
+            # TASK 2: PIN CONNECTION PREDICTION for each pin
 
-            predicted_connections = []
+            all_pin_results = []
             
-            if edge_scores_list and len(edge_scores_list[0]) > 0:
-                edge_scores = edge_scores_list[0].cpu().numpy()
-
-                print(f"  Edge predictions shape: {edge_scores.shape}")
-                print(f"  Edge scores min/max: {edge_scores.min():.3f}/{edge_scores.max():.3f}")
-                print(f"  Edge scores mean/std: {edge_scores.mean():.3f}/{edge_scores.std():.3f}")
-
-                if len(edge_scores) != len(node_mapping):
-                    print(f"  WARNING: Expected {len(node_mapping)} scores, got {len(edge_scores)}")
-
-########################################
+            for pin_idx, pin_node in enumerate(pin_nodes):
+                # TODO: what about subcircuits? can have more pins...
+                if pin_idx >= 2:  # Only handle up to 2 pins (max_pins in model)
+                    break
+                    
+                print(f"\n  Predicting connections for pin {pin_idx} ({pin_node})")
+                
+                # Get the net this pin should connect to (ground truth)
+                connected_nets = [n for n in original_graph.neighbors(pin_node) 
+                                if original_graph.nodes[n].get('type') == 'net']
+                
+                # TODO: (future) model that predicts whether pin nodes has connection or not (not only which node it connects to when it definetly has a connection)
+                if not connected_nets:
+                    print(f"    Pin {pin_idx} has no connected net, skipping...")
+                    continue
+                    
+                target_net = connected_nets[0]
+                print(f"    True connection: pin {pin_idx} -> net {target_net}")
+                
+                # Create graph with only this pin masked
+                G_pin_masked = original_graph.copy()
+                G_pin_masked.remove_node(pin_node)
+                
+                # Generate candidate edges from virtual pin node to all net nodes
+                node_mapping = {node: i for i, node in enumerate(G_pin_masked.nodes())}
+                candidate_edges = []
+                
+                VIRTUAL_NODE_IDX = -1
+                
+                # Only consider net nodes as candidates
+                # TODO: is this making it very easy for the model?
+                net_nodes = [node for node in G_pin_masked.nodes() 
+                            if G_pin_masked.nodes[node].get('type') == 'net']
+                
+                for net_node in net_nodes:
+                    idx = node_mapping[net_node]
+                    candidate_edges.append([VIRTUAL_NODE_IDX, idx])
+                
+                if not candidate_edges:
+                    print(f"    No net nodes found as candidates, skipping...")
+                    continue
+                
+                candidate_edges_tensor = torch.tensor(candidate_edges, dtype=torch.long).t()
+                
+                # Convert masked graph to PyG Data
+                pin_data = convert_graph_to_pyg(G_pin_masked, representation)
+                if pin_data is None:
+                    continue
+                
+                # Pin position attribute
+                pin_data.pin_position = torch.tensor([pin_idx], dtype=torch.long)
+                
+                pin_batch = Batch.from_data_list([pin_data]).to(device)
+                
+                # Use predicted component type (teacher_forcing=False)
+                with torch.no_grad():
+                    edge_scores = model(
+                        class_data=data_batch,
+                        pin_data_list=[[pin_batch]],
+                        candidate_edges_list=[[candidate_edges_tensor]],
+                        task='both',
+                        teacher_forcing=False,
+                        pin_position=[[pin_idx]]
+                    )[1]  # Returns value (class_output, all_edge_scores)
+                    
+                    # Extract scores
+                    if edge_scores and edge_scores[0] and len(edge_scores[0]) > 0:
+                        pin_edge_scores = edge_scores[0][0].cpu().numpy()
+                    else:
+                        print(f"    No edge scores returned for pin {pin_idx}")
+                        continue
 
                 all_labels = []
-                node_list = list(node_mapping.keys())
+                net_node_list = list(net_nodes)
                 
-                for node in node_list:
-                    is_true_connection = node in true_connections
+                for net_node in net_node_list:
+                    is_true_connection = (net_node == target_net)
                     all_labels.append(1 if is_true_connection else 0)
                 
                 all_labels = np.array(all_labels)
                 
                 # Calculate auc
                 try:
-                    auc_score = roc_auc_score(all_labels, edge_scores)
+                    auc_score = roc_auc_score(all_labels, pin_edge_scores)
                     print(f"  AUC-ROC: {auc_score:.3f}")
                 except ValueError as e:
                     print(f"  AUC-ROC calculation failed: {e}")
                     auc_score = 0.5
 
-                precision, recall, thresholds = precision_recall_curve(all_labels, edge_scores)
+                precision, recall, thresholds = precision_recall_curve(all_labels, pin_edge_scores)
     
-                # Find threshold that maximizes f1
-                f1_scores = 2 * (precision[:-1] * recall[:-1]) / (precision[:-1] + recall[:-1] + 1e-10)
-                optimal_idx = np.argmax(f1_scores) if len(f1_scores) > 0 else 0
-                optimal_threshold = thresholds[optimal_idx] if optimal_idx < len(thresholds) else 0.5
-                
-                predicted_binary = (edge_scores > optimal_threshold).astype(int)
+                if len(thresholds) > 0:
+                    # Find threshold that maximizes f1
+                    f1_scores = 2 * (precision[:-1] * recall[:-1]) / (precision[:-1] + recall[:-1] + 1e-10)
+                    optimal_idx = np.argmax(f1_scores)
+                    optimal_threshold = thresholds[optimal_idx]
+                    
+                    predicted_binary = (pin_edge_scores > optimal_threshold).astype(int)
 
-                tp = ((predicted_binary == 1) & (all_labels == 1)).sum()
-                fp = ((predicted_binary == 1) & (all_labels == 0)).sum()
-                fn = ((predicted_binary == 0) & (all_labels == 1)).sum()
-                
-                precision_opt = tp / (tp + fp) if (tp + fp) > 0 else 0
-                recall_opt = tp / (tp + fn) if (tp + fn) > 0 else 0
-                f1_opt = 2 * precision_opt * recall_opt / (precision_opt + recall_opt + 1e-10) if (precision_opt + recall_opt) > 0 else 0
+                    tp = ((predicted_binary == 1) & (all_labels == 1)).sum()
+                    fp = ((predicted_binary == 1) & (all_labels == 0)).sum()
+                    fn = ((predicted_binary == 0) & (all_labels == 1)).sum()
+                    
+                    precision_opt = tp / (tp + fp) if (tp + fp) > 0 else 0
+                    recall_opt = tp / (tp + fn) if (tp + fn) > 0 else 0
+                    f1_opt = 2 * precision_opt * recall_opt / (precision_opt + recall_opt + 1e-10) if (precision_opt + recall_opt) > 0 else 0
 
-                print(f"  Optimal threshold: {optimal_threshold:.3f}")
-                print(f"  F1 at optimal threshold: {f1_opt:.3f}")
-                print(f"  Precision/Recall at optimal: {precision_opt:.3f}/{recall_opt:.3f}")
-
-                # For comparison
-                predicted_binary_05 = (edge_scores > 0.5).astype(int)
-                tp_05 = ((predicted_binary_05 == 1) & (all_labels == 1)).sum()
-                fp_05 = ((predicted_binary_05 == 1) & (all_labels == 0)).sum()
-                fn_05 = ((predicted_binary_05 == 0) & (all_labels == 1)).sum()
-                
-                precision_05 = tp_05 / (tp_05 + fp_05) if (tp_05 + fp_05) > 0 else 0
-                recall_05 = tp_05 / (tp_05 + fn_05) if (tp_05 + fn_05) > 0 else 0
-                f1_05 = 2 * precision_05 * recall_05 / (precision_05 + recall_05 + 1e-10) if (precision_05 + recall_05) > 0 else 0
-                
-                print(f"  F1 at 0.5 threshold: {f1_05:.3f}")
-                print(f"  Precision/Recall at 0.5: {precision_05:.3f}/{recall_05:.3f}")
-
-#######################################
+                    print(f"  Optimal threshold: {optimal_threshold:.3f}")
+                    print(f"  F1 at optimal threshold: {f1_opt:.3f}")
+                    print(f"  Precision/Recall at optimal: {precision_opt:.3f}/{recall_opt:.3f}")
+                else:
+                    f1_opt = 0
+                    precision_opt = 0
+                    recall_opt = 0
+                    optimal_threshold = 0.5
                 
                 # Get top-k connection candidates
-                k = min(10, len(edge_scores))
-                top_indices = np.argsort(edge_scores)[-k:][::-1]
+                k = min(5, len(pin_edge_scores))
+                top_indices = np.argsort(pin_edge_scores)[-k:][::-1]
                 
                 print(f"  Top {k} connection candidates:")
                 for rank, idx in enumerate(top_indices, 1):
-                    node_list = list(node_mapping.keys())
-                    original_node = node_list[idx]
-
-                    node_type = G_masked.nodes[original_node].get('type', 'unknown')
-                    node_comp_type = G_masked.nodes[original_node].get('comp_type', '')
-                    is_true_connection = original_node in true_connections
-                    truth_label = "✓" if is_true_connection else "✗"
-                    print(f"    {rank}. Node {original_node} ({node_type}{'/'+node_comp_type if node_comp_type else ''}) "
-                          f"score = {edge_scores[idx]:.3f} {truth_label}")
+                    net_node = net_node_list[idx]
+                    net_name = f"net_{net_node}"
+                    is_correct = (net_node == target_net)
+                    truth_label = "✓" if is_correct else "✗"
+                    print(f"      {rank}. {net_name}: score={pin_edge_scores[idx]:.3f} {truth_label}")
                 
-            
-            # Check if prediction for component classification is correct
-            correct_type = (predicted_type == actual_type)
-            results.append({
-                'target_node': target_component,
-                'actual_type': actual_type,
-                'predicted_type': predicted_type,
-                'correct': correct_type,
-                'true_connections': list(true_connections),
-                'predicted_connections': predicted_connections,
+            all_pin_results.append({
+                'pin_idx': pin_idx,
+                'pin_node': pin_node,
+                'target_net': target_net,
                 'auc': auc_score,
-                'f1_optimal': f1_opt,
-                'f1_05': f1_05,
-                'precision_optimal': precision_opt,
-                'recall_optimal': recall_opt,
-                'optimal_threshold': optimal_threshold
+                'f1': f1_opt,
+                'precision': precision_opt,
+                'recall': recall_opt,
+                'top_predictions': [(net_node_list[i], pin_edge_scores[i]) for i in top_indices]
             })
+            
+            if all_pin_results:
+                avg_pin_auc = np.mean([r['auc'] for r in all_pin_results])
+                avg_pin_f1 = np.mean([r['f1'] for r in all_pin_results])
+
+                results.append({
+                    'target_node': target_component,
+                    'actual_type': actual_type,
+                    'predicted_type': predicted_type,
+                    'correct_type': correct_type,
+                    'num_pins': len(pin_nodes),
+                    'pin_results': all_pin_results,
+                    'avg_pin_auc': avg_pin_auc,
+                    'avg_pin_f1': avg_pin_f1
+                })
     
     # Summary
     print("*******************INFERENCE SUMMARY*******************")
-    correct_count = sum(1 for r in results if r['correct'])
-    accuracy = correct_count / len(results) if results else 0
-    print(f"Component type accuracy: {accuracy:.1%} ({correct_count}/{len(results)})")
-
     if results:
-        avg_auc = np.mean([r['auc'] for r in results])
-        avg_f1_opt = np.mean([r['f1_optimal'] for r in results])
-        avg_f1_05 = np.mean([r['f1_05'] for r in results])
-        avg_precision_opt = np.mean([r['precision_optimal'] for r in results])
-        avg_recall_opt = np.mean([r['recall_optimal'] for r in results])
+        correct_count = sum(1 for r in results if r['correct_type'])
+        accuracy = correct_count / len(results) if results else 0
+        print(f"Component type accuracy: {accuracy:.1%} ({correct_count}/{len(results)})")
+
+    all_pins = [pin for r in results for pin in r['pin_results']]
+    if all_pins:
+        avg_auc = np.mean([r['auc'] for r in all_pins])
+        avg_f1 = np.mean([r['f1'] for r in all_pins])
+        avg_precision = np.mean([r['precision'] for r in all_pins])
+        avg_recall = np.mean([r['recall'] for r in all_pins])
         
-        print(f"\nLink Prediction Average (across {len(results)} components):")
-        print(f"  AUC-ROC: {avg_auc:.3f} (primary metric)")
-        print(f"\n  At optimal threshold:")
-        print(f"    F1: {avg_f1_opt:.3f}")
-        print(f"    Precision: {avg_precision_opt:.3f}")
-        print(f"    Recall: {avg_recall_opt:.3f}")
-        print(f"\n  At 0.5 threshold:")
-        print(f"    F1: {avg_f1_05:.3f}")
+        print(f"\nLink Prediction Average (across {len(all_pins)} pins):")
+        print(f"    AUC-ROC: {avg_auc:.3f} (primary metric)")
+        print(f"    F1: {avg_f1:.3f}")
+        print(f"    Precision: {avg_precision:.3f}")
+        print(f"    Recall: {avg_recall:.3f}")
+
+        top1_correct = 0
+        top3_correct = 0
+        
+        for pin_result in all_pins:
+            top_predictions = [net for net, _ in pin_result['top_predictions']]
+            target_net = pin_result['target_net']
+            
+            if top_predictions and target_net == top_predictions[0]:
+                top1_correct += 1
+            if target_net in top_predictions[:min(3, len(top_predictions))]:
+                top3_correct += 1
+        
+        top1_acc = top1_correct / len(all_pins) if all_pins else 0
+        top3_acc = top3_correct / len(all_pins) if all_pins else 0
+        
+        print(f"\nTop-K Accuracy:")
+        print(f"  Top-1 Accuracy: {top1_acc:.1%} ({top1_correct}/{len(all_pins)})")
+        print(f"  Top-3 Accuracy: {top3_acc:.1%} ({top3_correct}/{len(all_pins)})")
     
     return results
-
-def get_component_connections(G, comp_node, representation):
-    connections = set()
-    
-    if representation in ["component_component", "component_net"]:
-        connections = set(G.neighbors(comp_node))
-    elif representation in ["component_pin", "component_pin_net"]:
-        pin_nodes = [n for n in G.neighbors(comp_node) 
-                    if G.nodes[n].get('type') == 'pin']
-        for pin in pin_nodes:
-            for neighbor in G.neighbors(pin):
-                if neighbor != comp_node:
-                    connections.add(neighbor)
-    
-    return connections
 
 def convert_graph_to_pyg(G, representation):
     if G.number_of_nodes() == 0:
@@ -476,7 +530,8 @@ def demo_with_sample_circuit(model_path, device='cuda'):
         max_nodes_per_hop=None,
         node_label="spd",
         use_rd=False,
-        neg_sampling_ratio=1.0
+        neg_sampling_ratio=1.0,
+        max_pins=2
     )
     
     model = load_trained_model(model_path, dataset, device)
@@ -507,5 +562,5 @@ if __name__ == "__main__":
     print(f"Using device: {device}")
     
     # Path to trained model
-    model_path = Path("fegin_experiments") / "ltspice_demos_MultiTaskFEGIN__20251213131938_20251213_131938" / "models" / "best_multitask_model_iter_8.pth"
-    demo_with_sample_circuit(model_path, device)
+    model_path = Path("fegin_experiments") / "ltspice_demos_MultiTaskFEGIN__20251229171920_20251229_171920" / "models" / "best_multitask_model_iter_5.pth"
+    results = demo_with_sample_circuit(model_path, device)
