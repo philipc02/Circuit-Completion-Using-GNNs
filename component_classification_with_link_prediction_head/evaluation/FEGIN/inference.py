@@ -210,7 +210,7 @@ def predict_component_completion(model, original_graph, representation='componen
                     optimal_idx = np.argmax(f1_scores)
                     optimal_threshold = thresholds[optimal_idx]
                     
-                    predicted_binary = (pin_edge_scores > optimal_threshold).astype(int)
+                    predicted_binary = (pin_edge_scores >= optimal_threshold).astype(int)
 
                     tp = ((predicted_binary == 1) & (all_labels == 1)).sum()
                     fp = ((predicted_binary == 1) & (all_labels == 0)).sum()
