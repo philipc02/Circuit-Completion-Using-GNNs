@@ -23,7 +23,7 @@ def load_trained_model(model_path, dataset, device='cuda'):
         use_rd=False,
         lambda_node=1.0,
         lambda_edge=1.0,
-        max_pins=2
+        max_pins=5
     )
     
     checkpoint = torch.load(model_path, map_location=device)
@@ -114,8 +114,7 @@ def predict_component_completion(model, original_graph, representation='componen
             all_pin_results = []
             
             for pin_idx, pin_node in enumerate(pin_nodes):
-                # TODO: what about subcircuits? can have more pins...
-                if pin_idx >= 2:  # Only handle up to 2 pins (max_pins in model)
+                if pin_idx >= 5:  # handle up to 5 pins (max_pins in model)
                     break
                     
                 print(f"\n  Predicting connections for pin {pin_idx} ({pin_node})")
@@ -530,8 +529,8 @@ def demo_with_sample_circuit(model_path, device='cuda'):
         max_nodes_per_hop=None,
         node_label="spd",
         use_rd=False,
-        neg_sampling_ratio=1.0,
-        max_pins=2
+        neg_sampling_ratio=2.0,
+        max_pins=5
     )
     
     model = load_trained_model(model_path, dataset, device)

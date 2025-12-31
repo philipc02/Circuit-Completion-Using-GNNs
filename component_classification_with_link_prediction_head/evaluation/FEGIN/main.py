@@ -89,7 +89,7 @@ def main():
                         help='Weight for component classification loss')
     parser.add_argument('--lambda_edge', type=float, default=1.0,
                         help='Weight for link prediction loss')
-    parser.add_argument('--neg_sampling_ratio', type=float, default=1.0,
+    parser.add_argument('--neg_sampling_ratio', type=float, default=2.0,
                         help='Ratio of negative to positive edge samples')
 
     # Training settings.
@@ -224,7 +224,7 @@ def main():
                     node_label=args.node_label,
                     use_rd=args.use_rd,
                     neg_sampling_ratio=args.neg_sampling_ratio,
-                    max_pins=2,
+                    max_pins=5,
                     split='train'
                 )
                 test_dataset = MultiTaskCircuitDataset(
@@ -236,7 +236,7 @@ def main():
                     node_label=args.node_label,
                     use_rd=args.use_rd,
                     neg_sampling_ratio=args.neg_sampling_ratio,
-                    max_pins=2,
+                    max_pins=5,
                     split='test'
                 )
                 print(f"Train: {len(train_dataset)}, Test: {len(test_dataset)}")
@@ -267,7 +267,7 @@ def main():
                     args.use_rd, 
                     args.max_nodes_per_hop)
             if args.model == 'MultiTaskFEGIN':
-                model = MultiTaskFEGIN(train_dataset, args.layers, args.hiddens, args.emb_size, args.node_label!='no', args.use_rd, lambda_node=args.lambda_node, lambda_edge=args.lambda_edge, max_pins=2)
+                model = MultiTaskFEGIN(train_dataset, args.layers, args.hiddens, args.emb_size, args.node_label!='no', args.use_rd, lambda_node=args.lambda_node, lambda_edge=args.lambda_edge, max_pins=5)
                 results = train_multitask_fegin(
                     train_dataset=train_dataset,
                     test_dataset=test_dataset,
