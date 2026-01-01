@@ -116,15 +116,9 @@ class MultiTaskFEGIN(torch.nn.Module):
             if hasattr(layer, 'reset_parameters'):
                 layer.reset_parameters()
 
-        for predictor in self.regular_edge_predictors:
-            for layer in predictor:
-                if hasattr(layer, 'reset_parameters'):
-                    layer.reset_parameters()
-
-        for predictor in self.subcircuit_edge_predictors:
-            for layer in predictor:
-                if hasattr(layer, 'reset_parameters'):
-                    layer.reset_parameters()
+        for layer in self.edge_predictor:
+            if hasattr(layer, 'reset_parameters'):
+                layer.reset_parameters()
     
     def encode(self, x, edge_index):
         x = self.conv1(x, edge_index)
