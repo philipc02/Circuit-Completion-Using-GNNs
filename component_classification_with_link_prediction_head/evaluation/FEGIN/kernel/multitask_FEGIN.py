@@ -70,7 +70,14 @@ class MultiTaskFEGIN(torch.nn.Module):
         )
 
         # Separate edge predictors for each pin position
+        self.edge_predictor = torch.nn.Sequential(
+            Linear(3 * num_layers * hidden, hidden), 
+            ReLU(),
+            torch.nn.Dropout(0.3),
+            Linear(hidden, 1)
+        )
 
+        '''
         # for R, C, V components (max 2 pins usually)
         self.regular_edge_predictors = torch.nn.ModuleList([
             torch.nn.Sequential(
@@ -98,6 +105,7 @@ class MultiTaskFEGIN(torch.nn.Module):
                 Linear(hidden, 1)
             ) for _ in range(max_pins)
         ])
+        '''
     
     def reset_parameters(self):
         self.conv1.reset_parameters()
@@ -243,6 +251,7 @@ class MultiTaskFEGIN(torch.nn.Module):
                 
         pin_emb = self.pin_position_embedding(torch.tensor([pin_pos], device=node_embeddings.device))
                 
+        '''
         # NEW: select predictor based on component type
         is_subcircuit = (comp_type_idx == 3)
         if is_subcircuit:
@@ -251,6 +260,7 @@ class MultiTaskFEGIN(torch.nn.Module):
         else:
             # Use regular predictor for R, C, V
             edge_predictors = self.regular_edge_predictors
+        '''
         #if candidate_edges.shape[1] > 0:
         #    print(f"DEBUG: candidate_edges min={candidate_edges.min().item()}, max={candidate_edges.max().item()}")
         scores = []
@@ -262,8 +272,8 @@ class MultiTaskFEGIN(torch.nn.Module):
                 dst_emb = graph_node_embeddings[dst].unsqueeze(0)
                 edge_feature = torch.cat([comp_type_emb, pin_emb, dst_emb], dim=1)
                 
-                pred_idx = min(pin_pos, self.max_pins - 1)
-                score = edge_predictors[pred_idx](edge_feature).squeeze()
+                # pred_idx = min(pin_pos, self.max_pins - 1)
+                score = self.edge_predictor(edge_feature).squeeze()
                 scores.append(torch.sigmoid(score))
                 
         if scores:
