@@ -9,7 +9,7 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 class MultiTaskFEGIN(torch.nn.Module):
 
     def __init__(self, dataset, num_layers, hidden, emb_size, use_z=False, use_rd=False, 
-                 lambda_node=1.0, lambda_edge=1.0, max_pins=5):
+                 lambda_node=1.0, lambda_edge=1.0, max_pins=2):
         super(MultiTaskFEGIN, self).__init__()
         self.use_z = use_z
         self.use_rd = use_rd
