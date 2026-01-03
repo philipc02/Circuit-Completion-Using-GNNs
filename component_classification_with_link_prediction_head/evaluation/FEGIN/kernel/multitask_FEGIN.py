@@ -107,9 +107,10 @@ class MultiTaskFEGIN(torch.nn.Module):
             if hasattr(layer, 'reset_parameters'):
                 layer.reset_parameters()
 
-        for layer in self.edge_predictor:
-            if hasattr(layer, 'reset_parameters'):
-                layer.reset_parameters()
+        for predictor in self.edge_predictors:
+            for layer in predictor:
+                if hasattr(layer, 'reset_parameters'):
+                    layer.reset_parameters()
         
         with torch.no_grad():
             self.temperature.fill_(1.0)
