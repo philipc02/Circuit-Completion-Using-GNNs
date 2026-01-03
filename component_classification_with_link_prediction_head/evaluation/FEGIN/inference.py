@@ -561,5 +561,5 @@ if __name__ == "__main__":
     print(f"Using device: {device}")
     
     # Path to trained model
-    model_path = Path("fegin_experiments") / "ltspice_demos_MultiTaskFEGIN__20260103070630_20260103_070630" / "models" / "best_multitask_model_iter_8.pth"
+    model_path = Path("fegin_experiments") / "ltspice_demos_MultiTaskFEGIN__20260103124550_20260103_124550" / "models" / "best_multitask_model_iter_6.pth"
     results = demo_with_sample_circuit(model_path, device)
