@@ -331,7 +331,7 @@ def train_multitask_fegin(train_dataset, test_dataset, dataset_name, model, epoc
                    f"Train loss: {train_metrics['total_loss']:.4f}"
                    f"(Node: {train_metrics['node_loss']:.4f}, Edge: {train_metrics['edge_loss']:.4f})|"
                    f"Test - Node weighted f1: {test_metrics['node_f1_weighted']:.4f},"
-                   f"Node macro F1: {test_metrics['node_f1_macro']:.4f}"
+                   f"Node macro F1: {test_metrics['node_f1_macro']:.4f},"
                    f"Edge AUC: {test_metrics['edge_auc']:.4f},"
                    f"Combined: {combined_score:.4f}")
             
