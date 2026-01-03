@@ -104,9 +104,6 @@ class MultiTaskFEGIN(torch.nn.Module):
         for layer in self.edge_predictor:
                 if hasattr(layer, 'reset_parameters'):
                     layer.reset_parameters()
-        
-        with torch.no_grad():
-            self.temperature.fill_(1.0)
     
     def encode(self, x, edge_index):
         x = self.conv1(x, edge_index)
