@@ -237,7 +237,8 @@ class MultiTaskFEGIN(torch.nn.Module):
                 
                 raw_score = self.edge_predictor(edge_feature).squeeze()
                 
-                scores.append(raw_score)
+                probability = torch.sigmoid(raw_score)
+                scores.append(probability)
                 
         if scores:
             return torch.stack(scores)
