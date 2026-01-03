@@ -70,32 +70,27 @@ class MultiTaskFEGIN(torch.nn.Module):
             num_layers * hidden
         )
 
-        # Separate edge predictors for each pin position
-        self.edge_predictors = torch.nn.ModuleList()
-        for _ in range(max_pins):
-            self.edge_predictors.append(
-                torch.nn.Sequential(
-                    Linear(3 * num_layers * hidden, hidden * 2),
-                    ReLU(),
-                    torch.nn.Dropout(0.5),
-                    Linear(hidden * 2, hidden),
-                    ReLU(),
-                    torch.nn.Dropout(0.3),
-                    Linear(hidden, 1)
-                )
-            )
-        # Temperature parameter to control sigmoid sharpness
-        self.temperature = torch.nn.Parameter(torch.tensor(1.0))
+        self.edge_predictor = torch.nn.Sequential(
+            Linear(3 * num_layers * hidden, hidden * 2),
+            ReLU(),
+            torch.nn.Dropout(0.4),
+            Linear(hidden * 2, hidden),
+            ReLU(),
+            torch.nn.Dropout(0.3),
+            Linear(hidden, 1)
+        )
         
         self._init_weights()
     
     def _init_weights(self):
-        for predictor in self.edge_predictors:
-            for layer in predictor:
+        for layer in self.edge_predictor:
                 if isinstance(layer, Linear):
-                    torch.nn.init.xavier_uniform_(layer.weight)
+                    torch.nn.init.xavier_uniform_(layer.weight, gain=0.5)
                     if layer.bias is not None:
                         torch.nn.init.zeros_(layer.bias)
+
+        torch.nn.init.normal_(self.comp_type_embedding.weight, std=0.01)
+        torch.nn.init.normal_(self.pin_position_embedding.weight, std=0.01)
     
     def reset_parameters(self):
         self.conv1.reset_parameters()
@@ -106,8 +101,7 @@ class MultiTaskFEGIN(torch.nn.Module):
             if hasattr(layer, 'reset_parameters'):
                 layer.reset_parameters()
 
-        for predictor in self.edge_predictors:
-            for layer in predictor:
+        for layer in self.edge_predictor:
                 if hasattr(layer, 'reset_parameters'):
                     layer.reset_parameters()
         
@@ -215,10 +209,6 @@ class MultiTaskFEGIN(torch.nn.Module):
             return class_output, all_edge_scores
 
     def process_candidate_edges_single_pin(self, node_embeddings, batch, comp_type_idx, candidate_edges, pin_pos):
-        #print(f"DEBUG: node_embeddings shape: {node_embeddings.shape}")
-        #print(f"DEBUG: batch is {batch}, type: {type(batch)}")
-        #if batch is not None:
-        #    print(f"DEBUG: batch values: {batch}")
         
         if candidate_edges is None or candidate_edges.shape[1] == 0:
             return torch.tensor([], device=node_embeddings.device)
@@ -226,10 +216,8 @@ class MultiTaskFEGIN(torch.nn.Module):
         if batch is None:
             # Single graph case - all embeddings belong to one graph
             graph_node_embeddings = node_embeddings
-            #print(f"DEBUG: Processing single graph with {len(graph_node_embeddings)} nodes")
         else:
             batch_size = batch.max().item() + 1
-            #print(f"DEBUG: Processing batched graph with batch_size={batch_size}")
             if batch_size != 1:
                 # Shouldnt happen
                 node_indices = (batch == 0).nonzero(as_tuple=True)[0]
@@ -250,12 +238,9 @@ class MultiTaskFEGIN(torch.nn.Module):
                 dst_emb = graph_node_embeddings[dst].unsqueeze(0)
                 edge_feature = torch.cat([comp_type_emb, pin_emb, dst_emb], dim=1)
                 
-                pred_idx = min(pin_pos, self.max_pins - 1)
-                raw_score = self.edge_predictors[pred_idx](edge_feature).squeeze()
+                raw_score = self.edge_predictor(edge_feature).squeeze()
                 
-                # temperature-scaled sigmoid to prevent saturation
-                scaled_score = torch.sigmoid(raw_score / self.temperature)
-                scores.append(scaled_score)
+                scores.append(raw_score)
                 
         if scores:
             return torch.stack(scores)
