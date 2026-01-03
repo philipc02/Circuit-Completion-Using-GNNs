@@ -78,7 +78,6 @@ class MultiTaskFEGIN(torch.nn.Module):
                     Linear(3 * num_layers * hidden, hidden * 2),
                     ReLU(),
                     torch.nn.Dropout(0.5),
-                    BN(hidden * 2),  # Added batch norm
                     Linear(hidden * 2, hidden),
                     ReLU(),
                     torch.nn.Dropout(0.3),
