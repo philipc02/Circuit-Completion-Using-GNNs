@@ -50,6 +50,7 @@ class MultiTaskFEGIN(torch.nn.Module):
             torch.nn.Dropout(0.5),
             Linear(hidden * 2, hidden),
             ReLU(),
+            torch.nn.Dropout(0.3),
             Linear(hidden, hidden),
             ReLU(),
             Linear(hidden, dataset.num_classes)
@@ -70,42 +71,32 @@ class MultiTaskFEGIN(torch.nn.Module):
         )
 
         # Separate edge predictors for each pin position
-        self.edge_predictor = torch.nn.Sequential(
-            Linear(3 * num_layers * hidden, hidden), 
-            ReLU(),
-            torch.nn.Dropout(0.3),
-            Linear(hidden, 1)
-        )
-
-        '''
-        # for R, C, V components (max 2 pins usually)
-        self.regular_edge_predictors = torch.nn.ModuleList([
-            torch.nn.Sequential(
-                Linear(3 * num_layers * hidden, hidden * 2),
-                ReLU(),
-                torch.nn.Dropout(0.5),  # increased dropout to adress score saturation (same score for multiple links)
-                Linear(hidden * 2, hidden),
-                ReLU(),
-                Linear(hidden, 1)
-            ) for _ in range(max_pins)
-        ])
-
-        # Special edge predictor for subcircuits (X type)
-        # Uses more capacity since subcircuits are more complex
-        self.subcircuit_edge_predictors = torch.nn.ModuleList([
-            torch.nn.Sequential(
-                Linear(3 * num_layers * hidden, hidden * 3),  # Larger hidden layer
-                ReLU(),
-                torch.nn.Dropout(0.4),  # Less aggressive dropout
-                Linear(hidden * 3, hidden * 2),
-                ReLU(),
-                torch.nn.Dropout(0.4),
-                Linear(hidden * 2, hidden),
-                ReLU(),
-                Linear(hidden, 1)
-            ) for _ in range(max_pins)
-        ])
-        '''
+        self.edge_predictors = torch.nn.ModuleList()
+        for _ in range(max_pins):
+            self.edge_predictors.append(
+                torch.nn.Sequential(
+                    Linear(3 * num_layers * hidden, hidden * 2),
+                    ReLU(),
+                    torch.nn.Dropout(0.5),
+                    BN(hidden * 2),  # Added batch norm
+                    Linear(hidden * 2, hidden),
+                    ReLU(),
+                    torch.nn.Dropout(0.3),
+                    Linear(hidden, 1)
+                )
+            )
+        # Temperature parameter to control sigmoid sharpness
+        self.temperature = torch.nn.Parameter(torch.tensor(1.0))
+        
+        self._init_weights()
+    
+    def _init_weights(self):
+        for predictor in self.edge_predictors:
+            for layer in predictor:
+                if isinstance(layer, Linear):
+                    torch.nn.init.xavier_uniform_(layer.weight)
+                    if layer.bias is not None:
+                        torch.nn.init.zeros_(layer.bias)
     
     def reset_parameters(self):
         self.conv1.reset_parameters()
@@ -119,6 +110,9 @@ class MultiTaskFEGIN(torch.nn.Module):
         for layer in self.edge_predictor:
             if hasattr(layer, 'reset_parameters'):
                 layer.reset_parameters()
+        
+        with torch.no_grad():
+            self.temperature.fill_(1.0)
     
     def encode(self, x, edge_index):
         x = self.conv1(x, edge_index)
@@ -151,6 +145,8 @@ class MultiTaskFEGIN(torch.nn.Module):
             logits = self.node_classifier(graph_embeddings)
             return F.log_softmax(logits, dim=1)
         
+
+        #TODO: remove this option
         elif task == 'link_prediction':
             all_edge_scores = []
 
@@ -245,18 +241,6 @@ class MultiTaskFEGIN(torch.nn.Module):
                 
         pin_emb = self.pin_position_embedding(torch.tensor([pin_pos], device=node_embeddings.device))
                 
-        '''
-        # NEW: select predictor based on component type
-        is_subcircuit = (comp_type_idx == 3)
-        if is_subcircuit:
-            # Use subcircuit-specific predictor
-            edge_predictors = self.subcircuit_edge_predictors
-        else:
-            # Use regular predictor for R, C, V
-            edge_predictors = self.regular_edge_predictors
-        '''
-        #if candidate_edges.shape[1] > 0:
-        #    print(f"DEBUG: candidate_edges min={candidate_edges.min().item()}, max={candidate_edges.max().item()}")
         scores = []
         for j in range(candidate_edges.shape[1]):
             src = candidate_edges[0, j].item()
@@ -266,9 +250,12 @@ class MultiTaskFEGIN(torch.nn.Module):
                 dst_emb = graph_node_embeddings[dst].unsqueeze(0)
                 edge_feature = torch.cat([comp_type_emb, pin_emb, dst_emb], dim=1)
                 
-                # pred_idx = min(pin_pos, self.max_pins - 1)
-                score = self.edge_predictor(edge_feature).squeeze()
-                scores.append(torch.sigmoid(score))
+                pred_idx = min(pin_pos, self.max_pins - 1)
+                raw_score = self.edge_predictors[pred_idx](edge_feature).squeeze()
+                
+                # temperature-scaled sigmoid to prevent saturation
+                scaled_score = torch.sigmoid(raw_score / self.temperature)
+                scores.append(scaled_score)
                 
         if scores:
             return torch.stack(scores)
