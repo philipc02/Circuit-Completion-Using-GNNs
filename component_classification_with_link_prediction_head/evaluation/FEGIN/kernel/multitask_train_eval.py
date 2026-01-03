@@ -73,6 +73,7 @@ def train_multitask_epoch(model, optimizer, loader, device, lambda_node=1.0, lam
         loss = lambda_node * node_loss + lambda_edge * edge_loss
         
         loss.backward()
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
         optimizer.step()
         
         total_loss += loss.item()
