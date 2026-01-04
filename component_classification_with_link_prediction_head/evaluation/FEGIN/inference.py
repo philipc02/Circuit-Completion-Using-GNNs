@@ -75,24 +75,6 @@ def predict_component_completion(model, original_graph, representation='componen
         if data is None:
             continue
         
-        '''
-        # Step 4: Create candidate edges from virtual node to all existing nodes
-        node_mapping = {node: i for i, node in enumerate(G_masked.nodes())}
-        candidate_edges = []
-
-        VIRTUAL_NODE_IDX = -1
-        
-        for node in G_masked.nodes():
-            idx = node_mapping[node]
-            candidate_edges.append([VIRTUAL_NODE_IDX, idx])
-        
-        if candidate_edges:
-            candidate_edges_tensor = torch.tensor(candidate_edges, dtype=torch.long).t()
-            candidate_edges_list = [candidate_edges_tensor]
-        else:
-            candidate_edges_list = [torch.empty((2, 0), dtype=torch.long)]
-            '''
-        
         data_batch = Batch.from_data_list([data])
         data_batch = data_batch.to(device)
         
@@ -114,41 +96,75 @@ def predict_component_completion(model, original_graph, representation='componen
             all_pin_results = []
             
             for pin_idx, pin_node in enumerate(pin_nodes):
-                if pin_idx >= 2:  # handle up to 5 pins (max_pins in model)
+                if pin_idx >= 2:  # handle up to 2 pins (max_pins, can be changed/increased)
                     break
                     
                 print(f"\n  Predicting connections for pin {pin_idx} ({pin_node})")
                 
-                # Get the net this pin should connect to (ground truth)
-                connected_nets = [n for n in original_graph.neighbors(pin_node) 
-                                if original_graph.nodes[n].get('type') == 'net']
-                
-                # TODO: (future) model that predicts whether pin nodes has connection or not (not only which node it connects to when it definetly has a connection)
-                if not connected_nets:
-                    print(f"    Pin {pin_idx} has no connected net, skipping...")
-                    continue
+                if representation == 'component_pin_net':
+                    # Get the net this pin should connect to (ground truth)
+                    connected_nets = [n for n in original_graph.neighbors(pin_node) 
+                                    if original_graph.nodes[n].get('type') == 'net']
                     
-                target_net = connected_nets[0]
-                print(f"    True connection: pin {pin_idx} -> net {target_net}")
-                
-                # Create graph with only this pin masked
-                G_pin_masked = original_graph.copy()
-                G_pin_masked.remove_node(pin_node)
-                
-                # Generate candidate edges from virtual pin node to all net nodes
-                node_mapping = {node: i for i, node in enumerate(G_pin_masked.nodes())}
-                candidate_edges = []
-                
-                VIRTUAL_NODE_IDX = -1
-                
-                # Only consider net nodes as candidates
-                # TODO: is this making it very easy for the model?
-                net_nodes = [node for node in G_pin_masked.nodes() 
-                            if G_pin_masked.nodes[node].get('type') == 'net']
-                
-                for net_node in net_nodes:
-                    idx = node_mapping[net_node]
-                    candidate_edges.append([VIRTUAL_NODE_IDX, idx])
+                    # TODO: (future) model that predicts whether pin nodes has connection or not (not only which node it connects to when it definetly has a connection)
+                    if not connected_nets:
+                        print(f"    Pin {pin_idx} has no connected net, skipping...")
+                        continue
+                        
+                    target_net = connected_nets[0]
+                    print(f"    True connection: pin {pin_idx} -> net {target_net}")
+                    
+                    # Create graph with only this pin masked
+                    G_pin_masked = original_graph.copy()
+                    G_pin_masked.remove_node(pin_node)
+                    
+                    # Generate candidate edges from virtual pin node to all net nodes
+                    node_mapping = {node: i for i, node in enumerate(G_pin_masked.nodes())}
+                    candidate_edges = []
+                    
+                    VIRTUAL_NODE_IDX = -1
+                    
+                    # Only consider net nodes as candidates
+                    # TODO: is this making it very easy for the model?
+                    net_nodes = [node for node in G_pin_masked.nodes() 
+                                if G_pin_masked.nodes[node].get('type') == 'net']
+                    
+                    for net_node in net_nodes:
+                        idx = node_mapping[net_node]
+                        candidate_edges.append([VIRTUAL_NODE_IDX, idx])
+
+                elif representation == 'component_pin':
+                    # Predict pin-to-pin connections
+                    connected_pins = []
+                    for neighbor in original_graph.neighbors(pin_node):
+                        if (original_graph.nodes[neighbor].get('type') == 'pin' and 
+                            neighbor not in pin_nodes):  # Pin from other component
+                            connected_pins.append(neighbor)
+                    
+                    if not connected_pins:
+                        print(f"    Pin {pin_idx} has no connected pins, skipping...")
+                        continue
+                    
+                    target_node = connected_pins[0]
+                    print(f"    True connection: pin {pin_idx} -> pin {target_node}")
+                    
+                    # Create graph with only this pin masked
+                    G_pin_masked = original_graph.copy()
+                    G_pin_masked.remove_node(pin_node)
+                    
+                    # Get all pins (except own component's pins) as candidates
+                    node_mapping = {node: i for i, node in enumerate(G_pin_masked.nodes())}
+                    other_pins = [node for node in G_pin_masked.nodes() 
+                                 if G_pin_masked.nodes[node].get('type') == 'pin' 
+                                 and node not in pin_nodes]
+                    
+                    for pin in other_pins:
+                        idx = node_mapping[pin]
+                        candidate_edges.append([VIRTUAL_NODE_IDX, idx])
+
+                else:
+                    print(f"    Representation {representation} not supported for link prediction")
+                    continue
                 
                 if not candidate_edges:
                     print(f"    No net nodes found as candidates, skipping...")
@@ -561,5 +577,5 @@ if __name__ == "__main__":
     print(f"Using device: {device}")
     
     # Path to trained model
-    model_path = Path("fegin_experiments") / "ltspice_demos_MultiTaskFEGIN__20260103124550_20260103_124550" / "models" / "best_multitask_model_iter_6.pth"
+    model_path = Path("fegin_experiments") / "ltspice_demos_MultiTaskFEGIN__20260103175757_20260103_175757" / "models" / "best_multitask_model_iter_8.pth"
     results = demo_with_sample_circuit(model_path, device)
