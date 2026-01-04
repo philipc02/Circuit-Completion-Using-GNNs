@@ -1,0 +1,9 @@
+FEGIN Experiment Results
+Dataset: ltspice_demos
+Model: MultiTaskFEGIN
+Test Accuracy: 0.6762
+Test F1 (Weighted): 0.6765
+Test F1 (Macro): 0.6926
+Timestamp: 20260103_124550
+Best Edge F1: 0.9819
+Best Combined Score: 0.7681
