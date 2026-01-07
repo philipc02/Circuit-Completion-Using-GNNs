@@ -462,7 +462,7 @@ def demo_multiple_components(model_path, representation='component_pin_net', dev
         component_nodes = [node for node, attr in sample_graph.nodes(data=True) 
                           if attr.get('type') == 'component']
         
-        target_components = component_nodes[:2]
+        target_components = component_nodes[:4]
         
         print(f"\nWill predict: {target_components}")
         
