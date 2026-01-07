@@ -462,8 +462,7 @@ def demo_multiple_components(model_path, representation='component_pin_net', dev
         component_nodes = [node for node, attr in sample_graph.nodes(data=True) 
                           if attr.get('type') == 'component']
         
-        # Choose which components to predict (first 3 for demo)
-        target_components = component_nodes[:3]
+        target_components = component_nodes[:2]
         
         print(f"\nWill predict: {target_components}")
         
@@ -482,5 +481,5 @@ if __name__ == "__main__":
     print(f"Using device: {device}")
     
     # Path to trained model
-    model_path = Path("fegin_experiments") / "ltspice_demos_MultiTaskFEGIN__20260104043623_20260104_043623" / "models" / "best_multitask_model_iter_0.pth"
+    model_path = Path("fegin_experiments") / "ltspice_demos_MultiTaskFEGIN__20260103124550_20260103_12455" / "models" / "best_multitask_model_iter_6.pth"
     results = demo_multiple_components(model_path, 'component_pin_net', device)
