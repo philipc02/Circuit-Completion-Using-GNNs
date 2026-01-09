@@ -5,6 +5,7 @@
 import os
 import networkx as nx
 import pickle
+import numpy as np
 from PySpice.Spice.Parser import SpiceParser
 
 # Pin roles for different component types
@@ -299,11 +300,47 @@ def remove_duplicate_graphs(folder):
 
     print(f"\nFinal dataset: {len(unique_hashes)} unique graphs")
 
+def analyze_dataset(folder):
+    # Analyze component distribution in filtered dataset
+    from collections import Counter
+    
+    print("DATASET ANALYSIS\n")
+    
+    comp_counter = Counter()
+    graph_sizes = []
+    
+    for fname in os.listdir(folder):
+        if not fname.endswith(".gpickle"):
+            continue
+            
+        with open(os.path.join(folder, fname), 'rb') as f:
+            G = pickle.load(f)
+        
+        graph_sizes.append(G.number_of_nodes())
+        
+        for node, attr in G.nodes(data=True):
+            if attr.get("type") in ["component"]:
+                comp_type = attr.get("comp_type")
+                comp_counter[comp_type] += 1
+    
+    print("Component Type Distribution:")
+    total = sum(comp_counter.values())
+    for comp_type in COMPONENT_TYPES:
+        count = comp_counter[comp_type]
+        pct = count / total * 100 if total > 0 else 0
+        print(f"  {comp_type:5s}: {count:5d} ({pct:5.1f}%)")
+    
+    print(f"Total components: {total}")
+    print(f"Total graphs: {len(graph_sizes)}")
+    print(f"Avg nodes per graph: {np.mean(graph_sizes):.1f}")
+    print(f"Avg components per graph: {total / len(graph_sizes):.1f}")
+
 
 if __name__ == "__main__":
     print("Netlist parser running...")
     
-    input_folder = "netlists_ltspice_demos"
-    output_folder = "graphs_ltspice_demos/graphs_component_pin"
+    input_folder = "netlists_amsnet"
+    output_folder = "graphs_amsnet/graphs_component_pin"
     process_folder(input_folder, output_folder)
     remove_duplicate_graphs(output_folder)
+    analyze_dataset(output_folder)

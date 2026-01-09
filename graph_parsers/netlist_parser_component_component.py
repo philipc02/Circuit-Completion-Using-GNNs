@@ -277,8 +277,8 @@ def analyze_dataset(folder):
 if __name__ == "__main__":
     print("Netlist parser running...")
     
-    input_folder = "netlists_ltspice_demos"
-    output_folder = "graphs_ltspice_demos/graphs_component_component"
+    input_folder = "netlists_amsnet"
+    output_folder = "graphs_amsnet/graphs_component_component"
     process_folder(input_folder, output_folder)
     remove_duplicate_graphs(output_folder)
     analyze_dataset(output_folder)
