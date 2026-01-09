@@ -340,11 +340,14 @@ def main():
                     best_result = (loss,f1,f1_std)
                     best_hyper = (num_layers, hidden, h)
             
-
-            print("========================FINAL RESULTS================================")
-            print(f"Component Classification F1: {results['best_node_f1_weighted']:.4f}")
-            print(f"Link Prediction AUC: {results['best_edge_auc']:.4f}")
-            print(f"Combined Score: {results['best_combined_score']:.4f}")
+            if args.model == "FEGIN":
+                print("========================FINAL RESULTS================================")
+                print(f"FEGIN weighted F1: {results['best_f1_weighted']:.4f}")
+            elif args.model == "MultiTaskFEGIN":
+                print("========================FINAL RESULTS================================")
+                print(f"Component Classification F1: {results['best_node_f1_weighted']:.4f}")
+                print(f"Link Prediction AUC: {results['best_edge_auc']:.4f}")
+                print(f"Combined Score: {results['best_combined_score']:.4f}")
         '''
         desc = 'f1:{:.3f} ± {:.3f}'.format(
             best_result[1], best_result[2]
