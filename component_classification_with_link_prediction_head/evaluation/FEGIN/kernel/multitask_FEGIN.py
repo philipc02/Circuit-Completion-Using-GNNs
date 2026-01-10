@@ -231,17 +231,14 @@ class MultiTaskFEGIN(torch.nn.Module):
             src = candidate_edges[0, j].item()
             dst = candidate_edges[1, j].item()
                     
-            if 0 <= src < len(graph_node_embeddings) and 0 <= dst < len(graph_node_embeddings):
-                src_emb = graph_node_embeddings[src].unsqueeze(0)
+            if src == -1 and 0 <= dst < len(graph_node_embeddings):
                 dst_emb = graph_node_embeddings[dst].unsqueeze(0)
-                edge_feature = torch.cat([src_emb, dst_emb, comp_type_emb], dim=1)
+                edge_feature = torch.cat([comp_type_emb, pin_emb, dst_emb], dim=1)
                 
                 raw_score = self.edge_predictor(edge_feature).squeeze()
                 
                 probability = torch.sigmoid(raw_score)
                 scores.append(probability)
-            else:
-                print(f"DEBUG: Skipping edge {src}->{dst} - src in range: {0 <= src < len(graph_node_embeddings)}, dst in range: {0 <= dst < len(graph_node_embeddings)}")
                 
         if scores:
             return torch.stack(scores)
