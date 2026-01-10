@@ -92,6 +92,9 @@ def predict_component_completion(model, original_graph, representation='componen
             correct_type = (predicted_type == actual_type)
 
             # TASK 2: PIN CONNECTION PREDICTION for each pin
+            pin_nodes = [node for node in original_graph.neighbors(target_component) 
+                        if original_graph.nodes[node].get('type') == 'pin']
+            pin_nodes.sort(key=lambda n: original_graph.nodes[n].get('pin', ''))
 
             all_pin_results = []
             
@@ -100,6 +103,7 @@ def predict_component_completion(model, original_graph, representation='componen
                     break
                     
                 print(f"\n  Predicting connections for pin {pin_idx} ({pin_node})")
+                print(f"    Pin features: {original_graph.nodes[pin_node]}")
                 
                 if representation == 'component_pin_net':
                     # Get the net this pin should connect to (ground truth)
@@ -114,15 +118,23 @@ def predict_component_completion(model, original_graph, representation='componen
                     target_net = connected_nets[0]
                     print(f"    True connection: pin {pin_idx} -> net {target_net}")
                     
-                    # Create graph with only this pin masked
+                    # Create graph with only this pin's edges masked
                     G_pin_masked = original_graph.copy()
-                    G_pin_masked.remove_node(pin_node)
+                    edges_to_remove = []
+                    for u, v in G_pin_masked.edges():
+                        if u == pin_node or v == pin_node:
+                            edges_to_remove.append((u, v))
+                    G_pin_masked.remove_edges_from(edges_to_remove)
                     
-                    # Generate candidate edges from virtual pin node to all net nodes
+                    # Generate candidate edges from target pin node to all net nodes
                     node_mapping = {node: i for i, node in enumerate(G_pin_masked.nodes())}
                     candidate_edges = []
                     
-                    VIRTUAL_NODE_IDX = -1
+                    if pin_node not in node_mapping:
+                        print(f"    Pin {pin_node} not in node mapping!")
+                        continue
+                    
+                    pin_idx_in_graph = node_mapping[pin_node]
                     
                     # Only consider net nodes as candidates
                     # TODO: is this making it very easy for the model?
@@ -131,7 +143,7 @@ def predict_component_completion(model, original_graph, representation='componen
                     
                     for net_node in net_nodes:
                         idx = node_mapping[net_node]
-                        candidate_edges.append([VIRTUAL_NODE_IDX, idx])
+                        candidate_edges.append([pin_idx_in_graph, idx])
 
                 elif representation == 'component_pin':
                     # Predict pin-to-pin connections
@@ -150,17 +162,25 @@ def predict_component_completion(model, original_graph, representation='componen
                     
                     # Create graph with only this pin masked
                     G_pin_masked = original_graph.copy()
-                    G_pin_masked.remove_node(pin_node)
+                    edges_to_remove = []
+                    for u, v in G_pin_masked.edges():
+                        if u == pin_node or v == pin_node:
+                            edges_to_remove.append((u, v))
+                    G_pin_masked.remove_edges_from(edges_to_remove)
                     
                     # Get all pins (except own component's pins) as candidates
                     node_mapping = {node: i for i, node in enumerate(G_pin_masked.nodes())}
+                    if pin_node not in node_mapping:
+                        continue
+                    
+                    pin_idx_in_graph = node_mapping[pin_node]
                     other_pins = [node for node in G_pin_masked.nodes() 
                                  if G_pin_masked.nodes[node].get('type') == 'pin' 
                                  and node not in pin_nodes]
                     
                     for pin in other_pins:
                         idx = node_mapping[pin]
-                        candidate_edges.append([VIRTUAL_NODE_IDX, idx])
+                        candidate_edges.append([pin_idx_in_graph, idx])
 
                 else:
                     print(f"    Representation {representation} not supported for link prediction")
@@ -201,11 +221,14 @@ def predict_component_completion(model, original_graph, representation='componen
                         continue
 
                 all_labels = []
-                net_node_list = list(net_nodes)
-                
-                for net_node in net_node_list:
-                    is_true_connection = (net_node == target_net)
-                    all_labels.append(1 if is_true_connection else 0)
+                if representation == 'component_pin_net':
+                    for net_node in net_nodes:
+                        is_true_connection = (net_node == target_net)
+                        all_labels.append(1 if is_true_connection else 0)
+                else:  # component_pin
+                    for other_pin in other_pins:
+                        is_true_connection = (other_pin == target_node)
+                        all_labels.append(1 if is_true_connection else 0)
                 
                 all_labels = np.array(all_labels)
                 
@@ -249,22 +272,26 @@ def predict_component_completion(model, original_graph, representation='componen
                 top_indices = np.argsort(pin_edge_scores)[-k:][::-1]
                 
                 print(f"  Top {k} connection candidates:")
+                if representation == 'component_pin_net':
+                    candidate_nodes = net_nodes
+                else:
+                    candidate_nodes = other_pins
+                
                 for rank, idx in enumerate(top_indices, 1):
-                    net_node = net_node_list[idx]
-                    net_name = f"net_{net_node}"
-                    is_correct = (net_node == target_net)
+                    candidate_node = candidate_nodes[idx]
+                    is_correct = (candidate_node == (target_net if representation == 'component_pin_net' else target_node))
                     truth_label = "✓" if is_correct else "✗"
-                    print(f"      {rank}. {net_name}: score={pin_edge_scores[idx]:.3f} {truth_label}")
+                    print(f"      {rank}. Node {candidate_node}: score={pin_edge_scores[idx]:.3f} {truth_label}")
                 
             all_pin_results.append({
                 'pin_idx': pin_idx,
                 'pin_node': pin_node,
-                'target_net': target_net,
+                'target_node': target_net if representation == 'component_pin_net' else target_node,
                 'auc': auc_score,
                 'f1': f1_opt,
                 'precision': precision_opt,
                 'recall': recall_opt,
-                'top_predictions': [(net_node_list[i], pin_edge_scores[i]) for i in top_indices]
+                'top_predictions': [(candidate_nodes[i], pin_edge_scores[i]) for i in top_indices]
             })
             
             if all_pin_results:
@@ -306,12 +333,12 @@ def predict_component_completion(model, original_graph, representation='componen
         top3_correct = 0
         
         for pin_result in all_pins:
-            top_predictions = [net for net, _ in pin_result['top_predictions']]
-            target_net = pin_result['target_net']
+            top_predictions = [node for node, _ in pin_result['top_predictions']]
+            target_node = pin_result['target_node']
             
-            if top_predictions and target_net == top_predictions[0]:
+            if top_predictions and target_node == top_predictions[0]:
                 top1_correct += 1
-            if target_net in top_predictions[:min(3, len(top_predictions))]:
+            if target_node in top_predictions[:min(3, len(top_predictions))]:
                 top3_correct += 1
         
         top1_acc = top1_correct / len(all_pins) if all_pins else 0
