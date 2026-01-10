@@ -206,45 +206,26 @@ class MultiTaskFEGIN(torch.nn.Module):
             return class_output, all_edge_scores
 
     def process_candidate_edges_single_pin(self, node_embeddings, batch, comp_type_idx, candidate_edges, pin_pos):
-        
         if candidate_edges is None or candidate_edges.shape[1] == 0:
             return torch.tensor([], device=node_embeddings.device)
-        
-        if batch is None:
-            # Single graph case - all embeddings belong to one graph
-            graph_node_embeddings = node_embeddings
-        else:
-            batch_size = batch.max().item() + 1
-            if batch_size != 1:
-                # Shouldnt happen
-                node_indices = (batch == 0).nonzero(as_tuple=True)[0]
-                graph_node_embeddings = node_embeddings[node_indices]
-            else:
-                graph_node_embeddings = node_embeddings
+
         
         comp_type_emb = self.comp_type_embedding(torch.tensor([comp_type_idx], device=node_embeddings.device))
-                
+        # TODO: integrate pin embedding
         pin_emb = self.pin_position_embedding(torch.tensor([pin_pos], device=node_embeddings.device))
                 
-        scores = []
-        for j in range(candidate_edges.shape[1]):
-            src = candidate_edges[0, j].item()
-            dst = candidate_edges[1, j].item()
-                    
-            if 0 <= src < len(graph_node_embeddings) and 0 <= dst < len(graph_node_embeddings):
-                src_emb = graph_node_embeddings[src].unsqueeze(0)
-                dst_emb = graph_node_embeddings[dst].unsqueeze(0)
-                edge_feature = torch.cat([src_emb, dst_emb, comp_type_emb], dim=1)
-                
-                raw_score = self.edge_predictor(edge_feature).squeeze()
-                
-                probability = torch.sigmoid(raw_score)
-                scores.append(probability)
-                
-        if scores:
-            return torch.stack(scores)
-        else:
-            return torch.tensor([], device=node_embeddings.device)
+        src_indices = candidate_edges[0]
+        dst_indices = candidate_edges[1]
+        
+        src_embs = node_embeddings[src_indices]
+        dst_embs = node_embeddings[dst_indices]
+        
+        comp_type_embs = comp_type_emb.expand(src_embs.size(0), -1)
+        
+        edge_features = torch.cat([src_embs, dst_embs, comp_type_embs], dim=1)
+        
+        raw_scores = self.edge_predictor(edge_features).squeeze(-1)
+        return torch.sigmoid(raw_scores)
 
     def __repr__(self):
         return self.__class__.__name__
