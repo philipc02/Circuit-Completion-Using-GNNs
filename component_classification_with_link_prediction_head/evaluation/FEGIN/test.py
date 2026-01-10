@@ -17,8 +17,8 @@ for path in search_paths:
 
 # Now try to import the dataset classes
 try:
-    from kernel.multitask_train_eval import MultiTaskDualDataset
-    print("✓ Successfully imported MultiTaskDualDataset")
+    from kernel.multitask_dataset import MultiTaskCircuitDataset
+    print("✓ Successfully imported MultiTaskCircuitDataset")
 except ImportError as e:
     print(f"✗ Failed to import: {e}")
     print("\nPlease run this script from the FEGIN directory or adjust paths")
@@ -87,11 +87,11 @@ print(f"  Node attributes: {list(G.nodes(data=True))[0]}")
 
 # Try to create dataset
 print("\n" + "="*60)
-print("Attempting to create MultiTaskDualDataset...")
+print("Attempting to create MultiTaskCircuitDataset...")
 print("="*60)
 
 try:
-    train_dataset = MultiTaskDualDataset(
+    train_dataset = MultiTaskCircuitDataset(
         dataset_info['train_files'],
         dataset_info['circuit_to_files'],
         representation,
