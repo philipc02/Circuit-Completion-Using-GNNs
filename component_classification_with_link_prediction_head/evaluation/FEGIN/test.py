@@ -11,7 +11,7 @@ print(f"Train files: {len(dataset_info['train_files'])}")
 print(f"Test files: {len(dataset_info['test_files'])}")
 
 # 2. Check if graphs exist
-base_path = "graphs_amsnet/graphs_component_component"
+base_path = "../../../graph_parsers/graphs_amsnet/graphs_component_component"
 missing_files = []
 
 for circuit in dataset_info['train_files']:
