@@ -126,15 +126,11 @@ def predict_component_completion(model, original_graph, representation='componen
                             edges_to_remove.append((u, v))
                     G_pin_masked.remove_edges_from(edges_to_remove)
                     
-                    # Generate candidate edges from target pin node to all net nodes
+                    # Generate candidate edges from virtual node to all net nodes
                     node_mapping = {node: i for i, node in enumerate(G_pin_masked.nodes())}
                     candidate_edges = []
-                    
-                    if pin_node not in node_mapping:
-                        print(f"    Pin {pin_node} not in node mapping!")
-                        continue
-                    
-                    pin_idx_in_graph = node_mapping[pin_node]
+
+                    VIRTUAL_NODE_IDX = -1
                     
                     # Only consider net nodes as candidates
                     # TODO: is this making it very easy for the model?
@@ -143,7 +139,7 @@ def predict_component_completion(model, original_graph, representation='componen
                     
                     for net_node in net_nodes:
                         idx = node_mapping[net_node]
-                        candidate_edges.append([pin_idx_in_graph, idx])
+                        candidate_edges.append([VIRTUAL_NODE_IDX, idx])
 
                 elif representation == 'component_pin':
                     # Predict pin-to-pin connections
@@ -170,17 +166,17 @@ def predict_component_completion(model, original_graph, representation='componen
                     
                     # Get all pins (except own component's pins) as candidates
                     node_mapping = {node: i for i, node in enumerate(G_pin_masked.nodes())}
-                    if pin_node not in node_mapping:
-                        continue
+                    candidate_edges = []
                     
-                    pin_idx_in_graph = node_mapping[pin_node]
+                    VIRTUAL_NODE_IDX = -1
+
                     other_pins = [node for node in G_pin_masked.nodes() 
                                  if G_pin_masked.nodes[node].get('type') == 'pin' 
                                  and node not in pin_nodes]
                     
                     for pin in other_pins:
                         idx = node_mapping[pin]
-                        candidate_edges.append([pin_idx_in_graph, idx])
+                        candidate_edges.append([VIRTUAL_NODE_IDX, idx])
 
                 else:
                     print(f"    Representation {representation} not supported for link prediction")
