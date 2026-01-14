@@ -365,6 +365,9 @@ def train_multitask_fegin(train_dataset, test_dataset, dataset_name, model, epoc
         iteration_results['node_f1'].append(best_node_f1)
         iteration_results['edge_auc'].append(best_edge_auc)
         iteration_results['combined'].append(best_combined_score)
+
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
     
     if tracker:
         tracker.save_training_log(training_log)
