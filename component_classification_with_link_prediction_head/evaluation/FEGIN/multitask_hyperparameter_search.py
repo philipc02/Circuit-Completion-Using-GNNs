@@ -163,7 +163,7 @@ def run_experiment(representation, params, output_dir, force_rerun=False):
             capture_output=True,
             text=True,
             cwd=os.path.dirname(os.path.abspath(__file__)),
-            timeout=7200  # 2 hour timeout per experiment
+            timeout=21600  # 6 hour timeout per experiment
         )
         
         # Save output
@@ -216,7 +216,7 @@ def run_experiment(representation, params, output_dir, force_rerun=False):
             'combined_score': None,
             'node_f1': None,
             'edge_auc': None,
-            'elapsed': 7200,
+            'elapsed': 21600,
             'success': False,
             'error': 'timeout',
             'resumed': False
