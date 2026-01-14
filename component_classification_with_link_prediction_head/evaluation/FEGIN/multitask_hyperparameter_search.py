@@ -62,7 +62,40 @@ def parse_results_from_stdout(stdout_text):
     
     return combined_score, node_f1, edge_auc, node_f1_std, edge_auc_std
 
-def run_experiment(representation, params, output_dir):
+def load_existing_result(exp_dir):
+    """Load results from a previously completed experiment"""
+    output_file = os.path.join(exp_dir, 'output.txt')
+    if not os.path.exists(output_file):
+        return None
+    
+    try:
+        with open(output_file, 'r') as f:
+            content = f.read()
+        
+        # Parse the stdout section
+        if 'STDOUT:' in content:
+            stdout_section = content.split('STDOUT:')[1].split('\n\nSTDERR:')[0]
+        else:
+            stdout_section = content
+        
+        combined, node_f1, edge_auc, node_f1_std, edge_auc_std = parse_results_from_stdout(stdout_section)
+        
+        if combined is not None:
+            return {
+                'combined_score': combined,
+                'node_f1': node_f1,
+                'edge_auc': edge_auc,
+                'node_f1_std': node_f1_std,
+                'edge_auc_std': edge_auc_std,
+                'success': True,
+                'resumed': True
+            }
+    except Exception as e:
+        print(f"⚠️  Warning: Could not parse existing results from {exp_dir}: {e}")
+    
+    return None
+
+def run_experiment(representation, params, output_dir, force_rerun=False):
     """Run a single experiment with given parameters"""
     exp_name = (f"{representation}_L{params['layers']}_H{params['hiddens']}_"
                 f"BS{params['batch_size']}_LR{params['lr']}_E{params['emb_size']}_"
@@ -71,6 +104,33 @@ def run_experiment(representation, params, output_dir):
     
     exp_dir = os.path.join(output_dir, exp_name)
     os.makedirs(exp_dir, exist_ok=True)
+    
+    # Check if experiment already completed (auto-resume support)
+    if not force_rerun and os.path.exists(os.path.join(exp_dir, 'output.txt')):
+        print("=" * 80)
+        print(f"⏩ Skipping {exp_name} (already completed)")
+        print("=" * 80)
+        
+        existing_result = load_existing_result(exp_dir)
+        if existing_result:
+            print(f"  Loaded results: Combined={existing_result['combined_score']:.4f}, "
+                  f"Node F1={existing_result['node_f1']:.4f}, "
+                  f"Edge AUC={existing_result['edge_auc']:.4f}")
+            
+            return {
+                'representation': representation,
+                'params': params,
+                'combined_score': existing_result['combined_score'],
+                'node_f1': existing_result['node_f1'],
+                'edge_auc': existing_result['edge_auc'],
+                'node_f1_std': existing_result['node_f1_std'],
+                'edge_auc_std': existing_result['edge_auc_std'],
+                'elapsed': 0,  # Not tracked for resumed experiments
+                'success': True,
+                'resumed': True
+            }
+        else:
+            print(f"⚠️  Could not load results, will re-run experiment")
     
     cmd = [
         'python3', 'main.py',
@@ -131,10 +191,12 @@ def run_experiment(representation, params, output_dir):
                 'node_f1_std': node_f1_std,
                 'edge_auc_std': edge_auc_std,
                 'elapsed': elapsed,
-                'success': True
+                'success': True,
+                'resumed': False
             }
         else:
             print(f"✗ Failed to parse results (completed in {elapsed:.1f}s)")
+            print(f"⚠️  stdout preview: {result.stdout[:500]}")
             return {
                 'representation': representation,
                 'params': params,
@@ -142,7 +204,8 @@ def run_experiment(representation, params, output_dir):
                 'node_f1': None,
                 'edge_auc': None,
                 'elapsed': elapsed,
-                'success': False
+                'success': False,
+                'resumed': False
             }
             
     except subprocess.TimeoutExpired:
@@ -155,7 +218,8 @@ def run_experiment(representation, params, output_dir):
             'edge_auc': None,
             'elapsed': 7200,
             'success': False,
-            'error': 'timeout'
+            'error': 'timeout',
+            'resumed': False
         }
     except Exception as e:
         print(f"✗ Experiment failed with error: {e}")
@@ -167,10 +231,11 @@ def run_experiment(representation, params, output_dir):
             'edge_auc': None,
             'elapsed': time.time() - start_time,
             'success': False,
-            'error': str(e)
+            'error': str(e),
+            'resumed': False
         }
 
-def grid_search(representations, hyperparams, output_dir):
+def grid_search(representations, hyperparams, output_dir, force_rerun=False):
     """Exhaustive grid search over all parameter combinations"""
     all_results = []
     best_by_representation = {}
@@ -184,6 +249,7 @@ def grid_search(representations, hyperparams, output_dir):
     print(f"Estimated time (assuming 2h per experiment): {total_combinations * 2:.1f} hours")
     
     completed = 0
+    skipped = 0
     
     for representation in representations:
         print("\n" + "=" * 80)
@@ -196,9 +262,12 @@ def grid_search(representations, hyperparams, output_dir):
         for param_combo in itertools.product(*param_values):
             params = dict(zip(param_names, param_combo))
             
-            result = run_experiment(representation, params, output_dir)
+            result = run_experiment(representation, params, output_dir, force_rerun)
             rep_results.append(result)
             all_results.append(result)
+            
+            if result.get('resumed', False):
+                skipped += 1
             
             if result['success'] and result['combined_score'] is not None:
                 if best_for_rep is None or result['combined_score'] > best_for_rep['combined_score']:
@@ -206,7 +275,10 @@ def grid_search(representations, hyperparams, output_dir):
                     print(f"\n🎯 NEW BEST for {representation}: {result['combined_score']:.4f}")
             
             completed += 1
-            print(f"\nProgress: {completed}/{total_combinations} ({completed/total_combinations*100:.1f}%)\n")
+            print(f"\nProgress: {completed}/{total_combinations} ({completed/total_combinations*100:.1f}%) [Resumed: {skipped}]\n")
+            
+            # Save intermediate results after each experiment
+            save_results(all_results, best_by_representation, output_dir)
         
         if best_for_rep:
             best_by_representation[representation] = best_for_rep
@@ -222,7 +294,7 @@ def grid_search(representations, hyperparams, output_dir):
     
     return all_results, best_by_representation
 
-def random_search(representations, hyperparams, output_dir, n_trials=30):
+def random_search(representations, hyperparams, output_dir, n_trials=30, force_rerun=False):
     """Random search (more efficient than grid search)"""
     all_results = []
     best_by_representation = {}
@@ -233,6 +305,7 @@ def random_search(representations, hyperparams, output_dir, n_trials=30):
     
     np.random.seed(42)
     completed = 0
+    skipped = 0
     
     for representation in representations:
         print("\n" + "=" * 80)
@@ -250,9 +323,12 @@ def random_search(representations, hyperparams, output_dir, n_trials=30):
             
             print(f"\nTrial {trial+1}/{n_trials} for {representation}")
             
-            result = run_experiment(representation, params, output_dir)
+            result = run_experiment(representation, params, output_dir, force_rerun)
             rep_results.append(result)
             all_results.append(result)
+            
+            if result.get('resumed', False):
+                skipped += 1
             
             if result['success'] and result['combined_score'] is not None:
                 if best_for_rep is None or result['combined_score'] > best_for_rep['combined_score']:
@@ -260,7 +336,10 @@ def random_search(representations, hyperparams, output_dir, n_trials=30):
                     print(f"\n🎯 NEW BEST for {representation}: {result['combined_score']:.4f}")
             
             completed += 1
-            print(f"\nProgress: {completed}/{total_experiments} ({completed/total_experiments*100:.1f}%)\n")
+            print(f"\nProgress: {completed}/{total_experiments} ({completed/total_experiments*100:.1f}%) [Resumed: {skipped}]\n")
+            
+            # Save intermediate results after each experiment
+            save_results(all_results, best_by_representation, output_dir)
         
         if best_for_rep:
             best_by_representation[representation] = best_for_rep
@@ -305,7 +384,8 @@ def save_results(results, best_results, output_dir):
                 f.write(f"  Parameters:\n")
                 for param_name, param_value in result['params'].items():
                     f.write(f"    {param_name}: {param_value}\n")
-                f.write(f"  Training time: {result['elapsed']:.1f}s ({result['elapsed']/3600:.2f}h)\n")
+                if not result.get('resumed', False):
+                    f.write(f"  Training time: {result['elapsed']:.1f}s ({result['elapsed']/3600:.2f}h)\n")
                 f.write("\n")
         
         f.write("\n" + "="*80 + "\n")
@@ -314,9 +394,12 @@ def save_results(results, best_results, output_dir):
         
         successful = [r for r in results if r['success'] and r['combined_score'] is not None]
         failed = [r for r in results if not r['success'] or r['combined_score'] is None]
+        resumed = [r for r in results if r.get('resumed', False)]
         
+        f.write(f"Total experiments: {len(results)}\n")
         f.write(f"Successful experiments: {len(successful)}/{len(results)}\n")
-        f.write(f"Failed experiments: {len(failed)}/{len(results)}\n\n")
+        f.write(f"Failed experiments: {len(failed)}/{len(results)}\n")
+        f.write(f"Resumed experiments: {len(resumed)}/{len(results)}\n\n")
         
         if successful:
             combined_scores = [r['combined_score'] for r in successful]
@@ -356,6 +439,8 @@ def main():
                        help='Output directory for results')
     parser.add_argument('--reps', type=str, nargs='+', default=REPRESENTATIONS,
                        help='Representations to search (default: component_pin component_pin_net)')
+    parser.add_argument('--force_rerun', action='store_true', default=False,
+                       help='Force re-run of all experiments (ignore existing results)')
     
     args = parser.parse_args()
     
@@ -378,7 +463,8 @@ def main():
         'n_trials': args.n_trials if args.search_method == 'random' else None,
         'representations': args.reps,
         'hyperparameters': HYPERPARAMETERS,
-        'timestamp': time.strftime("%Y-%m-%d %H:%M:%S")
+        'timestamp': time.strftime("%Y-%m-%d %H:%M:%S"),
+        'force_rerun': args.force_rerun
     }
     
     with open(os.path.join(output_dir, 'search_config.json'), 'w') as f:
@@ -392,6 +478,7 @@ def main():
     if args.search_method == 'random':
         print(f"Trials per representation: {args.n_trials}")
     print(f"Output directory: {output_dir}")
+    print(f"Force rerun: {args.force_rerun}")
     print(f"Hyperparameters:")
     for key, values in HYPERPARAMETERS.items():
         print(f"  {key}: {values}")
@@ -400,13 +487,13 @@ def main():
     start_time = time.time()
     
     if args.search_method == 'grid':
-        all_results, best_results = grid_search(args.reps, HYPERPARAMETERS, output_dir)
+        all_results, best_results = grid_search(args.reps, HYPERPARAMETERS, output_dir, args.force_rerun)
     else:
-        all_results, best_results = random_search(args.reps, HYPERPARAMETERS, output_dir, args.n_trials)
+        all_results, best_results = random_search(args.reps, HYPERPARAMETERS, output_dir, args.n_trials, args.force_rerun)
     
     total_time = time.time() - start_time
     
-    # Save results
+    # Save final results
     save_results(all_results, best_results, output_dir)
     
     # Print final summary
@@ -415,6 +502,10 @@ def main():
     print("="*80)
     print(f"Total time: {total_time:.1f}s ({total_time/3600:.2f} hours)")
     print(f"Results saved to: {output_dir}")
+    
+    resumed_count = sum(1 for r in all_results if r.get('resumed', False))
+    if resumed_count > 0:
+        print(f"Resumed {resumed_count} previously completed experiments")
     
     print(f"\nBEST CONFIGURATIONS:")
     print("-"*80)
