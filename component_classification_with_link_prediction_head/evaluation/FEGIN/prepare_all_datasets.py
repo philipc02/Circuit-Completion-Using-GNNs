@@ -26,7 +26,7 @@ def prepare_all_datasets():
     ]
     
     # Load all graph files
-    base_graph_folder = "../../../graph_parsers/graphs_ltspice_examples"
+    base_graph_folder = "../../../../graph_parsers/graphs_ltspice_examples"
     
     # TODO: Common list of circuits across all representations for fair comparison
     # Dictionary to store circuit -> representation -> actual filenames
