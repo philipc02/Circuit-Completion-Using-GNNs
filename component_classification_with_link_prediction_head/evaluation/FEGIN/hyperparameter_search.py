@@ -36,12 +36,23 @@ def parse_results_from_stdout(stdout_text):
     
     lines = stdout_text.split('\n')
     for line in lines:
-        if 'Best result - f1:' in line:
+        '''if 'Best result - f1:' in line:
             # Parse line example 'Best result - f1:0.634 ± 0.015, with 4 layers and 32 hidden units and h = 2'
             parts = line.split('f1:')[1].split('±')
             if len(parts) == 2:
                 best_f1 = float(parts[0].strip())
                 f1_std = float(parts[1].split(',')[0].strip())  # standard deviation -> extract from line as well
+            break
+            '''
+        line = line.strip()
+        if line.startswith("FEGIN weighted F1:"):
+            # supports both with and without ±
+            parts = line.split(":")[1].strip().split("±")
+            best_f1 = float(parts[0].strip())
+            if len(parts) > 1:
+                f1_std = float(parts[1].strip())
+            else:
+                f1_std = 0.0
             break
     
     return best_f1, f1_std
