@@ -342,7 +342,7 @@ def main():
             
             if args.model == "FEGIN":
                 print("========================FINAL RESULTS================================")
-                print(f"FEGIN weighted F1: {fegin_results['best_f1_weighted']:.4f}")
+                print(f"FEGIN weighted F1: {fegin_results['best_f1_weighted']:.4f} ± {f1_std:.4f}")
             elif args.model == "MultiTaskFEGIN":
                 print("========================FINAL RESULTS================================")
                 print(f"Component Classification F1: {results['best_node_f1_weighted']:.4f}")
