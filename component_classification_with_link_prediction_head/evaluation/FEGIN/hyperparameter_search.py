@@ -65,7 +65,7 @@ def run_experiment(representation, params, output_dir):
     
     cmd = [
         'python3', 'main.py',
-        '--data', 'ltspice_examples',
+        '--data', 'ltspice_demos',
         '--representation', representation,
         '--model', 'FEGIN',
         '--layers', str(params['layers']),
@@ -280,7 +280,7 @@ def main():
                        help='Search method: grid or random')
     parser.add_argument('--n_trials', type=int, default=20,
                        help='Number of random trials per representation (for random search)')
-    parser.add_argument('--output_dir', type=str, default='hyperparameter_search_ltspice_examples',
+    parser.add_argument('--output_dir', type=str, default='hyperparameter_search_ltspice_demos',
                        help='Output directory for results')
     parser.add_argument('--reps', type=str, nargs='+', default=REPRESENTATIONS,
                        help='Representations to search (default: all)')
