@@ -1,0 +1,16 @@
+FEGIN Experiment Configuration
+dataset: ltspice_examples
+representation: component_net
+model: FEGIN
+layers: 5
+hiddens: 64
+h: 2
+node_label: spd
+use_rd: False
+epochs: 100
+batch_size: 128
+lr: 0.0001
+lr_decay_factor: 0.5
+lr_decay_step_size: 50
+emb_size: 512
+seed: 1

@@ -254,13 +254,17 @@ def remove_duplicate_graphs(folder):
             if isinstance(fdict, dict):
                 return tuple(sorted(fdict.items()))
             return fdict
+        
+        # to handle None values
+        def sortable_value(val):
+            return "" if val is None else val
 
         # Make node and edge lists deterministic
         node_data = sorted(
             (
-                d.get("type"),
-                d.get("comp_type"),
-                d.get("pin"),
+                sortable_value(d.get("type")),
+                sortable_value(d.get("comp_type")),
+                sortable_value(d.get("pin")),
                 serialize_features(d.get("features", {})),
             )
             for _, d in G.nodes(data=True)
@@ -339,8 +343,8 @@ def analyze_dataset(folder):
 if __name__ == "__main__":
     print("Netlist parser running...")
     
-    input_folder = "netlists_amsnet"
-    output_folder = "graphs_amsnet/graphs_component_pin"
+    input_folder = "netlists_ltspice_examples"
+    output_folder = "graphs_ltspice_examples/graphs_component_pin"
     process_folder(input_folder, output_folder)
     remove_duplicate_graphs(output_folder)
     analyze_dataset(output_folder)
