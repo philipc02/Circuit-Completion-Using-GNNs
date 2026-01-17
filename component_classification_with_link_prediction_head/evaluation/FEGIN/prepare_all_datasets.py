@@ -84,7 +84,7 @@ def prepare_all_datasets():
         'representations': representations
     }
     
-    with open('data/ltspice_demos_examples.pkl', 'wb') as f:
+    with open('data/ltspice_examples_dataset.pkl', 'wb') as f:
         pickle.dump(dataset_info, f)
     
     print(f"Created splits with {len(train_files)} train, {len(test_files)} test circuits")
