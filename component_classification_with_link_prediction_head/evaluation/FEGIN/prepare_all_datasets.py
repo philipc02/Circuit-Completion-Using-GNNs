@@ -26,7 +26,7 @@ def prepare_all_datasets():
     ]
     
     # Load all graph files
-    base_graph_folder = "../../../graph_parsers/graphs_ltspice_demos"
+    base_graph_folder = "../../../graph_parsers/graphs_ltspice_examples"
     
     # TODO: Common list of circuits across all representations for fair comparison
     # Dictionary to store circuit -> representation -> actual filenames
@@ -84,7 +84,7 @@ def prepare_all_datasets():
         'representations': representations
     }
     
-    with open('data/ltspice_demos_dataset.pkl', 'wb') as f:
+    with open('data/ltspice_examples_dataset.pkl', 'wb') as f:
         pickle.dump(dataset_info, f)
     
     print(f"Created splits with {len(train_files)} train, {len(test_files)} test circuits")

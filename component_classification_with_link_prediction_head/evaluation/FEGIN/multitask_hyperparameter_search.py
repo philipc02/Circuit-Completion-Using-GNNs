@@ -134,7 +134,7 @@ def run_experiment(representation, params, output_dir, force_rerun=False):
     
     cmd = [
         'python3', 'main.py',
-        '--data', 'ltspice_demos',
+        '--data', 'ltspice_examples',
         '--representation', representation,
         '--model', 'MultiTaskFEGIN',
         '--layers', str(params['layers']),
