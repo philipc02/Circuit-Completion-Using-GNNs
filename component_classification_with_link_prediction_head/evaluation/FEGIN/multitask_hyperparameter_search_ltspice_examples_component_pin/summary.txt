@@ -1,0 +1,34 @@
+================================================================================
+MULTITASK FEGIN HYPERPARAMETER SEARCH SUMMARY
+================================================================================
+
+BEST CONFIGURATIONS BY REPRESENTATION:
+--------------------------------------------------------------------------------
+
+
+================================================================================
+ALL EXPERIMENTS SUMMARY:
+--------------------------------------------------------------------------------
+
+Total experiments: 12
+Successful experiments: 12/12
+Failed experiments: 0/12
+Resumed experiments: 0/12
+
+COMBINED SCORE Statistics:
+  Mean: 0.6768
+  Std: 0.0537
+  Min: 0.5722
+  Max: 0.7606
+
+NODE F1 Statistics:
+  Mean: 0.5937
+  Std: 0.0648
+  Min: 0.4502
+  Max: 0.6816
+
+EDGE AUC Statistics:
+  Mean: 0.8707
+  Std: 0.0412
+  Min: 0.7886
+  Max: 0.9450
