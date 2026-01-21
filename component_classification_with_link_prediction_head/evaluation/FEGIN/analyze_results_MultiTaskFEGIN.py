@@ -362,30 +362,44 @@ def parameter_effects(all_results, output_dir='analysis_multitask_hyperparameter
             plt.savefig(os.path.join(output_dir, f'parameter_effects_{rep}.png'), dpi=300, bbox_inches='tight')
         except Exception as e:
             print(f"Error saving figure: {e}")
-            backup_path = 'parameter_effects.png'
+            if rep == 'component_pin':
+                backup_path = 'parameter_effects_component_pin.png'
+            else:
+                backup_path = 'parameter_effects_component_pin_net.png'
             plt.savefig(backup_path, dpi=300, bbox_inches='tight')
             print(f"✓ Chart saved to backup location: {backup_path}")
         
         plt.show()
 
 def main():
-    output_dir = os.path.abspath('analysis_multitask_hyperparameter_search_component_pin_net')
+    output_dir = os.path.abspath('analysis_multitask_hyperparameter_search_ltspice_demos')
     os.makedirs(output_dir, exist_ok=True)
-    
+
+    results_dirs = [
+    'multitask_hyperparameter_search_ltspice_demos_component_pin',
+    'multitask_hyperparameter_search_ltspice_demos_component_pin_net'
+    ]
+
+    all_results_combined = []
+    best_results_combined = {}
+
     print("Loading results...")
-    all_results, best_results = load_results('multitask_hyperparameter_search_component_pin_net')
-    
-    print(f"\nTotal experiments: {len(all_results)}")
-    successful = [r for r in all_results if r.get('success') and r.get('combined_score') is not None]
+    for d in results_dirs:
+        all_r, best_r = load_results(d)
+        all_results_combined.extend(all_r)
+        best_results_combined.update(best_r)
+        
+    print(f"\nTotal experiments: {len(all_results_combined)}")
+    successful = [r for r in all_results_combined if r.get('success') and r.get('combined_score') is not None]
     print(f"Successful experiments: {len(successful)}")
     
     if len(successful) > 0:
-        print(f"Representations found: {list(best_results.keys())}")
+        print(f"Representations found: {list(best_results_combined.keys())}")
         
         print("\nCreating visualizations...")
-        create_comparison_chart(best_results, output_dir)
-        create_parameter_analysis(all_results, output_dir)
-        parameter_effects(all_results, output_dir)
+        create_comparison_chart(best_results_combined, output_dir)
+        create_parameter_analysis(all_results_combined, output_dir)
+        parameter_effects(all_results_combined, output_dir)
         
         print("\n" + "="*80)
         print("BEST OVERALL CONFIGURATION")
@@ -393,7 +407,7 @@ def main():
         
         # Find the best across all representations
         best_overall = None
-        for rep, result in best_results.items():
+        for rep, result in best_results_combined.items():
             if result and result['success']:
                 if best_overall is None or result['combined_score'] > best_overall['combined_score']:
                     best_overall = result
@@ -414,7 +428,7 @@ def main():
         
         # Show what went wrong
         print("\nFailure analysis:")
-        failures = [r for r in all_results if not r.get('success') or r.get('combined_score') is None]
+        failures = [r for r in all_results_combined if not r.get('success') or r.get('combined_score') is None]
         for i, fail in enumerate(failures[:5]):  # Show first 5 failures
             print(f"{i+1}. Representation: {fail.get('representation', 'N/A')}")
             if 'error' in fail:

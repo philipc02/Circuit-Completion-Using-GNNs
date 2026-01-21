@@ -1,0 +1,12 @@
+* Z:\mnt\design.r\spice\examples\3616.asc
+? Missing component
+V1 IN 0 3.6
+L1 N001 OUT .22µ Rser=1m Rpar=5K
+C1 OUT 0 47µ x2 Rser=5m
+R1 OUT N002 665K
+R2 N002 0 210K
+Rload OUT 0 .41
+.tran 1.2m startup
+.lib LTC3616.sub
+.backanno
+.end

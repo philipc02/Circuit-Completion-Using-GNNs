@@ -1,11 +1,10 @@
-Spalte1;num_nodes;num_edges;average_shortest_path_length;density;net_to_component_ratio;pin_to_component_ratio;avg_connections_per_net;num_nodes_component;num_nodes_pin;num_components_V;num_components_R;num_components_X;num_components_C
-mean;44,47395833;102,6822917;3,463541667;0,112521563;0;3,068581701;0;10,86458333;33,609375;1,578125;4,375;1,28125;3,630208333
-;;;;;;;;;;;;;
-;;;;;;;;;;;;;
-;;;;;;;;;;;;;
-# Global component class frequencies;;;;;;;;;;;;;
-component_type;count;relative_frequency_percent;;;;;;;;;;;
-R;840;40,26845638;;;;;;;;;;;
-C;697;33,41323106;;;;;;;;;;;
-V;303;14,52540748;;;;;;;;;;;
-X;246;11,79290508;;;;;;;;;;;
+;num_nodes;num_edges;average_shortest_path_length;density;average_node_degree;net_to_component_ratio;pin_to_component_ratio;avg_connections_per_net;num_nodes_component;num_nodes_pin;num_components_V;num_components_R;num_components_X;num_components_C
+mean;44,473958333333336;102,68229166666667;3,4635416666666665;0,11252156347855254;4,309444138653291;0,0;3,0685817007979836;0,0;10,864583333333334;33,609375;1,578125;4,375;1,28125;3,6302083333333335
+
+
+# Global component class frequencies
+component_type;count;relative_frequency_percent
+R;840;40,26845637583892
+C;697;33,41323106423778
+V;303;14,525407478427613
+X;246;11,792905081495686

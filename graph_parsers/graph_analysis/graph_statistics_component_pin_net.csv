@@ -1,11 +1,10 @@
-Spalte1;num_nodes;num_edges;average_shortest_path_length;density;net_to_component_ratio;pin_to_component_ratio;avg_connections_per_net;num_nodes_component;num_nodes_pin;num_nodes_net;num_components_V;num_components_R;num_components_X;num_components_C
-mean;56,15463918;67,1443299;4,551546392;0,052728744;1,091059576;3,070418521;3,084038141;10,84536082;33,57216495;11,7371134;1,572164948;4,355670103;1,278350515;3,639175258
-;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;
-# Global component class frequencies;;;;;;;;;;;;;;
-component_type;count;relative_frequency_percent;;;;;;;;;;;;
-R;845;40,16159696;;;;;;;;;;;;
-C;706;33,55513308;;;;;;;;;;;;
-V;305;14,49619772;;;;;;;;;;;;
-X;248;11,78707224;;;;;;;;;;;;
+;num_nodes;num_edges;average_shortest_path_length;density;average_node_degree;net_to_component_ratio;pin_to_component_ratio;avg_connections_per_net;num_nodes_component;num_nodes_pin;num_nodes_net;num_components_V;num_components_R;num_components_X;num_components_C
+mean;56,154639175257735;67,14432989690722;4,551546391752577;0,05272874446906839;2,3843699586166247;1,0910595763752382;3,070418520859379;3,084038140726754;10,845360824742269;33,57216494845361;11,737113402061855;1,5721649484536082;4,355670103092783;1,2783505154639174;3,6391752577319587
+
+
+# Global component class frequencies
+component_type;count;relative_frequency_percent
+R;845;40,161596958174904
+C;706;33,55513307984791
+V;305;14,49619771863118
+X;248;11,787072243346007

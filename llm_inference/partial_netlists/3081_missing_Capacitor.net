@@ -1,0 +1,13 @@
+* Z:\mnt\design.r\spice\examples\3081.asc
+R1 N001 0 1K
+XU1 N003 N004 N002 OUT N001 IN LT3081
+R2 N002 0 1K
+R3 N004 0 30.1K
+R4 OUT N003 6.04K
+V1 IN 0 5
+? Missing component
+Rload OUT 0 1
+.tran .1 startup
+.lib LT3081.sub
+.backanno
+.end

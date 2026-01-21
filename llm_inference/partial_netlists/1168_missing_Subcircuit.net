@@ -1,0 +1,10 @@
+* Z:\mnt\design.r\spice\examples\1168.asc
+V1 +V 0 10
+V2 -V 0 -10
+R1 N002 N004 1K
+V3 N001 0 SINE(0 50m 1K)
+? Missing component
+.tran 3m
+.lib LTC.lib
+.backanno
+.end
