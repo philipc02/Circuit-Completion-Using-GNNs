@@ -56,8 +56,12 @@ def predict_component(netlist_text):
 results = []
 
 for path in glob.glob("partial_circuits/*.net"):
-    with open(path) as f:
-        net_txt = f.read()
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            net_txt = f.read()
+    except UnicodeDecodeError:
+        with open(path, "r", encoding="latin-1") as f:
+            net_txt = f.read()
     lines = [l for l in net_txt.splitlines() if l.strip()]
     cleaned_netlist = "\n".join(l for l in lines if l not in {"*", "."})
 
