@@ -42,12 +42,16 @@ def predict_component(netlist_text):
     )
 
     full_out = out[0]["generated_text"].strip()
+    print("\n=== RAW MODEL OUTPUT ===")
+    print(full_out)
+    print("========================\n")
 
     try:
         pred_json = json.loads(full_out)
         return pred_json.get("prediction")
     except:
         return None
+
     
 results = []
 
