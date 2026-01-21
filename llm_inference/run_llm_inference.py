@@ -32,19 +32,21 @@ Reply with JSON only in this exact format:
 """
 
 def predict_component(netlist_text):
-    messages = [
-        {"role": "system", "content": "You are an expert electronic circuit design assistant."},
-        {"role": "user", "content": build_prompt(netlist_text)},
-    ]
+    prompt = build_prompt(netlist_text)
 
-    out = pipe(messages, max_new_tokens=128, do_sample=False)
-    
-    assistant_msg = out[0]["generated_text"][-1]["content"]
-    
+    out = pipe(
+        prompt,
+        max_new_tokens=128,
+        do_sample=False,
+        return_full_text=False
+    )
+
+    full_out = out[0]["generated_text"].strip()
+
     try:
-        pred_json = json.loads(assistant_msg)
-        return pred_json.get("prediction", None)
-    except Exception:
+        pred_json = json.loads(full_out)
+        return pred_json.get("prediction")
+    except:
         return None
     
 results = []
