@@ -25,7 +25,8 @@ Partial netlist:
 
 Component type options: {component_classes}
 
-Reply with JSON only in this exact format:
+Reply with JSON only. If your reply is not valid JSON, it will be discarded.
+Use this exact format:
 {{
   "prediction": "<component_type>"
 }}
@@ -36,9 +37,11 @@ def predict_component(netlist_text):
 
     out = pipe(
         prompt,
-        max_new_tokens=128,
+        max_new_tokens=48,
         do_sample=False,
-        return_full_text=False
+        return_full_text=False,
+        stop=["}"],
+        repetition_penalty=1.1
     )
 
     full_out = out[0]["generated_text"].strip()
@@ -53,23 +56,42 @@ def predict_component(netlist_text):
         return None
 
     
-results = []
-
-for path in glob.glob("partial_circuits/*.net"):
-    try:
-        with open(path, "r", encoding="utf-8") as f:
-            net_txt = f.read()
-    except UnicodeDecodeError:
-        with open(path, "r", encoding="latin-1") as f:
-            net_txt = f.read()
-    lines = [l for l in net_txt.splitlines() if l.strip()]
-    cleaned_netlist = "\n".join(l for l in lines if l not in {"*", "."})
-
-    pred = predict_component(cleaned_netlist)
-
-    results.append({"file": path, "pred": pred})
+paths = glob.glob("partial_circuits/*.net")
+total = len(paths)
 
 with open("llm_predictions.json", "w") as f:
-    json.dump(results, f, indent=2)
+    f.write("[\n")
 
-print("Inference completed!")
+    first = True
+
+    for i, path in enumerate(paths):
+        try:
+            try:
+                with open(path, "r", encoding="utf-8") as fr:
+                    net_txt = fr.read()
+            except UnicodeDecodeError:
+                with open(path, "r", encoding="latin-1") as fr:
+                    net_txt = fr.read()
+
+            lines = [l for l in net_txt.splitlines() if l.strip()]
+            cleaned = "\n".join(l for l in lines if l not in {"*", "."})
+
+            pred = predict_component(cleaned)
+            entry = {"file": path, "pred": pred}
+
+            if not first:
+                f.write(",\n")
+            first = False
+
+            json.dump(entry, f)
+            f.flush()
+
+            print(f"[{i+1}/{total}] {path} → {pred}")
+
+        except KeyboardInterrupt:
+            print("\nStopped by user. JSON so far is valid.")
+            break
+
+    f.write("\n]")
+
+print("Done!")
