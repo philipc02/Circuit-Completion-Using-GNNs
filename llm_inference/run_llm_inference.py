@@ -39,9 +39,7 @@ def predict_component(netlist_text):
         prompt,
         max_new_tokens=48,
         do_sample=False,
-        return_full_text=False,
-        stop=["}"],
-        repetition_penalty=1.1
+        return_full_text=False
     )
 
     full_out = out[0]["generated_text"].strip()
