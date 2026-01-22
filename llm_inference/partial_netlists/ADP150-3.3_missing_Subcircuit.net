@@ -1,0 +1,8 @@
+* Z:\mnt\design.r\spice\examples\ADP150-3.3.asc
+V1 IN 0 5
+Rload OUT 0 33
+C1 OUT 0 1µ
+.tran 500u startup
+.lib ADP150-x.x.sub
+.backanno
+.end

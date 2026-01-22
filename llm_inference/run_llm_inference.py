@@ -2,6 +2,17 @@ from transformers import pipeline
 import torch
 import json
 import glob
+import re, json
+
+def extract_json(s):
+    m = re.search(r'\{.*?\}', s, flags=re.DOTALL)
+    if not m:
+        return None
+    try:
+        return json.loads(m.group(0))
+    except:
+        return None
+
 
 MODEL = "meta-llama/Meta-Llama-3.1-8B-Instruct"
 
@@ -25,8 +36,8 @@ Partial netlist:
 
 Component type options: {component_classes}
 
-Reply with JSON only. If your reply is not valid JSON, it will be discarded.
-Use this exact format:
+Respond with ONLY this JSON and nothing else:
+
 {{
   "prediction": "<component_type>"
 }}
@@ -37,7 +48,7 @@ def predict_component(netlist_text):
 
     out = pipe(
         prompt,
-        max_new_tokens=48,
+        max_new_tokens=32,
         do_sample=False,
         return_full_text=False
     )
@@ -47,10 +58,10 @@ def predict_component(netlist_text):
     print(full_out)
     print("========================\n")
 
-    try:
-        pred_json = json.loads(full_out)
+    pred_json = extract_json(full_out)
+    if pred_json:
         return pred_json.get("prediction")
-    except:
+    else:
         return None
 
     
