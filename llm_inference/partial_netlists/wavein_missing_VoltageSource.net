@@ -1,0 +1,7 @@
+* Z:\mnt\design.r\spice\examples\wavein.asc
+? Missing component
+.tran .5
+* This example schematic is supplied for informational/educational purposes only.
+* This demonstrates using a .wav file into an LTspice simulation.
+.backanno
+.end

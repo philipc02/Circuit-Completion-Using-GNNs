@@ -1,0 +1,14 @@
+* Z:\mnt\design.r\spice\examples\4653.asc
+? Missing component
+C1 OUT 0 20µ
+C2 N002 0 4.7µ
+V1 N001 0 43
+R1 N010 0 124K
+R2 N009 0 481K
+R4 OUT 0 24
+C3 N011 0 10n Rser=499
+.tran 5m startup
+.softstart .1 ; shortens internal softstart time
+.lib LTM4653.sub
+.backanno
+.end

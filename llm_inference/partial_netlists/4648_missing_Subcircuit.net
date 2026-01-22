@@ -1,0 +1,11 @@
+* Z:\mnt\design.r\spice\examples\4648.asc
+V1 IN 0 4
+C1 N002 0 .001µ
+R1 N003 0 6.65K
+C2 OUT 0 100µ x2 V=6.3 Irms=0 Rser=0.002 Lser=0 mfg="TDK" pn="C575OX5ROJI07M" type="X5R"
+Rload OUT 0 .15
+? Missing component
+.tran 1m startup
+.lib LTM4648.sub
+.backanno
+.end

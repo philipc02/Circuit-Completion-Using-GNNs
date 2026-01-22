@@ -1,0 +1,8 @@
+* Z:\mnt\design.r\spice\examples\1541.asc
+V1 +V 0 5
+? Missing component
+V2 N003 0 sine(1.2 1 1K)
+.tran 3m
+.lib LTC.lib
+.backanno
+.end

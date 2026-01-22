@@ -1,0 +1,10 @@
+* Z:\mnt\design.r\spice\examples\AD5535Bopamp.asc
+? Missing component
+V2 N001 0 200
+R1 OUT 0 1T
+C1 OUT 0 200p
+XU1 N001 IN OUT 0 AD5535Bopamp AD5535Bopamp
+.tran 14m startup
+.lib AD5535Bopamp.sub
+.backanno
+.end

@@ -50,6 +50,13 @@ def get_graph_info_summary(graph, filename):
         "density": nx.density(graph),
     }
 
+    if graph.number_of_nodes() > 0:
+        avg_degree = sum(dict(graph.degree()).values()) / graph.number_of_nodes()
+    else:
+        avg_degree = 0
+    
+    stats["average_node_degree"] = avg_degree
+
     node_types = Counter(nx.get_node_attributes(graph, "type").values())
     for k, v in node_types.items():
         stats[f"num_nodes_{k}"] = v
@@ -113,7 +120,7 @@ def process_folder(graph_folder):
     df = pd.DataFrame(graph_stats).fillna(0)  # fill missing columns with 0
     # dataset-level summaries
     # adjust according to represntation type (no pin/net info if those nodes dont exist)
-    numeric_cols = ["num_nodes", "num_edges", "average_shortest_path_length", "density", "net_to_component_ratio", "pin_to_component_ratio", "avg_connections_per_net"]
+    numeric_cols = ["num_nodes", "num_edges", "average_shortest_path_length", "density", "average_node_degree", "net_to_component_ratio", "pin_to_component_ratio", "avg_connections_per_net"]
     summary = df[numeric_cols].mean().to_frame().T
 
     node_type_cols = [c for c in df.columns if c.startswith("num_nodes_")]
@@ -134,11 +141,11 @@ def process_folder(graph_folder):
         })
     freq_df = pd.DataFrame(freq_rows).sort_values("count", ascending=False)
 
-    with open("graph_statistics_component_net.csv", "w", encoding="utf-8") as f:
+    with open("graph_statistics_component_component.csv", "w", encoding="utf-8") as f:
         summary_full.to_csv(f, sep=";", decimal=",")
         f.write("\n\n# Global component class frequencies\n")
         freq_df.to_csv(f, sep=";", index=False, decimal=",")
 
 if __name__ == "__main__":
-    graph_folder = "../graphs_ltspice_demos/graphs_component_net"
+    graph_folder = "../graphs_ltspice_demos/graphs_component_component"
     process_folder(graph_folder)

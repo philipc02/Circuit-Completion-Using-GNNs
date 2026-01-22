@@ -1,0 +1,11 @@
+* Z:\mnt\design.r\spice\examples\6102.asc
+V1 N002 0 50
+? Missing component
+R1 N002 N001 1m
+R2 N002 N003 20
+R3 OUT 0 4.99K
+Iload N001 0 SINE(1 1 10)
+.tran 300m
+.lib LTC6.lib
+.backanno
+.end
