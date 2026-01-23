@@ -7,11 +7,11 @@ from torch_geometric.data import Data
 class ComponentPinNetDataset(BaseCircuitDataset):
     @property
     def num_features(self):
-        return 16
+        return 19
 
     @property 
     def num_classes(self):
-        return 4
+        return 5
     # Dataset for component-pin-net-pin-component representation
     def convert_graph_to_pyg(self, G):
         if G.number_of_nodes() == 0:
@@ -32,18 +32,18 @@ class ComponentPinNetDataset(BaseCircuitDataset):
             if node_type == 'component':
                 feat[0] = 1.0  # node type: component
                 feat[1] = degrees[node] / 10.0
-                if comp_type in ['R', 'C', 'V', 'X']:
-                    comp_idx = ['R', 'C', 'V', 'X'].index(comp_type)
+                if comp_type in ['R', 'C', 'V', 'X', 'M']:
+                    comp_idx = ['R', 'C', 'V', 'X', 'M'].index(comp_type)
                     feat[2 + comp_idx] = 1.0
             elif node_type == 'pin':
-                feat[6] = 1.0  # node type: pin
-                feat[7] = degrees[node] / 5.0
-                if pin_type in ['1', '2', 'pos', 'neg', 'p']:
-                    pin_idx = ['1', '2', 'pos', 'neg', 'p'].index(pin_type)
+                feat[7] = 1.0  # node type: pin
+                feat[8] = degrees[node] / 5.0
+                if pin_type in ['1', '2', 'pos', 'neg', 'p', 'drain', 'gate', 'source']:
+                    pin_idx = ['1', '2', 'pos', 'neg', 'p', 'drain', 'gate', 'source'].index(pin_type)
                     feat[8 + pin_idx] = 1.0
             elif node_type == 'net':
-                feat[13] = 1.0  # node type: net
-                feat[14] = degrees[node] / 20.0
+                feat[17] = 1.0  # node type: net
+                feat[18] = degrees[node] / 20.0
 
             node_features.append(feat)
         

@@ -7,11 +7,11 @@ from torch_geometric.data import Data
 class ComponentNetDataset(BaseCircuitDataset):
     @property
     def num_features(self):
-        return 8
+        return 9
 
     @property 
     def num_classes(self):
-        return 4
+        return 5
     # Dataset for component-net representation
     def convert_graph_to_pyg(self, G):
         if G.number_of_nodes() == 0:
@@ -31,12 +31,12 @@ class ComponentNetDataset(BaseCircuitDataset):
             if node_type == 'component':
                 feat[0] = 1.0  # node type: component
                 feat[1] = degrees[node] / 10.0
-                if comp_type in ['R', 'C', 'V', 'X']:
-                    comp_idx = ['R', 'C', 'V', 'X'].index(comp_type)
+                if comp_type in ['R', 'C', 'V', 'X', 'M']:
+                    comp_idx = ['R', 'C', 'V', 'X', 'M'].index(comp_type)
                     feat[2 + comp_idx] = 1.0
             else:  # net node
-                feat[6] = 1.0  # node type: net
-                feat[7] = degrees[node] / 20.0
+                feat[7] = 1.0  # node type: net
+                feat[8] = degrees[node] / 20.0
                             
             node_features.append(feat)
         

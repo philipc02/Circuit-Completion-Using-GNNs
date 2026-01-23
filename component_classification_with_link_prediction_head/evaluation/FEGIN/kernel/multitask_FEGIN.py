@@ -9,7 +9,7 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 class MultiTaskFEGIN(torch.nn.Module):
 
     def __init__(self, dataset, num_layers, hidden, emb_size, use_z=False, use_rd=False, 
-                 lambda_node=1.0, lambda_edge=1.0, max_pins=2):
+                 lambda_node=1.0, lambda_edge=1.0, max_pins=3):
         super(MultiTaskFEGIN, self).__init__()
         self.use_z = use_z
         self.use_rd = use_rd
@@ -58,11 +58,11 @@ class MultiTaskFEGIN(torch.nn.Module):
 
         # Component type embedding for link prediction
         self.comp_type_embedding = torch.nn.Embedding(
-            dataset.num_classes,  # 4 component types: R, C, V, X
+            dataset.num_classes,  # 5 component types: R, C, V, X, M
             num_layers * hidden   # Same dimension as node embeddings
         )
 
-        self.max_pins = max_pins # 2 for R, C, V
+        self.max_pins = max_pins # 2 for R, C, V, 3 for M (subcircuits have more)
 
         # Add pin position embeddings (for pin-specific predictions)
         self.pin_position_embedding = torch.nn.Embedding(

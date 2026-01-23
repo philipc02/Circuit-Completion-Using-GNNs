@@ -12,11 +12,11 @@ class MultiTaskCircuitDataset(InMemoryDataset):
     # Generate candidate edges for link prediction
     # Label which edges should exist based on original graph (positive, negative)
 
-    num_classes = 4  # R, C, V, X
+    num_classes = 5  # R, C, V, X, M
 
     
     def __init__(self, root, name, representation, h, max_nodes_per_hop, 
-                 node_label, use_rd, neg_sampling_ratio=5.0, max_pins=2, split='train',
+                 node_label, use_rd, neg_sampling_ratio=5.0, max_pins=3, split='train',
                  transform=None, pre_transform=None, pre_filter=None):
         self.representation = representation
         self.h,self.max_nodes_per_hop, self.node_label, self.use_rd,self.name = h,max_nodes_per_hop, node_label, use_rd,name
@@ -54,11 +54,13 @@ class MultiTaskCircuitDataset(InMemoryDataset):
     @property
     def num_features(self):
         if self.representation == "component_component":
-            return 6
+            return 7
         elif self.representation == "component_net":
-            return 8
-        else:  # component_pin, component_pin_net or anything else
-            return 16
+            return 9
+        elif self.representation == "component_pin":
+            return 17
+        else:  # component_pin_net or anything else
+            return 19
 
     def __len__(self):
         return self.num_examples
@@ -166,7 +168,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
     def create_multitask_examples(self, G, graph_name, split):
         # examples with both classification labels and edge prediction targets
         examples = []
-        comp_type_to_idx = {'R': 0, 'C': 1, 'V': 2, 'X': 3}
+        comp_type_to_idx = {'R': 0, 'C': 1, 'V': 2, 'X': 3, 'M': 4}
         
         component_nodes = [node for node, attr in G.nodes(data=True) if attr.get('type') == 'component']
         
@@ -203,7 +205,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
             pin_positions = []
 
             for pin_idx, pin_node in enumerate(pin_nodes):
-                if pin_idx >= self.max_pins:  # Only handle up to max_pins
+                if pin_idx >= self.max_pins:  # Only handle up to max_pins = 3
                     break
                 if self.representation == 'component_pin_net':
                     # Get the net this pin should connect to
@@ -506,12 +508,12 @@ class MultiTaskCircuitDataset(InMemoryDataset):
             for node, attr in G.nodes(data=True):
                 node_type = attr.get('type', '')
                 comp_type = attr.get('comp_type', '')
-                feat = np.zeros(6, dtype=np.float32)
+                feat = np.zeros(7, dtype=np.float32)
                 
                 feat[0] = 1.0  # node type: component
                 feat[1] = degrees[node] / 10.0
-                if comp_type in ['R', 'C', 'V', 'X']:
-                    comp_idx = ['R', 'C', 'V', 'X'].index(comp_type)
+                if comp_type in ['R', 'C', 'V', 'X', 'M']:
+                    comp_idx = ['R', 'C', 'V', 'X', 'M'].index(comp_type)
                     feat[2 + comp_idx] = 1.0
                 
                 node_features.append(feat)
@@ -525,17 +527,17 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                 node_type = attr.get('type', '')
                 comp_type = attr.get('comp_type', '')
                 
-                feat = np.zeros(8, dtype=np.float32)
+                feat = np.zeros(9, dtype=np.float32)
                 
                 if node_type == 'component':
                     feat[0] = 1.0  # node type: component
                     feat[1] = degrees[node] / 10.0
-                    if comp_type in ['R', 'C', 'V', 'X']:
-                        comp_idx = ['R', 'C', 'V', 'X'].index(comp_type)
+                    if comp_type in ['R', 'C', 'V', 'X', 'M']:
+                        comp_idx = ['R', 'C', 'V', 'X', 'M'].index(comp_type)
                         feat[2 + comp_idx] = 1.0
                 else:  # net node
-                    feat[6] = 1.0  # node type: net
-                    feat[7] = degrees[node] / 20.0
+                    feat[7] = 1.0  # node type: net
+                    feat[8] = degrees[node] / 20.0
                                 
                 node_features.append(feat)
         elif representation == "component_pin":
@@ -549,21 +551,21 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                 comp_type = attr.get('comp_type', '')
                 pin_type = attr.get('pin', '')
                 
-                feat = np.zeros(16, dtype=np.float32) # bigger feature vector for encoding pin type
+                feat = np.zeros(17, dtype=np.float32) # bigger feature vector for encoding pin type
                 
                 if node_type == 'component':
                     feat[0] = 1.0  # node type: component
                     feat[1] = degrees[node] / 10.0
-                    if comp_type in ['R', 'C', 'V', 'X']:
-                        comp_idx = ['R', 'C', 'V', 'X'].index(comp_type)
+                    if comp_type in ['R', 'C', 'V', 'X', 'M']:
+                        comp_idx = ['R', 'C', 'V', 'X', 'M'].index(comp_type)
                         feat[2 + comp_idx] = 1.0
                 elif node_type == 'pin':
-                    feat[6] = 1.0  # node type: pin
-                    feat[7] = degrees[node] / 5.0
-                    if pin_type in ['1', '2', 'pos', 'neg', 'p']:
-                        pin_types = ['1', '2', 'pos', 'neg', 'p']
+                    feat[7] = 1.0  # node type: pin
+                    feat[8] = degrees[node] / 5.0
+                    if pin_type in ['1', '2', 'pos', 'neg', 'p', 'drain', 'gate', 'source']:
+                        pin_types = ['1', '2', 'pos', 'neg', 'p', 'drain', 'gate', 'source']
                         pin_idx = pin_types.index(pin_type)
-                        feat[8 + pin_idx] = 1.0
+                        feat[9 + pin_idx] = 1.0
                 
                 node_features.append(feat)
         elif representation == "component_pin_net":
@@ -577,23 +579,23 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                 comp_type = attr.get('comp_type', '')
                 pin_type = attr.get('pin', '')
                 
-                feat = np.zeros(16, dtype=np.float32)  # bigger feature vector for encoding pin type
+                feat = np.zeros(19, dtype=np.float32)  # bigger feature vector for encoding pin type
 
                 if node_type == 'component':
                     feat[0] = 1.0  # node type: component
                     feat[1] = degrees[node] / 10.0
-                    if comp_type in ['R', 'C', 'V', 'X']:
-                        comp_idx = ['R', 'C', 'V', 'X'].index(comp_type)
+                    if comp_type in ['R', 'C', 'V', 'X', 'M']:
+                        comp_idx = ['R', 'C', 'V', 'X', 'M'].index(comp_type)
                         feat[2 + comp_idx] = 1.0
                 elif node_type == 'pin':
-                    feat[6] = 1.0  # node type: pin
-                    feat[7] = degrees[node] / 5.0
-                    if pin_type in ['1', '2', 'pos', 'neg', 'p']:
-                        pin_idx = ['1', '2', 'pos', 'neg', 'p'].index(pin_type)
-                        feat[8 + pin_idx] = 1.0
+                    feat[7] = 1.0  # node type: pin
+                    feat[8] = degrees[node] / 5.0
+                    if pin_type in ['1', '2', 'pos', 'neg', 'p', 'drain', 'gate', 'source']:
+                        pin_idx = ['1', '2', 'pos', 'neg', 'p', 'drain', 'gate', 'source'].index(pin_type)
+                        feat[9 + pin_idx] = 1.0
                 elif node_type == 'net':
-                    feat[13] = 1.0  # node type: net
-                    feat[14] = degrees[node] / 20.0
+                    feat[17] = 1.0  # node type: net
+                    feat[18] = degrees[node] / 20.0
 
                 node_features.append(feat)
         

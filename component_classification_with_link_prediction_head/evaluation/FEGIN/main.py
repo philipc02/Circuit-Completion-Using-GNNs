@@ -292,7 +292,7 @@ def main():
                     test_f1_macro=results['best_node_f1_macro'],
                     all_preds=results['predictions'],
                     all_labels=results['labels'],
-                    class_names=['R', 'C', 'V', 'X']
+                    class_names=['R', 'C', 'V', 'X', 'M']
                 )
                 tracker.log_best_scores(results['best_edge_auc'], results['best_combined_score'])
             elif args.model=="FEGIN":
@@ -317,7 +317,7 @@ def main():
                     test_f1_macro=fegin_results['best_f1_macro'],
                     all_preds=fegin_results['predictions'],
                     all_labels=fegin_results['labels'],
-                    class_names=['R', 'C', 'V', 'X']
+                    class_names=['R', 'C', 'V', 'X', 'M']
                 )
                 if f1 > best_result[1]:
                     best_result = (loss,f1,f1_std)
