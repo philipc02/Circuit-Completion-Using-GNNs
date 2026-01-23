@@ -1,0 +1,66 @@
+{
+  "component_component": {
+    "representation": "component_component",
+    "params": {
+      "layers": "2",
+      "hiddens": "64",
+      "batch_size": "32",
+      "lr": 0.01,
+      "emb_size": "512",
+      "epochs": "100",
+      "h": "2"
+    },
+    "f1": 0.6187,
+    "f1_std": 0.0094,
+    "elapsed": 820.2541198730469,
+    "success": true
+  },
+  "component_net": {
+    "representation": "component_net",
+    "params": {
+      "layers": "5",
+      "hiddens": "64",
+      "batch_size": "64",
+      "lr": 0.001,
+      "emb_size": "512",
+      "epochs": "100",
+      "h": "2"
+    },
+    "f1": 0.7108,
+    "f1_std": 0.0131,
+    "elapsed": 751.2732443809509,
+    "success": true
+  },
+  "component_pin": {
+    "representation": "component_pin",
+    "params": {
+      "layers": "3",
+      "hiddens": "128",
+      "batch_size": "64",
+      "lr": 0.01,
+      "emb_size": "512",
+      "epochs": "100",
+      "h": "2"
+    },
+    "f1": 0.7498,
+    "f1_std": 0.0162,
+    "elapsed": 664.6412003040314,
+    "success": true
+  },
+  "component_pin_net": {
+    "representation": "component_pin_net",
+    "params": {
+      "layers": "5",
+      "hiddens": "32",
+      "batch_size": "32",
+      "lr": 0.001,
+      "emb_size": "128",
+      "epochs": "100",
+      "h": "2"
+    },
+    "f1": 0.7308,
+    "f1_std": 0.0138,
+    "elapsed": 1310.3119463920593,
+    "success": true
+  }
+}

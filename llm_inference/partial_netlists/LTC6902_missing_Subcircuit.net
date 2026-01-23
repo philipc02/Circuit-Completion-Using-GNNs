@@ -1,0 +1,9 @@
+* Z:\mnt\design.r\spice\examples\LTC6902.asc
+? Missing component
+V1 PH 0 5
+R1 PH N002 10K
+R2 PH N001 10K
+.tran .5m
+.lib LTC6902.sub
+.backanno
+.end

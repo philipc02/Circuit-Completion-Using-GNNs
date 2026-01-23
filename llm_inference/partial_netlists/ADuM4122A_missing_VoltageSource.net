@@ -1,0 +1,11 @@
+* Z:\mnt\design.r\spice\examples\ADuM4122A.asc
+V1 N001 0 5
+V2 N002 0 15
+R1 OUT N003 10
+C1 OUT 0 2n
+XU1 N001 IN 0 0 N003 N002 0 N004 ADuM4122x Vrun2=4.3
+R2 OUT N004 10
+.tran 10u
+.lib ADuM4122x.sub
+.backanno
+.end
