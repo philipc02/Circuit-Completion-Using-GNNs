@@ -27,7 +27,7 @@ class ComponentPinNetDataset(BaseCircuitDataset):
             comp_type = attr.get('comp_type', '')
             pin_type = attr.get('pin', '')
             
-            feat = np.zeros(16, dtype=np.float32)  # bigger feature vector for encoding pin type
+            feat = np.zeros(19, dtype=np.float32)  # bigger feature vector for encoding pin type
 
             if node_type == 'component':
                 feat[0] = 1.0  # node type: component

@@ -26,7 +26,7 @@ class ComponentNetDataset(BaseCircuitDataset):
             node_type = attr.get('type', '')
             comp_type = attr.get('comp_type', '')
             
-            feat = np.zeros(8, dtype=np.float32)
+            feat = np.zeros(9, dtype=np.float32)
             
             if node_type == 'component':
                 feat[0] = 1.0  # node type: component

@@ -24,7 +24,7 @@ class ComponentComponentDataset(BaseCircuitDataset):
         for node, attr in G.nodes(data=True):
             node_type = attr.get('type', '')
             comp_type = attr.get('comp_type', '')
-            feat = np.zeros(6, dtype=np.float32)
+            feat = np.zeros(7, dtype=np.float32)
             
             feat[0] = 1.0  # node type: component
             feat[1] = degrees[node] / 10.0
