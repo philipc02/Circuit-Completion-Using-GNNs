@@ -372,12 +372,12 @@ def parameter_effects(all_results, output_dir='analysis_multitask_hyperparameter
         plt.show()
 
 def main():
-    output_dir = os.path.abspath('analysis_multitask_hyperparameter_search_ltspice_demos')
+    output_dir = os.path.abspath('analysis_multitask_hyperparameter_search_ltspice_examples')
     os.makedirs(output_dir, exist_ok=True)
 
     results_dirs = [
-    'multitask_hyperparameter_search_ltspice_demos_component_pin',
-    'multitask_hyperparameter_search_ltspice_demos_component_pin_net'
+    'multitask_hyperparameter_search_ltspice_examples_component_pin',
+    'multitask_hyperparameter_search_ltspice_examples_component_pin_net'
     ]
 
     all_results_combined = []
