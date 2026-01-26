@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-def load_results(results_dir='hyperparameter_search_ltspice_examples_round_2'):
+def load_results(results_dir='hyperparameter_search_ltspice_examples_round_4'):
     with open(os.path.join(results_dir, 'all_results.json'), 'r') as f:
         all_results = json.load(f)
     
@@ -72,7 +72,7 @@ def create_comparison_chart(best_results, output_dir='analysis'):
     plt.savefig(os.path.join(output_dir, 'representation_comparison.png'), dpi=300, bbox_inches='tight')
     plt.show()
     
-    print("Comparison chart saved to analysis_ltspice_examples_round_2/representation_comparison.png")
+    print("Comparison chart saved to analysis_ltspice_examples_round_4/representation_comparison.png")
 
 def create_parameter_analysis(all_results, output_dir='analysis'):
     os.makedirs(output_dir, exist_ok=True)
@@ -207,11 +207,11 @@ def paramter_effects(all_results, output_dir='analysis'):
         plt.show()
 
 def main():
-    output_dir = 'analysis_ltspice_examples_round_2'
+    output_dir = 'analysis_ltspice_examples_round_4'
     os.makedirs(output_dir, exist_ok=True)
     
     print("Loading results...")
-    all_results, best_results = load_results('hyperparameter_search_ltspice_examples_round_2')
+    all_results, best_results = load_results('hyperparameter_search_ltspice_examples_round_4')
     
     print("Creating visualizations...")
     create_comparison_chart(best_results, output_dir)
