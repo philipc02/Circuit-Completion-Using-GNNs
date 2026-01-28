@@ -1,0 +1,60 @@
+HYPERPARAMETER SEARCH SUMMARY
+BEST CONFIGURATIONS BY REPRESENTATION:
+
+COMPONENT_COMPONENT:
+  F1 Score: 0.6830 ± 0.0246
+  Parameters:
+    layers: 5
+    hiddens: 32
+    batch_size: 64
+    lr: 0.01
+    emb_size: 250
+    epochs: 100
+    h: 2
+  Training time: 660.4s
+
+COMPONENT_NET:
+  F1 Score: 0.6823 ± 0.0170
+  Parameters:
+    layers: 2
+    hiddens: 128
+    batch_size: 32
+    lr: 0.0001
+    emb_size: 128
+    epochs: 100
+    h: 2
+  Training time: 794.6s
+
+COMPONENT_PIN:
+  F1 Score: 0.7266 ± 0.0257
+  Parameters:
+    layers: 6
+    hiddens: 32
+    batch_size: 64
+    lr: 0.01
+    emb_size: 250
+    epochs: 100
+    h: 2
+  Training time: 790.5s
+
+COMPONENT_PIN_NET:
+  F1 Score: 0.6925 ± 0.0199
+  Parameters:
+    layers: 6
+    hiddens: 64
+    batch_size: 64
+    lr: 0.001
+    emb_size: 512
+    epochs: 100
+    h: 2
+  Training time: 772.2s
+ALL EXPERIMENTS SUMMARY:
+
+Successful experiments: 160/160
+Failed experiments: 0/160
+
+F1 Score Statistics (successful runs only):
+  Mean: 0.5468
+  Std: 0.1543
+  Min: 0.2281
+  Max: 0.7266

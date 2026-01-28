@@ -1,0 +1,1119 @@
+STDOUT:
+Results will be saved in /home/philip/projects/ltspice_examples_code_repo/Circuit-Completion-Using-GNNs/component_classification_with_link_prediction_head/evaluation/FEGIN/results/model_FEGIN_dataset_ltspice_demos
+Command line input: python main.py --data ltspice_demos --representation component_net --model FEGIN --layers 4 --hiddens 32 --batch_size 256 --lr 0.0001 --emb_size 128 --epochs 100 --save_appendix component_net_L4_H32_BS256_LR0.0001_E128 --no_val
+ is saved.
+-----
+ltspice_demos - FEGIN
+Using 4 layers, 32 hidden units, h = 2
+Loading component_net representation dataset
+ENTERED
+Training FEGIN on component_net representation
+Train: 1565, Test: 383
+##################ITERATION #0 ****************************************
+ epoch: 0, train_loss: 1.3559, test_loss: 1.3574, test_f1: 0.2281
+ epoch: 1, train_loss: 1.3525, test_loss: 1.3565, test_f1: 0.2281
+ epoch: 2, train_loss: 1.3503, test_loss: 1.3559, test_f1: 0.2281
+ epoch: 3, train_loss: 1.3488, test_loss: 1.3556, test_f1: 0.2281
+ epoch: 4, train_loss: 1.3468, test_loss: 1.3556, test_f1: 0.2281
+ epoch: 5, train_loss: 1.3459, test_loss: 1.3554, test_f1: 0.2281
+ epoch: 6, train_loss: 1.3435, test_loss: 1.3548, test_f1: 0.2281
+ epoch: 7, train_loss: 1.3421, test_loss: 1.3534, test_f1: 0.2281
+ epoch: 8, train_loss: 1.3408, test_loss: 1.3519, test_f1: 0.2281
+ epoch: 9, train_loss: 1.3394, test_loss: 1.3499, test_f1: 0.2281
+ epoch: 10, train_loss: 1.3375, test_loss: 1.3478, test_f1: 0.2281
+ epoch: 11, train_loss: 1.3360, test_loss: 1.3458, test_f1: 0.2281
+ epoch: 12, train_loss: 1.3338, test_loss: 1.3447, test_f1: 0.2281
+ epoch: 13, train_loss: 1.3324, test_loss: 1.3434, test_f1: 0.2281
+ epoch: 14, train_loss: 1.3308, test_loss: 1.3427, test_f1: 0.2281
+ epoch: 15, train_loss: 1.3290, test_loss: 1.3413, test_f1: 0.2281
+ epoch: 16, train_loss: 1.3283, test_loss: 1.3391, test_f1: 0.2281
+ epoch: 17, train_loss: 1.3273, test_loss: 1.3371, test_f1: 0.2281
+ epoch: 18, train_loss: 1.3244, test_loss: 1.3350, test_f1: 0.2281
+ epoch: 19, train_loss: 1.3232, test_loss: 1.3335, test_f1: 0.2281
+ epoch: 20, train_loss: 1.3206, test_loss: 1.3318, test_f1: 0.2281
+ epoch: 21, train_loss: 1.3182, test_loss: 1.3294, test_f1: 0.2281
+ epoch: 22, train_loss: 1.3159, test_loss: 1.3270, test_f1: 0.2281
+ epoch: 23, train_loss: 1.3146, test_loss: 1.3252, test_f1: 0.2281
+ epoch: 24, train_loss: 1.3119, test_loss: 1.3243, test_f1: 0.2281
+ epoch: 25, train_loss: 1.3099, test_loss: 1.3223, test_f1: 0.2281
+ epoch: 26, train_loss: 1.3072, test_loss: 1.3206, test_f1: 0.2281
+ epoch: 27, train_loss: 1.3045, test_loss: 1.3183, test_f1: 0.2336
+ epoch: 28, train_loss: 1.3029, test_loss: 1.3157, test_f1: 0.2336
+ epoch: 29, train_loss: 1.2989, test_loss: 1.3137, test_f1: 0.2336
+ epoch: 30, train_loss: 1.2983, test_loss: 1.3125, test_f1: 0.2336
+ epoch: 31, train_loss: 1.2937, test_loss: 1.3107, test_f1: 0.2336
+ epoch: 32, train_loss: 1.2923, test_loss: 1.3084, test_f1: 0.2336
+ epoch: 33, train_loss: 1.2896, test_loss: 1.3058, test_f1: 0.2336
+ epoch: 34, train_loss: 1.2868, test_loss: 1.3023, test_f1: 0.2336
+ epoch: 35, train_loss: 1.2840, test_loss: 1.3000, test_f1: 0.2336
+ epoch: 36, train_loss: 1.2803, test_loss: 1.2974, test_f1: 0.2336
+ epoch: 37, train_loss: 1.2791, test_loss: 1.2961, test_f1: 0.2336
+ epoch: 38, train_loss: 1.2752, test_loss: 1.2939, test_f1: 0.2336
+ epoch: 39, train_loss: 1.2694, test_loss: 1.2914, test_f1: 0.2336
+ epoch: 40, train_loss: 1.2707, test_loss: 1.2883, test_f1: 0.2336
+ epoch: 41, train_loss: 1.2633, test_loss: 1.2854, test_f1: 0.2336
+ epoch: 42, train_loss: 1.2595, test_loss: 1.2824, test_f1: 0.2336
+ epoch: 43, train_loss: 1.2565, test_loss: 1.2806, test_f1: 0.2336
+ epoch: 44, train_loss: 1.2546, test_loss: 1.2774, test_f1: 0.2336
+ epoch: 45, train_loss: 1.2523, test_loss: 1.2742, test_f1: 0.2336
+ epoch: 46, train_loss: 1.2474, test_loss: 1.2716, test_f1: 0.2336
+ epoch: 47, train_loss: 1.2484, test_loss: 1.2672, test_f1: 0.2390
+ epoch: 48, train_loss: 1.2430, test_loss: 1.2660, test_f1: 0.2390
+ epoch: 49, train_loss: 1.2387, test_loss: 1.2631, test_f1: 0.2390
+ epoch: 50, train_loss: 1.2378, test_loss: 1.2608, test_f1: 0.2390
+ epoch: 51, train_loss: 1.2335, test_loss: 1.2598, test_f1: 0.2390
+ epoch: 52, train_loss: 1.2302, test_loss: 1.2589, test_f1: 0.2390
+ epoch: 53, train_loss: 1.2302, test_loss: 1.2578, test_f1: 0.2390
+ epoch: 54, train_loss: 1.2266, test_loss: 1.2558, test_f1: 0.2390
+ epoch: 55, train_loss: 1.2255, test_loss: 1.2539, test_f1: 0.2390
+ epoch: 56, train_loss: 1.2235, test_loss: 1.2529, test_f1: 0.2390
+ epoch: 57, train_loss: 1.2235, test_loss: 1.2527, test_f1: 0.2390
+ epoch: 58, train_loss: 1.2218, test_loss: 1.2506, test_f1: 0.2390
+ epoch: 59, train_loss: 1.2190, test_loss: 1.2483, test_f1: 0.2390
+ epoch: 60, train_loss: 1.2158, test_loss: 1.2468, test_f1: 0.2390
+ epoch: 61, train_loss: 1.2147, test_loss: 1.2451, test_f1: 0.2441
+ epoch: 62, train_loss: 1.2108, test_loss: 1.2433, test_f1: 0.2441
+ epoch: 63, train_loss: 1.2119, test_loss: 1.2432, test_f1: 0.2441
+ epoch: 64, train_loss: 1.2084, test_loss: 1.2419, test_f1: 0.2441
+ epoch: 65, train_loss: 1.2130, test_loss: 1.2405, test_f1: 0.2441
+ epoch: 66, train_loss: 1.2089, test_loss: 1.2392, test_f1: 0.2441
+ epoch: 67, train_loss: 1.2069, test_loss: 1.2384, test_f1: 0.2441
+ epoch: 68, train_loss: 1.2010, test_loss: 1.2370, test_f1: 0.2443
+ epoch: 69, train_loss: 1.2007, test_loss: 1.2358, test_f1: 0.2441
+ epoch: 70, train_loss: 1.1997, test_loss: 1.2349, test_f1: 0.2429
+ epoch: 71, train_loss: 1.1981, test_loss: 1.2342, test_f1: 0.2441
+ epoch: 72, train_loss: 1.2006, test_loss: 1.2326, test_f1: 0.2441
+ epoch: 73, train_loss: 1.1943, test_loss: 1.2327, test_f1: 0.2477
+ epoch: 74, train_loss: 1.1903, test_loss: 1.2305, test_f1: 0.2428
+ epoch: 75, train_loss: 1.1922, test_loss: 1.2288, test_f1: 0.2478
+ epoch: 76, train_loss: 1.1919, test_loss: 1.2283, test_f1: 0.2478
+ epoch: 77, train_loss: 1.1888, test_loss: 1.2270, test_f1: 0.2478
+ epoch: 78, train_loss: 1.1921, test_loss: 1.2250, test_f1: 0.2478
+ epoch: 79, train_loss: 1.1860, test_loss: 1.2235, test_f1: 0.2478
+ epoch: 80, train_loss: 1.1865, test_loss: 1.2216, test_f1: 0.2478
+ epoch: 81, train_loss: 1.1808, test_loss: 1.2198, test_f1: 0.2478
+ epoch: 82, train_loss: 1.1784, test_loss: 1.2190, test_f1: 0.2478
+ epoch: 83, train_loss: 1.1836, test_loss: 1.2176, test_f1: 0.2478
+ epoch: 84, train_loss: 1.1775, test_loss: 1.2164, test_f1: 0.2478
+ epoch: 85, train_loss: 1.1731, test_loss: 1.2155, test_f1: 0.2525
+ epoch: 86, train_loss: 1.1751, test_loss: 1.2136, test_f1: 0.2570
+ epoch: 87, train_loss: 1.1711, test_loss: 1.2131, test_f1: 0.2525
+ epoch: 88, train_loss: 1.1705, test_loss: 1.2120, test_f1: 0.2570
+ epoch: 89, train_loss: 1.1700, test_loss: 1.2102, test_f1: 0.2614
+ epoch: 90, train_loss: 1.1694, test_loss: 1.2091, test_f1: 0.2614
+ epoch: 91, train_loss: 1.1680, test_loss: 1.2082, test_f1: 0.2614
+ epoch: 92, train_loss: 1.1614, test_loss: 1.2071, test_f1: 0.2614
+ epoch: 93, train_loss: 1.1590, test_loss: 1.2052, test_f1: 0.2614
+ epoch: 94, train_loss: 1.1616, test_loss: 1.2055, test_f1: 0.2614
+ epoch: 95, train_loss: 1.1586, test_loss: 1.2040, test_f1: 0.2614
+ epoch: 96, train_loss: 1.1562, test_loss: 1.2029, test_f1: 0.2614
+ epoch: 97, train_loss: 1.1550, test_loss: 1.2009, test_f1: 0.2598
+ epoch: 98, train_loss: 1.1571, test_loss: 1.2001, test_f1: 0.2598
+ epoch: 99, train_loss: 1.1521, test_loss: 1.1992, test_f1: 0.2598
+##################ITERATION #1 ****************************************
+ epoch: 0, train_loss: 1.3166, test_loss: 1.3338, test_f1: 0.2281
+ epoch: 1, train_loss: 1.3124, test_loss: 1.3330, test_f1: 0.2281
+ epoch: 2, train_loss: 1.3096, test_loss: 1.3318, test_f1: 0.2281
+ epoch: 3, train_loss: 1.3065, test_loss: 1.3308, test_f1: 0.2281
+ epoch: 4, train_loss: 1.3045, test_loss: 1.3296, test_f1: 0.2281
+ epoch: 5, train_loss: 1.3014, test_loss: 1.3276, test_f1: 0.2281
+ epoch: 6, train_loss: 1.3001, test_loss: 1.3263, test_f1: 0.2281
+ epoch: 7, train_loss: 1.2984, test_loss: 1.3246, test_f1: 0.2285
+ epoch: 8, train_loss: 1.2949, test_loss: 1.3219, test_f1: 0.2281
+ epoch: 9, train_loss: 1.2921, test_loss: 1.3191, test_f1: 0.2281
+ epoch: 10, train_loss: 1.2930, test_loss: 1.3162, test_f1: 0.2281
+ epoch: 11, train_loss: 1.2891, test_loss: 1.3137, test_f1: 0.2281
+ epoch: 12, train_loss: 1.2872, test_loss: 1.3122, test_f1: 0.2281
+ epoch: 13, train_loss: 1.2850, test_loss: 1.3106, test_f1: 0.2281
+ epoch: 14, train_loss: 1.2836, test_loss: 1.3091, test_f1: 0.2281
+ epoch: 15, train_loss: 1.2798, test_loss: 1.3078, test_f1: 0.2281
+ epoch: 16, train_loss: 1.2771, test_loss: 1.3054, test_f1: 0.2281
+ epoch: 17, train_loss: 1.2739, test_loss: 1.3039, test_f1: 0.2281
+ epoch: 18, train_loss: 1.2723, test_loss: 1.3010, test_f1: 0.2281
+ epoch: 19, train_loss: 1.2691, test_loss: 1.3004, test_f1: 0.2281
+ epoch: 20, train_loss: 1.2665, test_loss: 1.2995, test_f1: 0.2281
+ epoch: 21, train_loss: 1.2647, test_loss: 1.2969, test_f1: 0.2281
+ epoch: 22, train_loss: 1.2618, test_loss: 1.2939, test_f1: 0.2281
+ epoch: 23, train_loss: 1.2591, test_loss: 1.2910, test_f1: 0.2281
+ epoch: 24, train_loss: 1.2549, test_loss: 1.2875, test_f1: 0.2281
+ epoch: 25, train_loss: 1.2533, test_loss: 1.2865, test_f1: 0.2281
+ epoch: 26, train_loss: 1.2504, test_loss: 1.2840, test_f1: 0.2281
+ epoch: 27, train_loss: 1.2458, test_loss: 1.2816, test_f1: 0.2281
+ epoch: 28, train_loss: 1.2460, test_loss: 1.2784, test_f1: 0.2281
+ epoch: 29, train_loss: 1.2410, test_loss: 1.2763, test_f1: 0.2281
+ epoch: 30, train_loss: 1.2387, test_loss: 1.2738, test_f1: 0.2281
+ epoch: 31, train_loss: 1.2356, test_loss: 1.2719, test_f1: 0.2281
+ epoch: 32, train_loss: 1.2322, test_loss: 1.2699, test_f1: 0.2281
+ epoch: 33, train_loss: 1.2304, test_loss: 1.2673, test_f1: 0.2281
+ epoch: 34, train_loss: 1.2274, test_loss: 1.2642, test_f1: 0.2281
+ epoch: 35, train_loss: 1.2204, test_loss: 1.2606, test_f1: 0.2281
+ epoch: 36, train_loss: 1.2220, test_loss: 1.2593, test_f1: 0.2281
+ epoch: 37, train_loss: 1.2155, test_loss: 1.2582, test_f1: 0.2281
+ epoch: 38, train_loss: 1.2152, test_loss: 1.2557, test_f1: 0.2281
+ epoch: 39, train_loss: 1.2106, test_loss: 1.2523, test_f1: 0.2281
+ epoch: 40, train_loss: 1.2098, test_loss: 1.2502, test_f1: 0.2281
+ epoch: 41, train_loss: 1.2057, test_loss: 1.2477, test_f1: 0.2281
+ epoch: 42, train_loss: 1.2026, test_loss: 1.2457, test_f1: 0.2281
+ epoch: 43, train_loss: 1.1990, test_loss: 1.2451, test_f1: 0.2281
+ epoch: 44, train_loss: 1.1963, test_loss: 1.2428, test_f1: 0.2281
+ epoch: 45, train_loss: 1.1943, test_loss: 1.2404, test_f1: 0.2281
+ epoch: 46, train_loss: 1.1901, test_loss: 1.2380, test_f1: 0.2281
+ epoch: 47, train_loss: 1.1887, test_loss: 1.2356, test_f1: 0.2281
+ epoch: 48, train_loss: 1.1877, test_loss: 1.2341, test_f1: 0.2281
+ epoch: 49, train_loss: 1.1879, test_loss: 1.2308, test_f1: 0.2281
+ epoch: 50, train_loss: 1.1802, test_loss: 1.2322, test_f1: 0.2281
+ epoch: 51, train_loss: 1.1793, test_loss: 1.2305, test_f1: 0.2281
+ epoch: 52, train_loss: 1.1788, test_loss: 1.2271, test_f1: 0.2281
+ epoch: 53, train_loss: 1.1772, test_loss: 1.2260, test_f1: 0.2281
+ epoch: 54, train_loss: 1.1780, test_loss: 1.2242, test_f1: 0.2281
+ epoch: 55, train_loss: 1.1742, test_loss: 1.2241, test_f1: 0.2281
+ epoch: 56, train_loss: 1.1698, test_loss: 1.2210, test_f1: 0.2281
+ epoch: 57, train_loss: 1.1689, test_loss: 1.2201, test_f1: 0.2281
+ epoch: 58, train_loss: 1.1734, test_loss: 1.2194, test_f1: 0.2281
+ epoch: 59, train_loss: 1.1652, test_loss: 1.2185, test_f1: 0.2281
+ epoch: 60, train_loss: 1.1683, test_loss: 1.2177, test_f1: 0.2281
+ epoch: 61, train_loss: 1.1622, test_loss: 1.2177, test_f1: 0.2281
+ epoch: 62, train_loss: 1.1644, test_loss: 1.2160, test_f1: 0.2281
+ epoch: 63, train_loss: 1.1604, test_loss: 1.2158, test_f1: 0.2281
+ epoch: 64, train_loss: 1.1610, test_loss: 1.2137, test_f1: 0.2281
+ epoch: 65, train_loss: 1.1608, test_loss: 1.2123, test_f1: 0.2281
+ epoch: 66, train_loss: 1.1555, test_loss: 1.2114, test_f1: 0.2281
+ epoch: 67, train_loss: 1.1620, test_loss: 1.2109, test_f1: 0.2281
+ epoch: 68, train_loss: 1.1553, test_loss: 1.2115, test_f1: 0.2281
+ epoch: 69, train_loss: 1.1555, test_loss: 1.2125, test_f1: 0.2281
+ epoch: 70, train_loss: 1.1538, test_loss: 1.2108, test_f1: 0.2281
+ epoch: 71, train_loss: 1.1530, test_loss: 1.2121, test_f1: 0.2281
+ epoch: 72, train_loss: 1.1486, test_loss: 1.2070, test_f1: 0.2281
+ epoch: 73, train_loss: 1.1477, test_loss: 1.2077, test_f1: 0.2281
+ epoch: 74, train_loss: 1.1491, test_loss: 1.2075, test_f1: 0.2281
+ epoch: 75, train_loss: 1.1485, test_loss: 1.2097, test_f1: 0.2281
+ epoch: 76, train_loss: 1.1455, test_loss: 1.2074, test_f1: 0.2337
+ epoch: 77, train_loss: 1.1484, test_loss: 1.2096, test_f1: 0.2337
+ epoch: 78, train_loss: 1.1429, test_loss: 1.2061, test_f1: 0.2337
+ epoch: 79, train_loss: 1.1426, test_loss: 1.2069, test_f1: 0.2281
+ epoch: 80, train_loss: 1.1416, test_loss: 1.2034, test_f1: 0.2337
+ epoch: 81, train_loss: 1.1365, test_loss: 1.2018, test_f1: 0.2281
+ epoch: 82, train_loss: 1.1391, test_loss: 1.1947, test_f1: 0.2281
+ epoch: 83, train_loss: 1.1391, test_loss: 1.1944, test_f1: 0.2337
+ epoch: 84, train_loss: 1.1365, test_loss: 1.1948, test_f1: 0.2337
+ epoch: 85, train_loss: 1.1343, test_loss: 1.1941, test_f1: 0.2337
+ epoch: 86, train_loss: 1.1376, test_loss: 1.1947, test_f1: 0.2337
+ epoch: 87, train_loss: 1.1398, test_loss: 1.1971, test_f1: 0.2337
+ epoch: 88, train_loss: 1.1316, test_loss: 1.1939, test_f1: 0.2281
+ epoch: 89, train_loss: 1.1300, test_loss: 1.1946, test_f1: 0.2337
+ epoch: 90, train_loss: 1.1316, test_loss: 1.1937, test_f1: 0.2337
+ epoch: 91, train_loss: 1.1309, test_loss: 1.1930, test_f1: 0.2281
+ epoch: 92, train_loss: 1.1286, test_loss: 1.1928, test_f1: 0.2337
+ epoch: 93, train_loss: 1.1268, test_loss: 1.1868, test_f1: 0.2337
+ epoch: 94, train_loss: 1.1311, test_loss: 1.1873, test_f1: 0.2337
+ epoch: 95, train_loss: 1.1290, test_loss: 1.1891, test_f1: 0.2337
+ epoch: 96, train_loss: 1.1276, test_loss: 1.1888, test_f1: 0.2337
+ epoch: 97, train_loss: 1.1282, test_loss: 1.1850, test_f1: 0.2337
+ epoch: 98, train_loss: 1.1217, test_loss: 1.1844, test_f1: 0.2337
+ epoch: 99, train_loss: 1.1238, test_loss: 1.1869, test_f1: 0.2337
+##################ITERATION #2 ****************************************
+ epoch: 0, train_loss: 1.2844, test_loss: 1.3192, test_f1: 0.2281
+ epoch: 1, train_loss: 1.2773, test_loss: 1.3194, test_f1: 0.2281
+ epoch: 2, train_loss: 1.2734, test_loss: 1.3192, test_f1: 0.2281
+ epoch: 3, train_loss: 1.2688, test_loss: 1.3183, test_f1: 0.2281
+ epoch: 4, train_loss: 1.2655, test_loss: 1.3166, test_f1: 0.2281
+ epoch: 5, train_loss: 1.2602, test_loss: 1.3149, test_f1: 0.2281
+ epoch: 6, train_loss: 1.2578, test_loss: 1.3121, test_f1: 0.2281
+ epoch: 7, train_loss: 1.2553, test_loss: 1.3079, test_f1: 0.2281
+ epoch: 8, train_loss: 1.2499, test_loss: 1.3015, test_f1: 0.2281
+ epoch: 9, train_loss: 1.2480, test_loss: 1.2952, test_f1: 0.2281
+ epoch: 10, train_loss: 1.2434, test_loss: 1.2875, test_f1: 0.2281
+ epoch: 11, train_loss: 1.2417, test_loss: 1.2815, test_f1: 0.2281
+ epoch: 12, train_loss: 1.2358, test_loss: 1.2781, test_f1: 0.2281
+ epoch: 13, train_loss: 1.2345, test_loss: 1.2749, test_f1: 0.2281
+ epoch: 14, train_loss: 1.2335, test_loss: 1.2714, test_f1: 0.2281
+ epoch: 15, train_loss: 1.2310, test_loss: 1.2693, test_f1: 0.2281
+ epoch: 16, train_loss: 1.2293, test_loss: 1.2663, test_f1: 0.2281
+ epoch: 17, train_loss: 1.2264, test_loss: 1.2636, test_f1: 0.2281
+ epoch: 18, train_loss: 1.2185, test_loss: 1.2618, test_f1: 0.2281
+ epoch: 19, train_loss: 1.2181, test_loss: 1.2598, test_f1: 0.2281
+ epoch: 20, train_loss: 1.2149, test_loss: 1.2568, test_f1: 0.2281
+ epoch: 21, train_loss: 1.2123, test_loss: 1.2549, test_f1: 0.2281
+ epoch: 22, train_loss: 1.2061, test_loss: 1.2537, test_f1: 0.2281
+ epoch: 23, train_loss: 1.2087, test_loss: 1.2520, test_f1: 0.2281
+ epoch: 24, train_loss: 1.2089, test_loss: 1.2495, test_f1: 0.2281
+ epoch: 25, train_loss: 1.2041, test_loss: 1.2486, test_f1: 0.2281
+ epoch: 26, train_loss: 1.2007, test_loss: 1.2474, test_f1: 0.2281
+ epoch: 27, train_loss: 1.2005, test_loss: 1.2450, test_f1: 0.2281
+ epoch: 28, train_loss: 1.1964, test_loss: 1.2430, test_f1: 0.2281
+ epoch: 29, train_loss: 1.1900, test_loss: 1.2410, test_f1: 0.2281
+ epoch: 30, train_loss: 1.1925, test_loss: 1.2390, test_f1: 0.2281
+ epoch: 31, train_loss: 1.1892, test_loss: 1.2373, test_f1: 0.2281
+ epoch: 32, train_loss: 1.1880, test_loss: 1.2354, test_f1: 0.2281
+ epoch: 33, train_loss: 1.1799, test_loss: 1.2339, test_f1: 0.2281
+ epoch: 34, train_loss: 1.1836, test_loss: 1.2326, test_f1: 0.2281
+ epoch: 35, train_loss: 1.1772, test_loss: 1.2311, test_f1: 0.2281
+ epoch: 36, train_loss: 1.1767, test_loss: 1.2291, test_f1: 0.2281
+ epoch: 37, train_loss: 1.1781, test_loss: 1.2279, test_f1: 0.2281
+ epoch: 38, train_loss: 1.1728, test_loss: 1.2268, test_f1: 0.2281
+ epoch: 39, train_loss: 1.1676, test_loss: 1.2253, test_f1: 0.2281
+ epoch: 40, train_loss: 1.1657, test_loss: 1.2237, test_f1: 0.2281
+ epoch: 41, train_loss: 1.1649, test_loss: 1.2215, test_f1: 0.2281
+ epoch: 42, train_loss: 1.1671, test_loss: 1.2196, test_f1: 0.2281
+ epoch: 43, train_loss: 1.1630, test_loss: 1.2179, test_f1: 0.2285
+ epoch: 44, train_loss: 1.1623, test_loss: 1.2174, test_f1: 0.2281
+ epoch: 45, train_loss: 1.1594, test_loss: 1.2167, test_f1: 0.2281
+ epoch: 46, train_loss: 1.1528, test_loss: 1.2153, test_f1: 0.2281
+ epoch: 47, train_loss: 1.1539, test_loss: 1.2143, test_f1: 0.2281
+ epoch: 48, train_loss: 1.1540, test_loss: 1.2129, test_f1: 0.2281
+ epoch: 49, train_loss: 1.1472, test_loss: 1.2116, test_f1: 0.2281
+ epoch: 50, train_loss: 1.1459, test_loss: 1.2091, test_f1: 0.2281
+ epoch: 51, train_loss: 1.1468, test_loss: 1.2096, test_f1: 0.2285
+ epoch: 52, train_loss: 1.1464, test_loss: 1.2089, test_f1: 0.2285
+ epoch: 53, train_loss: 1.1436, test_loss: 1.2068, test_f1: 0.2289
+ epoch: 54, train_loss: 1.1408, test_loss: 1.2053, test_f1: 0.2289
+ epoch: 55, train_loss: 1.1373, test_loss: 1.2056, test_f1: 0.2285
+ epoch: 56, train_loss: 1.1438, test_loss: 1.2053, test_f1: 0.2289
+ epoch: 57, train_loss: 1.1408, test_loss: 1.2045, test_f1: 0.2289
+ epoch: 58, train_loss: 1.1423, test_loss: 1.2034, test_f1: 0.2285
+ epoch: 59, train_loss: 1.1405, test_loss: 1.2018, test_f1: 0.2285
+ epoch: 60, train_loss: 1.1320, test_loss: 1.2001, test_f1: 0.2289
+ epoch: 61, train_loss: 1.1328, test_loss: 1.2007, test_f1: 0.2289
+ epoch: 62, train_loss: 1.1334, test_loss: 1.1991, test_f1: 0.2289
+ epoch: 63, train_loss: 1.1331, test_loss: 1.1987, test_f1: 0.2289
+ epoch: 64, train_loss: 1.1313, test_loss: 1.1995, test_f1: 0.2289
+ epoch: 65, train_loss: 1.1288, test_loss: 1.1981, test_f1: 0.2289
+ epoch: 66, train_loss: 1.1289, test_loss: 1.1965, test_f1: 0.2289
+ epoch: 67, train_loss: 1.1286, test_loss: 1.1965, test_f1: 0.2289
+ epoch: 68, train_loss: 1.1272, test_loss: 1.1963, test_f1: 0.2289
+ epoch: 69, train_loss: 1.1238, test_loss: 1.1958, test_f1: 0.2289
+ epoch: 70, train_loss: 1.1231, test_loss: 1.1927, test_f1: 0.2289
+ epoch: 71, train_loss: 1.1246, test_loss: 1.1920, test_f1: 0.2289
+ epoch: 72, train_loss: 1.1235, test_loss: 1.1909, test_f1: 0.2289
+ epoch: 73, train_loss: 1.1241, test_loss: 1.1910, test_f1: 0.2289
+ epoch: 74, train_loss: 1.1267, test_loss: 1.1916, test_f1: 0.2285
+ epoch: 75, train_loss: 1.1199, test_loss: 1.1882, test_f1: 0.2285
+ epoch: 76, train_loss: 1.1182, test_loss: 1.1904, test_f1: 0.2289
+ epoch: 77, train_loss: 1.1240, test_loss: 1.1893, test_f1: 0.2285
+ epoch: 78, train_loss: 1.1139, test_loss: 1.1874, test_f1: 0.2289
+ epoch: 79, train_loss: 1.1181, test_loss: 1.1870, test_f1: 0.2285
+ epoch: 80, train_loss: 1.1152, test_loss: 1.1871, test_f1: 0.2289
+ epoch: 81, train_loss: 1.1128, test_loss: 1.1876, test_f1: 0.2285
+ epoch: 82, train_loss: 1.1120, test_loss: 1.1875, test_f1: 0.2340
+ epoch: 83, train_loss: 1.1145, test_loss: 1.1864, test_f1: 0.2285
+ epoch: 84, train_loss: 1.1170, test_loss: 1.1839, test_f1: 0.2285
+ epoch: 85, train_loss: 1.1070, test_loss: 1.1843, test_f1: 0.2289
+ epoch: 86, train_loss: 1.1116, test_loss: 1.1851, test_f1: 0.2285
+ epoch: 87, train_loss: 1.1086, test_loss: 1.1848, test_f1: 0.2340
+ epoch: 88, train_loss: 1.1107, test_loss: 1.1835, test_f1: 0.2329
+ epoch: 89, train_loss: 1.1040, test_loss: 1.1851, test_f1: 0.2329
+ epoch: 90, train_loss: 1.1107, test_loss: 1.1818, test_f1: 0.2356
+ epoch: 91, train_loss: 1.1086, test_loss: 1.1803, test_f1: 0.2544
+ epoch: 92, train_loss: 1.1027, test_loss: 1.1815, test_f1: 0.2654
+ epoch: 93, train_loss: 1.1042, test_loss: 1.1800, test_f1: 0.2721
+ epoch: 94, train_loss: 1.1002, test_loss: 1.1784, test_f1: 0.2888
+ epoch: 95, train_loss: 1.1040, test_loss: 1.1773, test_f1: 0.2872
+ epoch: 96, train_loss: 1.1113, test_loss: 1.1789, test_f1: 0.2846
+ epoch: 97, train_loss: 1.0992, test_loss: 1.1800, test_f1: 0.2761
+ epoch: 98, train_loss: 1.1012, test_loss: 1.1796, test_f1: 0.2927
+ epoch: 99, train_loss: 1.1006, test_loss: 1.1792, test_f1: 0.3047
+##################ITERATION #3 ****************************************
+ epoch: 0, train_loss: 1.2712, test_loss: 1.3170, test_f1: 0.1365
+ epoch: 1, train_loss: 1.2630, test_loss: 1.3178, test_f1: 0.1845
+ epoch: 2, train_loss: 1.2586, test_loss: 1.3171, test_f1: 0.1788
+ epoch: 3, train_loss: 1.2563, test_loss: 1.3145, test_f1: 0.2040
+ epoch: 4, train_loss: 1.2511, test_loss: 1.3107, test_f1: 0.2861
+ epoch: 5, train_loss: 1.2491, test_loss: 1.3060, test_f1: 0.2793
+ epoch: 6, train_loss: 1.2451, test_loss: 1.3014, test_f1: 0.2898
+ epoch: 7, train_loss: 1.2431, test_loss: 1.2971, test_f1: 0.3053
+ epoch: 8, train_loss: 1.2379, test_loss: 1.2926, test_f1: 0.2957
+ epoch: 9, train_loss: 1.2353, test_loss: 1.2887, test_f1: 0.2937
+ epoch: 10, train_loss: 1.2316, test_loss: 1.2830, test_f1: 0.2907
+ epoch: 11, train_loss: 1.2265, test_loss: 1.2777, test_f1: 0.2879
+ epoch: 12, train_loss: 1.2250, test_loss: 1.2730, test_f1: 0.3053
+ epoch: 13, train_loss: 1.2196, test_loss: 1.2708, test_f1: 0.2994
+ epoch: 14, train_loss: 1.2190, test_loss: 1.2684, test_f1: 0.2918
+ epoch: 15, train_loss: 1.2128, test_loss: 1.2646, test_f1: 0.3003
+ epoch: 16, train_loss: 1.2130, test_loss: 1.2614, test_f1: 0.3332
+ epoch: 17, train_loss: 1.2120, test_loss: 1.2595, test_f1: 0.3053
+ epoch: 18, train_loss: 1.2051, test_loss: 1.2571, test_f1: 0.2999
+ epoch: 19, train_loss: 1.2064, test_loss: 1.2555, test_f1: 0.3238
+ epoch: 20, train_loss: 1.2015, test_loss: 1.2544, test_f1: 0.3306
+ epoch: 21, train_loss: 1.1996, test_loss: 1.2514, test_f1: 0.3278
+ epoch: 22, train_loss: 1.1967, test_loss: 1.2487, test_f1: 0.3271
+ epoch: 23, train_loss: 1.1965, test_loss: 1.2472, test_f1: 0.3205
+ epoch: 24, train_loss: 1.1917, test_loss: 1.2435, test_f1: 0.3178
+ epoch: 25, train_loss: 1.1888, test_loss: 1.2425, test_f1: 0.3220
+ epoch: 26, train_loss: 1.1833, test_loss: 1.2412, test_f1: 0.3165
+ epoch: 27, train_loss: 1.1820, test_loss: 1.2384, test_f1: 0.3146
+ epoch: 28, train_loss: 1.1860, test_loss: 1.2364, test_f1: 0.3173
+ epoch: 29, train_loss: 1.1763, test_loss: 1.2345, test_f1: 0.3168
+ epoch: 30, train_loss: 1.1753, test_loss: 1.2330, test_f1: 0.3098
+ epoch: 31, train_loss: 1.1765, test_loss: 1.2301, test_f1: 0.3094
+ epoch: 32, train_loss: 1.1726, test_loss: 1.2270, test_f1: 0.3098
+ epoch: 33, train_loss: 1.1647, test_loss: 1.2241, test_f1: 0.3098
+ epoch: 34, train_loss: 1.1689, test_loss: 1.2218, test_f1: 0.3098
+ epoch: 35, train_loss: 1.1664, test_loss: 1.2186, test_f1: 0.3133
+ epoch: 36, train_loss: 1.1628, test_loss: 1.2175, test_f1: 0.3129
+ epoch: 37, train_loss: 1.1608, test_loss: 1.2168, test_f1: 0.3192
+ epoch: 38, train_loss: 1.1566, test_loss: 1.2136, test_f1: 0.3273
+ epoch: 39, train_loss: 1.1538, test_loss: 1.2117, test_f1: 0.3565
+ epoch: 40, train_loss: 1.1574, test_loss: 1.2091, test_f1: 0.3567
+ epoch: 41, train_loss: 1.1457, test_loss: 1.2068, test_f1: 0.3554
+ epoch: 42, train_loss: 1.1497, test_loss: 1.2059, test_f1: 0.3364
+ epoch: 43, train_loss: 1.1487, test_loss: 1.2041, test_f1: 0.3336
+ epoch: 44, train_loss: 1.1479, test_loss: 1.2032, test_f1: 0.3316
+ epoch: 45, train_loss: 1.1417, test_loss: 1.1985, test_f1: 0.3577
+ epoch: 46, train_loss: 1.1421, test_loss: 1.1961, test_f1: 0.3468
+ epoch: 47, train_loss: 1.1367, test_loss: 1.1945, test_f1: 0.3584
+ epoch: 48, train_loss: 1.1321, test_loss: 1.1894, test_f1: 0.3597
+ epoch: 49, train_loss: 1.1360, test_loss: 1.1895, test_f1: 0.3593
+ epoch: 50, train_loss: 1.1333, test_loss: 1.1881, test_f1: 0.3607
+ epoch: 51, train_loss: 1.1327, test_loss: 1.1874, test_f1: 0.3583
+ epoch: 52, train_loss: 1.1254, test_loss: 1.1854, test_f1: 0.3541
+ epoch: 53, train_loss: 1.1280, test_loss: 1.1871, test_f1: 0.3481
+ epoch: 54, train_loss: 1.1230, test_loss: 1.1844, test_f1: 0.3563
+ epoch: 55, train_loss: 1.1247, test_loss: 1.1841, test_f1: 0.3585
+ epoch: 56, train_loss: 1.1294, test_loss: 1.1800, test_f1: 0.3587
+ epoch: 57, train_loss: 1.1209, test_loss: 1.1823, test_f1: 0.3534
+ epoch: 58, train_loss: 1.1262, test_loss: 1.1840, test_f1: 0.3578
+ epoch: 59, train_loss: 1.1212, test_loss: 1.1837, test_f1: 0.3558
+ epoch: 60, train_loss: 1.1192, test_loss: 1.1835, test_f1: 0.3538
+ epoch: 61, train_loss: 1.1184, test_loss: 1.1852, test_f1: 0.3491
+ epoch: 62, train_loss: 1.1169, test_loss: 1.1806, test_f1: 0.3517
+ epoch: 63, train_loss: 1.1241, test_loss: 1.1793, test_f1: 0.3544
+ epoch: 64, train_loss: 1.1191, test_loss: 1.1778, test_f1: 0.3532
+ epoch: 65, train_loss: 1.1080, test_loss: 1.1800, test_f1: 0.3518
+ epoch: 66, train_loss: 1.1165, test_loss: 1.1753, test_f1: 0.3512
+ epoch: 67, train_loss: 1.1111, test_loss: 1.1767, test_f1: 0.3518
+ epoch: 68, train_loss: 1.1131, test_loss: 1.1744, test_f1: 0.3512
+ epoch: 69, train_loss: 1.1067, test_loss: 1.1713, test_f1: 0.3485
+ epoch: 70, train_loss: 1.1067, test_loss: 1.1747, test_f1: 0.3538
+ epoch: 71, train_loss: 1.1041, test_loss: 1.1775, test_f1: 0.3497
+ epoch: 72, train_loss: 1.1083, test_loss: 1.1758, test_f1: 0.3513
+ epoch: 73, train_loss: 1.1063, test_loss: 1.1747, test_f1: 0.3491
+ epoch: 74, train_loss: 1.1077, test_loss: 1.1709, test_f1: 0.3560
+ epoch: 75, train_loss: 1.1022, test_loss: 1.1699, test_f1: 0.3540
+ epoch: 76, train_loss: 1.1008, test_loss: 1.1727, test_f1: 0.3517
+ epoch: 77, train_loss: 1.1019, test_loss: 1.1700, test_f1: 0.3513
+ epoch: 78, train_loss: 1.1042, test_loss: 1.1694, test_f1: 0.3590
+ epoch: 79, train_loss: 1.0988, test_loss: 1.1674, test_f1: 0.3594
+ epoch: 80, train_loss: 1.0996, test_loss: 1.1710, test_f1: 0.3506
+ epoch: 81, train_loss: 1.1004, test_loss: 1.1650, test_f1: 0.3538
+ epoch: 82, train_loss: 1.0954, test_loss: 1.1670, test_f1: 0.3481
+ epoch: 83, train_loss: 1.0974, test_loss: 1.1653, test_f1: 0.3517
+ epoch: 84, train_loss: 1.0986, test_loss: 1.1663, test_f1: 0.3451
+ epoch: 85, train_loss: 1.1047, test_loss: 1.1683, test_f1: 0.3510
+ epoch: 86, train_loss: 1.0930, test_loss: 1.1639, test_f1: 0.3527
+ epoch: 87, train_loss: 1.0953, test_loss: 1.1637, test_f1: 0.3508
+ epoch: 88, train_loss: 1.0898, test_loss: 1.1626, test_f1: 0.3534
+ epoch: 89, train_loss: 1.0979, test_loss: 1.1560, test_f1: 0.3548
+ epoch: 90, train_loss: 1.0902, test_loss: 1.1613, test_f1: 0.3533
+ epoch: 91, train_loss: 1.0899, test_loss: 1.1630, test_f1: 0.3631
+ epoch: 92, train_loss: 1.0879, test_loss: 1.1624, test_f1: 0.3690
+ epoch: 93, train_loss: 1.0903, test_loss: 1.1563, test_f1: 0.3647
+ epoch: 94, train_loss: 1.0869, test_loss: 1.1508, test_f1: 0.3605
+ epoch: 95, train_loss: 1.0795, test_loss: 1.1504, test_f1: 0.3680
+ epoch: 96, train_loss: 1.0878, test_loss: 1.1597, test_f1: 0.3938
+ epoch: 97, train_loss: 1.0896, test_loss: 1.1635, test_f1: 0.3784
+ epoch: 98, train_loss: 1.0819, test_loss: 1.1594, test_f1: 0.3870
+ epoch: 99, train_loss: 1.0884, test_loss: 1.1492, test_f1: 0.3849
+##################ITERATION #4 ****************************************
+ epoch: 0, train_loss: 1.2671, test_loss: 1.3086, test_f1: 0.2281
+ epoch: 1, train_loss: 1.2543, test_loss: 1.3060, test_f1: 0.2281
+ epoch: 2, train_loss: 1.2514, test_loss: 1.3022, test_f1: 0.2281
+ epoch: 3, train_loss: 1.2448, test_loss: 1.3001, test_f1: 0.2281
+ epoch: 4, train_loss: 1.2438, test_loss: 1.2999, test_f1: 0.2281
+ epoch: 5, train_loss: 1.2432, test_loss: 1.3002, test_f1: 0.2281
+ epoch: 6, train_loss: 1.2384, test_loss: 1.3005, test_f1: 0.2281
+ epoch: 7, train_loss: 1.2361, test_loss: 1.2988, test_f1: 0.2281
+ epoch: 8, train_loss: 1.2354, test_loss: 1.2972, test_f1: 0.2281
+ epoch: 9, train_loss: 1.2285, test_loss: 1.2968, test_f1: 0.2281
+ epoch: 10, train_loss: 1.2305, test_loss: 1.2969, test_f1: 0.2281
+ epoch: 11, train_loss: 1.2280, test_loss: 1.2963, test_f1: 0.2281
+ epoch: 12, train_loss: 1.2279, test_loss: 1.2974, test_f1: 0.2281
+ epoch: 13, train_loss: 1.2219, test_loss: 1.2981, test_f1: 0.2281
+ epoch: 14, train_loss: 1.2203, test_loss: 1.3002, test_f1: 0.2281
+ epoch: 15, train_loss: 1.2141, test_loss: 1.3000, test_f1: 0.2281
+ epoch: 16, train_loss: 1.2140, test_loss: 1.3007, test_f1: 0.2281
+ epoch: 17, train_loss: 1.2145, test_loss: 1.2986, test_f1: 0.2281
+ epoch: 18, train_loss: 1.2109, test_loss: 1.2969, test_f1: 0.2281
+ epoch: 19, train_loss: 1.2062, test_loss: 1.2952, test_f1: 0.2281
+ epoch: 20, train_loss: 1.2034, test_loss: 1.2943, test_f1: 0.2270
+ epoch: 21, train_loss: 1.2023, test_loss: 1.2915, test_f1: 0.2270
+ epoch: 22, train_loss: 1.1957, test_loss: 1.2898, test_f1: 0.2270
+ epoch: 23, train_loss: 1.1962, test_loss: 1.2888, test_f1: 0.2253
+ epoch: 24, train_loss: 1.1948, test_loss: 1.2890, test_f1: 0.2242
+ epoch: 25, train_loss: 1.1908, test_loss: 1.2876, test_f1: 0.2242
+ epoch: 26, train_loss: 1.1850, test_loss: 1.2859, test_f1: 0.2242
+ epoch: 27, train_loss: 1.1909, test_loss: 1.2872, test_f1: 0.2231
+ epoch: 28, train_loss: 1.1834, test_loss: 1.2823, test_f1: 0.2231
+ epoch: 29, train_loss: 1.1836, test_loss: 1.2766, test_f1: 0.2242
+ epoch: 30, train_loss: 1.1815, test_loss: 1.2720, test_f1: 0.2242
+ epoch: 31, train_loss: 1.1788, test_loss: 1.2697, test_f1: 0.2317
+ epoch: 32, train_loss: 1.1743, test_loss: 1.2680, test_f1: 0.2341
+ epoch: 33, train_loss: 1.1704, test_loss: 1.2706, test_f1: 0.2341
+ epoch: 34, train_loss: 1.1691, test_loss: 1.2697, test_f1: 0.2329
+ epoch: 35, train_loss: 1.1723, test_loss: 1.2663, test_f1: 0.2317
+ epoch: 36, train_loss: 1.1650, test_loss: 1.2635, test_f1: 0.2288
+ epoch: 37, train_loss: 1.1646, test_loss: 1.2574, test_f1: 0.2288
+ epoch: 38, train_loss: 1.1636, test_loss: 1.2551, test_f1: 0.2288
+ epoch: 39, train_loss: 1.1607, test_loss: 1.2549, test_f1: 0.2294
+ epoch: 40, train_loss: 1.1561, test_loss: 1.2548, test_f1: 0.2583
+ epoch: 41, train_loss: 1.1518, test_loss: 1.2518, test_f1: 0.2570
+ epoch: 42, train_loss: 1.1536, test_loss: 1.2538, test_f1: 0.2545
+ epoch: 43, train_loss: 1.1481, test_loss: 1.2547, test_f1: 0.2545
+ epoch: 44, train_loss: 1.1466, test_loss: 1.2548, test_f1: 0.2590
+ epoch: 45, train_loss: 1.1456, test_loss: 1.2596, test_f1: 0.2590
+ epoch: 46, train_loss: 1.1444, test_loss: 1.2551, test_f1: 0.2634
+ epoch: 47, train_loss: 1.1425, test_loss: 1.2589, test_f1: 0.2721
+ epoch: 48, train_loss: 1.1360, test_loss: 1.2551, test_f1: 0.2678
+ epoch: 49, train_loss: 1.1384, test_loss: 1.2529, test_f1: 0.2678
+ epoch: 50, train_loss: 1.1353, test_loss: 1.2561, test_f1: 0.2721
+ epoch: 51, train_loss: 1.1347, test_loss: 1.2553, test_f1: 0.2721
+ epoch: 52, train_loss: 1.1343, test_loss: 1.2613, test_f1: 0.2721
+ epoch: 53, train_loss: 1.1295, test_loss: 1.2598, test_f1: 0.2721
+ epoch: 54, train_loss: 1.1311, test_loss: 1.2515, test_f1: 0.2721
+ epoch: 55, train_loss: 1.1267, test_loss: 1.2535, test_f1: 0.2721
+ epoch: 56, train_loss: 1.1232, test_loss: 1.2552, test_f1: 0.2721
+ epoch: 57, train_loss: 1.1249, test_loss: 1.2504, test_f1: 0.2776
+ epoch: 58, train_loss: 1.1274, test_loss: 1.2567, test_f1: 0.2776
+ epoch: 59, train_loss: 1.1209, test_loss: 1.2575, test_f1: 0.2776
+ epoch: 60, train_loss: 1.1232, test_loss: 1.2470, test_f1: 0.2776
+ epoch: 61, train_loss: 1.1203, test_loss: 1.2436, test_f1: 0.2776
+ epoch: 62, train_loss: 1.1186, test_loss: 1.2452, test_f1: 0.2776
+ epoch: 63, train_loss: 1.1197, test_loss: 1.2480, test_f1: 0.2776
+ epoch: 64, train_loss: 1.1191, test_loss: 1.2494, test_f1: 0.2776
+ epoch: 65, train_loss: 1.1151, test_loss: 1.2549, test_f1: 0.2819
+ epoch: 66, train_loss: 1.1182, test_loss: 1.2560, test_f1: 0.2927
+ epoch: 67, train_loss: 1.1142, test_loss: 1.2524, test_f1: 0.2927
+ epoch: 68, train_loss: 1.1120, test_loss: 1.2536, test_f1: 0.2915
+ epoch: 69, train_loss: 1.1148, test_loss: 1.2529, test_f1: 0.2874
+ epoch: 70, train_loss: 1.1087, test_loss: 1.2554, test_f1: 0.2780
+ epoch: 71, train_loss: 1.1105, test_loss: 1.2532, test_f1: 0.2817
+ epoch: 72, train_loss: 1.1120, test_loss: 1.2506, test_f1: 0.3115
+ epoch: 73, train_loss: 1.1071, test_loss: 1.2482, test_f1: 0.3082
+ epoch: 74, train_loss: 1.1035, test_loss: 1.2440, test_f1: 0.3020
+ epoch: 75, train_loss: 1.1059, test_loss: 1.2451, test_f1: 0.2954
+ epoch: 76, train_loss: 1.1059, test_loss: 1.2410, test_f1: 0.3069
+ epoch: 77, train_loss: 1.1101, test_loss: 1.2520, test_f1: 0.3151
+ epoch: 78, train_loss: 1.1043, test_loss: 1.2513, test_f1: 0.3129
+ epoch: 79, train_loss: 1.0999, test_loss: 1.2574, test_f1: 0.3117
+ epoch: 80, train_loss: 1.1014, test_loss: 1.2512, test_f1: 0.3048
+ epoch: 81, train_loss: 1.1041, test_loss: 1.2556, test_f1: 0.3018
+ epoch: 82, train_loss: 1.1007, test_loss: 1.2549, test_f1: 0.2959
+ epoch: 83, train_loss: 1.1070, test_loss: 1.2602, test_f1: 0.3123
+ epoch: 84, train_loss: 1.0993, test_loss: 1.2606, test_f1: 0.3233
+ epoch: 85, train_loss: 1.0935, test_loss: 1.2639, test_f1: 0.3240
+ epoch: 86, train_loss: 1.0985, test_loss: 1.2616, test_f1: 0.3240
+ epoch: 87, train_loss: 1.0998, test_loss: 1.2557, test_f1: 0.3377
+ epoch: 88, train_loss: 1.0927, test_loss: 1.2490, test_f1: 0.3475
+ epoch: 89, train_loss: 1.0931, test_loss: 1.2571, test_f1: 0.3563
+ epoch: 90, train_loss: 1.0957, test_loss: 1.2521, test_f1: 0.3359
+ epoch: 91, train_loss: 1.0876, test_loss: 1.2512, test_f1: 0.3556
+ epoch: 92, train_loss: 1.0934, test_loss: 1.2455, test_f1: 0.3576
+ epoch: 93, train_loss: 1.0856, test_loss: 1.2468, test_f1: 0.3629
+ epoch: 94, train_loss: 1.0860, test_loss: 1.2489, test_f1: 0.3627
+ epoch: 95, train_loss: 1.0920, test_loss: 1.2460, test_f1: 0.3657
+ epoch: 96, train_loss: 1.0874, test_loss: 1.2371, test_f1: 0.3757
+ epoch: 97, train_loss: 1.0947, test_loss: 1.2314, test_f1: 0.3722
+ epoch: 98, train_loss: 1.0878, test_loss: 1.2321, test_f1: 0.3747
+ epoch: 99, train_loss: 1.0850, test_loss: 1.2289, test_f1: 0.3764
+##################ITERATION #5 ****************************************
+ epoch: 0, train_loss: 1.2572, test_loss: 1.3096, test_f1: 0.2281
+ epoch: 1, train_loss: 1.2504, test_loss: 1.3103, test_f1: 0.2281
+ epoch: 2, train_loss: 1.2478, test_loss: 1.3094, test_f1: 0.2281
+ epoch: 3, train_loss: 1.2412, test_loss: 1.3089, test_f1: 0.2281
+ epoch: 4, train_loss: 1.2352, test_loss: 1.3097, test_f1: 0.2281
+ epoch: 5, train_loss: 1.2318, test_loss: 1.3103, test_f1: 0.2281
+ epoch: 6, train_loss: 1.2307, test_loss: 1.3084, test_f1: 0.2281
+ epoch: 7, train_loss: 1.2245, test_loss: 1.3036, test_f1: 0.2281
+ epoch: 8, train_loss: 1.2252, test_loss: 1.2979, test_f1: 0.2281
+ epoch: 9, train_loss: 1.2209, test_loss: 1.2906, test_f1: 0.2285
+ epoch: 10, train_loss: 1.2176, test_loss: 1.2855, test_f1: 0.2274
+ epoch: 11, train_loss: 1.2149, test_loss: 1.2787, test_f1: 0.2278
+ epoch: 12, train_loss: 1.2125, test_loss: 1.2710, test_f1: 0.2318
+ epoch: 13, train_loss: 1.2109, test_loss: 1.2675, test_f1: 0.2274
+ epoch: 14, train_loss: 1.2069, test_loss: 1.2637, test_f1: 0.2285
+ epoch: 15, train_loss: 1.2051, test_loss: 1.2604, test_f1: 0.2274
+ epoch: 16, train_loss: 1.2015, test_loss: 1.2584, test_f1: 0.2278
+ epoch: 17, train_loss: 1.1986, test_loss: 1.2560, test_f1: 0.2274
+ epoch: 18, train_loss: 1.1983, test_loss: 1.2534, test_f1: 0.2274
+ epoch: 19, train_loss: 1.1962, test_loss: 1.2527, test_f1: 0.2278
+ epoch: 20, train_loss: 1.1938, test_loss: 1.2523, test_f1: 0.2274
+ epoch: 21, train_loss: 1.1924, test_loss: 1.2504, test_f1: 0.2285
+ epoch: 22, train_loss: 1.1871, test_loss: 1.2490, test_f1: 0.2392
+ epoch: 23, train_loss: 1.1885, test_loss: 1.2454, test_f1: 0.2591
+ epoch: 24, train_loss: 1.1866, test_loss: 1.2435, test_f1: 0.2538
+ epoch: 25, train_loss: 1.1837, test_loss: 1.2424, test_f1: 0.2538
+ epoch: 26, train_loss: 1.1840, test_loss: 1.2402, test_f1: 0.2551
+ epoch: 27, train_loss: 1.1782, test_loss: 1.2382, test_f1: 0.2538
+ epoch: 28, train_loss: 1.1812, test_loss: 1.2363, test_f1: 0.2514
+ epoch: 29, train_loss: 1.1796, test_loss: 1.2339, test_f1: 0.2525
+ epoch: 30, train_loss: 1.1781, test_loss: 1.2330, test_f1: 0.2538
+ epoch: 31, train_loss: 1.1792, test_loss: 1.2324, test_f1: 0.2623
+ epoch: 32, train_loss: 1.1711, test_loss: 1.2301, test_f1: 0.2610
+ epoch: 33, train_loss: 1.1698, test_loss: 1.2287, test_f1: 0.2542
+ epoch: 34, train_loss: 1.1701, test_loss: 1.2266, test_f1: 0.2542
+ epoch: 35, train_loss: 1.1686, test_loss: 1.2254, test_f1: 0.2570
+ epoch: 36, train_loss: 1.1673, test_loss: 1.2246, test_f1: 0.2556
+ epoch: 37, train_loss: 1.1633, test_loss: 1.2228, test_f1: 0.2570
+ epoch: 38, train_loss: 1.1628, test_loss: 1.2198, test_f1: 0.2583
+ epoch: 39, train_loss: 1.1607, test_loss: 1.2185, test_f1: 0.2596
+ epoch: 40, train_loss: 1.1588, test_loss: 1.2170, test_f1: 0.2585
+ epoch: 41, train_loss: 1.1551, test_loss: 1.2152, test_f1: 0.2585
+ epoch: 42, train_loss: 1.1619, test_loss: 1.2143, test_f1: 0.2585
+ epoch: 43, train_loss: 1.1575, test_loss: 1.2132, test_f1: 0.2585
+ epoch: 44, train_loss: 1.1515, test_loss: 1.2115, test_f1: 0.2585
+ epoch: 45, train_loss: 1.1490, test_loss: 1.2096, test_f1: 0.2585
+ epoch: 46, train_loss: 1.1463, test_loss: 1.2079, test_f1: 0.2596
+ epoch: 47, train_loss: 1.1462, test_loss: 1.2055, test_f1: 0.2585
+ epoch: 48, train_loss: 1.1398, test_loss: 1.2051, test_f1: 0.2587
+ epoch: 49, train_loss: 1.1410, test_loss: 1.2028, test_f1: 0.2587
+ epoch: 50, train_loss: 1.1448, test_loss: 1.2017, test_f1: 0.2587
+ epoch: 51, train_loss: 1.1395, test_loss: 1.1997, test_f1: 0.2587
+ epoch: 52, train_loss: 1.1388, test_loss: 1.1973, test_f1: 0.2587
+ epoch: 53, train_loss: 1.1334, test_loss: 1.1978, test_f1: 0.2587
+ epoch: 54, train_loss: 1.1366, test_loss: 1.1964, test_f1: 0.2587
+ epoch: 55, train_loss: 1.1267, test_loss: 1.1958, test_f1: 0.2587
+ epoch: 56, train_loss: 1.1337, test_loss: 1.1947, test_f1: 0.2587
+ epoch: 57, train_loss: 1.1327, test_loss: 1.1937, test_f1: 0.2587
+ epoch: 58, train_loss: 1.1348, test_loss: 1.1929, test_f1: 0.2587
+ epoch: 59, train_loss: 1.1302, test_loss: 1.1915, test_f1: 0.2587
+ epoch: 60, train_loss: 1.1271, test_loss: 1.1901, test_f1: 0.2587
+ epoch: 61, train_loss: 1.1295, test_loss: 1.1896, test_f1: 0.2587
+ epoch: 62, train_loss: 1.1276, test_loss: 1.1880, test_f1: 0.2587
+ epoch: 63, train_loss: 1.1318, test_loss: 1.1874, test_f1: 0.2642
+ epoch: 64, train_loss: 1.1232, test_loss: 1.1861, test_f1: 0.2642
+ epoch: 65, train_loss: 1.1264, test_loss: 1.1856, test_f1: 0.2642
+ epoch: 66, train_loss: 1.1248, test_loss: 1.1858, test_f1: 0.2642
+ epoch: 67, train_loss: 1.1254, test_loss: 1.1854, test_f1: 0.2642
+ epoch: 68, train_loss: 1.1278, test_loss: 1.1849, test_f1: 0.2642
+ epoch: 69, train_loss: 1.1178, test_loss: 1.1836, test_f1: 0.2642
+ epoch: 70, train_loss: 1.1238, test_loss: 1.1831, test_f1: 0.2642
+ epoch: 71, train_loss: 1.1209, test_loss: 1.1820, test_f1: 0.2642
+ epoch: 72, train_loss: 1.1158, test_loss: 1.1802, test_f1: 0.2642
+ epoch: 73, train_loss: 1.1135, test_loss: 1.1799, test_f1: 0.2642
+ epoch: 74, train_loss: 1.1153, test_loss: 1.1801, test_f1: 0.2642
+ epoch: 75, train_loss: 1.1191, test_loss: 1.1806, test_f1: 0.2642
+ epoch: 76, train_loss: 1.1120, test_loss: 1.1782, test_f1: 0.2642
+ epoch: 77, train_loss: 1.1207, test_loss: 1.1780, test_f1: 0.2642
+ epoch: 78, train_loss: 1.1164, test_loss: 1.1776, test_f1: 0.2696
+ epoch: 79, train_loss: 1.1095, test_loss: 1.1750, test_f1: 0.2696
+ epoch: 80, train_loss: 1.1123, test_loss: 1.1737, test_f1: 0.2696
+ epoch: 81, train_loss: 1.1100, test_loss: 1.1734, test_f1: 0.2696
+ epoch: 82, train_loss: 1.1039, test_loss: 1.1716, test_f1: 0.2696
+ epoch: 83, train_loss: 1.1035, test_loss: 1.1708, test_f1: 0.2698
+ epoch: 84, train_loss: 1.1092, test_loss: 1.1699, test_f1: 0.2749
+ epoch: 85, train_loss: 1.1051, test_loss: 1.1701, test_f1: 0.2749
+ epoch: 86, train_loss: 1.1059, test_loss: 1.1687, test_f1: 0.2749
+ epoch: 87, train_loss: 1.1057, test_loss: 1.1685, test_f1: 0.2749
+ epoch: 88, train_loss: 1.1072, test_loss: 1.1686, test_f1: 0.2749
+ epoch: 89, train_loss: 1.1034, test_loss: 1.1672, test_f1: 0.2751
+ epoch: 90, train_loss: 1.1015, test_loss: 1.1674, test_f1: 0.2751
+ epoch: 91, train_loss: 1.0967, test_loss: 1.1670, test_f1: 0.2751
+ epoch: 92, train_loss: 1.1041, test_loss: 1.1659, test_f1: 0.2751
+ epoch: 93, train_loss: 1.1059, test_loss: 1.1644, test_f1: 0.2753
+ epoch: 94, train_loss: 1.0980, test_loss: 1.1648, test_f1: 0.2753
+ epoch: 95, train_loss: 1.1044, test_loss: 1.1630, test_f1: 0.2762
+ epoch: 96, train_loss: 1.1006, test_loss: 1.1632, test_f1: 0.2759
+ epoch: 97, train_loss: 1.0990, test_loss: 1.1623, test_f1: 0.2762
+ epoch: 98, train_loss: 1.0985, test_loss: 1.1616, test_f1: 0.2807
+ epoch: 99, train_loss: 1.1017, test_loss: 1.1612, test_f1: 0.2807
+##################ITERATION #6 ****************************************
+ epoch: 0, train_loss: 1.2441, test_loss: 1.2974, test_f1: 0.2281
+ epoch: 1, train_loss: 1.2302, test_loss: 1.2960, test_f1: 0.2281
+ epoch: 2, train_loss: 1.2263, test_loss: 1.2925, test_f1: 0.2281
+ epoch: 3, train_loss: 1.2190, test_loss: 1.2865, test_f1: 0.2281
+ epoch: 4, train_loss: 1.2177, test_loss: 1.2800, test_f1: 0.2281
+ epoch: 5, train_loss: 1.2120, test_loss: 1.2746, test_f1: 0.2281
+ epoch: 6, train_loss: 1.2097, test_loss: 1.2709, test_f1: 0.2270
+ epoch: 7, train_loss: 1.2069, test_loss: 1.2630, test_f1: 0.2259
+ epoch: 8, train_loss: 1.2038, test_loss: 1.2557, test_f1: 0.2284
+ epoch: 9, train_loss: 1.2000, test_loss: 1.2516, test_f1: 0.2537
+ epoch: 10, train_loss: 1.1934, test_loss: 1.2479, test_f1: 0.2583
+ epoch: 11, train_loss: 1.1928, test_loss: 1.2438, test_f1: 0.2583
+ epoch: 12, train_loss: 1.1887, test_loss: 1.2414, test_f1: 0.2583
+ epoch: 13, train_loss: 1.1860, test_loss: 1.2401, test_f1: 0.2628
+ epoch: 14, train_loss: 1.1815, test_loss: 1.2361, test_f1: 0.2637
+ epoch: 15, train_loss: 1.1742, test_loss: 1.2325, test_f1: 0.2639
+ epoch: 16, train_loss: 1.1742, test_loss: 1.2312, test_f1: 0.2685
+ epoch: 17, train_loss: 1.1705, test_loss: 1.2286, test_f1: 0.2917
+ epoch: 18, train_loss: 1.1648, test_loss: 1.2256, test_f1: 0.3013
+ epoch: 19, train_loss: 1.1665, test_loss: 1.2230, test_f1: 0.3078
+ epoch: 20, train_loss: 1.1686, test_loss: 1.2192, test_f1: 0.3200
+ epoch: 21, train_loss: 1.1584, test_loss: 1.2165, test_f1: 0.3200
+ epoch: 22, train_loss: 1.1581, test_loss: 1.2145, test_f1: 0.3209
+ epoch: 23, train_loss: 1.1554, test_loss: 1.2133, test_f1: 0.3208
+ epoch: 24, train_loss: 1.1483, test_loss: 1.2109, test_f1: 0.3278
+ epoch: 25, train_loss: 1.1511, test_loss: 1.2064, test_f1: 0.3279
+ epoch: 26, train_loss: 1.1432, test_loss: 1.2041, test_f1: 0.3279
+ epoch: 27, train_loss: 1.1418, test_loss: 1.2033, test_f1: 0.3246
+ epoch: 28, train_loss: 1.1373, test_loss: 1.1998, test_f1: 0.3310
+ epoch: 29, train_loss: 1.1346, test_loss: 1.1966, test_f1: 0.3357
+ epoch: 30, train_loss: 1.1336, test_loss: 1.1964, test_f1: 0.3358
+ epoch: 31, train_loss: 1.1278, test_loss: 1.1971, test_f1: 0.3340
+ epoch: 32, train_loss: 1.1265, test_loss: 1.1925, test_f1: 0.3401
+ epoch: 33, train_loss: 1.1221, test_loss: 1.1894, test_f1: 0.3422
+ epoch: 34, train_loss: 1.1164, test_loss: 1.1874, test_f1: 0.3610
+ epoch: 35, train_loss: 1.1235, test_loss: 1.1831, test_f1: 0.3686
+ epoch: 36, train_loss: 1.1175, test_loss: 1.1792, test_f1: 0.3725
+ epoch: 37, train_loss: 1.1086, test_loss: 1.1799, test_f1: 0.3730
+ epoch: 38, train_loss: 1.1168, test_loss: 1.1782, test_f1: 0.3746
+ epoch: 39, train_loss: 1.1088, test_loss: 1.1752, test_f1: 0.3761
+ epoch: 40, train_loss: 1.1091, test_loss: 1.1755, test_f1: 0.3729
+ epoch: 41, train_loss: 1.1019, test_loss: 1.1750, test_f1: 0.3764
+ epoch: 42, train_loss: 1.1102, test_loss: 1.1756, test_f1: 0.3741
+ epoch: 43, train_loss: 1.1015, test_loss: 1.1682, test_f1: 0.3792
+ epoch: 44, train_loss: 1.0940, test_loss: 1.1636, test_f1: 0.3804
+ epoch: 45, train_loss: 1.0960, test_loss: 1.1633, test_f1: 0.3837
+ epoch: 46, train_loss: 1.0975, test_loss: 1.1597, test_f1: 0.3903
+ epoch: 47, train_loss: 1.0928, test_loss: 1.1607, test_f1: 0.3821
+ epoch: 48, train_loss: 1.0912, test_loss: 1.1611, test_f1: 0.3995
+ epoch: 49, train_loss: 1.0891, test_loss: 1.1646, test_f1: 0.3889
+ epoch: 50, train_loss: 1.0874, test_loss: 1.1638, test_f1: 0.3977
+ epoch: 51, train_loss: 1.0859, test_loss: 1.1561, test_f1: 0.4000
+ epoch: 52, train_loss: 1.0801, test_loss: 1.1555, test_f1: 0.3968
+ epoch: 53, train_loss: 1.0771, test_loss: 1.1559, test_f1: 0.3919
+ epoch: 54, train_loss: 1.0845, test_loss: 1.1593, test_f1: 0.4056
+ epoch: 55, train_loss: 1.0796, test_loss: 1.1559, test_f1: 0.4017
+ epoch: 56, train_loss: 1.0770, test_loss: 1.1581, test_f1: 0.3939
+ epoch: 57, train_loss: 1.0805, test_loss: 1.1583, test_f1: 0.4008
+ epoch: 58, train_loss: 1.0728, test_loss: 1.1544, test_f1: 0.3962
+ epoch: 59, train_loss: 1.0756, test_loss: 1.1519, test_f1: 0.4030
+ epoch: 60, train_loss: 1.0721, test_loss: 1.1521, test_f1: 0.4015
+ epoch: 61, train_loss: 1.0682, test_loss: 1.1571, test_f1: 0.4042
+ epoch: 62, train_loss: 1.0702, test_loss: 1.1546, test_f1: 0.4031
+ epoch: 63, train_loss: 1.0774, test_loss: 1.1520, test_f1: 0.4051
+ epoch: 64, train_loss: 1.0690, test_loss: 1.1524, test_f1: 0.4023
+ epoch: 65, train_loss: 1.0719, test_loss: 1.1500, test_f1: 0.4045
+ epoch: 66, train_loss: 1.0708, test_loss: 1.1513, test_f1: 0.4071
+ epoch: 67, train_loss: 1.0644, test_loss: 1.1486, test_f1: 0.4145
+ epoch: 68, train_loss: 1.0663, test_loss: 1.1445, test_f1: 0.4224
+ epoch: 69, train_loss: 1.0628, test_loss: 1.1494, test_f1: 0.4160
+ epoch: 70, train_loss: 1.0597, test_loss: 1.1562, test_f1: 0.4227
+ epoch: 71, train_loss: 1.0603, test_loss: 1.1534, test_f1: 0.4155
+ epoch: 72, train_loss: 1.0591, test_loss: 1.1478, test_f1: 0.4149
+ epoch: 73, train_loss: 1.0591, test_loss: 1.1459, test_f1: 0.4237
+ epoch: 74, train_loss: 1.0619, test_loss: 1.1491, test_f1: 0.4289
+ epoch: 75, train_loss: 1.0607, test_loss: 1.1474, test_f1: 0.4265
+ epoch: 76, train_loss: 1.0610, test_loss: 1.1406, test_f1: 0.4369
+ epoch: 77, train_loss: 1.0600, test_loss: 1.1508, test_f1: 0.4216
+ epoch: 78, train_loss: 1.0559, test_loss: 1.1526, test_f1: 0.4213
+ epoch: 79, train_loss: 1.0520, test_loss: 1.1462, test_f1: 0.4336
+ epoch: 80, train_loss: 1.0525, test_loss: 1.1439, test_f1: 0.4368
+ epoch: 81, train_loss: 1.0536, test_loss: 1.1411, test_f1: 0.4340
+ epoch: 82, train_loss: 1.0534, test_loss: 1.1398, test_f1: 0.4320
+ epoch: 83, train_loss: 1.0549, test_loss: 1.1403, test_f1: 0.4345
+ epoch: 84, train_loss: 1.0441, test_loss: 1.1372, test_f1: 0.4368
+ epoch: 85, train_loss: 1.0474, test_loss: 1.1416, test_f1: 0.4322
+ epoch: 86, train_loss: 1.0457, test_loss: 1.1367, test_f1: 0.4389
+ epoch: 87, train_loss: 1.0430, test_loss: 1.1396, test_f1: 0.4251
+ epoch: 88, train_loss: 1.0501, test_loss: 1.1382, test_f1: 0.4350
+ epoch: 89, train_loss: 1.0461, test_loss: 1.1392, test_f1: 0.4322
+ epoch: 90, train_loss: 1.0561, test_loss: 1.1358, test_f1: 0.4258
+ epoch: 91, train_loss: 1.0433, test_loss: 1.1338, test_f1: 0.4376
+ epoch: 92, train_loss: 1.0419, test_loss: 1.1362, test_f1: 0.4377
+ epoch: 93, train_loss: 1.0399, test_loss: 1.1327, test_f1: 0.4308
+ epoch: 94, train_loss: 1.0349, test_loss: 1.1323, test_f1: 0.4309
+ epoch: 95, train_loss: 1.0358, test_loss: 1.1323, test_f1: 0.4309
+ epoch: 96, train_loss: 1.0368, test_loss: 1.1391, test_f1: 0.4154
+ epoch: 97, train_loss: 1.0342, test_loss: 1.1341, test_f1: 0.4233
+ epoch: 98, train_loss: 1.0310, test_loss: 1.1259, test_f1: 0.4423
+ epoch: 99, train_loss: 1.0361, test_loss: 1.1269, test_f1: 0.4332
+##################ITERATION #7 ****************************************
+ epoch: 0, train_loss: 1.2884, test_loss: 1.3165, test_f1: 0.2281
+ epoch: 1, train_loss: 1.2747, test_loss: 1.3130, test_f1: 0.2281
+ epoch: 2, train_loss: 1.2622, test_loss: 1.3100, test_f1: 0.2281
+ epoch: 3, train_loss: 1.2527, test_loss: 1.3083, test_f1: 0.2281
+ epoch: 4, train_loss: 1.2507, test_loss: 1.3070, test_f1: 0.2281
+ epoch: 5, train_loss: 1.2426, test_loss: 1.3040, test_f1: 0.2281
+ epoch: 6, train_loss: 1.2317, test_loss: 1.2983, test_f1: 0.2281
+ epoch: 7, train_loss: 1.2268, test_loss: 1.2902, test_f1: 0.2281
+ epoch: 8, train_loss: 1.2254, test_loss: 1.2871, test_f1: 0.2281
+ epoch: 9, train_loss: 1.2220, test_loss: 1.2796, test_f1: 0.2281
+ epoch: 10, train_loss: 1.2215, test_loss: 1.2727, test_f1: 0.2281
+ epoch: 11, train_loss: 1.2108, test_loss: 1.2653, test_f1: 0.2281
+ epoch: 12, train_loss: 1.2073, test_loss: 1.2576, test_f1: 0.2650
+ epoch: 13, train_loss: 1.2004, test_loss: 1.2506, test_f1: 0.2698
+ epoch: 14, train_loss: 1.1932, test_loss: 1.2434, test_f1: 0.3118
+ epoch: 15, train_loss: 1.2005, test_loss: 1.2412, test_f1: 0.3116
+ epoch: 16, train_loss: 1.1984, test_loss: 1.2382, test_f1: 0.3313
+ epoch: 17, train_loss: 1.1921, test_loss: 1.2359, test_f1: 0.3368
+ epoch: 18, train_loss: 1.1849, test_loss: 1.2316, test_f1: 0.3517
+ epoch: 19, train_loss: 1.1787, test_loss: 1.2298, test_f1: 0.3465
+ epoch: 20, train_loss: 1.1812, test_loss: 1.2298, test_f1: 0.3311
+ epoch: 21, train_loss: 1.1799, test_loss: 1.2284, test_f1: 0.3377
+ epoch: 22, train_loss: 1.1755, test_loss: 1.2270, test_f1: 0.3451
+ epoch: 23, train_loss: 1.1707, test_loss: 1.2236, test_f1: 0.3542
+ epoch: 24, train_loss: 1.1687, test_loss: 1.2214, test_f1: 0.3501
+ epoch: 25, train_loss: 1.1630, test_loss: 1.2205, test_f1: 0.3592
+ epoch: 26, train_loss: 1.1582, test_loss: 1.2170, test_f1: 0.3543
+ epoch: 27, train_loss: 1.1630, test_loss: 1.2156, test_f1: 0.3554
+ epoch: 28, train_loss: 1.1530, test_loss: 1.2139, test_f1: 0.3547
+ epoch: 29, train_loss: 1.1534, test_loss: 1.2121, test_f1: 0.3665
+ epoch: 30, train_loss: 1.1513, test_loss: 1.2099, test_f1: 0.3682
+ epoch: 31, train_loss: 1.1422, test_loss: 1.2067, test_f1: 0.3693
+ epoch: 32, train_loss: 1.1481, test_loss: 1.2072, test_f1: 0.3693
+ epoch: 33, train_loss: 1.1412, test_loss: 1.2046, test_f1: 0.3709
+ epoch: 34, train_loss: 1.1395, test_loss: 1.2014, test_f1: 0.3712
+ epoch: 35, train_loss: 1.1381, test_loss: 1.2003, test_f1: 0.3720
+ epoch: 36, train_loss: 1.1407, test_loss: 1.1996, test_f1: 0.3725
+ epoch: 37, train_loss: 1.1366, test_loss: 1.1969, test_f1: 0.3715
+ epoch: 38, train_loss: 1.1323, test_loss: 1.1950, test_f1: 0.3775
+ epoch: 39, train_loss: 1.1317, test_loss: 1.1942, test_f1: 0.3801
+ epoch: 40, train_loss: 1.1284, test_loss: 1.1905, test_f1: 0.3806
+ epoch: 41, train_loss: 1.1271, test_loss: 1.1879, test_f1: 0.3803
+ epoch: 42, train_loss: 1.1228, test_loss: 1.1858, test_f1: 0.3809
+ epoch: 43, train_loss: 1.1266, test_loss: 1.1839, test_f1: 0.3882
+ epoch: 44, train_loss: 1.1218, test_loss: 1.1819, test_f1: 0.3965
+ epoch: 45, train_loss: 1.1150, test_loss: 1.1799, test_f1: 0.4045
+ epoch: 46, train_loss: 1.1116, test_loss: 1.1790, test_f1: 0.4106
+ epoch: 47, train_loss: 1.1167, test_loss: 1.1775, test_f1: 0.4149
+ epoch: 48, train_loss: 1.1113, test_loss: 1.1763, test_f1: 0.4174
+ epoch: 49, train_loss: 1.1119, test_loss: 1.1741, test_f1: 0.4135
+ epoch: 50, train_loss: 1.1113, test_loss: 1.1732, test_f1: 0.4138
+ epoch: 51, train_loss: 1.1052, test_loss: 1.1714, test_f1: 0.4171
+ epoch: 52, train_loss: 1.1021, test_loss: 1.1713, test_f1: 0.4062
+ epoch: 53, train_loss: 1.0978, test_loss: 1.1701, test_f1: 0.4257
+ epoch: 54, train_loss: 1.1031, test_loss: 1.1698, test_f1: 0.4128
+ epoch: 55, train_loss: 1.1013, test_loss: 1.1695, test_f1: 0.4180
+ epoch: 56, train_loss: 1.1023, test_loss: 1.1696, test_f1: 0.4140
+ epoch: 57, train_loss: 1.1025, test_loss: 1.1687, test_f1: 0.4181
+ epoch: 58, train_loss: 1.0996, test_loss: 1.1682, test_f1: 0.4135
+ epoch: 59, train_loss: 1.0996, test_loss: 1.1669, test_f1: 0.4137
+ epoch: 60, train_loss: 1.0944, test_loss: 1.1670, test_f1: 0.4225
+ epoch: 61, train_loss: 1.0914, test_loss: 1.1663, test_f1: 0.4157
+ epoch: 62, train_loss: 1.0928, test_loss: 1.1637, test_f1: 0.4201
+ epoch: 63, train_loss: 1.0897, test_loss: 1.1621, test_f1: 0.4160
+ epoch: 64, train_loss: 1.0932, test_loss: 1.1618, test_f1: 0.4192
+ epoch: 65, train_loss: 1.0821, test_loss: 1.1615, test_f1: 0.4223
+ epoch: 66, train_loss: 1.0890, test_loss: 1.1601, test_f1: 0.4200
+ epoch: 67, train_loss: 1.0917, test_loss: 1.1618, test_f1: 0.4220
+ epoch: 68, train_loss: 1.0909, test_loss: 1.1599, test_f1: 0.4242
+ epoch: 69, train_loss: 1.0847, test_loss: 1.1596, test_f1: 0.4242
+ epoch: 70, train_loss: 1.0966, test_loss: 1.1616, test_f1: 0.4179
+ epoch: 71, train_loss: 1.0836, test_loss: 1.1598, test_f1: 0.4223
+ epoch: 72, train_loss: 1.0877, test_loss: 1.1586, test_f1: 0.4274
+ epoch: 73, train_loss: 1.0836, test_loss: 1.1590, test_f1: 0.4245
+ epoch: 74, train_loss: 1.0842, test_loss: 1.1591, test_f1: 0.4237
+ epoch: 75, train_loss: 1.0800, test_loss: 1.1562, test_f1: 0.4274
+ epoch: 76, train_loss: 1.0848, test_loss: 1.1568, test_f1: 0.4287
+ epoch: 77, train_loss: 1.0837, test_loss: 1.1555, test_f1: 0.4279
+ epoch: 78, train_loss: 1.0776, test_loss: 1.1546, test_f1: 0.4291
+ epoch: 79, train_loss: 1.0766, test_loss: 1.1550, test_f1: 0.4185
+ epoch: 80, train_loss: 1.0814, test_loss: 1.1574, test_f1: 0.4184
+ epoch: 81, train_loss: 1.0798, test_loss: 1.1580, test_f1: 0.4211
+ epoch: 82, train_loss: 1.0802, test_loss: 1.1589, test_f1: 0.4223
+ epoch: 83, train_loss: 1.0757, test_loss: 1.1595, test_f1: 0.4206
+ epoch: 84, train_loss: 1.0779, test_loss: 1.1578, test_f1: 0.4190
+ epoch: 85, train_loss: 1.0771, test_loss: 1.1558, test_f1: 0.4257
+ epoch: 86, train_loss: 1.0716, test_loss: 1.1553, test_f1: 0.4168
+ epoch: 87, train_loss: 1.0729, test_loss: 1.1561, test_f1: 0.4206
+ epoch: 88, train_loss: 1.0738, test_loss: 1.1562, test_f1: 0.4088
+ epoch: 89, train_loss: 1.0699, test_loss: 1.1555, test_f1: 0.4201
+ epoch: 90, train_loss: 1.0740, test_loss: 1.1555, test_f1: 0.4188
+ epoch: 91, train_loss: 1.0667, test_loss: 1.1528, test_f1: 0.4228
+ epoch: 92, train_loss: 1.0715, test_loss: 1.1518, test_f1: 0.4250
+ epoch: 93, train_loss: 1.0666, test_loss: 1.1538, test_f1: 0.4158
+ epoch: 94, train_loss: 1.0777, test_loss: 1.1516, test_f1: 0.4161
+ epoch: 95, train_loss: 1.0674, test_loss: 1.1491, test_f1: 0.4308
+ epoch: 96, train_loss: 1.0632, test_loss: 1.1496, test_f1: 0.4264
+ epoch: 97, train_loss: 1.0701, test_loss: 1.1493, test_f1: 0.4190
+ epoch: 98, train_loss: 1.0639, test_loss: 1.1501, test_f1: 0.4168
+ epoch: 99, train_loss: 1.0695, test_loss: 1.1486, test_f1: 0.4171
+##################ITERATION #8 ****************************************
+ epoch: 0, train_loss: 1.2513, test_loss: 1.2990, test_f1: 0.2281
+ epoch: 1, train_loss: 1.2395, test_loss: 1.3037, test_f1: 0.2281
+ epoch: 2, train_loss: 1.2290, test_loss: 1.3065, test_f1: 0.2281
+ epoch: 3, train_loss: 1.2215, test_loss: 1.3077, test_f1: 0.2281
+ epoch: 4, train_loss: 1.2210, test_loss: 1.3106, test_f1: 0.2281
+ epoch: 5, train_loss: 1.2137, test_loss: 1.3145, test_f1: 0.2281
+ epoch: 6, train_loss: 1.2056, test_loss: 1.3153, test_f1: 0.2281
+ epoch: 7, train_loss: 1.2047, test_loss: 1.3061, test_f1: 0.2337
+ epoch: 8, train_loss: 1.1980, test_loss: 1.2848, test_f1: 0.2985
+ epoch: 9, train_loss: 1.1936, test_loss: 1.2689, test_f1: 0.3457
+ epoch: 10, train_loss: 1.1866, test_loss: 1.2596, test_f1: 0.3526
+ epoch: 11, train_loss: 1.1869, test_loss: 1.2539, test_f1: 0.3485
+ epoch: 12, train_loss: 1.1919, test_loss: 1.2470, test_f1: 0.3524
+ epoch: 13, train_loss: 1.1845, test_loss: 1.2421, test_f1: 0.3462
+ epoch: 14, train_loss: 1.1792, test_loss: 1.2367, test_f1: 0.3533
+ epoch: 15, train_loss: 1.1727, test_loss: 1.2320, test_f1: 0.3533
+ epoch: 16, train_loss: 1.1777, test_loss: 1.2277, test_f1: 0.3471
+ epoch: 17, train_loss: 1.1693, test_loss: 1.2242, test_f1: 0.3502
+ epoch: 18, train_loss: 1.1687, test_loss: 1.2206, test_f1: 0.3483
+ epoch: 19, train_loss: 1.1650, test_loss: 1.2181, test_f1: 0.3502
+ epoch: 20, train_loss: 1.1698, test_loss: 1.2153, test_f1: 0.3552
+ epoch: 21, train_loss: 1.1650, test_loss: 1.2138, test_f1: 0.3573
+ epoch: 22, train_loss: 1.1592, test_loss: 1.2112, test_f1: 0.3497
+ epoch: 23, train_loss: 1.1512, test_loss: 1.2080, test_f1: 0.3595
+ epoch: 24, train_loss: 1.1502, test_loss: 1.2062, test_f1: 0.3575
+ epoch: 25, train_loss: 1.1467, test_loss: 1.2028, test_f1: 0.3575
+ epoch: 26, train_loss: 1.1487, test_loss: 1.1993, test_f1: 0.3555
+ epoch: 27, train_loss: 1.1396, test_loss: 1.1959, test_f1: 0.3680
+ epoch: 28, train_loss: 1.1427, test_loss: 1.1934, test_f1: 0.3668
+ epoch: 29, train_loss: 1.1411, test_loss: 1.1916, test_f1: 0.3576
+ epoch: 30, train_loss: 1.1431, test_loss: 1.1900, test_f1: 0.3618
+ epoch: 31, train_loss: 1.1392, test_loss: 1.1901, test_f1: 0.3678
+ epoch: 32, train_loss: 1.1362, test_loss: 1.1854, test_f1: 0.3634
+ epoch: 33, train_loss: 1.1326, test_loss: 1.1817, test_f1: 0.3602
+ epoch: 34, train_loss: 1.1289, test_loss: 1.1789, test_f1: 0.3584
+ epoch: 35, train_loss: 1.1246, test_loss: 1.1761, test_f1: 0.3599
+ epoch: 36, train_loss: 1.1230, test_loss: 1.1726, test_f1: 0.3571
+ epoch: 37, train_loss: 1.1200, test_loss: 1.1712, test_f1: 0.3680
+ epoch: 38, train_loss: 1.1283, test_loss: 1.1716, test_f1: 0.3676
+ epoch: 39, train_loss: 1.1190, test_loss: 1.1690, test_f1: 0.3695
+ epoch: 40, train_loss: 1.1158, test_loss: 1.1675, test_f1: 0.3746
+ epoch: 41, train_loss: 1.1134, test_loss: 1.1673, test_f1: 0.3698
+ epoch: 42, train_loss: 1.1153, test_loss: 1.1648, test_f1: 0.3720
+ epoch: 43, train_loss: 1.1070, test_loss: 1.1613, test_f1: 0.3705
+ epoch: 44, train_loss: 1.1044, test_loss: 1.1602, test_f1: 0.3728
+ epoch: 45, train_loss: 1.1045, test_loss: 1.1580, test_f1: 0.3741
+ epoch: 46, train_loss: 1.0970, test_loss: 1.1551, test_f1: 0.3729
+ epoch: 47, train_loss: 1.0937, test_loss: 1.1537, test_f1: 0.3848
+ epoch: 48, train_loss: 1.0986, test_loss: 1.1510, test_f1: 0.3884
+ epoch: 49, train_loss: 1.0933, test_loss: 1.1486, test_f1: 0.3839
+ epoch: 50, train_loss: 1.0907, test_loss: 1.1458, test_f1: 0.3798
+ epoch: 51, train_loss: 1.0914, test_loss: 1.1450, test_f1: 0.3798
+ epoch: 52, train_loss: 1.0919, test_loss: 1.1454, test_f1: 0.3801
+ epoch: 53, train_loss: 1.0860, test_loss: 1.1416, test_f1: 0.3863
+ epoch: 54, train_loss: 1.0826, test_loss: 1.1401, test_f1: 0.3846
+ epoch: 55, train_loss: 1.0905, test_loss: 1.1394, test_f1: 0.3861
+ epoch: 56, train_loss: 1.0846, test_loss: 1.1386, test_f1: 0.3873
+ epoch: 57, train_loss: 1.0910, test_loss: 1.1354, test_f1: 0.3857
+ epoch: 58, train_loss: 1.0857, test_loss: 1.1356, test_f1: 0.3868
+ epoch: 59, train_loss: 1.0867, test_loss: 1.1356, test_f1: 0.3977
+ epoch: 60, train_loss: 1.0842, test_loss: 1.1371, test_f1: 0.3844
+ epoch: 61, train_loss: 1.0835, test_loss: 1.1354, test_f1: 0.3817
+ epoch: 62, train_loss: 1.0754, test_loss: 1.1334, test_f1: 0.3890
+ epoch: 63, train_loss: 1.0756, test_loss: 1.1299, test_f1: 0.4033
+ epoch: 64, train_loss: 1.0729, test_loss: 1.1280, test_f1: 0.4037
+ epoch: 65, train_loss: 1.0811, test_loss: 1.1281, test_f1: 0.3995
+ epoch: 66, train_loss: 1.0745, test_loss: 1.1280, test_f1: 0.3996
+ epoch: 67, train_loss: 1.0786, test_loss: 1.1283, test_f1: 0.3966
+ epoch: 68, train_loss: 1.0715, test_loss: 1.1275, test_f1: 0.4062
+ epoch: 69, train_loss: 1.0763, test_loss: 1.1246, test_f1: 0.4064
+ epoch: 70, train_loss: 1.0688, test_loss: 1.1234, test_f1: 0.4024
+ epoch: 71, train_loss: 1.0728, test_loss: 1.1235, test_f1: 0.4101
+ epoch: 72, train_loss: 1.0705, test_loss: 1.1232, test_f1: 0.4038
+ epoch: 73, train_loss: 1.0720, test_loss: 1.1210, test_f1: 0.4006
+ epoch: 74, train_loss: 1.0678, test_loss: 1.1198, test_f1: 0.4075
+ epoch: 75, train_loss: 1.0606, test_loss: 1.1247, test_f1: 0.3910
+ epoch: 76, train_loss: 1.0647, test_loss: 1.1207, test_f1: 0.4012
+ epoch: 77, train_loss: 1.0658, test_loss: 1.1198, test_f1: 0.4007
+ epoch: 78, train_loss: 1.0614, test_loss: 1.1180, test_f1: 0.4083
+ epoch: 79, train_loss: 1.0679, test_loss: 1.1200, test_f1: 0.4037
+ epoch: 80, train_loss: 1.0601, test_loss: 1.1174, test_f1: 0.4063
+ epoch: 81, train_loss: 1.0661, test_loss: 1.1153, test_f1: 0.4056
+ epoch: 82, train_loss: 1.0687, test_loss: 1.1126, test_f1: 0.4142
+ epoch: 83, train_loss: 1.0634, test_loss: 1.1138, test_f1: 0.4197
+ epoch: 84, train_loss: 1.0571, test_loss: 1.1151, test_f1: 0.4206
+ epoch: 85, train_loss: 1.0581, test_loss: 1.1137, test_f1: 0.4129
+ epoch: 86, train_loss: 1.0571, test_loss: 1.1194, test_f1: 0.4039
+ epoch: 87, train_loss: 1.0540, test_loss: 1.1191, test_f1: 0.4039
+ epoch: 88, train_loss: 1.0522, test_loss: 1.1168, test_f1: 0.4063
+ epoch: 89, train_loss: 1.0641, test_loss: 1.1182, test_f1: 0.4086
+ epoch: 90, train_loss: 1.0595, test_loss: 1.1111, test_f1: 0.4110
+ epoch: 91, train_loss: 1.0508, test_loss: 1.1098, test_f1: 0.4161
+ epoch: 92, train_loss: 1.0476, test_loss: 1.1086, test_f1: 0.4087
+ epoch: 93, train_loss: 1.0544, test_loss: 1.1054, test_f1: 0.4235
+ epoch: 94, train_loss: 1.0482, test_loss: 1.1070, test_f1: 0.4233
+ epoch: 95, train_loss: 1.0497, test_loss: 1.1078, test_f1: 0.4187
+ epoch: 96, train_loss: 1.0454, test_loss: 1.1060, test_f1: 0.4211
+ epoch: 97, train_loss: 1.0495, test_loss: 1.1041, test_f1: 0.4262
+ epoch: 98, train_loss: 1.0433, test_loss: 1.1019, test_f1: 0.4265
+ epoch: 99, train_loss: 1.0492, test_loss: 1.0998, test_f1: 0.4331
+##################ITERATION #9 ****************************************
+ epoch: 0, train_loss: 1.2565, test_loss: 1.3022, test_f1: 0.2281
+ epoch: 1, train_loss: 1.2428, test_loss: 1.3049, test_f1: 0.2281
+ epoch: 2, train_loss: 1.2253, test_loss: 1.3030, test_f1: 0.2281
+ epoch: 3, train_loss: 1.2226, test_loss: 1.2994, test_f1: 0.2281
+ epoch: 4, train_loss: 1.2188, test_loss: 1.2974, test_f1: 0.2281
+ epoch: 5, train_loss: 1.2159, test_loss: 1.2938, test_f1: 0.2281
+ epoch: 6, train_loss: 1.1973, test_loss: 1.2839, test_f1: 0.2281
+ epoch: 7, train_loss: 1.1961, test_loss: 1.2688, test_f1: 0.2336
+ epoch: 8, train_loss: 1.1974, test_loss: 1.2562, test_f1: 0.2336
+ epoch: 9, train_loss: 1.1828, test_loss: 1.2467, test_f1: 0.2651
+ epoch: 10, train_loss: 1.1870, test_loss: 1.2405, test_f1: 0.2654
+ epoch: 11, train_loss: 1.1768, test_loss: 1.2376, test_f1: 0.2795
+ epoch: 12, train_loss: 1.1752, test_loss: 1.2358, test_f1: 0.2850
+ epoch: 13, train_loss: 1.1679, test_loss: 1.2375, test_f1: 0.2851
+ epoch: 14, train_loss: 1.1690, test_loss: 1.2310, test_f1: 0.2716
+ epoch: 15, train_loss: 1.1641, test_loss: 1.2281, test_f1: 0.2762
+ epoch: 16, train_loss: 1.1618, test_loss: 1.2245, test_f1: 0.2859
+ epoch: 17, train_loss: 1.1567, test_loss: 1.2210, test_f1: 0.2844
+ epoch: 18, train_loss: 1.1519, test_loss: 1.2190, test_f1: 0.2894
+ epoch: 19, train_loss: 1.1513, test_loss: 1.2162, test_f1: 0.2925
+ epoch: 20, train_loss: 1.1449, test_loss: 1.2133, test_f1: 0.2924
+ epoch: 21, train_loss: 1.1443, test_loss: 1.2101, test_f1: 0.2953
+ epoch: 22, train_loss: 1.1366, test_loss: 1.2080, test_f1: 0.2912
+ epoch: 23, train_loss: 1.1310, test_loss: 1.2061, test_f1: 0.3069
+ epoch: 24, train_loss: 1.1297, test_loss: 1.2040, test_f1: 0.2953
+ epoch: 25, train_loss: 1.1294, test_loss: 1.2003, test_f1: 0.3193
+ epoch: 26, train_loss: 1.1244, test_loss: 1.1968, test_f1: 0.3345
+ epoch: 27, train_loss: 1.1199, test_loss: 1.1950, test_f1: 0.3827
+ epoch: 28, train_loss: 1.1194, test_loss: 1.1944, test_f1: 0.3721
+ epoch: 29, train_loss: 1.1236, test_loss: 1.1943, test_f1: 0.3800
+ epoch: 30, train_loss: 1.1204, test_loss: 1.1918, test_f1: 0.3845
+ epoch: 31, train_loss: 1.1134, test_loss: 1.1895, test_f1: 0.3753
+ epoch: 32, train_loss: 1.1145, test_loss: 1.1885, test_f1: 0.3844
+ epoch: 33, train_loss: 1.1060, test_loss: 1.1874, test_f1: 0.4052
+ epoch: 34, train_loss: 1.1154, test_loss: 1.1853, test_f1: 0.3912
+ epoch: 35, train_loss: 1.1078, test_loss: 1.1814, test_f1: 0.4040
+ epoch: 36, train_loss: 1.1048, test_loss: 1.1813, test_f1: 0.4050
+ epoch: 37, train_loss: 1.1059, test_loss: 1.1800, test_f1: 0.4193
+ epoch: 38, train_loss: 1.0972, test_loss: 1.1777, test_f1: 0.4042
+ epoch: 39, train_loss: 1.0981, test_loss: 1.1755, test_f1: 0.4177
+ epoch: 40, train_loss: 1.0982, test_loss: 1.1712, test_f1: 0.4183
+ epoch: 41, train_loss: 1.0909, test_loss: 1.1718, test_f1: 0.4007
+ epoch: 42, train_loss: 1.0885, test_loss: 1.1718, test_f1: 0.3988
+ epoch: 43, train_loss: 1.0929, test_loss: 1.1709, test_f1: 0.4210
+ epoch: 44, train_loss: 1.0859, test_loss: 1.1675, test_f1: 0.4199
+ epoch: 45, train_loss: 1.0932, test_loss: 1.1626, test_f1: 0.4205
+ epoch: 46, train_loss: 1.0853, test_loss: 1.1605, test_f1: 0.4225
+ epoch: 47, train_loss: 1.0776, test_loss: 1.1551, test_f1: 0.4174
+ epoch: 48, train_loss: 1.0810, test_loss: 1.1534, test_f1: 0.4066
+ epoch: 49, train_loss: 1.0837, test_loss: 1.1520, test_f1: 0.4025
+ epoch: 50, train_loss: 1.0759, test_loss: 1.1509, test_f1: 0.4057
+ epoch: 51, train_loss: 1.0754, test_loss: 1.1503, test_f1: 0.4104
+ epoch: 52, train_loss: 1.0715, test_loss: 1.1519, test_f1: 0.4149
+ epoch: 53, train_loss: 1.0748, test_loss: 1.1498, test_f1: 0.4206
+ epoch: 54, train_loss: 1.0731, test_loss: 1.1533, test_f1: 0.4164
+ epoch: 55, train_loss: 1.0748, test_loss: 1.1513, test_f1: 0.4187
+ epoch: 56, train_loss: 1.0639, test_loss: 1.1506, test_f1: 0.4114
+ epoch: 57, train_loss: 1.0688, test_loss: 1.1484, test_f1: 0.4126
+ epoch: 58, train_loss: 1.0700, test_loss: 1.1511, test_f1: 0.4071
+ epoch: 59, train_loss: 1.0722, test_loss: 1.1499, test_f1: 0.4061
+ epoch: 60, train_loss: 1.0726, test_loss: 1.1502, test_f1: 0.4045
+ epoch: 61, train_loss: 1.0686, test_loss: 1.1506, test_f1: 0.4157
+ epoch: 62, train_loss: 1.0631, test_loss: 1.1486, test_f1: 0.4050
+ epoch: 63, train_loss: 1.0670, test_loss: 1.1479, test_f1: 0.4080
+ epoch: 64, train_loss: 1.0654, test_loss: 1.1450, test_f1: 0.4178
+ epoch: 65, train_loss: 1.0631, test_loss: 1.1456, test_f1: 0.4082
+ epoch: 66, train_loss: 1.0713, test_loss: 1.1410, test_f1: 0.3997
+ epoch: 67, train_loss: 1.0679, test_loss: 1.1408, test_f1: 0.3999
+ epoch: 68, train_loss: 1.0561, test_loss: 1.1417, test_f1: 0.4133
+ epoch: 69, train_loss: 1.0696, test_loss: 1.1371, test_f1: 0.4101
+ epoch: 70, train_loss: 1.0694, test_loss: 1.1386, test_f1: 0.4039
+ epoch: 71, train_loss: 1.0614, test_loss: 1.1398, test_f1: 0.4011
+ epoch: 72, train_loss: 1.0603, test_loss: 1.1403, test_f1: 0.4060
+ epoch: 73, train_loss: 1.0607, test_loss: 1.1447, test_f1: 0.4161
+ epoch: 74, train_loss: 1.0594, test_loss: 1.1446, test_f1: 0.4148
+ epoch: 75, train_loss: 1.0590, test_loss: 1.1442, test_f1: 0.4154
+ epoch: 76, train_loss: 1.0507, test_loss: 1.1445, test_f1: 0.4213
+ epoch: 77, train_loss: 1.0538, test_loss: 1.1408, test_f1: 0.4137
+ epoch: 78, train_loss: 1.0564, test_loss: 1.1396, test_f1: 0.4110
+ epoch: 79, train_loss: 1.0532, test_loss: 1.1345, test_f1: 0.4141
+ epoch: 80, train_loss: 1.0519, test_loss: 1.1352, test_f1: 0.4318
+ epoch: 81, train_loss: 1.0468, test_loss: 1.1341, test_f1: 0.4190
+ epoch: 82, train_loss: 1.0526, test_loss: 1.1347, test_f1: 0.4213
+ epoch: 83, train_loss: 1.0495, test_loss: 1.1359, test_f1: 0.4221
+ epoch: 84, train_loss: 1.0485, test_loss: 1.1354, test_f1: 0.4365
+ epoch: 85, train_loss: 1.0529, test_loss: 1.1365, test_f1: 0.4239
+ epoch: 86, train_loss: 1.0540, test_loss: 1.1370, test_f1: 0.4270
+ epoch: 87, train_loss: 1.0484, test_loss: 1.1369, test_f1: 0.4218
+ epoch: 88, train_loss: 1.0484, test_loss: 1.1352, test_f1: 0.4164
+ epoch: 89, train_loss: 1.0454, test_loss: 1.1344, test_f1: 0.4216
+ epoch: 90, train_loss: 1.0474, test_loss: 1.1371, test_f1: 0.4138
+ epoch: 91, train_loss: 1.0439, test_loss: 1.1404, test_f1: 0.4143
+ epoch: 92, train_loss: 1.0409, test_loss: 1.1386, test_f1: 0.4200
+ epoch: 93, train_loss: 1.0418, test_loss: 1.1351, test_f1: 0.4198
+ epoch: 94, train_loss: 1.0511, test_loss: 1.1351, test_f1: 0.4269
+ epoch: 95, train_loss: 1.0418, test_loss: 1.1327, test_f1: 0.4197
+ epoch: 96, train_loss: 1.0484, test_loss: 1.1336, test_f1: 0.4115
+ epoch: 97, train_loss: 1.0396, test_loss: 1.1314, test_f1: 0.4126
+ epoch: 98, train_loss: 1.0424, test_loss: 1.1299, test_f1: 0.4198
+ epoch: 99, train_loss: 1.0389, test_loss: 1.1289, test_f1: 0.4199
+
+Training completed in 370.32 seconds
+Best F1: 0.4423 at epoch 98
+Mean F1 across iterations: 0.3593 ± 0.0771
+========================FINAL RESULTS================================
+FEGIN weighted F1: 0.4423 ± 0.0771
+python main.py --data ltspice_demos --representation component_net --model FEGIN --layers 4 --hiddens 32 --batch_size 256 --lr 0.0001 --emb_size 128 --epochs 100 --save_appendix component_net_L4_H32_BS256_LR0.0001_E128 --no_val
+-----
+
+
+
+STDERR:
+  File "main.py", line 370, in <module>
+    main()
+  File "main.py", line 254, in main
+    dataset = dataset_class(
+  File "/home/philip/projects/ltspice_examples_code_repo/Circuit-Completion-Using-GNNs/component_classification_with_link_prediction_head/evaluation/FEGIN/kernel/circuit_datasets.py", line 15, in __init__
+    self.data, self.slices = torch.load(self.processed_paths[0])
+  File "/home/philip/.local/lib/python3.8/site-packages/torch/serialization.py", line 1040, in load
+    warnings.warn(
+  File "/usr/lib/python3.8/warnings.py", line 109, in _showwarnmsg
+    sw(msg.message, msg.category, msg.filename, msg.lineno,
+  File "main.py", line 47, in warn_with_traceback
+    traceback.print_stack(file=log)
+/home/philip/projects/ltspice_examples_code_repo/Circuit-Completion-Using-GNNs/component_classification_with_link_prediction_head/evaluation/FEGIN/kernel/circuit_datasets.py:15: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.data, self.slices = torch.load(self.processed_paths[0])
+  File "main.py", line 370, in <module>
+    main()
+  File "main.py", line 314, in main
+    tracker.log_test_results(
+  File "/home/philip/projects/ltspice_examples_code_repo/Circuit-Completion-Using-GNNs/component_classification_with_link_prediction_head/evaluation/FEGIN/fegin_experiment_tracker.py", line 139, in log_test_results
+    report = classification_report(all_labels, all_preds, target_names=class_names, output_dict=True)
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/utils/_param_validation.py", line 214, in wrapper
+    return func(*args, **kwargs)
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 2577, in classification_report
+    p, r, f1, s = precision_recall_fscore_support(
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/utils/_param_validation.py", line 187, in wrapper
+    return func(*args, **kwargs)
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 1749, in precision_recall_fscore_support
+    precision = _prf_divide(
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 1471, in _prf_divide
+    _warn_prf(average, modifier, msg_start, len(result))
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 1489, in _warn_prf
+    warnings.warn(msg, UndefinedMetricWarning, stacklevel=2)
+  File "/usr/lib/python3.8/warnings.py", line 109, in _showwarnmsg
+    sw(msg.message, msg.category, msg.filename, msg.lineno,
+  File "main.py", line 47, in warn_with_traceback
+    traceback.print_stack(file=log)
+/home/philip/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+  File "main.py", line 370, in <module>
+    main()
+  File "main.py", line 314, in main
+    tracker.log_test_results(
+  File "/home/philip/projects/ltspice_examples_code_repo/Circuit-Completion-Using-GNNs/component_classification_with_link_prediction_head/evaluation/FEGIN/fegin_experiment_tracker.py", line 139, in log_test_results
+    report = classification_report(all_labels, all_preds, target_names=class_names, output_dict=True)
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/utils/_param_validation.py", line 214, in wrapper
+    return func(*args, **kwargs)
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 2616, in classification_report
+    avg_p, avg_r, avg_f1, _ = precision_recall_fscore_support(
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/utils/_param_validation.py", line 187, in wrapper
+    return func(*args, **kwargs)
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 1749, in precision_recall_fscore_support
+    precision = _prf_divide(
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 1471, in _prf_divide
+    _warn_prf(average, modifier, msg_start, len(result))
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 1489, in _warn_prf
+    warnings.warn(msg, UndefinedMetricWarning, stacklevel=2)
+  File "/usr/lib/python3.8/warnings.py", line 109, in _showwarnmsg
+    sw(msg.message, msg.category, msg.filename, msg.lineno,
+  File "main.py", line 47, in warn_with_traceback
+    traceback.print_stack(file=log)
+/home/philip/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+  File "main.py", line 370, in <module>
+    main()
+  File "main.py", line 314, in main
+    tracker.log_test_results(
+  File "/home/philip/projects/ltspice_examples_code_repo/Circuit-Completion-Using-GNNs/component_classification_with_link_prediction_head/evaluation/FEGIN/fegin_experiment_tracker.py", line 139, in log_test_results
+    report = classification_report(all_labels, all_preds, target_names=class_names, output_dict=True)
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/utils/_param_validation.py", line 214, in wrapper
+    return func(*args, **kwargs)
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 2616, in classification_report
+    avg_p, avg_r, avg_f1, _ = precision_recall_fscore_support(
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/utils/_param_validation.py", line 187, in wrapper
+    return func(*args, **kwargs)
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 1749, in precision_recall_fscore_support
+    precision = _prf_divide(
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 1471, in _prf_divide
+    _warn_prf(average, modifier, msg_start, len(result))
+  File "/home/philip/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py", line 1489, in _warn_prf
+    warnings.warn(msg, UndefinedMetricWarning, stacklevel=2)
+  File "/usr/lib/python3.8/warnings.py", line 109, in _showwarnmsg
+    sw(msg.message, msg.category, msg.filename, msg.lineno,
+  File "main.py", line 47, in warn_with_traceback
+    traceback.print_stack(file=log)
+/home/philip/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
