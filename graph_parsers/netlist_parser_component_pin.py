@@ -14,10 +14,11 @@ PIN_ROLES = {
     "C": ["1", "2"],      # capacitor
     "V": ["pos", "neg"],  # voltage source
     "X" : None, # subcircuits, using None as we have dynamic number of pins
-    "M" : ["drain", "gate", "source"] # mosfet component
+    "N" : ["drain", "gate", "source"], # nmos
+    "P" : ["drain", "gate", "source"] # pmos
 }
 
-COMPONENT_TYPES = ["R", "C", "V", "X", "M"]
+COMPONENT_TYPES = ["R", "C", "V", "X", "N", "P"]
 PIN_TYPES = ["1", "2", "pos", "neg", "p", "drain", "gate", "source"]  # p for subcircuit pins
 
 def clean_netlist_file(input_path, cleaned_path):
@@ -80,6 +81,24 @@ def check_circuit_has_only_allowed_components(file_path):
     
     return True
 
+def get_mos_type(comp):
+    try:
+        model_name = comp.model
+
+        if model_name is None:
+            return None
+
+        model_type = str(model_name).upper()
+
+        if "NMOS" in model_type:
+            return "N"
+        elif "PMOS" in model_type:
+            return "P"
+    except Exception:
+        pass
+
+    return None
+
 def netlist_to_component_pin_graph(file_path, use_edge_attributes=True):
     # clean netlist
     cleaned_path = file_path + ".clean"
@@ -105,6 +124,13 @@ def netlist_to_component_pin_graph(file_path, use_edge_attributes=True):
     # Process each component
     for element in circuit.element_names:
         comp_type = element[0].upper()
+
+        if comp_type == "M":
+            mos_type = get_mos_type(circuit[element])
+            if mos_type is None:
+                print(f"Skipping {element}: unknown MOS type")
+                continue
+            comp_type = mos_type
         
         if comp_type not in COMPONENT_TYPES:
             print(f"Skipping {element}: not in allowed component types")
@@ -138,7 +164,7 @@ def netlist_to_component_pin_graph(file_path, use_edge_attributes=True):
             pins = PIN_ROLES[comp_type]
             nets = [str(net) for net in comp.nodes]
 
-            if comp_type == "M":
+            if comp_type == "P" or comp_type == "N":
                 nets = [str(net) for net in comp.nodes]
 
                 if len(nets) == 4:

@@ -7,7 +7,7 @@ from PySpice.Spice.Parser import SpiceParser
 import numpy as np
 from collections import Counter
 
-COMPONENT_TYPES = ["R", "C", "V", "X", "M"]
+COMPONENT_TYPES = ["R", "C", "V", "X", "N", "P"]
 NODE_TYPES = ["component", "net"]
 
 def clean_netlist_file(input_path, cleaned_path):
@@ -70,6 +70,24 @@ def check_circuit_has_only_allowed_components(file_path):
     
     return True
 
+def get_mos_type(comp):
+    try:
+        model_name = comp.model
+
+        if model_name is None:
+            return None
+
+        model_type = str(model_name).upper()
+
+        if "NMOS" in model_type:
+            return "N"
+        elif "PMOS" in model_type:
+            return "P"
+    except Exception:
+        pass
+
+    return None
+
 def netlist_to_component_net_graph(file_path, use_edge_attributes=True):
     # clean netlist first
     cleaned_path = file_path + ".clean"
@@ -95,6 +113,13 @@ def netlist_to_component_net_graph(file_path, use_edge_attributes=True):
     # Process each component
     for element in circuit.element_names:
         comp_type = element[0].upper()
+
+        if comp_type == "M":
+            mos_type = get_mos_type(circuit[element])
+            if mos_type is None:
+                print(f"Skipping {element}: unknown MOS type")
+                continue
+            comp_type = mos_type
         
         # Skip if not in allowed component types
         if comp_type not in COMPONENT_TYPES:
