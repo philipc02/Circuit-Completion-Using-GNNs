@@ -90,14 +90,16 @@ def create_comparison_chart(best_results, output_dir='analysis_multitask_hyperpa
     fig, axes = plt.subplots(2, 1, figsize=(14, 12), gridspec_kw={'height_ratios': [2, 1]})
     
     x_pos = np.arange(len(reps))
-    width = 0.25
+    width = 0.22
+    inner_gap = 0.04
+    offset = width + inner_gap
     # Map representations against their best scores
-    bars1 = axes[0].bar(x_pos - width, combined_scores, width, 
-                        label='Combined Score', capsize=5, alpha=0.8, color='#1f77b4')
+    bars1 = axes[0].bar(x_pos - offset, combined_scores, width, 
+                        label='Combined Score', capsize=5, alpha=0.9, color='#0065bd')
     bars2 = axes[0].bar(x_pos, node_f1_scores, width, 
-                        label='Node F1', capsize=5, alpha=0.8, color='#ff7f0e')
-    bars3 = axes[0].bar(x_pos + width, edge_auc_scores, width, 
-                        label='Edge AUC', capsize=5, alpha=0.8, color='#2ca02c')
+                        label='Node F1', capsize=5, alpha=0.7, color='#e37222')
+    bars3 = axes[0].bar(x_pos + offset, edge_auc_scores, width, 
+                        label='Edge AUC', capsize=5, alpha=0.7, color='#a2ad00')
     
     axes[0].set_xlabel('Representation', fontsize=12)
     axes[0].set_ylabel('Scores', fontsize=12)
@@ -112,7 +114,7 @@ def create_comparison_chart(best_results, output_dir='analysis_multitask_hyperpa
         [bars2, bars3],  # Only Node F1 and Edge AUC have std
         [node_f1_scores, edge_auc_scores],
         [node_f1_stds, edge_auc_stds],
-        ['#ff7f0e', '#2ca02c']
+        ['#e37222', '#a2ad00']
     ):
         for i, (bar, score, std) in enumerate(zip(bars, scores, stds)):
             height = bar.get_height()
@@ -372,12 +374,12 @@ def parameter_effects(all_results, output_dir='analysis_multitask_hyperparameter
         plt.show()
 
 def main():
-    output_dir = os.path.abspath('analysis_multitask_hyperparameter_search_ltspice_examples')
+    output_dir = os.path.abspath('analysis_multitask_hyperparameter_search_ltspice_demos')
     os.makedirs(output_dir, exist_ok=True)
 
     results_dirs = [
-    'multitask_hyperparameter_search_ltspice_examples_component_pin',
-    'multitask_hyperparameter_search_ltspice_examples_component_pin_net'
+    'multitask_hyperparameter_search_ltspice_demos_component_pin',
+    'multitask_hyperparameter_search_ltspice_demos_component_pin_net'
     ]
 
     all_results_combined = []
