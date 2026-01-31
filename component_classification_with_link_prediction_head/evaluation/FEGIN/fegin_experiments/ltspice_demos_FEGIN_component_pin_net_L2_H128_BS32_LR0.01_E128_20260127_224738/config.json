@@ -1,0 +1,17 @@
+{
+  "dataset": "ltspice_demos",
+  "representation": "component_pin_net",
+  "model": "FEGIN",
+  "layers": 2,
+  "hiddens": 128,
+  "h": 2,
+  "node_label": "spd",
+  "use_rd": false,
+  "epochs": 100,
+  "batch_size": 32,
+  "lr": 0.01,
+  "lr_decay_factor": 0.5,
+  "lr_decay_step_size": 50,
+  "emb_size": 128,
+  "seed": 1
+}

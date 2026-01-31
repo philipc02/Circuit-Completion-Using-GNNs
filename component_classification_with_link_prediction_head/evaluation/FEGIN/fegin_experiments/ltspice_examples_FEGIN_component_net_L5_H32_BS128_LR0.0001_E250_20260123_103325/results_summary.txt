@@ -1,0 +1,7 @@
+FEGIN Experiment Results
+Dataset: ltspice_examples
+Model: FEGIN
+Test Accuracy: 0.6111
+Test F1 (Weighted): 0.5597
+Test F1 (Macro): 0.5635
+Timestamp: 20260123_103325
