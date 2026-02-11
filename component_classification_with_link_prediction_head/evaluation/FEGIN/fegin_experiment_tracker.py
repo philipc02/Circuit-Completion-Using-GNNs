@@ -136,7 +136,17 @@ class FEGINExperimentTracker:
         with open(self.experiment_dir / "test_results.json", 'w') as f:
             json.dump(test_results, f, indent=2)
         
-        report = classification_report(all_labels, all_preds, target_names=class_names, output_dict=True)
+        all_classes = list(range(len(class_names)))
+
+        report = classification_report(
+            all_labels,
+            all_preds,
+            labels=all_classes,
+            target_names=class_names,
+            output_dict=True,
+            zero_division=0,
+        )
+        # report = classification_report(all_labels, all_preds, target_names=class_names, output_dict=True)
         with open(self.experiment_dir / "classification_report.json", 'w') as f:
             json.dump(report, f, indent=2)
         
