@@ -15,13 +15,13 @@ REPRESENTATIONS = [
     'component_pin_net'
 ]
 
-LAYER_RANGE = [2, 3, 4, 5, 6]
+LAYER_RANGE = [2, 3, 4, 5, 6, 7, 8]
 SEEDS = [0, 1, 2, 3, 4]
 
 DEFAULT_PARAMS = {
     'hiddens': 128,
     'batch_size': 64,
-    'lr': 0.01,
+    'lr': 0.001,
     'emb_size': 250,
     'epochs': 100,
     'h': 2
