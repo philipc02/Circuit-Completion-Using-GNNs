@@ -1,0 +1,23 @@
+* BJT Amplifier Circuit
+
+VCC 5 0 DC <value_of_VCC>
+Vin 1 0 AC 1 SIN(0 1 1k)
+
+* Resistors
+RC 3 5 <value_of_Rc>
+RE 6 0 <value_of_Re>
+R1 2 4 <value_of_R1>
+R2 4 0 <value_of_R2>
+
+* Capacitors
+Cin 1 7 <value_of_Cin>
+Cout 3 8 <value_of_Cout>
+
+* BJT
+Q1 3 7 6 NPN
+
+* Connectors
+Vout 8 0
+Vin 7 1
+
+* End of netlist

@@ -1,0 +1,16 @@
+spice
+* NPN Transistor Circuit
+Q1 4 2 3 NPN 
+
+* Current Source
+I1 5 4 DC I_Q 
+
+* Resistors
+RB 2 0 50k 
+RC 3 0 4.7k 
+
+* Voltage sources
+VCC 5 0 DC 9V
+VEE 0 3 DC 9V
+
+* End of netlist

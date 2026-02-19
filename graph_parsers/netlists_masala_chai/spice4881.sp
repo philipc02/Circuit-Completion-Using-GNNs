@@ -1,0 +1,5 @@
+spice
+Rre 5 6 r'_e
+Rc 3 2 R_C
+E_av 3 4 5 6 A_V
+Vin 5 0 Vin

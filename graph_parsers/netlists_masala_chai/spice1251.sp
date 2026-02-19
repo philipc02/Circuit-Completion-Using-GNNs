@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist
+VDD 33 0 DC 1.8V
+Vin 1 4 DC 0V
+I1 5 0 DC 0A
+R1 33 3 10k
+RD 3 5 10k
+C1 1 2 1uF
+C1b 5 0 1uF
+M1 3 2 5 NMOS L=1u W=5u

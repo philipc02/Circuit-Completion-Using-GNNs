@@ -1,0 +1,12 @@
+spice
+* SPICE netlist for the given schematic
+
+MN1 5 4 4 NMOS_MODEL  * M1: NMOS transistor
+R1 3 4 10k            * R1: Resistor
+R2 2 0 10k            * R2: Resistor
+RD 3 5 1k             * RD: Resistor
+C1 2 4 1uF            * C1: Capacitor
+VDD 3 0 DC 5V         * VDD: DC Voltage Source
+
+.MODEL NMOS_MODEL NMOS (LEVEL=1)
+.END

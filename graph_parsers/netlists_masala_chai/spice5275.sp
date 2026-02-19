@@ -1,0 +1,5 @@
+V1 2 3 DC 8
+R1 2 A 1k
+R2 A 2 2.2k
+R3 2 B 3.3k
+VSS 3 0 DC 0

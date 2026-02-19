@@ -1,0 +1,3 @@
+Iin 1 0 DC 1A
+CP 3 4 1uF
+RD 3 0 1k

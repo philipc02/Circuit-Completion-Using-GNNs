@@ -1,0 +1,7 @@
+spice
+* PMOS and NMOS transistor circuit
+ML 3 2 3 PMOS
+MD 2 4 5 NMOS
+Vi 4 5 DC VINPUT
+Vgsdq 4 5 DC VGSDQ
+Vdd 3 0 DC VDD

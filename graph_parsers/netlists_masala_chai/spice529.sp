@@ -1,0 +1,28 @@
+* Transistor Definitions
+M1 4 1 5 5 NMOS
+M2 8 4 2 2 PMOS
+M3 5 45 7 7 NMOS
+M4 2 45 7 7 PMOS
+M5 4 4 3 3 PMOS
+M6 7 2 7 7 NMOS
+M7 8 4 3 3 PMOS
+M9 5 9 5 5 NMOS
+M10 9 3 3 3 PMOS
+
+* Capacitors
+C1 5 4 C
+C2 7 2 C
+
+* Voltage Sources
+VDD 3 0 DC Vdd
+VSS 7 0 DC Vss
+V_B1 9 0 DC Vb1
+V_B1_2 8 0 DC Vb1
+V_B2 45 0 DC Vb2
+V_cmc 4 0 DC Vcmc
+V_i1 1 0 DC Vi1
+V_i2 2 0 DC Vi2
+
+* Output Nodes
+Vo1 8 0
+Vo2 9 0

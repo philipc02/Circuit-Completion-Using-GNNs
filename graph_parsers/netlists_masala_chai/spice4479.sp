@@ -1,0 +1,17 @@
+spice
+* SPICE Netlist
+
+M1 5 6 8 8 NMOS
+M2 3 4 8 8 NMOS
+Q1 7 2 2 NPN
+Q2 4 2 7 NPN
+Q3 8 5 2 PNP
+IQ 5 8 DC
+
+* Voltage Sources
+V1 6 0 DC V1
+V2 3 0 DC V2
+VPLUS 5 0 DC V+
+VMINUS 2 0 DC V-
+
+.end

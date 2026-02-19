@@ -1,0 +1,7 @@
+* NMOS Transistor with VDD, Vin, Vout
+
+M1 Vout 2 0 0 NMOS
+M2 VDD 4 Vout Vout NMOS
+RS Vin 2 R_S_VALUE
+VDD VDD 0 DC SUPPLY_VOLTAGE
+V_in Vin 0 DC INPUT_VOLTAGE

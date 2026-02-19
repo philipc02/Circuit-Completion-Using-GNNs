@@ -1,0 +1,13 @@
+plaintext
+* Voltage Source
+V1 3 0 DC V_in
+
+* Voltage-Controlled Current Source
+G1 3 2 3 0 gm
+
+* Resistors
+R1 2 4 r0
+R2 4 0 R0
+
+* Output Voltage
+Vout 4 0

@@ -1,0 +1,7 @@
+* NMOS Transistor
+M1 4 2 3 3 NMOS
+
+* Voltage Sources
+V1 2 0 DC VG
+V2 3 0 DC VS
+V3 4 0 DC VD

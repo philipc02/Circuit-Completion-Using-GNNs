@@ -1,0 +1,20 @@
+spice
+* NMOS Transistor
+M1 4 5 6 6 NMOS
+
+* Resistors
+R1 3 2 R1_value
+RD 3 4 RD_value
+RS 6 0 RS_value
+RG 5 1 RG_value
+Rin 5 0 Rin_value
+
+* Capacitors
+C1 2 4 C1_value
+C2 6 0 C2_value
+
+* Voltage Sources
+VDD 3 0 DC VDD_value
+Vin 1 0 DC Vin_value
+
+* End of netlist

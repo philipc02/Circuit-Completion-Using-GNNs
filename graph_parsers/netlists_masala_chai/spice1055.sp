@@ -1,0 +1,9 @@
+plaintext
+* SPICE Netlist
+
+V1 VCC 0 DC <DC voltage value>
+I1 VCC Vout DC <current source value>
+M1 Vout Vb Vin Vin NMOS_L W=<width> L=<length>
+
+* Specify NMOS model parameters
+.model NMOS_L NMOS(Level=1)

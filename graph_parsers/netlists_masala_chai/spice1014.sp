@@ -1,0 +1,9 @@
+spice
+* My SPICE netlist
+VCC N2 0 DC 2.5V
+M1 N3 N2 N2 N2 PMOS
+M2 N3 N3 0 0 NMOS
+R1 N2 N3 32k
+R2 N3 0 1k
+R3 N3 0 18k
+.end

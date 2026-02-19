@@ -1,0 +1,22 @@
+plaintext
+* SPICE Netlist
+
+V1 10 0 DC 10V
+V2 6 0 DC -10V
+V3 9 0 DC 5V
+
+R1 5 6 10k
+R2 9 7 1k
+R3 8 3 0.8k
+R4 4 0 500
+RE1 10 7 300
+
+Q1 5 5 6 QNPN
+Q2 6 6 0 QNPN
+Q3 7 5 0 QNPN
+Q4 10 7 8 QNPN
+Q5 8 3 4 QNPN
+
+.model QNPN NPN (IS=1e-16 BF=100)
+
+.END

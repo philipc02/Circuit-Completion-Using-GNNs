@@ -1,0 +1,23 @@
+spice
+* SPICE netlist
+
+VCC Vcc 0 DC 2.5
+Vin Vin 0 AC 1
+
+R1 2 3 2k
+R2 3 4 600
+RE1 5 0 RE1
+R3 5 0 200
+R4 3 0 50
+
+C1 Vin 2 C1
+C2 4 0 C2
+C3 3 Vout C3
+
+Q1 3 2 5 QMODEL1
+Q2 4 3 5 QMODEL2
+
+.model QMODEL1 NPN
+.model QMODEL2 NPN
+
+.end

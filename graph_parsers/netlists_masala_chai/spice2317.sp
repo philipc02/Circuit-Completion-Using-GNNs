@@ -1,0 +1,4 @@
+plaintext
+MN1 2 4 0 0 NMOS
+IBIAS 3 2 DC 1mA
+VSS 0 0 DC 0

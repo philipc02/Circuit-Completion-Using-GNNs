@@ -1,0 +1,9 @@
+spice
+* SPICE Netlist for the circuit
+VCC 6 0 DC 15
+VEE 4 0 DC -15
+RC 3 7 1MEG
+RE 5 4 1MEG
+CC 7 22 3000PF
+Q1 6 3 5 NPN
+Q2 3 7 4 NPN

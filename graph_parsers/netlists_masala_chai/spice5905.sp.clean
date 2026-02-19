@@ -1,0 +1,23 @@
+* SPICE Netlist for the schematic
+Q1 6 9 8 QMOD 
+Q2 8 7 8 QMOD 
+Q3 3 3 7 QMOD 
+Q4 7 5 7 QMOD 
+Q5 2 3 4 QMOD 
+Q6 5 4 5 QMOD 
+Q7 5 5 5 QMOD 
+Q8 5 5 5 QMOD 
+Q9 5 5 5 QMOD 
+
+R1 6 8 1k
+
+IREF 6 8 DC 1mA
+I1 3 0 DC 1mA
+I2 7 0 DC 1mA
+I3 5 0 DC 1mA
+I4 5 0 DC 1mA
+
+VCC 6 0 DC 15V
+VEE 8 0 DC -15V
+
+.model QMOD NPN

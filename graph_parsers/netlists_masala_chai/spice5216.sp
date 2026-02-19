@@ -1,0 +1,4 @@
+spice
+Vin 2 5 AC 1
+R 2 3 R
+C 3 4 C

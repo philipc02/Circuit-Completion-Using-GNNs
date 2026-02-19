@@ -1,0 +1,5 @@
+plaintext
+* SPICE Netlist
+V1 2 4 DC Vin
+Rthev 2 3 1/gm
+Rs 3 4 Rs

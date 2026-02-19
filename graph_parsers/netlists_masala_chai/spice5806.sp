@@ -1,0 +1,11 @@
+spice
+* SPICE Netlist for the given schematic
+
+V_BE 3 5 DC V_BE  ; Voltage source for base-emitter junction
+R_C 2 4 R_C        ; Resistor from V_CC to Collector
+Q1 4 3 5 NPN       ; NPN BJT, C=B, B=base, E=5 (Emitter)
+
+* Voltage source for V_CC
+V_CC 2 0 DC V_CC
+
+.END

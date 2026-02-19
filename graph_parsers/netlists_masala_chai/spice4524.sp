@@ -1,0 +1,22 @@
+* SPICE Netlist
+* Components
+R1 1 2  R1_value
+R2 2 3  R2_value
+R3 3 4  R3_value
+R4 vi 1 R4_value
+R5 3 4  R5_value
+C1 2 5  C1_value
+C2 3 3  C2_value
+
+* Op-Amp Definitions (Assumed ideal modeling with high gain)
+XU1 1 2 2 opamp
+XU2 0 3 3 opamp
+XU3 0 4 4 opamp
+
+* Voltage Source
+Vi vi 0 DC Vi_value
+
+* General Settings
+.model opamp opamp(A=1e6)
+
+.end

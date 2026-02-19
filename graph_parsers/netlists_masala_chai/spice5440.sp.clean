@@ -1,0 +1,5 @@
+plaintext
+V1 4 6 DC 5.0V
+R1 4 8 2.2k
+C1 8 3 5.0k
+L1 3 4 10k

@@ -1,0 +1,8 @@
+* SPICE Netlist
+I1 3 4 DC 10u
+
+Q1 3 3 4 NPN
+Q2 3 3 7 NPN
+Q3 5 3 6 NPN
+
+R1 5 6 R

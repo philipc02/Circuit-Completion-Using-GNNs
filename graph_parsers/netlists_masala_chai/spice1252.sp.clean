@@ -1,0 +1,19 @@
+plaintext
+* NMOS Transistor
+M1 2 Vin 3 3 NMOS_MODEL
+
+* Resistor
+RD 2 4 RD_VALUE
+
+* Voltage Source
+VDD 4 0 DC 1.8V
+
+* Models
+.model NMOS_MODEL NMOS(Level=1)
+
+* Simulation Control
+.control
+  run
+  .endc
+
+.end

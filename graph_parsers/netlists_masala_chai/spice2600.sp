@@ -1,0 +1,12 @@
+spice
+* Components
+M1 7 5 8 8 NMOS
+M2 2 3 8 8 NMOS
+RD_X 6 7 RD
+RD_Y 5 2 RD_DELTA
+RSS 8 0 RSS
+
+* Voltage Source 
+VDD 6 0 DC VDD
+
+* End of Netlist

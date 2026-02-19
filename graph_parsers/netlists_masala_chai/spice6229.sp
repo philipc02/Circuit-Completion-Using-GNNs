@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+VD 6 5 DC 0
+R_JC 6 4 1
+R_CS 4 2 1
+R_SA 2 5 1
+I_PD 5 6 DC <current_value>

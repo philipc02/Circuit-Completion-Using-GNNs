@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+M1 2 1 3 3 NMOS
+M2 3 2 0 0 NMOS
+Vin 1 0 DC 0
+Vout 3 0 DC 0

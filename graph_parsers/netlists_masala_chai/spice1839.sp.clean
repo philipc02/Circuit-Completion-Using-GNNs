@@ -1,0 +1,12 @@
+* PMOS Transistor
+M2 VDD Vout 4 4 PMOS
+
+* NMOS Transistor
+M1 Vout 5 5 NMOS
+
+* Current Sources
+I1 VDD 3 DC 10mA
+Iin 5 0 DC 5mA
+
+* Voltage Source
+VDD 2 0 DC 5V

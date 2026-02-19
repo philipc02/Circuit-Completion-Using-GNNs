@@ -1,0 +1,7 @@
+spice
+* Circuit Netlist
+V1 3 5 AC 10 SIN(0 10 3k)
+L1 3 4 5m
+L2 2 5 1e-3
+L3 22 5 3m
+I1 22 5 DC 50m

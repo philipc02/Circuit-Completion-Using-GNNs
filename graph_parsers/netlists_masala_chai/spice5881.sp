@@ -1,0 +1,16 @@
+spice
+* SPICE netlist
+
+Vsig 3 7 DC 0V AC 1V
+Rsig 3 4 1k
+M1 5 4 6 6 NMOS L=1u W=10u
+RS 5 2 1k
+CS 5 8 10u
+RD 6 1 1k
+CC 6 2 10u
+
+* NMOS model
+.model NMOS NMOS (LEVEL=1)
+
+VDD 2 0 DC 2.5V
+VSS 1 0 DC -2.5V

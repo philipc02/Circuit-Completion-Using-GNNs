@@ -1,0 +1,8 @@
+spice
+* SPICE Netlist
+Q1 8 10 2 NPN
+Q2 8 3 4 NPN
+I1 2 9 DC
+RE 4 5 
+VCC 8 0 DC
+VEE 5 0 DC

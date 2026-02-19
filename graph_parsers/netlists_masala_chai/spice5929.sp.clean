@@ -1,0 +1,13 @@
+spice
+* NMOS Transistors
+M1 3 1 0 0 NMOS
+M2 5 2 3 3 NMOS
+M3 4 6 5 5 NMOS
+
+* Current Source
+I1 4 0 DC I
+
+* Voltage Sources
+V1 1 0 DC VG2
+V2 2 0 DC VG2
+V3 6 0 DC VG3

@@ -1,0 +1,20 @@
+spice
+* Netlist for the given schematic
+
+VCC 6 0 DC 15V
+VEE 0 2 DC -15V
+
+R47 6 2 33k
+R58 6 8 33k
+R60 9 0 3k
+
+Q47 3 1 2 NPN
+Q58 8 3 7 NPN
+Q49 4 2 2 NPN
+Q60 7 5 9 NPN
+
+* Bias sources
+VBIAS1 1 0 DC 1.5V
+VBIAS5 5 0 DC 1.5V
+
+.end

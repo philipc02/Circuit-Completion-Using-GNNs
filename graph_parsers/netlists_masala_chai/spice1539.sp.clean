@@ -1,0 +1,24 @@
+spice
+* SPICE Netlist
+* Transistors
+Q1 6 1 3 NPN
+Q2 6 4 3 NPN
+Q3 5 5 6 NPN
+Q4 5 4 6 NPN
+Q5 2 2 5 NPN
+Q6 5 4 2 NPN
+Q7 2 2 2 PNP
+Q8 2 4 4 PNP
+
+* Current Source
+I1 6 0 DC IEE
+
+* Voltage Source
+VCC 2 0 DC VCC
+
+* Voltage Inputs
+Vb1 1 0 DC Vb1
+Vb2 2 0 DC Vb2
+Vb3 4 0 DC Vb3
+Vin1 1 0 DC Vin1
+Vin2 4 0 DC Vin2

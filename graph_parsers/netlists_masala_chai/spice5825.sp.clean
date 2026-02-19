@@ -1,0 +1,24 @@
+plaintext
+* SPICE Netlist
+* Components
+Vsig 7 0 DC 0
+Rsig 7 4 Rsig_value
+Rpi 2 22 Rpi_value
+Beta_Id V3 2 Beta_transistor_model
+Rc 4 3 Rc_value
+
+* Nodes
+* 2 = Base, 3 = Collector, 4 = Emitter, 0 = Ground
+
+* Voltage Source
+Vsig 7 0 AC 1
+
+* Resistors
+Rsig 7 4 Rsig_value
+Rpi 2 22 Rpi_value
+Rc 4 3 Rc_value
+
+* Dependent Current Source (BJT)
+I_Beta 3 5 V=Beta*I(Vpi)
+
+* End of netlist

@@ -1,0 +1,25 @@
+spice
+* NMOS Transistors: M1, M2, M5
+M1 2 4 3 3 NMOS
+M2 2 4 3 3 NMOS
+M5 3 3 0 0 NMOS
+
+* PMOS Transistors: M3, M4
+M3 5 8 2 2 PMOS
+M4 5 4 2 2 PMOS
+
+* Resistors
+RD 3 5 10k
+RP 2 2 1k
+
+* Voltage Sources
+VDD 5 0 DC 5V
+Vb1 8 0 DC 1V
+Vb 3 0 DC 1V
+Vin1 4 0 DC 1V
+Vin2 4 0 DC 1V
+
+* Output
+Vout 2 0
+
+.END

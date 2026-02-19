@@ -1,0 +1,17 @@
+plaintext
+* SPICE Netlist
+
+Q1 3 6 3 QNPN ; NPN Transistor: Collector=3, Base=6, Emitter=3
+
+R1 6 2 R1_value ; Resistor R1: Node 6 to Node 2
+R2 3 8 R2_value ; Resistor R2: Node 3 to Node 8
+RE 3 0 RE_value ; Resistor RE: Node 3 to Ground
+
+C1 2 4 C1_value ; Capacitor C1: Node 2 to Node 4
+C2 3 4 C2_value ; Capacitor C2: Node 3 to Node 4
+C3 6 5 C3_value ; Capacitor C3: Node 6 to Ground
+C4 2 3 C4_value ; Capacitor C4: Node 2 to Node 3
+
+L1 2 0 L_value ; Inductor L1 (RF CHOKE): Node 2 to Ground
+
+.END

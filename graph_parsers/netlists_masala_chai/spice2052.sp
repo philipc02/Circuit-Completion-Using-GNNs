@@ -1,0 +1,18 @@
+spice
+* Node Assignments:
+* A = 1
+* B = 2
+* Vout = 3
+* VDD = 4
+* Ground = 0
+
+M1 3 1 0 0 NMOS
+M2 3 2 0 0 NMOS
+M3 4 1 3 3 PMOS
+M4 4 2 3 3 PMOS
+
+VDD 4 0 DC 5V
+
+* Example device model (parameters might need adjustment)
+.model NMOS nmos (level=1)
+.model PMOS pmos (level=1)

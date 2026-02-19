@@ -1,0 +1,15 @@
+plaintext
+* NMOS Circuit
+
+VDD O 0 DC VDD
+VREF 4 0 DC VREF
+
+* Resistors
+RG 4 4 1e9    ; Large Resistor
+RD O 2 RD
+RS 2 0 RS
+
+* NMOS Transistor (Model name: NMOS)
+M1 2 4 2 2 NMOS
+
+.model NMOS NMOS

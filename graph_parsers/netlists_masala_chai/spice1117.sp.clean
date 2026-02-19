@@ -1,0 +1,8 @@
+* SPICE Netlist for the given circuit
+
+V1 1 0 DC 1V
+VDD 2 0 DC 1.8V
+RD 2 3 100
+M1 3 1 3 3 NMOSModel
+
+.model NMOSModel NMOS (default parameters)

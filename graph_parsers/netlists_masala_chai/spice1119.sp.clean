@@ -1,0 +1,5 @@
+plaintext
+* PMOS Transistor Test Circuit
+M1 D G S S PMOS_MODEL
+V1 D 0 DC 1.8V
+R1 S 0 2k

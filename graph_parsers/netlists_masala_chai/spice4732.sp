@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist
+Q1 3 6 2 QNPN
+RB 5 6 470k
+RC 3 4 1k
+VBB 5 2 DC 15
+VCC 7 2 DC 15
+.model QNPN NPN (IS=1e-14 BF=100 VAF=100)
+
+.END

@@ -1,0 +1,16 @@
+plaintext
+* PMOS Transistor
+MP1 4 2 3 3 PMOS
+
+* NMOS Transistor
+M1 4 5 0 0 NMOS
+
+* Current Source
+I1 3 4 DC 1mA
+
+* Voltage Sources
+VDD 3 0 DC 5V
+VIN 5 0 DC 0V
+
+* Output
+VOUT 4 0

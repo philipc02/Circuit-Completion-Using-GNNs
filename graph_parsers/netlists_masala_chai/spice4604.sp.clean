@@ -1,0 +1,3 @@
+spice
+I1 3 4 DC <value_of_IS>
+R1 5 2 <value_of_RS>

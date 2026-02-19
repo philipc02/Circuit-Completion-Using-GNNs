@@ -1,0 +1,22 @@
+* Voltage Source
+VDD 7 0 DC 1.8
+
+* Current Source
+ISS 4 0 DC 0.1m
+
+* Resistors
+RD1 7 6 10k
+RD2 7 6 10k
+
+* NMOS Transistors (M5, M6)
+M5 6 1 4 4 NMOS L=1u W=10u
+M6 6 2 4 4 NMOS L=1u W=10u
+
+* PMOS Transistors (M4, M2)
+M4 6 2 3 3 PMOS L=1u W=10u
+M2 6 3 3 3 PMOS L=1u W=10u
+
+* Connections
+* Vout node 6
+* Vcont node 3
+* Vin node 1

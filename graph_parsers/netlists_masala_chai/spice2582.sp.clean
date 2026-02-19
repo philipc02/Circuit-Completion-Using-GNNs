@@ -1,0 +1,25 @@
+spice
+* SPICE Netlist for Differential Amplifier
+
+VDD 4 0 DC VDD
+
+* NMOS Transistors
+M1 5 1 4 4 NMOS W=W L=L
+M2 2 3 4 4 NMOS W=2W L=L
+
+* Resistors
+RD1 4 5 RD
+RD2 4 2 RD
+
+* Current Source
+ISS 4 0 DC ISS
+
+* Voltage Source
+VIN1 1 0 DC 0
+VIN2 3 0 DC 0
+
+* Output
+VOUT1 2 0
+VOUT2 5 0
+
+.ends

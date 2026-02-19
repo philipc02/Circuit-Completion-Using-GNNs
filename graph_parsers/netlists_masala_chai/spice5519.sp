@@ -1,0 +1,19 @@
+spice
+* SPICE Netlist for the given schematic
+
+Vin in 1 DC 0
+R1 1 4  R1_value
+C2 4 2  C2_value
+C1 2 5  C1_value
+R2 2 6  R2_value
+Vout 3 out DC 0
+
+* Node connections:
+* Node 1: Input (Vin)
+* Node 2: Connection between C2, C1, and R2
+* Node 3: Output (Vout)
+* Node 4: Connection between R1 and C2
+* Node 5: Ground connection for C1
+* Node 6: Ground connection for R2
+
+.END

@@ -1,0 +1,18 @@
+spice
+* SPICE Netlist
+VCC 8 5 DC 15V
+VB 3 4 DC 5V
+
+* Current Sources
+Ic3 5 2 DC
+Ic4 6 2 DC
+Ic9 8 3 DC
+Ic10 8 4 DC
+
+* BJTs
+Q9 8 2 3 NPN
+Q10 8 3 4 NPN
+
+* Resistors
+R9 3 4 22k
+R10 4 3 22k

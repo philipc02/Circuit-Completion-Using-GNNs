@@ -1,0 +1,28 @@
+* SPICE Netlist
+
+* Voltage Sources
+VDD 6 0 DC <VDD_VALUE>
+VinCM 1 0 DC <VinCM_VALUE>
+Vb 2 0 DC <Vb_VALUE>
+
+* Resistors
+RD1 6 7 <RD_VALUE>
+RD2 6 8 <RD_VALUE>
+
+* NMOS Transistors
+M1 3 1 7 7 NMOS_MODEL
+M2 4 1 8 8 NMOS_MODEL
+M3 5 2 9 9 NMOS_MODEL
+
+* Nodes
+* 1 - Vin,CM
+* 2 - Vb
+* 3 - Node X
+* 4 - Node Y
+* 5 - Node P
+* 6 - VDD
+* 7 - Source of M1 / Drain of M1
+* 8 - Source of M2 / Drain of M2
+* 9 - Source of M3 / Ground
+
+.end

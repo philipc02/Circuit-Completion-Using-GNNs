@@ -1,0 +1,4 @@
+Vi 5 4 DC 0
+C1 3 5 <value of C1>
+C2 3 2 <value of C2>
+Vout 3 6 DC 0

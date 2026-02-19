@@ -1,0 +1,16 @@
+spice
+* NMOS Transistor
+M1 2 6 2 2 NMOS
+
+* Resistor
+RD 5 2 1K
+
+* Voltage Sources
+VDD 5 0 DC 1.8V
+VB 4 3 DC <value>
+
+* Connections
+* 1 -> Vout
+* 2 -> X
+* 3 -> Ground
+* 4 -> VB

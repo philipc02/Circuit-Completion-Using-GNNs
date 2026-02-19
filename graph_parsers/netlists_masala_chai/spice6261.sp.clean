@@ -1,0 +1,9 @@
+spice
+M1 3 2 4 4 NMOS
+M2 5 3 6 6 NMOS
+R9 5 6 R9_value
+R7 4 0 R7_value
+R_id_2 1 2 Rid_value
+R_L_2 3 0 Rl_value
+V_in 1 0 DC V_id/2
+V_out 3 0 DC V_ol/2

@@ -1,0 +1,4 @@
+Q1 4 3 2 QNPN
+Q2 2 3 0 QNPN
+Rp 3 2 VALUE
+Rout 4 0 VALUE

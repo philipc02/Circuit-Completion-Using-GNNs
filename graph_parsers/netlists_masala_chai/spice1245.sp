@@ -1,0 +1,5 @@
+spice
+* SPICE Netlist
+M1 2 Vin 0 NMOS
+M2 Rout Vb 2 PMOS
+M3 2 2 0 NMOS

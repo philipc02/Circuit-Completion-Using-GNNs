@@ -1,0 +1,13 @@
+*MOSFET Configuration
+M1 2 2 4 4 NMOS W=W L=L
+M2 5 5 4 4 NMOS W=2*W L=L
+
+*Current Sources
+I_X 2 0 DC IX
+I_Y 5 0 DC IY
+
+*Voltage Source
+V_B 4 0 DC VB
+
+*Power Supply
+V_DD 3 0 DC VDD

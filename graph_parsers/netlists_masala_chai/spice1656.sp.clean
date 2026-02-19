@@ -1,0 +1,6 @@
+plaintext
+* SPICE Netlist
+
+M1 2 3 3 3 NMOS
+Iin 3 0 DC 1mA
+Cin 3 0 1uF

@@ -1,0 +1,22 @@
+spice
+* Transistor Definitions
+M1 N_OUT V_IN N2 N2 NMOS
+M2 V_OUT N_OUT V_DD V_DD PMOS
+
+* Resistor
+RD V_OUT N2 RD_VALUE
+
+* Voltage Sources
+VDD V_DD 0 DC VDD_VALUE
+VIN V_IN 0 DC VIN_VALUE
+VB V_B 0 DC VB_VALUE
+
+* Node Names
+* V_IN: Input Voltage
+* V_B: Bias Voltage
+* V_DD: Supply Voltage
+* V_OUT: Output Voltage
+* N_OUT: Node connecting M1 and M2
+* N2: Node connecting M1 and RD
+
+.end

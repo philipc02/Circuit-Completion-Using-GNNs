@@ -1,0 +1,6 @@
+* SPICE Netlist
+Rin 4 3 Ri
+Ro 2 5 Ro
+VCCS 3 6 Vin Gms
+Vin 4 0 DC
+Vo 2 5

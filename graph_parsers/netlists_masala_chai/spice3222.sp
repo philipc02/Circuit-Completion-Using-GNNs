@@ -1,0 +1,19 @@
+* SPICE Netlist
+* Components
+
+CH X 2 CH_VALUE
+CX 2 0 CX_VALUE
+
+* Op-amp
+* Vout = Av1 * (Voltage at + - Voltage at -)
+.subckt OPAMP 2 0 Vout
+* Assume a behavioral model using a voltage-controlled voltage source
+E1 Vout 0 2 0 Av1
+.ends OPAMP
+
+* Connections
+XOPAMP 2 0 Vout OPAMP Av1=GIVEN_GAIN
+
+* Sources and simulation instructions would be added here in a full simulation setting
+
+.end

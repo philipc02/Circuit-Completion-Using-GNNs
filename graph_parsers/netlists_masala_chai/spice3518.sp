@@ -1,0 +1,18 @@
+plaintext
+* Differential Amplifier SPICE Netlist
+
+Q1 5 6 4 NPN
+Q2 5 7 4 NPN
+
+RC 8 5 10k
+RT1 6 1 1k
+RT1 7 2 1k
+
+VIN1 1 0 DC 0V
+VIN2 2 0 DC 0V
+VCC 8 0 DC 15V
+VEE 0 3 DC -15V
+
+IBIAS 3 4 DC 1mA
+
+.end

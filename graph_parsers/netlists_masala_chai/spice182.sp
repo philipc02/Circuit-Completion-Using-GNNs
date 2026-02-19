@@ -1,0 +1,12 @@
+spice
+* NMOS transistor
+M1 8 3 6 6 NMOS
+
+* Current Source
+I1 8 4 DC <value>
+
+* Voltage source for VDD
+V1 5 4 DC <VDD_value>
+
+* Ground
+V0 2 0 DC 0

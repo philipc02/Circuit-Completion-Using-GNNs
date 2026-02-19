@@ -1,0 +1,11 @@
+spice
+* NPN BJT Circuit
+Q1 2 6 5 NPN
+
+VBE 6 7 DC VBE_VALUE
+VCC 4 0 DC VCC_VALUE
+
+RC 4 2 RC_VALUE
+
+.model NPN NPN
+.end

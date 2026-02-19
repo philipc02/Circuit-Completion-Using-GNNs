@@ -1,0 +1,15 @@
+plaintext
+* NMOS transistor M1
+M1 7 4 0 0 NMOS
+
+* PMOS transistor M2
+M2 2 3 7 7 PMOS
+
+* PMOS transistor M3
+M3 5 6 3 3 PMOS
+
+* Current source
+I0 5 0 DC 100uA
+
+* Voltage source
+Vi 4 0 DC

@@ -1,0 +1,6 @@
+R1 5 6 R1_value
+R2 6 9 R2_value
+R3 5 2 R3_value
+R4 2 4 R4_value
+R5 7 3 R5_value
+R6 3 8 R6_value

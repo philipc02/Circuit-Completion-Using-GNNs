@@ -1,0 +1,3 @@
+VDD 3 0 DC VDD
+RD 3 2 RD
+rDS 2 0 rDS

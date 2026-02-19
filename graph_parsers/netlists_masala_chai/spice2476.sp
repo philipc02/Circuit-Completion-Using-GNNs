@@ -1,0 +1,7 @@
+spice
+* NMOS Amplifier Circuit
+M1 2 1 0 0 NMOS
+RD 3 2 1k
+RS 2 0 500
+VDD 3 0 DC 5V
+VIN 1 0 DC 0V

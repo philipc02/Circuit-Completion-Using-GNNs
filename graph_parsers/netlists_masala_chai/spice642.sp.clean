@@ -1,0 +1,8 @@
+plaintext
+* SPICE Netlist
+V1 1 0 DC Vin
+D1 3 4 Dmodel
+D2 1 5 Dmodel
+D3 2 6 Dmodel
+D4 4 5 Dmodel
+RL 3 2 1000 ; Assuming RL = 1000 Ohms

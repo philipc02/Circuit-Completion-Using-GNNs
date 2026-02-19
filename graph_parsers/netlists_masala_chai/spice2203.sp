@@ -1,0 +1,13 @@
+spice
+* NMOS Transistor
+M1 2 4 4 2 NMOS_MODEL
+
+* Resistors
+RG 4 2 1k  ; Replace 1k with the actual resistance value if known
+RD 3 2 1k  ; Replace 1k with the actual resistance value if known
+
+* Voltage Source
+VDD 3 0 DC 1.8V
+
+* Model Declaration (Example, replace with actual parameters as needed)
+.model NMOS_MODEL NMOS (Level=1)

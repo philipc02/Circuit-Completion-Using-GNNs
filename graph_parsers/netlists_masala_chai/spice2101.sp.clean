@@ -1,0 +1,5 @@
+* PMOS Transistor
+M2 VDD Vb Y Y PMOS
+
+* Voltage Source
+VDD VDD 0 DC <value>

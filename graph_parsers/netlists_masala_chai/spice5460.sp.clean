@@ -1,0 +1,8 @@
+* SPICE Netlist
+Vs 2 0 AC 1
+L1 4 3 35m
+C1 2 3 200u
+RL 3 6 220
+Vout 6 0 DC 0
+
+.END

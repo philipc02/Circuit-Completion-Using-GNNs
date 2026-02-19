@@ -1,0 +1,12 @@
+* SPICE Netlist for the given schematic
+
+R1 8 10 R1
+R2 5 2 R2
+
+I1 5 7 In1_2
+I2 6 4 In2_2
+
+* Voltage for visualization, replace with actual voltage if needed
+V1 6 9 V2_n_tot
+
+.end

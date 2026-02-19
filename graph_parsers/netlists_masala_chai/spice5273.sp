@@ -1,0 +1,5 @@
+* SPICE Netlist
+V1 6 5 DC 16V
+R1 3 6 1MEG
+R2 3 4 2.2MEG
+R3 2 5 560K

@@ -1,0 +1,12 @@
+plaintext
+* Components
+V1 6 0 DC Vin
+RS 4 2 RS_VALUE
+RD 2 5 RD_VALUE
+
+* MOSFETS
+M1 5 4 2 2 PMOS_MODEL
+M2 2 4 3 3 NMOS_MODEL
+
+* Define additional nodes
+VDD 2 0 DC

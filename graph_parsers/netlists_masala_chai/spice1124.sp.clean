@@ -1,0 +1,7 @@
+* Transistors
+M1 Vout Vin VDD VDD PMOS
+M2 Vout Vin 0 0 NMOS
+
+* Voltage sources
+VVin Vin 0 DC 0
+VVDD VDD 0 DC VDD

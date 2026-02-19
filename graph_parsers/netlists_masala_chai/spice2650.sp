@@ -1,0 +1,7 @@
+plaintext
+M0 4 5 6 6 NMOS
+M1 3 5 0 0 NMOS
+M2 2 5 0 0 NMOS
+M3 7 4 2 2 PMOS
+IREF 6 4 DC
+VDD 7 0 DC

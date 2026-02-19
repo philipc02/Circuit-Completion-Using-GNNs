@@ -1,0 +1,14 @@
+plaintext
+* Circuit Netlist
+Vin 4 0 DC 0  ; Voltage Source Vin connected to node 4 and ground
+V1 4 0 DC 0   ; Voltage Source V1 between node 4 and ground
+
+* Dependent Current Source g_m * V1
+G1 2 3 4 0 gm ; G1 is the current source from node 2 to node 3, controlled by voltage on nodes 4 0
+
+* Resistor
+RS 3 0 Rs     ; Resistor RS from node 3 to ground
+
+* Analysis directive
+.OP
+.END

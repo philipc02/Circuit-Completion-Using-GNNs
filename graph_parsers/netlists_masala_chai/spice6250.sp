@@ -1,0 +1,14 @@
+spice
+*Current Sources
+I1 6 4 DC 1
+I2 2 2 DC 1
+
+*BJTs
+Q1 3 1 3 NPN
+Q2 4 5 3 NPN
+Q3 2 7 3 NPN
+
+*Resistors
+R1 5 0 R
+R2 2 0 R+ΔR
+R3 3 0 R

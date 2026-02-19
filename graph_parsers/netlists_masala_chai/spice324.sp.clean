@@ -1,0 +1,12 @@
+plaintext
+* SPICE Netlist
+V1 4 0 DC 0
+I_Gm2 7 6 DC Gm2
+I_Gm3 3 5 DC Gm3
+R_01 7 4 R01
+R_2_over_2 4 0 R2/2
+R_a2 6 2 Ra2
+R_3_25 6 0 R3(25)
+R_a3 3 2 Ra3
+R_L 3 0 RL
+V_out 3 0 DC 0

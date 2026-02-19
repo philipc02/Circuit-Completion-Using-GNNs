@@ -1,0 +1,5 @@
+I1 3 4 DC 1
+Rre 3 2 r'_e
+Re 2 0 r_e
+Vin 3 Vin DC 0
+Vout 2 Vout DC 0

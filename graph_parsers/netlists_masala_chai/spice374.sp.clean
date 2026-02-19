@@ -1,0 +1,12 @@
+plaintext
+* SPICE Netlist
+I1 10 0 DC <value>                * Current Source
+Rs 10 6 <value>                   * Resistor
+R_RE_RF_1 6 0 <value>             * Resistor
+R_RE_RF_2 5 0 <value>             * Resistor
+R11 3 8 <value>                   * Resistor
+
+Q1 3 9 0 NPNMODEL                * NPN Transistor, Q1
+Q2 2 3 5 NPNMODEL                * NPN Transistor, Q2
+
+.model NPNMODEL NPN(IS=<value>)  * Placeholder for NPN model parameters

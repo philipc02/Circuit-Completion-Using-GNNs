@@ -1,0 +1,12 @@
+* SPICE Netlist for the Circuit
+
+VThev 5 3 DC 0
+
+RThev 5 2 1k
+
+CX 2 4 1nF
+Cin 2 0 1nF
+
+* Define ground (node 0)
+.options gmin=0.00000001
+.end

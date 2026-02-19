@@ -1,0 +1,9 @@
+spice
+* SPICE Netlist for the given schematic
+Vsig 4 8 DC 0
+Rsig 4 0 1k
+Q1 6 4 2 NMOS
+Q2 3 2 2 NMOS
+RD 3 2 1k
+I 2 0 DC 1mA
+VDD 6 0 DC 5V

@@ -1,0 +1,25 @@
+spice
+*SPICE netlist for the schematic
+
+VCC 3 0 DC 15V
+VEE 7 0 DC -15V
+
+IEE 2 3 DC 20uA
+
+Q1 3 3 4 QNPN
+Q2 3 3 3 QNPN
+Q3 4 3 7 QNPN
+Q4 4 5 7 QNPN
+Q5 3 5 6 QPNP
+Q6 6 6 7 QPNP
+
+RC 5 7 50k
+C1 5 6 10pF
+
+ISOURCE 5 3 DC 300uA
+VO 5 0
+
+.model QNPN NPN (IS=1E-14 BF=100)
+.model QPNP PNP (IS=1E-14 BF=100)
+
+.end

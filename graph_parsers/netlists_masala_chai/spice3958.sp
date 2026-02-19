@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist for the given circuit
+
+VCC 5 0 DC 10V
+VEE 0 7 DC -10V
+VS 6 0 DC
+
+RS 6 4 1k
+RB 4 1 50k
+RE 3 7 10k
+RC 2 5 5k
+RL 2 0 2k
+
+C1 4 1
+C2 2 0
+CE 3 0 
+
+Q1 2 1 3 QMODEL
+
+.model QMODEL NPN

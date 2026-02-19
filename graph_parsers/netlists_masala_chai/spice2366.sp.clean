@@ -1,0 +1,19 @@
+plaintext
+* SPICE Netlist
+
+C_S1 4 2 38xCD
+C_D1 7 4 38xCS
+C_S2 3 2 38xCD
+C_D2 7 3 38xCS
+C_F1 2 5 CF
+C_F2 2 3 CF
+C_IN1_COMP 6 0 10xCIN_COMP
+C_IN2_COMP 8 0 10xCIN_COMP
+
+* Input
+V_IN 7 0 VIN
+
+* Operational Amplifier
+X1 2 3 5 6 OPAMP
+
+* End of Netlist

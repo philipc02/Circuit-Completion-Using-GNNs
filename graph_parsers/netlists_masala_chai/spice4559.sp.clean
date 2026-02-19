@@ -1,0 +1,25 @@
+plaintext
+* SPICE Netlist for the given circuit
+
+* Voltage Sources
+VDD 8 0 DC VDD
+
+* PMOS Transistors
+MP1 3 2 8 8 PMOS    * (Drain, Gate, Source, Substrate)
+MP2 5 4 6 6 PMOS    * (Drain, Gate, Source, Substrate)
+
+* NMOS Transistors
+MNA 3 2 3 3 NMOS    * (Drain, Gate, Source, Substrate)
+MN1 3 7 3 3 NMOS    * (Drain, Gate, Source, Substrate)
+MN2 5 3 3 3 NMOS    * (Drain, Gate, Source, Substrate)
+
+* Nodes
+* 2 = Node connected to input A
+* 3 = Common node for sources of MNA, MN1, MN2
+* 4 = Output node for MP2
+* 5 = Output node for MN2
+* 6 = Supply rail for MP2
+* 7 = Node connected to CLK
+* 8 = Supply rail for MP1
+
+.end

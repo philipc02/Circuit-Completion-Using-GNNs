@@ -1,0 +1,18 @@
+plaintext
+* Transistor Q1
+Q1 6 5 4 QNPN
+
+* Transistor Q2
+Q2 3 2 6 QNPN
+
+* Current Source
+I1 8 3 DC
+
+* Voltage Source for Q2 Base
+VB2 2 0 DC
+
+* Input Voltage Source
+Vi 5 9 DC
+
+* Ground
+RIN 9 4 0

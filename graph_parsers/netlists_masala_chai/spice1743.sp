@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist for BJT Amplifier
+
+Q1 2 4 0 NPN
+I1 3 2 DC 0.001  * Current source from VCC to Vout
+RS 4 4 1k        * Resistor Rs
+
+* Voltage sources
+VCC 3 0 DC 10V   * VCC connected to node 3
+VIN 4 0          * Input voltage source connected to node 4
+
+* Model for NPN transistor
+.model NPN NPN (Is=1e-14 BF=100)
+
+.end

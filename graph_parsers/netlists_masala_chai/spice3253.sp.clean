@@ -1,0 +1,11 @@
+* SPICE Netlist
+*M1 drain gate source type
+M1 3 5 2 PMOS
+*M2 drain gate source type
+M2 3 6 4 NMOS
+*I1 positive_terminal negative_terminal current_value
+I1 2 3 DC 1mA
+*Voltage source for Vin
+Vin 9 0 DC 1V
+*Voltage source for VDD
+VDD 2 0 DC 5V

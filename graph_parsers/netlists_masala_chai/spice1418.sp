@@ -1,0 +1,21 @@
+plaintext
+* Transistor Q1
+Q1 2 3 1 NPN
+
+* Transistor Q2
+Q2 1 4 5 NPN
+
+* Current Source I1
+I1 3 0 DC 0.5A
+
+* Voltage Source Vcc
+Vcc 5 0 DC 10V
+
+* Voltage Vb2
+Vb2 4 0 DC 2.5V
+
+* Voltage Vb
+Vb 2 0 DC 1V
+
+* Resistor Rout
+Rout 5 2 1k

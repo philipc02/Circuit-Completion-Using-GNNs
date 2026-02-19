@@ -1,0 +1,20 @@
+spice
+* NPN BJT Amplifier
+
+Q1 8 7 4 NPN
+
+RG 7 0 600
+R1 8 7 10k
+R2 7 0 2.2k
+RC 8 3 3.6k
+RE 4 0 1k
+RL 3 2 10k
+
+C1 7 1 0.0001
+C2 2 3 0.0001
+C3 4 0 0.0001
+
+VCC 3 0 DC 10
+VG 6 0 AC 1m
+
+.END

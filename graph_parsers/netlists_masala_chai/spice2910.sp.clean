@@ -1,0 +1,6 @@
+spice
+M1 N5 Vin N0 N0 NMOS
+M2 N2 N5 N0 N0 NMOS
+M3 N3 N3 Vdd Vdd PMOS
+M4 N4 N2 Vdd Vdd PMOS
+Iss N5 N0 DC

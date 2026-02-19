@@ -1,0 +1,18 @@
+spice
+*MOSFET
+M2 3 5 2 2 NMOS
+
+*Voltage Source
+V1 6 7 DC <Value> 
+
+*Current Source
+I1 5 7 DC <Value> 
+
+*Resistors
+RD1 3 5 <Value>
+RD2 3 4 <Value>
+R1 5 2 <Value>
+R2 6 7 <Value>
+
+*Voltage Supply
+VDD 4 0 DC <Value>

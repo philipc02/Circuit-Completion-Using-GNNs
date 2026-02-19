@@ -1,0 +1,18 @@
+plaintext
+* NMOS Transistor
+M1 Vout Vin 3 3 NMOS
+
+* Current Source
+I1 3 0 DC 1A
+
+* Capacitor
+C1 Vout 3 1uF
+
+* Resistor
+RL Vout 2 50
+
+* Voltage Source
+VDD VDD 0 DC 1.8V
+
+* Ground Node
+0 GND

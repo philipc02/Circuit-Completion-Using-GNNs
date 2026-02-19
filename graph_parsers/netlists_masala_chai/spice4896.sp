@@ -1,0 +1,18 @@
+spice
+* Transistor
+Q1 6 4 7 NPN
+
+* Resistors
+R1 6 5  R_R1 
+R2 5 4  R_R2 
+RC 6 3  R_RC
+RE 7 1  R_RE
+RL 3 2  R_RL
+
+* Capacitors
+C1 4 1  C_C1
+C2 3 2  C_C2
+
+* Voltage Source
+VCC 6 0 DC V_VCC
+Vin 8 1 AC V_Vin

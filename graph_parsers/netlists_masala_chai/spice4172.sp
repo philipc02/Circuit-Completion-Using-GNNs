@@ -1,0 +1,3 @@
+* SPICE Netlist
+V1 3 0 DC vI
+E1 2 0 3 2 1000k

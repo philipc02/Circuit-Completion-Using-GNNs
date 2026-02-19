@@ -1,0 +1,19 @@
+spice
+* SPICE Netlist for the Given Schematic
+M1 2 2 3 3 NMOS
+M2 2 4 VDD VDD PMOS
+M5 4 6 VDD VDD PMOS
+MB 3 3 GND GND NMOS
+
+IB1 3 GND DC 0
+IB2 6 GND DC 0
+
+CB 2 Vin 1uF
+
+R1 3 2 1k
+
+* Voltage Definitions
+VDD VDD GND DC 10
+
+* End of Netlist
+.end

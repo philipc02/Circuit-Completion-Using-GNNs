@@ -1,0 +1,15 @@
+plaintext
+* SPICE Netlist for the schematic
+
+M1 6 5 0 0 NMOS
+M2 3 6 0 0 NMOS
+M3 2 5 2 2 PMOS
+M4 3 4 2 2 PMOS
+
+VDD 2 0 DC <value> ; Replace <value> with the desired voltage
+
+* Connections: 
+* M1: Drain - 6, Gate - 5, Source/Body - 0
+* M2: Drain - 3, Gate - 6, Source/Body - 0
+* M3: Drain - 2, Gate - 5, Source/Body - 2
+* M4: Drain - 3, Gate - 4, Source/Body - 2

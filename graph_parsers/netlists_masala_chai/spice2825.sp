@@ -1,0 +1,24 @@
+spice
+* SPICE Netlist
+
+*.model statements would be here (e.g., .model NMOS NMOS, .model PMOS PMOS)
+
+VDD 24 0 DC 10
+
+Iss 3 0 DC 0.1
+
+M1 6 3 0 0 NMOS
+M2 2 3 0 0 NMOS
+M3 4 5 24 24 PMOS
+M4 2 5 24 24 PMOS
+
+C1 24 5 1u
+C2 24 2 1u
+
+R1 4 4 1k
+R2 2 2 1k
+
+Vin 6 0 Sin(0 1 1k)
+
+* Control statements (e.g., .tran, .ac, .dc) would be added here.
+.end

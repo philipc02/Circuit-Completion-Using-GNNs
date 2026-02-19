@@ -1,0 +1,22 @@
+plaintext
+* SPICE Netlist
+* Transistor M1 (PMOS)
+M1 3 2 5 5 PMOS
+
+* Transistor M2 (NMOS)
+M2 5 3 5 5 NMOS
+
+* Transistor MB (NMOS)
+MB 6 3 5 5 NMOS
+
+* Current Source IB
+IB 3 5 DC 1mA
+
+* Capacitor Cin
+Cin 2 3 1uF
+
+* Resistor Rin
+Rin 3 4 10k
+
+* Voltage Source VDD
+VDD 3 0 DC 5V

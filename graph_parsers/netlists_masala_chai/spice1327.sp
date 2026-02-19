@@ -1,0 +1,19 @@
+spice
+* SPICE Netlist for the given circuit
+
+* Voltage Source
+Vin 5 0 DC 0
+
+* Resistors
+R2 5 2 1k  ; example resistance value for R2
+R1 2 0 1k  ; example resistance value for R1
+R4 0 3 1k  ; example resistance value for R4
+R3 3 0 1k  ; example resistance value for R3
+
+* Op-amp
+* A generic op-amp model (parameters may vary based on actual op-amp used)
+XOpamp 2 0 0 OpampModel
+
+.model OpampModel opamp (gain=100k bandwidth=1meg)
+
+.end

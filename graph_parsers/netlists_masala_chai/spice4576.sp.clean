@@ -1,0 +1,13 @@
+spice
+* Transistor Definitions
+M1 4 9 3 3 NMOS
+M2 4 4 4 4 NMOS
+M3 2 6 4 4 PMOS
+M4 2 4 4 4 NMOS
+M5 2 4 3 3 NMOS
+M6 Y 5 3 3 NMOS
+M7 Y 2 6 6 PMOS
+
+VDD 2 0 DC 5V
+VIN_A 9 0 DC 0V
+VIN_B 4 0 DC 0V

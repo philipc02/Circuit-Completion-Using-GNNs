@@ -1,0 +1,13 @@
+spice
+   * NMOS Transistors
+   M6 7 6 2 2 NMOS
+   M5 2 3 1 1 NMOS
+
+   * Current Source
+   IIN 5 4 DC I_IN_VALUE
+
+   * Voltage Supply
+   VDD 4 0 DC VDD_VALUE
+
+   .model NMOS NMOS
+   .end

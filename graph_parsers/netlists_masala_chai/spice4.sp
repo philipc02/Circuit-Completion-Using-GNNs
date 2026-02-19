@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+VB 3 4 DC VBEon
+IB 3 B DC IB
+G1 2 4 3 4 BFIB
+.END

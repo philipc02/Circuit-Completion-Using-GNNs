@@ -1,0 +1,7 @@
+* Example Circuit SPICE Netlist
+V1 8 0 DC Vs
+R1 8 3 100
+R2 3 4 94
+R3 3 6 99.8
+R4 4 7 0
+R5 6 7 0

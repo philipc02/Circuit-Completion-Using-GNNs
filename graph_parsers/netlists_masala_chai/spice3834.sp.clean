@@ -1,0 +1,14 @@
+plaintext
+* SPICE Netlist for the Circuit
+
+VDD 5 0 DC 20V
+Vi 3 0 DC
+
+R1 5 2  R1_value
+RS 2 6  RS_value
+R2 7 4  R2_value
+RD 6 3  RD_value
+
+CC1 3 7 CC1_value
+
+.END

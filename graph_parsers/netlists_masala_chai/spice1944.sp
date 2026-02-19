@@ -1,0 +1,18 @@
+* Transistors
+Q1 4 3 5 NPN
+Q2 5 2 3 NPN
+
+* Diodes
+D1 3 4 DMODEL
+D2 4 5 DMODEL
+
+* Resistor
+RL 5 0 1k
+
+* Voltage Sources
+VCC 4 0 10V
+VEE 2 0 -10V
+Vin 3 0 DC 0V AC 1V
+
+.model NPN NPN
+.model DMODEL D

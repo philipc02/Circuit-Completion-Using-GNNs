@@ -1,0 +1,17 @@
+plaintext
+* Differential Amplifier Circuit
+
+Q1 6 Vin1 5 NPN
+Q2 6 Vin2 5 NPN
+Q3 4 3 5 NPN
+Q4 4 3 5 NPN
+
+R1 3 4 R1_value
+R2 2 4 R2_value
+
+I_EE 6 5 IEE_value
+
+VCC 3 0 DC VCC_value
+
+* The netlist assumes NPN transistors. Make sure to set R1_value, R2_value, 
+* IEE_value, and VCC_value to the appropriate values for simulation.

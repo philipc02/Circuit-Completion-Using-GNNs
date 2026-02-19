@@ -1,0 +1,18 @@
+spice
+* SPICE Netlist
+
+V1 4 0 DC Vin        * Vin is the input voltage source
+Rs 4 5 Rs            * Rs is the series resistor
+
+Cin 5 3 Cin          * Cin capacitor connected to node 5 and ground
+Cxy 4 5 Cxy          * Cxy capacitor between Rs and gate of MOSFET M1
+
+* MOSFET
+M1 2 4 3 3 NMOS      * M1 with drain at node 2, gate at node 4, source at node 3
+
+Cout 2 3 Cout        * Cout capacitor between node 2 and ground
+
+* Resistor network
+Rout 2 3 Ro1 || Ro2  * Rout represents parallel combination of ro1 and ro2
+
+* End of netlist

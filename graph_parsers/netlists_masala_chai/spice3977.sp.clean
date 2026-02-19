@@ -1,0 +1,16 @@
+plaintext
+* SPICE Netlist
+V1 7 0 DC v_s
+RS 7 2 R_S
+CC1 2 3 C_C1
+RE 3 6 R_E
+RB 3 6 R_B
+Q1 3 5 6 QNPN
+CB 3 5 C_B
+RC 5 5 R_C
+VCC 0 5 DC V_CC
+RL 5 5 R_L
+VEE 0 6 DC V_EE
+
+.model QNPN NPN
+.END

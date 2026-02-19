@@ -1,0 +1,7 @@
+spice
+* CMOS Inverter
+M1 5 3 0 0 NMOS
+M2 5 3 0 0 NMOS
+M3 7 6 8 8 PMOS
+M4 2 4 8 8 PMOS
+V1 8 0 DC VDD

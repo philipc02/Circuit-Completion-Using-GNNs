@@ -1,0 +1,14 @@
+spice
+* NMOS Amplifier Circuit
+
+M1 4 2 4 4 NMOS
+RL 5 4  RL_value
+Rs 3 4  Rs_value
+Usig 3 0 DC 0 AC 1
+VDD 5 0 VDD_value
+
+.model NMOS NMOS (level=1)
+
+* Note: Replace RL_value, Rs_value, and VDD_value with actual values.
+
+.END

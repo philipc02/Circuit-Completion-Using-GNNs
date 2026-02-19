@@ -1,0 +1,8 @@
+spice
+*MOSFET Definitions
+M_Q1 4 3 5 5 NMOS
+M_Q2 6 2 4 4 PMOS
+
+*Voltage Definitions
+V_VDD 6 0 DC 5V
+V_VI 3 0 DC 1V

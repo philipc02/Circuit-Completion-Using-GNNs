@@ -1,0 +1,27 @@
+spice
+* Transistor Q1
+Q1 5 6 7 NPN
+
+* Transistor Q2
+Q2 5 3 7 NPN
+
+* Transistor QO
+QO 4 2 5 NPN
+
+* Resistor R1
+R1 6 5 
+
+* Resistor RB
+RB 2 7 
+
+* Resistor RC
+RC 3 8 
+
+* Current Source I1
+I1 6 0 DC
+
+* Voltage Sources
+V+ 8 0 DC 5
+V- 7 0 DC -5
+
+.end

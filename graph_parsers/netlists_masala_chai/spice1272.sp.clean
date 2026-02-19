@@ -1,0 +1,13 @@
+spice
+*MOSFET Definitions
+M1 2 Vin 5 5 NMOS
+M2 Vout Vb 4 4 NMOS
+
+*Resistor
+RD VDD Vout <value>
+
+*Current Source
+I1 5 0 <value>
+
+*Voltage Source
+VDD VDD 0 <value>

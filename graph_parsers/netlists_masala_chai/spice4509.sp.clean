@@ -1,0 +1,6 @@
+spice
+* SPICE netlist for the given schematic
+
+M1 5 3 6 6 NMOS
+M2 6 2 4 4 NMOS
+C1 6 0 C

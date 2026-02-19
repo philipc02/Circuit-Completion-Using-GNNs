@@ -1,0 +1,13 @@
+* Example Circuit
+
+M1 3 Vin 0 NMOS
+M2 4 3 5 PMOS
+RD 4 5 RD_VALUE
+I1 2 0 DC I_VALUE
+VDD 5 0 DC VDD_VALUE
+Vin Vin 0 DC Vin_VALUE
+
+*.model NMOS NMOS_MODEL_PARAMS
+*.model PMOS PMOS_MODEL_PARAMS
+
+.end

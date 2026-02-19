@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist
+VCC 3 0 DC VCC
+
+I1 6 3 DC I
+
+D1 1 5 DMODEL
+D2 7 5 DMODEL
+
+RC 3 4 RC
+
+Q1 4 5 8 QMODEL
+
+VIN 1 0 AC 1
+
+* Models
+.model DMODEL D
+.model QMODEL NPN(IS=1E-14 BF=100)
+
+.END

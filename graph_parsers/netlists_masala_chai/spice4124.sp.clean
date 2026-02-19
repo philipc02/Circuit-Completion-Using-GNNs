@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist
+Iin 5 3 DC 0
+Cgd 2 4 Cgd_value
+Cgs 2 3 Cgs_value
+Gm 2 4 VALUE={gm*(V(2,3))}
+Ri 6 2 Ri_value
+Rs 2 3 Rs_value
+RL 4 3 RL_value
+Vgs 6 2 DC 0

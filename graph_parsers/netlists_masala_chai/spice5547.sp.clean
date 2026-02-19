@@ -1,0 +1,5 @@
+* SPICE Netlist
+G1 1 5 VPI 5 gm
+R1 2 5 ro
+R2 3 5 RL
+VPI 1 5 DC 0

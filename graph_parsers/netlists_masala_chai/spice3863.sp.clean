@@ -1,0 +1,5 @@
+spice
+V1 7 6 DC 5
+RB 6 4 RB_value
+RC 7 5 2k
+Q1 5 4 2 NPN

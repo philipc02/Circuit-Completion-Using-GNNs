@@ -1,0 +1,10 @@
+plaintext
+* SPICE netlist for the given schematic
+
+Vn_RD 3 0 DC <value> ; Voltage source Vn_RD connected between node 3 and ground
+In_M1 2 0 DC <value> ; Current source In_M1 connected between node 2 and ground
+RD 3 5 <value>       ; Resistor RD connected between nodes 3 and 5
+CL 5 0 <value>       ; Capacitor CL connected between node 5 and ground
+
+* Additional parameters
+* .param value=<value as per requirement>

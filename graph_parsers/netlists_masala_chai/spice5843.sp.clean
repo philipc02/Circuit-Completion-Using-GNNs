@@ -1,0 +1,14 @@
+* NMOS Transistor Circuit
+M1 5 3 4 4 NMOS_MODEL
+
+* Resistors
+RG 3 0  RG_VALUE
+RD 5 5  RD_VALUE
+RS 4 2  RS_VALUE
+
+* Voltage Sources
+VDD 5 0 VDD_VALUE
+VSS 2 0 VSS_VALUE
+
+* Model Definition
+.model NMOS_MODEL NMOS

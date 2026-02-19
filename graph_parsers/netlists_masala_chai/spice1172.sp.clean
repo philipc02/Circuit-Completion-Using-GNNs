@@ -1,0 +1,20 @@
+plaintext
+*MOSFET Amplifier Circuit
+
+M1 3 2 2 2 NMOS
+RD 4 3 1k
+I1 2 0 DC 1/gm2
+
+*DC voltage source for load resistor
+VDD 4 0 DC Vdd
+
+*Input Voltage
+Vin 2 0 DC Vin
+
+*.model definition for NMOS 
+.model NMOS NMOS(L=1u W=1u)
+
+*.options
+.options post
+
+.end

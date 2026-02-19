@@ -1,0 +1,24 @@
+plaintext
+* SPICE netlist for the given schematic
+VDD VDD 0 DC 5V
+
+* Resistors
+RS 2 1 1k
+RD VDD 3 1k
+
+* Capacitor
+CF 3 Vout 10pF
+
+* NMOS transistor
+M1 3 2 0 0 NMOS_MODEL
+
+* Voltage source
+VDD VDD 0 5V
+
+* Input voltage
+VIN 1 0 SIN(0 1V 1kHz)
+
+* NMOS model (example parameters)
+.model NMOS_MODEL NMOS (LEVEL=1 VTO=1 KP=2E-5)
+
+.end

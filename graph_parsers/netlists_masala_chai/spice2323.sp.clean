@@ -1,0 +1,5 @@
+spice
+* SPICE Netlist
+M1 OUT- IN+ 2 2 NMOS
+M2 OUT+ IN- 2 2 NMOS
+IBIAS 2 0 DC IBIAS_VALUE

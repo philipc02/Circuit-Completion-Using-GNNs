@@ -1,0 +1,14 @@
+spice
+* SPICE Netlist
+
+Vin 2 9 DC Vpi
+Rx 8 2  r_x
+Ro 3 2  r_o
+Re 2 9  r_e
+Cmu 8 6 C_mu
+Cpi 2 9 C_pi
+Gm 6 3 VOL=V(2,9)*g_m
+
+* Control voltage: V(2,9) corresponds to Vpi
+
+.end

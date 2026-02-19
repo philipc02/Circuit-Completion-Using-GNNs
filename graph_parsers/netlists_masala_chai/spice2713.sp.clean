@@ -1,0 +1,22 @@
+spice
+* SPICE Netlist for the Circuit
+
+* Transistors
+M1 4 5 0 0 PMOS
+M2 0 4 0 0 NMOS
+M3 2 Vin 0 0 NMOS
+
+* Resistors
+RD 6 2 RD_value
+RB 6 5 RB_value
+
+* Capacitors
+CC 2 5 CC_value
+
+* Voltage Sources
+Vin Vin 0 DC Vin_value
+
+* Power Supply
+VDD 6 0 DC VDD_value
+
+* End of Netlist

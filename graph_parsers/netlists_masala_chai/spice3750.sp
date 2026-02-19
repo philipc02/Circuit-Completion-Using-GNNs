@@ -1,0 +1,20 @@
+plaintext
+* SPICE Netlist for the given circuit
+
+Vi 4 0 DC 0V
+Vcc 7 0 DC 5V
+Vee 6 0 DC -5V
+
+R1 7 8 165k
+R2 8 2 35k
+RD 8 3 7k
+RS 2 2 0.5k
+
+CC 5 8 1uF  ; assuming 1uF for simulation purposes
+
+M1 3 5 2 2 NMOS ; Assuming NMOS model is available
+* The drain is connected to node 3, gate to node 5, source to node 2
+
+Vo 3 0
+
+.END

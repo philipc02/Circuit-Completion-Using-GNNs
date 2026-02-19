@@ -1,0 +1,18 @@
+plaintext
+* SPICE Netlist
+
+V1 5 0 DC 10V        ; Voltage source V+ = 10V
+IREF 5 4 DC          ; Current source I_REF
+
+R1 5 4 6.3k          ; Resistor R1 = 6.3 kOhm
+RER 4 0 3k           ; Resistor R_ER = 3 kOhm
+RE1 2 0              ; Resistor RE1 connected to ground
+RE2 3 0              ; Resistor RE2 connected to ground
+RE3 6 0              ; Resistor RE3 connected to ground
+
+Q_R 4 4 1 NPN        ; Transistor Q_R (collector, base, emitter)
+Q1 4 9 2 NPN         ; Transistor Q_1 (collector, base, emitter)
+Q2 2 9 3 NPN         ; Transistor Q_2 (collector, base, emitter)
+Q3 3 9 6 NPN         ; Transistor Q_3 (collector, base, emitter)
+
+.end

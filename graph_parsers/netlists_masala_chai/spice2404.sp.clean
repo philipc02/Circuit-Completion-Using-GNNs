@@ -1,0 +1,4 @@
+spice
+Mnmos 3 2 0 0 NMOS
+I1 3 0 DC <value>
+Vb 2 0 DC <voltage_value>

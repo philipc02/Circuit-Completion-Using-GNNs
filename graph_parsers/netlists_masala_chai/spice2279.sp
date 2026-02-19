@@ -1,0 +1,4 @@
+spice
+* RC Circuit
+R1 Vin 2 1k
+C1 2 0 1p

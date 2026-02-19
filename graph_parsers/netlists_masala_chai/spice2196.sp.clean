@@ -1,0 +1,3 @@
+M2 5 4 6 6 NMOS
+Vin 1 2 DC 0
+Rd 3 5 3 R

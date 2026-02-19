@@ -1,0 +1,21 @@
+plaintext
+*MOSFETs
+M1 4 6 5 5 NMOS
+M2 2 4 5 5 NMOS
+M3 3 2 5 5 NMOS
+
+*Resistors
+RD1 4 7 RD
+RD2 2 7 RD
+RD3 3 7 RD
+
+*Capacitors
+CD1 4 5 CD
+CD2 2 5 CD
+CD3 3 5 CD
+
+*Voltage
+VDD 7 0 DC VDD
+
+*Connections
+VOUT 3 0

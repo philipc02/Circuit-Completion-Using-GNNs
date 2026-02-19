@@ -1,0 +1,18 @@
+spice
+* NMOS Transistors
+M1 3 6 2 2 NMOS
+M2 5 5 2 2 NMOS
+
+* PMOS Transistors
+M3 4 3 2 3 PMOS
+M4 2 4 1 2 PMOS
+
+* Resistor
+RSS 7 2 1000
+
+* Voltage Sources
+VDD 1 0 DC 5
+Vb 3 0 DC 1.8
+Vin,CM 6 0 DC 1.2
+
+* End of Netlist

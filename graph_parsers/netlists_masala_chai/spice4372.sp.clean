@@ -1,0 +1,27 @@
+spice
+* NMOS Transistors
+M1 3 1 4 4 NMOS
+M2 2 2 4 4 NMOS
+
+* Resistors
+R1 3 6 25k
+R2 2 6 25k
+R3 4 7 20k
+
+* Voltage Sources
+V1 6 0 DC 5
+V2 0 7 DC 5
+
+* Current Sources
+I1 3 0 DC
+I2 2 0 DC
+IS 4 0 DC
+
+* Input Drivers
+V1 1 0 DC v1
+V2 2 0 DC v2
+
+* .model statement for NMOS
+.model NMOS NMOS (Level=1)
+
+.end

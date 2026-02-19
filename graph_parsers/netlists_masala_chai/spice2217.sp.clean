@@ -1,0 +1,7 @@
+plaintext
+* Netlist for the given circuit
+
+M1 3 Vin 0 0 NMOS
+M2 2 Vb 3 3 PMOS
+
+VDD 2 0 DC VDD

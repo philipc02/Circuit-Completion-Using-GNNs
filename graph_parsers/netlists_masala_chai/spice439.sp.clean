@@ -1,0 +1,6 @@
+* Circuit Netlist
+C_CF 2 22 CF
+R_RF 2 2 RF
+R_RE 2 3 RE
+I_i1 5 2 DC
+I_i2 2 4 DC

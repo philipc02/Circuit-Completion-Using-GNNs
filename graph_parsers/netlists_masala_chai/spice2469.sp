@@ -1,0 +1,12 @@
+spice
+* NMOS with drain at node 2, gate at node 4, source at node 5
+M1 2 4 5 5 NMOS
+
+* Resistor ro2 between node 3 and node 2
+Rro2 3 2 1000
+
+* Voltage source Vdd at node 3 with reference to ground (node 5)
+Vdd 3 5 DC 5
+
+* Input voltage source Vin at node 4 with reference to ground
+Vin 4 5 DC 2.5

@@ -1,0 +1,15 @@
+plaintext
+* NMOS Transistor
+M1 3 6 2 2 NMOS_MODEL
+
+* Current Source
+I1 3 5 DC IBias
+
+* Resistor
+RL 3 4 RL_VALUE
+
+* Voltage Input
+VIN 6 2 DC VIN_VALUE
+
+* Control Voltage
+VDSsat 3 4 DC VOUT_VALUE

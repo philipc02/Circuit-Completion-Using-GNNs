@@ -1,0 +1,28 @@
+plaintext
+* NMOS Transistors
+M1 2 2 6 6 MN1
+M2 2 4 6 6 MN2
+M3 2 4 2 6 MN3
+M4 2 5 2 6 MN4
+M5 2 5 2 6 MN5
+M6 2 5 6 6 MN6
+M7 2 5 6 6 MN7
+M8 2 5 6 6 MN8
+
+* PMOS Transistors
+M9 2 2 3 3 MP1
+M10 2 4 3 3 MP2
+M11 2 4 4 4 MP3
+M12 2 4 4 4 MP4
+M13 2 4 4 4 MP5
+M14 2 4 4 4 MP6
+M15 2 4 4 4 MP7
+
+* Current Source
+IBIAS 2 3 DC 0
+
+* Voltage Sources
+VDD 3 0 DC 1.8
+VSS 6 0 DC 0
+
+* End of netlist

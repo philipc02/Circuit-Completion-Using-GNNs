@@ -1,0 +1,19 @@
+spice
+* SPICE Netlist
+VDD 6 0 DC 1.8V
+VB 3 0 DC
+IX 2 0 DC
+
+* Transistors
+M1 5 3 4 4 NMOS
+M2 5 1 6 6 PMOS
+
+* Node Mapping
+* 1 - PMOS Gate
+* 2 - IX and VX
+* 3 - NMOS Gate and VB
+* 4 - NMOS Source (GND)
+* 5 - NMOS and PMOS Drain
+* 6 - PMOS Source (VDD)
+
+.END

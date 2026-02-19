@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist for the BJT Amplifier Circuit
+
+* Voltage Sources
+VCC 3 0 DC <VCC_value>
+VEE 2 0 DC <VEE_value>
+VB 6 5 DC <VB_value>
+
+* Resistor
+RL 4 0 <RL_value>
+
+* Transistors
+Q1 3 6 5 PNP
+Q2 4 5 2 NPN
+
+* Inputs and Outputs
+Vin 5 1 DC <Vin_value>
+Vout 4 0
+
+* End of Netlist

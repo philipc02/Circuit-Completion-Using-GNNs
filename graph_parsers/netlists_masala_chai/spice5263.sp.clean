@@ -1,0 +1,4 @@
+plaintext
+V1 5 4 DC 10V
+R1 3 6 10
+R2 6 0 10

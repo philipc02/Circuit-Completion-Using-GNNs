@@ -1,0 +1,27 @@
+plaintext
+* Transistor Q1 (NMOS)
+M1 2 3 5 5 NMOS
+
+* Transistor Q2 (NMOS)
+M2 4 2 5 5 NMOS
+
+* Current Source I1
+I1 6 2 DC 1A
+
+* Current Source I2
+I2 2 2 DC 1A
+
+* Resistor R1
+R1 6 2 1k
+
+* Resistor R2
+R2 2 2 1k
+
+* Resistor R3
+R3 2 3 1k
+
+* Voltage Source VOUT
+VOUT 2 0 DC 0V
+
+* Additional Information
+* Node 5 is connected to the ground

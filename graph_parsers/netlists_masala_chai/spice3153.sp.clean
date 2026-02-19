@@ -1,0 +1,23 @@
+spice
+* Operational Amplifier Circuit
+* Node 1: Vin
+* Node 2: Ground
+* Node 3: Vout
+* Node 4: Intermediate node connected between resistors
+
+R1 1 4 4.7k
+R1 2 4 4.7k
+R2 4 3 10k
+R2 2 2 10k
+
+CL 3 2 10n
+
+* Voltage Input
+Vin 1 0 DC 1.0V
+
+* Voltage Source for Op-Amp (if needed)
+Vcc 5 0 DC 15V
+Vee 6 0 DC -15V
+
+* Op-Amp
+XOP 4 2 3 5 6 OPAMP

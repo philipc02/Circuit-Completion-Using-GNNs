@@ -1,0 +1,10 @@
+spice
+*.MODEL D1 D(IS=1e-14)
+V1 4 0 DC 10
+R1 4 5 0.5k
+D1 5 3 ZENER
+RL 4 2 RL
+RZ 6 5 0.001
+RZ2 3 0 0.001
+
+.END

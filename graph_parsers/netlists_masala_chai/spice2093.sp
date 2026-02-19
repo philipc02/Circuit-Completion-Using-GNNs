@@ -1,0 +1,13 @@
+* NMOS Transistor
+M1 Y X 0 0 NMOS
+
+* Voltage Source
+VDD 2 0 DC 1.8
+
+* Resistors
+RG 4 2 1k
+RD 3 2 1k
+
+* Connections
+Y 3
+X 4

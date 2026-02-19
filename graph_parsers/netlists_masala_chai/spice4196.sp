@@ -1,0 +1,15 @@
+* Op-Amp Circuit
+XOPAMP N2 N3 Vout OPAMP
+
+R1 N2 N1 50k
+R2 Vout N2 50k
+R3 N3 V1 20k
+R4 N3 V2 40k
+
+V1 V1 0 DC
+V2 V2 0 DC
+
+Vout Vout 0
+
+* Connections
+N1 V1 V2

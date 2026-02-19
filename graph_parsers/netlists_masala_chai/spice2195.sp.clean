@@ -1,0 +1,26 @@
+plaintext
+* SPICE Netlist
+
+* Voltage Source
+VDD 7 0 DC VDD
+
+* Resistor
+RD 7 2 RD
+
+* NMOS Transistor M1
+M1 4 6 3 3 NMOS
+
+* NMOS Transistor M2
+M2 2 2 3 3 NMOS
+
+* Current Source
+I1 3 0 DC I1
+
+* Voltage Input
+VIN 6 0 DC Vin
+
+* Voltage Bias
+VB 2 0 DC Vb
+
+* Output
+VOUT 2 0

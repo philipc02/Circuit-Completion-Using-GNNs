@@ -1,0 +1,25 @@
+*MOSFETs
+M3 X 4 4 4 NMOS
+M4 X 8 4 8 NMOS
+M5 2 Y 2 2 PMOS
+M6 Y 2 2 2 PMOS
+M21 4 2 4 4 NMOS
+M22 Y 22 2 2 PMOS
+M23 5 5 5 5 NMOS
+M24 3 6 5 5 NMOS
+
+*Current Sources
+I1 4 4 DC
+I2 2 22 DC
+I3 5 5 DC
+I4 6 3 DC
+
+*Resistors
+R1 1 5
+R2 22 2
+R3 3 8
+R4 8 3
+
+*Voltage
+V1 5 0 DC
+V2 3 0 DC

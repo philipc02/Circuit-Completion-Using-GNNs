@@ -1,0 +1,7 @@
+* SPICE Netlist
+Vth 2 7 AC 1
+Rzout 2 4 z_out
+RR 4 6 R
+* Ground reference
+Rground 7 0 0
+Rground2 6 0 0

@@ -1,0 +1,12 @@
+* SPICE Netlist
+* NMOS and PMOS transistor model names assumed as NMOS and PMOS respectively
+
+VDD 6 0 DC 5V ; Voltage source VDD connected from node 6 to ground
+
+R1 2 3 1k ; Resistor R1 between Vin (node 2) and node 3
+R2 3 4 1k ; Resistor R2 between node 3 and Vout (node 4)
+
+M1 4 3 0 0 NMOS ; NMOS M1 with drain at node 4, gate at node 3, source and body at ground
+M2 4 4 6 6 PMOS ; PMOS M2 with drain at node 4, gate at node 4, source and body at VDD (node 6)
+
+Vin 2 0 DC 1V ; Input voltage source

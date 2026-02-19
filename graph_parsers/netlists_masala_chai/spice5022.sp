@@ -1,0 +1,8 @@
+spice
+* NMOS Transistor
+M1 3 4 2 2 NMOS
+
+* Capacitors
+C_iss 4 2 Ciss_value
+C_gs 4 2 Cgs_value
+C_gd 3 4 Cgd_value

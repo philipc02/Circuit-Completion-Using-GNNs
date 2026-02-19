@@ -1,0 +1,21 @@
+* Components
+V1 4 0 DC 0     ; Voltage source vs
+V+ 8 0 DC 6     ; Positive supply voltage
+V- 6 0 DC -6    ; Negative supply voltage
+
+* Resistors
+R1 2 8 1k       ; Resistor R1
+R2 2 6 1k       ; Resistor R2
+RC 2 7 2k       ; Resistor RC
+RE 5 6 200      ; Resistor RE
+
+* Capacitor
+CC 4 2 1uF      ; Capacitor CC
+
+* BJT
+Q1 7 2 5 Q2N2222; NPN transistor
+
+* Model
+.model Q2N2222 NPN (BF=100)
+
+* End of netlist

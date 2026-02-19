@@ -1,0 +1,19 @@
+* NMOS Transistors
+M1 2 1 0 0 NMOS
+M2 3 Vb2 0 0 NMOS
+M3 2 Vb3 0 0 NMOS
+M4 VDD Vb4 0 0 NMOS
+
+* PMOS Transistor
+M5 4 Vin 3 3 PMOS
+
+* Voltage Sources
+Vb1 1 0 DC <value>
+Vb2 2 0 DC <value>
+Vb3 2 0 DC <value>
+Vb4 VDD 0 DC <value>
+Vin 4 0 DC <value>
+
+* Node Annotations
+* 0 - Ground
+* 1..4 - Annotated from schematic

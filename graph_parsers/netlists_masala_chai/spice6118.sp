@@ -1,0 +1,6 @@
+spice
+* NMOS and Resistor Circuit
+M1 3 2 4 4 NMOS_MODEL
+RD 3 0 RD_VALUE
+V1 2 0 DC Vid/2
+VDD 0 3 DC Vo/2

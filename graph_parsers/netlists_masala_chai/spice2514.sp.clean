@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+M2 2 5 4 4 NMOS
+I1 2 2 DC (value unknown)
+rO2 2 4  (value unknown)
+rO1 4 3  (value unknown)
+V1 3 0 DC (-gm1*rO1*Vin)  ; Assuming voltage source

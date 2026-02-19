@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist
+* Transistor Connections and Power Supply
+
+M1 N1 VIN 0 0 NMOS
+M2 N2 Vb1 N1 N1 NMOS
+M3 Vout Vb2 N2 N2 NMOS
+M4 VCC Vb3 Vout Vout NMOS
+
+VCC VCC 0 DC 2.5V
+VIN VIN 0 DC <input_voltage> 
+
+* End of Netlist

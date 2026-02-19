@@ -1,0 +1,5 @@
+plaintext
+M1 5 10 4 4 NMOS
+M2 9 2 4 4 NMOS
+M3 8 22 4 4 NMOS
+M4 3 23 4 4 NMOS

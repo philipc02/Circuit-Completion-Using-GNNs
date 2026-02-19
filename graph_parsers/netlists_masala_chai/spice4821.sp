@@ -1,0 +1,13 @@
+plaintext
+* SPICE Netlist
+* Components identified and nodes mapped
+
+V1 5 0 AC 1 * VIN - voltage source connected between node 5 and ground
+
+R1 5 4 1k   * Resistor R1 between node 5 and node 4
+R2 4 6 1k   * Resistor R2 between node 4 and node 6
+Re 6 0 1k   * Resistor r'e between node 6 and ground
+RC 3 2 1k   * Resistor RC between node 3 and node 2
+RL 3 7 1k   * Resistor RL between node 3 and node 7
+
+I1 3 3 DC 1mA * Current source ic between node 3 and node 3

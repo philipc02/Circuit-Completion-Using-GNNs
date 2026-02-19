@@ -1,0 +1,31 @@
+plaintext
+* SPICE Netlist for the given schematic
+
+* Transistors
+Q13A 4 BIAS 3 NPN
+Q14 2 5 3 NPN
+Q15 2 1 3 NPN
+Q18 4 3 3 NPN
+Q19 3 3 3 NPN
+Q20 3 2 6 NPN
+Q23 3 Vi 7 NPN
+
+* Current Source
+I1 4 2 DC 0.22mA
+
+* Resistors
+R6 2 5 1k
+R7 2 3 1k
+RL 6 3 1k
+
+* Voltage Supplies
+VCC 4 0 DC +VCC
+VEE 3 8 DC -VEE
+
+* Input Voltage
+Vi 7 3 DC 0
+
+* Output Voltage
+Vo 6 3
+
+.end

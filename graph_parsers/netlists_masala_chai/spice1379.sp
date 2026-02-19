@@ -1,0 +1,6 @@
+* Nodes are labeled based on the annotated image
+M1 2 2 3 3 NMOS
+R1 1 2 1k
+R2 2 0 1k
+I1 3 0 DC 1mA
+VDD 1 0 DC 5V

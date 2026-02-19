@@ -1,0 +1,22 @@
+spice
+* Transistors
+M1 2 Vin1 7 7 NMOS
+M2 2 3 7 7 NMOS
+M3 2 1 5 5 PMOS
+M4 6 2 5 5 PMOS
+M5 7 4 0 0 PMOS
+
+* Resistors
+R1 5 1 <Resistor_Value>
+R2 6 8 <Resistor_Value>
+
+* Voltage and Current Sources
+VDD 5 0 DC <Voltage_Value>
+Vin1 Vin1 0 DC <Voltage_Value>
+Vin2 3 0 DC <Voltage_Value>
+Vb1 4 0 DC <Voltage_Value>
+Vb2 1 0 DC <Voltage_Value>
+
+* Simulation Commands
+.OP
+.END

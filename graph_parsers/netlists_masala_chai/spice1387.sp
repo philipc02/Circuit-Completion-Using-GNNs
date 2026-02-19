@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist for the given schematic
+
+IREF 6 0 DC 0.25mA
+I1 5 0 DC 0.75mA
+I2 2 0 DC 0.5mA
+
+QREF 6 2 0 QMODEL
+Q1 6 3 0 QMODEL
+Q2 3 4 0 QMODEL
+Q3 4 5 0 QMODEL
+Q4 2 2 0 QMODEL
+Q5 2 2 0 QMODEL
+
+.model QMODEL NPN(IS=1E-15 BF=100)

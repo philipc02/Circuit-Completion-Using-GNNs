@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist
+V1 2 0 DC 5V
+V2 4 0 DC -5V
+IREF 2 0 DC 1A
+
+R1 2 5 1K
+
+Q1 2 3 7 NPN
+Q2 6 6 4 NPN
+Q3 5 2 6 NPN
+
+.END

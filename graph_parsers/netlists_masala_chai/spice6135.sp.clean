@@ -1,0 +1,14 @@
+* Components
+Vsig 7 0 DC
+Rsig 7 4 Rsig
+B1 4 3 V=2*I(Rsig)
+
+* Dependent source
+R1 4 3 2*rpi
+C1 3 2 Cpi/2
+C2 2 6 Cmu
+
+* Ground references
+Vgnd 0 5 0
+
+* End of netlist

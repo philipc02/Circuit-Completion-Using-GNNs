@@ -1,0 +1,20 @@
+* Differential Pair Circuit
+
+* Voltage Sources
+V_CMIn 2 0 DC <value>
+V_DD 3 0 DC <value>
+
+* Current Source
+I_SS 6 0 DC <value>
+
+* Resistors
+R_D1 3 4 <value>
+R_D2 33 4 <value>
+
+* Transistors
+M1 4 5 6 6 NMOS
+M2 4 2 6 6 NMOS
+
+* Connections
+X 3 3
+Y 33 33

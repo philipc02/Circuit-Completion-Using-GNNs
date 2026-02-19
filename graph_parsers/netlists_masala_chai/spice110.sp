@@ -1,0 +1,16 @@
+plaintext
+* Differential Pair Circuit
+
+VCC 5 0 DC 15V
+VEE 8 0 DC -15V
+Vi 0 0 DC 0V
+
+Q1 5 0 4 NPN
+Q2 6 7 4 NPN
+
+R1 5 6 10k
+RTAIL 4 8 10k
+
+Vo 3 0 DC 0V
+
+.model NPN NPN

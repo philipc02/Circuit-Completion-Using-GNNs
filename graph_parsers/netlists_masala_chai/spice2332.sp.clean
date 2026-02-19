@@ -1,0 +1,23 @@
+plaintext
+* SPICE Netlist for the provided schematic
+* NMOS Transistor M1
+M1 5 3 33 33 NMOS
+
+* NMOS Transistor M2
+M2 6 2 4 4 NMOS
+
+* Current Sources
+I_BIAS1 5 FP DC IBIAS1
+I_BIAS2 4 0 DC IBIAS2
+
+* Voltage Source VIN
+VIN 3 0 DC VIN
+
+* Voltage Source VBIAS
+VBIAS 2 0 DC VBIAS
+
+* Load Resistors
+RL1 FP 0 RL
+RL2 6 0 RL
+
+* End of Netlist

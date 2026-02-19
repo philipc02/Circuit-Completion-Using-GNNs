@@ -1,0 +1,15 @@
+spice
+V1 1 0 DC 1.8V
+
+M1 1 2 3 3 NMOS
+M2 3 4 5 5 NMOS
+M3 5 6 7 7 NMOS
+
+R1 5 0 R_D
+I1 7 0 DC I
+
+VG1 2 0 DC V_G1
+VG2 4 0 DC V_G2
+VG3 6 0 DC V_G3
+
+.model NMOS NMOS

@@ -1,0 +1,22 @@
+spice
+* SPICE Netlist
+
+V1 4 0 DC vi
+V2 1 0 DC 10
+V3 6 0 DC -10
+V4 2 0 DC 10
+
+RG 4 3 400k
+RS1 3 6 10k
+RS2 3 0 10k
+RD 2 0 5k
+RL 2 0 2k
+
+CC1 4 3 
+CC2 1 2 
+CC3 2 0
+
+M1 2 3 6 6 NMOS
+M2 0 2 0 0 NMOS
+
+.end

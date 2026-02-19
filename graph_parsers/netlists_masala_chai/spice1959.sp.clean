@@ -1,0 +1,17 @@
+spice
+* Example circuit
+* Components
+Vpi 5 4 DC 0
+Ro3o4 4 3 r={r_o3 || r_o4}
+Rpi1pi2 5 4 r={r_pi1 || r_pi2}
+Gm 4 3 Value = {(g_m1 + g_m2)*V(4,3)}
+Ix 6 7 DC 0
+Vx 7 2 DC 0
+
+* Connections
+* Node mapping
+* 3: Ground connection for dependent sources
+* 4: Middle connection for ro and voltage sources
+* 5: Connection between r_pi and V_pi
+* 6, 7: Ix connection
+* 2: Reference node for Vx

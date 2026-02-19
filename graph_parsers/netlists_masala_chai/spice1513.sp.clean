@@ -1,0 +1,24 @@
+spice
+* Differential Amplifier Circuit Netlist
+
+* Transistors
+Q1 4 Vin1 2 NPN
+Q2 32 Vin2 2 NPN
+
+* Resistors
+RC1 32 4 10k
+RC2 32 32 10k
+RE 2 22 1k
+
+* Current Source
+IEE 22 2 DC 1mA
+
+* Voltage Sources
+Vin1 Vin1 0 DC 0V
+Vin2 Vin2 0 DC 0V
+VCC 32 0 DC 15V
+
+* Output
+Vout 4 32
+
+.end

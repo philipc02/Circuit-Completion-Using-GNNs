@@ -1,0 +1,7 @@
+spice
+* NPN Transistor with Biasing
+VCC 1 0 DC 20
+VBB 3 0 DC 2.5
+RC 1 2 10k
+RE 2 0 1.8k
+Q1 2 3 0 NPN

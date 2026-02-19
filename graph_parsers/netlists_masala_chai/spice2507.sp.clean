@@ -1,0 +1,10 @@
+spice
+* NMOS transistors
+M1 8 6 9 NMOS
+M2 3 7 6 NMOS
+
+* Resistor
+RD 1 3
+
+* Voltage Source
+VDD 1 0 DC value

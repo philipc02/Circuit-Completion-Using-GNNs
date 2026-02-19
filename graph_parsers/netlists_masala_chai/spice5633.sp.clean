@@ -1,0 +1,6 @@
+* Netlist for the given circuit
+V1 1 0 DC 3
+V2 0 4 DC -3
+I1 0 1 DC I
+R1 1 3 10k
+D1 3 4 D

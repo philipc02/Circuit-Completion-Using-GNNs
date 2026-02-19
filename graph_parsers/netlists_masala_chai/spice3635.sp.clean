@@ -1,0 +1,16 @@
+plaintext
+* SPICE netlist
+
+V1 4 0 DC 14
+V2 3 0 DC 5
+V3 0 2 DC 5
+
+D1 4 4_ 1N4148
+D2 3 2 1N4148
+D3 2 0 1N4148
+
+R1 4_ 2 5k
+R2 2 2_ 5k
+R3 2_ 0 5k
+
+.END

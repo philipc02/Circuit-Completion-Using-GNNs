@@ -1,0 +1,6 @@
+* NPN BJT Circuit
+
+VBB 1 0 DC <voltage_value> ; Replace <voltage_value> with the actual value
+Q1 4 1 0 NPN ; NPN transistor with collector at node 4, base at node 1, emitter at node 0
+R1 3 4 <resistor_value1> ; Replace <resistor_value1> with the actual resistance value
+R2 2 0 <resistor_value2> ; Replace <resistor_value2> with the actual resistance value

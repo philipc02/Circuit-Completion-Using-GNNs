@@ -1,0 +1,3 @@
+M1 2 2 0 0 NMOS
+VIn 2 0 DC 0
+Rout 2 0 1k

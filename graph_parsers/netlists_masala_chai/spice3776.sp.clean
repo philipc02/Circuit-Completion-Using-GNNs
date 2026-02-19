@@ -1,0 +1,15 @@
+spice
+* Nodes: 
+* 0 - Ground
+* 1 - G
+* 2 - Vgs
+* 3 - S
+* 4 - Vi
+* 5 - D
+* 6 - Connected to Vo
+
+Vi 4 0 DC
+r_o1 3 5 r_o1_value
+r_o2 5 6 r_o2_value
+Gm 3 6 Vgs 2 gm_value
+Vgs 2 4 DC 0V

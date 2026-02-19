@@ -1,0 +1,30 @@
+plaintext
+* SPICE Netlist for the circuit
+
+* Resistors
+R1 1 2 10k
+R2 2 0 10k
+R3 8 2 10k
+R4 2 9 10k
+R5 9 4 10k
+R6 4 0 10k
+R7 2 3 10k
+R8 3 5 10k
+R9 5 6 10k
+
+* Capacitors
+C1 9 3 1u
+C2 5 6 1u
+
+* Operational Amplifiers
+XU1 2 9 4 opamp
+XU2 9 3 5 opamp
+XU3 3 6 0 opamp
+
+* Inputs and Outputs
+Vin 1 0 DC 0V 
+VoutHP 4 0
+VoutLP 6 0
+VoutBP 7 0
+
+* End of netlist

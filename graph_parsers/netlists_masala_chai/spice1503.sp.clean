@@ -1,0 +1,21 @@
+spice
+* Netlist for the given circuit
+
+* Voltage sources
+Vn1 8 0 DC 0
+Vn2 2 0 DC 0
+
+* Resistors
+Rx1 8 7 1000
+Rx2 2 4 1000
+Rc 3 8 1000
+Rc 3 2 1000
+
+* Dependent Current Sources
+Gm1 7 6 5 0 1m
+Gm2 4 6 5 0 1m
+
+* Ground
+V0 0 GND 0
+
+.END

@@ -1,0 +1,8 @@
+plaintext
+* SPICE Netlist
+V1 3 9 DC 
+R1 3 8
+R2 3 6
+R3 7 6
+Q1 3 8 5 NPN 
+Q2 3 2 7 NPN

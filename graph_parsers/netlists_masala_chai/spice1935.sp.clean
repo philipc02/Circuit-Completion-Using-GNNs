@@ -1,0 +1,24 @@
+plaintext
+* SPICE Netlist
+* Transistor
+Q1 3 1 5 NPN
+
+* Current Source
+I1 5 3 DC 32.5mA
+
+* Resistor
+RL 3 2 8
+
+* Voltage Sources
+VCC 7 3 DC 5V
+VEE 5 8 DC -5V
+
+* Nodes
+* 1: Vin
+* 2: Vout
+* 3: Common node connected to I1, RL, and VCC
+* 5: Common node for current source and VEE
+* 7: VCC
+* 8: VEE
+
+.end

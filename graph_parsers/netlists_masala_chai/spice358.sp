@@ -1,0 +1,33 @@
+spice
+* SPICE Netlist
+
+* Voltage Source
+VCC 10 0 DC 12V
+
+* Transistors
+Q1 2 8 3 NPN 
+Q2 3 2 4 PNP 
+Q3 3 2 9 NPN
+Q4 5 2 3 PNP
+Q5 10 2 5 PNP
+Q6 6 3 2 NPN
+Q7 9 3 2 NPN
+
+* Resistors
+R1 8 2 1k
+R2 2 3 2k
+R3 10 5 1k
+R4 5 6 1k
+R5 8 9 1k
+R6 2 9 1k
+
+* Capacitors
+C1 2 10 1u
+C2 6 3 1u
+CF 2 3 1u
+
+* Connections
+Vinput 1 0
+Voutput 7 0 
+
+* End of netlist

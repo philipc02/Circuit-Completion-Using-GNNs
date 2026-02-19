@@ -1,0 +1,8 @@
+plaintext
+* SPICE Netlist
+LP 2 5
+RP 5 3
+CP 3 2
+M1 5 4 4 4 NMOS
+VDD 5 0 DC VDD_VALUE
+VOUT 6 7

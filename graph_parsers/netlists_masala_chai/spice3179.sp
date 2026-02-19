@@ -1,0 +1,10 @@
+* NMOS transistor Q1
+M1 2 6 0 0 NMOS
+
+* PMOS transistor Q2
+M2 3 4 5 5 PMOS
+
+* Voltage sources
+VDD 5 0 DC V_DD
+VB 3 0 DC V_b 
+VBE 4 0 DC 2V_BE

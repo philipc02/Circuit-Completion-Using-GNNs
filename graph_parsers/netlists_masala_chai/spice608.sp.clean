@@ -1,0 +1,9 @@
+spice
+* SPICE Netlist
+Vin 4 3 DC 0V
+R1 4 2 1k 
+D1 2 3 Ddefault
+Vout 2 0
+
+.model Ddefault D
+.end

@@ -1,0 +1,12 @@
+* BJT Amplifier Circuit
+
+VBB 1 0 DC <value_of_VBB>
+RB 1 3  <value_of_RB>
+RE 3 0  <value_of_RE>
+
+Q1 2 1 3 NPN
+
+* Assumptions:
+* Node 1: Base of Q1, connected to VBB (and RB)
+* Node 2: Collector of Q1 (RB is also connected to this node)
+* Node 3: Emitter of Q1 (RE is connected to this node and ground)

@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+Q1 Vout Vin 0 NPN_Model
+RS Vin 2 1k
+RL Vcc Vout 1k
+VCC Vcc 0 DC 10V

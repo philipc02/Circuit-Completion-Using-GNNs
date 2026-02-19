@@ -1,0 +1,15 @@
+spice
+* NPN Transistor Circuit
+Q1 2 5 4 NPN
+
+* Resistors
+R1 5 4 1k
+R2 2 4 1k
+R3 2 0 1k
+
+* Voltage Sources
+V1 5 0 DC 5V
+V2 2 3 DC 10V
+
+* Ground Node
+V0 4 0 DC 0V

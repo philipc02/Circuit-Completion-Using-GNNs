@@ -1,0 +1,14 @@
+spice
+* Nodes: 
+* 1 - Vin 
+* 2 - Vout / RD 
+* 3 - VDD 
+* 4 - Ground
+
+VDD 3 0 DC 5V
+Vin 1 0 DC 1V
+
+M1 2 1 4 4 NMOS
+M2 2 2 3 3 PMOS
+
+RD 2 3 1k

@@ -1,0 +1,9 @@
+plaintext
+* NMOS Transistor
+M1 net1 net2 0 0 NMOS
+
+* Resistor
+R_D net1 VDD 5k
+
+* Voltage Source
+V1 VDD 0 1.8

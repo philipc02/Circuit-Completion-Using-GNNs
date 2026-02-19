@@ -1,0 +1,24 @@
+spice
+* SPICE Netlist
+
+* Voltage Supply
+VDD 7 0 DC 5V
+
+* MOSFETs
+M1 3 2 2 0 NMOS
+M2 2 6 2 0 NMOS
+M3 0 2 8 0 NMOS
+M4 2 5 5 0 PMOS
+M5 2 4 4 0 PMOS
+M6 8 0 0 0 NMOS
+
+* Resistors
+R1 5 2 X
+R2 4 2 Y
+R3 6 3 RD
+R4 7 2 RD
+
+* Simulation commands
+.control
+run
+.endc

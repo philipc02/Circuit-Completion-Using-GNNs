@@ -1,0 +1,20 @@
+spice
+* MOSFETs
+M0 9 5 4 4 PMOS
+M1 6 7 8 8 NMOS
+M2 3 6 8 8 NMOS
+M3 2 3 8 8 NMOS
+
+* Current Source
+IREF 4 9 DC 1mA
+
+* Voltage Source
+Vx 2 8 DC 5V
+
+* Nodes
+* 4: VDD
+* 5: N
+* 6: A
+* 7: Ground for M1
+* 8: Ground
+* 9: Node above M0

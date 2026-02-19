@@ -1,0 +1,18 @@
+plaintext
+* SPICE Netlist
+
+V1 V_DD 0 DC 5V  * Assumed 5V for V_DD as an example
+
+* Transistors
+M1 3 Vin V_DD V_DD PMOS_MODEL
+M2 3 Vb 4 4 NMOS_MODEL
+M3 4 Vb3 6 6 NMOS_MODEL
+
+* Resistor
+Rout 3 6 1k  * Assumed 1k resistance, replace as needed
+
+* Models (assuming simple level-1 models, replace with accurate models)
+.MODEL PMOS_MODEL PMOS
+.MODEL NMOS_MODEL NMOS
+
+* End of netlist

@@ -1,0 +1,4 @@
+spice
+VDD VDD 0 DC <value>   ; Replace <value> with the DC voltage value
+RD VDD 2 RD_value      ; Replace RD_value with the resistance value
+M1 2 1 0 0 NMOS L=<L_value> W=<W_value> ; Replace <L_value> and <W_value> with length and width

@@ -1,0 +1,33 @@
+* SPICE Netlist for given schematic
+
+* Voltage Source
+VDD 4 0 DC VDD
+
+* PMOS Transistors
+M8 2 2 3 3 PMOS
+M9 2 2 5 5 PMOS
+M12 4 2 2 4 PMOS 
+M13 4 2 2 4 PMOS
+M14 4 2 2 4 PMOS
+
+* NMOS Transistors
+M4 3 2 5 5 NMOS
+M5 3 2 0 0 NMOS
+M6 2 2 0 0 NMOS
+M7 5 2 0 0 NMOS
+M10 2 2 0 0 NMOS 
+M11 4 2 0 0 NMOS 
+
+* BJTs
+Q1 5 8 7 NPN
+Q2 5 8 7 NPN
+Q3 5 10 7 NPN
+
+* Resistors
+R 2 0 R
+R2 2 0 R2
+
+* Notes:
+* Nets 4, 0 are used for VDD and GND respectively.
+* Nets 2, 3, 5, 6, 7, 8, 10 correspond to the labeled nodes in red.
+* Component values need to be specified per design requirements.

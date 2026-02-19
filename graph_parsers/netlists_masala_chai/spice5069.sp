@@ -1,0 +1,15 @@
+plaintext
+* SPICE Netlist
+
+VCC 4 0 DC 15V
+VEE 2 0 DC -15V
+V1 5 0 AC 2.5mV
+
+RC1 4 3 47k
+RC2 4 1 47k
+RE 3 2 68k
+
+Q1 3 5 2 NPN
+Q2 1 3 2 NPN
+
+.model NPN NPN

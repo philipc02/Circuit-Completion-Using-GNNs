@@ -1,0 +1,13 @@
+plaintext
+*MOSFETs
+M3 3 2 4 4 NMOS
+
+*Resistors
+R01 2 5 r01
+R02 2 5 r02
+
+*Voltage Source
+VDD 3 0 DC V_DD
+
+*Ground
+VSS 5 0 DC 0

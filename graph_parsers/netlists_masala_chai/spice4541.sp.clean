@@ -1,0 +1,10 @@
+plaintext
+* SPICE netlist
+V1 0 6 DC 10V
+R1 5 8 9.3k
+R2 2 7 10k
+R3 2 3 90k
+Q1 6 8 5 NPN
+Q2 6 7 5 NPN
+Vz 7 5 ZENER
+Vout 3 0 DC 0V

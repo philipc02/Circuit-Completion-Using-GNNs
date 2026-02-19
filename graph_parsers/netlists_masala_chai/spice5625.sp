@@ -1,0 +1,15 @@
+plaintext
+* SPICE Netlist
+* Components
+R1 1 2 R
+
+* Voltage Source
+V1 3 1 DC <value_of_vI> 
+
+* Diode
+D1 2 3 D_model
+
+* Define model for diode
+.model D_model D
+
+* End of netlist

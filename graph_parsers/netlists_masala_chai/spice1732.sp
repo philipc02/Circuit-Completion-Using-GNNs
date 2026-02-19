@@ -1,0 +1,14 @@
+* SPICE netlist for the given schematic
+
+VCC 3 0 DC VCC
+Vin 1 0 DC Vin
+
+RB 1 2 RB
+RC 3 2 RC
+CF 2 3 CF
+
+Q1 2 3 0 Q1NPN
+
+.model Q1NPN NPN (Is=1e-14 Bf=100)
+
+.end

@@ -1,0 +1,4 @@
+spice
+M1 2 3 2 2 NMOS
+V1 3 4 DC 0
+VDD 2 0 DC 1V

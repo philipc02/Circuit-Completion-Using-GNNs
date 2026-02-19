@@ -1,0 +1,12 @@
+spice
+* Transistor Definitions
+M1 5 9 4 4 NMOS
+M2 2 6 7 7 NMOS
+M3 7 5 3 3 PMOS
+M4 3 3 3 3 PMOS
+M5 8 8 GND GND NMOS
+
+* Voltage Source
+VDD 3 GND DC 5V
+
+* End of Netlist

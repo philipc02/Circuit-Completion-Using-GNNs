@@ -1,0 +1,15 @@
+plaintext
+* List of components
+* Transistors: M10, M12
+* Capacitors: CC
+* Resistors: RZ
+* Voltage sources: VDD
+
+* SPICE Netlist
+M10 3 6 5 5 PMOS
+M12 3 4 0 0 NMOS
+CC 6 4 4.5pF
+RZ 4 3 190
+VDD 5 0 DC <value>  ; Specify the appropriate DC value for VDD
+
+* End of netlist

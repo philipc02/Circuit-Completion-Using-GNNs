@@ -1,0 +1,9 @@
+* SPICE Netlist
+V1 8 3 DC 0
+I1 8 3 DC i_i
+R1 8 4 Rs'
+R2 4 3 r_pi
+C1 3 2 C_pi
+G1 6 2 (Vc) gm
+V2 2 5 DC 0
+RL 2 5 RL

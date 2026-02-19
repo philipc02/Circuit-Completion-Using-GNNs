@@ -1,0 +1,26 @@
+spice
+* SPICE Netlist
+*MOSFET model declaration (Example: Level 1)
+.model PMOS_1 PMOS (LEVEL=1)
+
+* Transistors
+M1 6 1 9 9 PMOS_1
+M2 3 2 9 9 PMOS_1
+
+* Current Source
+IS 9 8 DC
+
+* Resistors
+RS 9 V+ 
+RD1 6 4 
+RD2 3 5 
+
+* Voltage source for reference (node 8 as ground)
+V+ V+ 0 DC
+V- V- 0 DC
+
+* Inputs
+V1 1 10 DC
+V2 2 V-
+
+* End of netlist

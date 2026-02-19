@@ -1,0 +1,7 @@
+* SPICE netlist for the given circuit
+Vin 1 4 DC 0
+RD 3 2 1k
+M2 3 2 5 NMOS
+VDD 3 0 DC 5
+Rout 3 Vout 1k
+Cout Vout 0 1u

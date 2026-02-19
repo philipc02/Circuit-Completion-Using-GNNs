@@ -1,0 +1,10 @@
+spice
+* NMOS Transistor
+M1 drain_gate_source_substrate 0 0 0 NMOS
+
+* Resistors
+RD drain_gate_source_substrate 2 RD
+ro drain_gate_source_substrate 0 ro
+
+* Nodes
+Vinput drain_gate_source_substrate 0 DC 0

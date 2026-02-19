@@ -1,0 +1,16 @@
+* NPN Common Emitter Amplifier Circuit
+
+VCC 2 0 DC 2.5V
+Vin 1 0 AC 1V
+
+R1 2 3 10k
+R2 3 0 2k
+RC 2 4 1k
+RE 5 0 500
+
+Q1 4 3 5 NPN
+
+.model NPN NPN (IS=1e-14 BF=100)
+
+.tran 1u 10m
+.end

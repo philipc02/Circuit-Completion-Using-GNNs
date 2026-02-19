@@ -1,0 +1,4 @@
+spice
+* SPICE Netlist for the given circuit
+R_rd 5 2 rd
+C_cd 6 4 Cd

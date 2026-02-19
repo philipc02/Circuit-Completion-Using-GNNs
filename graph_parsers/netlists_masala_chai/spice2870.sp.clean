@@ -1,0 +1,22 @@
+* Amplifier Circuit
+
+* Voltage Sources
+Vn_in 8 0 DC
+Vn_out 5 0 DC
+VDD 3 0 DC
+
+* Current Sources
+In_in 8 2 DC
+Iss 4 0 DC
+
+* Resistors
+RD1 3 6 RD
+RD2 3 7 RD
+
+* PMOS Transistor
+* Drain Gate Source
+M1 6 2 1 VDD PMOS
+
+* NMOS Transistor
+* Drain Gate Source
+M2 7 1 4 0 NMOS

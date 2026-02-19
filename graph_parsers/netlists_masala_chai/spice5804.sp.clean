@@ -1,0 +1,12 @@
+plaintext
+Vin 2 3 DC 0
+Vdd 2 0 DC VDD
+Vss 3 0 DC VSS
+
+RD 2 4 RD_value
+C1 4 3 C1_value
+C2 4 0 C2_value
+
+I1 5 3 DC I_value
+
+Rin 2 3 Rin_value

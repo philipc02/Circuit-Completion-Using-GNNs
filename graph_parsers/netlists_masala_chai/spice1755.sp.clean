@@ -1,0 +1,5 @@
+plaintext
+Q1 3 4 2 NPN
+RC 5 3 1k
+RS 1 2 1k
+VCC 5 0 DC 10V

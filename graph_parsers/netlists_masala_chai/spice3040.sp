@@ -1,0 +1,22 @@
+spice
+* NMOS Transistors
+M1 3 Vin 0 0 NMOS
+M2 7 3 0 0 NMOS
+M3 X Vb1 3 3 NMOS
+M4 Y Vb1 7 7 NMOS
+M11 8 Vb4 3 3 NMOS
+M12 5 Vb4 7 7 NMOS
+
+* PMOS Transistors
+M5 X Vb2 4 4 PMOS
+M6 Y Vb2 2 2 PMOS
+M7 4 Vb3 8 8 PMOS
+M8 2 Vb3 8 8 PMOS
+M9 Vout1 Vb3 8 8 PMOS
+M10 Vout2 Vb3 2 2 PMOS
+
+* Current Source
+Iss 3 0 DC 1mA
+
+* Voltage Sources (Not explicitly mentioned but inferred from context)
+VDD 8 0 DC 5V

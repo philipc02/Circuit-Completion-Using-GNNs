@@ -1,0 +1,5 @@
+plaintext
+* Simple Circuit
+V1 2 4 DC 5
+RS 2 3 100
+RL 3 4 200

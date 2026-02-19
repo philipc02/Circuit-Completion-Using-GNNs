@@ -1,0 +1,9 @@
+spice
+* NMOS differential pair with current source and load resistors
+M1 2 4 7 7 NMOS
+M2 5 3 7 7 NMOS
+RD1 6 2 RD
+RD2 6 5 RD
+I1 7 0 DC 1A
+V1 4 0 DC VG1
+V2 3 0 DC VG2

@@ -1,0 +1,6 @@
+VDD 7 0 DC 20
+R1 3 4 140k
+RD 7 2 2.7k
+R2 3 4 60k
+RS 2 8 2k
+VSS 8 0 DC 0

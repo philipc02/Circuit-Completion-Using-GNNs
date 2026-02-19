@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+Vs 3 6 DC Usig
+Rs 3 4 R_sig_beta_1
+Re 4 2 re
+RL 2 7 RL

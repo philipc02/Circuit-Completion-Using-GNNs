@@ -1,0 +1,5 @@
+I1 3 6 DC 1A ; Current source, assuming 1A for example
+C1 4 7 1uF ; Capacitor, assume 1uF for example
+L1 2 3 1mH ; Inductor, assuming 1mH for example
+RS 2 6 1k ; Resistor, assuming 1k for example
+RL 2 5 1k ; Resistor, assuming 1k for example

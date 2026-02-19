@@ -1,0 +1,32 @@
+plaintext
+* Transistor M3 (PMOS)
+M3 9 5 5 PMOS
+
+* Transistor M4 (PMOS)
+M4 7 6 6 PMOS
+
+* Bipolar Junction Transistor Q1
+Q1 8 5 2 QNPN
+
+* Bipolar Junction Transistor Q2
+Q2 2 6 3 QNPN
+
+* Resistor R1
+R1 5 9 R_value
+
+* Resistor R2
+R2 6 3 R_value
+
+* Current Source IBIAS (left)
+I1 9 8 DC IBIAS_value
+
+* Current Source ITAIL
+I2 2 4 DC ITAIL_value
+
+* Current Source IBIAS (right)
+I3 3 7 DC IBIAS_value
+
+* Voltage Definitions
+VDD 9 0 DC VCC_value
+VSS 4 0 DC -VEE_value
+VID 9 8 DC VID_value

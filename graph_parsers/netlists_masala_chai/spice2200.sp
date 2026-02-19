@@ -1,0 +1,6 @@
+* NMOS Circuit
+M1 3 4 0 0 NMOS_Level1
+R1 2 3 10k
+R2 2 4 1k
+R3 3 0 100
+VDD 2 0 DC 1.8V

@@ -1,0 +1,16 @@
+plaintext
+* NMOS Transistor Q1
+M1 3 8 2 2 NMOS
+
+* NMOS Transistor Q2
+M2 7 4 3 3 NMOS
+
+* Current Source I
+I1 3 7 DC 0.001
+
+* Voltage nodes
+VDD 3 0 DC 5
+
+* Input Voltage
+Vi 8 0 DC 1.5
+Vg2 4 0 DC 2.5

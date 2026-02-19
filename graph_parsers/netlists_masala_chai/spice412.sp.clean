@@ -1,0 +1,18 @@
+plaintext
+* SPICE Netlist for the given schematic
+
+* Voltage Source
+V1 5 2 DC
+
+* Resistors
+R1 5 8 10k
+R2 7 2 100k
+Ri 7 3 
+Ro 3 2
+
+* Voltage Controlled Voltage Source
+E1 2 7 3 2 av
+
+* Ground connections
+V1 2 0
+E1 2 0

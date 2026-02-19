@@ -1,0 +1,19 @@
+spice
+* SPICE Netlist for the given schematic
+
+VCC 3 0 DC 2.5V
+Vin 5 0 DC 0V
+
+R1 3 3 50k
+R2 3 3 1k
+R3 5 4 1k
+R4 1 0 2k
+
+C1 5 4 <value>
+C2 1 0 <value>
+
+Q1 3 4 1 QNPN   ; NPN transistor labeled Q1
+
+.model QNPN NPN(IS=1e-14 BF=200)
+
+.end

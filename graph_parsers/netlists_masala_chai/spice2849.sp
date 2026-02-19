@@ -1,0 +1,14 @@
+spice
+* Netlist for the given schematic
+
+M1 5 6 0 0 NMOS
+M2 5 1 3 3 PMOS
+RD 3 4 10k
+VDD 4 0 DC 5V
+Vb 1 0 DC 1.8V
+Vin 6 0 DC 
+
+.model NMOS nmos
+.model PMOS pmos
+
+.end

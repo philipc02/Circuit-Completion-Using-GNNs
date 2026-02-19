@@ -1,0 +1,11 @@
+* SPICE Netlist
+* NMOS and PMOS transistors assumed
+* Assume default model parameters
+
+IREF 1 3 DC 1
+RP 3 0 1k ; Example resistance value, modify as needed
+MREF 3 3 0 0 NMOS
+M1 2 2 0 0 NMOS
+VDD 1 0 DC VDD
+
+.END

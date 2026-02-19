@@ -1,0 +1,3 @@
+* Simple circuit with a voltage source and a resistor
+V1 2 4 DC 10
+R1 4 3 100

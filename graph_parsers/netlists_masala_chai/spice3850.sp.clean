@@ -1,0 +1,6 @@
+spice
+V1 3 4 DC 10V
+V2 4 2 DC 10V
+R1 3 4 8k
+R2 2 4 4k
+Q1 2 4 3 NPN

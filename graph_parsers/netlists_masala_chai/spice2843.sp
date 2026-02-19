@@ -1,0 +1,17 @@
+spice
+   * NMOS Transistor
+   M1 2 3 0 0 NMOS
+
+   * Current Source
+   Iin 3 0 DC 1mA
+
+   * Resistor
+   RF 3 2 1k
+
+   * Diode
+   D1 2 0 D
+
+   .model NMOS NMOS
+   .model D D
+
+   .end

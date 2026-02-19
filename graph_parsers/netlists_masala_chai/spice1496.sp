@@ -1,0 +1,15 @@
+spice
+* BJT Differential Pair
+* Q1 and Q2 are NPN BJTs
+
+VCC 2 0 DC 10V
+VCM 5 0 DC 5V
+I1 4 0 DC 1mA
+
+Q1 6 5 4 QNPN
+Q2 2 3 4 QNPN
+
+RC1 6 2 10k
+RC2 2 2 10k
+
+.model QNPN NPN(IS=1e-14 BF=100)

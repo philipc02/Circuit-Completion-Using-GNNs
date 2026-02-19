@@ -1,0 +1,6 @@
+* SPICE netlist for the given circuit
+
+VDD 3 4 DC 0 ; Voltage source, Node 3 to Node 4
+R1 3 2 R     ; Resistor R, Node 3 to Node 2
+Rd 2 5 rd    ; Resistor rd, Node 2 to Node 5
+V1 5 6 DC 0  ; Ground connection from Node 5 to Node 6

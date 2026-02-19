@@ -1,0 +1,19 @@
+spice
+* SPICE netlist for the given schematic
+
+Vsig 7 10 DC 0 AC 1
+VDD 9 0 DC VDD_VAL
+
+Rsig 7 7 Rsig_VAL
+RG1 9 8 RG1_VAL
+RG2 10 3 RG2_VAL
+RD 4 5 RD_VAL
+RL 5 6 RL_VAL
+
+CC1 7 8 CC1_VAL
+CC2 5 6 CC2_VAL
+CS 3 3 CS_VAL
+
+M1 4 8 3 3 NMOS_MODEL
+
+.END

@@ -1,0 +1,12 @@
+plaintext
+* SPICE Netlist
+Vi 8 7 DC 0
+
+R1 3 2 1k
+R1 2 4 1k
+R 3 6 1k
+
+C 6 5 1uF
+L 6 5 1mH
+
+.END

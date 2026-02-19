@@ -1,0 +1,18 @@
+plaintext
+* SPICE Netlist for the Circuit
+
+M1 4 2 5 5 NMOS
+M2 7 3 0 0 NMOS
+
+I1 4 4 DC
+I2 6 7 DC
+
+RS 1 2 Rsemp
+
+Vb 5 0 DC  [Vb_value]
+
+VDD 6 4 DC  [VDD_value]
+
+Vin 1 0 DC  [Vin_value]
+
+* End of netlist

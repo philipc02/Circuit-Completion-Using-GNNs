@@ -1,0 +1,15 @@
+plaintext
+* Transistor Q1
+Q1 3 2 0 QNPN
+
+* Transistor Q2
+Q2 3 2 0 QNPN
+
+* Current source nI0
+I1 4 3 DC nI0
+
+* Current source I0
+I2 4 3 DC I0
+
+* Voltage Source VDD
+V1 4 0 DC VDD

@@ -1,0 +1,23 @@
+* NMOS Transistors
+M1 4 6 0 0 NMOS
+M2 8 4 0 0 NMOS
+
+* PMOS Transistors
+M3 2 4 6 6 PMOS
+M4 2 6 4 4 PMOS
+
+M5 3 2 X X PMOS
+M6 2 X 8 8 PMOS
+M7 2 2 3 3 PMOS
+M8 2 3 2 2 PMOS
+
+* Current Source
+Iss 4 0 DC 1mA
+
+* Voltage Definitions
+Vin 6 0 DC 0
+Vb 4 0 DC 0
+VDD 2 0 DC 1.8V
+
+* Plot/Vout
+Vout 8 0 DC

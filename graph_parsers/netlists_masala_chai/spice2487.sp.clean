@@ -1,0 +1,12 @@
+spice
+* PMOS transistor M1
+M1 Vout Vin VDD VDD PMOS
+
+* NMOS transistor M2
+M2 Vout 3 0 0 NMOS
+
+* Voltage source for VDD
+VDD VDD 0 DC 5V
+
+* Input voltage source Vin
+Vin Vin 0 DC 1V

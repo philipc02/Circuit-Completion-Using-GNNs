@@ -1,0 +1,7 @@
+spice
+* NMOS Amplifier Circuit
+VDD VDD 0 DC <VDD_value>
+VIN VIN 0 DC <VIN_value>
+RS VIN N1 <RS_value>
+RL VDD VOUT <RL_value>
+M1 VOUT VIN 0 0 NMOS

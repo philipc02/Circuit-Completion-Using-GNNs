@@ -1,0 +1,22 @@
+spice
+* PMOS Transistors
+M1 2 3 2 2 PMOS
+M2 2 1 2 2 PMOS
+M3 2 1 4 2 PMOS
+M4 2 3 5 2 PMOS
+
+* NMOS Transistors
+M5 4 2 5 5 NMOS
+M6 2 2 2 5 NMOS
+M7 2 2 5 5 NMOS
+M8 4 2 4 5 NMOS
+
+* Additional NMOS Transistors at the Bottom
+M9 6 2 2 0 NMOS
+M10 5 2 5 0 NMOS
+
+* Resistor
+R1 2 nA 1k
+
+* Voltage and Ground Nodes
+VDD 2 0 DC 5V

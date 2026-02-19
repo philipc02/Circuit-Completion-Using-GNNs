@@ -1,0 +1,12 @@
+spice
+* NMOS Transistor M1
+M1 2 1 6 6 NMOS
+
+* PMOS Transistor M2
+M2 4 2 3 3 PMOS
+
+* Capacitor CH
+CH 2 6 CH
+
+* Voltage Source for Vin
+V1 1 0 DC 0

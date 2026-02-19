@@ -1,0 +1,12 @@
+spice
+* NMOS Transistor Circuit
+M1 2 6 3 3 NMOS
+VDD 4 2 DC 15V
+VG 5 6 DC 7V
+VVS 3 2 DC 5V
+VVD 2 7 DC 10V
+R1 4 5 8MEG
+R2 7 2 10K
+R3 5 3 7MEG
+R4 3 2 10K
+.END

@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist for the given circuit
+
+VDD 6 0 DC VDD
+VSS 0 4 DC VSS
+
+IREF1 2 0 DC IREF1_value
+IREF2 4 3 DC IREF2_value
+VIC 5 4 DC VIC_value
+
+M1 5 5 4 4 NMOS
+M3 6 5 2 2 PMOS
+M5 2 2 2 2 PMOS
+M6 4 3 4 4 NMOS
+M8 4 5 4 4 NMOS
+
+.model NMOS NMOS (LEVEL=1)
+.model PMOS PMOS (LEVEL=1)
+
+.ends

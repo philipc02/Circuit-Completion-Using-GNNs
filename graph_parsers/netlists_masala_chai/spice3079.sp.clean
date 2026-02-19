@@ -1,0 +1,11 @@
+* SPICE Netlist
+
+M9 X 5 3 3 PMOS
+M10 Y 5 3 3 PMOS
+M11 3 6 4 4 NMOS
+M12 Y 6 4 4 NMOS
+M3 X 1 4 4 NMOS
+M4 Y 1 4 4 NMOS
+VDD 5 0 DC <value>
+
+* End of Netlist

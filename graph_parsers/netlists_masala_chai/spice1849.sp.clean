@@ -1,0 +1,14 @@
+* SPICE Netlist
+
+VDD 3 0 DC 5V
+Vin 1 0 DC 1V
+Rs 1 5 10k
+
+* Transistors
+M1 2 5 0 0 NMOS L=1u W=5u
+M2 2 5 3 3 PMOS L=1u W=5u
+
+* Current Source
+I1 3 2 DC 1mA
+
+.END

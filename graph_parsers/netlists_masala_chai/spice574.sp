@@ -1,0 +1,3 @@
+* PMOS Transistor and AC Current Source Circuit
+   M1 22 Gate 0 0 PMOS
+   I1 Gate 0 AC 1

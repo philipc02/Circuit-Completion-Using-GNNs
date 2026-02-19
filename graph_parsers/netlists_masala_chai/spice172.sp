@@ -1,0 +1,16 @@
+plaintext
+* SPICE Netlist
+
+M1 0 6 3 NMOS
+M2 55 2 3 NMOS
+M3 44 2 4 NMOS
+
+IIN 6 66 DC
+
+RS1 0 3 RS1_value
+RS2 3 7 RS2_value
+
+* Control Statements
+
+.tran 1n 10u
+.end

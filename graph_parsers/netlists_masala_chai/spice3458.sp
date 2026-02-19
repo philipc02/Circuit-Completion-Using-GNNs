@@ -1,0 +1,24 @@
+spice
+* SPICE Netlist for the given schematic
+
+* Voltage Sources
+VDD 5 6 DC 5V
+VT1 7 2 DC V_T1_value
+VT2 4 2 DC V_T2_value
+VSS 2 0 DC -V_SS_value
+
+* Current Source
+IBIAS 2 0 DC I_BIAS_value
+
+* Resistors
+R0 6 5  R0_value
+R11 7 3 R11_value
+R12 4 2 R12_value
+
+* Ground References
+VSS 2 0 0V
+
+* Node Definitions for clarity
+* Node 3 and node 2 might serve as intermediary or ground connections
+
+.end

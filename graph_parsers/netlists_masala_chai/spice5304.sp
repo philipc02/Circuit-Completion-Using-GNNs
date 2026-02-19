@@ -1,0 +1,8 @@
+plaintext
+* Netlist for the schematic
+I1 3 6 DC 10mA
+R1 3 2 1k
+R2 4 2 2.2k
+R3 4 5 3.3k
+R4 5 2 5.6k
+V1 3 6 DC 0V

@@ -1,0 +1,21 @@
+* NMOS Transistor
+M1 6 1 6 NMOS
+M2 3 2 3 NMOS
+
+* Resistors
+RD1 5 6 RD1
+RD2 4 3 RD2
+R_2Rs 6 3 2RS
+
+* Current Sources
+I1 6 0 DC Iss/2
+I2 3 0 DC Iss/2
+
+* Voltage Source
+VDD 5 4 DC VDD
+
+* Connections to nodes
+X 1 0
+Y 2 0
+
+.END

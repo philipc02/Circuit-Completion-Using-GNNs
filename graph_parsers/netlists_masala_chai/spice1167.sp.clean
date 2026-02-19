@@ -1,0 +1,18 @@
+spice
+* NMOS Transistor
+M1 Vout Vin 0 0 NMOS
+
+* Current Source
+I1 0 3 DC 1/gm2
+
+* Resistors
+Rro1 Vout 2 ro1
+Rro2 2 3 ro2
+
+* Voltage Source
+V1 3 0 DC Vdd
+
+* Analysis
+.control
+run
+.endc

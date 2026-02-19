@@ -1,0 +1,24 @@
+* SPICE Netlist
+
+* Resistors
+R1 5 2 R1_value
+R2 3 3 R2_value
+R3 3 2 R3_value
+R4 3 4 R4_value
+
+* Voltage Sources (Ground and Input)
+V1 5 0 DC V1_value
+
+* Operational Amplifier
+* Assuming an ideal op-amp
+XOPAMP 2 3 4 OPAMP
+
+* Define the subcircuit for the ideal Op-Amp
+.subckt OPAMP non_inv inv out
+* Availability of power supply nodes for op-amp may be implicit in many simulators
+* Ideal op-amp model with gain A
+G  out inv VOL = A*(V(non_inv) - V(inv))
+.ends OPAMP
+
+* Specify .end
+.end

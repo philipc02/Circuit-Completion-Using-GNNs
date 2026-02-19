@@ -1,0 +1,9 @@
+* Op-Amp Circuit
+Vin 1 0 DC 0
+Vcc 4 0 DC VCC
+Vee 3 0 DC VEE
+R1 4 2 1k
+.subckt myopamp in+ in- out VCC VEE
+* Assume internal configuration of Op-Amp.
+.ends myopamp
+X1 1 2 4 4 3 myopamp

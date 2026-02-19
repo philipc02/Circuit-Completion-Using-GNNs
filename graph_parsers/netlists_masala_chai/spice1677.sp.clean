@@ -1,0 +1,20 @@
+plaintext
+* SPICE netlist for the given circuit
+.model QNPN NPN
+
+VCC VCC 0 DC <voltage_value>
+
+RC Y VCC R_RC
+RS Vin X R_RS
+
+C_CS Y 0 C_CS_value
+C_mu Y Vb C_mu_value
+C_pi Vb 0 C_pi_value
+
+Q1 Y Vb X QNPN
+
+Vin Vin 0 AC <amplitude>
+
+.tran <simulation_time>
+.ac <frequency_range>
+.end

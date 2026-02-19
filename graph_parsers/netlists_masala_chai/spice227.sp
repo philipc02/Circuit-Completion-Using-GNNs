@@ -1,0 +1,19 @@
+spice
+* Voltage Sources
+V1 66 3 DC VDD
+V2 44 3 DC VSS
+
+* Current Sources
+I1 2 3 DC I1_value
+I2 3 3 DC I2_value
+
+* PSRR  Circuit
+EPSRR1 2 3 3 3 PSRR1_gain
+EPSRR2 2 3 3 3 PSRR2_gain
+
+* Voltage divider
+EV_div1 3 3 5 3 (1/2)
+EV_div2 3 3 5 3 (1/2)
+
+* Output
+Vout 3 0 DC 0

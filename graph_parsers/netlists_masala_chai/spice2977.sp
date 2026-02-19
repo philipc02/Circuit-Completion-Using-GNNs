@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist for the given schematic
+
+M1 4 6 1 1 NMOS_MODEL
+Rs 1 3 500
+ro 4 3 10000
+Rout 4 0 1000

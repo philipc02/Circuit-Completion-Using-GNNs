@@ -1,0 +1,23 @@
+spice
+* NMOS Amplifier Circuit
+
+* Voltage Sources
+V_in 4 0 DC 0
+V_b 5 0 DC Vb_value
+V_DD 6 0 DC Vdd_value
+
+* Resistors
+R_S 4 3 RS_value
+R_D 6 2 RD_value
+R_1 2 5 R1_value
+R_in 3 0 Rin_value
+
+* Capacitor
+C_1 3 2 C1_value
+
+* NMOS Transistor
+M1 2 3 0 0 NMOS_model
+
+* Control Signals
+.ac dec 100 1kHz 1GHz
+.end

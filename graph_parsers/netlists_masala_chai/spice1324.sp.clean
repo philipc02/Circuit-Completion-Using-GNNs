@@ -1,0 +1,5 @@
+* Op-Amp Circuit Netlist
+Vin 2 0 DC 0
+A0 Vout 2 3 Opamp
+R1 Vout 3 1k
+R2 3 0 1k

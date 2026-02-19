@@ -1,0 +1,6 @@
+*MOSFET Circuit
+M1 4 A 3 3 NMOS
+M2 4 B 2 2 NMOS
+M3 2 C 1 1 NMOS
+
+.END

@@ -1,0 +1,7 @@
+plaintext
+M1 3 Vb1 4 4 NMOS
+M2 2 Vb2 3 3 NMOS
+VDD 2 0 DC VDD
+Vb1 Vb1 0 DC Vb1
+Vb2 Vb2 0 DC Vb2
+Rout 4 0 Rout

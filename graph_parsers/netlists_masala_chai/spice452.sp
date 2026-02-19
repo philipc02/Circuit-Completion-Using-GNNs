@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist
+* Components
+R1 3 5 R
+C1 3 22 C
+V1 5 0 V_i
+I1 4 3 a(s)*v_x
+
+* Ground nodes
+V2 0 6 0

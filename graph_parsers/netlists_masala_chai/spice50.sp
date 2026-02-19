@@ -1,0 +1,16 @@
+* Components
+Vs 7 6 DC
+Rs 7 3 0
+Ri 3 2 0
+ro 2 22 0
+R_ideal 22 2 0
+Gm_Vi 2 22 0 22
+Ro 22 5 0
+Rl 5 2 0
+
+* Voltage and Current Sources
+Vsource 6 0 DC
+
+* Connections
+I_i 6 4 DC
+I_o 5 2 DC

@@ -1,0 +1,25 @@
+spice
+* Transistors
+Q1 4 10 9 QN
+Q2 5 3 66 QN
+Q3 7 5 8 QN
+Q4 2 4 8 QP
+
+* Current Sources
+IBIAS1 9 66 DC 1mA
+IBIAS2 66 8 DC 1mA
+ILS 8 2 DC 1mA
+
+* Resistors
+RC1 5 7 1k
+RC2 4 7 1k
+RE 2 10 500
+
+* Voltage Sources
+VIN1 10 9 DC 0
+VIN2 3 66 DC 0
+VOUT 2 0 DC 0
+
+* Voltage Rails
+VCC 5 0 DC 15V
+VEE 9 0 DC -15V

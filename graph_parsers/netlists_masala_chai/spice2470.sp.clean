@@ -1,0 +1,8 @@
+* NMOS Transistor
+M1 2 Vin 0 0 NMOS
+
+* Resistor
+RD 2 3 1k
+
+* Voltage Source
+VDD 3 0 DC 5V

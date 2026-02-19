@@ -1,0 +1,16 @@
+* Transistors
+Q1 4 5 3 NPN
+Q2 3 3 2 NPN
+
+* Resistors
+R1 4 5 10k
+R2 4 3 10k
+
+* Voltage Source
+VCC 4 2 DC 15V
+
+* Input
+Rin 5 1 50
+
+* Ground
+.param gnd 0

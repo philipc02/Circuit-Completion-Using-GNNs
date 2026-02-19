@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist
+C1 Vin 1 C1_value
+R1 1 0 R1_value
+RY1 1 2 RY_value
+RY2 3 4 RY_value
+RY3 4 5 RY_value
+RX 5 0 RX_value
+C2 2 3 C_value
+
+* Operational Amplifiers
+* A1: Inverting input at node 2, output at node 3
+A1 2 0 3 OPAMP
+
+* A2: Non-inverting input at node 3, output at node 5
+A2 3 0 5 OPAMP
+
+Vin Vin 0 DC 0
+
+* End of Netlist

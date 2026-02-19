@@ -1,0 +1,13 @@
+* Transistors
+Q1 2 6 6 NPN
+Q2 2 5 6 NPN
+Q3 4 2 3 PNP
+
+* Current Source
+IREF 4 6 DC <value>
+
+* Voltage Source
+VCC 4 0 DC <value>
+
+* Connections
+VCC 4 0 DC <value>

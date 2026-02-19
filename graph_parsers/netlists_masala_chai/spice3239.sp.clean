@@ -1,0 +1,13 @@
+spice
+* NMOS Transistors
+M1 NetVin CK NetC1 NetC1 NMOS
+M2 NetC1 NotCK NetC2 NetC2 NMOS
+
+* Capacitors
+C1 NetC1 0 <value_of_C1>
+C2 NetC2 0 <value_of_C2>
+
+* Voltage Sources and nets
+Vin NetVin 0 DC <value_of_Vin>
+VCK CK 0 PULSE(<specific_values_for_clock>)
+VNotCK NotCK 0 PULSE(<specific_values_for_inverted_clock>)

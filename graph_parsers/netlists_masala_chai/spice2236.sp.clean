@@ -1,0 +1,4 @@
+* Netlist for the given schematic
+VDD VDD 0 DC 1.8V
+RD VDD Vout RD
+M1 Vout Vin 0 0 NMOS

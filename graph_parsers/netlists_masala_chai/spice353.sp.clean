@@ -1,0 +1,21 @@
+spice
+* Component definitions
+V1 8 0 DC Vs    * Voltage source Vs
+
+Q1 7 8 6 QNPN   * NPN transistor Q1 (collector base emitter)
+R1 7 6 RL1      * Resistor RL1
+Q2 6 5 3 QNPN   * NPN transistor Q2 (collector base emitter)
+R2 6 0 RL2      * Resistor RL2
+Q3 3 2 4 QNPN   * NPN transistor Q3 (collector base emitter)
+R3 2 0 ZL       * Resistor ZL
+
+* Feedback network
+R4 3 4 RF       * Resistor RF
+R5 4 0 RE1      * Resistor RE1
+R6 3 4 RE2      * Resistor RE2
+
+* Resistors and connections
+R7 8 7 Rs       * Resistor Rs
+
+.model QNPN NPN
+.end

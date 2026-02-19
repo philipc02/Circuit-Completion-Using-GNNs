@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist for the given circuit
+
+V1 5 8 DC <value_of_Vs>
+Q1 2 5 7 QNPN
+RE 7 6 <value_of_RE>
+RL 3 4 <value_of_zL>
+
+* Definitions of Transistors
+.model QNPN NPN (BF=100)
+
+* Define Ground
+6 0
+4 0
+8 0

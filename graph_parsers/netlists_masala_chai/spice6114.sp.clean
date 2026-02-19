@@ -1,0 +1,15 @@
+* SPICE Netlist for the given circuit
+
+   Vsig 4 0 DC 0V AC 1V
+   VCC 7 0 DC 15V
+   
+   I1 6 8 DC 1A 
+
+   Rsig 4 6 1k
+   RL 5 3 1k
+   CL 5 3 1uF
+
+   Q1 5 4 6 QNPN
+
+   .model QNPN NPN (Is=1e-14 Bf=100)
+   .end

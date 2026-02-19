@@ -1,0 +1,25 @@
+* SPICE Netlist
+
+* Voltage Sources
+V1 vi 5 DC 0
+VDD 22 0 DC <VDD Value>
+VSS 4 0 DC <VSS Value>
+
+* Resistor
+R1 8 3 <Resistor Value>
+
+* NMOS Transistors (M1 to M6)
+M1 6 3 8 8 NMOS
+M2 3 2 6 6 NMOS
+M3 4 5 7 7 NMOS
+M4 4 5 5 5 NMOS
+M5 5 4 5 5 NMOS
+M6 7 4 5 5 NMOS
+
+* PMOS Transistors (M7 to M10)
+M7 3 3 22 22 PMOS
+M8 3 3 22 22 PMOS
+M9 7 3 22 22 PMOS
+M10 3 3 22 22 PMOS
+
+* End of Netlist

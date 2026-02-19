@@ -1,0 +1,6 @@
+* SPICE Netlist
+I1 2 5 DC 1A            ; Current source from node 2 to node 5
+L1 3 5 1uH              ; Inductor between nodes 3 and 5
+C1 3 4 1uF              ; Capacitor between nodes 3 and 4
+R1 4 2 1k               ; Resistor between nodes 4 and 2
+.END

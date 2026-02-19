@@ -1,0 +1,17 @@
+plaintext
+* SPICE netlist for the circuit
+
+V1 VDD 0 DC 5V
+Vin Vin 0 DC 1V
+
+* Resistor
+RD Vout 2 10k
+R1 3 0 10k
+
+* Transistors
+M1 Vout Vin VDD VDD PMOS L=1u W=5u
+M2 2 3 0 0 NMOS L=1u W=5u
+
+* Analysis commands
+.OP
+.END

@@ -1,0 +1,6 @@
+spice
+* VCCS controlled by voltage difference between node 2 and node 4
+G1 3 2 2 4 gm
+
+* Resistor ro between node 3 and node 4
+Rro 3 4 ro

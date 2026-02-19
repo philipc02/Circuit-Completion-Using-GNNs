@@ -1,0 +1,9 @@
+plaintext
+* SPICE Netlist
+
+Q1 3 2 0 NPN       ; BJT with collector at net 3, base at net 2, emitter grounded
+VBC 2 0 DC VALUE   ; Voltage source for base to emitter
+IE 3 3 DC VALUE    ; Current source feeding into the collector
+RC 3 0 RES VALUE   ; Resistor from collector to ground
+
+* End of Netlist

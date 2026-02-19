@@ -1,0 +1,12 @@
+spice
+V1 1 0 DC 10V
+VS 7 0 AC 1 SIN(0 1 1k)
+
+RB 1 2 430k
+RS 7 5 500
+RE 3 0 2.5k
+CC 5 0 CCvalue
+
+Q1 2 5 3 QNPN
+
+.model QNPN NPN

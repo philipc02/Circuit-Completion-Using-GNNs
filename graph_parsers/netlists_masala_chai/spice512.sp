@@ -1,0 +1,25 @@
+plaintext
+* Netlist for the given circuit
+
+* NMOS Transistors
+M1 7 6 9 9 NMOS
+M2 4 4 9 9 NMOS
+M5 9 5 5 5 NMOS
+
+* PMOS Transistors
+M3 3 7 8 8 PMOS
+M4 2 4 8 8 PMOS
+
+* Voltage Sources
+VDD 8 0 DC VDD
+VBias 2 0 DC VBIAS
+VCMC 5 0 DC VCMC
+VSS 0 0 DC VSS
+
+* Input Sources
+Vi1 6 0 DC Vi1
+Vi2 4 0 DC Vi2
+
+* Output Nodes
+Vo1 7 0
+Vo2 4 0

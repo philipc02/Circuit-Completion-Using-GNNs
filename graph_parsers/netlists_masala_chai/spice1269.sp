@@ -1,0 +1,16 @@
+plaintext
+* SPICE netlist for the given circuit
+
+M1 2 Vin VDD VDD PMOS
+M2 2 3 0 0 NMOS
+
+R1 2 3 R1_value
+R2 3 0 R2_value
+
+VDD VDD 0 VDD_value
+Vin Vin 0 DC Vin_value
+
+.model PMOS PMOS
+.model NMOS NMOS
+
+.end

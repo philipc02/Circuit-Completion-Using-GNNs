@@ -1,0 +1,22 @@
+spice
+* SPICE Netlist
+
+VCC 3 0 DC 2.5V  * Voltage source V_CC
+
+R1 2 3 1k       * 1 kΩ resistor between node 2 and VCC
+R2 4 2 10k      * 10 kΩ resistor between base of Q1 and node 4
+
+C1 1 4          * Capacitor between Vin and node 4
+
+Q1 2 4 0 QNPN   * NPN Transistor; collector to node 2, base to node 4, emitter to ground
+
+.model QNPN NPN(Is=1e-14 bf=100)  * NPN transistor model
+
+VIN 1 0 AC 1    * AC Input voltage source
+
+.control
+  tran 1n 10u
+  plot v(2)
+.endc
+
+.end

@@ -1,0 +1,25 @@
+spice
+* SPICE netlist
+
+V1 1 2 DC 0
+Vs 1 2 AC
+
+R1 4 6 1k
+R2 6 2 1k
+RC 4 5 1k
+RE 5 3 1k
+
+CC 1 6 10u
+
+Q1 5 6 3 QMOD
+
+.model QMOD NPN (IS=1E-14 BF=100)
+
+VIN 1 2 SIN(0 1 1k)
+VPLUS 4 0 DC 5
+VMINUS 2 0 DC -5
+
+RL 3 0 1k
+VOUT 7 3 0
+
+.END

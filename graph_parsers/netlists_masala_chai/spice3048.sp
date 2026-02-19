@@ -1,0 +1,8 @@
+spice
+*MOSFET Amplifier Circuit
+VDD 6 0 DC VDD
+RD1 6 3 RD
+RD2 5 4 RD
+M1 3 7 8 8 NMOS
+M2 4 2 8 8 NMOS
+ISS 8 0 DC ISS

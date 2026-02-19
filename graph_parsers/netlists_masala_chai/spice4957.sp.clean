@@ -1,0 +1,25 @@
+plaintext
+* SPICE Netlist for the given schematic
+
+V1 9 0 DC 5V
+
+* Resistors
+R1 9 5 1k
+R2 5 7 2k
+RS 3 2 1k
+RL 3 10 1k
+
+* Capacitors
+C1 1 5 1u
+C2 3 10 1u
+
+* NMOS Transistor
+M1 4 5 3 3 NMOS L=1u W=1u
+
+* Voltage Source
+Vin 1 0 DC 0V
+
+* Ground Connection
+Vgnd 2 0 DC 0V
+
+.END

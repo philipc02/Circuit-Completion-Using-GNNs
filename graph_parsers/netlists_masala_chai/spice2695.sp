@@ -1,0 +1,24 @@
+spice
+* NMOS Transistor M_B definition
+MB 6 5 0 0 NMOS
+
+* PMOS Transistor M_1 definition
+M1 3 2 0 0 PMOS
+
+* Current Source I_B
+IB 1 6 DC I_value
+
+* Capacitor C_B
+CB 2 1 C_value
+
+* Resistors
+RB 2 4 R_value
+RD 5 3 R_value
+
+* Voltage Definitions
+VDD 5 0 DC VDD_value
+
+* Simulation Settings
+*.TEMP 27
+*.OP
+*.END

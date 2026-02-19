@@ -1,0 +1,8 @@
+plaintext
+* SPICE Netlist
+M1 Vout Vin VF NMOS L=1u W=1u
+RD VDD Vout 10k
+C1 Vout 2 10p
+C2 2 0 10p
+VDD VDD 0 DC 5V
+Vin Vin 0 DC 1V

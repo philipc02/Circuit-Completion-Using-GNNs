@@ -1,0 +1,4 @@
+I1 4 0 DC
+I2 2 0 DC
+R1 3 5 1k
+VDD 6 5 DC

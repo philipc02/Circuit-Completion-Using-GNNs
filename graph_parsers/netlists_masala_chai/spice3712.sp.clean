@@ -1,0 +1,8 @@
+plaintext
+* NMOS Amplifier Circuit
+
+VDD 5 0 DC 5V
+RD 3 5 1k
+M1 3 2 0 0 NMOS L=1u W=2u
+
+*.end

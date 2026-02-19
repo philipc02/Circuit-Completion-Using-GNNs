@@ -1,0 +1,10 @@
+plaintext
+Vi 5 6 DC 0
+CC1 5 1 1u
+RG 1 6 500k
+M1 3 1 2 2 NMOS
+RS 4 3 1k
+CC2 3 2 1u
+RL 2 6 1k
+VDD 4 0 DC 5
+VSS 6 0 DC -5

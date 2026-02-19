@@ -1,0 +1,7 @@
+* NMOS DC Load Line Analysis
+M1 2 3 0 0 NMOS
+RD 4 2 1k
+VDD 4 0 1.8
+V1 3 0 1
+.MODEL NMOS NMOS
+.END

@@ -1,0 +1,21 @@
+plaintext
+* NMOS and PMOS transistor model declaration
+.model NMOS NMOS
+.model PMOS PMOS
+
+* Voltage sources
+VDD 3 0 DC 5V
+VB 2 0 DC 1.8V
+Vin 4 0 DC 2.5V
+
+* Transistors
+M1 3 4 0 0 PMOS
+M2 3 4 0 0 NMOS
+
+* Resistor
+RD 3 Vout 10k
+
+* Simulation directives
+.control
+run
+.endc

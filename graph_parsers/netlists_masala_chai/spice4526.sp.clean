@@ -1,0 +1,14 @@
+spice
+* Op-Amp Circuit
+R1 2 6  R1_value
+R2 4 3  R2_value
+C1 2 5  C_value
+Vi 1 2  DC Vi_value
+X1 0 2 3 Opamp
+
+* Connections
+* Node 2 is a common node connecting R1, R2, and the inverting terminal of the op-amp
+* Node 3 is the output node V_o
+* Node 4 is one terminal of R2
+* Node 5 is the other terminal of C
+* Node 6 is the ground

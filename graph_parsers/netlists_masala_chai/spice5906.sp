@@ -1,0 +1,13 @@
+plaintext
+* SPICE Netlist
+
+IREF 2 7 DC
+
+QREF 2 6 7 QMODEL
+Q1 6 6 7 QMODEL
+Q2 5 4 6 QMODEL
+QN 4 3 7 QMODEL
+
+VEE 7 0 DC
+
+.model QMODEL NPN

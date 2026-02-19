@@ -1,0 +1,10 @@
+* Transistors
+M1 2 4 5 5 NMOS
+M2 2 1 2 2 PMOS
+M3 3 2 3 3 PMOS
+M4 3 3 3 3 PMOS
+
+* Voltage Source
+Vin1 1 0 DC <VIN_VALUE>  ; Replace <VIN_VALUE> with the desired voltage value
+
+* End of Netlist

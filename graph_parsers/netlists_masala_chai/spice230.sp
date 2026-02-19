@@ -1,0 +1,22 @@
+spice
+* Transistors
+M1 6 4 3 3 NMOS
+M2 6 4 4 4 NMOS
+M3 3 6 9 9 NMOS
+M4 5 4 9 9 NMOS
+M5 6 6 2 2 PMOS
+M6 5 5 9 9 NMOS
+M7 8 6 2 2 PMOS
+M8 6 2 2 2 PMOS
+
+* Current Source
+I1 2 3 IDC
+
+* Capacitor
+CC 4 5
+
+* Voltage Sources
+VDD 2 0 DC
+VSS 9 0 DC
+VI 4 0 DC
+VO 8 0 DC

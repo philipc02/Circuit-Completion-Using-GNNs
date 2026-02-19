@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+VVDD 2 0 DC 5V
+VIN 1 0 DC 1V
+I1 2 4 DC 1mA
+C1 4 5 1uF
+RLOAD 5 0 1k

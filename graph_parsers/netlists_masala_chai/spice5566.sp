@@ -1,0 +1,21 @@
+spice
+* SPICE Netlist for the given circuit
+
+R1 5 2 100k  ; Resistor R1 between net 5 and net 2
+R2 2 3 100k  ; Resistor R2 between net 2 and net 3
+R3 vp2 2 10k ; Resistor R3 between vp2 and net 2
+R4 2 0 10k   ; Resistor R4 between net 2 and ground
+
+* Op-Amp
+* Assuming an ideal op-amp, using a subcircuit or built-in model
+XU1 2 vp2 vo2 OpAmpModel
+
+* Voltage Source
+V1 vp2 0 DC 5V  ; Example DC voltage source connected to vp2
+
+.control
+tran 0.1m 10m
+plot v(vo2)
+.endc
+
+* End of netlist

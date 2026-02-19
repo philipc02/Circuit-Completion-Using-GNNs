@@ -1,0 +1,16 @@
+* SPICE netlist for the given schematic
+
+R_pi 1 4 r_pi
+R_C 3 5 R_C
+C_pi 1 4 C_pi
+C_mu 4 5 C_mu
+
+Gm 2 3 VOL=VALUE(gm*v(V(pi)))
+V(pi) 1 4 DC 0
+
+* Node assignments
+* 1: B (positive side of v_pi)
+* 4: E (negative side of v_pi, shared ground for capacitors)
+* 3: node between current source and R_C
+* 5: vo (output)
+* 2: bottom side of current source

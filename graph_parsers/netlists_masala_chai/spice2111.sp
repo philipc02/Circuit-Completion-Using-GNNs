@@ -1,0 +1,12 @@
+spice
+* NMOS Transistor
+M1 Vout Vin GND GND NMOS
+
+* Current Source
+I1 VDD Vout DC I_value
+
+* Voltage Source (for VDD)
+VDD VDD GND DC V_value
+
+* Example of .MODEL for NMOS (example values)
+.model NMOS NMOS (KP=120u VT0=0.7)

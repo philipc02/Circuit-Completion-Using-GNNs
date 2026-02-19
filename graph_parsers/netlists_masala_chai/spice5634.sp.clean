@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist for the given schematic
+
+V1 1 0 DC 3        * Voltage source +3V
+R1 1 2 10k         * Resistor 10kΩ
+D1 2 3 D           * Diode
+I1 3 4 DC 1A       * Current source I
+V2 0 4 DC 3        * Voltage source -3V
+
+.model D D         * Diode model

@@ -1,0 +1,12 @@
+spice
+* SPICE Netlist
+M1 4 A 7 7 PMOS
+M2 VDD 5 Y Y NMOS
+Iin A 7 DC 0
+VDD 3 7 DC 0
+CA A 7 1u
+CX 5 7 1u
+CY 6 7 1u
+RD 3 5 1k
+RF 6 Vout 1k
+.END

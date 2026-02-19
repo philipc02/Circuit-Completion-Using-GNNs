@@ -1,0 +1,12 @@
+plaintext
+* Transistor M1 PMOS
+M1 Vout 5 2 2 PMOS
+
+* Transistor M2 NMOS
+M2 2 B 2 2 NMOS
+
+* Transistor M3 NMOS
+M3 3 C 3 3 NMOS
+
+* Voltage source for simulation
+Vout Vout 0 DC 1.8

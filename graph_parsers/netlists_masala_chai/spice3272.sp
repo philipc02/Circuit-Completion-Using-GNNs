@@ -1,0 +1,7 @@
+* SPICE Netlist for Parallel RLC Circuit
+
+   L1 2 4 LP
+   R1 3 5 RP
+   C1 2 6 CP
+
+   .END

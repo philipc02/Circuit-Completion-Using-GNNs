@@ -1,0 +1,4 @@
+* PMOS Transistor
+   M1 2 4 3 3 PMOS_VDD
+   * Voltage Source
+   VDD 2 0 DC VDD

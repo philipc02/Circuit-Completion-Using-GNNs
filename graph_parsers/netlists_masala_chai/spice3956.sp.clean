@@ -1,0 +1,28 @@
+spice
+* SPICE Netlist for the given schematic
+
+* Voltage Sources
+VEB 9 3 DC
+Vs 7 2 DC
+
+* Current Source
+IQ 4 2 DC
+
+* Resistor
+RB 5 3 1k  ; Assumed resistance value
+
+* Capacitors
+CC 7 5 1uF ; Assumed capacitance value
+CE 8 2 1uF ; Assumed capacitance value
+
+* BJT (Assumed NPN type based on configuration)
+Q0 9 5 2 QMODEL
+
+.model QMODEL NPN(IS=1e-15 BF=100)
+
+* Connections
+* 9 - Collector
+* 5 - Base
+* 2 - Emitter
+
+.END

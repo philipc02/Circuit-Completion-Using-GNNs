@@ -1,0 +1,15 @@
+spice
+* NMOS Transistor
+M1 Vout Vin 0 0 NMOS_MODEL
+
+* Resistor
+RD Vout 0 1k
+
+* Voltage Sources
+VDD 2 0 DC 5V
+Vin Vin 0 DC 1V
+
+* Model Declaration
+.model NMOS_MODEL NMOS ( LEVEL=1 VTO=0.7 KP=30u LAMBDA=0.02)
+
+.END

@@ -1,0 +1,7 @@
+V1 5 0 DC VCC
+V2 7 0 AC vt
+RB 5 6 RB
+RL 5 2 RL
+C1 7 6 C
+Q1 5 6 4 QNPN
+.model QNPN NPN

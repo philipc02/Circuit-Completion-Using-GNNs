@@ -1,0 +1,6 @@
+spice
+I1 10 2 DC 10mA
+D1 6 2 D
+D2 9 5 D
+R1 5 4  R
+V1 9 3 DC V

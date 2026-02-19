@@ -1,0 +1,15 @@
+plaintext
+   * Netlist for the given circuit
+
+   .model NMOS NMOS (LEVEL=1)
+
+   * Voltage Source
+   VDD VDD 0 DC 5V
+
+   * Components
+   RG Vin net1 1k
+   CF net2 Vout 10pF
+   M1 Vout Vin 0 0 NMOS
+   I1 VDD net2 DC 1mA
+
+   .end

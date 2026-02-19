@@ -1,0 +1,16 @@
+plaintext
+* SPICE Netlist
+
+* Transistor Components
+M1 9 2 2 2 PMOS
+M2 8 2 5 5 PMOS
+MR1 2 2 2 2 NMOS
+MR2 2 2 5 5 NMOS
+
+* Current Sources
+I1 2 2 DC IBIAS/2     ; Left side
+I2 5 2 DC IBIAS/2     ; Right side
+
+* Voltage Sources
+V_IN+ 2 2 DC V_IN+
+V_IN- 5 5 DC V_IN-

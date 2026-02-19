@@ -1,0 +1,15 @@
+plaintext
+* PMOS Transistor
+M2 Vout Vin VDD VDD PMOS
+
+* NMOS Transistor
+M1 Vout Vb 0 0 NMOS
+
+* Voltage Sources
+VDD VDD 0 DC <value_of_VDD>
+Vin Vin 0 DC <value_of_Vin>
+Vb Vb 0 DC <value_of_Vb>
+
+* Model Definitions (to be defined or included elsewhere)
+.model PMOS PMOS (parameters)
+.model NMOS NMOS (parameters)

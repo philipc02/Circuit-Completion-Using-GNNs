@@ -1,0 +1,14 @@
+plaintext
+* SPICE netlist for the given schematic
+
+V0 4 0 DC 1
+C1 4 2 1uF
+
+M1 2 3 0 0 NMOS
+M2 3 4 0 0 NMOS
+
+R1 3 5 1k
+VDD 5 0 DC 5
+
+* NMOS transistor model
+.model NMOS NMOS (LEVEL=1)

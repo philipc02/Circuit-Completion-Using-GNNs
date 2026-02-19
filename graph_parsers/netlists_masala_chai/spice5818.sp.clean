@@ -1,0 +1,17 @@
+spice
+* SPICE netlist for the given schematic
+
+V1 3 5 DC 0          * Voltage source Vi
+M1 4 3 2 2 NMOS      * NMOS transistor
+RL 6 5 1k            * Load resistor RL
+
+* Connection nodes
+* Node 2: Source of NMOS and connected to Node 6
+* Node 3: Gate of NMOS also connected to Vi
+* Node 4: Drain of NMOS
+* Node 5: Ground reference
+* Node 6: Connected to RL and source of NMOS
+* Node 7: Positive of Vi
+
+.MODEL NMOS NMOS (LEVEL=1) * Example NMOS model
+.END

@@ -1,0 +1,22 @@
+spice
+* SPICE Netlist
+*Cgd capacitor
+Cgd 3 5 Cgd_value
+
+*Cgs capacitor
+Cgs 3 8 Cgs_value
+
+*Cdb capacitor
+Cdb 5 2 Cdb_value
+
+*Voltage source Vgs
+Vgs 3 4 DC Vgs_value
+
+*Current source gm*Vgs
+Gm 5 8 VALUE={gm * V(Vgs)}
+
+*Resistor ro
+Ro 5 2 Ro_value
+
+* Define the netlist's end
+.end

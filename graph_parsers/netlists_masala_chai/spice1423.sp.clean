@@ -1,0 +1,14 @@
+plaintext
+* MOSFETs
+M1 2 1 4 4 NMOS
+M2 2 3 4 4 PMOS
+
+* Resistors
+Rout 2 0 Rout_value
+RG 1 3 RG_value
+
+* Voltage Source
+Vb1 1 0 Vb1_value
+
+* Ground
+0 GND

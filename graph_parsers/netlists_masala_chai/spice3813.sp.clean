@@ -1,0 +1,11 @@
+spice
+* Example SPICE Netlist
+
+V1 N3 0 DC -5V
+RS N3 N1 10k
+C1 N1 N2 
+NMOS N2 N2 0 0 M=1
+V2 N2 0 DC 5V
+RD N2 N5 5k
+C2 N5 N4 
+RL N4 0 4k

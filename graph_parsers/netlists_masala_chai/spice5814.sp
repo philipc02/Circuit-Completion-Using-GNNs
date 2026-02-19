@@ -1,0 +1,9 @@
+plaintext
+* Simple BJT Circuit
+
+V1 3 0 DC 0
+RBB 3 3 500  ; assuming resistance value
+RC 5 4 1k     ; assuming resistance value
+Q1 5 3 2 NPN
+
+.END

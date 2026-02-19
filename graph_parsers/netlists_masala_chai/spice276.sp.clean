@@ -1,0 +1,22 @@
+spice
+* SPICE Netlist
+* Transistors
+M101 3 2 4 4 NMOS
+M102 1 2 3 3 PMOS
+M103 2 2 1 1 PMOS
+M104 3 2 2 2 NMOS
+M105 25 2 5 5 NMOS
+M106 2 2 5 5 NMOS
+M107 5 2 4 4 NMOS
+M108 62 2 2 2 PMOS
+M109 62 2 2 2 PMOS
+
+* Current Source
+IBIAS 42 2 DC <value>
+
+* Voltage Sources
+VDD 2 0 DC <VDD_value>
+VSS 4 0 DC <VSS_value>
+VBIAS1 2 0 DC <VBIAS1_value>
+VBIAS2 2 0 DC <VBIAS2_value>
+VBIAS3 2 0 DC <VBIAS3_value>

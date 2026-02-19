@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist
+Q1 4 2 4 NPN ; Transistor Q1, NPN
+RB 2 4 100k  ; Base resistor
+RE 4 3 2k    ; Emitter resistor
+RC 4 0 8k    ; Collector resistor
+VE 3 4 DC 4V ; Voltage source at emitter
+VCC 3 0 DC 5V ; Power supply +5 V
+VEE 0 0 DC -5V ; Power supply -5 V
+.END

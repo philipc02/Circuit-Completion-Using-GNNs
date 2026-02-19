@@ -1,0 +1,16 @@
+spice
+* Simple Amplifier Circuit
+
+* Voltage Source
+Vin in 0 DC 0
+
+* Resistors
+R1 x 4 Rvalue  ; Replace Rvalue with actual resistance value
+R2 x 4 Rvalue  ; Replace Rvalue with actual resistance value
+RD 2 0 Rvalue  ; Replace Rvalue with actual resistance value
+
+* NMOS Transistor - M1
+M1 2 3 4 4 NMOSmodel  ; Drain, Gate, Source, Body - NMOSmodel needs to be defined
+
+* Connections
+x in 0 Vin

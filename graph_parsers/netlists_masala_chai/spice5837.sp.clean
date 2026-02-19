@@ -1,0 +1,13 @@
+spice
+* Voltage-controlled voltage source
+V1 2 4 DC 0
+E1 2 4 2 0 Gv
+
+* Output resistor
+Rout 2 3 Rout
+
+* Load resistor
+RL 3 5 RL
+
+* Ground connection
+V2 4 0 DC 0

@@ -1,0 +1,8 @@
+spice
+* SPICE Netlist
+
+VBB 4 6 DC 1.4V
+VCC 5 6 DC 2V
+RC 2 5 4k
+RE 3 6 2k
+Q1 2 4 3 NPN

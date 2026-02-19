@@ -1,0 +1,3 @@
+M1 2 VDD 3 3 NMOS
+V1 VDD 0 DC 5V
+R2 3 0 1k

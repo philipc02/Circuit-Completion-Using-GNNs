@@ -1,0 +1,9 @@
+spice
+* SPICE Netlist
+IREF 4 0 DC 1mA
+VCC 4 0 DC 5V
+
+M1 2 5 5 5 NMOS L=1u W=2u
+M2 2 4 6 6 NMOS L=1u W=2u
+
+* Note: NMOS is defined as: Mname D G S B model L=value W=value

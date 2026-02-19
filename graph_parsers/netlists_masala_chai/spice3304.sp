@@ -1,0 +1,20 @@
+spice
+* MOSFET Differential Amplifier
+* PMOS: M1, M2
+* NMOS: M3, M4
+
+M1 3 5 2 2 PMOS
+M2 3 2 2 2 PMOS
+I1 2 9 DC Iss
+
+M3 6 7 3 3 NMOS
+M4 6 3 3 3 NMOS
+I2 3 4 DC Iss
+
+* Voltage Inputs
+Vin1 5 0 DC Vin1
+Vin2 7 0 DC Vin2
+
+* Outputs
+Vout1 6 0
+Vout2 3 0

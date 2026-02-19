@@ -1,0 +1,13 @@
+spice
+* NPN Transistor
+Q1 3 5 2 NPN
+
+* Resistors
+RS 3 5  RS_value
+RL 2 4  RL_value
+
+* Zener Diode
+DZ 5 6 VZ_model
+
+* Voltage Source
+VCC 3 0 VCC_value

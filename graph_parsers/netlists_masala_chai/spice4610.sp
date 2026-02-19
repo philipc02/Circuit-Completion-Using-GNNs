@@ -1,0 +1,4 @@
+* SPICE Netlist
+VTH 2 0 DC 9V
+RTH 2 4 1.5k
+RL 4 5 1k

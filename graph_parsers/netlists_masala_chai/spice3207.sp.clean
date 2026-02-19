@@ -1,0 +1,24 @@
+spice
+* SPICE netlist for the schematic
+
+* Voltage source
+V1 Vin 0 DC 0
+
+* Resistor
+RF 2 4 1k ; Feedback resistor
+
+* Capacitors
+C1 Vin 2 10u ; Capacitor C1
+C2 4 2 10u ; Capacitor C2
+
+* Operational amplifier
+* Non-ideal op-amp model
+.subckt opamp in+ in- out vcc vee
+* Volgage controlled voltage source
+E1 out 0 value = {v(in+) - v(in-)}
+* Voltage source for power supply connections
+VCC vcc 0 DC 15 ; Positive supply
+VEE vee 0 DC -15 ; Negative supply
+.ends opamp
+
+XOP 2 1 Vout opamp

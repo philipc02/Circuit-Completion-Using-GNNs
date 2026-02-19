@@ -1,0 +1,23 @@
+spice
+* Transistors
+M_Q1 N4 N4 0 0 NMOS
+M_Q2 N45 N7 N4 N4 PMOS
+M_Q3 N8 N3 N7 N7 NMOS
+M_Q4 N9 N2 N8 N8 NMOS
+M_Q5 0 N2 0 NMOS
+
+* Voltage Sources
+V_VDD N45 0 DC VDD
+V_VG2 N4 0 DC VG2
+V_VG3 N2 0 DC VG3
+V_VG4 N9 0 DC VG4
+V_VG5 0 0 DC VG5
+V_Vi N7 0 DC Vi
+
+* Resistors
+R_Ro1 N4 N8 Ro1
+R_Ro2 N45 N7 Ro2
+R_Rin3 N7 N3 Rin3
+R_Ro3 N3 Vout Ro3
+R_Ro5 N8 0 Ro5
+R_Re Vout 0 Re

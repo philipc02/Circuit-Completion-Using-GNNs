@@ -1,0 +1,18 @@
+spice
+* NMOS Transistors
+M1 5 5 0 0 NMOS
+M2 5 4 2 2 NMOS
+
+* Current Source
+I1 2 5 DC <current_value>
+
+* Voltage Source
+VDD 2 0 DC <voltage_value>
+
+* Resistor
+RS 3 4 <resistor_value>
+
+* Voltage Input
+Vinput 3 0 DC <input_voltage_value>
+
+* End of netlist

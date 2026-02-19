@@ -1,0 +1,7 @@
+* NPN Transistor Amplifier Circuit
+VCC 3 0 DC 10V
+R1 3 4 10k
+R2 4 0 2.2k
+RC 3 2 3.6k
+RE 2 0 1k
+Q1 2 4 0 NPN

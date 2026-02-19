@@ -1,0 +1,20 @@
+* SPICE Netlist
+
+* Current Source
+I1 3 2 DC 5mA 
+
+* Diodes
+D1 2 6 D_model
+D2 2 4 D_model
+
+* Resistor
+R1 4 5 R
+
+* Voltage Sources
+V1 3 0 DC 5V
+V2 5 0 DC -2V
+
+* Model for diodes
+.model D_model D
+
+.end

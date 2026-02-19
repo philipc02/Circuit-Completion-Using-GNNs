@@ -1,0 +1,23 @@
+spice
+* NMOS Transistors
+M1 2 3 0 0 NMOS
+M2 4 2 0 0 NMOS
+
+* Resistors
+Rs 1 2 200
+R_D1 3 VDD 1k
+R_S1 2 0 200
+R_F X 4 10k
+R_D2 VDD Vout 1k
+
+* Capacitors
+C1 2 0 50p
+C2 3 X 10p
+
+* Voltage Source
+VDD VDD 0 DC 5V
+Vin 1 0 DC 0 AC 1V
+
+* Analysis
+.ac dec 100 1 1Meg
+.end

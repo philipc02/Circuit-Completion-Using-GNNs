@@ -1,0 +1,8 @@
+plaintext
+* Diode Circuit
+V1 A 0 DC 18V
+RS A B 270
+RL C 2 1k
+D1 D E 1N5240B
+B B D
+E 2

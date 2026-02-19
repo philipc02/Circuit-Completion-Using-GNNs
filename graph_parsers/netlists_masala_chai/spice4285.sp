@@ -1,0 +1,18 @@
+plaintext
+* SPICE Netlist
+
+V1 V+ 0 DC 5V
+
+IREF 1 0 DC
+
+* NMOS Transistors
+M1 4 4 0 0 NMOS
+M2 6 5 0 0 NMOS
+M3 2 2 0 0 NMOS
+
+* PMOS Transistors
+M4 2 2 3 3 PMOS
+M5 3 3 1 1 PMOS
+
+* Connections
+R1 0 0 0

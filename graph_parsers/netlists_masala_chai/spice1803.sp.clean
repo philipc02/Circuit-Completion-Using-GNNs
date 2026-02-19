@@ -1,0 +1,9 @@
+* SPICE Netlist for the given circuit
+
+R1 6 8 1k    * Resistor R1 between nodes 6 and 8
+R2 6 2 1k    * Resistor R2 between nodes 6 and 2
+
+V1 8 5 DC 10 * Voltage Source V1: + at node 8, - at node 5
+V2 6 2 DC 5  * Voltage Source V2: + at node 6, - at node 2 (ground)
+
+*.end        * End of netlist

@@ -1,0 +1,14 @@
+plaintext
+* SPICE Netlist for the given schematic
+
+MN1 5 4 6 6 NMOS_Model
+
+R1 2 5 R1_Value
+R2 5 2 R2_Value
+RD 3 4 RD_Value
+RS 6 2 RS_Value
+
+C1 1 5 C1_Value
+C2 6 2 C2_Value
+
+* Please replace Model and Value parameters with actual values

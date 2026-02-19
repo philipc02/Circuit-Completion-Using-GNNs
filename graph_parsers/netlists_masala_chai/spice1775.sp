@@ -1,0 +1,20 @@
+spice
+* Transistor M1: NMOS
+M1 4 1 3 3 NMOS_Model
+
+* Transistor M2: PMOS
+M2 3 4 2 2 PMOS_Model
+
+* Drain Resistor RD
+R1 4 2 RD
+
+* DC Voltage Source VDD
+V1 2 0 VDD
+
+* Current Source
+I1 2 3 DC 1
+
+* Input Voltage Source
+Vin 1 0 DC 0
+
+* End of netlist

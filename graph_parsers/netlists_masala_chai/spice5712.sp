@@ -1,0 +1,4 @@
+plaintext
+V1 3 0 DC 1.3
+M1 5 3 2 2 NMOS
+RD 5 6 1k

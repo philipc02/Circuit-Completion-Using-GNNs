@@ -1,0 +1,24 @@
+spice
+* PMOS Transistors
+M1 3 2 1 1 PMOS
+M2 3 8 1 1 PMOS
+
+* NMOS Transistors
+M3 2 8 5 5 NMOS
+M4 2 8 5 5 NMOS
+
+* Resistors
+R1 4 3 RD
+R2 3 3 RD
+
+* Current Sources
+I1 2 6 DC 0.5
+I2 5 7 DC 0.5
+
+* Voltage Reference
+VDD 4 0 DC VDD
+VSS 0 5 DC -VSS
+
+* Voltage Node Definitions
+VUG1 2 0 DC VUG1
+VUG2 8 0 DC VUG2

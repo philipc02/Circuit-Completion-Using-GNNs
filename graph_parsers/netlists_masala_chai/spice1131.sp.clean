@@ -1,0 +1,5 @@
+plaintext
+* SPICE netlist
+M1 2 2 4 4 NMOS
+V1 2 4 DC 0.9
+V2 2 4 DC 0.9

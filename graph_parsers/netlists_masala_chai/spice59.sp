@@ -1,0 +1,10 @@
+plaintext
+* SPICE Netlist for the given circuit
+
+Vgs 4 8 DC 0
+GmVgs 4 3 VALUE {g_m * V(4,8)}
+Gmbs 4 3 VALUE {g_mb * V(4,3)}
+Ro 2 3 1
+Io 4 2 DC 0
+Vi 4 7 DC 0
+RL 4 5 1

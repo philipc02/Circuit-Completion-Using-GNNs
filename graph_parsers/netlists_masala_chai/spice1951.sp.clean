@@ -1,0 +1,18 @@
+spice
+* SPICE Netlist for the given schematic
+
+* Voltage Sources
+VCC 3 0 DC <VCC_Value>
+Vb1 1 0 DC <Vb1_Value>
+
+* Transistors
+Q1 2 3 0 NPN
+Q3 3 1 2 NPN
+
+* Diode
+D1 2 0 D
+
+.model NPN NPN
+.model D D
+
+*.end

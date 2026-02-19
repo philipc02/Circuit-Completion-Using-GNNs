@@ -1,0 +1,35 @@
+plaintext
+* Voltage Sources
+VDDL 3 0 DC
+VDD 2 0 DC
+
+* Load Capacitor (Assumed, not visible as a separate element)
+Cload 8 0 10p
+
+* Resistors
+R1 3 7 1k
+R2 3 2 1k
+R3 3 2 1k
+R4 8 0 1k
+R5 7 8 1k
+R6 8 0 1k
+RM 2 5 1k
+
+* Transistors
+M1 9 7 6 6 NMOS
+M2 2 3 9 9 PMOS
+M3 7 3 6 6 NMOS
+M4 6 2 10 10 NMOS
+M5 5 3 4 4 PMOS
+M6 2 3 5 5 PMOS
+M7 7 3 10 10 NMOS
+M8 8 3 7 7 NMOS
+M9 3 6 7 7 NMOS
+M10 3 2 11 11 PMOS
+M11 8 3 9 9 NMOS
+
+* Operational Amplifier
+A1 7 8 8 3 OPAMP
+
+* Ground
+0 GND

@@ -1,0 +1,5 @@
+* SPICE netlist
+VDD VDD 0 DC 1.8V
+I1 VDD Vout DC 1mA
+M1 Vout Vin 0 0 NMOS
+M2 Vout Vb VDD VDD PMOS

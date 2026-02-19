@@ -1,0 +1,5 @@
+plaintext
+* SPICE Netlist
+V1 5 0 DC 5V
+R1 3 2 2k
+D1 2 4 1N4002

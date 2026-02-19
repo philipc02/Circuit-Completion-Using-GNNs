@@ -1,0 +1,23 @@
+spice
+* SPICE Netlist
+
+V1 5 0 DC 5V
+V2 7 0 DC 5V
+V3 8 0 DC 5V
+
+* PMOS Transistors
+M1 3 3 5 5 PMOS
+M2 5 1 3 3 PMOS
+M3 6 2 7 7 PMOS
+M4 7 7 8 8 PMOS
+
+* NMOS Transistors
+M5 3 4 0 0 NMOS
+M6 2 6 0 0 NMOS
+M7 4 6 0 0 NMOS
+M8 4 2 0 0 NMOS
+
+* Connections
+VDD 5 0 5V
+VDD 7 0 5V
+VDD 8 0 5V

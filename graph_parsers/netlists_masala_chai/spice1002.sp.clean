@@ -1,0 +1,13 @@
+spice
+* BJT Amplifier Circuit
+
+VCC 1 0 DC 2.5V
+R1 1 2 13k
+R2 2 0 12k
+RC 1 4 1k
+RE 2 0 400
+Q1 4 2 2 QNPN
+Q2 3 2 2 QNPN
+
+.model QNPN NPN (IS=1E-14 BF=100)
+.ends

@@ -1,0 +1,28 @@
+* NMOS L=1u W=1u
+M1 2 6 2 2 NMOS
+M2 2 2 2 2 NMOS
+M6 5 9 2 2 NMOS
+M7 8 6 7 7 NMOS
+MA 11 2 2 2 NMOS
+MB 2 11 2 2 NMOS
+MD 9 8 2 2 NMOS
+ME 3 11 2 2 NMOS
+MF 12 11 2 2 NMOS
+
+* PMOS L=1u W=1u
+M3 2 10 3 3 PMOS
+M4 3 10 4 4 PMOS
+M5 4 6 5 5 PMOS
+MC 8 6 7 7 PMOS
+
+* Current source
+IREF 11 2 DC 1.0
+
+* Resistors
+R 6 2 R
+
+* Voltage Sources
+V1 3 0 DC +5V
+V2 11 0 DC -5V
+
+* End of Netlist

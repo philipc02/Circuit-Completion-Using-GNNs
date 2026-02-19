@@ -1,0 +1,44 @@
+* Transistors
+Q31 4 10 9 QN
+Q32 8 3 2 QN
+Q33 3 6 3 QP
+Q34 2 7 2 QN
+Q35 3 5 3 QN
+Q36 5 10 3 QP
+Q37 2 25 2 QP
+Q38 25 3 26 QP
+Q39 4 1 2 QN
+Q40 26 3 25 QP
+Q41 2 5 2 QN
+Q42 3 6 3 QP
+Q43 3 3 3 QN
+Q44 3 3 3 QN
+Q45 3 3 3 QN
+Q46 3 3 3 QN
+
+* Resistors
+R31 2 10 3.5k
+R32 9 4 3.5k
+R33 10 5 14k
+R34 5 3 33k
+R35 4 3 33k
+R36 4 3 1.3k
+R37 2 9 2.5k
+R38 3 25 2.5k
+R39 2 8 5k
+R40 3 7 5k
+R41 2 3 10k
+R42 3 6 1.3k
+R43 3 5 3.5k
+R44 3 3 3.5k
+R45 3 3 1.3k
+
+* Voltage Source
+VCC 10 0 DC 15V
+VBias1 1 0 DC 1.5V
+VBias2 6 0 DC 1.5V
+VBias3 7 0 DC 1.5V
+VBias4 8 0 DC 1.5V
+VBias5 9 0 DC 1.5V
+
+* End of Netlist

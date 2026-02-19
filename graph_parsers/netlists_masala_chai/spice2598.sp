@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist Example
+M1 Vout VinCM 2 2 NMOS
+RD2 VDD Vout 2
+RSS 2 0 2
+VDD VDD 0 DC VDD_VALUE

@@ -1,0 +1,5 @@
+R1 A B 1k
+R2 B 9 2k
+R3 9 C 3k
+R4 B 4 C 4k
+R5 D 8 C 5k

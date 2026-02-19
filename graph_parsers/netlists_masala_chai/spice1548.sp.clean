@@ -1,0 +1,20 @@
+plaintext
+* SPICE Netlist
+* Nodes: Vin1 = 1, Vout1 = 2, Vdd = 5, Ground = 3
+
+* NMOS: Drain Gate Source
+M1 2 6 3 NMOS
+M3 2 4 3 NMOS
+M5 2 3 3 NMOS
+
+* PMOS: Drain Gate Source
+M7 5 3 3 PMOS
+
+* Resistor
+R1 3 2 1k
+
+* Voltage Source
+Vdd 5 3 DC 5V
+Vin1 1 3 DC 1V
+
+* End of Netlist

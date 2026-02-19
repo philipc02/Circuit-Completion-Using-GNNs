@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist for the Circuit
+Vs1 4 3 DC 6
+Vs2 3 2 DC 6
+Vs3 2 0 DC 6
+R1 3 2 R

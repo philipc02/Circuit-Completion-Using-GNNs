@@ -1,0 +1,16 @@
+spice
+* SPICE netlist
+*.MODEL NMOS NMOS
+*.MODEL PMOS PMOS
+
+VDD 1 0 DC 5V
+
+RD 1 2 1k
+
+C1 3 0 10p
+C2 3 0 10p
+
+M1 2 3 4 4 NMOS
+M2 2 3 0 0 PMOS
+
+*.END

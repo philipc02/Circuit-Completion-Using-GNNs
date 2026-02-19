@@ -1,0 +1,22 @@
+spice
+* SPICE Netlist for Given Schematic
+
+* Voltage Source
+Vi 2 0 DC <input_voltage>   ; Define input voltage value
+
+* Current Source
+IR 2 7 DC <current_value>    ; Define current value for IR
+
+* Transistors
+M1 2 3 2 2 PMOS              ; PMOS (Drain, Gate, Source, Body)
+M2 4 5 3 3 NMOS              ; NMOS (Drain, Gate, Source, Body)
+M3 3 3 7 7 NMOS              ; NMOS (Drain, Gate, Source, Body)
+
+* Load Resistor
+RL 4 6 <resistor_value>      ; Define resistor value for RL
+
+* Analysis
+.tran 1n 10u                ; Define transient analysis parameters
+
+* End of Netlist
+.end

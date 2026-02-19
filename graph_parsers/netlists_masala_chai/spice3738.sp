@@ -1,0 +1,5 @@
+spice
+V1 1 0 DC 3V
+RD 1 2 1k
+M1 2 1 3 3 NMOS
+V2 1 0 DC 3V

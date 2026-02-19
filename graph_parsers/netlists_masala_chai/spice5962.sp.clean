@@ -1,0 +1,9 @@
+spice
+* Transistor Q1
+Q1 2 3 0 NPN
+
+* Transistor Q2
+Q2 4 3 0 NPN
+
+* Current Source I_i
+I1 2 0 DC I_i

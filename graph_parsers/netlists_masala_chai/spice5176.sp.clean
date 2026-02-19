@@ -1,0 +1,9 @@
+spice
+* SPICE Netlist
+
+VCC 6 0 DC +VCC
+VEE 2 4 DC -VEE
+VIN 0 4 DC vin
+R1 2 4 R
+MP1 6 2 5 5 PMOS
+MN1 3 2 5 5 NMOS

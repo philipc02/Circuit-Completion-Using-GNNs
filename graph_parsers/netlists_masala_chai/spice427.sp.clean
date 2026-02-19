@@ -1,0 +1,12 @@
+spice
+* SPICE Netlist
+I1 6 5 DC
+G1 6 5 6 5 8m
+R1 6 8 R1_value
+C1 8 2 C1_value
+RZ 2 3 RZ_value
+C 3 4 C_value
+G2 4 5 6 5 8m6
+R2 4 3 R2_value
+C2 3 5 C2_value
+V1 5 0 DC 0

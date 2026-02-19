@@ -1,0 +1,19 @@
+plaintext
+* NMOS Amplifier Circuit
+
+V1 2 0 DC 24V
+Vin 6 0 AC 100mV
+
+R1 2 7 2MEG
+R2 7 0 1MEG
+RD 2 4 1K
+RS 3 0 2K
+RL 4 5 10K
+
+C1 6 7 1UF
+C2 4 0 10UF
+C3 3 5 10UF
+
+M1 4 7 3 3 2N5486
+
+.END

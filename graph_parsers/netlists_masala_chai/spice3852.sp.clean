@@ -1,0 +1,12 @@
+spice
+* BJT Circuit
+
+VBB 6 7 DC 4V
+VCC 4 0 DC 5V
+RE 3 2 RE 
+RC 2 4 1k
+Q1 2 3 5 QNPN
+
+.model QNPN NPN (IS=1E-14 BF=100)
+
+*.end

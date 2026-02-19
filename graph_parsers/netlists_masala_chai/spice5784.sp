@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist for NPN Transistor Circuit
+
+Q1 2 4 3 NPN
+RB 4 5 1k  ; Assume some resistance value
+RE 1 2 1k  ; Assume some resistance value
+RC 3 6 1k  ; Assume some resistance value
+
+VCC 1 0 DC 5V
+VEE 6 0 DC -5V
+
+.model NPN NPN
+.end

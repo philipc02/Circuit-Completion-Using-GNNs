@@ -1,0 +1,7 @@
+* Diode Circuit
+V1 7 5 DC VI
+R1 7 8 R
+D1 4 3 DZM
+D2 8 2 DZM
+VZ1 3 3V
+VZ2 2 2V

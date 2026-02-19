@@ -1,0 +1,8 @@
+plaintext
+* SPICE netlist for the given circuit
+M1A 5 6 6 6 PMOS
+M1 2 3 3 3 NMOS
+CL 5 0 C_L
+Cp 2 0 C_p
+V1 6 0 DC (vod/2)
+V2 3 0 DC (vid/2)

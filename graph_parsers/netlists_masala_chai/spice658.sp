@@ -1,0 +1,10 @@
+plaintext
+* Components
+* Voltage Source
+Vin 3 0 DC
+
+* Capacitor
+C1 3 2
+
+* Connections
+Vout 2 0

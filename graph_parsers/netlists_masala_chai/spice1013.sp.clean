@@ -1,0 +1,8 @@
+spice
+* Example SPICE netlist
+
+VCC 4 0 DC 2.5V
+R1 4 2 32k
+R2 2 0 18k
+R3 3 0 100
+Q1 4 2 3 NPN

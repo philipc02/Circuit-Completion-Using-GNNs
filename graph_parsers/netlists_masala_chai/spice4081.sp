@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist
+Vi 10 0 DC 0V
+RS 10 3 100k
+C1 3 2 1uF
+R1 2 0 1k
+R2 2 3 4.7k
+RE 4 6 100
+C2 4 6 1uF
+RL 7 8 1k
+CL 8 0 10uF
+V+ 2 0 DC 15V
+V- 3 0 DC -15V
+Q1 2 4 6 ModNPN
+.model ModNPN NPN (BF=100)

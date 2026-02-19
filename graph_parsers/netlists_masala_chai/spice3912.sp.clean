@@ -1,0 +1,19 @@
+plaintext
+* Common Emitter Amplifier
+
+VCC 6 0 DC 10V        * DC Voltage Supply
+Vs 8 0 AC 1V          * AC Input Voltage Source
+
+R1 5 6 R1_value       * R1, node 5 to VCC
+R2 3 7 R2_value       * R2, node 3 to ground
+RC 5 2 RC_value       * RC, node 5 to 2
+RL 2 4 1k             * RL, node 2 to 4
+RE 4 0 0.5k           * RE, node 4 to ground
+CE 4 0 CE_value       * CE, in parallel with RE
+
+CC1 5 8 CC1_value     * CC1, between node 5 and Vs
+CC2 2 0 CC2_value     * CC2, between node 2 and ground/output
+
+Q1 5 3 4 NPN          * Transistor Q1, Collector: node 5, Base: node 3, Emitter: node 4
+
+.end

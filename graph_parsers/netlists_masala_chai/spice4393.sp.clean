@@ -1,0 +1,18 @@
+spice
+* SPICE Netlist
+V+ 8 0 DC 12
+V- 0 3 DC 12
+I1 8 7 DC
+IQ 2 3 DC
+R1 7 3 55k
+RD 8 2 40k
+RD2 8 6 4k
+R5 6 0 6k
+
+M1 2 7 3 3 NMOS
+M2 2 2 3 3 NMOS
+M3 6 9 0 0 NMOS
+M4 4 4 3 8 PMOS
+M5 5 4 3 8 PMOS
+
+.END

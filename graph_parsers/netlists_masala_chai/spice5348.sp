@@ -1,0 +1,7 @@
+spice
+* Resistor Network
+R1 6 4 R1_value
+R2 4 3 R2_value
+R3 6 2 R3_value
+R4 2 2 R4_value
+R5 2 3 R5_value

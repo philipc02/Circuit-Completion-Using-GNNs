@@ -1,0 +1,5 @@
+spice
+V_G 2 3 DC <value_of_V_G>
+V_D 4 3 DC <value_of_V_D>
+
+M1 4 2 4 4 NMOS

@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+V1 4 0 DC Vs
+R1 4 3 560
+R2 3 2 330
+R3 3 5 330
+R4 5 2 560

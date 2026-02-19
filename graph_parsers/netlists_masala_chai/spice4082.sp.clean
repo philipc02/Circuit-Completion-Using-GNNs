@@ -1,0 +1,23 @@
+spice
+* Voltage Source
+Vi 8 0 DC
+
+* Resistors
+RS 8 9  RS_value
+RB 9 7  RB_value
+Rpi 10 7  Rpi_value
+RE 6 2  RE_value
+RL 6 2  RL_value
+
+* Capacitors
+Cmu 3 4  Cmu_value
+Cpi 10 7  Cpi_value
+CL 6 2  CL_value
+
+* Voltage-Controlled Current Source
+Gm 4 2  VALUE={gm * V(10,7)}
+
+* Connections
+* B node is at 9
+* C node is at 3
+* E node is at 6

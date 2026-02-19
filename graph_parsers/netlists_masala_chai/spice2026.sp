@@ -1,0 +1,8 @@
+spice
+* SPICE Netlist for LC Filter Circuit
+
+Vin in 0 DC 0V
+L1 in 2 1uH
+C1 2 0 1uF
+R1 2 3 1k
+Vout 3 0 DC 0V

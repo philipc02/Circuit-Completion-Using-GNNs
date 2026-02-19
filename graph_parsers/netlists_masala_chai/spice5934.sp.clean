@@ -1,0 +1,6 @@
+plaintext
+IREF 1 2 DC VALUE
+Q1 3 2 6 NPN
+Q2 2 3 6 NPN
+Q3 5 3 1 NPN
+VEE 6 0 DC VALUE

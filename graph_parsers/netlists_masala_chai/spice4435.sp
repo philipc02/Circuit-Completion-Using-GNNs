@@ -1,0 +1,12 @@
+VDD 1 0 DC VDD_VALUE
+Vi 4 0 DC Vi_VALUE
+
+M1 1 4 3 3 NMOS_MODEL
+
+RS 3 0 RS_VALUE
+
+* Model and Value definitions
+.model NMOS_MODEL NMOS
+RS_VALUE = 1k
+VDD_VALUE = 5
+Vi_VALUE = 1

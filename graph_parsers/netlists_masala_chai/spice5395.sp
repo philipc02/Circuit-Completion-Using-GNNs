@@ -1,0 +1,18 @@
+* SPICE Netlist
+
+* Voltage Sources
+V_AC 6 3 AC 1
+V_DC 4 0 DC 5
+
+* Capacitor
+C1 3 8 1uF
+
+* Resistors
+R1 4 8 10k
+R2 8 0 10k
+
+* Amplifier
+XU1 8 0 2 OPAMP
+
+* Ground
+0 0

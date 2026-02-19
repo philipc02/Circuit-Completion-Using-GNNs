@@ -1,0 +1,9 @@
+spice
+* Lead Lag Circuit
+R1 6 4 10k        ; Resistor R1 between nodes 6 and 4
+C1 4 3 1uF        ; Capacitor C1 between nodes 4 and 3
+R2 3 2 10k        ; Resistor R2 between nodes 3 and 2
+C2 4 2 1uF        ; Capacitor C2 between nodes 4 and 2
+Vin 6 0 DC 5V     ; Voltage source Vin connected between nodes 6 and ground
+Vout 4 0          ; Voltage output at node 4
+.end

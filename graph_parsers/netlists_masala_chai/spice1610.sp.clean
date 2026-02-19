@@ -1,0 +1,16 @@
+plaintext
+* Transistors
+M1 Vout Vin1 2 2 NMOS
+M2 Vout Vin2 2 2 NMOS
+M3 2 Vb1 VDD VDD PMOS
+M4 Vout Vb1 VDD VDD PMOS
+M5 2 Vb2 0 0 NMOS
+
+* Voltage Sources
+VDD VDD 0 DC <value>
+Vb1 Vb1 0 DC <value>
+Vin1 Vin1 0 DC <value>
+Vin2 Vin2 0 DC <value>
+Vb2 Vb2 0 DC <value>
+
+* NOTE: Replace <value> with the actual voltages you intend to use for simulation.

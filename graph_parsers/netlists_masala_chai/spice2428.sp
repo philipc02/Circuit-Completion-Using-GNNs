@@ -1,0 +1,4 @@
+M1 2 3 0 0 NMOS
+I1 2 0 DC 1A
+Vx 4 0 DC 5V 
+R1 3 2 1kOhm

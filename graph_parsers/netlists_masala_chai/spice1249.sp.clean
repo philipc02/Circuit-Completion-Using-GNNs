@@ -1,0 +1,17 @@
+spice
+* NMOS Transistor
+M1 Vout Vin Vb Vb NMOS
+
+* Resistor
+RD VDD Vout 1k
+
+* Voltage Source
+VDD VDD 0 DC 1.8V
+
+* Input Voltage
+Vin Vin 0 DC 0V
+
+* Define NMOS Model (Example, may need modification as per specific process)
+.model NMOS NMOS(Level=1 VTO=0.7 KP=200u)
+
+.end

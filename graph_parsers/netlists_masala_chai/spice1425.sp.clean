@@ -1,0 +1,19 @@
+* PMOS Transistor
+M1 Vb3 2 3 3 PMOS
+
+* NMOS Transistors
+M2 2 Vb2 0 0 NMOS
+M3 3 Vb1 2 2 NMOS
+
+* Resistor
+Rout 3 Vb3 Rout_value
+
+* Voltage Sources for Body Terminals
+Vb1 Vb1 0 DC_value1
+Vb2 Vb2 0 DC_value2
+Vb3 Vb3 0 DC_value3
+
+* Simulation Commands
+*.options
+*.control
+*.end

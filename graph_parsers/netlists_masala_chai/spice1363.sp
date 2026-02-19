@@ -1,0 +1,7 @@
+spice
+M1 2 1 3 3 NMOS
+M2 3 2 0 0 NMOS
+Rp 2 3 100k
+Rout 0 2 50k
+Vb1 1 0 DC 1.2
+Vb2 2 0 DC 0.8

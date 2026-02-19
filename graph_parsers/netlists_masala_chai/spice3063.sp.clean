@@ -1,0 +1,31 @@
+plaintext
+* SPICE netlist for provided schematics
+
+* Voltage Sources
+VDD 3 0 DC VDD
+VREF 2 0 DC VREF
+
+* Current Source
+I1 9 2 DC I1
+
+* Transistors
+M1 6 3 2 2 NMOS
+M2 6 3 2 2 NMOS
+M3 5 3 11 11 PMOS
+M4 3 5 3 3 PMOS
+M5 11 3 8 8 PMOS
+M6 8 5 3 3 PMOS
+M7 7 3 2 2 NMOS
+M8 7 2 2 2 NMOS
+M9 4 3 6 6 NMOS
+M10 8 8 0 0 NMOS
+M11 8 8 0 0 NMOS
+M12 8 8 0 0 NMOS
+M13 8 8 0 0 NMOS
+M14 12 3 2 2 NMOS
+M15 2 2 2 2 NMOS
+M16 2 2 2 2 NMOS
+M17 9 2 0 0 NMOS
+M18 12 0 9 9 NMOS
+
+* End of netlist

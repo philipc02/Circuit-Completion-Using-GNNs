@@ -1,0 +1,26 @@
+plaintext
+* NMOS: Source arrow points outwards.
+* PMOS: Source arrow points inwards.
+
+M1 3 2 6 6 NMOS
+M2 3 2 7 7 PMOS
+M3 2 11 5 5 NMOS
+M4 5 1 5 5 NMOS
+M5 4 4 8 8 PMOS
+M6 4 4 9 9 PMOS
+M7 4 4 10 10 PMOS
+M8 10 4 9 9 NMOS
+M9 10 4 8 8 PMOS
+M10 3 3 10 10 PMOS
+M11 9 9 10 10 NMOS
+M12 3 3 11 11 PMOS
+
+IREF 8 3 DC
+
+C1 2 6 
+C2 2 7 
+
+Vdd 3 0 DC
+Vss 5 0 DC
+
+* End of Netlist

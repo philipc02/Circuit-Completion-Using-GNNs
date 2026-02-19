@@ -1,0 +1,12 @@
+spice
+* SPICE Netlist
+
+.title Example Circuit
+
+M1 4 3 2 2 NMOS
+M2 3 3 0 0 NMOS
+IREF 4 3 DC 1mA
+R1 4 2 1k
+C1 2 0 1uF
+
+.END

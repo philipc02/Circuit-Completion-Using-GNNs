@@ -1,0 +1,15 @@
+spice
+* MOS Transistor Definitions
+M1 2 4 3 3 NMOS
+M2 2 3 5 5 NMOS
+M3 2 2 6 6 PMOS
+M4 2 2 26 26 PMOS
+
+* Voltage Sources
+V1 4 0 DC
+V2 3 0 DC
+VDD 6 0 DC
+VOUT 7 0 DC
+
+* Current Source
+ITAIL 5 55 DC

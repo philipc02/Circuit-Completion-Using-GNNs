@@ -1,0 +1,16 @@
+plaintext
+* SPICE Netlist
+
+M1 3 3 0 0 NMOS
+M2 2 5 4 4 NMOS
+
+Iin 3 0 DC [value of Iin]
+Iout 2 0 DC [value of Iout]
+
+RD 4 5 [value of RD]
+RF 3 2 [value of RF]
+
+VDD 4 0 DC [value of VDD]
+
+* Model definitions
+.model NMOS NMOS level=1

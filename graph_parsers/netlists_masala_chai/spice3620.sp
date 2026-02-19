@@ -1,0 +1,5 @@
+spice
+* SPICE netlist
+V1 vI 3 DC V_B
+R1 1 2 R
+D1 2 3 D

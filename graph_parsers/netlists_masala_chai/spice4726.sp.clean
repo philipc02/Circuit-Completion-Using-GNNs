@@ -1,0 +1,6 @@
+* BJT Amplifier Circuit
+Q1 3 4 2 NPN
+RB 4 4 RB_VALUE
+RC 3 3 3k
+VBB 4 8 VBB_VALUE
+VCC 5 6 30

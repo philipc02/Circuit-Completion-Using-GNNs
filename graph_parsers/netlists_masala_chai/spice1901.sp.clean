@@ -1,0 +1,8 @@
+plaintext
+* SPICE Netlist
+VDD 5 0 DC VALUE
+Vin 1 0 DC VALUE
+M1 2 1 0 0 NMOS_MODEL
+C1 3 2 10uF
+L1 5 3 10uH
+RP 5 4 10ohm

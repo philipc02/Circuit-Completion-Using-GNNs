@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist
+Q1 8 3 6 NPN       ; NPN Transistor QN
+Q2 6 4 7 PNP       ; PNP Transistor QP
+
+C1 6 5 C           ; Capacitor C
+
+R1 5 7 RL          ; Resistor RL
+
+VCC 8 7 DC 2VCC    ; Voltage Source 2VCC

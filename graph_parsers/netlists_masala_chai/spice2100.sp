@@ -1,0 +1,2 @@
+spice
+M1 X Vb 2 2 NMOS

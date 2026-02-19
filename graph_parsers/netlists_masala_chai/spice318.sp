@@ -1,0 +1,26 @@
+spice
+* SPICE Netlist for the given schematic
+
+* Voltage Sources
+V1 9 2 DC 0
+V2 6 7 DC 0
+
+* Resistors
+R_RB1_RB1 9 2
+R_rpi1 2 3
+R_RE 3 0
+R_rc1 2 4
+R_rc3 5 7
+R_RL 7 0
+
+* Capacitors
+C_Cmu1 2 4
+C_Cmu3 4 5
+C_Cpi3 4 6
+C_Cc3 7 0
+
+* Dependent Current Source
+G_gm1 2 3 V1 1.0
+
+* Ground
+0 GND

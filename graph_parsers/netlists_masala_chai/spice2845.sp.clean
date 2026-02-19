@@ -1,0 +1,8 @@
+spice
+* SPICE Netlist for the given schematic
+
+.model NMOS NMOS (Level=1)
+
+Vin 2 0 DC 5V
+M1 3 2 4 4 NMOS
+Vout 3 0

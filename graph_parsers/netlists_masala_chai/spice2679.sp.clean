@@ -1,0 +1,24 @@
+spice
+* NMOS Technology Parameters (Assuming placeholders)
+.model NMOS NMOS(Level=1 VTO=1 KP=2u)
+.model PMOS PMOS(Level=1 VTO=-1 KP=2u)
+
+* Transistors
+M1 10 10 9 9 NMOS
+M2 2 6 8 8 NMOS
+M3 7 5 9 9 PMOS
+M4 7 3 2 2 PMOS
+
+* Voltage Sources
+VDD 7 0 DC 5
+VX 6 8 DC 1
+
+* Current Source
+IX 2 8 DC 1m
+
+* Resistor
+RXY 10 2 1k
+
+* Simulation Commands
+.op
+.end

@@ -1,0 +1,5 @@
+spice
+* Circuit Netlist
+Vin in 0 DC 0V
+C1 in out C
+R1 out 0 R

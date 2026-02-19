@@ -1,0 +1,11 @@
+plaintext
+* SPICE Netlist
+
+C_GDOV 5 8 C_GDOV
+C_GS 5 7 C_GS
+C_GB 9 0 C_GB
+
+Gm 3 2 VALUE = {gm * (V(9) - n * V(7))}
+R_GDS 3 2 GDS
+
+.END

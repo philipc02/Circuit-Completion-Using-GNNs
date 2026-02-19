@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist for the Given Circuit
+* Components:
+* C1: Capacitor connected to node 4 and ground
+* C2: Capacitor connected between nodes 2 and 2
+* R1: Resistor connected between nodes 3 and 4
+
+V1 Vin 1 DC 0
+V2 Vout 2 DC
+
+R1 3 4 R1_value
+C1 4 2 C1_value
+C2 2 3 C2_value
+
+.end

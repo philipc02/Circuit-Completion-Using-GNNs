@@ -1,0 +1,20 @@
+* SPICE Netlist
+*
+* NMOS Transistor M1
+M1 5 5 4 4 NMOS
+
+* PMOS Transistor M2
+M2 2 2 5 5 PMOS
+
+* Resistors
+RF 2 5 RF_value
+R1 6 4 R1_value
+
+* Capacitors
+CA 3 7 CA_value
+CB 6 4 CB_value
+
+* Voltage Source
+VDD 2 0 DC VDD_value
+
+* End of Netlist

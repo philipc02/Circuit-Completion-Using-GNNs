@@ -1,0 +1,14 @@
+* SPICE Netlist
+* Components
+M1 2 4 3 3 NMOS
+I1 3 0 DC I2n,in
+RD 2 1 RD
+VDD 1 0 DC VDD
+
+* Node Mapping
+* 1: VDD
+* 2: Vn2_out
+* 3: Ground
+* 4: Vb
+
+* End of Netlist

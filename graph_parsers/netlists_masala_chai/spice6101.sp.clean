@@ -1,0 +1,16 @@
+spice
+* SPICE netlist
+* Voltage Source
+Vsig 10 8 DC 0
+
+* Resistors
+R_sig 7 9 R'sig
+R_L 11 3 R'_L
+
+* Capacitors
+C_gd 9 5 Cgd
+C_gs 9 6 Cgs
+C_L 4 2 CL
+
+* Voltage-Controlled Current Source
+G_m 6 0 8 6 gm

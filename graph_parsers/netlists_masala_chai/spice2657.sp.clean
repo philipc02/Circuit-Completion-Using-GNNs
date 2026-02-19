@@ -1,0 +1,19 @@
+spice
+* SPICE Netlist
+* VDD connected to node 4
+VDD 4 0 DC Vdd_value
+
+* Current source I_REF
+IREF 4 4 DC Iref_value
+
+* PMOS M0: Drain=4, Gate=2, Source=4
+M0 4 2 4 4 PMOS_MODEL
+
+* NMOS M1: Drain=3, Gate=2, Source=5
+M1 3 2 5 5 NMOS_MODEL
+
+* Node voltages
+Vb 2 0 DC Vb_value
+
+* End of netlist
+.end

@@ -1,0 +1,27 @@
+spice
+* SPICE netlist for the given schematic
+
+*.model statements for the MOSFETs (example: LEVEL=1, here assumed)
+.model NMOS NMOS LEVEL=1
+.model PMOS PMOS LEVEL=1
+
+* NMOS Transistor
+M1 3 7 8 8 NMOS
+
+* PMOS Transistor
+M2 4 2 5 5 PMOS
+
+* Current Source I
+I1 5 4 DC I
+
+* Current Source 2I
+I2 8 6 DC 2I
+
+* Voltage Source VDD
+VDD 5 0 DC VDD
+
+* Voltage Source VSS
+VSS 6 0 DC -VSS
+
+* Input node for reference
+Vin 7 0 DC Vi

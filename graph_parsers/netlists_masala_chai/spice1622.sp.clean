@@ -1,0 +1,20 @@
+spice
+* Differential Amplifier Netlist
+
+Q1 Vout Vin1 2 NPN
+Q2 Vout Vin2 2 NPN
+Q3 Vb Vout VCC PNP
+Q4 VCC Vout Vb PNP
+
+I1 2 0 DC IEE
+
+Vcc VCC 0 DC 15
+Vb Vb 0 DC 5
+
+Vin1 Vin1 0 DC 1
+Vin2 Vin2 0 DC 1.1
+
+.model NPN NPN
+.model PNP PNP
+
+.end

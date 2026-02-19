@@ -1,0 +1,25 @@
+plaintext
+* SPICE Netlist
+* Components
+
+* Transistors
+M_A 1 2 0 0 NMOS
+M_B 2 4 0 0 NMOS
+
+* Capacitor
+C1 1 2 C_VALUE
+
+* Inductor
+L1 2 3 L_VALUE
+
+* Voltage Source
+VDD 3 0 DC VDD_VALUE
+
+* Nodes
+* 1 -> Connected to VDD through C1 and M_A
+* 2 -> Common connection for C1, M_A, and M_B
+* 3 -> Connected to VDD through L1
+* 4 -> Node for M_B gate
+* 0 -> Ground
+
+*.end

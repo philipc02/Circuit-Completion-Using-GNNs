@@ -1,0 +1,15 @@
+* Component connections
+Ix 3 4 DC 1.0
+
+* Resistors
+Rrpi1 4 5 rpi1_value
+Rrpi2 2 3 rpi2_value
+Rc1 6 0 RC_value
+Rc2 7 0 RC_value
+
+* Voltage Controlled Voltage Sources
+Gm1 5 0 4 0 gm1_value
+Gm2 2 0 3 0 gm2_value
+
+* Voltage Source
+Vx 3 0 DC vx_value

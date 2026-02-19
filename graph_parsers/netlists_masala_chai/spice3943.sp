@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist for the Amplifier Circuit
+
+VCC 6 3 DC 10V
+VS 4 3 DC
+RS 4 5 0.5k
+R1 2 6 56k
+R2 2 7 12.2k
+RC 6 9 2k
+RE 8 3 0.4k
+CC 5 7 
+
+Q1 9 7 8 NPN
+
+.END

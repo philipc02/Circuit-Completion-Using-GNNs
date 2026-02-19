@@ -1,0 +1,16 @@
+plaintext
+* SPICE Netlist
+
+* Voltage Source
+V1 4 6 DC <Vs_value>
+
+* Resistors
+R1 4 0 Rs_value
+R2 4 3 R_i'_value
+R3 2 0 Ro_value
+
+* Voltage Source with gain
+E1 2 3 5 0 <Av_value>
+
+* Output connection
+V2 5 0 DC 0

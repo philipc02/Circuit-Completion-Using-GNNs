@@ -1,0 +1,17 @@
+plaintext
+* Netlist for the given schematic
+
+* Transistor M1 (NMOS)
+M1 5 4 6 6 NMOS
+
+* Transistor M2 (PMOS)
+M2 5 5 VDD VDD PMOS
+
+* Resistor R1
+R1 5 2 10k ; Example resistor value
+
+* Voltage Source Vx
+Vx 2 3 DC 5 ; Example voltage value
+
+* Nodes
+VDD 5 0 DC 10 ; Example supply voltage

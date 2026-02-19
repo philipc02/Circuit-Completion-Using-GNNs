@@ -1,0 +1,18 @@
+spice
+* BJT Amplifier Circuit
+
+Q1 2 Vin 0 QMODEL
+Q2 2 Vb1 4 QMODEL
+Q3 Vout Vb2 2 QMODEL
+
+VCC VCC 0 DC 10V
+Vin Vin 0 DC 0V
+Vb1 Vb1 0 DC 2V
+Vb2 Vb2 0 DC 5V
+
+* Define transistor model
+.model QMODEL NPN (Is=1e-16 Bf=100)
+
+* Simulation and analysis statements
+.tran 1n 100n
+.end

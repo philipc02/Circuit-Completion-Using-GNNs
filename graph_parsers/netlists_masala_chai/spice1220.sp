@@ -1,0 +1,19 @@
+spice
+* SPICE Netlist
+
+VDD 4 0 DC 1.8V
+VB 5 0 DC <value>   ; Specify the bias voltage value
+
+M1 0 3 0 0 NMOS     ; M1 (Drain, Gate, Source, Body)
+M2 2 3 4 4 PMOS     ; M2 (Drain, Gate, Source, Body)
+
+* Model declarations (if needed)
+.model NMOS nmos
+.model PMOS pmos
+
+* Analysis commands (optional)
+*.op
+*.dc
+*.ac
+
+.end

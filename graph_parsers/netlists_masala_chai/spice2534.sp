@@ -1,0 +1,16 @@
+* SPICE Netlist for the given schematic
+
+VDD 3 0 DC VDD
+VIN 1 0 DC Vin
+
+M1 5 1 0 0 NMOS
+M2 5 2 3 3 PMOS
+
+R1 3 2 R1_value
+R2 2 5 R2_value
+
+* Specify models for NMOS and PMOS if necessary
+.model NMOS NMOS
+.model PMOS PMOS
+
+.end

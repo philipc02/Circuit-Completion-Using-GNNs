@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist Example
+* Nodes: vin = 4, Ic - (positive terminal) = 2, R'e = 4 to 6, RC = 2 to 3, RL = 2 to 5, ground = 0
+
+* Current Source
+I1 2 6 DC 0.1A  * Assumed current value
+
+* Resistors
+R1 4 6 R'e_value  * Replace R'e_value with actual resistor value in ohms
+R2 2 3 RC_value   * Replace RC_value with actual resistor value
+R3 2 5 RL_value   * Replace RL_value with actual resistor value
+
+*.end

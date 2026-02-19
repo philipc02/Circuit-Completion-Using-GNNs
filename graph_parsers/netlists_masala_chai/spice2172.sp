@@ -1,0 +1,3 @@
+spice
+M1 Vout Vin VDD Vout NMOS
+I1 Vout 0 DC 1A

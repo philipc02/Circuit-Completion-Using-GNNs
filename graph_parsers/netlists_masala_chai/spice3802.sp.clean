@@ -1,0 +1,7 @@
+* NMOS Transistor Circuit
+VDD 1 0 DC 2.5V
+M1 1 3 2 2 NMOS
+RS 2 0 0.5k
+VIN 3 0 DC
+.MODEL NMOS NMOS (LEVEL=1)
+.END

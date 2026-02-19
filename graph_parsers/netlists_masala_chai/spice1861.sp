@@ -1,0 +1,18 @@
+* Amplifier Circuit Netlist
+
+VCC 3 0 DC 15V
+Iin 1 0 DC 1mA
+
+RC 2 3 1k
+RF 2 5 10k
+RM 4 3 500
+
+Q1 5 1 2 NMOS
+Q2 4 2 0 PMOS
+
+Vout 4 0 
+
+.model NMOS NMOS (level=1)
+.model PMOS PMOS (level=1)
+
+.end

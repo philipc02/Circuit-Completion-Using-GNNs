@@ -1,0 +1,6 @@
+spice
+*MOSFET Circuit
+M1 3 5 2 2 NMOS_LVL3
+RD 4 3 1k
+VGS 5 0 DC 0V
+VIN 4 0 DC 0V

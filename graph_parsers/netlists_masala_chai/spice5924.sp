@@ -1,0 +1,7 @@
+spice
+* Netlist for given schematic
+M1 6 5 4 4 NMOS
+M2 2 7 6 6 NMOS
+M3 8 3 2 2 NMOS
+V1 5 4 Vi
+V2 8 0 VDD

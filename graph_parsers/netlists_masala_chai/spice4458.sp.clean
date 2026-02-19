@@ -1,0 +1,23 @@
+spice
+* MOSFETs
+M1 3 4 8 8 NMOS
+M2 3 6 5 5 NMOS
+M3 8 3 8 8 PMOS
+M4 5 3 8 8 PMOS
+M5 2 2 3 3 PMOS
+M6 3 3 3 3 PMOS
+M7 3 6 5 5 NMOS
+M8 2 2 5 5 PMOS
+
+* Current Source
+ISET 5 8 DC
+
+* Resistor
+RSET 5 8
+
+* Capacitor
+C1 6 7
+
+* Voltage Sources
+V1 3 0 DC
+V2 5 0 DC

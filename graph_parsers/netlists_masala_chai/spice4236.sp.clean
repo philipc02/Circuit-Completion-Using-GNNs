@@ -1,0 +1,20 @@
+plaintext
+* Transistors
+Q1 3 10 11 QNPN
+Q2 5 2 4 QNPN
+Q3 7 2 4 QPNP
+Q4 4 4 9 QPNP
+Q5  7 4 6 QPNP
+Q6 4 4 6 QPNP
+
+* Resistor
+R1 2 5 R1
+
+* Current Source
+IREF 5 2 DC IREF_VALUE
+
+* Voltage Sources
+VEE 11 4 -VEE
+VEB 8 4 VEB
+VBE 4 2 VBE
+VCC 7 4 VCC

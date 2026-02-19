@@ -1,0 +1,8 @@
+plaintext
+* SPICE netlist for the provided circuit
+
+V1 6 5 DC 0
+V2 3 33 DC 0
+R1 4 7 R
+Cj1 6 5 Cj/2
+Cj2 2 5 Cj/2

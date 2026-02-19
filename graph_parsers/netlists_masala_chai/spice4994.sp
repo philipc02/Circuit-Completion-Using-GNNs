@@ -1,0 +1,19 @@
+spice
+* SPICE Netlist for the Circuit
+
+VDD 1 0 DC VDD
+Vin 5 8 AC 1
+
+R1 3 1 R1_value
+R2 2 0 R2_value
+RD 3 9 RD_value
+RL 9 0 RL_value
+
+C1 5 2 C1_value
+C2 9 3 C2_value
+
+M1 3 2 4 4 NMOS_Model
+
+*.options reltol=0.001
+
+*.end

@@ -1,0 +1,24 @@
+plaintext
+* SPICE Netlist for the given circuit
+
+* Resistors
+R1 1 4 R
+R2 2 4 R
+
+* Capacitors
+C3 4 3 1.414C
+C4 2 0 0.707C
+
+* Operational Amplifier
+X1 2 4 3 opamp
+
+* Voltage input (placeholder)
+Vin 1 0 DC 0
+
+* Op-Amp model definition
+.subckt opamp noninv inv out
+* Ideal Op-Amp model
+G1 out 0 value={V(noninv) - V(inv)}
+.ends opamp
+
+.end

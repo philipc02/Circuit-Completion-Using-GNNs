@@ -1,0 +1,15 @@
+* SPICE Netlist for the given schematic
+
+V1 4 0 DC Vs
+R1 4 2 R
+C1 2 3 C
+XOPAMP 0 2 2 opamp
+VOUT 2 0 
+
+* Subcircuit for operational amplifier (ideal model)
+.subckt opamp in+ in- out
+* This is a generic opamp model 
+* For realistic simulations, replace with specific opamp model
+.ends opamp
+
+.end

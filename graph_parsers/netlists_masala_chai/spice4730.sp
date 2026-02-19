@@ -1,0 +1,6 @@
+* SPICE Netlist
+Q1 4 8 5 NPN
+RB 7 4 500k
+RC 4 6 3k
+VBB 7 0 DC 15V
+VCC 6 0 DC 15V

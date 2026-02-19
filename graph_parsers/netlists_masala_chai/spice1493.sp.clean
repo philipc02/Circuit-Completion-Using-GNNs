@@ -1,0 +1,17 @@
+* Inductor
+L1 3 4
+
+* Capacitor
+C1 4 2
+
+* Voltage Source
+V1 2 0 DC 2V
+
+* Ground
+V2 5 0 DC 0V
+
+* Connections
+Vin1 3
+Vin2 2
+
+.END

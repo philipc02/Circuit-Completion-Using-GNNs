@@ -1,0 +1,27 @@
+spice
+* Netlist for the provided schematic
+
+VDD 2 0 DC 5V
+
+* Resistors
+RD1 3 2 10k
+RD2 3 3 10k
+RD3 3 4 10k
+
+* NMOS Transistors (assuming default model for simplicity)
+M1 3 1 0 0 NMOS
+M2 3 1 0 0 NMOS
+M3 4 0 0 0 NMOS
+
+* Capacitors
+C1_1 1 0 10p
+C1_2 1 0 10p
+CC 1 0 2p
+
+* Voltage source
+VIN 1 0 DC 0V
+
+* Outputs
+VOUT 4 0 DC 0V
+
+* End of netlist

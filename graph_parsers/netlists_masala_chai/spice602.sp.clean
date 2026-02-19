@@ -1,0 +1,2 @@
+Iin 3 2 DC 0
+D1 3 2 D_MODEL

@@ -1,0 +1,7 @@
+plaintext
+* SPICE netlist for given schematic
+V1 3 4 DC 24V
+R1 3 2 1.5k
+* Ground connections
+V1 4 0
+R1 2 0

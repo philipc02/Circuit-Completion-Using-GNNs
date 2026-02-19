@@ -1,0 +1,12 @@
+spice
+* Netlist for given schematic
+V1 3 0 DC Vin
+R1 2 3  R1_value
+C1 4 2  C1_value
+R2 4 5  R2_value
+C2 5 2  C2_value
+XOP 6 4 2 opamp
+VOUT 8 6 DC 0
+
+* Model Definitions
+.model opamp OPAMP(infinite_lat=1e12 gain=1e7 bandwidth=1e6)

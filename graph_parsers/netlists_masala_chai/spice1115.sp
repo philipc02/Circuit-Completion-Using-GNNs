@@ -1,0 +1,4 @@
+spice
+M1 (2 0 0 0) NMOS
+R_D (2 V_DD) 1k
+V_DD V_DD 0 DC <voltage_value>

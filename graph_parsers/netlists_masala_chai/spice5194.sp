@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist for the given op-amp circuit
+
+R1 1 2 R   ; Resistor R between vin and op-amp input
+R2 2 4 10R ; Feedback resistor >= 10R
+
+C1 3 2 C   ; Capacitor C
+
+VCC 3 0 DC ; Positive supply voltage
+VEE 2 0 DC ; Negative supply voltage
+
+* Op-amp configuration
+* The op-amp is represented by a standard model
+XOP 2 0 4 opamp ; Op-amp with inputs and output
+
+* Input source
+VIN 1 0 DC 0V ; Input voltage source
+
+* .MODEL statement for the op-amp (generic)
+.model opamp opamp

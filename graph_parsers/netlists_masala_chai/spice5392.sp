@@ -1,0 +1,7 @@
+spice
+* AC circuit spice netlist
+V1 7 9 AC 10V SIN(0 10 5k)
+R1 7 4 1k
+C1 4 3 0.1u
+R2 3 2 680
+C2 5 2 0.047u

@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist
+
+V1 6 4 DC Vin
+Rpi 6 5 rpi
+I1 5 4 DC I1
+Gm 2 22 VALUE={gm*(V(5,4))}
+RL 2 3 RL
+
+.END

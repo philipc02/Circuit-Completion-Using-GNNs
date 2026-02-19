@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist for the given circuit
+
+VDD 5 0 DC 15V
+
+RG 6 8 1MEG
+RS 2 0 220
+RL 3 0 3K
+R 5 2 1K
+
+Vin 6 0 AC 1
+
+* NMOS Transistor Model
+M1 5 6 2 2 NMOS L=1U W=1U KP=2.0E-3
+
+* Capacitors
+Cin 6 9 0
+Cf 5 7 0
+
+.END

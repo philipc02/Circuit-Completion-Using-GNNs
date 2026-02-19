@@ -1,0 +1,12 @@
+spice
+* SPICE Netlist for the given circuit
+R1 4 2  <value_of_R1>
+R2 2 7  <value_of_R2>
+RE 3 6  <value_of_RE>
+
+V1 4 0 2V
+V2 7 0 -2V
+V3 3 0 5V
+V4 5 0 -5V
+
+Q1 2 6 5 NPN

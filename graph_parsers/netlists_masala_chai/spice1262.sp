@@ -1,0 +1,4 @@
+spice
+VDD V_DD 2 DC 1.8V
+M1 2 Vin 1 1 PMOS
+I1 1 0 DC 1mA

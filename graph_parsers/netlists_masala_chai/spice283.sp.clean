@@ -1,0 +1,28 @@
+* SPICE netlist for the given circuit
+
+* Resistors
+Rx 1 4  r_x
+Rin 4 5  r_in
+Ro 3 5  r_o
+
+* Capacitors
+Cin 5 7  C_in
+Cf 4 2  C_f
+
+* Voltage-controlled current source
+Gm 3 8 6 8  g_m
+
+* Voltage source for V1
+V1 7 8 DC 0
+
+* Nodes annotations:
+* 1 - Node between B or G and Rx
+* 2 - Node between Cf and C or D
+* 3 - Node between gmV1 and ro
+* 4 - Node between Rx, Cf and Rin
+* 5 - Node between Rin, Cin, Ro
+* 6 - Positive terminal of gmV1
+* 7 - Positive terminal of Cin (V1)
+* 8 - Node between negative terminal of Cin (V1), E or S 
+
+.end

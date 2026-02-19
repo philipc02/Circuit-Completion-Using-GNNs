@@ -1,0 +1,8 @@
+plaintext
+* SPICE Netlist
+VCC 3 0 DC 10V
+Vin 7 6 SIN(0 1 1k)
+RC1 3 X 1k
+RC2 3 Y 1k
+Q1 X 6 0 NPN
+Q2 Y 2 0 NPN

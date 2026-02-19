@@ -1,0 +1,9 @@
+spice
+* Differential Amplifier Netlist
+M1 3 4 5 5 NMOS
+M2 2 8 9 9 NMOS
+M3 3 2 6 6 PMOS
+M4 2 8 7 7 PMOS
+ISS 5 0 DC
+VDD 6 0 DC
+VIN 4 0 DC

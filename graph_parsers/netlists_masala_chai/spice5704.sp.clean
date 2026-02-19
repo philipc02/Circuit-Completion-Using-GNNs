@@ -1,0 +1,12 @@
+spice
+* NMOS Transistor
+M1 3 6 2 2 nmos
+
+* Voltage Source v_G
+V1 6 4 DC 0
+
+* Voltage Source
+V2 3 2 DC 1V
+
+* Ground
+V0 4 0 DC 0

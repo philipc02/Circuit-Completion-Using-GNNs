@@ -1,0 +1,4 @@
+Vin 5 1 DC V1
+Gm 2 1 4 1 gm
+Ro 2 3 ro
+RL 3 1 RL

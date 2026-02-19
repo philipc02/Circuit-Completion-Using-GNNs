@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist
+* NMOS Transistor Definition
+M1 3 4 3 3 NMOS_MODEL
+
+* Current Source
+I1 5 3 gm2
+
+* Voltage Source
+V1 5 0 DC V1_VALUE
+
+* Resistors
+RrO2 5 2 rO2
+RrO1 4 3 rO1
+
+* End of Netlist

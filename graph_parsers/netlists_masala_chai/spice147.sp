@@ -1,0 +1,22 @@
+spice
+* SPICE Netlist for the Given Schematic
+
+* Voltage sources
+VDD 9 0 DC VDD
+VSS 3 0 DC VSS
+VBIAS 5 0 DC IBIAS
+
+* Current source
+IBIAS 9 6 DC IB
+
+* NMOS Transistors
+M1 2 7 3 3 NMOS  ; T1
+M2 2 8 3 3 NMOS  ; T2
+M3 2 9 3 3 NMOS  ; T3
+M4 2 2 3 3 NMOS  ; T4
+
+* PMOS Transistors
+M5 3 6 5 5 PMOS  ; T5
+M6 6 5 9 9 PMOS  ; T6
+
+* End of netlist

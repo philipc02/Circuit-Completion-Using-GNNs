@@ -1,0 +1,9 @@
+* SPICE Netlist
+M1 6 3 0 0 NMOS
+RD 5 6 RD_VALUE
+Ron 6 0 Ron_VALUE
+VDD 5 4 DC VDD_VALUE
+Vin 3 0 DC Vin_VALUE
+
+* Model Definitions
+.model NMOS NMOS_MODEL

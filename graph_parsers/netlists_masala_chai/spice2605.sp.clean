@@ -1,0 +1,16 @@
+plaintext
+*MOSFETs
+M1 X Vin 11 NMOS
+M2 Y Vin 11 NMOS
+M3 VDD 4 8 PMOS
+M4 VDD 2 10 PMOS
+
+*Current Source
+Iss 11 0 DC 1mA
+
+*Voltage Supply
+VDD VDD 0 DC 5V
+
+*Connections
+Vds Vout X 0
+Vds Vout Y 0

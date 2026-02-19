@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+V1 5 0 AC 8V SIN(0 8 20k)
+R1 5 6 10k
+C1 6 4 560p
+C2 6 2 560p

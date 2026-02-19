@@ -1,0 +1,9 @@
+* Simple CMOS Inverter
+M1 Vout Vin VCC VCC PMOS
+M2 Vout Vin 0 0 NMOS
+V1 VCC 0 DC 5V
+Vin Vin 0 DC
+Vout Vout 0
+.model PMOS PMOS
+.model NMOS NMOS
+.end

@@ -1,0 +1,25 @@
+spice
+* NMOS Transistor M1
+M1 5 4 6 6 NMOS
+
+* NMOS Transistor M2
+M2 8 2 6 6 NMOS
+
+* Resistors
+RD1 5 VDD 10k
+RD2 8 VDD 10k
+RSS 6 0 100
+
+* Current Source
+I1 6 0 DC 1mA
+
+* Voltage Sources
+V1 4 0 DC Vin1
+V2 2 0 DC Vin2
+VDD VDD 0 DC 5V
+
+* Output Nodes
+Vout1 5 0
+Vout2 8 0
+
+* End of netlist

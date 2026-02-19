@@ -1,0 +1,15 @@
+plaintext
+* SPICE Netlist
+VCC 7 0 DC 5V
+V1 0 4 DC
+V2 0 5 DC
+
+RC 7 3 1k
+
+RB1 0 4 10k
+RB2 0 5 10k
+
+Q1 3 0 4 QNPN
+Q2 6 5 22 QNPN
+
+.model QNPN NPN

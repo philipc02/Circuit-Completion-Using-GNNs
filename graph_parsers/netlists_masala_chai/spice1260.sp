@@ -1,0 +1,10 @@
+plaintext
+* Example SPICE Netlist
+VDD 2 0 DC 5V
+I1 2 3 DC 1mA
+R1 3 0 10k
+M1 3 4 4 4 NMOS_MODEL
+VIN 4 0 DC 0V
+
+* Models
+.model NMOS_MODEL NMOS(Level=1)

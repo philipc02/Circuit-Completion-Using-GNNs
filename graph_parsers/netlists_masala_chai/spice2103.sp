@@ -1,0 +1,1 @@
+M1 X Vb VDD X NMOS

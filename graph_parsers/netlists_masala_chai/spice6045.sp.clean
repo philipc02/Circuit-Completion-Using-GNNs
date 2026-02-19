@@ -1,0 +1,15 @@
+plaintext
+* Transistors
+Q4 2 4 2 NPN
+Q5 7 2 7 NPN
+
+* Resistors
+R2 4 3 R2_value
+R3 7 3 R3_value
+R3 5 0 R3_value
+
+* Voltage Sources
+V01 2 0 v01_value
+
+* Output
+Vout 5 0

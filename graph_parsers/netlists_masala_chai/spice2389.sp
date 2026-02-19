@@ -1,0 +1,18 @@
+spice
+* PMOS Transistors (M1-M4)
+M1 4 8 8 8 PMOS
+M2 4 2 2 2 PMOS
+M3 4 3 3 3 PMOS
+M4 4 3 3 3 PMOS
+
+* NMOS Transistors (M5-M8)
+M5 2 2 10 10 NMOS
+M6 3 3 3 11 NMOS
+M7 2 2 10 10 NMOS
+M8 3 3 3 11 NMOS
+
+* Model definitions
+.model PMOS PMOS
+.model NMOS NMOS
+
+.end

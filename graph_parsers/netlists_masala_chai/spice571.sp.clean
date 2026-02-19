@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+Q1 1 2 4 NPN
+R1 3 2 r_pi*(beta+1)*RE
+RE1 4 0 RE
+VAC 4 0 AC 0

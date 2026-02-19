@@ -1,0 +1,22 @@
+plaintext
+* SPICE Netlist for given schematic
+
+* Voltage Sources
+V_in 1 0 DC=V_in
+V_b1 3 0 DC=V_b1
+V_b2 5 0 DC=V_b2
+V_b3 6 0 DC=V_b3
+V_CC 4 0 DC=V_CC
+
+* BJTs
+Q1 2 1 3 QNPN
+Q2 2 3 4 QNPN
+Q3 5 2 4 QNPN
+Q4 4 5 6 QNPN
+
+* Resistors
+R_op 4 2 R_op
+R_on 2 0 R_on
+
+* Model Definitions
+.model QNPN NPN(IS=1e-14 BF=100 VAF=100)

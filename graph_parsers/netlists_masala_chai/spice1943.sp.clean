@@ -1,0 +1,20 @@
+spice
+* NPN Transistor Q1
+Q1 2 3 2 npn
+
+* NPN Transistor Q2
+Q2 2 3 2 npn
+
+* Voltages
+VCC 2 0 DC VCC
+VEET 2 0 DC VEE
+VB 3 0 DC VB
+
+* Load Resistor
+RL 2 0 RL
+
+* Input
+Vin 4 0 DC Vin
+
+* Output
+Vout 2 0

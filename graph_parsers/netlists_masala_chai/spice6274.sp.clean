@@ -1,0 +1,14 @@
+spice
+* SPICE Netlist for the circuit
+
+VDD 6 0 DC 5V
+
+* PMOS Transistors
+M1 2 5 6 6 PMOS
+M2 4 2 3 3 PMOS
+
+* Connections to output
+Y 4 0 
+
+* Model Definitions
+.model PMOS PMOS

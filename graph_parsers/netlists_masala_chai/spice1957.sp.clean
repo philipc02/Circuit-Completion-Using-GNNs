@@ -1,0 +1,18 @@
+spice
+* SPICE Netlist for the given schematic
+
+* Resistors
+RrOS 2 VDD rOS
+R2rD 4 2 2rD
+RrO4 7 0 rO4
+
+* NMOS Transistors
+* NMOS model is used for both Q1 and Q2, assuming default model
+M1 VDD 2 3 3 NMOS
+M2 3 2 6 6 NMOS
+
+* Load Resistor
+Rout 3 6 Rout
+
+* Voltage Definitions
+VDD VDD 0 DC <Value>

@@ -1,0 +1,19 @@
+plaintext
+* SPICE netlist for the given schematic
+
+Vi 3 0 DC 0
+Rg 1 3 200k
+C1 1 2
+M1 5 2 0 0 NMOS
+Rs 0 4 
+RL 2 6 2k
+Ro 2 6
+C2 2 6
+
+Vdd 5 0 DC 5
+Vss 0 4 DC -5
+
+* NMOS transistor model
+.model NMOS NMOS
+
+.end

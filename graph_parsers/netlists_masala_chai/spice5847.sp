@@ -1,0 +1,13 @@
+spice
+* NPN BJT Circuit
+
+VCC 4 0 DC 12V
+
+RB 4 2 10k
+RC 4 3 1k
+
+Q1 3 2 2 NPN_MODEL
+
+.model NPN_MODEL NPN (IS=1E-14 BF=100 VAF=100)
+
+.end

@@ -1,0 +1,29 @@
+spice
+* SPICE Netlist for the Circuit
+
+* Voltage Sources
+VIN 1 0 DC 0
+VOUT 5 0
+
+* Resistors
+R1 6 5 22
+R2 1 2 1k  ; Assuming 1k for R2
+R3 5 4 1k  ; Assuming 1k for R3
+R4 4 0 1k  ; Assuming 1k for R4
+
+* Diode
+D1 1 0 DIODE
+
+* Operational Amplifier
+* Use an ideal op-amp model
+XOA 2 6 0 5 opamp
+
+* Transistor - BJT
+* Assume NPN transistor
+Q1 4 2 3 NPN
+
+.model DIODE D
+.model NPN NPN
+.model opamp OPAMP_LIB
+
+.end

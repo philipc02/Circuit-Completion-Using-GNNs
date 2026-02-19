@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist
+* Components and connections
+
+V1 2 0 AC 1         ; AC voltage source connected at node 2 with amplitude 1V
+D1 2 3 DIODEVALUE   ; Diode with anode at node 2 and cathode at node 3
+C1 3 0 1uF          ; Capacitor connected between node 3 and ground (1uF)
+R1 3 5 1k           ; Resistor connected between node 3 and node 5 (1k ohm)
+I1 5 0 DC           ; Current source (Idc) flowing through the resistor
+
+.model DIODEVALUE D ; Diode model placeholder
+
+.END

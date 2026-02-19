@@ -1,0 +1,7 @@
+VCC 1 0 DC 24
+R1 2 1 10k
+R2 2 0 2.7k
+RC 1 3 470
+RE 3 4 220
+Q1 3 2 4 QNPN
+.model QNPN NPN

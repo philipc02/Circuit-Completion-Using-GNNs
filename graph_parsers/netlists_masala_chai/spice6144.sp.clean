@@ -1,0 +1,14 @@
+spice
+* SPICE Netlist for the Given Circuit
+
+* Transistors
+Q1 4 4 6 NPN
+Q2 3 2 5 NPN
+
+* Current Source
+Iin 4 0 DC 0 
+
+* Voltage Source
+VCC 3 0 DC VCC
+
+* End of Netlist

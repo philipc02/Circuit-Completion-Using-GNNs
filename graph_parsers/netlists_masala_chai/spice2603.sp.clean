@@ -1,0 +1,20 @@
+spice
+* MOS differential pair with resistive load
+VDD 8 0 DC VDD
+
+* Resistors
+RD_left 3 8 RD
+RD_right 2 7 RD
+RSS 4 0 RSS
+
+* NMOS Transistors
+M1 3 5 4 4 NMOS_MODEL
+M2 2 3 4 4 NMOS_MODEL
+
+* Voltage Sources
+VDD 7 0 DC VDD
+
+* Simulation commands
+*.model NMOS_MODEL NMOS(VTO=0.7 KP=100u)
+*.op
+*.end

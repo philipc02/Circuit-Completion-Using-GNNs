@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist for the given schematic
+
+* NPN BJT Transistor
+Q1 Vout Vin VEE QNPN
+
+* Current Source
+I1 VEE Vin DC 0.01
+
+* Resistor
+RL Vout 2 1k
+
+* Voltage Sources
+VCC VCC 0 DC 12
+VEE VEE 0 DC -12
+
+* Model Definitions
+.model QNPN NPN (IS=1E-14 BF=100)
+
+* End of Netlist

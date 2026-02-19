@@ -1,0 +1,12 @@
+* SPICE netlist
+V1 3 0 DC Vin0
+V2 4 0 DC Vb
+R1 2 1 Rout
+
+* PMOS (M1): Drain-Gate-Source
+M1 1 3 2 2 PMOS_MODEL
+
+* NMOS (M2): Drain-Gate-Source
+M2 2 4 0 0 NMOS_MODEL
+
+.END

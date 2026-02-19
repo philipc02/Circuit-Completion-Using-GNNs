@@ -1,0 +1,17 @@
+spice
+* NMOS Transistor (Drain, Gate, Source)
+M1 4 3 5 NMOS_MODEL
+
+* Resistors
+R1 6 2 1k
+R2 3 6 1k
+RD 4 5 1k
+
+* Voltage Source
+VDD 3 0 DC 1.8
+
+* Current Source
+ID 4 5 DC 0
+
+.model NMOS_MODEL NMOS
+.end

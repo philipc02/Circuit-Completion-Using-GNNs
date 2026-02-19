@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist for the given circuit
+
+V1 3 0 DC Vin
+V2 5 4 DC Vb
+M1 3 5 2 2 NMOS
+Rs 2 0 Rs
+
+* Models and other definitions
+.model NMOS NMOS

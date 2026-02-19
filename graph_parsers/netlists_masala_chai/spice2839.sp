@@ -1,0 +1,18 @@
+spice
+* NMOS Transistor M1
+M1 5 3 6 6 NMOS
+
+* Voltage Source VDD
+VDD 2 222 DC <value>
+
+* Resistor RD
+RD 2 5 <value>
+
+* Current Source In,in
+Iin 3 0 DC <value>
+
+* Capacitor Cin
+Cin 3 7 <value>
+
+* Connections
+Vn2_out 4 5 <value>

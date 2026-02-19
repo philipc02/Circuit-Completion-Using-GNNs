@@ -1,0 +1,19 @@
+spice
+* Transistors
+Q1 6 3 4 NPN 
+Q2 3 5 4 NPN
+
+* Resistors
+R 5 4 1k
+RL 2 0 1k
+
+* Diode
+D1 5 4 D
+
+* Voltage Supplies
+VCC 6 0 DC 15
+VEE 4 0 DC -15
+
+* .MODEL statements
+.model NPN NPN(...)
+.model D D(...)

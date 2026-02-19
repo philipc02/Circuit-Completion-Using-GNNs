@@ -1,0 +1,9 @@
+plaintext
+* SPICE netlist
+I1 9 8 0 i_signal
+R1 8 7 RS
+V1 9 4 AC V1/1.414
+I2 5 2 DC 2i_f
+R2 3 2 ri
+V2 2 2 AC GVx
+R3 2 2 RL

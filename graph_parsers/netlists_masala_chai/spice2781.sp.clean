@@ -1,0 +1,21 @@
+plaintext
+* SPICE Netlist
+VDD 5 1 DC VDD
+
+* Transistors
+M1 2 4 1 1 NMOS
+M2 3 2 1 1 NMOS
+
+* Resistors
+RD_left 6 4 RD
+RD_right 6 3 RD
+ro3 2 1 ro3
+
+* Capacitors
+CL_left 4 1 CL
+CL_right 3 1 CL
+CP 2 1 CP
+
+* Nodes
+* Node 1 is ground
+* Node 5 is VDD

@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist
+Vs 1 4 DC 0V
+Vplus 7 0 DC 5V
+Vminus 0 6 DC -5V
+Rc 7 3  R
+Rs 1 4 2.5k
+Rl 5 0 5k
+Cc 3 5 C
+Re 3 2 R
+Ce 2 6 C
+Q1 4 3 2 NPN
+.model NPN NPN

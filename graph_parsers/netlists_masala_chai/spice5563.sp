@@ -1,0 +1,25 @@
+spice
+* SPICE Netlist for the given circuit
+
+* Voltage Source
+V1 3 8 DC 1V
+
+* Resistors
+R1 6 2 1k
+R2 2 7 9k
+R3 7 5 1k
+
+* Connections to Op-Amp
+* Node 2 is the inverting input (-), Node 3 is the non-inverting input (+)
+* Node 7 is the output
+
+* Op-Amp Connection
+XOPAMP 2 3 7 opamp
+
+* Ground
+GND 6 0
+GND 8 0
+GND 5 0
+
+* Define the Op-Amp model
+.model opamp opamp

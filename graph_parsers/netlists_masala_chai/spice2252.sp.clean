@@ -1,0 +1,11 @@
+spice
+* NMOS Amplifier Circuit
+M1 2 3 1 1 NMOS
+Rs 1 0 500
+VDD 2 0 DC 1.8V
+Vin 3 0 DC
+
+* Model Definitions
+.model NMOS NMOS (LEVEL=1 VTO=0.7 KP=50u)
+
+.end

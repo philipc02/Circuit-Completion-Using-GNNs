@@ -1,0 +1,11 @@
+* SPICE netlist for given circuit
+
+RS 8 2 10k
+RF 2 4 82k
+R1 2 3 4.96k
+R2 3 0 5.28k
+RC 4 6 10k
+I1 2 4 DC 18.9m
+VX 6 5 DC 0
+
+V1 5 0 DC 0

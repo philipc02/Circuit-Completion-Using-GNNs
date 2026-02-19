@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist for the Circuit
+
+V1 5 0 AC 1       ; AC Voltage Source 
+D1 4 3 D_MODEL    ; Diode
+RL 3 2 1000       ; Resistor RL with 1k ohms
+.model D_MODEL D  ; Diode model
+
+* Nodes
+* 5 - Vin
+* 4 - Diode Anode
+* 3 - Output to Resistor & Diode Cathode
+* 2 - Ground for Resistor
+* 0 - Global Ground
+
+.end

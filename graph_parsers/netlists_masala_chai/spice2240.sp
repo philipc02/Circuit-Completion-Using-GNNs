@@ -1,0 +1,9 @@
+plaintext
+* NMOS with drain, gate, source connected
+M1 Vout Vb Vin Vin NMOS
+
+* Resistor
+RD VDD Vout 1k
+
+* Voltage Sources
+VDD VDD 0 DC 1.8V

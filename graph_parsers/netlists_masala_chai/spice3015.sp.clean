@@ -1,0 +1,20 @@
+spice
+* PMOS Transistors
+M3 2 2 3 3 PMOS
+M4 4 2 4 4 PMOS
+
+* NMOS Transistors
+M1 5 6 5 5 NMOS
+M2 7 5 5 5 NMOS
+
+* Current Source
+I1 5 0 DC Iss
+
+* Voltage Source
+VDD 3 0 DC 1V
+
+* Input
+Vin 6 0
+
+* Output
+Vout 7 0

@@ -1,0 +1,23 @@
+plaintext
+* NMOS Transistor: M1
+* 1: Drain, 2: Gate, 3: Source
+
+M1 2 4 3 3 NMOS
+
+* Resistor: RF
+* 4: Node 1, 2: Node 2
+
+RF 4 2 R
+
+* Current Source: Iout
+* 2: Positive terminal, 0: Negative terminal
+
+Iout 2 0 DC 0
+
+* Voltage Source: Vin
+* 5: Positive terminal, 0: Negative terminal
+
+Vin 5 0 DC
+
+* Node connections
+* 2: Connected node

@@ -1,0 +1,17 @@
+spice
+* SPICE netlist for the given schematic
+
+M1 4 5 8 8 NMOS
+M2 2 6 8 8 NMOS
+M3 5 4 3 3 PMOS
+M4 2 4 3 3 PMOS
+I1 8 0 DC Iss
+
+* Define models for NMOS and PMOS
+.model NMOS NMOS (Level=1)
+.model PMOS PMOS (Level=1)
+
+* VDD supply voltage
+VDD 3 0 DC VDD
+
+* End of netlist

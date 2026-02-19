@@ -1,0 +1,6 @@
+spice
+* NMOS Inverter Circuit Description
+
+VDD 1 0 DC 1.8V
+R1 1 2 R
+M1 2 3 4 4 NMOS L=1u W=1u

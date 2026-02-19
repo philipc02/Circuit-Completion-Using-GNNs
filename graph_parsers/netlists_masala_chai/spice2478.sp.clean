@@ -1,0 +1,19 @@
+plaintext
+* NMOS and PMOS transistors with bulk connected to source
+M1 3 5 2 2 NMOS 
+M2 3 4 2 2 NMOS 
+
+* Resistor
+RD 3 Vout RD
+
+* Voltage Source
+VDD VDD 3 DC 5V 
+
+* Input Source
+Vin 5 0 DC 0V AC 1V
+
+* Ground
+VSS 2 0 DC 0V
+
+.model NMOS NMOS(Level=1)
+.model PMOS PMOS(Level=1)

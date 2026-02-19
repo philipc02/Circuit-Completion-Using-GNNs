@@ -1,0 +1,14 @@
+spice
+* SPICE Netlist
+Vs 6 7 DC [value]    * Voltage source Vs with positive terminal at Node 6 and negative terminal at Node 7
+Rs 6 2 [value]       * Resistor Rs between Node 6 and Node 2
+Igm 3 2 [value]      * Current source gm*Vx with positive terminal at Node 3 and negative terminal at Node 2
+R_L 5 4 [value]      * Resistor R'L between Node 5 and Node 4
+
+* Nodes:
+* Node 2: Common connection for Rs and Igm
+* Node 6: Connection for positive terminal of Vs and one terminal of Rs
+* Node 7: Ground connection for Vs
+* Node 3: Positive terminal of Igm
+* Node 5: One terminal of R'L
+* Node 4: The other terminal of R'L

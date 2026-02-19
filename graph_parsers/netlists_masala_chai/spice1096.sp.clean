@@ -1,0 +1,12 @@
+* Netlist for the provided schematic
+
+M1 2 5 3 3 NMOS
+
+V1 5 0 DC 0.5
+V2 3 0 DC 0.5
+V3 2 4 DC 2.0
+
+* NMOS model (example parameters, adjust if needed)
+.model NMOS NMOS (Level=1 VTO=0.7 KP=120u)
+
+.end

@@ -1,0 +1,4 @@
+plaintext
+M2 Net2 Vb Vdd Vdd PMOS
+M1 Vout Vin Net3 Net3 NMOS
+M3 Net3 Vout 0 0 NMOS

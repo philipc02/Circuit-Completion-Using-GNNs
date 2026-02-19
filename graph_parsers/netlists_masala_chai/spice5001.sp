@@ -1,0 +1,28 @@
+spice
+* SPICE Netlist for p-Channel Load Switch Circuit
+
+* Voltage Source
+V_in 8 0 DC 15V
+
+* Resistors
+R1 6 8 10k
+R_L 222 0 5
+
+* NMOS Transistor
+M1 222 7 0 0 NMOS L=1u W=1u
+RS1 7 0 1
+
+* PMOS Transistor
+M2 222 6 5 5 PMOS L=1u W=1u
+
+* Control Voltage Source
+V_EN 4 0 PULSE(0 5 1n)
+
+* Connections
+V_out 222 0
+
+* Models
+.model NMOS NMOS(Level=1)
+.model PMOS PMOS(Level=1)
+
+.end

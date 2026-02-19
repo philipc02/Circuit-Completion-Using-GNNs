@@ -1,0 +1,11 @@
+plaintext
+*MOSFET circuit
+M2 4 2 1 1 PMOS
+M1 4 3 6 6 NMOS
+I1 6 0 DC 1A
+C1 6 0 1pF
+VDD 1 0 DC 5V
+VIN 3 0 DC 1V
+
+.model PMOS PMOS
+.model NMOS NMOS

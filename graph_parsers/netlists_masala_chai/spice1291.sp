@@ -1,0 +1,15 @@
+* Transistor Definitions
+M1 2 3 0 0 NMOS W=10u L=0.18u
+M2 2 3 4 4 PMOS W=W2 L=0.18u
+
+* Voltage Source
+VDD 4 0 DC 1.8V
+
+* Input source
+Vin 3 0
+
+* Simulation Commands (if needed)
+*.op
+*.dc Vin 0 1.8 0.1
+*.plot v(2)
+*.end

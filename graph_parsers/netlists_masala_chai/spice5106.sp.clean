@@ -1,0 +1,20 @@
+plaintext
+* SPICE Netlist
+
+* Voltage Source
+Iin 1 0 DC 1uA
+
+* Resistors
+Rf1 2 3 10k
+Rf2 3 4 99k
+R1 0 3 1k
+RL 4 0 
+
+* Operational Amplifiers
+XU1 2 0 3 opamp
+XU2 3 0 4 opamp
+
+* Net Definitions
+V1 1 2 DC
+
+* End of Netlist

@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+V1 6 3 AC 1        * AC Voltage Source
+RS 6 5 1k          * Resistor RS
+RL 5 4 1k          * Resistor RL
+D1 5 2 D_Model     * Diode
+V2 2 3 DC 5        * DC Voltage Source

@@ -1,0 +1,16 @@
+SPICE
+* Darlington Pair Amplifier
+
+Vg 7 0 DC 0 AC 1
+RG 2 7 1k
+R1 6 4 1k
+R2 4 0 1k
+RE 3 0 1k
+
+C1 6 2 10uF
+C2 3 5 10uF
+
+Q1 6 4 2 NPN
+Q2 4 6 3 NPN
+
+Vcc 9 0 DC 10V

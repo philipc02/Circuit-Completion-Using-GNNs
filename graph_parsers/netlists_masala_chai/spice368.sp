@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist
+V1 5 0 DC 0
+
+R1 5 2  Z5
+R2 2 0  RE
+R3 2 3  RL1
+R4 3 0  RL2
+R5 6 6  RF
+R6 3 6  ZL
+
+Q1 2 5 0 QMODEL1
+Q2 3 2 0 QMODEL2
+Q3 6 3 0 QMODEL3
+
+.model QMODEL1 NPN
+.model QMODEL2 NPN
+.model QMODEL3 NPN
+
+.END

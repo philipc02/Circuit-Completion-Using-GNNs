@@ -1,0 +1,18 @@
+* SPICE Netlist
+* Components
+Vx 4 6 DC 0
+Ix 4 5 DC 0
+V1 2 0 DC 0
+Gm 5 3 2 3 gm
+Ro1 3 7 r_ro1
+
+* Nodes
+* 0: Ground
+* 2: Connection between V1 and Ground
+* 3: Connection between Ro1 and Ground
+* 4: Positive terminal of Vx
+* 5: Connection between Ix and Controlled Current Source
+* 6: Negative terminal of Vx
+* 7: Positive terminal of Ro1
+
+.end

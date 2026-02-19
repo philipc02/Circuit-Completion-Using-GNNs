@@ -1,0 +1,4 @@
+spice
+Vin N001 0 DC 0
+L1 N001 N002 Lvalue
+R1 N002 0 Rvalue

@@ -1,0 +1,10 @@
+plaintext
+* SPICE Netlist for the given schematic
+
+VCC 3 0 DC 15V             * VCC is the supply voltage
+VI 2 0 DC 5V               * Input voltage source
+RC 3 4 5k                  * Collector resistor
+QNPN 3 2 4 NPN             * NPN Transistor
+                          * (Collector, Base, Emitter)
+
+.end

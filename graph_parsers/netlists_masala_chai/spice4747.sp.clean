@@ -1,0 +1,12 @@
+spice
+* SPICE Netlist for BJT Amplifier Circuit
+
+Q1 5 4 3 NPN
+RC 5 2 470
+RE 3 0 130
+VBB 4 6 DC 2
+VCC 2 0 DC 15
+
+.MODEL NPN NPN(IS=1E-14 BF=100 VAF=100)
+
+.END

@@ -1,0 +1,9 @@
+* SPICE netlist for the given circuit
+Vs 4 7 DC 15V
+R1 4 3 10
+R2 3 2 12
+R3 2 6 56
+R4 6 5 22
+* Ground nodes
+V0 7 0 DC 0
+V1 5 0 DC 0

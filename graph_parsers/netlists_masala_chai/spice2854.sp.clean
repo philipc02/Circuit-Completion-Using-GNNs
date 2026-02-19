@@ -1,0 +1,17 @@
+spice
+* SPICE Netlist
+
+VDD 4 0 DC VDD
+I_nRD 4 6 DC value
+I_n1 6 5 DC value
+RD 4 3 RD_value
+M1 3 7 5 5 NMOS_MODEL
+
+* Node Definitions
+* 3 - Output node Vn2,out
+* 4 - Connected to VDD and top of RD
+* 5 - Ground node
+* 6 - Common node for current sources I_nRD and I_n1
+* 7 - Gate of M1 (connected to Vb)
+
+* End of netlist

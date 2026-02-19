@@ -1,0 +1,7 @@
+plaintext
+* SPICE Netlist
+V1 6 0 DC ub
+Rpi 3 5 r_pi
+I1 4 3 DC beta_ib
+RE 3 2 RE
+RL 4 7 RL

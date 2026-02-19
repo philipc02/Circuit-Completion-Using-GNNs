@@ -1,0 +1,27 @@
+spice
+* SPICE Netlist
+
+*. Transistors
+M1 6 2 9 9 NMOS
+M2 0 3 9 9 NMOS
+M3 1 5 2 2 PMOS
+M4 2 4 3 3 PMOS
+M5 3 8 6 6 PMOS
+M6 9 10 8 8 NMOS
+
+*. Capacitors
+C1 8 9 C1_value
+C2 2 3 C2_value
+
+*. Resistors
+R1 8 9 R1_value
+R2 2 3 R2_value
+R2 2 3 R2_value
+
+*. Current Source
+I1 9 0 Iss_value
+
+*. Voltage Source
+V1 5 0 VDD_value
+
+*. End of Netlist

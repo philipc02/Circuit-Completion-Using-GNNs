@@ -1,0 +1,4 @@
+* Circuit Netlist
+VA 5 0 DC V1
+VB 4 0 DC V2
+R1 5 2 R

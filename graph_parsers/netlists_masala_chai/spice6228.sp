@@ -1,0 +1,35 @@
+spice
+* SPICE netlist
+
+V1 1 2 DC PULSE(0 1 0 0 0 0 0)
+Iin 3 3 DC 1uA
+
+R1 2 5 25k
+R2 2 3 4.7k
+R3 4 4 25k
+R4 8 4 5k
+R5 10 4 0.5
+R6 8 4 0.5
+R7 3 3 150k
+
+C1 4 7 10pF
+
+D1 4 8 D
+D2 5 4 D
+
+M1 2 6 3 3 NMOS
+M2 6 2 5 5 PMOS
+M3 3 7 6 6 NMOS
+M4 7 3 4 4 PMOS
+M5 3 3 3 3 NMOS
+M6 3 3 3 3 NMOS
+M7 3 3 3 3 PMOS
+M8 3 3 3 3 PMOS
+M9 3 3 3 3 NMOS
+M10 3 3 3 3 NMOS
+
+.model NMOS nmos
+.model PMOS pmos
+.model D D
+
+.end

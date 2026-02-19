@@ -1,0 +1,15 @@
+* Components
+Q1 5 3 6 QNPN
+Q2 2 3 6 QNPN
+RC 3 8  RC_VALUE
+RE1 6 4 2RE_VALUE
+RE2 6 4 2RE_VALUE
+
+* Voltage sources
+VCC 8 0 DC VCC_VALUE
+VEE 4 0 DC VEE_VALUE
+VINP 5 0 DC VINCM_VALUE
+VINN 2 0 DC VINCM_VALUE
+
+* Model definitions
+.model QNPN NPN

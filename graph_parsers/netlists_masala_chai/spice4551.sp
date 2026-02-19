@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist for the given circuit
+* Transistors
+M1 out 2 VDD VDD PMOS W=1 L=1
+M2 out A 3 0 NMOS W=8 L=1
+M3 3 B 4 0 NMOS W=8 L=1
+M4 out C 4 0 NMOS W=4 L=1
+
+* Voltage Source
+V1 VDD 0 DC 5
+
+* Nets:
+* 1: VDD
+* 2: gate terminals of ML
+* 3: internal net between M2 and M4
+* 4: ground (GND)

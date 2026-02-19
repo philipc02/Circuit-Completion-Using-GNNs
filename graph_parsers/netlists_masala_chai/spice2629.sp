@@ -1,0 +1,20 @@
+* SPICE netlist
+M1 net4 Vin1 net6 net6 NMOS
+M2 net4 Vin2 net2 net2 NMOS
+M3 net4 Vb1 net4 net4 PMOS
+M4 net2 Vb1 net2 net2 PMOS
+M5 Vout net2 net5 net5 NMOS
+M6 net2 Vb3 net2 net2 NMOS
+M7 net3 Vb2 net4 net4 PMOS
+
+RD1 VDD Vout 5k
+RD2 VDD Vout 5k
+
+VDD VDD 0 DC 5V
+Vb1 Vb1 0 DC 1V
+Vb2 Vb2 0 DC 1V
+Vb3 Vb3 0 DC 1V
+Vin1 Vin1 0 DC 1V
+Vin2 Vin2 0 DC 1V
+
+* End of netlist

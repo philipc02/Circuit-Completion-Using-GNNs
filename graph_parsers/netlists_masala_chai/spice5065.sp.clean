@@ -1,0 +1,15 @@
+* NPN BJT Amplifier Circuit
+
+VCC N001 0 DC VCC
+VEE N003 0 DC -VEE
+
+RC N001 N002 RC
+RE N002 N003 2RE
+
+Q1 N002 Vin N003 QNPN
+
+Vin Vin 0 DC 0
+
+.model QNPN NPN (Is=1e-15 Bf=100)
+
+.end

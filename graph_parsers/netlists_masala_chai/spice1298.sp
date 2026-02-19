@@ -1,0 +1,22 @@
+spice
+* Operational Amplifier Inverting Circuit
+
+V1 4 0 DC Vin
+R1 3 2 R1_value
+R2 2 1 R2_value
+XOP 0 2 3 OPAMP
+
+* Define OPAMP as a subcircuit
+.subckt OPAMP IN- IN+ OUT
+* Simple ideal op-amp model, replace with actual model as needed
+E1 OUT 0 VALUE = {IF(V(IN+) > V(IN-), VOUT_max, VOUT_min)}
+.ends OPAMP
+
+* Connections:
+* Node 1: Input to Op-Amp and R2's resistor
+* Node 2: Between R1, R2, Virtual Ground, and Op-Amp inverting input
+* Node 3: Output of Op-Amp
+* Node 4: Vin
+
+* Simulation and control commands would go here
+.end

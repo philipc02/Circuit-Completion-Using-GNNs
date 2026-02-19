@@ -1,0 +1,5 @@
+plaintext
+* SPICE netlist for the circuit
+V1 3 0 DC 55
+R1 3 5 2k
+C1 5 3 0.02uF

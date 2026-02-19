@@ -1,0 +1,19 @@
+plaintext
+* Differential Amplifier Circuit
+
+VCC 1 0 DC 2.5
+VIN1 X 0 DC 1
+VIN2 Y 0 DC 2
+
+RC1 1 2 1k ; Replace 1k with actual resistance
+RC2 1 4 1k ; Replace 1k with actual resistance
+
+Q1 2 X P NPN
+Q2 4 Y P NPN
+
+IEE P 3 DC 0.001 ; Replace 0.001 with actual current
+
+*Specify the model for NPN transistors
+.model NPN NPN (...)
+
+.END

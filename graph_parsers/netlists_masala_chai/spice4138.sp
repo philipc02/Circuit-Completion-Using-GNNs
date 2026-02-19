@@ -1,0 +1,32 @@
+plaintext
+* SPICE Netlist for the given schematic
+
+V1 11 0 DC 0
+R1 11 9 2k
+RG 9 8 400k
+C1 9 10 
+
+* PMOS Transistor M1: Drain, Gate, Source, Body
+M1 8 8 4 4 PMOS
+C2 4 2 
+
+RS1 4 10 10k
+RS2 10 2 10k
+
+* NMOS Transistor M2: Drain, Gate, Source, Body
+M2 2 2 5 5 NMOS
+
+RD 5 3 5k
+C3 3 5 
+RL 3 0 2k
+
+* Voltage Sources
+VDD_M1 8 0 DC 10V
+VDD_M2 5 0 DC 10V
+VEE_M1 4 0 DC -10V
+VEE_RS2 2 0 DC -10V
+
+* Output
+Vo 3 0
+
+.END

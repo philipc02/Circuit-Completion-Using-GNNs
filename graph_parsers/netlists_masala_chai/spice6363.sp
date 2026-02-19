@@ -1,0 +1,13 @@
+spice
+* List of components:
+* R3, R4 - Resistors
+* C1, C2 - Capacitors
+
+* Component connections:
+R3 3 2 R3_value
+C2 3 2 C2_value
+C1 2 b C1_value
+R4 2 0 R4_value
+
+* Node annotations:
+V1 a 3 0V

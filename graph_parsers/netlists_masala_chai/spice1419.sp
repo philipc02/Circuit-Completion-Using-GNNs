@@ -1,0 +1,13 @@
+plaintext
+* Netlist for the given schematic
+
+Q1 2 Vb2 0 NPN
+Q2 3 Vb2 5 NPN
+I1 3 4 DC 1
+Rout 5 4 1k
+
+* Voltage and Ground Definitions
+Vb2 Vb2 0 DC 1
+VCC 3 0 DC 5
+
+.END

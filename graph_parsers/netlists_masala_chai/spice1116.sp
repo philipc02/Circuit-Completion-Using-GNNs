@@ -1,0 +1,13 @@
+spice
+* NMOS Transistor
+M1 2 4 0 0 NMOS_MODEL
+
+* Resistor
+RD 3 2 5k
+
+* Voltage Sources
+VDD 3 0 DC 1.8V
+VB  4 0 DC <VB_value>
+
+* Model Definition (as example; actual model parameters needed)
+.model NMOS_MODEL NMOS (LEVEL=1 VTO=0.7 KP=50u)

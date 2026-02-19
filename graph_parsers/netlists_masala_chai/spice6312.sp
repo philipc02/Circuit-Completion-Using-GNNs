@@ -1,0 +1,21 @@
+plaintext
+* SPICE netlist for given schematic
+
+M1 3 7 8 8 PMOS L=1u W=1u
+M2 2 5 2 2 NMOS L=1u W=1u
+M3 2 6 2 2 NMOS L=1u W=1u
+M4 3 4 6 6 NMOS L=1u W=1u
+
+VDD 8 0 DC 5V
+
+* Node Mapping:
+* 1 - Not used
+* 2 - A, Drain of M2 and M3
+* 3 - Y (output)
+* 4 - φ (gate of M4)
+* 5 - B (gate of M2)
+* 6 - C (gate of M3), Source of M4
+* 7 - φ (gate of M1)
+* 8 - VDD
+
+.END

@@ -1,0 +1,7 @@
+* Example BJT Amplifier Circuit
+Vb Vb 0 DC 0
+Q1 OUT Vb 0 QMODEL
+RE 0 Q1_Emitter 100
+ROUT OUT 0 1k 
+
+.model QMODEL NPN (IS=1e-14 BF=100)

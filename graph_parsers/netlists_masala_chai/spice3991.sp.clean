@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+VBB 3 0 DC VBB
+RB 3 1 100k
+RC 2 0 10k
+Q1 2 1 0 NPN

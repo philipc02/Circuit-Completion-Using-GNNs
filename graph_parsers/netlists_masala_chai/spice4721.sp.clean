@@ -1,0 +1,5 @@
+plaintext
+* NPN Transistor Circuit
+VBE 5 0 DC
+VCE 2 3 DC
+Q1 2 5 4 NPN

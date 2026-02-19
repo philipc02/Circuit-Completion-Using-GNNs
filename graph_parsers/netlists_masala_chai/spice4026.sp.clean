@@ -1,0 +1,13 @@
+plaintext
+* SPICE Netlist
+
+* Transistors
+Q1 5 0 3 QMODEL1
+Q2 4 3 6 QMODEL2
+
+* Resistors
+RC1 3 6 4k
+RE2 2 4 4k
+
+* Voltage Source
+V1 0 Vi DC 0

@@ -1,0 +1,23 @@
+spice
+* SPICE netlist
+
+* Voltage supply
+VDD 2 0 DC VDD
+
+* Transistors
+M1 2 4 3 3 PMOS
+MC 3 1 3 3 NMOS
+MB 0 3 3 3 NMOS
+
+* Current Source
+IB 2 3 DC IB
+
+* Capacitors
+CB 1 4 C_B
+MR 3 5 C_MR
+
+* Resistor
+RD 2 4 R_D
+
+* Connections for simulation purposes
+Vout 4 0

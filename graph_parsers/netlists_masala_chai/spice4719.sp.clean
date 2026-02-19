@@ -1,0 +1,12 @@
+plaintext
+* SPICE Netlist
+
+VBB 2 0 DC 10V
+VCC 5 0 DC 10V
+RB 2 3 1MEG
+RC 4 5 2K
+Q1 4 2 3 0 NPN
+
+.model NPN NPN (IS=1E-14 BF=100)
+
+.END

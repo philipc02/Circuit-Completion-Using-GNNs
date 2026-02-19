@@ -1,0 +1,17 @@
+plaintext
+* Differential Amplifier
+
+VCC 3 0 DC VCC
+VEE 6 0 DC VEE
+
+I1 8 6 DC I
+I2 6 5 DC I
+
+RC1 2 3 RC
+RC2 5 3 RC
+R 4 8 R
+
+Q1 2 4 6 NPN
+Q2 5 4 6 NPN
+
+VIN 7 0 AC 1 SIN(...)

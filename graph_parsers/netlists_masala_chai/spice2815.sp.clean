@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist
+
+*** NMOS and PMOS Transistors ***
+M1 4 2 3 3 NMOS
+M2 5 6 4 4 PMOS
+
+*** Current Sources ***
+I1 4 6 DC 1mA
+I2 3 0 DC 1mA
+
+*** Resistor ***
+RS 1 3 50k
+
+*** Voltage Definitions ***
+VDD 6 0 DC 5V
+Vb2 2 0 DC 2V
+Vin 1 0
+
+*** End of Netlist ***

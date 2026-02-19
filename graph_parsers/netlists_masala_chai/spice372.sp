@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist
+Vi 6 8 DC 0
+Rs 6 4  R_S
+Rl1 7 4  R_L1
+Re 2 0  R_E
+Rf 5 3  R_F
+Zl 4 0  Z_L
+
+* Q1 transistor
+Q1 7 6 4 QNPN
+
+* Q2 transistor
+Q2 4 7 2 QNPN
+
+* Models (placeholders, substitute with actual model parameters)
+.model QNPN NPN (IS=1E-14 BF=100)
+
+* End of netlist
+.END

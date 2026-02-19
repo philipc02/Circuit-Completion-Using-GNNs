@@ -1,0 +1,28 @@
+spice
+* SPICE Netlist for the given schematic
+
+* Voltage Sources (for test purposes)
+Vg 1 0 DC Vgs
+Vb 2 0 DC Vbs
+
+* Capacitors
+Cgs 1 4 Cgs_value
+Cgd 1 6 Cgd_value
+Cbs 2 7 Cbs_value
+Cdb 5 7 Cdb_value
+
+* Dependent Current Source
+Gm 4 5 VALUE = {gm*(V(1) - V(4)) + gmb*(V(2) - V(7))}
+
+* Resistor
+Rd 6 5 gd_value
+
+* Connections (Nodes)
+* 1 - Gate (g)
+* 2 - Bulk/Substrate (b)
+* 4 - Source (s)
+* 5 - Source (s)
+* 6 - Drain (d)
+* 7 - Node between capacitors Cbs and Cdb
+
+.END

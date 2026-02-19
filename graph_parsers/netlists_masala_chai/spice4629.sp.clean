@@ -1,0 +1,16 @@
+spice
+* SPICE netlist for the given schematic
+VS 1 5 DC 0
+R1 1 2  R1
+R2 2 3  R2
+RL 3 5  RL
+D1 6 3  D
+
+* Define nodes
+* 1: Positive terminal of Vs
+* 5: Ground
+* 2: Node A (between R1 and R2)
+* 3: Node B (connection of RL and diode)
+* 6: Anode of Diode
+
+.END

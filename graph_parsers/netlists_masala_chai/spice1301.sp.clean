@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist
+R1 X Vin 1k
+C1 Vout X 1u
+* Ideal Op-Amp
+XU1 X 3 Vout OPAMP
+* Voltage Source (for the purpose of simulation)
+Vin Vin 0 DC 0V
+
+.SUBCKT OPAMP + - OUT
+* Ideal Op-Amp Model
+EOUT OUT 0 VALUE { V(+,-) }
+.ENDS OPAMP
+
+.END

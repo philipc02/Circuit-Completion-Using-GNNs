@@ -1,0 +1,27 @@
+plaintext
+* Diodes
+D1 3 2 D1_model
+.model D1_model D (n=2)
+
+D2 3 2 D2_model
+.model D2_model D (n=2)
+
+D3 4 2 D3_model
+.model D3_model D (m=1)
+
+D4 4 2 D4_model
+.model D4_model D (m=1)
+
+* Resistors
+RB B 2  RB_value
+RC C 3  RC_value
+RE 2 E  RE_value
+
+* Current Source
+I1 4 2 DC (betaIp-betaIR)
+
+* Voltage sources and grounds
+VBC C 3 DC VBC_value
+VBE B 2 DC VBE_value
+
+.end

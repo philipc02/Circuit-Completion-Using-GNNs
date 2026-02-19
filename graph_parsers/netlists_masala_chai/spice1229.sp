@@ -1,0 +1,12 @@
+plaintext
+* SPICE Netlist for the given circuit
+
+M1 Vout Vb 0 0 NMOS
+M2 Vout Vin VDD VDD PMOS
+
+* Nodes:
+* Vout - Output node
+* Vin - Input node for M2
+* Vb - Input node for M1
+
+.ends

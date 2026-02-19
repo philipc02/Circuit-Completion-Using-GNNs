@@ -1,0 +1,3 @@
+* Circuit Netlist
+C1 1 3 CM
+V1 1 2 DC Av*Vin

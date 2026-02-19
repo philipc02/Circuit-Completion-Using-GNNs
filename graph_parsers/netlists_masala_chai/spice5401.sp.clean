@@ -1,0 +1,8 @@
+spice
+* SPICE Netlist
+Vs 6 3 AC 2 SIN(0 2 100k)
+R1 4 5 10k
+R2 4 7 12k
+C1 5 2 100p
+C2 5 2 47p
+Vgnd 2 0 DC 0

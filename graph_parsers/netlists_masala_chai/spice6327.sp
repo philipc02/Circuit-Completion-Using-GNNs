@@ -1,0 +1,14 @@
+spice
+* SPICE Netlist for the given schematic
+
+MN1 2 4 4 NMOS  ; NMOS Transistor Q_N (Drain, Gate, Source)
+RD 1 2 RD_value  ; Resistor R_D (Connected between V_DD and Net 2)
+C1 2 4 C_value   ; Capacitor C (Connected between Net 2 and Ground)
+
+VDD 1 0 DC VDD_value  ; DC Voltage Source V_DD
+VI 4 0 DC VI_value    ; DC Voltage Source V_I as input
+
+* Specify model parameters for NMOS
+.model NMOS NMOS (level=1)
+
+.end

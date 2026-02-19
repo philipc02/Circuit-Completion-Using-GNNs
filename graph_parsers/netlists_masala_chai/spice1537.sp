@@ -1,0 +1,17 @@
+spice
+* Transistor connections
+Q1 2 Vin1 8 QNPN
+Q2 6 Vin2 8 QNPN
+Q3 Vout 4 Vb QNPN
+Q4 Vout 5 Vb QNPN
+
+* Current sources
+I1 4 Vcc DC 0
+I2 5 Vcc DC 0
+IEE 8 0 DC 0
+
+* Voltage nodes
+Vb Vb 0 DC 0
+Vin1 Vin1 0 DC 0
+Vin2 Vin2 0 DC 0
+Vcc Vcc 0 DC 0

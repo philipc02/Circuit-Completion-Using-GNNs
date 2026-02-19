@@ -1,0 +1,16 @@
+spice
+* Transistor Definitions
+M1 6 7 5 5 PMOS
+M2 6 7 3 3 PMOS
+M3 7 4 2 2 NMOS
+M4 4 2 2 2 NMOS
+
+* Current Source
+IREF 7 2 DC 1mA
+
+* Voltage Sources
+V+ 5 0 DC 5V
+V- 2 0 DC 0V
+
+* Output
+IO 3 0

@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist for the given schematic
+
+Vsig 3 4 DC 0 AC 200m
+Rsig 3 2 100k
+RL 2 5 1k
+Q1 2 3 5 NPN
+
+* Global ground node
+Vgnd 4 0 DC 0
+Vgnd 5 0 DC 0
+
+.model NPN NPN(IS=1e-14 BF=100)
+
+.end

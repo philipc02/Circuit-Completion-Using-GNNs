@@ -1,0 +1,4 @@
+spice
+Iin 4 0 DC 0
+L1 4 2 10u
+C1 2 3 1u

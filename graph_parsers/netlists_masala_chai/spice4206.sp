@@ -1,0 +1,14 @@
+plaintext
+* SPICE Netlist
+* Components
+R1 2 6 10k
+R2 4 2 10k
+R3 2 3 10k
+R4 6 2 48k
+R5 2 5 6k
+R6 2 0 5k
+* Opamp
+* Assume an ideal op-amp
+EAMP 3 0 2 0 100k
+* Voltage source
+V1 6 0 Vi

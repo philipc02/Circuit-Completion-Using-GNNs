@@ -1,0 +1,26 @@
+spice
+* SPICE Netlist
+
+V1 7 3 DC 5V
+
+* BJTs
+Q1 4 2 7 QMODEL
+Q2 3 9 3 QMODEL
+Q3 3 4 7 QMODEL
+
+* MOSFETs
+M1 2 8 5 5 NMOSMODEL L=1u W=1u
+M2 6 3 5 5 NMOSMODEL L=1u W=1u
+
+* Resistors
+R1 7 4 1k
+R2 4 7 10k
+R3 3 9 10k
+R4 8 3 30k
+R5 3 5 1k
+
+* Models
+.model QMODEL NPN (IS=1E-14 BF=100)
+.model NMOSMODEL NMOS (Level=1)
+
+.END

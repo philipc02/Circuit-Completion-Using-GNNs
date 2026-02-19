@@ -1,0 +1,22 @@
+spice
+* SPICE netlist for the given schematic
+
+* Voltage Sources
+VCC 7 0 DC 10
+VIN 6 0 AC 100uV
+
+* Resistors
+R1 6 5 10k
+R2 5 2 2.2k
+RC 7 8 3.6k
+RE 3 0 1k
+RL 2 4 100k
+
+* Capacitors
+C1 6 5 
+C2 8 2 
+
+* NPN BJT
+Q1 8 5 3 NPN
+
+.end

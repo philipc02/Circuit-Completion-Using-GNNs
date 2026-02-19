@@ -1,0 +1,25 @@
+plaintext
+* Differential Amplifier SPICE Netlist
+
+Q1 N2 N1 P N2 NPN
+Q2 N2 N5 P N5 NPN
+Q3 N4 N4 N3 N4 PNP
+Q4 N4 N4 N3 N4 PNP
+
+R1 N3 N6 1k
+R2 N6 N5 1k
+
+I_EE P 0 DC 1mA
+
+VCC N4 0 DC 5V
+VB N4 0 DC 1.5V
+
+* Node assignments:
+* N1 = Vin1
+* N2 = P (Common emitter node)
+* N3 = Vout
+* N4 = VCC
+* N5 = Vin2
+* N6 = Junction between R1 and R2
+
+.end

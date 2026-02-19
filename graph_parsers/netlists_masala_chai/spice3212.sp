@@ -1,0 +1,6 @@
+spice
+* NMOS Transistor
+M1 Vout Vin Low Vout NMOS
+
+* Capacitor
+C1 Vout 0 CH

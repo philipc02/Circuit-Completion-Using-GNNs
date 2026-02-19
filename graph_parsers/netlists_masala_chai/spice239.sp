@@ -1,0 +1,21 @@
+spice
+* PMOS Transistors
+M5 2 2 7 PMOS
+M6 9 5 5 PMOS
+M7 2 2 2 PMOS
+M8 2 2 6 PMOS
+
+* NMOS Transistors
+M1 2 2 8 NMOS
+M2 2 2 8 NMOS
+M3 8 2 55 NMOS
+M4 9 2 55 NMOS
+M9 2 2 2 NMOS
+M10 5 5 55 NMOS
+
+* Current Sources
+IBIAS 6 55 DC <value>
+IC 2 8 DC <value>
+
+* Capacitors
+CC 5 9 <value>

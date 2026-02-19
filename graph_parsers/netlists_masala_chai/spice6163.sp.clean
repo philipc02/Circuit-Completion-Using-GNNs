@@ -1,0 +1,11 @@
+spice
+* SPICE Netlist for the given circuit
+R_S 8 3 R_S
+R_ID 3 4 R_ID
+R_O 2 3 R_O
+R_L 2 0 R_L
+R_1 9 0 R_1
+R_2 9 6 R_2
+E_VCVS 4 1 VALUE={MU*(V(3) - V(4))}
+* Node voltage sources for VCVS control:
+* .nodeset or equivalent statements may be required depending on simulator to ensure correct operation

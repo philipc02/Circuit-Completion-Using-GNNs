@@ -1,0 +1,15 @@
+* Transistors
+M1 2 7 8 8 NMOS
+M2 5 7 8 8 NMOS
+M3 9 2 10 10 PMOS
+M4 5 6 10 10 PMOS
+
+* Current Source
+I1 8 3 DC 100uA
+
+* Voltage Sources
+V_SUP 10 0 DC V_SUP
+V_IN 7 0 DC V_i
+
+* Output
+V_OUT 5 4 DC 0

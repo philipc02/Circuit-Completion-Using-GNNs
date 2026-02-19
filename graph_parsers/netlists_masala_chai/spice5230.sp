@@ -1,0 +1,26 @@
+plaintext
+* SR Latch Circuit Netlist
+
+* Voltage Source
+VCC 7 0 DC <VCC_VALUE>
+
+* NPN Transistors
+Q1 4 9 0 NPN
+Q2 4 2 0 NPN
+
+* Resistors
+RC 4 Q <RC_VALUE>
+RC 4 Q̅ <RC_VALUE>
+RB 9 3 <RB_VALUE>
+RB 2 3 <RB_VALUE>
+RS 0 3 <RS_VALUE>
+RR 0 3 <RR_VALUE>
+
+* Nodes
+Q̅ 0
+Q 0
+
+* Define transistor models
+.model NPN NPN(IS=1e-15 BF=100)
+
+* .end

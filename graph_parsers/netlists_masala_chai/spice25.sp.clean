@@ -1,0 +1,3 @@
+spice
+M1 4 3 3 NMOS W=W1 L=L1
+M2 2 3 2 NMOS W=W2 L=L2

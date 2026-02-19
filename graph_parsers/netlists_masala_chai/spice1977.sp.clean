@@ -1,0 +1,11 @@
+spice
+* Circuit Description
+Q1 4 3 3 NPN
+Q2 2 3 2 NPN
+Q3 3 6 5 NPN
+I1 5 3 DC 1mA
+RL 4 2 1k
+VCC 6 0 DC 15V
+VEE 2 0 DC -15V
+VIN 5 0 DC 0V
+VOUT 4 0 DC 0V

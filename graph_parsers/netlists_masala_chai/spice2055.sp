@@ -1,0 +1,5 @@
+spice
+M1 3 2 0 0 NMOS
+M2 Vout 2 0 0 NMOS
+M3 3 2 Vout Vout NMOS
+M4 VDD 3 Vout Vout PMOS

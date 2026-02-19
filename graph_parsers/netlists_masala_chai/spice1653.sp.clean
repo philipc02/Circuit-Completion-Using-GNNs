@@ -1,0 +1,19 @@
+spice
+* MOSFET Circuit
+M1 3 2 7 7 NMOS
+M2 5 3 6 6 PMOS
+
+* Capacitors
+C_CGS1 2 7 CGS1
+C_CGD1 3 2 CGD1
+C_CSB1 7 3 CSB1
+C_CDB1 3 7 CDB1
+
+C_CGS2 2 6 CGS2
+C_CGD2 3 5 CGD2
+C_CSB2 5 7 CSB2
+C_CDB2 5 6 CDB2
+
+* Voltage Sources
+VDD 6 0 VDD
+VIN 1 0 Vin

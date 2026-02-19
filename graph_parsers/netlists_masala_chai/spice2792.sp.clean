@@ -1,0 +1,20 @@
+spice
+* Components
+M1 2 5 0 0 NMOS
+M2 3 2 4 4 PMOS
+M3 4 2 0 0 NMOS
+M4 2 3 4 4 PMOS
+CL1 2 0 1u
+CL2 4 0 1u
+
+* Voltage Sources
+VDD 3 0 DC 5V
+Vin 5 0 DC 0V
+Vb 2 0 DC 3V
+
+* Nodes
+* 0: Ground
+* 2: VX
+* 3: VDD
+* 4: Vout
+* 5: Vin (Input)

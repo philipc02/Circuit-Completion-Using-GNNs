@@ -1,0 +1,17 @@
+plaintext
+* PMOS Transistor
+M1 2 7 2 2 PMOS
+
+* NMOS Transistor
+M2 2 7 3 3 NMOS
+
+* Resistor
+R3 2 4 10k
+
+* Voltage sources
+V1 2 0 DC +2.5
+V2 3 0 DC -2.5
+V3 7 0 DC 0
+
+* Output node
+V4 0 4 Vo

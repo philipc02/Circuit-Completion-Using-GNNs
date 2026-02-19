@@ -1,0 +1,6 @@
+* SPICE Netlist for the given circuit
+
+V1 3 0 DC 5V
+RB 6 4 150k
+RC 2 3 5k
+Qn 2 4 5 NPN

@@ -1,0 +1,5 @@
+* SPICE Netlist
+M1 2 1 3 3 NMOS
+M2 4 2 3 3 NMOS
+Rss 3 0 Rss_value
+V1 1 0 DC VinCM_value

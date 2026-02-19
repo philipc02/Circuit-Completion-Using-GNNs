@@ -1,0 +1,17 @@
+spice
+* Resistors
+RS 5 4 RS
+RX 4 6 RX
+RIN 6 9 RIN
+RL 9 0 RL
+
+* Capacitor
+CIN 6 9 CIN
+
+* Voltage Source
+VI 5 0 DC VI
+
+* Current Source (Dependent)
+G1 9 0 VALUE={gm*V(2,3)}
+
+.end

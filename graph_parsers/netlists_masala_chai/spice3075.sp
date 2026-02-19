@@ -1,0 +1,24 @@
+spice
+*MOSFETs
+* M<name> <drain> <gate> <source> <body> <model>
+M1 4 5 1 1 NMOS
+M2 6 4 1 1 NMOS
+M3 3 5 2 2 PMOS
+M4 2 5 3 3 PMOS
+
+*Current Source
+* I<name> <positive node> <negative node> <value>
+Iss 1 3 DC ? ; Replace ? with the actual current value
+
+*Resistors
+* R<name> <positive node> <negative node> <value>
+R1 6 2 ?
+R2 X 1 ?
+
+*Capacitor
+* C<name> <node1> <node2> <value>
+CL 6 1 ?
+
+*Voltage Source
+* V<name> <positive node> <negative node> <DC voltage>
+V_DD 2 1 DC ?

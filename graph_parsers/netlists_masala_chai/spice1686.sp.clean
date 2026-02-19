@@ -1,0 +1,23 @@
+plaintext
+* SPICE netlist for the circuit
+
+VCC 5 0 DC [VCC_VALUE]
+RL 2 4 [RL_VALUE]
+CL 4 0 [CL_VALUE]
+CX 7 6 [CX_VALUE]
+CPI 7 2 [CPI_VALUE]
+CMU 3 5 [CMU_VALUE]
+Q1 3 2 6 NPN
+
+* Specify component values
+*.param VCC_VALUE=<value>
+*.param RL_VALUE=<value>
+*.param CL_VALUE=<value>
+*.param CX_VALUE=<value>
+*.param CPI_VALUE=<value>
+*.param CMU_VALUE=<value>
+
+* Model definitions
+.model NPN npn
+
+.end

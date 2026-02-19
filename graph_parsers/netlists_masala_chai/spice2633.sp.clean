@@ -1,0 +1,21 @@
+spice
+* NMOS Transistors
+M1 3 Vin1 2 2 NMOS
+M2 3 Vin2 1 1 NMOS
+
+* Resistors
+RD1 4 3 RD1_value
+RD2 5 3 RD2_value
+RS1 2 0 RS1_value
+RS2 1 0 RS2_value
+
+* Current Source
+I1 2 1 DC ISS_value
+
+* Voltage Sources
+VDD 4 0 DC VDD_value
+Vin1 Vin1 0 DC Vin1_value
+Vin2 Vin2 0 DC Vin2_value
+
+* Ground
+V0 0 0 0

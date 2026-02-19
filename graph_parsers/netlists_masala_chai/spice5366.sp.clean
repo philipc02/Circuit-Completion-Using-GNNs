@@ -1,0 +1,8 @@
+* SPICE Netlist
+V1 6 7 DC 18V
+R1 6 3 5.6k
+R2 3 5 2.2k
+R3 3 3 1.0k
+R4 3 4 2.2k
+R5 3 3 1.0k
+R6 3 2 1.0k

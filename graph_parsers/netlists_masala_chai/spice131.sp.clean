@@ -1,0 +1,14 @@
+* NMOS transistor M1
+   M1 5 6 8 8 NMOS
+
+   * PMOS transistor M2
+   M2 5 2 3 3 PMOS
+
+   * Voltage source VDD
+   VDD 7 3 DC VDD_value
+
+   * Voltage source Vi
+   VI 6 4 DC Vi_value
+
+   .model NMOS NMOS
+   .model PMOS PMOS

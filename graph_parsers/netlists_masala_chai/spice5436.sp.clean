@@ -1,0 +1,5 @@
+* SPICE Netlist
+Vs 3 5 AC 1
+R1 3 2 100
+L1 2 4 100m
+C1 4 6 0.01u

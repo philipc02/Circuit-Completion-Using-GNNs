@@ -1,0 +1,16 @@
+* SPICE Netlist for the given circuit
+
+* Voltage Source
+Vs 3 8 DC
+
+* Resistor Rs
+Rs 3 2 1k
+
+* Capacitor C
+C1 2 4 
+
+* Resistor Ri
+Ri 4 5 9k
+
+* Ground connection
+V2 4 6 DC 0

@@ -1,0 +1,5 @@
+spice
+* SPICE Netlist
+D1 A 2 D_model
+D2 B 2 D_model
+I1 2 4 DC 1 ; Current source from Node 2 to Node 4 with value 1A

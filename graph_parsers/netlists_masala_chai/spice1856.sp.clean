@@ -1,0 +1,24 @@
+spice
+* SPICE Netlist for the given schematic
+
+* NMOS Transistors
+M1 net5 Vin 5 5 NMOS
+M2 net5 net2 5 5 NMOS
+
+* PMOS Transistors
+M3 net4 net2 net4 net4 PMOS
+M4 net4 net6 net2 net2 PMOS
+M5 net2 net3 net4 net4 PMOS
+
+* Current Source
+Iss net5 0 DC 1mA
+
+* Voltage Source
+Vdd net4 0 DC 5V
+
+* Define Models for Transistors
+.model NMOS NMOS (level=1)
+.model PMOS PMOS (level=1)
+
+* Simulation Commands
+.END

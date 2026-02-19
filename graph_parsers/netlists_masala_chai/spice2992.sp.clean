@@ -1,0 +1,9 @@
+spice
+* SPICE Netlist
+
+M1 4 3 5 5 NMOS
+VDD 1 0 DC VDD_value
+VW 2 4 DC W_value
+RD 1 4 RD_value
+RF 2 3 RF_value
+RS 5 3 RS_value

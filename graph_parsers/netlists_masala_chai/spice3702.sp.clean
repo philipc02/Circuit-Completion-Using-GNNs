@@ -1,0 +1,8 @@
+plaintext
+* SPICE netlist
+VDD 5 0 DC 4V
+R1 5 6 R
+R2 2 4 R
+RD 5 3 6.7k
+RS 1 4 R
+M1 3 2 1 1 NMOS

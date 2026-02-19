@@ -1,0 +1,12 @@
+spice
+* Op-Amp Inverting Amplifier
+* Nodes: 1 = Vin, 2 = Vout, 0 = Ground
+
+V1 1 0 DC Vi
+
+* Resistors
+R1 1 2 40k
+R2 2 0 20k
+
+* Ideal Op-Amp
+E1 2 0 2 3 1e6

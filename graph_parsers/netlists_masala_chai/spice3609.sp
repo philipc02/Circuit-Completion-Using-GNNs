@@ -1,0 +1,6 @@
+plaintext
+Vs 5 0 DC 0
+Rs 2 5 1k
+C 2 3 1u
+I 3 0 DC 1m
+D1 2 0 D

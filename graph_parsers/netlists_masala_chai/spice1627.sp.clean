@@ -1,0 +1,19 @@
+plaintext
+* BJT Differential Amplifier
+* Transistors
+Q1 Vout Vin1 3 NPN
+Q2 Vout Vin2 3 NPN
+Q3 V_CC Vb Vout PNP
+Q4 V_CC Vb Vout PNP
+
+* Current Source
+I1 3 0 DC 1mA
+
+* Voltage Source
+V1 V_CC 0 DC 2.5V
+
+* Node Definitions
+* Node 1: Vb
+* Node 2: Vout
+* Node 3: Common Emitter Node of Q1 and Q2
+* Other nodes as labeled in schematic

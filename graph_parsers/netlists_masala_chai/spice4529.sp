@@ -1,0 +1,17 @@
+plaintext
+* Components
+C1 2 6 C1_value
+CF 2 3 CF_value
+
+V1 2 5 DC V_phi1
+V2 2 2 DC V_phi2
+
+* Operational Amplifier
+X1 2 3 3 opamp_model
+
+* Connections
+V_in 5 0 DC Vin
+V_out 3 0
+
+* Ground
+R1 6 0 0.1Meg

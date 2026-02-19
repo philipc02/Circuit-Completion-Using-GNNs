@@ -1,0 +1,6 @@
+plaintext
+* SPICE Netlist
+M1 X Vin 2 2 NMOS
+M2 3 Vb X X NMOS
+RD 3 4 RD_VALUE
+I1 2 0 I1_VALUE

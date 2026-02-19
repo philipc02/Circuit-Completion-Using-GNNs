@@ -1,0 +1,16 @@
+plaintext
+* NMOS Transistor circuit
+M1 2 5 4 4 NMOS  * (Drain Gate Source Body)
+
+* Resistors
+R1 6 5 R1
+R2 5 2 R2
+RD 3 4 RD
+
+* Voltage Sources
+V1 6 0 DC 5V
+V2 2 0 DC -5V
+V3 4 0 DC -10V
+
+* Input Source
+Vin 7 5 DC 0  * Assuming Vin is connected to node 7

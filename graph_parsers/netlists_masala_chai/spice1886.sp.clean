@@ -1,0 +1,21 @@
+spice
+* SPICE Netlist
+
+VDD 3 0 DC 1.8V
+
+* N-channel MOSFET
+M1 5 1 4 4 NMOS
+
+* P-channel MOSFET
+M2 3 2 5 5 PMOS
+
+* Resistors
+RD1 3 2 2k
+RD2 5 0 500
+
+* Voltage source
+Vin 1 0 DC 0V
+
+* Simulation commands
+.TRAN 1n 10u
+.END

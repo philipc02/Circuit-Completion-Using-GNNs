@@ -1,0 +1,17 @@
+* Transistors
+Q1 4 9 2 NPN
+Q2 5 6 2 NPN
+
+* Current Source
+I1 2 7 DC IQ
+
+* Resistors
+RC1 7 4 RC
+RC2 7 5 RC
+
+* Voltage Sources
+V1 9 2 DC (vd/2)
+V2 6 8 DC (vd/2)
+
+* Ground Reference
+V3 8 0 0

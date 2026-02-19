@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist
+VCC VCC 0 DC <VCC_VALUE>
+
+R1 VCC 2 <R1_VALUE>
+R2 2 3 <R2_VALUE>
+R3 3 4 <R3_VALUE>
+R4 4 0 <R4_VALUE>
+
+Q1 2 3 6 NPN
+Q2 3 4 0 NPN
+
+.model NPN NPN(IS=1e-15 BF=100)

@@ -1,0 +1,23 @@
+* Differential amplifier circuit
+
+* Components
+Q2 2 2 3 NPN
+Q4 3 2 5 NPN
+Q5 6 3 5 NPN
+
+D1 3 4 D
+D2 5 4 D
+
+RE3 2 5 R
+RES 7 6 R
+RE4 5 5 R
+RL 3 3 R
+
+ILS 4 5 DC I
+
+* Voltage sources
++VCC 7 0 DC 15V
+-VEE 4 0 DC -15V
+
+* Connections
+VOUT 3 0

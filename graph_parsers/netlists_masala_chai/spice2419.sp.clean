@@ -1,0 +1,4 @@
+plaintext
+M1 2 3 4 4 NMOS
+I_x 4 6 DC 0
+V_x 4 6 DC 0

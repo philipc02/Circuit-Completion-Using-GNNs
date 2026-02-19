@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist for the schematic
+
+V1 3 4 DC 0        ; Current Source Ii
+
+M1 4 5 5 5 NMOS    ; NMOS Transistor
+
+RL 2 5 RL_value    ; Resistor RL
+
+VSS 5 6 DC 0       ; Connect source body to ground (VSS is 0V)
+
+* Define the NMOS model if necessary
+.model NMOS NMOS (Level=1 KP=1u VTO=1 GAMMA=0.5 PHI=0.7)
+
+.end

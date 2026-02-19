@@ -1,0 +1,11 @@
+* Example SPICE Netlist
+
+* Components
+I1 7 0 DC 0.5mA
+I2 3 6 DC 0.5mA
+C1 4 0 2p
+R1 6 2 20k
+MN1 2 6 0 0 NMOS
+
+* Voltage source
+V1 3 0 DC 5V

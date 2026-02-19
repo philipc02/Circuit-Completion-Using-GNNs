@@ -1,0 +1,18 @@
+spice
+* SPICE netlist for the given circuit
+
+* Voltage Source
+V1 6 8 DC Vi
+
+* Resistors
+RSi 6 4 RSi
+Ri 4 2 Ri
+Ro 5 2 Ro
+RD 2 7 RD
+RL 5 3 RL
+
+* Voltage-Controlled Current Source
+Gm 2 3 22 0 gmVgs
+
+* Ground connections
+Vgs 22 8 0

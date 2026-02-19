@@ -1,0 +1,18 @@
+spice
+* Components
+R1 1 5 R1_value
+R2 5 6 R2_value
+R3 6 3 R3_value
+
+C1 5 0 C1_value
+C2 6 0 C2_value
+C3 3 0 C3_value
+
+* Op-amp with voltage-controlled voltage source (VCVS)
+E1 4 0 3 2 -A_value
+
+* Nodes
+Vout 4 0
+
+* Connectors
+V1 1 4 DC 0

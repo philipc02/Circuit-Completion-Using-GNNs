@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist for BJT Amplifier
+
+VCC 2 3 DC 15V
+VEE 7 3 DC -15V
+V1 5 6 AC 1V SIN(0 1V 1kHz)
+RB1 5 1 1k
+RB2 2 3 1k
+RC 2 4 1Meg
+RE 7 3 1Meg
+Q1 2 5 7 QNPN
+Q2 4 2 7 QNPN
+
+.model QNPN NPN (IS=1E-15 BF=100 VAF=100) 
+
+.END

@@ -1,0 +1,15 @@
+spice
+* SPICE netlist for the differential pair circuit
+
+VDD 5 0 DC <value>
+Vin_left 2 0 DC <value>
+Vin_right 4 0 DC <value>
+Iss 8 0 DC <value>
+
+M1 2 1 8 8 NMOS
+M2 3 1 8 8 NMOS
+M3 5 2 1 1 PMOS
+M4 3 3 5 5 PMOS
+
+* Simulation commands
+.options

@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist for the given circuit
+I1 0 5 DC 150mA
+V1 5 4 DC 10V
+I2 3 0 DC 100mA
+R1 3 4 1k
+R2 4 2 1k

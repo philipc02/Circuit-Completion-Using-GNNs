@@ -1,0 +1,20 @@
+* List of components:
+* IREF: Current source
+* I1: Current source
+* M0: PMOS transistor
+* M1, M4: NMOS transistors
+* M2, M3: PMOS transistors
+
+* Netlist
+IREF 1 2 DC 1mA
+I1 3 0 DC 1mA
+
+M0 2 2 1 1 PMOS
+M1 3 2 3 3 NMOS
+M4 4 2 3 3 NMOS
+M3 5 6 4 4 PMOS
+M2 6 5 3 3 PMOS
+
+VDD 4 0 DC 5V
+
+* End of netlist

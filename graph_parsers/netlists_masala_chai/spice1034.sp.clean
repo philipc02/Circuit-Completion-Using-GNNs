@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist for the given schematic
+
+VCC VCC 0 DC 12V
+
+* Transistors
+Q1 3 Vin 2 NPN
+Q2 2 2 0 NPN
+
+* Resistors
+RE VCC 3 1k
+RC 3 Vout 1k
+
+* Connections
+Vin Vin 0 DC 5V

@@ -1,0 +1,14 @@
+plaintext
+Vcc 2 0 DC <+V>
+Vee 3 0 DC <-V>
+
+Q1 6 2 3 NPN
+Q2 4 2 3 NPN
+
+R1 2 2 7
+R2 7 2 4
+R3 6 0 3
+R4 3 3 4
+
+Vin 6 0 DC <Vin>
+Vout 4 0 DC <Vout>

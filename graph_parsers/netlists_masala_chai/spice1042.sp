@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist for the given circuit
+
+VCC 2 0 DC VCC_VALUE
+Rout 4 2 Rout_VALUE
+R1 3 0 R1_VALUE
+Q1 4 BASE 3 NPN_MODEL
+Q2 2 3 0 NPN_MODEL
+
+* Models
+.model NPN_MODEL NPN
+
+* End of Netlist

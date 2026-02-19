@@ -1,0 +1,6 @@
+plaintext
+* NMOS Amplifier Circuit
+MN1 3 2 4 4 NMOS
+VGS 2 4 DC V_GS
+VD 3 4 DC V_DD
+RD 3 4 RD

@@ -1,0 +1,6 @@
+* Example SPICE Netlist
+C1 3 3B <value_of_C1>
+C2 2 4 <value_of_C2>
+* Voltage sources (not shown, assuming based on context)
+V1 Vi 3 DC <value_of_Vi>
+V2 4 Vo DC <value_of_Vo>

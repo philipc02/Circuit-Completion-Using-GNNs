@@ -1,0 +1,13 @@
+* List of Components
+* Resistors
+R1 3 0 
+R2 4 3
+R3 2 3
+R4 2 0
+
+* Voltage Source
+V1 4 0 DC 
+
+* Connections to the Op-Amp (Assuming ideal op-amp)
+* Non-inverting input (3), inverting input (2), output (0)
+XU1 3 2 0 OPAMP

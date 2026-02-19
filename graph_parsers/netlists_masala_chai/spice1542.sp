@@ -1,0 +1,10 @@
+spice
+* Netlist for the circuit
+M1 6 0 2 2 NMOS
+M2 5 3 2 2 NMOS
+M3 5 3 4 4 PMOS
+M4 4 3 3 3 PMOS
+R1 4 3 2
+Vin1 0
+Vout1 5
+VDD 3

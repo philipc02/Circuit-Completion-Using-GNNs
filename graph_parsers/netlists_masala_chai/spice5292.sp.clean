@@ -1,0 +1,6 @@
+spice
+VS 6 7 DC 0
+R1 3 2 680
+R2 5 4 330
+* Ground Node
+0 7 8 8 8

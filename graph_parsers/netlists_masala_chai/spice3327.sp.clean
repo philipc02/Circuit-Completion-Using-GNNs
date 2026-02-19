@@ -1,0 +1,18 @@
+spice
+* NMOS Transistors
+M0 7 3 8 8 NMOS 
+MREF 8 2 9 9 NMOS
+M1 6 2 2 2 NMOS
+M2 6 2 2 2 NMOS
+Mn 6 2 2 2 NMOS
+
+* Current Source
+IREF 8 2 DC 1mA
+
+* Wire Resistance
+R1 9 6 10
+R2 6 6 10
+R3 6 5 10
+
+* Substrate (assumed as ground)
+VSS 2 0 0

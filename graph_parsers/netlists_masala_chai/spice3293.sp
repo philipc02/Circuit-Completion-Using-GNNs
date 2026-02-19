@@ -1,0 +1,5 @@
+plaintext
+L1 4 6 L1_value
+C1 4 3 C1_value
+C2 3 0 C2_value
+M1 5 2 3 3 NMOS_model

@@ -1,0 +1,17 @@
+* NMOS M1
+M1 4 2 1 1 NMOS
+
+* NMOS M2
+M2 5 3 4 4 NMOS
+
+* PMOS M3
+M3 5 3 6 6 PMOS
+
+* Voltage Source VDD
+VDD 6 0 DC VDD
+
+* Input Voltage Source Vin
+Vin 2 0 DC Vin
+
+* Ground
+VSS 1 0 DC 0

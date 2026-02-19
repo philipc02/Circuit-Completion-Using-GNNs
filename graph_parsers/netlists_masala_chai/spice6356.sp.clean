@@ -1,0 +1,5 @@
+spice
+Vi 3 6 DC 0
+L1 2 4 L
+C1 2 4 C
+R1 4 5 R

@@ -1,0 +1,14 @@
+plaintext
+* Transistor Circuit
+
+VBB 2 7 DC 2V
+VBBCONN 7 8 DC 0V
+VCC 3 6 DC 10V
+VCCCONN 3 0 DC 0V
+
+RB 2 4 100k
+RC 5 3 1k
+
+Q1 5 2 4 NPN
+
+.END

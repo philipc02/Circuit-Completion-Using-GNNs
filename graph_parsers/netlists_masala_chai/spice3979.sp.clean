@@ -1,0 +1,19 @@
+plaintext
+* Circuit description
+Q1 2 7 8 8 2N3904
+Q2 11 3 12 12 2N3906
+V1 4 0 DC 5
+V2 0 8 DC 5
+V3 9 0 DC 1u
+R1 3 11 100k
+R2 9 7 50k
+R3 3 2 5k
+R4 2 4 5k
+R5 9 5 0.5k
+R6 2 8 2k
+R7 3 6 1.5k
+R8 6 0 1.5k
+C1 5 9 100u
+C2 6 0 100u
+C_E1 8 0 100u
+C_E2 2 0 100u

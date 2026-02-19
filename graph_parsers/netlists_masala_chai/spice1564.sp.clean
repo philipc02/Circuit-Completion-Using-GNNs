@@ -1,0 +1,26 @@
+spice
+* Transistors
+M1 5 8 7 7 NMOS
+M2 5 3 6 6 NMOS
+
+* Resistors
+R01 7 5 R01_value
+R02 6 5 R02_value
+
+* Current Sources
+I1 5 0 DC ISS_value
+
+* Voltage Sources
+V1 8 0 DC V1_value
+V2 3 0 DC V2_value
+VX 4 2 DC Vx_value
+
+* Node Definitions
+* 1 - V input for M1
+* 2 - Positive terminal of VX
+* 3 - V input for M2
+* 4 - Negative terminal of VX
+* 5 - Node P (Common source of M1 and M2)
+* 6 - Drain of M2
+* 7 - Drain of M1
+* 8 - Positive terminal of V1

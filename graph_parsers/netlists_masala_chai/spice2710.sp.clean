@@ -1,0 +1,7 @@
+plaintext
+* SPICE Netlist
+M1 3 5 2 2 NMOS
+M2 3 4 3 3 NMOS
+MB 4 4 2 2 PMOS
+IB 2 4 DC
+VDD 2 0 DC

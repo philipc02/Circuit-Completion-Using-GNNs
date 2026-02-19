@@ -1,0 +1,8 @@
+spice
+* PMOS Transistors
+M1 5 1 2 2 PMOS
+M2 6 1 2 2 PMOS
+
+* NMOS Transistors
+M3 7 3 4 4 NMOS
+M4 7 4 4 4 NMOS

@@ -1,0 +1,6 @@
+spice
+* Circuit Netlist
+C2 1 3 10u
+R2 3 4 10k
+Vinp 1 0 DC 0
+Vout 2 3 DC 0

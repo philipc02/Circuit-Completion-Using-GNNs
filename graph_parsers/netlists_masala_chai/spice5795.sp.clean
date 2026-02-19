@@ -1,0 +1,15 @@
+spice
+* NMOS Transistor
+M1 2 3 5 5 NMOS
+
+* Voltage Source for V_GS
+VGS 3 6 DC <value>
+
+* Resistor
+RD 4 2 <value>
+
+* Supply Voltage
+VDD 4 0 DC <value>
+
+* Ground
+VSS 6 0 DC 0

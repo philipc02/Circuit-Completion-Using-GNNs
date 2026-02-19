@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist for the given circuit diagram
+
+* Define components
+Iin 2 0 DC 0
+RF 2 22 1k
+RC 22 2 1k
+Q1 2 22 0 npn
+VCC 2 22 DC 5
+
+* Model definitions
+.model npn NPN(Is=1e-14 VAF=100)
+
+* Simulation commands
+.tran 0.1ms 100ms
+.end

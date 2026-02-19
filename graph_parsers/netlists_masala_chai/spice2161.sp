@@ -1,0 +1,15 @@
+spice
+* NMOS Transistors
+M1 4 6 2 2 NMOS
+M2 2 3 3 3 NMOS
+
+* Resistors
+Rs 3 5  Rs_value
+RD 4 4  RD_value
+
+* Voltage Sources
+Vin 3 0 DC Vin_value
+VDD 4 0 DC VDD_value
+
+* Ground
+0 3 0

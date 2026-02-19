@@ -1,0 +1,11 @@
+* SPICE Netlist
+V1 5 0 DC VSS
+V2 7 3 DC VDD
+VIN 5 7 DC VIN
+C1 7 2 C1_value
+C0 3 4 C0_value
+RT 5 7 RT_value
+RS 2 0 RS_value
+RD 3 4 RD_value
+RL 4 6 RL_value
+MN1 3 2 0 0 NMOS_Model

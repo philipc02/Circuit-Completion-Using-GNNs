@@ -1,0 +1,4 @@
+spice
+M1 0 VTH 5 5 NMOS
+M2 I_55 VGS2 5 5 NMOS
+I1 0 5 DC I_55

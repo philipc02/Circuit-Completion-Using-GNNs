@@ -1,0 +1,7 @@
+plaintext
+* NMOS Active Load Amplifier
+M1 OUT IN 0 0 NMOS
+ro OUT VDD 1k
+Rs 0 0 500
+VIN IN 0 DC 1.2
+VDD VDD 0 DC 5

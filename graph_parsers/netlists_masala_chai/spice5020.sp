@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist
+
+V1 1 0 SIN(0 1 1k)  ; Voltage Source with AC signal
+Rg 2 1 100k         ; Gate Resistor
+Rc 4 5 1k           ; Collector Resistor
+Ce 2 3 10u          ; Emitter Capacitor
+Cc 4 6 10u          ; Collector Capacitor
+
+Q1 4 2 3 NPN        ; NPN Transistor, (Collector Base Emitter)
+
+.tran 1n 1m
+.end

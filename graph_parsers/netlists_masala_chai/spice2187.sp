@@ -1,0 +1,15 @@
+spice
+* NMOS with gate at Vin, drain at Vout, source at Vb
+M1 Vout Vin Vb Vb NMOS
+
+* Resistor RD connected between VDD and Vout
+RD VDD Vout 1k
+
+* Voltage source Vb
+Vb Vb 0 DC 5V
+
+* DC Supply Voltage
+VDD VDD 0 DC 10V
+
+* .MODEL statement to define NMOS characteristics
+.model NMOS NMOS (level=1)

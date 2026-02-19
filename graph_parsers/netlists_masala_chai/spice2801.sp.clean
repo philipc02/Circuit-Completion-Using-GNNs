@@ -1,0 +1,15 @@
+plaintext
+* SPICE Netlist
+Vin 5 1 DC 0
+RG 5 3 R_G_VALUE
+CGS 3 2 C_GS_VALUE
+V1 2 1 DC 0
+gmV1 3 2 1 Gm_VALUE
+RS 2 1 R_S_VALUE
+CGD 3 3 C_GD_VALUE
+CL 3 4 C_L_VALUE
+RD 4 1 R_D_VALUE
+
+* Analysis
+.TRAN 1n 100n
+.END

@@ -1,0 +1,14 @@
+Q1 3 5 2 PNP
+Q2 3 5 2 NPN
+Qp 3 5 2 PNP
+Qn 5 5 2 NPN
+
+I1 0 4 DC IBIAS
+
+RL 2 1 RL
+
+VCC 5 0 DC VCC
+VEE 0 4 DC -VEE
+
+.SUBCKT circuit_name 1 2 3 4 5 7
+.ENDS

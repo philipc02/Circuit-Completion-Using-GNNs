@@ -1,0 +1,3 @@
+spice
+V1 N1 0 DC 0.6V
+M1 N2 N1 0 0 NMOS

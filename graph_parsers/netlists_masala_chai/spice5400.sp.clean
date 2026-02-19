@@ -1,0 +1,7 @@
+* SPICE Netlist
+
+V1 2 0 AC 8V
+C1 4 10 0.047uF
+C2 6 3 0.022uF
+R1 6 8 220
+R2 8 5 180

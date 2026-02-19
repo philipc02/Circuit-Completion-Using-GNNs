@@ -1,0 +1,11 @@
+* SPICE Netlist for the Circuit
+I1 2 4 DC IREF
+VEE 4 2 DC -VEE
+
+Q1 4 2 2 QNPN
+Q2 2 2 5 QNPN
+Q3 2 5 5 QNPN
+Q4 3 5 5 QNPN
+
+.model QNPN NPN(IS=1E-14 BF=100)
+.end

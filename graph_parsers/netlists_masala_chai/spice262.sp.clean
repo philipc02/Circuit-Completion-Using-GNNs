@@ -1,0 +1,16 @@
+spice
+* Transistors
+Q3 2 2 3 NPN
+Q9 9 3 2 NPN
+Q13 4 9 3 PNP
+
+* Resistors
+R13 4 5 33k
+R9 3 0 22k
+Rin2 9 2 0
+
+* Voltage Sources
+V1 2 0 DC {Vid/2}
+Vout 4 0 DC {Vout/2}
+
+* End of Netlist

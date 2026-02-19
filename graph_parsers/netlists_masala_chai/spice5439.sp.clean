@@ -1,0 +1,5 @@
+* RLC Circuit Netlist
+V1 8 7 AC 1
+R1 2 7 10k
+L1 2 6 5k
+C1 3 2 10k

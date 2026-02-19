@@ -1,0 +1,15 @@
+* Transistors
+M1 4 Y 0 0 NMOS
+M2 5 X 4 5 PMOS
+M3 Y 4 5 5 PMOS
+
+* Capacitor
+C1 Y 0
+
+* Voltage Source
+VDD 5 0 DC VDD
+
+* Nodes
+* Node labels based on annotations:
+* X = Gate of M2
+* Y = Node connected to drain of M1

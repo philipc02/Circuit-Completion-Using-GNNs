@@ -1,0 +1,24 @@
+spice
+* SPICE Netlist for the given schematic
+
+V1 7 0 DC V+                    ; Voltage Source
+
+Q1 2 6 3 QMOD                   ; Transistor Q1
+Q2 3 5 7 QMOD                   ; Transistor Q2
+Q0 3 9 8 QMOD                   ; Transistor Q0
+
+RE1 7 2 RE1_VALUE               ; Resistor RE1
+RE2 7 5 RE2_VALUE               ; Resistor RE2
+Ro2 9 8 Ro2_VALUE               ; Resistor Ro2
+R1 3 4 R1_VALUE                 ; Resistor R1
+RL 4 0 RL_VALUE                 ; Resistor RL
+
+Cc 3 4 CC_VALUE                 ; Capacitor Cc
+
+.model QMOD NPN (IS=1E-14 BF=100) ; NPN Transistor Model
+
+.control
+  run
+  .endc
+
+.end

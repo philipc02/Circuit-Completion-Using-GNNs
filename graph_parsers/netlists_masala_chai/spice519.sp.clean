@@ -1,0 +1,4 @@
+spice
+V1 2 0 a'cm*vic
+I1 2 3 adm*vid/2
+I2 3 4 adm*vid/2

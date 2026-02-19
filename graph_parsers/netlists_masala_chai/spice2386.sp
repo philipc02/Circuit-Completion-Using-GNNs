@@ -1,0 +1,4 @@
+* SPICE Netlist
+M1 2 3 3 3 NMOS
+IBIAS 3 2 DC
+VBIAS 2 0 DC

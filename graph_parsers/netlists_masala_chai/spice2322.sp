@@ -1,0 +1,15 @@
+spice
+* NMOS Transistor
+MNMOS 3 IN 4 4 NMOS_MODEL
+
+* PMOS Transistor
+MPMOS OUT 3 2 2 PMOS_MODEL
+
+* Current Sources
+IIBIAS1 5 3 DC VALUE
+IIBIAS2 OUT 2 DC VALUE
+
+* Voltage Source
+VBIAS 3 VBIAS DC VALUE
+
+.END

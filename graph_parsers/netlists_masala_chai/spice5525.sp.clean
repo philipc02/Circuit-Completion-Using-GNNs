@@ -1,0 +1,29 @@
+spice
+* Two-Pole High-Pass and Low-Pass Filter
+
+* Voltage source
+Vin 0 7 DC 0
+
+* Resistors
+R1 7 2  R1_value
+R2 22 5 R2_value
+R3 5 2  R3_value
+R4 3 Vout R4_value
+
+* Capacitors
+C1 7 0  C1_value
+C2 2 22 C2_value
+C3 5 0  C3_value
+C4 3 0  C4_value
+
+* Operational Amplifiers
+XU1 2 22 2 opamp
+XU2 5 3 Vout opamp
+
+* Model definitions
+.model opamp opamp
+
+* Analysis
+.tran 1us 100ms
+.ac dec 100 10 1Meg
+.end

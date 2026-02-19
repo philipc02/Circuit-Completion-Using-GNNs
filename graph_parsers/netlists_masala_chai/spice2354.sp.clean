@@ -1,0 +1,27 @@
+plaintext
+* PMOS Transistors
+MMP1  2 5 8 8 PMOS
+MMP2  5 5 8 8 PMOS
+MMP3  2 5 8 8 PMOS
+MMP4  5 5 8 8 PMOS
+MMP5  3 5 2 2 PMOS
+MMP6  3 5 2 2 PMOS
+MMP7  2 3 2 2 PMOS
+MMP8  3 3 2 2 PMOS
+
+* NMOS Transistors
+MMN1  5 9 8 8 NMOS
+MMN2  2 2 8 8 NMOS
+MMN3  2 2 8 8 NMOS
+MMN4  5 5 8 8 NMOS
+MMN5  4 4 8 8 NMOS
+MMN6  4 4 8 8 NMOS
+MMN7  2 2 8 8 NMOS
+MMN8  4 4 8 8 NMOS
+
+* Voltage Sources
+VDD 2 0 DC 1V
+VBias 9 8 DC 1V
+
+* Resistor
+R1 9 5 RValue

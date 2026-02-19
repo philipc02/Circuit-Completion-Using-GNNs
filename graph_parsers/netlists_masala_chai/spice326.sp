@@ -1,0 +1,14 @@
+spice
+* SPICE netlist for the given circuit
+
+V1 8 0 DC 0  ; vi, positive terminal to net 8, negative to ground
+
+RS 8 7 1k    ; Resistor RS from net 8 to net 7
+RL 4 5 1k    ; Resistor RL from net 4 to net 5
+
+Q1 3 4 2 QNP    ; NPN transistor Q1: C=3, B=4, E=2
+Q2 4 2 9 QNP    ; NPN transistor Q2: C=4, B=2, E=9
+
+.model QNP NPN  ; Model for NPN transistors
+
+.END

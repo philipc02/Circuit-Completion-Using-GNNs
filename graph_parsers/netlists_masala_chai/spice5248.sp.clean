@@ -1,0 +1,4 @@
+plaintext
+Q1 5 6 2 NPN
+R4 6 3 4k
+ISL 3 2 DC

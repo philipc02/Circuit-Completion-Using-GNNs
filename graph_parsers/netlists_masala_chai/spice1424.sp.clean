@@ -1,0 +1,5 @@
+plaintext
+M1 drain1 2 source1 2 NMOS
+M2 source1 2 0 0 NMOS
+Rout drain1 0 Rout_value
+Vb1 2 0 DC Vb1_value

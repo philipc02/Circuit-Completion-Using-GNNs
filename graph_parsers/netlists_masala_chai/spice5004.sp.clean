@@ -1,0 +1,11 @@
+spice
+* Components Declaration
+VCC 6 0 DC 15
+RL 6 3 1k
+
+* Transistors
+Q1 3 3 2 PNP
+Q2 2 3 8 NPN
+
+* Connection to ground
+8 0 0

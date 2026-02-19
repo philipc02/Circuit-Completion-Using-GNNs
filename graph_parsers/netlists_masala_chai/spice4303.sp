@@ -1,0 +1,22 @@
+plaintext
+* SPICE Netlist
+
+Q1 8 2 2 2N3904
+Q2 7 2 5 2N3904
+Q3 2 3 3 2N3904
+Q4 2 3 0 2N3904
+
+R1 7 8 21.8k
+R2 7 8 21.8k
+R3 3 2 38.6k
+RB1 2 5 0.5k
+RB2 2 5 0.5k
+
+V1 5 0 DC 4m
+V2 5 0 DC 4m
+V3 5 0 DC 2.5
+V4 5 0 DC 2.5
+V5 4 3 DC 10
+V6 6 0 DC 10
+
+.end

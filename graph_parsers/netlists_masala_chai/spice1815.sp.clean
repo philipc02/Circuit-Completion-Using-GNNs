@@ -1,0 +1,24 @@
+spice
+* NMOS Transistor M1
+M1 2 6 7 7 NMOS
+
+* PMOS Transistor M2
+M2 23 2 22 22 PMOS
+
+* Current Source
+Iin 6 0 DC 0.5A
+
+* Resistors
+RD VDD 2 1k
+RF 6 0 1k
+RF 5 0 1k
+RM 7 0 1k
+RM 5 0 1k
+RL 23 22 1k
+rO2 22 Iout 1k
+
+* Voltage supply
+VDD VDD 0 DC 5V
+
+* End of netlist
+.end

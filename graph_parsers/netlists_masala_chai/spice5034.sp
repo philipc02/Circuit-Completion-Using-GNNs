@@ -1,0 +1,14 @@
+spice
+* Differential Amplifier
+VCC 1 0 DC VCC
+VEE 0 9 DC VEE
+V2 7 4 AC 1
+
+RC1 2 1 RC
+RC2 5 3 RC
+RE 8 9 RE
+
+Q1 2 6 8 QMODEL
+Q2 3 7 8 QMODEL
+
+.model QMODEL NPN

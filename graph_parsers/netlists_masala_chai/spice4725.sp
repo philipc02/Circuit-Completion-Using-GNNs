@@ -1,0 +1,11 @@
+* SPICE Netlist
+Q1 4 2 5 NPN
+
+RB 6 2 RB_value
+RC 4 3 3k
+
+VBB 6 0 DC 15V
+VCC 3 7 DC 15V
+
+.model NPN NPN
+.END

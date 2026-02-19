@@ -1,0 +1,19 @@
+spice
+* Capacitors
+CGBOV 4 8
+CGBi 8 0
+CGSOV 0 1
+CGSi 1 2
+CBSV 2 4
+CJS 2 4
+CPD 6 4
+CBDi 4 7
+CGDOV 3 7
+CGDi 3 5
+
+* Current-Controlled Voltage Sources
+GMVG 5 3 VOL='g_m*v(3)'
+NGMVS 9 5 VOL='n*g_m*v(2)'
+
+* Conductance
+GDS 2 4 VALUE='g_ds*v(2,4)'

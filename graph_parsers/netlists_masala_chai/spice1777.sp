@@ -1,0 +1,5 @@
+* SPICE netlist for the given circuit
+M1 3 Vin 0 0 NMOS
+Iout 3 2 DC 0
+Rout 3 2 rO
+Vin Vin 0 DC 0

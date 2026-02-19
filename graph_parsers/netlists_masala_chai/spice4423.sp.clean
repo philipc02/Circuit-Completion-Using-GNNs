@@ -1,0 +1,17 @@
+* Example SPICE Netlist
+VCC 10 0 DC 10
+VS 7 8 DC ?
+
+R1 10 4 51k
+R2 5 8 5.5k
+R3 5 3 10k
+R4 4 6 10k
+Rf 3 2 82k
+RE 6 9 0.5k
+
+C1 4 5 1u
+C2 8 7 1u
+C3 4 6 1u
+C4 9 0 1u
+
+Q1 6 7 9 NPN

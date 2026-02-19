@@ -1,0 +1,22 @@
+spice
+* Transistors
+* Q1: NPN Transistor
+Q1 5 9 7 NPN
+
+* Q2: NPN Transistor
+Q2 2 5 4 NPN
+
+* Current Sources
+I1 8 7 DC
+I2 2 4 DC
+
+* Diodes
+D1 9 2 D
+D2 2 10 D
+
+* Load Resistor
+RL 3 0 1k
+
+* Voltage Sources
+VCC 7 0 DC
+VEE 4 0 DC

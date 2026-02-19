@@ -1,0 +1,21 @@
+spice
+* SPICE Netlist
+
+* Voltage Source
+VDD 6 0 DC VDD
+
+* Transistors
+M1 2 2 5 5 PMOS
+M2 2 3 4 4 NMOS
+
+* Resistors
+R1_1 6 3 R1Value
+R1_2 6 5 R1Value
+
+* Capacitor
+C1 4 2 C1Value
+
+* Voltage Output
+V0 4 2 DC 0
+
+* End of Netlist

@@ -1,0 +1,13 @@
+plaintext
+* SPICE Netlist
+I1 3 2 DC 1A
+Q1 3 7 4 QMODEL
+L1 3 5 L1_VALUE
+L2 4 8 L2_VALUE
+C1 5 2 C_VALUE
+
+.model QMODEL NPN (IS=1E-15 BF=100 VAF=100)
+
+.dc V1 0 1 0.1
+.tran 1n 10u
+.end

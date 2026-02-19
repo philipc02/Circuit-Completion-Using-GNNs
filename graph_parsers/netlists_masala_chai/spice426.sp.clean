@@ -1,0 +1,23 @@
+spice
+* SPICE Netlist Generated
+
+M1 3 1 3 3 NMOS
+M2 3 2 3 3 NMOS
+M3 3 3 10 10 NMOS
+M4 3 3 4 4 NMOS
+M5 6 3 6 6 PMOS
+M6 4 3 3 3 NMOS
+M7 6 6 9 9 PMOS
+M8 8 6 8 8 PMOS
+
+I1 10 3 DC IBIAS
+
+Rz 6 2 Rz
+C1 2 3 C
+
+CL 9 3 CL
+
+VDD 6 0 DC VDD
+VSS 10 0 DC VSS
+
+* End of Netlist

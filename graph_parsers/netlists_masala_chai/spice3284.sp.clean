@@ -1,0 +1,7 @@
+spice
+Iin 7 0 DC 0
+Cp 7 5 0
+Lp 5 2 0
+Rp 2 3 0
+Rm 3 4 0
+Vout 4 0 DC 0

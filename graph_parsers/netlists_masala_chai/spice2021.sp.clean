@@ -1,0 +1,6 @@
+spice
+* Example SPICE netlist
+Iin N001 0 DC 1A
+C1 N001 N002 1uF
+L1 N002 0 1mH
+R1 N001 N002 1k

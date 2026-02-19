@@ -1,0 +1,20 @@
+spice
+* Differential Amplifier Circuit
+
+* Transistors
+Q1 3 4 5 NPN
+Q2 3 2 6 NPN
+
+* Current Source
+I1 3 0 DC 1A
+
+* Resistor
+RL 3 0 1k
+
+* Voltage Sources
+VCC 4 0 DC 15V
+VEE 6 0 DC -15V
+Vin 2 0 DC 1V
+
+.model NPN NPN
+.END

@@ -1,0 +1,15 @@
+plaintext
+* SPICE Netlist for the given schematic
+
+M1 4 2 3 3 NMOS
+R_O1 4 2 rO1
+R_O2 3 5 rO2
+R_O3 3 6 rO3
+G_M3 3 6 V=GM3(V(3)-V(5))
+V_IN 2 0 DC Vin_value
+
+* Assuming gm3 is the transconductance value for the current source
+* Note: Replace `NMOS`, `rO1`, `rO2`, `rO3`, and `GM3` with actual values or model names as needed
+
+.tran 0.1ms 10ms
+.end

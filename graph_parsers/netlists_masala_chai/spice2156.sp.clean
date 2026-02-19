@@ -1,0 +1,5 @@
+plaintext
+M1 4 3 5 5 NMOS
+R_O 2 3 VALUE
+R_S 5 0 VALUE
+R_D 4 2 VALUE

@@ -1,0 +1,23 @@
+spice
+* Voltage Sources
+V1 6 0 DC V1
+VSD 5 0 DC Vsd
+
+* Capacitors
+C1 6 2 C1_Value
+C2 2 0 C2_Value
+CL 2 3 CL_Value
+
+* Control Signals
+VBB 2 5 DC VBB_Value
+
+* Assuming ideal OpAmp (indicated as CMC in the schematics)
+* The OpAmp is configured such that:
+* - Non-inverting terminal is node 2
+* - Inverting terminal is node 5
+* - Output is node 4
+E1 4 0 2 5 100k
+
+* Control Signals \( \Phi_1, \Phi_2 \)
+S1 6 2 V1 5 Phi1
+S2 5 2 C1 5 Phi2

@@ -1,0 +1,23 @@
+plaintext
+* Nodes:
+* 1 - VDD
+* 2 - Node for PMOS/M3 drain/gate
+* 3 - Node for NMOS/M1 source and NMOS/M2 source
+* 4 - Vo
+* 5 - Bottom node of tail current source ITAIL
+* 6 - VSS
+
+* Transistors
+M1 2 7 5 NMOS
+M2 4 3 5 NMOS
+M3 1 2 2 PMOS
+M4 1 4 2 PMOS
+
+* Current Source
+ITAIL 5 6 DC 
+
+* Voltage Sources
+VDD 1 0 DC
+VSS 6 0 DC
+
+.end

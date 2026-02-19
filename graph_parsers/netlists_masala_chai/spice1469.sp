@@ -1,0 +1,5 @@
+plaintext
+* SPICE Netlist
+M1 3 Vb1 2 2 PMOS
+M2 2 Vb2 0 0 NMOS
+Rout 3 0 Rout_value

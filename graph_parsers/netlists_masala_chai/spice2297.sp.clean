@@ -1,0 +1,22 @@
+spice
+* Transistors
+Q1 2 4 0 NPN
+Q2 6 7 5 NPN
+
+* Current Source
+Iout 6 5 DC 1mA
+
+* Capacitors
+Cin 3 0 1uF
+Cemi 2 5 10nF
+
+* Resistors
+Rinb 3 4 10k
+Rx 4 7 5k
+Remi 2 5 1k
+
+* Voltage Nodes
+Vcc 7 0 DC 12V
+Vin 3 0 DC 1V
+
+* End of netlist

@@ -1,0 +1,2 @@
+VDD 3 0 DC <value of VDD>
+RD 3 2 <value of RD>

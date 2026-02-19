@@ -1,0 +1,19 @@
+*MOSFET Differential Amplifier
+
+* NMOS Transistor
+M1 3 1 2 2 NMOS
+
+* PMOS Transistor
+M2 5 3 2 2 PMOS
+
+* Current Source
+I1 2 0 DC ISS
+
+* Resistor
+R1 6 5 ro4
+
+* Voltage Source
+V1 6 0 DC VDD
+
+* Input
+Vin 1 0 DC 0

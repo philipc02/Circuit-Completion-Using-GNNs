@@ -1,0 +1,16 @@
+spice
+*MOSFET Differential Amplifier
+
+M1 2 3 0 0 NMOS
+M2 4 1 2 2 NMOS
+
+R1 2 0 Rs
+
+VDD 4 0 DC VDD
+Vin 1 0 DC Vin
+Vb 3 0 DC Vb
+
+*Specify model parameters for NMOS if necessary
+*.model NMOS NMOS(...) 
+
+.END

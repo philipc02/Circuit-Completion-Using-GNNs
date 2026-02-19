@@ -1,0 +1,3 @@
+spice
+MN1 3 4 2 2 NMOS
+IBIAS 3 3 DC

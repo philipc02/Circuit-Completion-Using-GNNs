@@ -1,0 +1,18 @@
+plaintext
+*MOSFETs
+M1 P B 0 0 NMOS L=40n W=300u
+M2 P Y 0 0 NMOS L=40n W=300u
+M3 X A 0 0 NMOS L=40n W=300u
+M4 Y B 0 0 NMOS L=40n W=300u
+M5 C X Vb2 Vb2 PMOS L=80n W=320u
+M6 D Y Vb2 Vb2 PMOS L=80n W=320u
+M7 VDD C Vb3 Vb3 PMOS L=80n W=320u
+M8 VDD D Vb3 Vb3 PMOS L=80n W=320u
+
+*Current Source
+I1 P 0 DC 1.9mA
+
+*Voltage Source
+V1 VDD 0 DC VDD
+
+*.end

@@ -1,0 +1,36 @@
+spice
+* SPICE Netlist
+
+* Voltage Source
+VCC VCC 0 DC 12
+
+* Transistors
+Q1 N1 N2 N3 NMOS
+Q2 N4 N5 N6 NMOS
+Q3 N7 N8 N9 NMOS
+Q4 N10 N11 N12 NMOS
+Q5 N13 N14 N15 NMOS
+
+* Resistors
+R1 N2 N5 1k
+R2 N5 N8 1k
+R3 N8 N11 1k
+R4 N1 VCC 1k
+R5 N4 VCC 1k
+R6 N7 VCC 1k
+RF N1 N4 100k
+RM N13 N7 47k
+
+* Capacitors
+C1 N1 N3 10u
+C2 N2 N5 10u
+C3 N4 N6 10u
+C4 N5 N8 10u
+C5 N7 N9 10u
+C6 N11 N12 10u
+C7 N13 N15 10u
+
+* Inductor
+L1 N5 N10 100u
+
+* End of Netlist

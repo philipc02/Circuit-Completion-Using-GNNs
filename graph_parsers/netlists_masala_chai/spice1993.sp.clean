@@ -1,0 +1,5 @@
+spice
+* Example SPICE Netlist
+R1 Vin 3 1k
+C1 3 2 1uF
+Vout 3 5

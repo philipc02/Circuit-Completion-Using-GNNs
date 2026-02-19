@@ -1,0 +1,10 @@
+spice
+* NMOS Transistor
+M1 2 2 6 6 NMOS
+
+* Capacitors
+Cgd 2 4 Cgd_value
+Cgs 2 6 Cgs_value
+Cdb 2 3 Cdb_value
+Csb 2 5 Csb_value
+Cgb 6 5 Cgb_value

@@ -1,0 +1,18 @@
+spice
+* SPICE Netlist for the given circuit
+
+* Components
+I1 4 5 DC 0         * Current Source I_in
+V1 2 0 DC VDD       * Voltage Source V_DD
+M1 2 3 0 0 NMOS     * NMOS Transistor M1 with D, G, S, B terminals
+R1 2 3 RF           * Resistor R_F
+
+* Node Assignments
+* 0 - Ground
+* 1 - Vout (not directly used in netlist)
+* 2 - Node at VDD and one side of RF
+* 3 - Node at Gate of M1 and one side of RF
+* 4 - Node from I_in
+* 5 - Ground connection for I_in
+
+.end

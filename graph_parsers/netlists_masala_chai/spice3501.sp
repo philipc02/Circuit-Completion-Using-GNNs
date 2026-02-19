@@ -1,0 +1,23 @@
+* SPICE Netlist for the schematic
+
+VCC 4 0 DC VCC
+VT 6 10 DC 0
+
+RB1 4 2 RB1
+RB2 2 9 RB2
+RC1 4 7 RC1
+RC2 4 2 RC2
+RE1 3 8 RE1
+RE2 3 2 RE2
+RL 2 3 RL
+RT 6 9 RT
+
+C1 6 2 C1
+CE1 3 9 CE1
+CE2 3 2 CE2
+CO 2 3 CO
+
+Q1 2 9 3 QNPN
+Q2 2 8 3 QNPN
+
+.END

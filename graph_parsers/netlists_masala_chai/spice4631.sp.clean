@@ -1,0 +1,5 @@
+V1 7 3 DC <value>
+R1 3 2 <value>
+R2 2 5 <value>
+D1 2 4 D
+D2 5 6 D

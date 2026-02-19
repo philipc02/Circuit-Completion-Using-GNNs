@@ -1,0 +1,9 @@
+spice
+* NMOS Transistor with source connected to ground
+M1 2 2 4 4 NMOS
+
+* Voltage source connected to NMOS drain
+VDS 3 4 DC 0
+
+* Connection between VDS and NMOS
+Rdummy 2 3 1e-12

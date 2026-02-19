@@ -1,0 +1,21 @@
+spice
+* Transistor Definitions
+M1 3 8 3 3 NMOS
+M2 2 4 6 6 NMOS
+M3 4 6 5 5 PMOS
+
+* Current Source
+I1 5 4 DC 1A
+
+* Resistor
+R1 5 2 Rvalue
+
+* Variable Resistor
+R2 2 2 RoValue
+
+* Voltage Input
+Vi 8 0 DC 0
+
+* Simulation Commands
+*.tran 1n 10u
+*.end

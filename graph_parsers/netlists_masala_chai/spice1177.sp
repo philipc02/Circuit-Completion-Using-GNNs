@@ -1,0 +1,6 @@
+spice
+*MOSFET and resistors
+M1 2 4 2 NMOS
+R1 2 3 r1
+R2 2 0 r2
+Rout 1 2 Rout

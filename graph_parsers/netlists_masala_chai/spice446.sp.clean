@@ -1,0 +1,31 @@
+* NMOS Transistors
+M1 3 1 5 5 nmos
+M2 3 2 6 6 nmos
+M3 4 3 2 2 nmos
+M4 4 3 7 7 nmos
+M5 11 5 3 3 nmos
+M6 8 6 3 3 nmos
+
+* PMOS Transistors
+M7 4 1 2 2 pmos
+M8 4 2 3 3 pmos
+M9 9 4 2 2 pmos
+M10 9 4 2 2 pmos
+M11 10 4 2 2 pmos
+M12 10 4 2 2 pmos
+M13 9 7 8 8 pmos
+M14 9 7 8 8 pmos
+
+* Current Sources
+I1 11 2 DC 1mA
+I2 3 2 DC 1mA
+
+* Voltage Sources
+VDD 9 0 DC 5V
+VSS 0 11 DC -5V
+
+* Connections by net
+vin_p 1 0
+vin_n 2 0
+vout 8 0
+Io 10 8

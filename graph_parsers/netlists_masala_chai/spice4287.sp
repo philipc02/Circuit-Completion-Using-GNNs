@@ -1,0 +1,20 @@
+* Components 
+M1 2 5 3 3 NMOS W=1 L=1
+M2 6 5 4 4 PMOS W=1 L=1
+M3 2 2 4 4 PMOS W=1 L=1
+M4 6 2 3 3 NMOS W=1 L=1
+
+I1 2 1 1A
+I2 4 1 1.25A
+I3 3 1 0.8A
+I4 4 1 4A
+
+V1 5 6 DC 12V
+V2 3 4 DC -12V
+
+R1 2 4 1k
+
+IREF 2 4 1A
+
+.model NMOS NMOS
+.model PMOS PMOS

@@ -1,0 +1,12 @@
+spice
+* Transistors
+Q1 2 3 5 NPN
+Q2 2 5 5 NPN
+
+* Resistors
+R1 4 2 R1
+R2 6 2 R2
+R_i2 2 3 R_i2
+
+* Voltage Source
+V_id 5 3 DC V_id

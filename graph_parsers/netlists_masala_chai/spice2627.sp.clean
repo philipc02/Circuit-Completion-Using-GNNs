@@ -1,0 +1,19 @@
+spice
+* Transistors
+M1 out Vin1 0 0 NMOS
+M2 out Vin2 0 0 NMOS
+M3 out 2 VDD VDD PMOS
+M4 out 3 VDD VDD PMOS
+M5 0 Vb 0 0 NMOS
+
+* Resistors
+R1 out 2
+R2 out 3
+
+* Voltage Sources
+VDD VDD 0 DC <value>
+
+* Node Descriptions
+Vin1 Vin1 0 DC <value>
+Vin2 Vin2 0 DC <value>
+Vb Vb 0 DC <value>

@@ -1,0 +1,2 @@
+M1 Vout A 0 0 NMOS
+   M2 0 B Vout Vout NMOS

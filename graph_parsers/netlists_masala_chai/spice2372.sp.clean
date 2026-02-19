@@ -1,0 +1,38 @@
+plaintext
+* SPICE Netlist
+
+VDD 3 0 DC VDD
+VSS 5 0 DC VSS
+
+* Current Sources
+I1 2 5 DC 2.5uA
+I2 3 5 DC 2.5uA
+
+* PMOS Transistors
+M1 2 1 3 3 PMOS L=1u W=5u
+M2 2 6 3 3 PMOS L=1u W=5u
+M3 3 6 3 3 PMOS L=1u W=5u
+M4 3 8 3 3 PMOS L=1u W=5u
+
+* NMOS Transistors
+M5 2 8 2 5 NMOS L=1u W=5u
+M6 8 9 5 5 NMOS L=1u W=5u
+M7 9 9 5 5 NMOS L=1u W=5u
+M8 9 3 5 5 NMOS L=1u W=5u
+
+M9 2 8 5 5 NMOS L=8u W=1u
+M10 2 9 5 5 NMOS L=8u W=1u
+
+M11 3 3 5 5 NMOS L=0.5u W=32u
+M12 3 3 5 5 NMOS L=0.5u W=32u
+
+M13 3 3 5 5 NMOS L=0.4u W=30u
+M14 3 3 5 5 NMOS L=0.4u W=30u
+
+M15 3 3 5 5 NMOS L=0.5u W=8u
+M16 3 3 5 5 NMOS L=0.5u W=8u
+
+M17 3 3 5 5 NMOS L=8u W=0.5u
+M18 3 3 5 5 NMOS L=8u W=0.5u
+
+* End of Netlist

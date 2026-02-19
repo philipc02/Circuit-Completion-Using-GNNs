@@ -1,0 +1,20 @@
+spice
+* MOSFETs
+M1 5 2 5 5 NMOS
+M2 3 2 3 3 NMOS
+M3 5 2 5 5 PMOS
+M4 3 2 3 3 PMOS
+M5 3 2 3 3 PMOS
+
+* BJTs
+Q1 2 6 6 NPN
+Q2 3 4 4 NPN
+
+* Resistor
+R1 2 3 1k
+
+* Voltage Source
+VDD 5 0 DC VDD
+
+* Current Source
+I_PTAT 3 0 DC IP

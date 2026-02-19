@@ -1,0 +1,13 @@
+spice
+* NMOS transistor
+M1 Vout Vin 0 0 NMOS
+
+* Resistor
+R1 VDD Vout RD
+
+* Voltage sources
+VDD VDD 0 DC
+Vin Vin 0 DC
+
+* Model definition (add appropriate model parameters)
+.model NMOS NMOS (Level=1 Vto=0.7)

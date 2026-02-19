@@ -1,0 +1,9 @@
+spice
+* SPICE Netlist
+M7 1 7 2 2 PMOS
+M5 2 6 4 4 NMOS
+CN 2 3 1u
+CL 3 4 1u
+VDD 1 0 DC 5.0
+Vb3 7 0 DC 1.2
+Vb2 6 0 DC 0.8

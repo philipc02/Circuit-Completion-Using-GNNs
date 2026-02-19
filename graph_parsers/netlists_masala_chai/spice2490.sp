@@ -1,0 +1,6 @@
+plaintext
+M1 4 1 5 5 NMOS
+I1 4 5 DC 1
+RL 4 3 1k
+VDD 6 4 DC 5
+VIN 1 3 DC 2.5

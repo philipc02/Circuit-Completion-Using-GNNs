@@ -1,0 +1,19 @@
+plaintext
+* SPICE Netlist
+V1 7 0 DC 5V
+
+R1 4 0 18k
+R2 9 0 18k
+R3 6 2 2.5k
+
+Q1 5 4 0 NPN
+Q2 6 5 0 NPN
+Q3 3 9 0 NPN
+Q4 3 8 0 NPN
+Q5 2 6 0 NPN
+Q6 2 0 7 NPN
+
+* Connections
+B 6
+C 3
+D 2

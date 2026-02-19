@@ -1,0 +1,4 @@
+plaintext
+V1 3 0 DC 5V
+R1 3 4 100k
+D1 4 0 D

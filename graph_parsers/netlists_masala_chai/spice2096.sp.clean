@@ -1,0 +1,8 @@
+* SPICE Netlist for the Given Circuit 
+VDD 3 0 DC 1.8V
+R1 3 5 4k
+R2 5 1 10k
+RD 4 3 1k
+RS 2 1 1k
+M1 4 5 2 2 NMOS
+.model NMOS NMOS

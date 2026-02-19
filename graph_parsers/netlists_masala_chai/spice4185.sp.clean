@@ -1,0 +1,24 @@
+spice
+* BJTs
+Q1 4 6 7 NPN
+Q2 8 10 6 NPN
+Q3 4 9 2 NPN
+Q4 8 10 9 NPN
+
+* Diodes
+D1 5 3 D
+D2 2 3 D
+
+* Resistors
+R1 6 7 1k
+R2 9 2 1k
+
+* Voltage Source
+V+ 8 3 DC 5
+
+* Current Sources
+I_REF1 7 4 DC 1m
+I_REF2 2 4 DC 1m
+
+* Ground
+3 0

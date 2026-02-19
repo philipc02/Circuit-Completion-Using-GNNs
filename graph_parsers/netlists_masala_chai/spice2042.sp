@@ -1,0 +1,10 @@
+* Transistor Definitions
+M1 3 Vin 0 0 NMOS
+M2 Vout 2 VDD VDD PMOS
+
+* Voltage Sources
+Vin Vin 0 DC 0
+VDD VDD 0 DC VDD_value
+VTH1 3 2 DC VTH1_value
+
+* End of Netlist

@@ -1,0 +1,13 @@
+plaintext
+* SPICE Netlist
+
+L1 Y 6 L1_value
+Rp 6 Y Rp_value
+Q1 Y X 2 NMOS_MODEL
+C1 Y Vout C1_value
+C2 Vout 2 C2_value
+I1 2 X DC I1_value
+VDD 6 0 DC VDD_value
+Rin Vout 2 Rin_value
+
+.model NMOS_MODEL NMOS(Level=1)

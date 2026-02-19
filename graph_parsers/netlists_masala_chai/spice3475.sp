@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist for the given circuit
+
+Q1 6 7 0 NPN
+Q2 4 2 0 NPN
+Q3 3 5 2 NPN
+
+VCC VCC 0 DC <value_of_VCC> 
+VEE 0 VEE DC <value_of_VEE>
+
+R1 VCC 6 <value_of_R1>
+
+IBIAS1 VCC 4 DC <value_of_IBIAS1>
+IBIAS2 VCC 3 DC <value_of_IBIAS2>
+
+.end

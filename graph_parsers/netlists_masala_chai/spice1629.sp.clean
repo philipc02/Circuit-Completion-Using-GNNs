@@ -1,0 +1,28 @@
+spice
+* SPICE Netlist
+VDD 5 0 DC 1.8V
+
+* NMOS Transistors
+M1 3 1 3 3 NMOS
+M2 4 2 3 3 NMOS
+M3 4 Vb 3 3 NMOS
+M9 2 Vb 0 0 NMOS
+
+* PMOS Transistors
+M4 5 4 3 3 PMOS
+M7 5 4 5 5 PMOS
+M8 5 Vout 5 5 PMOS
+
+* Current Sources
+I1 2 1 DC 1mA
+Iss 3 0 DC 1mA
+
+* Voltage Source
+Vb Vb 0 DC 0V
+
+* Nodes
+Vin1 1 0
+Vin2 2 0
+Vout 4 0
+
+.END

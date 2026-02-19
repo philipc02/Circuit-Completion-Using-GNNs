@@ -1,0 +1,27 @@
+spice
+* Transformer
+* Primary (nodes 6, 6) - Secondary (nodes 3, 2)
+L1 6 6 1mH
+L2 3 2 1mH
+K1 L1 L2 1
+
+* Diode Bridge
+D1 3 2 D_model
+D2 3 2 D_model
+D3 3 2 D_model
+D4 3 2 D_model
+
+* Capacitor
+C1 2 3 100uF
+
+* Resistor
+R1 4 5 1k
+
+* NPN Transistor
+Q1 5 2 3 QN_model
+
+* Voltage Source
+V1 6 6 110V AC
+
+.model D_model D
+.model QN_model NPN

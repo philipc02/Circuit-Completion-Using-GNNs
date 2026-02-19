@@ -1,0 +1,5 @@
+spice
+* RLC Circuit
+R1 3 5 RW
+L1 5 6 L
+C1 3 4 C

@@ -1,0 +1,18 @@
+plaintext
+* Differential Pair Circuit
+
+M1 5 3 0 0 NMOS
+M2 4 2 0 0 NMOS
+M3 6 7 2 2 PMOS
+M4 2 2 2 2 PMOS
+
+I1 0 1 DC
+I2 0 3 DC
+
+Vb 7 0 DC
+Vin1 3 0 DC
+Vin2 4 0 DC
+
+Rss 5 4 VALUE
+
+VDD 2 0 DC

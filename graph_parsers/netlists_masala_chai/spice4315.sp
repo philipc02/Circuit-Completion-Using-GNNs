@@ -1,0 +1,20 @@
+plaintext
+* NMOS Transistors
+M1 5 1 6 6 NMOS
+M2 4 3 6 6 NMOS
+
+* PMOS Transistors
+M3 2 1 2 2 PMOS
+M4 3 2 2 2 PMOS
+
+* Current Source
+I1 6 2 DC IQ
+
+* Voltage Sources
+V+ 2 0 DC V+
+V- 6 0 DC V-
+
+* Input and Output
+Vin1 1 0 DC v1
+Vin2 3 0 DC v2
+Vout 4 0 DC vo

@@ -1,0 +1,16 @@
+plaintext
+* Netlist for the given schematic
+
+* Voltage Sources
+VB1 5 0 DC V_B1
+VB2 3 0 DC V_B2
+
+* Current Sources
+IX 2 0 DC Ix
+IY 4 0 DC Iy
+
+* NMOS Transistors
+M1 2 5 3 3 NMOS
+M2 4 3 4 4 NMOS
+
+.model NMOS NMOS (Level=1)

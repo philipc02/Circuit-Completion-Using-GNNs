@@ -1,0 +1,10 @@
+spice
+* NMOS Device
+M1 2 3 5 5 NMOS
+
+* Voltage Source
+V1 3 5 DC VGS
+
+* Capacitors
+C1 2 4 C1_VALUE
+C2 3 5 C2_VALUE

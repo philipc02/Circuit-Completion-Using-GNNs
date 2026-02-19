@@ -1,0 +1,14 @@
+spice
+* SPICE Netlist
+
+* Capacitors
+Cgd 1 2 Cgd_value
+Coss 2 0 Coss_value
+Cds 2 3 Cds_value
+
+* NMOS Transistor
+M1 2 2 0 0 NMOS_model
+
+* Ground Nodes
+Vg1 1 0 DC 0
+Vg2 3 0 DC 0

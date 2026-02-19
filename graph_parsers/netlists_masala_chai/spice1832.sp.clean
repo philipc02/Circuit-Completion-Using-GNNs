@@ -1,0 +1,23 @@
+spice
+   * Transistor M1 (NMOS)
+   M1 4 1 5 N-type
+
+   * Transistor M2 (NMOS)
+   M2 2 1 5 N-type
+
+   * Transistor M3 (PMOS)
+   M3 6 2 7 P-type
+
+   * Current Source ISS
+   ISS 5 0 DC <value>
+
+   * Voltage Supply VDD
+   VDD 7 0 DC <value>
+
+   * Nodes:
+   * 1 - Vin
+   * 2 - Connection between M2 and M3 gates
+   * 4 - Drain of M1
+   * 5 - Ground (Common for ISS current source)
+   * 6 - Vout
+   * 7 - VDD

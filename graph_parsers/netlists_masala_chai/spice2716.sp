@@ -1,0 +1,14 @@
+spice
+* SPICE Netlist
+VDD 2 1 DC 5V
+
+* Resistors
+R1_left 5 4 1k
+R1_right 6 4 1k
+
+* NMOS Transistors
+M1 4 4 3 1 NMOS L=1u W=2u
+M2 4 4 1 1 NMOS L=1u W=2u
+
+* Voltage Source
+VDD 2 0 DC 5V

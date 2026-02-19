@@ -1,0 +1,28 @@
+* Example SPICE netlist for the given schematic
+
+V1 4 0 DC 6
+V2 8 0 DC -6
+
+R1 4 5 3k
+R2 5 5 3k
+R3 6 9 2.4k
+R4 9 8 3k
+R5 6 7 4.8k
+R6 7 8 3k
+RL 9 8 
+
+Q1 1 3 2 NPN
+Q2 2 5 3 NPN
+Q3 5 2 7 NPN
+Q4 6 2 9 PNP
+Q5 7 5 2 NPN
+Q6 9 10 8 PNP
+
+* Inputs
+Vin1 3 0 DC 0
+Vin2 5 0 DC 0
+
+* Output
+Vout 9 0 0
+
+.end

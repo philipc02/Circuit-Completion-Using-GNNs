@@ -1,0 +1,18 @@
+spice
+* SPICE Netlist
+* Components and connections
+
+C1 6 4 CM_1_Av  ; Capacitor C_{M}(1 - A_v) connected between nodes 6 and 4
+C2 5 3 CM        ; Capacitor C_M connected between nodes 5 and 3
+V1 7 2 AvVin     ; Voltage source A_v v_in connected with positive terminal at node 7 and negative terminal at node 2
+
+* Node descriptions
+* Node 1: v_in
+* Node 2: Ground
+* Node 3: Node connecting C_M to V1
+* Node 4: Ground connection for C_{M}(1 - A_v)
+* Node 5: v_out
+* Node 6: Positive input for C_{M}(1 - A_v)
+* Node 7: Positive terminal of voltage source
+
+.END

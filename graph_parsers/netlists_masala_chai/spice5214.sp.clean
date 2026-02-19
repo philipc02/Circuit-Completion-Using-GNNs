@@ -1,0 +1,25 @@
+spice
+* SPICE Netlist for Operational Amplifier Circuit
+
+* Voltage Sources
+VCC 2 0 DC 15V
+VEE 4 0 DC -15V
+
+* Capacitor
+C1 2 0 0.1uF
+
+* Resistors
+R 2 5 2k
+R1 2 0 33k
+R2 2 3 4.7k
+
+* Operational Amplifier
+* Connecting pins of the op-amp according to the schematic
+XU1 2 3 4 6 opamp318
+
+* Output
+Vout 6 0 
+
+* Model for the operational amplifier
+.model opamp318 opamp
+.end

@@ -1,0 +1,12 @@
+plaintext
+* SPICE Netlist for the given circuit
+
+V1 7 6 DC 0       * Voltage source vi connected between node 7 and node 6
+I1 6 4 DC 0       * Current source i2 connected between node 6 and node 4
+RL 1 2 1000       * Resistor RL connected between nodes 1 and 2
+RE 3 4 1000       * Resistor zE2 connected between node 3 and node 4
+Q1 1 5 3 NPN      * NPN transistor Q1 with collector at 1, base at 5, emitter at 3
+
+.model NPN NPN (IS=1e-14 BF=100)
+
+.end

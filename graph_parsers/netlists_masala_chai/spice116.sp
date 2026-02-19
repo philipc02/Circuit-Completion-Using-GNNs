@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist
+
+VCC 5 0 DC 15
+
+IIN 5 4 DC 1mA 
+
+Q1 7 3 8 NPN
+Q2 7 4 8 NPN
+Q3 3 2 8 PNP
+Q4 4 2 8 PNP
+
+V_IN 1 0 DC 0V
+V_OUT 6 0 DC 0V
+
+.END

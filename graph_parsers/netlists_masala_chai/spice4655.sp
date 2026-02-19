@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+Vin 3 7 AC 1
+D1 3 4 Dmodel
+C1 6 2 C
+RL 4 5 1k
+Dmodel D

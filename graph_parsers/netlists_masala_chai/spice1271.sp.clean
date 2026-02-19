@@ -1,0 +1,4 @@
+spice
+M1 3 Vin 0 0 NMOS
+M2 3 Vb1 2 2 NMOS
+M3 VDD Vb2 2 2 NMOS

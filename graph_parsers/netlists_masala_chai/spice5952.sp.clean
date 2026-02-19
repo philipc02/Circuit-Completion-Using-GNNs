@@ -1,0 +1,15 @@
+plaintext
+* SPICE Netlist
+
+MN1 8 6 2 VSS M1
+MN2 4 2 5 VSS M2
+
+VDD 7 0 DC VDD
+VSS 0 3 DC VSS
+
+I1 7 5 DC I
+I2 2 3 DC 2I
+
+Rin 6 8 Rin
+
+.END

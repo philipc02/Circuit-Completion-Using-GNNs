@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist
+VDD 3 0 DC VDD
+RD1 3 3 0 RD1
+M1 3 4 2 2 NMOS
+M2 2 2 2 2 NMOS
+Iin 4 2 DC Iin
+
+* MOSFET Parameters
+.model NMOS NMOS (level=1)

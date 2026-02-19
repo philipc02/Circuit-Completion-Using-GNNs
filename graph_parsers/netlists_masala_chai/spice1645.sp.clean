@@ -1,0 +1,23 @@
+plaintext
+* SPICE netlist for given schematic
+
+* Capacitor Cπ
+C1 2 4 Cpi
+
+* Resistor rπ
+R1 2 4 rpi
+
+* Capacitor Cμ
+C2 2 7 Cmu
+
+* Voltage-controlled current source gm*vπ
+G1 6 4 VOL=V(2,4)
+I1 6 5 gm
+
+* Resistor r₀
+R2 5 4 ro
+
+* Connections 
+* Node 2 -> B
+* Node 3 -> C
+* Node 4 -> E (ground reference)

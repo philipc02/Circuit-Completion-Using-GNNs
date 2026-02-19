@@ -1,0 +1,6 @@
+spice
+* NMOS Amplifier Circuit
+M1 4 6 5 5 NMOS
+RS 2 4 1k
+RD 5 3 0.4k
+V1 3 0 -5

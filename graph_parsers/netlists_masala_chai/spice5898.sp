@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist for the Given Schematic
+
+* NMOS Transistors
+M_Q1 5 2 2 2 NMOS
+M_Q2 4 3 2 2 NMOS
+
+* Resistor
+R1 8 6 R
+
+* Voltage Source (VDD)
+VDD 8 0 DC <value>
+
+* Ground
+VSS 3 0 DC 0V

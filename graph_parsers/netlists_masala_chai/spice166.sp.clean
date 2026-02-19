@@ -1,0 +1,22 @@
+* SPICE Netlist
+
+V_OS 7 6 DC 0
+
+R1 7 2 1k
+R2 2 2 1k
+R3 2 5 1k
+
+Q1 2 3 4 NMOS
+Q2 2 0 5 NMOS
+
+* Assume op-amp modeled or connected externally
+* Nodes: 
+*   2 - Common connection between R1, R2, R3.
+*   3 - Gate of Q1
+*   4 - Source of Q1 (ground)
+*   5 - Source of Q2 (ground)
+*   6 - Positive input of V_OS
+*   7 - Negative input of V_OS
+*   Op-amp input and output connections need extra specification for functionality
+
+.END

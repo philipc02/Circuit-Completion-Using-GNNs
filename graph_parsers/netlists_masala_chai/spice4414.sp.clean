@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist for the Transistor Amplifier Circuit
+
+V1 4 0 DC 0
+RS 4 3 1k  ; Replace 1k with the actual value if known
+RF 3 3 10k ; Replace 10k with the actual value if known
+RC 1 5 1k  ; Replace 1k with the actual value if known
+
+Q1 5 3 2 NPN
+
+VCC 1 0 DC 15 ; Replace 15 with the actual Vcc value if known
+
+.END

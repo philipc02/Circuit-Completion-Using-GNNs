@@ -1,0 +1,10 @@
+* Netlist for the given schematic
+
+V1 12 8 DC 0
+Rs 8 3 10k
+R1 2 3 1k
+Cpi 9 4 10u
+Cmu 7 10 10u
+Ibeta 5 7 DC 0
+Rc 7 11 5k
+RE 6 9 2k

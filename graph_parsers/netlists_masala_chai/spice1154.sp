@@ -1,0 +1,14 @@
+spice
+* NMOS Example Circuit
+VDD 3 0 DC 1.8V
+
+R1 3 2 4k
+R2 2 0 10k
+RD 3 5 2k
+RS 5 0 1k
+
+M1 5 2 0 0 NMOS_model
+
+.model NMOS_model NMOS (Level=1)
+
+* End of netlist

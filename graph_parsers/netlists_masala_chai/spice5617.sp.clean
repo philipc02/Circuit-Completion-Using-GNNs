@@ -1,0 +1,5 @@
+spice
+V1 7 6 DC 0
+R1 7 2 R
+R2 2 3 r_d
+V2 3 6 DC 0

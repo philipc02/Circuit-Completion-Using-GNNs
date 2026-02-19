@@ -1,0 +1,21 @@
+plaintext
+* SPICE Netlist for the given schematic
+
+V1 VCC 0 DC VCC
+
+I1 Vout VCC DC I1
+
+* PMOS Transistor Q1
+M1 Vout Vb1 VCC VCC PMOS_MODEL
+
+* NMOS Transistor Q2
+M2 2 Vin 0 0 NMOS_MODEL
+
+* NMOS Transistor Q3
+M3 VCC Vb3 2 0 NMOS_MODEL
+
+* Models for transistors
+.model PMOS_MODEL PMOS
+.model NMOS_MODEL NMOS
+
+.end

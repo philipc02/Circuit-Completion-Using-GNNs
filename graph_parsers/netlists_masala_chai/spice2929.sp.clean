@@ -1,0 +1,18 @@
+* NMOS Transistor
+M1 3 4 6 6 NMOS
+
+* Current Source
+Iin 5 6 DC 1mA
+
+* Resistor
+RD 2 3 1k
+
+* Voltage Source
+VDD 2 0 DC 5V
+Vb 4 0 DC 1V
+
+* Simulation Control
+.control
+  dc Vb 0 5 0.1
+  print V(3)
+.endc

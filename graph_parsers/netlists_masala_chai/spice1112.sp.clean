@@ -1,0 +1,17 @@
+spice
+* List of components
+* Voltage source
+V1 4 3 DC 1V
+
+* MOSFET
+M1 2 4 3 3 NMOS
+
+* Current source
+Ix 2 0 DC 1A
+
+* Voltage source
+Vx 2 0
+
+* Connections
+* Ground
+0 3

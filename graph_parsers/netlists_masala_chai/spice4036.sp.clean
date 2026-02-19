@@ -1,0 +1,14 @@
+* Voltage Source
+Vi 6 0 DC
+
+* Resistors
+RS 6 1  # RS connected between net 6 and net 1
+Rpi 1 2  # Rπ connected between net 1 and net 2
+RL 4 5  # RL connected between net 4 and net 5
+
+* Capacitors
+CC 1 0  # CC connected between net 1 and ground
+CL 5 0  # CL connected between net 5 and ground
+
+* Voltage-Controlled Current Source
+Gm 2 0 VALUE={gm*V(2,0)}  # gmVπ controlled by voltage across net 2 and ground

@@ -1,0 +1,24 @@
+spice
+* Netlist for the given schematic
+
+* Voltage Source
+V1 7 8 DC <value>
+
+* Current Source
+IREF 6 1 DC <value>
+
+* Resistors
+R1 6 7 <value>
+R2 1 5 <value>
+
+* NMOS Transistors
+M1 5 4 2 2 NMOS
+M2 1 3 5 5 NMOS
+
+* Connections
+* Node 6: VDD
+* Node 1: X
+* Node 5: Y
+* Node 8: Ground
+
+* Note: Specify the transistor model parameters as required.

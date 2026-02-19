@@ -1,0 +1,5 @@
+* SPICE Netlist
+V_BE 4 0 DC <value>  ; Define the voltage value for V_BE
+RC 3 1 <value>       ; Define the resistance value for RC
+Q1 3 4 2 QNPN        ; BJT with collector (3), base (4), emitter (2)
+V_CC 3 0 DC <value>  ; Define the voltage value for V_CC

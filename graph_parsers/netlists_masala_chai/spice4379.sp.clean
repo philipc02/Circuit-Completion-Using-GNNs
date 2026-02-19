@@ -1,0 +1,17 @@
+* Transistor Definitions
+Q1  1 2 9 NPN
+Q2  2 4 9 NPN
+Q3  3 2 7 NPN
+Q4  4 3 7 NPN
+Q5  2 2 9 NPN
+Q6  4 5 9 NPN
+Q7  5 6 7 NPN
+
+* Current Sources
+IQ  9 8 DC <Value>
+IQ1 6 7 DC <Value>
+
+* Voltage Sources (Assuming for simulation purposes)
+V1  9 1 DC <V1>
+V2  9 2 DC <V2>
+V3  7 9 DC <Voltage value>

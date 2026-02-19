@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist for the given circuit
+
+V1 4 0 DC 0     * Voltage source Vi connected to node 4 and ground
+R1 4 2 10k      * 10 kΩ resistor between node 4 and node 2
+C1 2 0 1uF      * Capacitor connected between node 2 and ground
+R2 2 3 4k       * 4 kΩ resistor between node 2 and output node 3

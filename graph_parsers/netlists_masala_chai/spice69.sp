@@ -1,0 +1,14 @@
+spice
+* SPICE netlist for the given schematic
+
+V1 7 4 DC 0
+
+Igm1 4 2 DC g_m1*v(7,4)
+Igm2 6 8 DC g_m2*v(4,8)
+
+Rpi1 7 4 r_pi1
+Rpi2 4 8 r_pi2
+Ro2 3 5 r_o2
+
+* Ground node
+V0 2 0 DC 0

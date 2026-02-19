@@ -1,0 +1,25 @@
+plaintext
+* SPICE Netlist for Given Schematic
+
+* Voltage Sources
+Vs 3 6 DC
+Vi 3 8 DC
+
+* Current Source
+Is 3 7 DC
+
+* Resistors
+R11a 6 5  R11a_value
+R12a 5 4  R12a_value
+R21a 4 2  R21a_value
+R22a 2 9  R22a_value
+R11v 7 3  R11v_value
+R12v 3 9  R12v_value
+R21v 9 2  R21v_value
+R22v 2 1  R22v_value
+
+* Load Resistor
+ZL 2 2 ZL_value
+
+* Define Nodes
+.END

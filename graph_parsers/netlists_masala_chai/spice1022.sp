@@ -1,0 +1,13 @@
+*MOSFET Definitions
+* Q<name> <drain> <gate> <source> <model>
+
+Q1 2 Vin 0 NMOS
+Q2 Vcc 2 2 PMOS
+
+*Voltage Sources
+Vcc Vcc 0 DC <value>
+Vin Vin 0 DC <value>
+
+*.MODEL Definitions
+.model NMOS NMOS
+.model PMOS PMOS

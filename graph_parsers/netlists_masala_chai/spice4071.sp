@@ -1,0 +1,9 @@
+spice
+Vi 7 5 DC 0
+Rs 7 8 100  ; Rs connected between nodes 7 and 8
+Rb 8 3 100k ; Rb connected between nodes 8 and 3
+rpi 3 2 10k ; rpi connected between nodes 3 and 2
+Cpi 3 2 10p ; Cpi connected between nodes 3 and 2
+Cm 2 0 10p  ; Cm connected between nodes 2 and 0 (ground)
+Gm 2 6 POLY(2) (3,2) 0.01 ; Gm controlled by Vpi with nodes 3,2
+Rl 6 2 1k  ; R'L connected between nodes 6 and 2

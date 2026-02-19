@@ -1,0 +1,15 @@
+plaintext
+* NMOS transistor M1
+M1 2 Vin 3 NMOS
+
+* NMOS transistor M2
+M2 3 Vb 0 NMOS
+
+* Output resistor
+Rout 2 0 Rout_value
+
+* Voltage source Vb
+Vb Vb 0 DC Vb_value
+
+* Voltage source Vin
+Vin Vin 0 DC Vin_value

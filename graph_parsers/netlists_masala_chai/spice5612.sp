@@ -1,0 +1,8 @@
+plaintext
+* Netlist for the given circuit
+V1 1 3 DC 10
+R1 3 4 R
+D1 4 4 D
+D2 4 4 D
+D3 4 0 D
+Vo 3 2 DC 0

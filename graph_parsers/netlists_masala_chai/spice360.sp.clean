@@ -1,0 +1,8 @@
+Vs 8 0 DC 0
+R1 8 5 rpi1
+V1 5 7 DC 0
+R2 7 2 88
+Gm 2 0 (5, 7) gm1
+R3 2 6 9k
+R4 2 4 rpi2
+V2 4 0 DC 0

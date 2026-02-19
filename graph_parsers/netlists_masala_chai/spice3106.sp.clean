@@ -1,0 +1,24 @@
+* Transistors
+M1 2 7 7 7 NMOS   * Mb1
+M2 2 3 7 7 NMOS   * Mb2
+M3 2 2 2 2 PMOS   * Mb3
+M4 9 2 7 7 NMOS   * Mb4
+M5 6 9 3 3 NMOS   * M9
+M6 6 3 3 3 NMOS   * M11
+
+* Resistors
+RS 2 9 RS
+RZ 4 6 RZ
+
+* Capacitors
+CE 9 3 CE
+CC 9 4 CC
+CL 6 0 CL
+
+* Current Source
+IB 2 3 DC IB
+
+* Voltage Source
+VDD 3 0 DC VDD
+
+.END

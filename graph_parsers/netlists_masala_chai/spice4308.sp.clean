@@ -1,0 +1,15 @@
+plaintext
+* SPICE Netlist for the circuit
+V1 7 0 DC 10V
+V2 9 0 DC -10V
+I_D1 6 7 DC 1A
+R_D1 7 10 16k
+R_D2 5 10 16k
+R_1 10 9 30k
+I_D2 10 5 DC 1A
+I_1 10 9 DC 1A
+M1 6 1 2 2 NMOS_MODEL L=1u W=1u
+M2 10 3 5 5 NMOS_MODEL L=1u W=1u
+M3 5 3 4 4 PMOS_MODEL L=1u W=1u
+M4 2 2 4 4 PMOS_MODEL L=1u W=1u
+.end

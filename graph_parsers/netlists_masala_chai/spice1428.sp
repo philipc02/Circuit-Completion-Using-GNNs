@@ -1,0 +1,10 @@
+spice
+*MOSFET Circuit
+M1 2 2 0 0 NMOS
+M2 3 1 0 0 NMOS
+Rout 2 3 Rout_value
+Vb1 2 0 DC Vb1_value
+RG 1 0 RG_value
+
+* Specify Models
+.model NMOS NMOS

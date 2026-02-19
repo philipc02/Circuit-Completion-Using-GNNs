@@ -1,0 +1,21 @@
+plaintext
+* SPICE Netlist
+R_S 5 2 RS
+R_1R_2 2 8 R1R2
+R_pi 6 8 Rpi
+R_F 3 4 RF
+R_C 3 7 RC
+
+* Dependent Voltage Source
+* V_pi between nodes 6 and 8
+E_Vpi 6 8 6 8 1
+
+* Dependent Current Source
+* gm * V_pi from node 3 to 7
+G_gmVpi 3 2 6 8 gm
+
+* Voltage source Vr
+V_1 1 2 Vr
+
+* Ground connection
+V_gnd 2 0 0

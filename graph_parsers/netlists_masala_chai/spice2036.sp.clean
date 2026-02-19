@@ -1,0 +1,16 @@
+spice
+* NMOS Transistor
+M1 2 0 0 0 NMOS_MODEL
+
+* Resistor
+RD 3 2 10k
+
+* Capacitor
+CL 2 0 1uF
+
+* Voltage Sources
+VDD 3 0 DC 5V
+Vin 0 0 DC 0V
+
+* Model declaration (You may need to replace this with actual model parameters)
+.model NMOS_MODEL NMOS (level=1)

@@ -1,0 +1,5 @@
+plaintext
+V1 7 6 DC <value_of_vi>
+RBB 7 2 <value_of_RBB>
+RC 4 9 <value_of_RC>
+Q1 4 2 3 QNPN

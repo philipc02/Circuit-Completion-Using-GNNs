@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist
+
+* Voltage sources
+VCC Vcc 0 DC <Vcc_value>
+Vb1 Vb1 0 DC <Vb1_value>
+Vb2 Vb2 0 DC <Vb2_value>
+
+* Resistors
+RE Vcc Q2c <RE_value>
+Rout Q1e 0 <Rout_value>
+
+* NPN Transistors
+Q1 Q2e Vb1 Q1e NPN
+Q2 Vcc Vb2 Q2e NPN
+
+*.model statements (if necessary)
+.model NPN NPN (...)
+
+.end

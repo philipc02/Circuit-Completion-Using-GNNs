@@ -1,0 +1,22 @@
+spice
+* NMOS Differential Pair Circuit
+
+* NMOS Transistor
+M1 2 4 1 1 NMOS 
+M2 2 2 1 1 NMOS 
+
+* Resistors
+RD1 5 3 RD
+RD2 6 3 RD
+
+* Current Source
+I1 1 2 DC I
+
+* Voltage Sources
+V1 4 0 DC VG1
+V2 2 0 DC VG2
+VDD 3 0 DC VDD
+VSS 0 1 DC VSS
+
+* Models
+.model NMOS NMOS

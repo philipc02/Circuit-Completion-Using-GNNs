@@ -1,0 +1,34 @@
+spice
+* SPICE Netlist for the given schematic
+
+VCC 1 0 DC 12V  ; Assuming a 12V supply for VCC
+
+* Transistor Q1
+Q1 5 8 0 NPN
+
+* Transistor Q2
+Q2 5 8 0 NPN
+
+* Transistor Q3
+Q3 8 6 0 PNP
+
+* Transistor Q4
+Q4 2 8 0 NPN
+
+* Transistor Q5
+Q5 2 4 0 NPN
+
+* Transistor Q6
+Q6 5 7 1 PNP
+
+* Diode Q7 (Diode connected NPN)
+D7 1 3 D
+
+* Resistor
+R1 3 0 1k  ; Assuming 1k Ohm resistor
+
+.model NPN NPN
+.model PNP PNP
+.model D D
+
+.end

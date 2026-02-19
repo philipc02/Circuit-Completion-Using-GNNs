@@ -1,0 +1,18 @@
+spice
+* Transistors
+Q1 3 22 3 NPN
+Q2 3 5 3 NPN
+Q3 6 4 5 NPN
+
+* Current Source
+I1 22 4 DC 1mA
+
+* Resistor
+RL 3 0 1k
+
+* Voltage Sources
+VCC 22 0 DC 10V
+VEE 5 0 DC -10V
+VIN 4 0 DC 0V
+
+* End of netlist

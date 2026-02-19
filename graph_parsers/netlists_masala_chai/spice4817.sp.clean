@@ -1,0 +1,6 @@
+spice
+* Example Circuit
+V1 5 6 AC 1
+R1 5 2 10k
+R2 2 3 2.2k
+R3 3 6 1k ; Assuming βr'e = 1k ohms for simulation

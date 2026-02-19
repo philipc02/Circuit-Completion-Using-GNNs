@@ -1,0 +1,15 @@
+spice
+* Diodes
+D1 N1 N4
+D2 N2 N5
+
+* Resistors
+R1 N3 N2 10k
+R2 N2 N1 5k
+
+* Voltage Sources
+V1 N3 N4 DC 10
+V2 N1 N5 DC -10
+
+* Ground
+V0 N5 0 DC 0

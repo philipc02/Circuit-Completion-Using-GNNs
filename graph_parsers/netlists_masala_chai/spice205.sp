@@ -1,0 +1,25 @@
+spice
+* SPICE Netlist for the given schematic
+
+* Voltage Sources
+V1 3 0 DC <V1_value>
+V2 4 0 DC <V2_value>
+VDD 6 0 DC <VDD_value>
+VSS 5 0 DC <VSS_value>
+
+* Load Resistor
+RL 7 0 <RL_value>
+
+* NMOS Transistors
+M1 3 2 4 4 NMOS
+M2 3 2 5 5 NMOS
+M5 3 4 5 5 NMOS
+M6 4 4 5 5 NMOS
+
+* PMOS Transistors
+M3 6 3 6 6 PMOS
+M4 6 4 6 6 PMOS
+M11 5 3 5 5 PMOS
+M12 5 2 5 5 PMOS
+
+* End of Netlist

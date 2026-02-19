@@ -1,0 +1,22 @@
+spice
+* Transistor
+Q1 3 2 4 NPN
+
+* Resistors
+R1 1 2 125k
+R2 2 8 30k
+RC 1 3 2k
+RE 4 10 0.5k
+RL 3 10 2k
+
+* Capacitors
+CC1 2 8
+CC2 3 11
+CE 4 10
+
+* Voltage sources
+VCC 1 10 12V
+Vs 8 10 SIN(0 1 1k)
+
+* Ground
+10 0

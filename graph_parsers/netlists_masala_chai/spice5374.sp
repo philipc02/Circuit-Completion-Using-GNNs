@@ -1,0 +1,4 @@
+plaintext
+Vs 4 0 AC 120
+R1 4 2 1k
+R2 2 3 560

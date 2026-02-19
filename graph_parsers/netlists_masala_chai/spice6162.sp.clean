@@ -1,0 +1,18 @@
+* SPICE Netlist
+   .title Op-Amp Circuit
+
+   * Voltage Source
+   Vs 6 3 DC 5V
+
+   * Resistors
+   Rs 3 2 1k
+   R1 2 0 1k
+   R2 2 2 1k
+   RL 2 4 1k
+
+   * Operational Amplifier
+   X1 2 3 Vo opamp_model
+   
+   * Ground
+   .model opamp_model opamp
+   .end

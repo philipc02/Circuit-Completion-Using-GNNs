@@ -1,0 +1,9 @@
+plaintext
+* NMOS Amplifier Circuit
+M1 2 Vin 3 3 NMOS_L W=1u L=1u
+RD 4 2 1k
+RS 3 0 500
+VDD 4 0 DC 5V
+Vin Vin 0 DC 0
+* Model Definition (for illustration only, parameters need to be defined)
+.model NMOS_L NMOS (Level=1)

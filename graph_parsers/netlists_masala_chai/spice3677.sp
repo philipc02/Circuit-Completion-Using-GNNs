@@ -1,0 +1,17 @@
+* PMOS Circuit Netlist
+
+VDD 6 0 DC VDD
+
+R1 6 3 R1
+R2 3 7 R2
+RD 2 5 RD
+
+* PMOS Transistor
+* Drain Gate Source
+M1 5 8 2 2 PMOS
+
+* Connections
+VSG 8 3 VG
+
+* Ground
+0 5 0

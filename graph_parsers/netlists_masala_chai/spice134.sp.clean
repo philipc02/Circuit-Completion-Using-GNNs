@@ -1,0 +1,15 @@
+spice
+* NMOS: drain gate source body
+M1 2 5 3 3 NMOS L=1u W=2u
+
+* Current Source
+I1 4 44 DC 1A
+
+* Voltage Source
+V1 4 0 DC 1V
+
+* Additional connectivity
+VDD 2 0 DC 5V
+
+* .END (defines the end of the SPICE deck)
+.END

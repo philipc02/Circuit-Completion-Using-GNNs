@@ -1,0 +1,17 @@
+plaintext
+* Feedback Amplifier SPICE Netlist
+
+* Voltage Source
+Vs 1 7 
+
+* Current Sources
+Is 7 3
+I1 4 6
+
+* Dependent Current Source
+G1 2 3 2 3 k_s
+
+* Dependent Voltage Source
+E1 5 3 2 3 s_y
+
+* End of Netlist

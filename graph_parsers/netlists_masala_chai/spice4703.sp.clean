@@ -1,0 +1,5 @@
+spice
+* SPICE Netlist
+D1 3 5 SCHOTTKY
+V1 6 2 AC 1
+R1 5 2 V

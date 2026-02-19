@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+Vin 4 0 AC 1
+XL 4 3 1uH
+XC 3 2 1uF
+Vout 3 0

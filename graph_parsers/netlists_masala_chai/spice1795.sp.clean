@@ -1,0 +1,16 @@
+spice
+*MOSFET Device Parameters
+* W and L values need to be defined based on specific technology
+
+M1 6 8 3 3 NMOS
+M3 5 2 4 4 NMOS
+M4 2 9 4 4 NMOS
+M5 7 9 8 8 PMOS
+M6 6 7 2 2 PMOS
+
+*Current Source
+Iss 4 0 DC VALUE
+
+*Voltage Sources
+VDD 8 0 DC VALUE
+Vin 5 0 DC VALUE

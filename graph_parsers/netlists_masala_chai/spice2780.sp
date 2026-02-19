@@ -1,0 +1,19 @@
+spice
+* NMOS transistor M1
+M1 4 3 0 0 NMOS
+
+* Capacitors
+CGD 2 4 100f
+CGS 3 0 100f
+CDB 4 0 100f
+
+* Resistor
+RD 4 5 1k
+
+* Voltage Source
+VDD 5 0 DC 5V
+
+* Input Current Source
+Iin1 2 0 DC 1mA
+
+* Note: Node 4 is connected to drain of M1, 3 is gate, and 0 is source.

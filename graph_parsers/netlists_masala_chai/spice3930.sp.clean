@@ -1,0 +1,12 @@
+plaintext
+* BJT Amplifier Circuit
+
+Q1 2 3 4 QMODEL
+
+RB 5 3 RB_VALUE
+RC 2 4 RC_VALUE
+VS 5 0 DC VS_VALUE
+
+.MODEL QMODEL NPN(IS=1e-14 BF=100)
+
+.END

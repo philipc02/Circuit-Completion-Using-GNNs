@@ -1,0 +1,22 @@
+spice
+* SPICE Netlist for given schematic
+* Voltage Source
+V1 7 0 DC
+
+* Resistors
+R1 7 3 1k
+R2 6 2 10k
+R3 5 3 1k
+
+* Capacitors
+C1 4 6 10p
+C2 5 2 10p
+
+* Operational Amplifiers (assumed ideal for simplicity)
+* You might need a specific model for simulation:
+* .MODEL OpAmp OPAMP
+XU1 3 4 0 OPAMP
+XU2 5 2 0 OPAMP
+
+* End of Netlist
+.end

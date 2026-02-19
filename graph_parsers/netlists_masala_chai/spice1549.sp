@@ -1,0 +1,16 @@
+plaintext
+* Differential Amplifier Circuit
+
+V_CM 8 4 DC <value_of_VCM>
+I_EE 3 4 DC <value_of_IEE>
+
+RC1 1 2 <value_of_RC>
+RC2 2 2 <value_of_RC>
+REE 3 3 <value_of_REE>
+
+* NPN Transistors
+Q1 1 6 3 NPN
+Q2 2 5 3 NPN
+
+* Models
+.model NPN NPN (IS=<value>, BF=<value>, ...)

@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist for the Circuit
+
+Vth 5 6 AC 1
+RC 5 2 1k
+Cout 2 4 1u
+RL 4 3 1k
+RL 3 0 1k
+
+* End of Netlist

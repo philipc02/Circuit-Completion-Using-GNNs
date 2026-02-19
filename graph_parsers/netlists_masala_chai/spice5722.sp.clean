@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+M1 4 3 5 5 PMOS
+M2 6 3 4 4 PMOS
+I1 6 2 DC 2mA
+V1 5 2 DC 5V

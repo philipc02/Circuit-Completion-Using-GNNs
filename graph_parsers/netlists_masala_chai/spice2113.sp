@@ -1,0 +1,17 @@
+* NMOS Amplifier Circuit
+
+Vdd 2 0 DC 5V  * Voltage source Vdd
+Vin 1 0 DC 1V  * Voltage source Vin
+
+M1 3 1 0 0 NMOS L=1u W=2u
+R1 3 0 1k  * Resistor at output
+R2 2 3 1k  * Resistor to Vdd
+
+* Node Mapping:
+* 1 - Input voltage Vin
+* 2 - VDD
+* 3 - Vout
+* 4 - Ground
+
+.model NMOS NMOS LEVEL=1
+.end

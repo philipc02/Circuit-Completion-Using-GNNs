@@ -1,0 +1,5 @@
+spice
+* SPICE netlist
+v1 3 6 ac 1 sin(0 1 1Hz)
+c1 2 5 10u
+c2 3 4 15u

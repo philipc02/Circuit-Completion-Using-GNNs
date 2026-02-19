@@ -1,0 +1,25 @@
+plaintext
+* SPICE Netlist
+
+* Resistors
+Rb 1 8 rb
+Rpi 8 4 rpi
+Rmu 3 5 rmu
+Ro 2 9 ro
+
+* Capacitors
+Cmu 5 3 Cmu
+Cx 8 5 Cx
+
+* Voltage Source
+V1 8 4 DC v1
+
+* Current Source
+Gm1 6 7 VALUE={g_m*v(8,4)}
+
+* Connectivity
+* Nodes: 
+* 1 - Base
+* 7 - Emitter
+* 9 - Collector
+* 2, 3, 4, 5, 6, 8 - Internal nodes based on annotated image

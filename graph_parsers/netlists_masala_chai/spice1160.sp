@@ -1,0 +1,12 @@
+spice
+* SPICE netlist for the given schematic
+V1 2 4 DC <value_of_V1>
+G1 2 4 VALUE = {g_m * V(2,4)}
+RD 2 0 RD
+IX 2 3 DC <value_of_IX>
+VX 3 0 DC <value_of_VX>
+
+* .control and .end necessary for SPICE simulation
+.control
+.endc
+.end

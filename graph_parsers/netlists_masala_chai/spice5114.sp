@@ -1,0 +1,15 @@
+spice
+* SPICE netlist for operational amplifier circuit
+
+V1 6 0 DC Vin  * Voltage source
+
+R1 6 2 R1_value
+R2 2 4 R2_value
+R1' 7 2 R1'_value
+R2' 2 5 R2'_value
+
+* Ideal op-amp model
+* Voltage controlled voltage source with large gain (A = 1e6)
+E1 4 0 2 3 1e6
+
+V2 5 0 DC 0  * Ground reference

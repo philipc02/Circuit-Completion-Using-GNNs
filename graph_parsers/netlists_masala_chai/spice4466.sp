@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist for the given schematic
+V1 6 5 DC 12V
+I1 4 3 DC 1A
+I2 5 3 DC 1A
+
+R1 3 5 8k
+
+Q1 4 6 5 PNP
+Q6 4 7 3 NPN
+Q7 2 3 5 NPN
+
+D1 6 4 D
+D2 5 2 D
+
+.MODEL D D
+.MODEL NPN NPN
+.MODEL PNP PNP
+
+.END

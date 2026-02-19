@@ -1,0 +1,33 @@
+spice
+* NMOS Transistor Model
+.model NMOS NMOS
+
+* Voltage Sources
+V1 1 0 VDD
+V2 0 9 VSS
+
+* Current Source
+I1 2 0 DC 10uA
+
+* Resistor
+R1 2 3 20k
+
+* NMOS Transistors
+M1 2 3 9 9 NMOS L=1u W=20u
+M2 3 4 9 9 NMOS L=1u W=10u
+M3 4 5 9 9 NMOS L=1u W=40u
+M4 5 6 9 9 NMOS L=1u W=80u
+M5 6 7 9 9 NMOS L=1u W=20u
+M6 7 2 9 9 NMOS L=1u W=80u
+M7 8 99 9 9 NMOS L=1u W=20u
+M8 9 2 9 9 NMOS L=1u W=80u
+M9 10 100 2 2 NMOS L=1u W=5u
+M10 3 4 9 9 NMOS L=1u W=128u
+M11 4 5 9 9 NMOS L=1u W=32u
+M12 5 6 9 9 NMOS L=1u W=128u
+M13 6 7 9 9 NMOS L=1u W=1u
+M14 7 8 9 9 NMOS L=1u W=32u
+M15 8 9 9 9 NMOS L=1u W=32u
+M16 9 3 9 9 NMOS L=1u W=16u
+M17 9 4 9 9 NMOS L=1u W=8u
+M18 3 5 9 9 NMOS L=1u W=1u

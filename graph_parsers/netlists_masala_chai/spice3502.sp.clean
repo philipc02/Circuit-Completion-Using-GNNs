@@ -1,0 +1,25 @@
+* SPICE Netlist for the Schematic
+
+VCC 8 0 DC <VCC_VALUE>
+VEE 9 0 DC -<VEE_VALUE>
+
+VT 11 6 DC <VT_VALUE>
+RT 6 4 <RT_VALUE>
+RB1 8 3 <RB1_VALUE>
+RB2 3 4 <RB2_VALUE>
+RC1 8 1 <RC1_VALUE>
+RC2 8 5 <RC2_VALUE>
+RL 7 0 <RL_VALUE>
+
+Q1 1 3 2 NPN
+Q2 5 2 9 NPN
+
+CE1 2 9 <CE1_VALUE>
+CE2 2 5 <CE2_VALUE>
+
+VOUT 5 7 DC 0
+
+* Connections:
+* Node 8: VCC
+* Node 9: -VEE
+* Node 11: V_T input

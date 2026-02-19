@@ -1,0 +1,20 @@
+spice
+* NMOS transistor definition
+M1 2 1 3 3 NMOS
+
+* Current source definition
+Ix 1 2 DC 0
+
+* Capacitor C1 definition
+C1 2 4 1u
+
+* Capacitor C2 definition
+C2 3 5 1u
+
+* Voltage source
+V1 1 0 DC +2V
+
+* Model for NMOS
+.model NMOS NMOS (LEVEL=1)
+
+* End of file

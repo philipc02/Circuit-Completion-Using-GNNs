@@ -1,0 +1,8 @@
+spice
+* SPICE Netlist
+VCC 1 0 DC 2.5V
+IREF 2 0 DC 1mA
+RP 2 4 1k
+QREF 2 2 0 QNPN
+Q1 3 2 0 QNPN
+.model QNPN NPN

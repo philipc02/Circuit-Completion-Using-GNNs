@@ -1,0 +1,8 @@
+spice
+* NMOS Amplifier
+M1 3 2 2 2 NMOS W=5u L=0.18u
+RD 3 VDD 1k
+RL 3 2 20k
+RS 2 0 200
+VDD VDD 0 1.8V
+.END

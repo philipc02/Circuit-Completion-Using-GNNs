@@ -1,0 +1,3 @@
+spice
+MN1 9 2 3 3 NMOS
+I1 6 9 0.0

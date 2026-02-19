@@ -1,0 +1,19 @@
+spice
+* Netlist for the given circuit
+
+* Voltage sources
+V1 3 0 DC 
+V2 5 0 DC 
+
+* Resistors
+R1 3 2 50k
+R2 5 2 20k
+R3 2 0 10k
+R4 2 4 100k
+R5 2 2 40k
+
+* Operational Amplifier
+* Assuming ideal op-amp model
+E_OPAMP 4 0 2 2 100Meg
+
+.END

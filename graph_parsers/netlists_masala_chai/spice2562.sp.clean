@@ -1,0 +1,13 @@
+* Netlist for the schematic
+   
+   * PMOS Transistor
+   M1 2 4 2 PMOS
+
+   * NMOS Transistor
+   M2 3 5 2 NMOS
+
+   * Capacitor
+   C1 2 3 <value_of_C1>
+
+   * Voltage Source
+   VDD 2 0 <value_of_VDD> DC

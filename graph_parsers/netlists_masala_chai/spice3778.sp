@@ -1,0 +1,23 @@
+plaintext
+* SPICE Netlist
+
+Vplus 4 0 DC 5V
+Vi 10 0 DC 0V
+
+R1 7 9 383k
+R2 6 8 135k
+RSi 10 3 4k
+R3 8 11 3.9k
+RD1 9 4 16.1k
+RS2 2 11 8k
+RL 13 12 4k
+
+CC1 3 6
+CC2 2 12
+CS 11 0
+
+M1 9 6 11 11 NMOS
+M2 4 2 11 11 NMOS
+
+.tran 1n 100u
+.end

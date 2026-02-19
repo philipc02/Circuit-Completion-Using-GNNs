@@ -1,0 +1,23 @@
+plaintext
+* Differential Amplifier Circuit
+* Nodes:
+* 1: v1 positive terminal
+* 2: M1 gate
+* 3: RD common node
+* 4: Source, IQ
+* 5: M2 gate
+* 6: vO, M1 and M2 drain
+* 7: v2 positive terminal
+
+* Components
+M1 6 2 4 4 NMOS
+M2 6 5 4 4 NMOS
+I1 4 0 DC IQ
+R1 3 6 RD
+R2 3 7 RD
+V1 1 2 DC v1
+V2 5 7 DC v2
+
+* Voltage Sources
+V+ 0 3 DC V+
+V- 4 0 DC V-

@@ -1,0 +1,13 @@
+plain
+* SPICE Netlist
+VCC VCC 0 DC <value>
+Vb Vb 0 DC <value>
+Vin Vin 0 DC <value>
+
+Q1 Node2 Vin Emitter Q1_Model
+Q2 VCC Vb Node2 Q2_Model
+
+RE Emitter 0 <value>
+
+.model Q1_Model NPN
+.model Q2_Model NPN

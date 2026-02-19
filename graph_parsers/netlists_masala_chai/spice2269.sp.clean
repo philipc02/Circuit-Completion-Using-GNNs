@@ -1,0 +1,16 @@
+spice
+* NMOS Common Source Amplifier
+
+M1 Vout 3 0 0 NMOS_L W=1u L=0.18u
+
+RD 4 Vout 10k
+RG 3 2 5k
+RS 1 0 1k
+CG 2 0 10pF
+
+Vin 1 0 DC 0 AC 1
+VDD 4 0 DC 1.8
+
+.model NMOS_L NMOS LEVEL=1
+
+.end

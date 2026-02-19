@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+MNout 3 2 0 0 NMOS
+I1 VDD 3 DC 1A
+Iin 2 0 DC 1A
+CF 3 2 1uF
+rO 3 0 1k

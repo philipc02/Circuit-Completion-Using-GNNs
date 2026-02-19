@@ -1,0 +1,8 @@
+plaintext
+* SPICE Netlist
+V1 8 7 AC 18 SIN(0 18 80k)
+R1 8 6 1.2k
+R2 8 5 1.0k
+R3 5 4 3.3k
+R4 5 2 5.6k
+L1 2 0 8.0mH

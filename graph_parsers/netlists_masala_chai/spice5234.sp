@@ -1,0 +1,6 @@
+plaintext
+* Netlist for the resistor network
+R1 4 3 R
+R2 3 2 R
+R3 2 1 R
+V1 4 0 DC Vcc

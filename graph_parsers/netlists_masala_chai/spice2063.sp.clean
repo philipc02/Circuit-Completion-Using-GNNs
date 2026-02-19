@@ -1,0 +1,8 @@
+spice
+* SPICE Netlist
+M1 Vout A 2 2 PMOS
+M2 2 B 3 3 PMOS
+M3 6 C 3 3 NMOS
+M4 4 B 6 6 NMOS
+M5 Vout A 4 4 NMOS
+M6 VDD C 5 5 NMOS

@@ -1,0 +1,14 @@
+plaintext
+*SPICE Netlist for the given schematic
+
+Q1 6 4 3 NPN          * BJT Transistor: (Collector -> Base -> Emitter)
+RFC 8 7 1uH           * RFC Inductor with arbitrary value of 1uH
+C1 2 0 10uF           * Capacitor C1: Node 2 to Ground
+C2 2 0 10uF           * Capacitor C2: Node 2 to Ground
+L1 7 6 1uH            * Inductor L: Node 7 to Node 6
+RB1 5 4 1k            * Resistor RB1: Node 5 to Node 4
+RB2 4 0 1k            * Resistor RB2: Node 4 to Ground
+RL 2 3 1k             * Resistor RL: Node 2 to Node 3
+VCC 8 0 DC 12V        * DC Voltage Source: Node 8 to Ground
+
+.END

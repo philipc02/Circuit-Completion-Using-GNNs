@@ -1,0 +1,8 @@
+plaintext
+Q1 1 2 3 npn
+Q2 2 2 4 npn
+Qn 2 4 0 npn
+Rout 1 output 1000 ; replace 1000 with actual resistance value if known
+Vb1 2 0 DC ; base voltage source for Q1
+Vb2 2 0 DC ; base voltage source for Q2
+Vbn 4 0 DC ; base voltage source for Qn

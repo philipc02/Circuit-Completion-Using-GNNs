@@ -1,0 +1,16 @@
+spice
+* Transistors
+M1 2 3 1 1 NMOS
+M2 2 3 5 5 PMOS
+
+* Resistor
+RD 2 5 1k
+
+* Voltage Sources
+VDD 5 0 DC 5V
+Vin 1 0 DC 0V
+Vb 3 0 DC 1.2V
+
+* Analysis
+.tran 1n 100n
+.end

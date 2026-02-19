@@ -1,0 +1,13 @@
+spice
+* NMOS and PMOS Transistor Models
+.model NMOS NMOS
+.model PMOS PMOS
+
+* Circuit Netlist
+M1 3 3 5 5 PMOS
+M2 5 7 4 4 NMOS
+I1 6 4 DC 1mA
+RS 5 3 10k
+
+* Independent Voltage Source
+VDD 6 0 DC 5V

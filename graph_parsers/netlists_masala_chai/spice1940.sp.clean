@@ -1,0 +1,18 @@
+spice
+* SPICE Netlist
+
+* Voltage Sources
+VCC 4 0 DC VCC
+VEE 5 2 DC VEE
+
+* Resistor
+RL 3 2 RL
+
+* NMOS Transistors
+M1 4 7 6 6 NMOS
+M2 7 5 6 6 NMOS
+
+* Model Definitions
+.model NMOS NMOS
+
+.end

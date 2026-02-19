@@ -1,0 +1,15 @@
+spice
+* Nodes have been identified based on the second image annotation
+
+VDD 2 0 DC 5
+VIN 5 0 AC 1 SIN(0 1 1k)
+
+RS 5 2 1k
+CE 2 0 10uF
+CC 3 2 10nF
+RL 2 3 1k
+CL 3 0 10uF
+
+M9 2 1 3 3 NMOS L=1u W=2u
+
+.model NMOS NMOS (LEVEL=1 VT0=1 KP=120u)

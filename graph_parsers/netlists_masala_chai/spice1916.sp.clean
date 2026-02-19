@@ -1,0 +1,17 @@
+* SPICE Netlist
+R1 5 6 R1_value
+C1 5 6 C1_value
+R2 3 0 R2_value
+C2 3 0 C2_value
+RF1 2 0 RF1_value
+RF2 2 4 RF2_value
+
+* Op-Amp Model
+* Inverting input at Node 2, Non-inverting input at Node 3, Output at Node 0
+XOPAMP 3 2 0 opamp
+
+* Voltage Source for Op-Amp (if needed)
+VDD 4 0 DC VDD_value
+VSS 0 4 DC VSS_value
+
+.end

@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist for given schematic
+
+VCC 4 0 DC 2.5V
+
+R1 4 2 100k
+R2 2 5 1k
+R3 3 0 500
+
+C1 Vin 3 
+C2 3 0 
+
+M1 2 3 3 3 CMOSN
+
+.END

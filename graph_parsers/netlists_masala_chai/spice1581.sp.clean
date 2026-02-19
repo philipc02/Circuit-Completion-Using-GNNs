@@ -1,0 +1,16 @@
+spice
+* Voltage Sources
+V1 3 0 DC <value_of_V1>
+V2 2 0 DC <value_of_V2>
+
+* Resistors
+RC1 3 5 <value_of_RC>
+RC2 2 6 <value_of_RC>
+
+* Current Source
+I1 4 0 DC <value_of_I1>
+
+* Connections
+P 6 4
+
+.END

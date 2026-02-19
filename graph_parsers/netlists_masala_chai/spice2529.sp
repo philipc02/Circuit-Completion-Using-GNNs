@@ -1,0 +1,6 @@
+* NMOS Amplifier
+M1 2 Vin 3 3 NMOS
+RD 1 2 1k
+RS 3 0 500
+VDD 1 0 DC 10V
+Vin Vin 0 DC 1V

@@ -1,0 +1,10 @@
+* SPICE Netlist for the schematic
+
+R1 N3 N2
+R2 N2 Vtot
+R3 N3 VCM_plus_VGS23
+R4 N2 VCM_plus_VGS24
+
+* Voltage nodes
+VCM_minus_VGS21 N3 0
+VCM_minus_VGS22 N2 0

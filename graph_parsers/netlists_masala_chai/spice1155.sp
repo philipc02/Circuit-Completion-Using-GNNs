@@ -1,0 +1,20 @@
+spice
+* NMOS Transistor
+M1 2 2 0 0 NMOS
+
+* Resistor
+RD 2 VDD  RD_value
+RG 2 2    RG_value
+RS 0 2    RS_value
+
+* Voltage Source
+VDD VDD 0 VDD_value
+
+* Current Source
+ID 2 VDD ID_value
+
+* .MODEL statement for NMOS
+.model NMOS NMOS (LEVEL=1)
+
+* .END
+.end

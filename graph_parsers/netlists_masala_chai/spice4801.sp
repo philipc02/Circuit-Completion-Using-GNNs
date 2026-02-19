@@ -1,0 +1,10 @@
+plaintext
+* Example Circuit
+
+V1 4 5 AC 1
+R1 4 3 R
+C1 3 2 C
+
+* Ground connections
+V0 5 0 DC 0
+V2 2 0 DC 0

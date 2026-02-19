@@ -1,0 +1,17 @@
+spice
+* SPICE netlist for the given circuit
+
+Vin 1 0 DC 0
+VDD 3 0 DC 1.8
+
+R1 3 1 1k
+RD 3 4 1k
+RS 2 0 1k
+
+M1 4 1 2 2 NMOS
+
+C1 1 Vin 1u
+CS 2 0 1u
+
+.model NMOS NMOS (LEVEL=1)
+.END

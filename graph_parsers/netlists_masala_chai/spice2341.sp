@@ -1,0 +1,11 @@
+spice
+* SPICE Netlist
+
+VBIAS 2 0 DC 0
+IBIAS 2 2 DC 0 
+
+M2 2 3 5 5 NMOS
+M1 5 4 6 6 NMOS
+
+* Define NMOS model (Add specific model parameters if known)
+.model NMOS NMOS

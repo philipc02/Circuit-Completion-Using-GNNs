@@ -1,0 +1,12 @@
+plaintext
+* Netlist for the schematic
+
+VDD 4 0 DC 1.8V
+
+R1 4 2 30k
+R2 4 2 2k
+Rp 2 3 Rp_value
+
+M1 2 3 1 1 NMOS
+
+*.end of netlist

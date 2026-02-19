@@ -1,0 +1,5 @@
+spice
+* SPICE netlist for the schematic
+G1 2 5 V_SRC 0 g_m
+R1 5 0 R_S
+R2 3 0 R_L

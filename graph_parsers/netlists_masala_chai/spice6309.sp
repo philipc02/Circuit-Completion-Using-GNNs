@@ -1,0 +1,18 @@
+plaintext
+* SPICE Netlist for the Schematic
+
+* PMOS Transistors
+M1 5 A 3 3 PMOS
+M2 3 B 2 2 PMOS
+
+* NMOS Transistors
+M3 4 C 2 2 NMOS
+M4 2 C C C NMOS
+
+* Voltage and Current Sources
+VDD 5 0 DC VDD 
+
+* Node Definitions
+* 0 - Ground
+* 5 - VDD
+* C - Common Ground

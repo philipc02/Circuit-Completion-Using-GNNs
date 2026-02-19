@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist for the Circuit
+
+IREF 5 VCC DC 1mA
+
+QREF VCC 5 0 QMODEL
+Q1 Icopy1 2 0 QMODEL
+Q2 Icopy2 4 0 QMODEL
+Q3 Icopy3 2 0 QMODEL
+
+.model QMODEL NPN (Is=1e-14 bf=100)
+
+VCC VCC 0 DC 10V

@@ -1,0 +1,21 @@
+spice
+* NMOS Amplifier Circuit
+
+VDD 1 0 DC Vdd_value
+Vn_in 5 0 AC Vn_ac_value
+Cin 6 0 Cin_value
+RD 1 2 RD_value
+M1 2 6 4 4 NMOS_MODEL
+
+* Define NMOS Model Parameters (example)
+.model NMOS_MODEL NMOS (LEVEL=1 KP=120u VTO=1)
+
+* Voltage and Component Values
+.param Vdd_value=5
+.param Vn_ac_value=0
+.param Cin_value=10n
+.param RD_value=1k
+
+* Simulation Commands
+.tran 1n 10u
+.end

@@ -1,0 +1,19 @@
+plaintext
+* SPICE Netlist
+VCC 2 0 DC 9V
+IIN 10 0 DC 0  ; Input current source
+
+R1 4 11
+R2 5 11
+R3 2 5
+R4 2 6
+R5 5 7
+RL 7 3
+C1 10 4
+C2 5 11
+C3 7 3
+
+Q1 5 4 11 NPN
+Q2 6 5 11 NPN
+
+.END

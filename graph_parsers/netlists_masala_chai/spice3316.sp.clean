@@ -1,0 +1,14 @@
+plaintext
+* NMOS Inverter
+
+VDD VDD 0 DC 5V
+RD VDD Vout 1k
+
+M1 Vout Vin 0 0 NMOS L=1u W=10u
+
+* Input Voltage Source
+Vin Vin 0 DC 0V AC 1V
+
+.model NMOS NMOS (Level=1)
+
+.end

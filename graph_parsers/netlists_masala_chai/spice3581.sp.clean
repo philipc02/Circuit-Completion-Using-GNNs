@@ -1,0 +1,25 @@
+spice
+* SPICE Netlist for the BJT Amplifier Circuit
+
+* Voltage Sources
+VCC 5 2 DC VCC
+
+* Resistors
+RB 6 3 RB
+RC 5 2 RC
+RE 3 4 RE
+
+* Transistors (Assuming NPN BJTs)
+Q1 1 6 3 QNPN
+Q2 2 3 4 QNPN
+Q3 5 2 3 QNPN
+Q4 2 3 7 QNPN
+
+* Diode
+DL  2 3 DL
+
+* Model Definitions
+.model QNPN NPN (IS=1e-14 BF=100)
+.model DL D (IS=1e-14 N=1)
+
+* End of Netlist

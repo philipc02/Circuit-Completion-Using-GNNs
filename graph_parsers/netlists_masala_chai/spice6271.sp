@@ -1,0 +1,16 @@
+spice
+* Transistor Definitions
+Q13A 3 2 7 NPN 
+Q14 2 8 3 NPN
+Q18 2 2 0 NPN
+Q19 7 2 6 NPN
+Q23 6 2 0 NPN
+
+* Resistors
+R10 7 2 40k
+R02 6 6 81k
+
+* Outputs
+ROUT 8 0
+
+.END

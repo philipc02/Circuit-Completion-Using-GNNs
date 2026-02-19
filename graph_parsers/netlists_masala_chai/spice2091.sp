@@ -1,0 +1,5 @@
+spice
+* Schematic Netlist
+VDD 5 6 DC 2.5
+RD 5 2 1k
+M1 2 3 4 4 NMOS

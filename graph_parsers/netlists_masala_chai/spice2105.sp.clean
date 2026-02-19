@@ -1,0 +1,5 @@
+M1 2 Vin 0 0 NMOS
+ID 2 3 DC  Id
+RD 3 VDD 1000
+Vin Vin 0 DC 0
+VDD VDD 0 DC VDD

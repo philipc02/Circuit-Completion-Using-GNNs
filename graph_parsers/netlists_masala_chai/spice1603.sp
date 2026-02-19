@@ -1,0 +1,20 @@
+spice
+* Transistor Q1
+Q1 4 5 6 NPN
+
+* Transistor Q2
+Q2 2 3 6 NPN
+
+* Transistor Q3
+Q3 7 4 8 NPN
+
+* Transistor Q4
+Q4 8 2 8 NPN
+
+* Current Sources
+I1 8 7 DC
+I2 8 3 DC
+I_EE 6 0 DC
+
+* Voltage Source
+V_CC 8 0 DC

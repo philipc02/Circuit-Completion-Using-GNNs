@@ -1,0 +1,19 @@
+plaintext
+* Differential Pair Circuit
+
+V+ 7 0 DC ?     ; Define V+ with appropriate voltage
+V- 3 0 DC ?     ; Define V- with appropriate voltage
+
+RC1 7 5 ?       ; Collector resistor for Q1
+RC2 7 22 ?      ; Collector resistor for Q2
+RE 6 3 ?        ; Emitter resistor shared by Q1 and Q2
+
+IQ 6 3 DC ?     ; Current source IQ
+
+Q1 5 v1 6 NPN   ; Q1 transistor
+Q2 22 v2 6 NPN  ; Q2 transistor
+
+* Model definition for NPN transistors
+.model NPN NPN (IS=1E-14 BF=100)
+
+.end

@@ -1,0 +1,11 @@
+spice
+M1 5 3 6 6 PMOS
+M2 6 2 4 4 NMOS
+M3 3 3 2 2 PMOS
+M4 2 2 2 2 PMOS
+M5 2 2 1 1 NMOS
+
+V+ 3 0 DC V+
+V- 4 0 DC V-
+Vi 1 0 DC Vi
+Vo 5 0 DC Vo

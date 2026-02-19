@@ -1,0 +1,12 @@
+plaintext
+* Transistors
+Q1 Vout Vin 0 NPN
+
+* Resistors
+RC VCC Vout 1k ; Assume RC = 1k
+R1 Vin 0 200
+
+* Voltage Source
+VCC VCC 0 DC 2.5
+
+* End of Netlist

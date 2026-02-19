@@ -1,0 +1,8 @@
+plaintext
+* SPICE Netlist
+M1 1 5 2 2 PMOS
+R1 2 5 R1_value
+R2 5 6 R2_value
+RS 2 1 2k
+VDD 2 0 DC 5V
+VSS 6 0 DC -5V

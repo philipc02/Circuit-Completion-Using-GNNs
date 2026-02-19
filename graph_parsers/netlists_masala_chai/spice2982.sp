@@ -1,0 +1,17 @@
+plaintext
+* SPICE netlist for the given schematic
+
+VDD 2 0 DC 5V
+RD 2 4 1k
+RS 3 0 500
+M1 4 Vin 3 3 NMOS l=1u w=2u
+M2 3 4 2 2 PMOS l=1u w=2u
+
+* Input voltage source
+Vin Vin 0 DC 0V
+
+* Model definitions
+.model NMOS NMOS
+.model PMOS PMOS
+
+.end

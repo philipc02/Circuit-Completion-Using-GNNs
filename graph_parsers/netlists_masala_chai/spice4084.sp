@@ -1,0 +1,18 @@
+plaintext
+* SPICE Netlist
+* Voltage Source
+Vi 55 1 DC 0
+
+* Resistors
+RS 55 2  RS_value
+RB 2 3   RB_value
+rpi 4 2  rpi_value
+RL 6 0   RL_value
+
+* Capacitors
+Cmu 3 2  Cmu_value
+Cpi 7 2  Cpi_value
+
+* Voltage Control Element/Impedance
+Zb 3 4  Zb_value
+Vb 4 7  DC 0

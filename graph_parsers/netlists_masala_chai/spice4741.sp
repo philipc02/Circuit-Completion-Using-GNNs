@@ -1,0 +1,8 @@
+* BJT Amplifier Circuit
+VBB 3 0 DC 10
+RB 3 2 1MEG
+Q1 2 1 0 NPN
+RC 1 4 3.3K
+VCC 4 0 DC 20
+.model NPN NPN
+.END

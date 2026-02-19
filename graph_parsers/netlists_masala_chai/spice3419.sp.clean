@@ -1,0 +1,10 @@
+* SPICE Netlist
+Vt 10 11 DC 0
+RT 10 3 1k
+RG 3 5 50k
+RD 8 4 10k
+RL 4 5 10k
+Gm 6 5 POLY(2) (2 5) (3 5) 0.001
+Ro 2 5 1MEG
+
+.END

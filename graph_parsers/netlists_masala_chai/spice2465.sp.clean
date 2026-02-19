@@ -1,0 +1,11 @@
+* NMOS Transistor
+M2 4 3 6 6 NMOS
+
+* Current Source
+I1 4 6 DC 1mA
+
+* Capacitor
+Cp 5 6 1uF
+
+* Voltage Source
+VDD 2 0 DC 5V

@@ -1,0 +1,11 @@
+spice
+* SPICE Netlist
+VCC VCC 0 DC 15
+Vin vin 0 DC 0
+
+RC VCC out 1k
+RE out 0 500
+Q1 out vin 0 NPN
+
+.model NPN NPN (BF=100)
+.end

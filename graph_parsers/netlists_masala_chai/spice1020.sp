@@ -1,0 +1,17 @@
+spice
+* Transistor Q1 (NPN assumed)
+Q1 Vout Vin 0 NPN
+
+* Resistor RC
+RC VCC Vout 1k
+
+* Voltage Source VCC
+VCC VCC 0 DC <value> ; Specify the DC voltage value
+
+* Vin Input
+Vin Vin 0 DC <value> ; Specify the DC input value
+
+* Simulation commands
+.control
+run
+.endc

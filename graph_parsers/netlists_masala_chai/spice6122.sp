@@ -1,0 +1,18 @@
+* Voltage Source
+Vsig 7 0 DC 0
+
+* Resistors
+Rsig 7 3  Rsig_value
+Rs 2 0  Rs_value
+RL 5 4  RL_value
+
+* Capacitors
+Cgd 5 6  Cgd_value
+Cgs 3 2  Cgs_value
+CL 6 9  CL_value
+
+* NMOS Transistor (Assumption: NMOS with drain at node 5, gate at node 3, source at node 2)
+M1 5 3 2 2 NMOS_MODEL
+
+* .MODEL statements for transistors (add actual parameters)
+.model NMOS_MODEL NMOS(...)

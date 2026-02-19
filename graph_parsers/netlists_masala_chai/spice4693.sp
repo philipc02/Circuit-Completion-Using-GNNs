@@ -1,0 +1,12 @@
+* Voltage Source
+VS 2 4 DC <value_of_VS>
+
+* Resistors
+RS 2 5 <value_of_RS>
+R2 3 6 <value_of_R2>
+
+* Zener Diode
+D1 5 3 DZ
+
+* Voltage Source Node (For Net Clarity)
+VZ 5 3 DC <value_of_VZ>

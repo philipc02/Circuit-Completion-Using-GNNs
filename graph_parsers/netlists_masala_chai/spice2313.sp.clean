@@ -1,0 +1,11 @@
+* SPICE Netlist for the given schematic
+
+V1 2 4 DC V_G    * Voltage Source V_G from Node 2 to Ground
+I1 3 4 DC I_S/2  * Current Source I_S/2 from Node 3 to Ground
+
+* PMOS Transistor
+M1 2 2 3 3 PMOS  * PMOS with Drain at Node 2, Gate at Node 2, Source and Body at Node 3
+
+*.MODEL PMOS PMOS (Level=1 ...)   * Define PMOS model with appropriate parameters
+
+.END

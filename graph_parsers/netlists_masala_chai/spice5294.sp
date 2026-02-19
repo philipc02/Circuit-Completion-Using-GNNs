@@ -1,0 +1,7 @@
+* SPICE Netlist
+
+Vs 3 0 DC 0
+I1 3 3_mA DC 37m
+R1 3 4 220
+R2 3 2 560
+R3 3 5 1k

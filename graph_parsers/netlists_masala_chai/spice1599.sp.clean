@@ -1,0 +1,30 @@
+spice
+* SPICE Netlist
+
+VDD 2 0 DC 5V
+
+* NMOS Transistors
+M1 1 3 0 0 NMOS_MODEL
+M2 2 4 0 0 NMOS_MODEL
+
+* PMOS Transistors
+M3 5 3 2 2 PMOS_MODEL
+M4 5 4 2 2 PMOS_MODEL
+
+* Resistors
+R1 5 1 1k
+R2 5 2 1k
+RSS 0 2 1k
+
+* Current Sources
+I1 1 0 DC 1mA
+I2 2 0 DC 1mA
+
+* Voltage Inputs
+Vin1 3 0 DC 0V
+Vin2 4 0 DC 0V
+
+.model NMOS_MODEL NMOS (LEVEL=1)
+.model PMOS_MODEL PMOS (LEVEL=1)
+
+.end

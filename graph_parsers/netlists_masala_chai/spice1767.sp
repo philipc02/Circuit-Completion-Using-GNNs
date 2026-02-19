@@ -1,0 +1,7 @@
+M1 2 3 1 1 NMOS
+RD 2 6 100
+R1 4 3 1k
+R2 3 0 1k
+VDD 6 0 DC 5V
+Ix 4 2 DC 0.1A
+Vx 4 2 DC 1V

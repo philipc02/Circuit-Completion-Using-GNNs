@@ -1,0 +1,17 @@
+spice
+* NMOS Transistor
+M1 3 4 0 0 NMOS_MODEL 
+
+* Capacitors
+C1 4 2 1uF
+C2 3 0 1uF
+
+* Resistors
+RG 22 2 10k
+RS 0 3 1k
+
+* Voltage Source
+VDD 22 0 DC 10V
+
+* Models
+.model NMOS_MODEL NMOS

@@ -1,0 +1,26 @@
+spice
+* SPICE Netlist
+* Diodes
+D1 B 9 D_Model
+D2 B 11 D_Model
+
+* Current Sources
+I1 8 13 DC I_CS
+I2 10 12 DC I_ES
+
+* Transistors modeled as current sources
+I_T1 3 13 DC α_FiF
+I_T2 5 13 DC α_RiR
+I_T3 1 12 DC α_FiF
+I_T4 4 12 DC α_RiR
+
+* Models for Diodes and Transistors
+.model D_Model D
+.param I_CS=1m
+.param I_ES=1m
+.param α_FiF=1m
+.param α_RiR=1m
+
+* Other Parameters
+V1 C 0 DC 5V
+V2 E 0 DC 0V

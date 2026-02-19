@@ -1,0 +1,5 @@
+M1 2 Vb1 3 NMOS
+M2 3 Vb2 4 NMOS
+M3 4 Vb3 0 NMOS
+
+Rout 2 0 ROUT

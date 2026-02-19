@@ -1,0 +1,4 @@
+* SPICE Netlist
+V1 5 2 DC 2.2V
+V2 4 6 DC 2.2V
+M1 2 4 2 2 NMOS

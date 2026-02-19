@@ -1,0 +1,14 @@
+plaintext
+* SPICE netlist
+
+VDD 3 0 DC VDD
+
+IB 2 0 DC I_B
+
+R1 6 2 R1
+R2 2 3 R2
+
+M11 6 2 0 0 NMOS
+M12 5 2 0 0 NMOS
+
+.END

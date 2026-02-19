@@ -1,0 +1,14 @@
+spice
+* SPICE Netlist
+
+*Current Source
+I1 8 2 DC value
+
+*Transistors
+Q1 5 8 2 QNL
+Q2 24 5 3 QNL
+
+*Resistors
+R1 6 5 20k
+R2 5 2 5k
+R3 2 3 500

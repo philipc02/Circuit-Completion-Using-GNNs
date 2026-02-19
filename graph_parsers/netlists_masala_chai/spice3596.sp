@@ -1,0 +1,4 @@
+* SPICE Netlist
+   I1 8 5 DC 1mA
+   D1 5 4 D_model
+   D2 4 2 D_model

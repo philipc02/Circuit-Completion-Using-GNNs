@@ -1,0 +1,3 @@
+I1 1 0 DC <CurrentValue>
+R1 2 3 <ResistanceValue>
+C1 3 0 <CapacitanceValue>

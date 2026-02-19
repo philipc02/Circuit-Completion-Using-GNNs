@@ -1,0 +1,2 @@
+Q2 2 3 4 NPN
+M1 4 vin 0 NMOS

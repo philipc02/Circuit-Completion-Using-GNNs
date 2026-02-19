@@ -1,0 +1,5 @@
+spice
+Vin in 0 DC 0
+L1 in n1 L
+R1 n1 Vout R
+C1 Vout 0 C

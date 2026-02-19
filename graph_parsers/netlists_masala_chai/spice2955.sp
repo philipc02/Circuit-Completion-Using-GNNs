@@ -1,0 +1,7 @@
+* NMOS Amplifier Circuit
+M1 3 2 4 4 NMOS
+RD 3 VDD 1k
+RS 4 0 1k
+ID1 4 0 DC 1mA
+VDD VDD 0 DC 5V
+VIN 2 0 DC 0V

@@ -1,0 +1,7 @@
+plaintext
+V1 4 0 DC 15V
+R1 4 3 R
+D1 3 2 D
+D2 2 2 D
+D3 2 2 D
+D4 2 0 D

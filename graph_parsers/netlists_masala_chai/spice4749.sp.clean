@@ -1,0 +1,4 @@
+R1 3 2 100k
+R2 2 4 50k
+VCC 3 0 DC 10V
+VBB 2 0 DC 5V

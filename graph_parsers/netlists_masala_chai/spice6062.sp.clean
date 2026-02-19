@@ -1,0 +1,17 @@
+spice
+* Differential Pair Circuit
+
+VDD 4 0 DC 5V
+V_CM 7 5 DC VC
+VID 1 2 DC Vid
+
+I1 3 5 DC 1m
+
+RD1 4 3 RD
+RD2 4 3 RD
+RSS 5 0 1k
+
+M1 4 2 5 5 NMOS_MODEL
+M2 4 2 5 5 NMOS_MODEL
+
+.END

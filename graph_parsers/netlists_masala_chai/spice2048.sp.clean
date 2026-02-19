@@ -1,0 +1,5 @@
+* SPICE Netlist
+
+VDD 3 0 DC 5V
+RL 3 2 10k
+CL 2 0 10uF

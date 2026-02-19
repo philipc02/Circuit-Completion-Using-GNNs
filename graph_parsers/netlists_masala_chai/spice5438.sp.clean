@@ -1,0 +1,5 @@
+* SPICE netlist for the given circuit
+Vs 5 11 AC 1
+R1 5 9 R
+L1 5 2 L
+C1 5 8 C

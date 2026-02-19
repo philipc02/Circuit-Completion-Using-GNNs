@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+V1 7 6 DC <value_of_V1>
+V2 3 2 DC <value_of_V2>
+RF 5 3 <value_of_RF>
+R7 7 5 0
+R6 6 5 0

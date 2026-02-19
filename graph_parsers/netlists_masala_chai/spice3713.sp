@@ -1,0 +1,8 @@
+plaintext
+* SPICE Netlist
+VDD 3 0 DC 1.8V
+R1 3 5 R1_Value
+RD 3 nmos_d 0.5k
+R2 5 4 R2_Value
+Rin rin 5 Rin_Value
+M1 nmos_d 5 4 4 NMOS_Model

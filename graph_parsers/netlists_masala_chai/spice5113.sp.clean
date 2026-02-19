@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist
+* Components
+R1 4 7 R'
+R2 7 3 R'
+R3 8 6 R
+C1 6 5 C
+Vin 8 0 AC 1kHz
+
+* Operational Amplifier
+* (Note: Node 2 is common to non-inverting and inverting inputs and may require a specific Op-Amp model)
+XU1 2 2 3 Vout opamp
+
+* Ground
+0 GND

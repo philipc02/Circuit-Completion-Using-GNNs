@@ -1,0 +1,5 @@
+spice
+* SPICE Netlist
+V1 8 11 DC <VALUE>
+D1 4 6 D_MODEL
+R1 6 2  R_VALUE

@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+Vin 1 0 DC Vin
+Rin 1 2 Rin
+E1 2 3 0 1 Av
+Rout 2 0 Rout

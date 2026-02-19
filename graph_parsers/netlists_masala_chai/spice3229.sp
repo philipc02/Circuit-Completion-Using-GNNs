@@ -1,0 +1,7 @@
+Vin 5 0 DC 0V
+C1 5 2 1uF
+C2 2 2 1uF
+Cin 5 2 1uF
+CL 4 0 1uF
+Gm 2 0 Vx 5 1
+RO 2 3 1k

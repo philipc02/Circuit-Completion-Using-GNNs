@@ -1,0 +1,8 @@
+plaintext
+* SPICE netlist for the given schematic
+V1 7 2 DC 120V
+R1 7 4 470
+R2 4 8 1k
+R3 8 6 1
+V2 6 2 DC 30V
+V3 4 2 DC 65V

@@ -1,0 +1,17 @@
+* NMOS transistor Q1
+Q1 2 1 0 0 NPN
+
+* NMOS transistor Q2
+Q2 3 4 0 0 NPN
+
+* Resistor R01
+R01 2 0 1k
+
+* Resistor R02
+R02 3 0 1k
+
+* Voltage input source Vin1
+Vin1 1 0 DC 5V
+
+* Voltage input source Vin2
+Vin2 4 0 DC 5V

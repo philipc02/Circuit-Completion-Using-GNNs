@@ -1,0 +1,36 @@
+plaintext
+* SPICE Netlist
+
+VCC 2 0 DC 15
+VEE 5 0 DC -15
+
+* Transistors QX C B E
+Q1 8 4 2 QNPN
+Q2 8 3 2 QNPN
+Q3 3 2 6 QNPN
+Q4 3 2 5 QNPN
+Q5 9 3 5 QNPN
+Q6 5 3 5 QNPN
+Q7 2 8 2 QPNP
+Q8 9 8 6 QPNP
+Q9 6 33 5 QNPN
+Q10 6 0 5 QNPN
+Q11 8 33 2 QPNP
+Q12 2 0 0 QPNP
+Q13 6 2 2 QNPN
+Q14 2 6 5 QPNP
+
+* Resistors RX N1 N2 Value
+R1 4 2 1k
+R2 2 3 1k
+R3 8 2 1k
+R4 4 2 1k
+R5 5 3 1k
+R6 5 5 1k
+
+* Capacitors CX N1 N2 Value
+CC 3 6 10p
+
+* Models
+.model QNPN NPN
+.model QPNP PNP

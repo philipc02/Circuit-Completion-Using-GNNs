@@ -1,0 +1,4 @@
+IIN 2 7 DC
+R1 2 4 1k
+D1 2 6 Dmodel
+VB 6 5 DC

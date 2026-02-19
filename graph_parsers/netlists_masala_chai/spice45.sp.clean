@@ -1,0 +1,15 @@
+* SPICE Netlist
+* Voltage Source
+V1 5 10 DC 0
+V2 2 8 DC 0
+
+* Resistors
+Rre 5 3 re
+Rrb 9 3 rb
+RRC 4 2 RC
+
+* Current Source
+Igmve 4 6 DC gm*ve
+
+* Ground
+V3 10 0 DC 0

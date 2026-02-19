@@ -1,0 +1,17 @@
+spice
+* SPICE Netlist
+
+VCC 10 0 DC
+Vi 1 0 DC
+IQ 5 10 AC 0 DC 1m
+
+Q1 4 3 6 QLPNP
+Q2 4 7 2 QLPNP
+D1 5 2 MD
+D2 2 0 MD
+RL 4 8 10k
+
+.model QLPNP PNP (IS=1E-15 BF=100)
+.model MD D
+
+.END

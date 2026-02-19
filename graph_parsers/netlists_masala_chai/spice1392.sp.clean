@@ -1,0 +1,16 @@
+spice
+* Components
+IREF 3 0 DC 0.2mA
+
+* BJTs
+QF 3 2 0 QMODEL
+Q1 2 1 0 QMODEL
+Q2 4 1 0 QMODEL
+
+* Nets
+* 1: X
+* 2: AE
+* 3: VCC
+* 4: 10AE
+
+.model QMODEL NPN

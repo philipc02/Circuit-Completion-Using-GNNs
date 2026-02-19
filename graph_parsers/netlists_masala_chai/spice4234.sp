@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+Rpi2 7 8 rpi2_value
+Ro2 2 5 ro2_value
+RE 7 6 RE_value
+Vx 3 4 DC Vx_value
+Gm2 2 7 (7 8) gm2_value

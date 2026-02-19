@@ -1,0 +1,28 @@
+spice
+* SPICE Netlist
+* Components identified from schematics
+
+Vi 9 0 DC v_i
+Rf 9 8 R_f
+Gm1 8 0 1010 9 g_m1(1+η)  ; Voltage controlled current source
+Cij 8 6 C_ij
+Vout 11 0 DC v_out
+RL 11 11 R_L
+Gm2 5 0 7 2 g_m2(1+η)    ; Voltage controlled current source
+Cbd 5 12 C_bd
+
+* Node mapping
+* 1: Ground (0)
+* 2: Connected to terminal 6 of Cij
+* 3: Terminal 6 of Cij
+* 4: Terminal 5 of Cbd
+* 5: Connected to current source Gm2
+* 6: Connected to node of Cij
+* 7: Control node for Gm2
+* 8: Node after Rf
+* 9: Positive terminal of Vi
+* 10: Negative terminal of Vi
+* 11: Positive terminal of RL
+* 12: Connected to node of Cbd
+
+.end

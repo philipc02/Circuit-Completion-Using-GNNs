@@ -1,0 +1,4 @@
+spice
+I1 2 0 DC 1A
+R1 2 3 RF
+V1 3 0 DC 5V

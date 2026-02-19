@@ -1,0 +1,25 @@
+spice
+* SPICE Netlist generated from the schematic
+
+VCC 7 0 DC 1.2
+VEE 555 0 DC -1.2
+Vs 8 9 DC 
+
+* Resistor Definitions
+R1 8 1 10k
+RF 9 4 10k
+Rload 3 2 
+
+* Current Sources
+I1 555 0 DC 0.2m
+I2 2 0 DC 0.8m
+
+* Transistor G D S (assuming NMOS for the sake of netlist)
+* Adjust the model name and parameters based on your assumption.
+M1 1 8 555 555 NMOS
+M2 4 1 555 555 NMOS
+M3 2 7 3 3 PMOS
+M4 2 7 2 2 PMOS
+M5 2 3 2 2 NMOS
+
+* End of netlist

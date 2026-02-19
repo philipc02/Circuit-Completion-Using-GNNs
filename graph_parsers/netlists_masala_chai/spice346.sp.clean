@@ -1,0 +1,20 @@
+spice
+* Voltage Source
+V1 12 6 DC Vi
+
+* Resistors
+R1 2 11 Ys
+R2 11 2 Y11g
+R3 2 8 Y11a
+R4 8 9 Y21a
+R5 9 5 Y22a
+R6 5 2 Y22y
+
+* Current Source
+I1 6 2 DC Is
+
+* Voltage Source Output
+V2 3 5 DC Vo
+
+* Feedback Network Current Source
+H1 10 4 I1 3 0 12g

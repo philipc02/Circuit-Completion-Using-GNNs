@@ -1,0 +1,4 @@
+plaintext
+Vs 2 0 AC 1
+R1 2 4 R
+C1 4 0 XC

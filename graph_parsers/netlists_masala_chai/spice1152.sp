@@ -1,0 +1,14 @@
+spice
+* SPICE Netlist for the given schematic
+
+M1 3 3 2 NMOS L=0.18U W=5U
+M2 4 3 2 NMOS L=0.18U W=5U
+
+V1 1 2 DC 0.9
+I1 3 4 DC IX
+
+Vx 3 0 DC 0
+
+.model NMOS NMOS(Level=1)
+
+.end

@@ -1,0 +1,2 @@
+spice
+M1 2 VG 3 3 PMOS_MODEL

@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist for BJT Amplifier Circuit
+
+VCC 8 0 DC <voltage_value> * Replace <voltage_value> with actual value
+
+R1 2 5  <R1_value>          * Replace <R1_value> with actual resistance value
+R2 2 0  <R2_value>          * Replace <R2_value> with actual resistance value
+RC 4 8  <RC_value>          * Replace <RC_value> with actual resistance value
+RE 6 0  <RE_value>          * Replace <RE_value> with actual resistance value
+
+Q1 4 7 6 NPN                * NPN Transistor: C B E
+
+.END

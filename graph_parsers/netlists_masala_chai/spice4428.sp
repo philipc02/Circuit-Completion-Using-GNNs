@@ -1,0 +1,35 @@
+* NMOS Transistor: M1
+M1 3 9 2 2 NMOS
+
+* NMOS Transistor: M2
+M2 2 5 2 2 NMOS
+
+* PMOS Transistor: M3
+M3 4 8 2 5 PMOS
+
+* Current Source: Is1
+I1 2 3 DC 1mA
+
+* Current Source: Is2
+I2 2 5 DC 2mA
+
+* Voltage Source: V+
+V1 4 2 DC 12V
+
+* Voltage Source: vi
+Vin 9 2 DC 0V
+
+* Resistor: Rs
+R1 9 3 1k
+
+* Resistor: RD
+RD 4 8 40k
+
+* Resistor: R1
+R2 5 6 10k
+
+* Resistor: R2
+R3 5 7 40k
+
+* Resistor: RL
+RL 7 2 4k

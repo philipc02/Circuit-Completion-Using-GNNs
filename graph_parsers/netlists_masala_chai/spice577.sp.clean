@@ -1,0 +1,3 @@
+MN1 D 2 S S NMOS
+Rs S 0 Rs_value
+I1 D 0 AC 1

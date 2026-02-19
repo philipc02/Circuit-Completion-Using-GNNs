@@ -1,0 +1,24 @@
+* SPICE Netlist for the given schematic
+
+V1 1 0 DC 1 * Input voltage source
+R1 1 4 1k * Resistor R1
+C1 4 3 1u * Capacitor C1
+R2 5 3 10k * Resistor R2
+C2 2 3 0.1u * Capacitor C2
+
+* Op-amp - using an ideal model
+XOPAMP 3 2 3 OPAMP
+
+* Generic op-amp model
+.subckt OPAMP noninv inv out
+VN 6 0 DC 1
+RM 6 5 10Meg
+CM 5 0 1p
+G1 7 0 5 4 1e-3
+E1 4 0 8 0 1e6
+Rout 8 7 10
+Cout 8 0 1u
+R1 4 8 200
+.ends
+
+* End of Netlist

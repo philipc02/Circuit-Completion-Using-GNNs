@@ -1,0 +1,5 @@
+spice
+* Capacitor and Resistor Circuit
+C1 Vin 2 0.1uF
+R1 2 0 1k
+Vout 2 0

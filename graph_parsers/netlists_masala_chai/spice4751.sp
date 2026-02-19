@@ -1,0 +1,7 @@
+* SPICE Netlist
+VCC 8 0 DC 10V
+R1 5 6 10k
+R2 3 2 2.2k
+RC 8 6 3.6k
+RE 4 2 1k
+Q1 6 5 4 2N3904

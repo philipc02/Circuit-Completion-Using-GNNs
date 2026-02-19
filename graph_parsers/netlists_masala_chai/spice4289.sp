@@ -1,0 +1,20 @@
+* Voltage Sources
+V1 4 0 DC 1.75
+V2 7 0 DC -1.75
+
+* Current Source
+IREF 6 0 DC <value>
+
+* MOSFETs
+M1 5 4 6 6 PMOS
+M2 5 5 4 4 PMOS
+M3 4 5 4 4 PMOS
+M4 2 2 7 7 NMOS
+M5 8 3 7 7 NMOS
+
+* Resistor
+R 6 0 R
+
+* Current Outputs
+IO1 0 5 DC <value>
+IO2 0 8 DC <value>

@@ -1,0 +1,5 @@
+plaintext
+Vin 1 0 DC 0
+Rin 1 4 1000
+Gm 3 0 (1,0)
+Rout 3 2 1000

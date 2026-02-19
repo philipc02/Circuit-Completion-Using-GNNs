@@ -1,0 +1,15 @@
+spice
+* NPN Transistor
+Q1 6 8 2 NPN
+
+* Resistor
+RC 6 2 1k ; Assuming RC value is 1k ohms
+
+* Voltage Source
+VCC 6 2 DC 5V
+
+* Input Voltage
+VI 8 0 DC 0V ; Assuming input is grounded or specified elsewhere
+
+* Output Node
+VOUT 5 0 ; Assuming vO connects to node 5 or is defined on node 3

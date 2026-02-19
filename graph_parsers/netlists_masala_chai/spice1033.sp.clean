@@ -1,0 +1,20 @@
+plaintext
+* SPICE Netlist
+
+* Transistors
+Q1 5 1 3 NPN
+Q2 4 2 3 NPN
+
+* Current Source
+I1 3 0 DC 1mA
+
+* Resistors
+RB 1 0 10k
+RC 5 4 1k
+
+* Voltage Sources
+VCC 4 0 DC 5V
+VB 2 0 DC 1.5V
+VIN 1 0 DC 0V
+
+* End of Netlist

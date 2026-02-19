@@ -1,0 +1,11 @@
+plaintext
+* SPICE Netlist
+
+V_in 5 4 DC <VALUE>          ; Define the value as needed
+R_pi 5 2 <VALUE>             ; Replace <VALUE> with the resistance value
+I1 2 4 DC <VALUE>            ; Define the current value
+Gm_vpi 2 3 VALUE={g_m*(V(2,4))}  ; Voltage-controlled current source
+RL 3 4 <VALUE>               ; Replace <VALUE> with the load resistance value
+
+* Control voltage source for V(pi), if required for simulation
+V_pi 2 4 DC 0

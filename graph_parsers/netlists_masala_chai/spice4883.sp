@@ -1,0 +1,19 @@
+* BJT Amplifier Circuit
+
+VCC 4 0 DC 15
+Vg 6 0 DC 1
+
+RG 6 1 50
+R1 3 4 2.2k
+R2 1 2 2.2k
+RE 2 0 1k
+RL 5 0 3.3k
+
+Q1 3 1 2 NPN
+
+C1 6 1 1u
+C2 3 5 1u
+
+.MODEL NPN NPN(IS=1E-14 BF=100)
+
+.END

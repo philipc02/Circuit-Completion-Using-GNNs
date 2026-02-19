@@ -1,0 +1,21 @@
+spice
+* NMOS with drain, gate, source
+M1 2 6 4 4 NMOS
+
+* Resistors
+R1 2 3 R1_value
+R2 3 4 R2_value
+
+* Voltage source and ground
+V1 6 0 Vin
+Vdd 2 0 DC Vdd_value
+
+* Output
+Vout 3
+
+* DC supply
+.dc Vin 0 Vdd_value 0.1
+
+* Analysis
+.op
+.end

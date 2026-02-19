@@ -1,0 +1,19 @@
+spice
+* Netlist for the given circuit
+
+M1 3 1 B NMOS
+M2 3 4 B NMOS
+
+Iss B 3 DC
+
+V1_top 3 1 DC (Vin1/2)
+V1_mid 3 2 DC (Vin1/2)
+V1_bot 3 0 DC (Vin1/2)
+
+V2_top 3 4 DC (Vin2/2)
+V2_mid 3 2 DC (Vin2/2)
+V2_bot 3 0 DC (Vin2/2)
+
+* Notes: 
+* NMOS is assumed with default model.
+* 0 is the ground node.

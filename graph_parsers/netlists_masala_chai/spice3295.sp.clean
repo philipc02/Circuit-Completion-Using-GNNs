@@ -1,0 +1,13 @@
+* Netlist for the given schematic
+
+M1 3 2 0 0 NMOS
+L1 1 3 
+C1 3 0 
+C2 2 0 
+
+* Node annotations
+* 1 - inductor L1 terminal
+* 2 - shared node between M1 drain and C2
+* 3 - shared node between L1, M1 gate, and C1
+
+.end

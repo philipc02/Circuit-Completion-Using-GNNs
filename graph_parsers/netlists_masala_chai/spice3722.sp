@@ -1,0 +1,12 @@
+plaintext
+* SPICE Netlist for NMOS Amplifier with Resistors
+
+M1 5 2 3 3 NMOS 
+RG 2 0 47k
+RD 4 5 RD_value
+RS 3 0 RS_value
+
+VDD 4 0 DC 5V
+VSS 0 3 DC -5V
+
+* Replace RD_value and RS_value with actual values if known

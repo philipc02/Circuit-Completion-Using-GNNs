@@ -1,0 +1,6 @@
+spice
+M1 2 6 7 7 NMOS
+M2 2 3 7 7 NMOS
+I1 7 8 DC Iss
+V1 6 5 DC Vin1
+V2 3 4 DC Vin2

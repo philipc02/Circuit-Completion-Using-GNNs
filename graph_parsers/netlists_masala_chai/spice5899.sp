@@ -1,0 +1,13 @@
+spice
+* NMOS Transistor Model Declaration
+.model NMOS NMOS
+
+* Transistors
+M1 6 2 2 2 NMOS
+M2 5 3 4 4 NMOS
+
+* Current Source
+IREF 7 6 DC <value>
+
+* Ground
+VSS 2 0 0

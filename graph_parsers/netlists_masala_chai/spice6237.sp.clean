@@ -1,0 +1,15 @@
+spice
+* NMOS Transistor
+M1 2 6 4 4 NMOS
+
+* Resistor
+R1 2 2 R
+
+* Voltage Source for Gate-Source Voltage
+VGS 6 7 DC V_GS
+
+* Voltage Source for Drain-Source Voltage
+VDD 1 3 DC V_DD
+
+* Ground
+V3 3 4 DC 0

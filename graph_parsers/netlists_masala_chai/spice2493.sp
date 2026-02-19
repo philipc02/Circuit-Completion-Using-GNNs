@@ -1,0 +1,15 @@
+spice
+*MOSFETs
+M1 2 5 6 6 NMOS
+M2 2 3 VDD VDD PMOS
+M3 3 Vin 4 4 NMOS
+
+*Current Source
+I1 2 6 DC 
+
+*Capacitor
+C1 2 6 <value>
+
+* Voltage Sources
+VDD VDD 0 <value>
+Vin Vin 0 <value>

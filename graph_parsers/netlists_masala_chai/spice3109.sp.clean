@@ -1,0 +1,12 @@
+spice
+* Operational Amplifier 1
+XU1 3 4 2 opamp
+
+* Operational Amplifier 2
+XU2 2 4 opamp
+
+* Capacitor CC
+CC 2 4 CC_value
+
+* Voltage Source for input
+Vin 3 4 DC Vin_value

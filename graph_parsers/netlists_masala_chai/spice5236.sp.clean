@@ -1,0 +1,5 @@
+V1 6 0 Vin
+RS 6 2 1k
+VZ 222 2 D
+Q1 2 4 7 NPN
+R2 3 0 1k

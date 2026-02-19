@@ -1,0 +1,8 @@
+spice
+* SPICE Netlist
+I1 2 7 DC 1A
+D1 3 2 D
+D2 3 3 D
+D3 5 3 D
+R1 3 0 0.001
+R2 4 3 0.001

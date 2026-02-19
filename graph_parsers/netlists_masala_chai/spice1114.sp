@@ -1,0 +1,12 @@
+spice
+* NMOS Transistor
+M1 3 3 2 NMOS
+
+* Voltage Source
+Vx 2 4 DC 0
+
+* Current Source
+Ix 3 2 DC 0
+
+* Power Supply
+VDD 3 4 DC 1.8

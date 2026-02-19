@@ -1,0 +1,11 @@
+spice
+* Differential Amplifier
+Q1 6 3 3 QNPN
+Q2 6 7 3 QNPN
+Q3 6 3 6 QPNP
+Q4 5 6 6 QPNP
+VCC 6 0 DC VCC
+IEE 3 3 DC IEE
+RL 5 2 RL
+.model QNPN NPN (IS=1E-15 BF=100)
+.model QPNP PNP (IS=1E-15 BF=100)

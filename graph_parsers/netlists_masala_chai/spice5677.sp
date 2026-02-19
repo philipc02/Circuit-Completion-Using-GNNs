@@ -1,0 +1,16 @@
+plaintext
+* SPICE Netlist
+
+C1 1 2 C     ; Capacitor C between nodes 1 and 2
+D1 2 3 D     ; Diode D connected between nodes 2 and 3 (ground)
+V1 1 0 DC 1  ; Voltage source V1 providing input at v_1
+
+* Nodes:
+* 1: v_1
+* 2: Internal node
+* 3: Ground (0)
+* 4: v_O
+
+* Analysis
+.TRAN 1n 10n
+.END

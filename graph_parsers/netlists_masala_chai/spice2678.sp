@@ -1,0 +1,13 @@
+plaintext
+* SPICE Netlist
+M1 6 0 0 NMOS
+M2 3 4 0 NMOS
+M3 2 5 2 PMOS
+M4 2 4 2 PMOS
+VDD 2 0 DC VDD
+Vin1 0 6 DC Vin/2
+Vin2 4 0 DC Vin/2
+Iout 2 3 DC Iout
+*.model NMOS NMOS level=1
+*.model PMOS PMOS level=1
+.END

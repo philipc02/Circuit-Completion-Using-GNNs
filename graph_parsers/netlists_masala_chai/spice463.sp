@@ -1,0 +1,26 @@
+spice
+* Components
+Q1 3 10 10 NPN
+Q2 6 7 6 NPN
+Q3 2 3 5 NPN
+Q4 3 3 4 NPN
+Q5 5 2 8 PNP
+Q6 5 3 8 PNP
+
+* Resistors
+R1 5 8 R
+R2 5 8 R
+
+* Current Sources
+I1 10 0 DC I1
+I2 6 0 DC 2*I1
+
+* Voltage Sources
+V1 9 0 DC Vcc
+V2 7 6 DC Vh2
+
+* Capacitor
+C1 3 6 C
+
+* Output
+Vout 9 3 DC 0

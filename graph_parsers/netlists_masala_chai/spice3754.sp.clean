@@ -1,0 +1,20 @@
+plaintext
+* NMOS Transistor
+M1 2 5 2 2 NMOS
+
+* Voltage Sources
+V1 5 0 DC Vi
+V2 2 0 DC 3
+V3 0 2 DC 3
+
+* Resistors
+RG 5 7 100k
+RS 2 2 1.2k
+RD 2 3 2k
+
+* Capacitors
+C1 5 7 C1
+CS 2 4 CS
+
+* Connect Node 4 to GND
+Rdummy 4 0 1MEG

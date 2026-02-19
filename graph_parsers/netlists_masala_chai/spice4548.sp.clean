@@ -1,0 +1,9 @@
+* PMOS Transistor
+MP1 3 2 5 5 PMOS
+
+* NMOS Transistor
+MN1 3 6 4 4 NMOS
+
+* Voltage Sources
+V1 6 4 V1
+VDD 3 0 VDD

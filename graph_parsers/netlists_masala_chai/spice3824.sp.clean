@@ -1,0 +1,20 @@
+spice
+*SPICE Netlist
+Vi 7 0 DC
+I_Q 3 8 DC 1mA
+C_C 7 3 C_C_value
+R_i 3 2 R_i_value
+
+* NMOS Transistor M_D
+* Drain at 2, Gate at 3, Source connected to Ground at 5
+M_D 2 3 5 5 NMOS_model
+
+* PMOS Transistor M_L
+* Drain at 2, Gate at 4, Source at 6
+M_L 2 4 6 6 PMOS_model
+
+Vplus 6 0 DC 3.3V
+Vminus 8 0 DC -3.3V
+
+* Output
+Vo 2 0

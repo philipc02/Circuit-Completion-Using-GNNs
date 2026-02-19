@@ -1,0 +1,25 @@
+spice
+* SPICE Netlist for the given circuit schematic
+
+VCC 6 0 DC V+     * Power supply
+
+RC1 6 3 1k        * Left RC
+RC2 6 4 1k        * Right RC
+RL  3 5 500       * Load resistor
+
+Q1 3 1 7 NPN      * Transistor Q1
+Q2 4 2 7 NPN      * Transistor Q2
+
+IQ 7 8 DC 1mA     * Current Source
+
+* Nodes Legend:
+* 1: v1
+* 2: v2 
+* 3: vo1
+* 4: vo2
+* 5: Intermediate connection
+* 6: V+
+* 7: Common emitter node
+* 8: V-
+
+.END

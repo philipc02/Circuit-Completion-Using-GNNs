@@ -1,0 +1,5 @@
+plaintext
+*MOSFET Circuit
+M1 Net2 Signal GND GND NMOS
+R1 VCC Net2 1k
+V1 VCC GND DC 5V

@@ -1,0 +1,6 @@
+* Circuit Description
+V1 5 2 DC V+
+R1 5 2 R
+D1 2 3 D
+* Ground Reference
+V2 3 0 DC 0

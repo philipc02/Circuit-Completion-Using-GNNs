@@ -1,0 +1,14 @@
+plaintext
+* SPICE Netlist
+VCC N1 0 DC VCC
+Vb1 N2 0 DC Vb1
+Vin N3 0 DC Vin
+Vb3 N4 0 DC Vb3
+
+I1 N1 N5 DC I1
+
+Q1 N5 N2 N6 NPN
+Q2 N6 N3 0 NPN
+Q3 N1 N4 N5 NPN
+
+* End of Netlist

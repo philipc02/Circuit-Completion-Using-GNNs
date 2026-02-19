@@ -1,0 +1,34 @@
+* Transistors
+M_Q1 5 8 9 9 NMOS
+M_Q2 5 8 9 9 NMOS
+M_Q3 7 5 8 8 PMOS
+M_Q4 3 1 2 2 PMOS
+M_Q5 2 2 7 7 NMOS
+M_Q6 6 3 5 5 NMOS
+M_Q7 3 4 5 5 NMOS
+M_Q8 1 5 5 5 NMOS
+M_Q9 8 6 9 9 NMOS
+
+* Capacitors
+C_C21 9 5 23n
+C_C22 5 2 100n
+C_C25 2 5 47n
+
+* Resistors
+R_R9 8 9 100K
+R_R10 5 2 100K
+R_R13 5 5 10K
+R_R14 2 5 10K
+R_R15 8 7 1K
+R_R16 7 6 1K
+R_R17 6 4 1K
+R_R19 4 5 1K
+R_R65 5 3 10K
+
+* Current Source
+I_L 7 2 1mA
+
+* Voltage Source
+V_SUPPLY 9 1 DC 15V
+
+*.end

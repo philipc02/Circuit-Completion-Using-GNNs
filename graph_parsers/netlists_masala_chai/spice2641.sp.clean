@@ -1,0 +1,6 @@
+plaintext
+* SPICE Netlist
+M1 3 7 5 5 NMOS
+M2 2 7 5 5 NMOS
+I1 3 6 DC IREF
+C1 7 5 <C_VALUE>

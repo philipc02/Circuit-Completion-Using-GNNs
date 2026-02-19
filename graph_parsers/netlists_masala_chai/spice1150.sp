@@ -1,0 +1,15 @@
+plaintext
+* MOSFET
+M1 4 3 2 2 NMOS L=0.36u W=5u
+
+* Voltage Source
+V1 3 2 DC 0.9V
+
+* Current Source
+Ix 4 2 DC 0A
+
+* Voltage Source
+Vx 2 0
+
+* Model Definitions
+.model NMOS NMOS

@@ -1,0 +1,7 @@
+* Zener Diode with Series Resistance and Current Source
+Iz 4 3 DC VALUE  ; Current source from Node 4 to Node 3
+VZ 5 2 DC VALUE  ; Voltage source from Node 5 to Node 2
+D1 3 2 DZener    ; Zener diode from Node 3 to Node 2
+Rz 2 1 R_value   ; Series resistance Rz from Node 2 to Node 1
+
+.model DZener D (IS=1e-14 BV=Vz_value RS=r_value)

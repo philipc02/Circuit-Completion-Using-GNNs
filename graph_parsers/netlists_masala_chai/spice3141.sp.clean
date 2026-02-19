@@ -1,0 +1,14 @@
+spice
+* SPICE Netlist
+
+M1 5 8 6 6 NMOS
+M2 4 6 7 7 NMOS
+
+I1 5 55 DC
+I2 4 44 DC
+I3 3 0 DC
+
+VDD 4 0 DC
+VIN 8 0 DC
+
+.END

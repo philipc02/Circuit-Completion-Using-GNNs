@@ -1,0 +1,6 @@
+plaintext
+* SPICE Netlist
+M3 4 1 3 3 PMOS
+M1 4 2 0 0 NMOS
+Vb 1 0 DC <Voltage_Value>
+VDD 3 0 DC <Voltage_Value>

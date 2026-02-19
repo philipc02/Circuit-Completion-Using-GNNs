@@ -1,0 +1,4 @@
+spice
+CW 3 2
+RW 4 5
+L 5 2

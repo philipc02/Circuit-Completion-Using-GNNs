@@ -1,0 +1,4 @@
+Vin 1 2 DC Vinput_value
+R1 2 3 R1_value
+D1 3 4 D_model
+VB 4 0 DC VB_value

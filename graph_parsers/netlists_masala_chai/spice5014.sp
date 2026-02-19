@@ -1,0 +1,7 @@
+plaintext
+* SPICE Netlist
+Ic 3 7 DC 0 AC 1
+RC 3 6 1k
+Rout 6 5 1k
+Cout 5 4 1u
+RL 4 2 1k

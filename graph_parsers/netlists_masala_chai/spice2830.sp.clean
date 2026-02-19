@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+VDD 5 0 DC VDD_VALUE
+I1 5 2 DC I1_VALUE
+M1 2 6 3 3 NMOS_MODEL
+I2_n 4 3 DC I2_N_VALUE
+.ac 6 0

@@ -1,0 +1,23 @@
+spice
+* NMOS Transistor M1 (Drain, Gate, Source)
+M1 3 4 0 NMOS
+
+* PMOS Transistor M2 (Drain, Gate, Source)
+M2 3 2 2 PMOS
+
+* Current Source I1
+I1 3 0 DC 1mA
+
+* Resistor RD
+RD 3 0 1k
+
+* Voltage Sources
+Vin 4 0 DC 1V
+Vb 4 0 DC 1V
+VDD 2 0 DC 5V
+
+* Model Definitions for MOSFETs
+.model NMOS NMOS
+.model PMOS PMOS
+
+.end

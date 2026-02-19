@@ -1,0 +1,9 @@
+plaintext
+* SPICE Netlist
+VCC 5 0 DC VCC
+R1 5 1 1k
+R2 5 3 1k
+R3 3 2 1k
+R4 4 3 1k
+C1 1 6 1uF
+D1 4 3 D

@@ -1,0 +1,2 @@
+spice
+M1 22 3 4 4 NMOS

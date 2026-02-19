@@ -1,0 +1,18 @@
+spice
+* NMOS transistor
+M1 3 2 5 5 NMOS
+
+* NPN BJT 
+Q1 4 6 5 NPN
+
+* Voltage source
+V1 4 0 DC 5V
+
+* VIN
+VIN 2 0 DC 0V
+
+* VOUT
+VOUT 3 0
+
+* Ground
+VSS 5 0 0

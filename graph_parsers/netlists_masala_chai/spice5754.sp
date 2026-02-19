@@ -1,0 +1,7 @@
+* BJT Circuit
+V1 1 0 DC 5
+V2 3 0 DC -5
+R1 1 2 10K
+R2 4 0 1K
+Q1 2 2 4 NPN
+Q2 4 2 3 PNP

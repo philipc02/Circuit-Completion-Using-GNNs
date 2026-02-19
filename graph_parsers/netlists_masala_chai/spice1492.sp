@@ -1,0 +1,20 @@
+* Differential Pair SPICE Netlist
+
+* Transistors
+Q1 2 5 3 NPN
+Q2 2 3 3 NPN
+
+* Resistors
+R1 2 4 1k
+R2 2 4 1k
+
+* Input Voltage Source
+Vs 6 3 AC 1
+
+* Vcc
+Vcc 4 0 DC 15
+
+* Current Source
+I1 3 0 DC 1mA
+
+* End of Netlist

@@ -1,0 +1,17 @@
+* Netlist for the given schematic
+
+VDD 4 0 DC XXVDD
+VIN 5 0 AC XXVIN
+
+RG 5 2 XXRG
+RD 4 2 XXRD
+RS 2 6 XXRS
+RL 4 3 XXRL
+
+CI 5 2 XXCI
+CO 4 3 XXCO
+CS 2 3 XXCS
+
+M1 2 5 0 0 NMOS_MODEL
+
+.END

@@ -1,0 +1,17 @@
+spice
+* NMOS Amplifier Circuit
+
+VDD 3 0 DC <VDD_Value>
+Vin1 2 0 DC <Vin1_Value>
+
+* Transistor
+M1 2 2 4 4 NMOS_MODEL 
+
+* Resistors
+RDD 3 2 <RDD/2_Value>
+RSS 4 5 <RSS/2_Value>
+
+* Model Definitions
+.model NMOS_MODEL NMOS (LEVEL=1 VTO=<VTO_Value> KP=<KP_Value>)
+
+.END

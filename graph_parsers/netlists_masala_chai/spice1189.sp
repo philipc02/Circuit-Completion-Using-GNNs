@@ -1,0 +1,26 @@
+plaintext
+* SPICE Netlist for the given schematic
+
+* NMOS Transistor
+M1 2 5 3 3 NMOS_MODEL
+
+* Resistors
+RS 2 3 RS_VALUE
+RO1 2 4 RO1_VALUE
+RO2 2 3 RO2_VALUE
+
+* Current Source
+Gm 2 3 VALUE={1/GM2_VALUE}
+
+* Load resistor
+Rout1 2 0 ROUT1_VALUE
+
+* Models and other definitions
+.model NMOS_MODEL NMOS (LEVEL=1)
+.param RS_VALUE=1k
+.param RO1_VALUE=100k
+.param RO2_VALUE=100k
+.param GM2_VALUE=1m
+.param ROUT1_VALUE=10k
+
+.end

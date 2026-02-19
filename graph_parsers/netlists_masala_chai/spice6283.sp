@@ -1,0 +1,7 @@
+spice
+* MOSFET Inverter
+M1 4 2 7 7 PMOS
+M2 4 2 5 5 NMOS
+VDD 7 0 DC VDD
+VIN 6 2 DC 0
+VOUT 4 0

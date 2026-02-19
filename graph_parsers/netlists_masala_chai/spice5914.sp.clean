@@ -1,0 +1,3 @@
+plaintext
+* NMOS Transistor Q1
+M1 2 4 3 3 NMOS

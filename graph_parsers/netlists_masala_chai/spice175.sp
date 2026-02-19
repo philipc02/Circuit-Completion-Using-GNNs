@@ -1,0 +1,8 @@
+spice
+V1 8 44 DC 15V
+R1 8 2 13.7k
+Q1 2 5 44 QNPN
+Q2 9 7 2 QNPN
+Q3 2 2 6 QNPN
+
+.model QNPN NPN

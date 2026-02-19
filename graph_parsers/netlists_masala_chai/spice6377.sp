@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+Vi 1 0 DC 0
+C1 1 2
+C2 2 3
+R 3 5
+Vout 5 0

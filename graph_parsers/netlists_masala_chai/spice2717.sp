@@ -1,0 +1,16 @@
+spice
+* Netlist for the given schematic
+
+VDD 7 0 DC VDD
+
+R1_L 6 4 10k
+R1_R 7 2 10k
+R2 4 2 5k
+
+M1 3 2 4 4 NMOS
+M2 1 4 4 4 NMOS
+
+* NMOS model (example parameters)
+.model NMOS nmos (level=1 Vto=1 kp=2e-5 lambda=0.02)
+
+.END

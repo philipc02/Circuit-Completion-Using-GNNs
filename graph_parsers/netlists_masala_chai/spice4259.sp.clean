@@ -1,0 +1,19 @@
+spice
+* SPICE netlist for the given schematic
+
+V1 3 0 DC Vi
+V2 4 0 DC Vgs2
+
+Gm1 3 0 VALUE = {g_m1 * V(3)}
+Gm2 4 2 VALUE = {g_m2 * V(4,2)}
+
+R_ro1 3 2  r_o1
+R_ro2 2 6  r_o2
+R_R3 6 Vo  R3
+
+* Connections
+* G1 is represented by V1
+* G2 is represented by V2
+* Vi and Vgs2 are input voltage levels
+
+.END

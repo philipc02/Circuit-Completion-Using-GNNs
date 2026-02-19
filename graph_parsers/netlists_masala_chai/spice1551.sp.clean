@@ -1,0 +1,21 @@
+* Differential Amplifier Circuit
+
+* Transistors
+Q1 3 2 4 NPN
+Q2 5 2 4 NPN
+
+* Resistors
+RC1 6 3  RC
+RC2 7 5  RC
+REE 4 0  REE
+
+* Voltage Sources
+VCC 6 0 VCC
+VIN1 2 3 VIN1
+VIN2 2 5 VIN2
+VCM 2 0 VCM
+
+* Current Source
+IEE 4 0 IEE
+
+* End of netlist

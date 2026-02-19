@@ -1,0 +1,14 @@
+spice
+* SPICE netlist
+* Components
+V1 3 5 DC Vin
+R1 2 3 R1
+R2 2 4 R2
+* Op-Amp
+X1 0 2 4 opamp
+
+* Ground reference
+Vgnd 5 0 DC 0
+
+* End of netlist
+.end

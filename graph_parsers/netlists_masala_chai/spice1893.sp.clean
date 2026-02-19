@@ -1,0 +1,16 @@
+plaintext
+* NMOS Transistors
+M1 3 1 6 6 NMOS
+M2 2 2 6 6 NMOS
+M3 5 2 7 7 NMOS
+
+* PMOS Transistors
+M4 4 4 2 2 PMOS
+M5 5 2 2 2 PMOS
+M6 Vout 5 2 2 PMOS
+
+* Voltage Source
+VDD 2 0 DC VDD
+
+* Nodes
+Vb 4 0 DC Vb

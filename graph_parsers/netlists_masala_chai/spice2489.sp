@@ -1,0 +1,5 @@
+spice
+M1 2 1 0 0 NMOS
+M2 4 2 3 3 NMOS
+M3 4 5 0 0 NMOS
+ID 3 2 DC 1A

@@ -1,0 +1,6 @@
+* SPICE Netlist
+R1 4 3 10k
+R2 6 2 RE
+V1 5 2 DC 5V
+V2 3 2 DC 5V
+Q1 3 4 6 NPN

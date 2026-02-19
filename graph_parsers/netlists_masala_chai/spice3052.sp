@@ -1,0 +1,18 @@
+spice
+* SPICE Netlist for the given schematic
+VDD 2 0 DC 5V
+I1 2 1 DC 300uA
+M1 6 8 4 4 NMOS
+M2 9 6 4 4 NMOS
+M3 5 8 6 6 NMOS
+M4 9 6 6 6 NMOS
+M5 8 5 2 2 NMOS
+M6 9 5 2 2 NMOS
+M7 2 8 2 2 PMOS
+M8 2 9 2 2 PMOS
+M9 4 8 4 4 NMOS
+M10 4 4 1 1 PMOS
+M11 2 2 1 1 PMOS
+R1 1 0 1k
+I2 4 0 DC 2.97mA
+.ends

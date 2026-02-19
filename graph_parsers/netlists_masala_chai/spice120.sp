@@ -1,0 +1,20 @@
+* SPICE Netlist
+
+* Voltage Source
+VDD 8 0 DC
+
+* Current Source
+IIN 8 5 DC
+
+* NMOS Transistors
+M1 7 6 9 9 NMOS
+M2 6 10 9 9 NMOS
+
+* PMOS Transistors
+M3 4 5 7 7 PMOS
+M4 5 3 4 4 PMOS
+
+* Capacitor
+C1 5 10
+
+* End of Netlist

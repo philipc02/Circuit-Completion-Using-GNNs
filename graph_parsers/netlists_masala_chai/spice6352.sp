@@ -1,0 +1,5 @@
+Vi 4 6 DC V_i
+L1 4 5 L
+R1 5 3 R
+C1 5 7 C
+Vout 7 3 DC 0

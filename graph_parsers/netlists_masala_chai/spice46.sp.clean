@@ -1,0 +1,10 @@
+plaintext
+* NMOS Common Source Amplifier
+MN1 3 2 4 4 NMOS_model
+RD 3 6 1k
+VDD 6 0 DC 5V
+Vi 1 0 DC 1V
+Vo 5 0 
+
+* Models
+.model NMOS_model NMOS (Level=1)

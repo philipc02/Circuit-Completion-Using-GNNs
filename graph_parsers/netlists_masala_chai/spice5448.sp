@@ -1,0 +1,14 @@
+plaintext
+* SPICE netlist for the given circuit
+
+Vs 2 5 AC 1        * Voltage source Vs connected between nodes 2 and 5
+Rs 2 3 10          * Resistor Rs connected between nodes 2 and 3
+Rw 4 6 5           * Resistor Rw connected between nodes 4 and 6
+L 4 6 100m         * Inductor L connected between nodes 4 and 6
+C 6 8 1u           * Capacitor C connected between nodes 6 and 8
+R 9 7 10k          * Resistor R connected between nodes 9 and 7
+
+* Defining ground
+8 0
+
+.end

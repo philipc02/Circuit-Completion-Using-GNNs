@@ -1,0 +1,17 @@
+spice
+* SPICE Netlist
+
+VDD VDD 0 DC 5V
+VIN Vin 0 DC 1.2V
+
+M1 Out Vin 2 2 NMOS
+M2 1 0 2 2 NMOS
+M3 2 2 VDD VDD PMOS
+M4 Out M2 VDD VDD PMOS
+M5 Vout Out VDD VDD PMOS
+
+I1 2 0 DC ISS
+
+* The node "2" is the common node for the sources of M1 and M2, as well as the drain of M3.
+* ISS current source connects from node 2 to ground.
+* VDD is the supply voltage, connected as the source for PMOS and as the positive supply.

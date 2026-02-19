@@ -1,0 +1,15 @@
+* NMOS Transistor
+M1 2 3 2 2 NMOS W=2u L=0.18u
+
+* Resistor
+R_D 5 4 5k
+
+* Voltage Sources
+V_DD 5 0 DC 1.8V
+V_GS 3 0 DC
+
+* Nodes
+* 2: Source/Body
+* 3: Gate
+* 5: Drain
+* 4: Connection to R_D and I_D

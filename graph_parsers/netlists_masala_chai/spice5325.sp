@@ -1,0 +1,5 @@
+spice
+* Netlist for the circuit
+R1 6 5 10
+R2 3 4 100
+R3 5 2 100

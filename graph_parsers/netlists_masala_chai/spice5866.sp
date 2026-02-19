@@ -1,0 +1,6 @@
+spice
+* NMOS Transistor
+M1 5 3 3 3 NMOS
+
+* Voltage Source
+V1 4 2 Vx

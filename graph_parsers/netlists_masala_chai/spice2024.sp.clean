@@ -1,0 +1,12 @@
+* Components
+R1 Vin 2  R1
+C2 2 Vout C2
+C1 2 0    C1
+
+* Voltage source
+Vin Vin 0 DC 0
+
+* Analysis
+.tran 1n 1u
+
+.end

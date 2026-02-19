@@ -1,0 +1,19 @@
+* Transistor Definitions
+Q1 3 5 4 QNPN
+Q2 3 0 1 QNPN
+Q3 2 3 2 QPNP
+
+* Voltage Sources
+Vb1 5 0 DC <value1>
+Vb2 1 0 DC <value2>
+Vb3 2 0 DC <value3>
+VCC 2 0 DC <value4>
+
+* Resistor
+Rout 3 2 <Rout_value>
+
+* Model Definitions
+.model QNPN NPN
+.model QPNP PNP
+
+.end

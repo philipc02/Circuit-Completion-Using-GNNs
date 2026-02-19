@@ -1,0 +1,4 @@
+* Example Circuit
+V1 1 4 AC 1
+V2 4 3 DC 1
+R1 2 3 1k

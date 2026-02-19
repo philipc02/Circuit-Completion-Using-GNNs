@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist for the given schematic
+
+V1 4 5 DC 0  ; Voltage source V_in from net 4 to net 5
+D1 4 3 Dmodel  ; Diode D1 connected from net 4 to net 3
+C1 3 5 1u  ; Capacitor C1 connected from net 3 to net 5
+RL 2 5 1k  ; Resistor RL connected from net 2 to net 5
+.model Dmodel D  ; Diode model
+
+* End of Netlist

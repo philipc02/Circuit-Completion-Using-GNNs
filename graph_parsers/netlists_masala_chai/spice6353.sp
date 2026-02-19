@@ -1,0 +1,6 @@
+plaintext
+Vin 5 6 DC 0V
+L1 5 4 L
+R1 4 2 R
+C1 4 3 C
+Vout 3 2 DC 0V

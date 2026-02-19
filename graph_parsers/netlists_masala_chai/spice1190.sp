@@ -1,0 +1,17 @@
+* Example SPICE netlist
+VDD 4 0 DC 5V
+VIN 1 0 DC 1V
+RS 1 3 1k
+RD 4 2 1k
+R1 3 4 1k
+R2 3 5 1k
+R3 5 0 1k
+C1 3 5 1uF
+
+* NMOS definition: M<name> <drain node> <gate node> <source node> <source node> (since the body is connected to the source)
+M1 2 3 5 5 NMOS_MODEL
+
+.model NMOS_MODEL NMOS (kp=120u vto=0.7 lambda=0.02)
+
+.tran 0.1u 10u
+.end

@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist
+* PMOS and NMOS Transistor Circuit
+
+V1 1 0 DC 0
+V_signal 4 5 DC 0.1
+
+* Transistors
+M1 2 1 3 3 PMOS  ; Q_P
+M2 2 1 2 2 NMOS  ; Q_N
+
+* Resistor
+R1 2 4 100k
+
+* Voltage input
+Vin 1 0 DC 0
+
+* Analysis
+.TRAN 1u 10m
+.END

@@ -1,0 +1,18 @@
+plaintext
+* Netlist for given circuit
+* Nodes are numbered based on annotated image
+
+Vmu 8 0 DC <value>           ; Voltage source mu Vi
+
+I0 1 0 <value>               ; Current source Io
+
+Rro1 3 4 <value>             ; Resistor ro1
+Rro2 4 2 <value>             ; Resistor ro2
+RR1 2 3 <value>              ; Resistor R1
+RR2 3 7 <value>              ; Resistor R2
+RRo 2 1 <value>              ; Resistor Ro
+
+* Q: drain=2, gate=4, source=3
+M1 2 4 3 3 NMOS L=<value> W=<value> 
+
+.END

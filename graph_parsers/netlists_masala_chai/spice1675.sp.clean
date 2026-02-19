@@ -1,0 +1,4 @@
+plaintext
+M1 2 4 5 5 NMOS
+CGS 4 2 Cvalue
+L1 2 3 Lvalue

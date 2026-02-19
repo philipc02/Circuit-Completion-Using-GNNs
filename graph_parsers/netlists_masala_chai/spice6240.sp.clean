@@ -1,0 +1,21 @@
+spice
+* SPICE Netlist for the provided schematic
+
+* Voltage Sources
+VDD 1 0 DC VDD
+VSS 6 0 DC VSS
+
+* Current Sources
+I1 1 2 DC IB
+I2 1 2 DC IB
+
+* NMOS Transistors
+M1 3 5 2 2 NMOS
+M2 4 0 2 2 NMOS
+M3 2 7 2 2 NMOS
+M4 8 10 2 2 NMOS
+M5 6 9 6 6 NMOS
+M6 6 11 6 6 NMOS
+
+* Load Capacitor
+CL 10 0 CL

@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist
+
+VDD 5 0 DC 5V
+Vin 4 0 DC 1V
+Vb1 7 0 DC 1.5V
+Vb2 3 0 DC 1.5V
+
+M1 6 3 0 0 NMOS
+M2 6 4 0 0 NMOS
+M3 5 7 6 6 PMOS
+
+.END

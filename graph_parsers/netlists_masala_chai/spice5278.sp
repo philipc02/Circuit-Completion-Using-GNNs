@@ -1,0 +1,7 @@
+* SPICE Netlist
+R1 5 6 560k
+R2 5 3 560k
+R3 3 4 100k
+R4 4 1 1.0M
+R5 1 2 100k
+V1 6 2 DC 15V

@@ -1,0 +1,25 @@
+spice
+*SPICE Netlist
+V1 2 0 DC 6V
+V2 4 0 DC -6V
+Vin 1 0
+
+Q1 2 2 3 QNPN
+Q2 2 2 4 QPNP
+Q3 27 3 6 QNPN
+Q4 6 27 5 QNPN
+Q5 2 2 4 QPNP
+Q6 5 3 4 QNPN
+
+R1 2 27 5k
+R2 2 2 10k
+R3 3 1 20k
+R4 2 2 10k
+R5 3 5 5k
+R6 6 0 5k
+R7 5 0 5k
+R8 3 4 2k
+R9 4 0 1k
+
+.model QNPN NPN
+.model QPNP PNP

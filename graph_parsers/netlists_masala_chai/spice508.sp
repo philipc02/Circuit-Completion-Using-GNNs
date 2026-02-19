@@ -1,0 +1,18 @@
+plaintext
+* SPICE Netlist
+VCC 7 0 DC 10
+VEE 3 0 DC -10
+VS 6 0 DC
+
+RS 6 4 RS
+R1 7 4 20k
+R2 5 2 20k
+R3 4 3 500
+R4 4 4 500
+R5 3 0 100k
+
+Q1 4 1 3 NPN
+Q2 5 2 4 NPN
+
+* Models
+.model NPN NPN

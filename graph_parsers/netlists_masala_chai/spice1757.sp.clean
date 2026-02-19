@@ -1,0 +1,23 @@
+spice
+* SPICE Netlist
+
+VDD VDD 0 DC <voltage_value>
+
+* Resistors
+RD VDD Vout <RD_value>
+RG Vin M1_gate <RG_value>
+
+* Transistors
+M1 M1_drain M1_gate 0 0 NMOS
+M2 Vout Vb M2_source 0 NMOS
+
+* Net Connections
+* Node Mappings
+M1_drain = 0
+M1_gate = Vin
+M1_source = 0
+M2_drain = Vout
+M2_gate = Vb
+M2_source = M1_drain
+
+* End of Netlist

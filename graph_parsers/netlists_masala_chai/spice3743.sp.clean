@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist for the Given Circuit
+
+V1 5 2 DC <value>     * Voltage source vi
+MP1 4 5 3 3 PMOS      * PMOS Transistor
+RD 4 6 RD_value       * Resistor RD
+VSS 7 0 DC 0          * Ground reference
+
+* Node Descriptions
+* Net 5 - Input voltage (vi+ terminal)
+* Net 2 - vi- terminal
+* Net 4 - PMOS Drain, RD Terminal 1
+* Net 6 - RD Terminal 2, Ground
+* Net 3 - PMOS Source, Body
+
+.END

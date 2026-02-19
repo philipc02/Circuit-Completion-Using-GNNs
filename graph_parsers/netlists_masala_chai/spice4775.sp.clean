@@ -1,0 +1,5 @@
+* SPICE Netlist
+R1 VCC 2 <value_of_R1>
+R2 2 0 <value_of_R2>
+VCC VCC 0 DC <value_of_VCC>
+VBB 2 0 DC <value_of_VBB>

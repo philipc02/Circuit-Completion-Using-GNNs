@@ -1,0 +1,14 @@
+spice
+* SPICE netlist for the given schematic
+
+M1 8 3 2 2 NMOS
+M2 6 9 8 8 NMOS
+M3 4 6 2 2 NMOS
+
+I_BIAS1 4 2 DC <VALUE>
+I_BIAS2 5 6 DC <VALUE>
+
+V_BIAS1 3 0 DC <VALUE>
+V_BIAS2 9 0 DC <VALUE>
+
+.END

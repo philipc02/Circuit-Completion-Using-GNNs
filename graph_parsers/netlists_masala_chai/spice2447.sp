@@ -1,0 +1,5 @@
+M1 6 7 2 2 NMOS
+V1 4 2 DC 3
+C1 4 3 1u
+VDD 6 0 DC 5
+VX 7 0 DC 1

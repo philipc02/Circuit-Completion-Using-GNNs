@@ -1,0 +1,21 @@
+plaintext
+* SPICE Netlist for the given circuit
+
+* Voltage Source
+VDD 2 0 DC 1.8
+
+* Transistors
+* M1 is an NMOS: Drain is connected to Node 3, Gate is Node 'Vin', Source is Ground
+M1 3 Vin 0 NMOS
+
+* M2 is a PMOS: Drain is connected to Node 3, Gate is Node 2, Source is Node 2
+M2 2 2 3 PMOS
+
+* Input Voltage 
+Vin Vin 0 DC 0
+
+* Models for NMOS and PMOS
+.model NMOS NMOS
+.model PMOS PMOS
+
+.end

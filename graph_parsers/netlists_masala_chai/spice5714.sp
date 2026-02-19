@@ -1,0 +1,19 @@
+plaintext
+* SPICE Netlist for the Circuit
+
+V1 1 2 DC 2.5
+I1 2 5 DC 0.5m
+R1 2 5 1k ; Assuming R = 1k for simulation
+
+* NMOS Transistor Models
+.model NMOS NMOS (LEVEL=1)
+.model PMOS PMOS (LEVEL=1)
+
+Q1 3 4 3 NMOS
+Q2 2 5 3 NMOS
+
+V2 4 0 DC 1
+
+.control
+run
+.endc

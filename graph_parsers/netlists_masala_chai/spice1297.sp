@@ -1,0 +1,13 @@
+* SPICE Netlist
+* Component Definitions
+R1 2 3 
+R2 4 2 
+Vin 4 0 DC
+XOPAMP 2 0 3 OPAMP
+
+* Connections
+* Op-amp: non-inverting input at node 2, inverting input at ground, output at node 3
+* Resistors: R1 connects from node 2 to node 3, R2 from node 4 to node 2
+* Voltage Source: Vin connects from node 4 to ground (0)
+
+.end

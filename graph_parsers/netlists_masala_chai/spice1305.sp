@@ -1,0 +1,14 @@
+* Voltage sources
+V1 1 3 DC
+V2 1 3 DC
+
+* Resistors
+R1 1 3 1000
+R2 3 X 1000
+RF X 2 1000
+
+* Operational Amplifier
+XU1 3 3 2 OPAMP
+
+* .OP is used to indicate operational point analysis
+.OP

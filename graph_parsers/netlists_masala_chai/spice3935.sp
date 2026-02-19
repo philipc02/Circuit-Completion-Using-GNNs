@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist
+
+V1 7 2 DC 0        * Input Voltage Source
+V2 2 0 DC 3.65     * VBB Voltage Source
+V3 5 0 DC 5        * V+ Voltage Source
+
+RB 7 5 50k         * Base Resistor
+RC 4 3 3k          * Collector Resistor
+
+Q1 5 4 2 NPN       * NPN Transistor (Collector, Base, Emitter)
+
+.END

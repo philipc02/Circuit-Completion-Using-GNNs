@@ -1,0 +1,16 @@
+spice
+* NMOS Amplifier Circuit
+
+VDD N5 0 DC 10V
+VIN N3 0 DC 1V AC 1V
+
+RD N1 N5 10k
+R1 N1 N2 4.7k
+R1 N2 0 4.7k
+
+M1 N1 N3 N2 N2 NMOS_MOD
+
+.model NMOS_MOD NMOS (LEVEL=1 KP=2e-5 VTO=1)
+
+.TRAN 1us 10ms
+.END

@@ -1,0 +1,17 @@
+* SPICE Netlist for the circuit
+
+* Voltage Source
+Vx 3 5 DC <value>
+
+* Dependent Current Source
+G1 2 3 VOL=Gm*vpi
+
+* Resistors
+Rc 6 3 rc
+Ro 2 8 ro
+RL 8 0 RL
+
+* Ground definitions
+0 5 7 4 0
+
+.end

@@ -1,0 +1,16 @@
+spice
+* NMOS Transistor
+M1 3 4 2 2 NMOS 
+
+* Voltage Source
+V1 3 0 DC 3V
+
+* Capacitor
+CH 5 0 1pF
+
+* Define NMOS Model (default model, update accordingly)
+.model NMOS NMOS (level=1)
+
+* Simulation Commands
+.tran 1n 10u  ; Transient analysis for 10 microseconds
+.end

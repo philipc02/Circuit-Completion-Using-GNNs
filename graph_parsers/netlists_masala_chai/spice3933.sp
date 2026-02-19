@@ -1,0 +1,5 @@
+spice
+* BJT Hybrid-Pi Model
+R_pi 2 4 r_pi
+R_o 4 5 r_o
+G_m 4 3 2 4 gm

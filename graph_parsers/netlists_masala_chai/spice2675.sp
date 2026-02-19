@@ -1,0 +1,22 @@
+spice
+* MOSFETs
+* M<name> <drain> <gate> <source> <body> <model>
+M1 4 Vin 6 6 NMOS
+M2 5 P 33 33 NMOS
+M3 7 4 VDD VDD PMOS
+M4 5 2 VDD VDD PMOS
+M5 33 Vb 0 0 NMOS
+
+* Voltage Sources
+VDD VDD 0 DC <VDD_value>
+Vin Vin 0 DC <Vin_value>
+Vb Vb 0 DC <Vb_value>
+
+* Load
+RL Vout 0 <RL_value>
+
+* .MODEL statements for NMOS and PMOS
+.model NMOS NMOS
+.model PMOS PMOS
+
+* End of netlist

@@ -1,0 +1,5 @@
+spice
+I1 2 3 DC 2mA
+C1 6 3
+D1 3 4
+V1 2 0 DC 5V

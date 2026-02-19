@@ -1,0 +1,11 @@
+spice
+* SPICE Netlist for CMOS Circuit
+
+VDD 5 0 DC 1.8
+IREF 5 4 DC {I_REF_VALUE}
+
+M1 4 4 2 2 NMOS_MODEL
+M2 9 4 2 2 NMOS_MODEL
+M3 7 8 9 9 PMOS_MODEL
+
+.END

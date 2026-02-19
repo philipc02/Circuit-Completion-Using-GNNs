@@ -1,0 +1,5 @@
+spice
+V1 1 0 DC Vs
+R1 1 2 R
+D1 2 0 D
+RL 2 0 RL

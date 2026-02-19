@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+M1 3 1 4 4 NMOS
+Cgd 5 6 Cgd_value
+Cgs 1 6 Cgs_value
+Cds 2 3 Cds_value

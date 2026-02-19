@@ -1,0 +1,24 @@
+plaintext
+* SPICE Netlist
+* Transistor Devices
+M_Q1 3 8 3 3 NMOS
+M_Q2 5 3 6 6 PMOS
+
+* Resistors
+R1 8 2 1k
+R2 2 7 47k
+R3 2 1 100k
+R4 7 5 <value>
+R5 3 4 <value>
+
+* Capacitors
+C1 7 2 <value>
+C2 5 4 <value>
+
+* Voltage Sources
+VCC 7 0 DC <Vcc_value>
+VEE 4 0 DC <Vee_value>
+
+* Inputs/Outputs
+Vin 1 0 AC <Vin_value>
+Vout 7 0

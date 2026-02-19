@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist
+VDD 5 0 DC 5
+V1 4 0 DC 0
+VC Vc 0 DC 0
+
+R1 3 2 10k
+
+M1 2 4 3 3 NMOS L=1u W=20u
+M2 3 2 5 5 PMOS L=1u W=20u
+M3 2 5 5 5 PMOS L=1u W=20u
+M4 2 5 3 3 NMOS L=2u W=5u
+M5 Vc 2 5 5 PMOS L=1u W=20u
+M6 Vo 2 3 3 NMOS L=1u W=20u
+
+.end

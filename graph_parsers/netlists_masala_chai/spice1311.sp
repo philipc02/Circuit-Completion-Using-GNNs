@@ -1,0 +1,16 @@
+* Node assignments
+   * Vin = Voltage source
+   * R1 = Resistor
+   * R2 = Resistor
+   * C1 = Capacitor
+   * U1 = Operational Amplifier (Op-amp)
+
+   Vin 5 3 DC 0
+   R1 5 2 1k
+   R2 2 4 1k
+   C1 2 4 1uF
+   U1 3 2 4 2 Opamp
+
+   * Control statements
+   .model Opamp opamp
+   .end

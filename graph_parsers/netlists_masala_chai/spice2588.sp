@@ -1,0 +1,20 @@
+spice
+* Components
+M1 2 3 4 4 NMOS
+M2 2 5 4 4 NMOS
+I1 4 0 DC I_SS
+V1 3 6 DC (Vin1-Vin2)/2
+V2 6 0 DC (Vin1+Vin2)/2
+V3 5 0 DC (Vin2-Vin1)/2
+V4 5 0 DC (Vin1+Vin2)/2
+
+* Connections
+* M1 Drain: 2, Gate: 3, Source: 4
+* M2 Drain: 2, Gate: 5, Source: 4
+* Current Source I1 connected between 4 and ground
+* Voltage source V1 connected between nodes 3 and 6
+* Voltage source V2 connected between nodes 6 and ground
+* Voltage source V3 connected between 5 and ground
+* Voltage source V4 connected between 5 and ground
+
+.END

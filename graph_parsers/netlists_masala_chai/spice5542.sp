@@ -1,0 +1,15 @@
+spice
+* Components
+V1 1 6 DC 10
+R1 1 2 20k
+R2 2 3 20k
+R3 3 4 20k
+R4 2 0 20k
+R5 3 0 20k
+R6 4 0 20k
+
+* Voltage Source Ground Connection
+V1 6 0 0
+
+* End of Netlist
+.end

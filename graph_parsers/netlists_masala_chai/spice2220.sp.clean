@@ -1,0 +1,9 @@
+plaintext
+* SPICE Netlist
+M1 22 24 0 0 NMOS
+M2 2 Vin 22 22 PMOS
+M3 23 22 0 0 NMOS
+VDD 2 0 DC VDD
+Vb 24 0 DC Vb
+Vin Vin 0 DC Vin
+Vout 23 0

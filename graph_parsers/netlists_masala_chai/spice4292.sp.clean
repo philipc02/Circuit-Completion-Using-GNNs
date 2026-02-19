@@ -1,0 +1,9 @@
+spice
+Q0 5 4 5 NPN
+Q1 7 2 3 NPN
+Q2 6 4 3 NPN
+
+R1 7 2 R
+
+VBE 3 0 DC 0.7
+VPLUS 7 0 DC VDC

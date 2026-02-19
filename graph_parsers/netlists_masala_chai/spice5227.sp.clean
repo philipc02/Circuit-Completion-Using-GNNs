@@ -1,0 +1,24 @@
+plaintext
+* NMOS Amplifier Circuit
+
+VDD VDD 0 DC VALUE
+
+* Components
+M1 D G S S NMOS
+C1 3 0 VALUE
+C2 3 0 VALUE
+C3 4 0 VALUE
+C4 2 S VALUE
+L 3 2 VALUE
+R1 G 0 VALUE
+R2 S 0 VALUE
+RL 2 0 VALUE
+
+* Connections
+VDD VDD 0 DC VALUE
+RF_CHOKE VDD D L
+
+* Nodes
+* D = Drain, G = Gate, S = Source
+
+.END

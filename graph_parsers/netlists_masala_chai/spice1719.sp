@@ -1,0 +1,14 @@
+spice
+* Transistor M1 (NMOS)
+M1 Vout Vin 0 0 NMOS
+
+* Transistor M2 (PMOS)
+M2 Vout Vb VDD VDD PMOS
+
+* Capacitor CL
+C1 Vout 0 CL_VALUE
+
+* Voltage sources
+VDD VDD 0 DC VDD_VALUE
+Vin Vin 0 DC Vin_VALUE
+Vb Vb 0 DC Vb_VALUE

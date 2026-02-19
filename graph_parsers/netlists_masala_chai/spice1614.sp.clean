@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist
+
+VDD 4 0 DC VDD
+Vin1 1 0 DC Vin1
+Vin2 2 0 DC Vin2
+Vb1 5 0 DC Vb1
+
+* Resistors
+R1 4 3 RD
+R2 4 2 RD+DeltaRD
+
+* Transistors
+M1 3 1 3 3 PMOS
+M2 2 2 2 2 PMOS
+M3 3 5 0 0 NMOS

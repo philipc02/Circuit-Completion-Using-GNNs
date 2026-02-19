@@ -1,0 +1,11 @@
+spice
+* SPICE Netlist
+VDD 3 0 DC VDD_VALUE
+
+* NMOS M1
+M1 2 4 0 0 NMOS_MODEL
+
+* PMOS M2
+M2 2 4 3 3 PMOS_MODEL
+
+* End of Netlist

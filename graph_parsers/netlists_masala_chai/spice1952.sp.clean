@@ -1,0 +1,14 @@
+plaintext
+* Transistors
+Q1 2 2 3 NPN
+Q3 2 5 3 NPN
+
+* Diode
+D1 24 3 D
+
+* Voltage Sources
+Vcc Vcc 0 DC 5
+Vb1 5 0 DC 1.2
+
+* Nodes
+Vcc 2

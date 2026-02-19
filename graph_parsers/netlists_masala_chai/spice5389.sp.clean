@@ -1,0 +1,5 @@
+plaintext
+* Example Circuit
+V1 3 4 DC 10
+C1 5 2 150u
+R1 2 0 220

@@ -1,0 +1,15 @@
+spice
+* Netlist for the schematic
+
+* Voltage sources
+Vb1 2 0 DC <value_of_Vb1>
+Vb2 3 0 DC <value_of_Vb2>
+
+* Resistor
+Rout 1 0 <value_of_Rout>
+
+* Transistors
+Q1 1 2 3 NPN
+Q2 0 3 3 NPN
+
+* End of netlist

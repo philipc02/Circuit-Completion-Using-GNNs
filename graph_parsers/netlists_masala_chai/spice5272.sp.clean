@@ -1,0 +1,6 @@
+* SPICE Netlist
+V1 2 4 DC 100V
+R1 2 5 1k
+R2 5 5 1k
+R3 5 3 1k
+R4 3 4 1k

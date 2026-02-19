@@ -1,0 +1,28 @@
+spice
+* SPICE Netlist
+
+* Current Source
+Iin 2 4 DC 0 AC 1
+
+* Resistors
+RS 2 4 10k
+RL 3 5 1k
+
+* Capacitors
+CC 2 3 1u
+CL 5 4 1u
+
+* MOSFET
+M1 3 2 7 7 NMOS L=1u W=1u
+
+* Voltage Source
+V1 6 4 DC 5
+
+* Controlled Source
+Gm 1 3 2 0 0.001
+
+* Voltage Amplifier with Gain of 1
+Eamp 3 0 1 0 1
+
+.option post
+.end

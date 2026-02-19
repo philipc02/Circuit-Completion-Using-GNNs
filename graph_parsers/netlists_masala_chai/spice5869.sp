@@ -1,0 +1,22 @@
+plaintext
+* SPICE netlist for the circuit
+
+Vsig 8 5 DC 0
+Rsig 8 10 1k
+
+Vin 1 10 DC 1.5
+Rbias 1 2 10k
+
+I1 2 3 DC 10m
+
+Rc 3 2 100
+
+Q1 2 9 7 QMOD
+
+C1 10 2
+C2 3 2
+
+.model QMOD NPN (IS=1e-14 BF=100)
+
+* Grounds
+Vground 5 0 DC 0

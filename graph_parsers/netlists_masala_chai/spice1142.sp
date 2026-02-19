@@ -1,0 +1,12 @@
+plaintext
+* MOSFET Amplifier Circuit
+VDD VDD 0 DC 10
+RS VDD M1_SOURCE 1k
+RD M1_DRAIN 0 1k
+V_IN VIN 0 DC 0
+M1 M1_DRAIN VIN M1_SOURCE M1_SOURCE NMOS
+
+* Model for NMOS
+.model NMOS NMOS (LEVEL=1)
+
+.end

@@ -1,0 +1,11 @@
+plaintext
+* SPICE Netlist
+IREF 4 3 DC 1mA
+M1 3 3 0 0 NMOS
+M2 3 2 0 0 NMOS
+M3 5 3 4 4 PMOS
+M4 6 2 4 4 PMOS
+VDD 4 0 DC 5V
+* Assumptions: 
+* NMOS and PMOS models are defined elsewhere
+* DC supply for IREF and VDD assumed for illustration

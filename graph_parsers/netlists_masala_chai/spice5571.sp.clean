@@ -1,0 +1,20 @@
+plaintext
+* SPICE Netlist for the given circuit
+
+R1 1 4 R1_value
+R2 3 2 R2_value
+V1 3 4 DC Vos_value
+* Op-amp model (ideal, to be defined by user)
+* Example model: 
+* 
+* .subckt opamp2p 1 2 3
+* Vin 1 2 DC 0
+* G1 3 0 poly(1) (Vin) 1 1.0
+* .ends opamp2p
+
+XU1 3 2 2 opamp2p
+
+* Define the ground node
+0 4 
+
+.end

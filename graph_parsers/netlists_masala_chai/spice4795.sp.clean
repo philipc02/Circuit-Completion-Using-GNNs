@@ -1,0 +1,17 @@
+spice
+* Nodes
+* 1 - Ground
+* 2 - Base of BJT
+* 3 - Collector of BJT
+* 4 - VEE (+12V)
+* 5 - Emitter of BJT 
+
+VEE 4 1 DC 12V
+
+R1 2 1 620
+R2 4 2 680
+RC 4 3 200
+
+Q1 3 2 5 NPN
+
+D1 5 1 LED

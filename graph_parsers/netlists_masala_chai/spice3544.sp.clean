@@ -1,0 +1,18 @@
+* SPICE Netlist for the provided schematic
+VS 10 7 DC 0
+RS 6 6 1000
+RB 6 3 1000
+RX 3 3 1000
+RO 5 3 1000
+CM 3 4 1u
+EVM 8 4 VALUE={(Vm)}
+CPI 5 4 1u
+RL 2 3 1000
+VOUT 2 3
+
+* Define control sources
+* Voltage-dependent voltage source
+* Ename N+ N- NC+ NC- VALUE
+E_VM 4 9 5 3 VALUE={e_m*V(vin)}
+
+* End of netlist

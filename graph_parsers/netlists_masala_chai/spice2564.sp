@@ -1,0 +1,6 @@
+spice
+* SPICE netlist for the given schematic
+M1 Y Vb1 X NMOS
+M2 X Vb2 0 NMOS
+C1 Y 4 1uF
+VDD 4 0 DC 5V

@@ -1,0 +1,16 @@
+spice
+* Voltage Source
+VDD 2 0 DC 1.8
+
+* Resistors
+RG Vin 2 10k
+RS 4 0 1k
+
+* NMOS Transistor
+M1 4 3 0 0 NMOS
+
+* Additional connections
+Vin 1 0
+
+* Model for NMOS
+.model NMOS NMOS

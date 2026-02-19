@@ -1,0 +1,9 @@
+spice
+* SPICE netlist
+M_MC 3 1 2 2 PMOS
+M_MB 7 3 2 2 PMOS
+M_MA 2 4 6 5 NMOS
+I_REF2 2 1 DC <value>
+R_RD 6 5 8k
+V_SUPPLY 7 2 DC <V+>
+V_GROUND 2 1 DC 0

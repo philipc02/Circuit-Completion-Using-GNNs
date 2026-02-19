@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+V1 3 0 DC Vs
+E1 6 4 2 0 a
+Z1 3 2 Z1
+Z2 2 2 Z2
+Rout 6 5 Rout ; Optional load to capture Vout, assumed here as Rout

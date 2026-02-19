@@ -1,0 +1,3 @@
+IS 1 2 DC 1A
+RS 4 3 1k
+RL 3 2 1k

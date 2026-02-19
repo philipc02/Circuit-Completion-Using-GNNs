@@ -1,0 +1,23 @@
+spice
+* Transistor Definitions
+Q1 2 9 5 PNP
+Q2 2 2 5 PNP
+Q3 8 0 3 NPN
+Q4 2 0 3 NPN
+Q5 5 7 5 NPN
+Q6 0 2 0 NPN
+Q7 8 4 8 NPN
+Q8 2 2 8 NPN
+Q9 2 2 3 NPN
+Q10 2 3 3 NPN
+
+* Resistor Definitions
+R7 3 0 1k
+R8 2 0 1k
+R9 2 3 1k
+R10 3 2 1k
+
+* Voltage Sources
+VCC 2 0 DC 12V
+V_BIAS2 7 0 DC 0.7V
+VB 8 0 DC 0.7V

@@ -1,0 +1,5 @@
+* SPICE Netlist
+V1 4 0 AC 1
+C1 2 4 1u
+D1 2 3 D
+R1 3 6 RL

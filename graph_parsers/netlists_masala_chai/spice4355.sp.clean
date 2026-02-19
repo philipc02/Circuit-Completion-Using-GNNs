@@ -1,0 +1,19 @@
+spice
+* SPICE Netlist
+* Components
+Q1 5 v1 2 NPN
+Q2 4 2 v2 NPN
+Q3 2 2 6 NPN
+Q4 6 2 7 NPN
+
+RC1 5 +10V 1k
+RC2 4 +10V 1k
+R1 2 +10V 1k
+R2 7 6 1k
+
+I1 2 2 DC 0.1A
+
+VCC +10V 0 DC 10V
+VEE 0 -10V DC -10V
+
+.model NPN NPN

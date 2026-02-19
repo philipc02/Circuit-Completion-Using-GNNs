@@ -1,0 +1,10 @@
+* Differential Amplifier
+VCC 6 0 DC 12
+VEE 2 0 DC -12
+RC 3 2 200k
+RE 4 5 200k
+
+Q1 3 44 4 NPN
+Q2 3 2 5 NPN
+
+VOUT 3 0 DC

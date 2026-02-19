@@ -1,0 +1,7 @@
+plaintext
+* SPICE Netlist
+VThev 5 4 DC 0
+RC 5 3 1k
+C2 3 2 1u
+Rin2 2 0 1k
+VY 2 0

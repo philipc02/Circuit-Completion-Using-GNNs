@@ -1,0 +1,6 @@
+* SPICE Netlist
+RS 7 4 RS
+RF 4 3 RF
+RD 6 3 RD
+VDD 6 0 VDD DC 10
+It 3 2 DC 1mA

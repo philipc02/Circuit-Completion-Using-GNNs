@@ -1,0 +1,16 @@
+spice
+* Operational Amplifier Circuit
+* Nodes: 1=Vo, 2=v-, 3=vout, 6=ground, 5=intermediate
+
+R1 2 6 R1_value
+R2 2 3 R2_value
+R 2 5 R_value
+L 5 6 L_value
+L 2 6 L_value
+
+* Op-amp connections
+* Negative terminal of Op-amp connected to node 2
+* Positive terminal connected to ground (node 6)
+* Output of Op-amp is node 3
+
+V1 6 3 0

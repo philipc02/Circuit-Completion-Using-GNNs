@@ -1,0 +1,25 @@
+spice
+* Netlist for the given schematic
+* Components are mapped using node annotations
+
+VDD 5 0 DC VDD
+
+* Current Sources
+I1 2 5 DC I1
+I2 4 5 DC I2
+I3 3 0 DC I3
+
+* MOSFETs
+M1 2 2 3 3 NMOS
+M2 4 4 3 3 NMOS
+
+* Resistors
+RDD 2 4 RDD
+RSS 3 0 RSS
+
+* Voltage Inputs
+Vin1 2 0 DC Vin1
+Vin2 4 0 DC Vin2
+
+* Output
+Vout 2 7

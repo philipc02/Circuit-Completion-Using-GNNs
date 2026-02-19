@@ -1,0 +1,8 @@
+* NMOS Circuit Example
+   M1 4 5 2 2 NMOS
+   VGG 5 7 DC V_GG
+   VDD 3 6 DC V_DD
+
+   * Additional Statements
+   .MODEL NMOS NMOS (Level=1)
+   .END

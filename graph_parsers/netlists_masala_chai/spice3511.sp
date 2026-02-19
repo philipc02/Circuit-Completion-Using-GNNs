@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist for the provided circuit
+
+* Voltage sources
+Vx1 8 3 DC 0
+Vx2 3 10 DC 0
+
+* Resistors
+Rf1 8 9 r_f1_value
+Rf2 3 e' r_f2_value
+Ro1 4 7 r_o1_value
+Ro2 2 6 r_o2_value
+
+* Dependent voltage-controlled current sources
+GmVn1 4 5 VALUE = {gm * V(9, e')}
+Gm'Ro2Vx2 2 10 VALUE = {-gm_prime * r_o2 * V(9, e')}
+
+* Node Definitions
+* 1 is connected in subcircuit definition
+* Node labels: b'=8, c'=7, e'=reference (ground)

@@ -1,0 +1,21 @@
+spice
+* Transistor and Component Netlist
+Q1 2 5 3 NPN
+
+* Voltage Source
+Vin 5 0 AC 1
+
+* Resistors
+R1 4 5 R1_VALUE
+R2 5 0 R2_VALUE
+RC 4 2 RC_VALUE
+RE 3 0 RE_VALUE
+RL 2 0 RL_VALUE
+
+* Capacitors
+C1 5 0 C1_VALUE
+C2 2 0 C2_VALUE
+C3 3 0 C3_VALUE
+
+* Power Supply
+VCC 4 0 DC VCC_VALUE

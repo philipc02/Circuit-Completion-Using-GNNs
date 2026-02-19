@@ -1,0 +1,19 @@
+spice
+*MOSFET and Capacitor Network
+
+* NMOS Transistor
+M1 3 2 1 1 NMOS
+
+* Capacitors
+C_CF 2 Cin_value
+
+* Current Source
+I1 1 0 DC CurrentValue
+
+* Voltage Source
+V1 3 0 DC VDD_value
+
+* Specify MOSFET model
+.model NMOS NMOS
+
+.end

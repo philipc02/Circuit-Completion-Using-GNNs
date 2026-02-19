@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist for the provided schematic
+
+Vi 3 12 DC 0
+
+C1 3 6  C1_value
+C2 10 2 C2_value
+
+Rpar1 6 11 Rpar_value
+RE1 8 1 RE1_value
+RC1 2 4 RC1_value
+Rpar2 4 5 Rpar_value
+
+Gm 2 1 (8, 1) gm_value
+
+.END

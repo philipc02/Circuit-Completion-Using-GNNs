@@ -1,0 +1,31 @@
+plaintext
+* Transistors
+Q1 2 1 8 NPN
+Q2 4 3 8 NPN
+
+* Resistors
+R1 1 7 R1_value
+R2 4 7 R2_value
+R0 2 6 R0_value
+R0 6 4 R0_value
+
+* Current Source
+I_BIAS 8 9 I_value
+
+* Voltage Sources
+VCC 6 0 DC VCC_value
+VT1 7 0 DC VT1_value
+VT2 7 0 DC VT2_value
+VEE 9 0 DC VEE_value
+
+* Nodes
+* 1 = Base of Q1
+* 2 = Collector of Q1 connecting to R0
+* 3 = Base of Q2 (connected to VCC)
+* 4 = Collector of Q2 connecting to R0
+* 6 = Common node between R0 and VCC
+* 7 = Ground connection for input voltages
+* 8 = Common emitter node connecting to I_BIAS
+* 9 = Negative terminal for I_BIAS (connected to -VEE)
+
+.end

@@ -1,0 +1,14 @@
+plaintext
+* Transistor Definitions
+M1 6 2 5 5 NMOS
+M2 7 2 5 5 NMOS
+Mb1 2 2 5 5 PMOS
+M3 1 2 6 6 PMOS
+M4 3 7 4 4 PMOS
+
+* Current Sources
+I1 3 1 DC
+Iss 5 6 DC
+
+* Voltage Supply
+VDD 3 0 DC

@@ -1,0 +1,5 @@
+plaintext
+* SPICE Netlist
+C1 2 222 CC1
+Rsig 2 0 Rsig
+RG 2 3 RG

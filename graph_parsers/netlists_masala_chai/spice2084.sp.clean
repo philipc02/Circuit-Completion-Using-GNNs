@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist for the Schematic
+M1 drain gate source source NMOS
+VDD drain 0 DC <value>
+Vin gate 0 DC <value>
+Rout source 0 <resistance_value>

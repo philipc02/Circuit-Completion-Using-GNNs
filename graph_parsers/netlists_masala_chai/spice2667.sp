@@ -1,0 +1,16 @@
+spice
+* Nodes: 
+* 1 - Ground
+* 2 - Vb
+* 3 - Rout
+* 4 - ro1 and current source gm1 connection
+* 5 - Connection between r02 and M2
+
+VDD 3 0 DC
+r04 3 5 1k
+r02 5 4 1k
+M2 3 2 5 NMOS L=1u W=1u
+r01 4 1 1k
+I_gm1 4 1 DC gm1
+
+.model NMOS NMOS (level=1)

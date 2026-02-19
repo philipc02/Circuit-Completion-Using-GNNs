@@ -1,0 +1,4 @@
+I1 2 4 DC 1A
+D1 6 5 D_model
+D2 4 2 D_model
+R1 5 2 1k

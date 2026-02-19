@@ -1,0 +1,11 @@
+spice
+* SPICE netlist for the given circuit
+
+R1 7 4 R
+R2 4 3 R3
+I1 4 6 iRc
+V1 7 8 vsc
+V2 5 8 a_d_prime_vic
+
+* Ground connection
+V0 8 0 0

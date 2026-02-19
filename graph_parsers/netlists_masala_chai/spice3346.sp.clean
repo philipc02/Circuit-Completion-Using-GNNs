@@ -1,0 +1,9 @@
+* SPICE Netlist for the given schematic
+
+* Diodes
+D1 4 3 DEO
+D2 4 3 DCO
+
+* Current Sources
+I1 4 3 aIE
+I2 4 3 aIF

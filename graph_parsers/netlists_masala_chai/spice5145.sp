@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist for the given schematic
+
+V1 Vin 0 DC 0         * Voltage source
+C1 Vin 2 1uF          * Capacitor
+R1 2 0 1k             * Resistor
+X1 2 0 Vout Vout Opamp * Operational Amplifier
+
+* Model definition for Opamp
+.subckt Opamp in+ in- out V+ V-
+Vin+ 1 in+ DC 0
+Vin- 2 in- DC 0
+Vout out 3 DC 10
+.ends Opamp
+
+.end

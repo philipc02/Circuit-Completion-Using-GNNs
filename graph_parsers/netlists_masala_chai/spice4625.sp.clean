@@ -1,0 +1,6 @@
+plaintext
+* SPICE Netlist
+V1 4 0 DC 36
+R1 4 5 6k
+R2 5 6 3k
+RL 5 3 RL

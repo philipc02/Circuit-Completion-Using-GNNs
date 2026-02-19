@@ -1,0 +1,21 @@
+plaintext
+* SPICE Netlist for provided schematic
+
+* Current Sources
+I1 X 3 DC 1A
+I2 Y 3 DC 1A
+
+* Resistors
+Rx X 2 RC
+Ry Y 4 RC
+
+* Voltage Source
+Vb 2 0 DC SIGNAL_VALUE
+
+* Node Mapping
+* 3: Vcc
+* X, Y: Connection points for I1 and I2
+* 2, 4: Nodes connecting resistors
+* 0: Ground
+
+.end

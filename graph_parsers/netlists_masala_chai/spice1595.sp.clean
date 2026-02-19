@@ -1,0 +1,18 @@
+spice
+* NMOS Transistors
+M1 Vout X 4 4 NMOS
+M2 Y Vb 4 4 NMOS
+
+* Resistors
+R1 X VDD 3k
+R2 Y VDD 3k
+
+* Current Source
+I1 4 0 ISS
+
+* Voltage Sources
+V1 Vin 6 DC Vin
+V2 Vb 2 DC Vb
+
+* Global Node
+VDD 3 0 DC VDD

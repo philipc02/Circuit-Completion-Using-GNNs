@@ -1,0 +1,20 @@
+* Transistors
+M21 4 4 4 VDD PMOS
+M22 4 4 4 VDD PMOS
+M23 2 2 4 VDD PMOS
+M24 4 3 6 2 NMOS
+M25 4 2 9 VDD PMOS
+M26 4 2 9 VDD PMOS
+M27 2 2 7 2 NMOS
+M28 2 2 5 2 NMOS
+M29 5 8 8 2 NMOS
+M30 2 2 8 2 NMOS
+M31 4 10 10 VDD PMOS
+M32 4 10 10 VDD PMOS
+M33 5 5 9 2 NMOS
+
+* Current Source
+IBIAS 6 4 DC <value>
+
+* Voltage Sources (Implicit)
+VDD 9 0 DC <value>

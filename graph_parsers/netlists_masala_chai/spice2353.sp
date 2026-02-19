@@ -1,0 +1,22 @@
+plaintext
+* NMOS: MC1, MC2, MC3, MC4, MC5, MC6
+* PMOS: MB12, MB13
+
+* PMOS Transistors
+MB12 8 3 2 2 PMOS
+MB13 8 2 2 2 PMOS
+
+* NMOS Transistors
+MC1 2 4 7 7 NMOS
+MC2 2 2 7 7 NMOS
+MC3 2 2 2 2 NMOS
+MC4 2 2 2 2 NMOS
+MC5 7 4 2 2 NMOS
+MC6 2 6 2 2 NMOS
+
+* Voltage and Current Sources are not explicitly visible
+
+VDD 8 0 DC <value>
+VSS 2 0 DC <value>
+VBIA3 3 0 DC <value>
+VCMFB 6 0 DC <value>

@@ -1,0 +1,7 @@
+spice
+* NMOS Transistor
+M1 2 4 5 5 NMOS
+V_G V3 4 DC VG
+V_D 2 3 DC VD
+V_S V5 5 DC VS
+V_B V5 5 DC VB

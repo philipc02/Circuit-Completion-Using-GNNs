@@ -1,0 +1,11 @@
+spice
+* Circuit Netlist
+
+V1 4 6 AC 1
+
+C1 6 2 0.1u
+R1 2 7 330
+C2 3 2 0.047u
+R2 7 5 180
+C3 5 3 0.22u
+GND 3 0

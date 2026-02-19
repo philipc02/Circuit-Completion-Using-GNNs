@@ -1,0 +1,12 @@
+spice
+I1 2 4 DC <VALUE> ; Current Source from node 2 to 4
+
+* Transistors
+M1 4 2 2 2 PMOS ; Q1 PMOS
+M2 3 7 2 2 PMOS ; Q2 PMOS
+M3 25 6 5 5 NMOS ; Q3 NMOS
+M4 3 6 5 5 NMOS ; Q4 NMOS
+
+* Supply Voltage
+VDD 2 0 DC <VALUE> ; Apply the appropriate voltage value
+VSS 5 0 DC <VALUE> ; Connect to ground or use a specific voltage

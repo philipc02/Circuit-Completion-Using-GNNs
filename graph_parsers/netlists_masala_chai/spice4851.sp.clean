@@ -1,0 +1,4 @@
+plaintext
+I1 4 1 DC 1
+R1 5 3 RC_VALUE
+R2 4 3 RL_VALUE

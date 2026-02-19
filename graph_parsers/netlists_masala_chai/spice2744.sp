@@ -1,0 +1,23 @@
+* MOSFET Specifications
+M1 3 5 6 6 NMOS
+M2 4 2 6 6 NMOS
+M3 6 3 8 8 PMOS
+M4 4 3 7 7 PMOS
+
+* Resistor
+R1 6 3 R1_value
+
+* Current Source
+I1 6 0 DC ISS_value
+
+* Voltage Source
+VDD 7 8 DC VDD_value
+
+* Inputs
+Vin1 5 0 DC Vin1_value
+Vin2 2 0 DC Vin2_value
+
+* Outputs
+Vout 4 0
+
+.END

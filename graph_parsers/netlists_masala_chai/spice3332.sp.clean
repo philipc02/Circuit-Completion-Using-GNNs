@@ -1,0 +1,21 @@
+* NMOS and PMOS are not labeled, assuming both as NMOS for this netlist
+* Add appropriate model parameters for simulation
+
+M1 4 2 3 3 nmos
+M2 2 4 3 3 nmos
+
+RD1 6 4  RDvalue
+RD2 22 4 RDvalue
+
+I1 24 3 AC 0 DC Ivalue
+
+LA 7 3 LAvalue
+
+* Voltage sources
+VDD 6 0 DC VDDvalue
+Vsub 5 0 DC Vsubvalue
+Vin 2 0 DC Vinvalue
+
+.GND 0
+
+.END

@@ -1,0 +1,40 @@
+* Transistor Q25
+M25 2 0 3 3 NMOS
+
+* Transistor Q26
+M26 6 0 3 3 NMOS
+
+* Transistor Q27
+M27 7 0 8 8 NMOS
+
+* Transistor Q28
+M28 7 0 8 8 NMOS
+
+* Transistor Q39
+M39 2 3 8 8 NMOS
+
+* Transistor Q40
+M40 3 4 8 8 NMOS
+
+* Resistor R_up1
+Rup1 3 33 5MEG
+
+* Resistor R_up2
+Rup2 33 6 5MEG
+
+* Resistor R39
+R39 2 3 2.5k
+
+* Resistor R40
+R40 4 8 2.5k
+
+* Voltage Source a_21*v9
+Va21 3 3 DC v9
+
+* Voltage Source a_22*v10
+Va22 3 8 DC v10
+
+* Voltage Source Vi40
+Vi40 2 4 DC v40
+
+.END

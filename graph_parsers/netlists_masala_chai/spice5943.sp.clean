@@ -1,0 +1,6 @@
+plaintext
+* SPICE Netlist
+M1 2 6 5 5 PMOS
+Q2 3 2 4 QNPN
+I1 2 7 DC <current_value_I1>
+I2 3 4 DC <current_value_I2>

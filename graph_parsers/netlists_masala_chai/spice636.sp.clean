@@ -1,0 +1,5 @@
+Vin 2 5 DC 0V
+D1 5 3 D
+C1 3 22 1uF
+RL 3 4 1k
+Vout 4 0

@@ -1,0 +1,5 @@
+* SPICE netlist for given circuit
+M1 3 2 0 0 NMOS
+RD 4 3 1k
+RF 2 3 1k
+VDD 4 0 DC 5V

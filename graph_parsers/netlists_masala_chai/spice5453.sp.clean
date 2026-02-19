@@ -1,0 +1,4 @@
+* SPICE Netlist
+L1 1 2 2mH
+C1 2 4 0.022uF
+R1 4 3 22

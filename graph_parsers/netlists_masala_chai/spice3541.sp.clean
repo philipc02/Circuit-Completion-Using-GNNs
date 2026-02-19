@@ -1,0 +1,30 @@
+spice
+* BJTs
+Q1 4 5 1 NPN
+Q2 5 6 3 NPN
+Q3 4 4 3 PNP
+Q4 7 8 4 NPN
+Q5 8 2 5 NPN
+Q6 4 10 3 NPN
+Q7 4 4 3 PNP
+Q8 7 8 4 NPN
+Q9 4 4 3 PNP
+Q10 6 9 3 NPN
+Q11 7 9 4 NPN
+Q12 8 2 5 NPN
+
+* Resistors
+R1 5 1 100k
+R2 2 3 10k
+R3 8 3 10k
+
+* Voltage Sources
+V1 4 0 DC 6
+V2 3 0 DC -6
+VIN1 5 6 DC 0
+VIN2 4 6 DC 0
+
+* Output
+VOUT 2 3 DC 0
+
+* End of netlist

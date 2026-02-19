@@ -1,0 +1,9 @@
+spice
+Q1 3 5 3 NPN
+Q2 3 2 2 NPN
+RB 3 4 500k
+Rf 3 2 100k
+Rin 5 vi
+I1 2 0 DC 1mA
+V1 4 0 DC 10V
+V2 0 2 DC 10V

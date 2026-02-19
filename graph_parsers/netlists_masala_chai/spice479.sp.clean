@@ -1,0 +1,23 @@
+spice
+* SPICE netlist for the given schematic
+
+* Voltage Source
+V1 7 5 DC <V/2_value>
+
+* Current Source
+I1 5 3 DC <i/2_value>
+
+* Resistors
+RE 6 3 <R_E_value>
+RF 3 4 <R_F_value>
+
+* Operational Amplifier
+* Note: You may have to define the op-amp model elsewhere in your SPICE environment
+XU1 5 3 4 2 opamp 
+
+* Connections to Ground
+* Assume node 2/6 is ground based on standard schematic practices
+V2 2 0 DC 0
+V3 6 0 DC 0
+
+* Note: Replace <V/2_value>, <i/2_value>, <R_E_value>, and <R_F_value> with actual values

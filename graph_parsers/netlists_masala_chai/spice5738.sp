@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist for the given BJT Circuit
+
+V_CB 2 5 DC value
+V_BE 3 4 DC value
+
+Q1 5 3 4 NPN

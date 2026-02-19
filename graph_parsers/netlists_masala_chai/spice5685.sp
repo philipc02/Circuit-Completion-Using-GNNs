@@ -1,0 +1,3 @@
+spice
+M1 2 3 4 4 NMOS_MODEL
+VDD 4 0 DC 5V

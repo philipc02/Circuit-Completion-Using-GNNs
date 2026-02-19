@@ -1,0 +1,11 @@
+* SPICE Netlist for the Given Circuit
+
+V1 IN 0 DC 1.1V
+V2 VCC 0 DC 5V
+
+R1 IN BASE 50k
+R2 VCC COLLECTOR 10k
+
+Q1 COLLECTOR BASE 0 NPN
+
+* End of Netlist

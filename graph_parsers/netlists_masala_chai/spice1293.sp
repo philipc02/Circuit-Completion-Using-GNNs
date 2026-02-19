@@ -1,0 +1,12 @@
+spice
+* Op-Amp Circuit
+V1 4 2 DC 1V
+XU1 0 4 1 opamp
+
+* Model for Op-Amp with a gain of 1000
+.subckt opamp non_inv inv out
+E1 out 0 value={1000*(V(non_inv) - V(inv))}
+.ends opamp
+
+* Ground
+V2 3 2 DC 0

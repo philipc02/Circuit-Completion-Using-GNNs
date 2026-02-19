@@ -1,0 +1,4 @@
+spice
+R1 7 3 VALUE
+R2 5 2 VALUE
+Vnoise 4 3 DC VALUE

@@ -1,0 +1,14 @@
+plaintext
+* SPICE netlist
+V1 9 6 DC 0
+R1 9 7 RT
+R2 3 2 RB1
+R3 2 0 RB2
+R4 4 0 RE
+R5 3 5 RC
+R6 8 0 RL
+C1 7 2 C1
+C0 5 8 C0
+CE 4 0 CE
+Q1 3 2 4 QMOD
+.model QMOD NPN

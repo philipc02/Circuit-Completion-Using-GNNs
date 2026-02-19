@@ -1,0 +1,16 @@
+plaintext
+* NMOS M1 - Drain: Node 3, Gate: Node 1, Source: Node 4
+M1 3 1 4 4 NMOS
+
+* PMOS M2 - Drain: Node 2, Gate: Node 3, Source: Node 5
+M2 2 3 5 5 PMOS
+
+* Resistors
+RD1 7 3 RD1_value
+RD2 5 2 RD2_value
+R1 3 6 R1_value
+R2 4 0 R2_value
+
+* Voltage Sources
+VDD 7 0 DC VDD_value
+Vin 1 0 DC Vin_value

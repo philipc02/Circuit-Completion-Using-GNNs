@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist for given circuit
+M1 2 VIN 0 0 NMOS_MODEL
+M2 VDD 2 2 2 PMOS_MODEL
+VDD VDD 0 DC 5V
+VIN VIN 0 DC 0V

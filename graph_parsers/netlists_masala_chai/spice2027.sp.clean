@@ -1,0 +1,22 @@
+spice
+* SPICE Netlist for Given Schematic
+
+V1 6 0 DC 0         ; Voltage source Vin
+R1 6 1 1k           ; Resistor R1
+R2 1 4 1k           ; Resistor R2
+C1 2 3 1u           ; Capacitor C1
+C2 6 0 1u           ; Capacitor C2
+
+* Operational Amplifier (ideal model)
+E1 5 0 4 0 100k     ; Voltage-controlled voltage source as op-amp
+
+* Nodes
+* 6: Vin positive terminal
+* 0: Ground
+* 1: Node between R1 and R2
+* 2: Connected to feedback cap C1
+* 3: Other side of feedback cap C1, and feedback to op-amp input
+* 4: Inverting input of op-amp
+* 5: Output of op-amp (Vout)
+
+.END

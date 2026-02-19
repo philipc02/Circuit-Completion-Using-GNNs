@@ -1,0 +1,14 @@
+spice
+* Netlist for given schematic
+
+VDD VDD 0 DC 1.8
+
+R1 VDD 2 10k
+R2 2 3 1k
+R3 3 0 20k
+RP 2 4 200
+RS 4 0 Rs_value ; Rs_value should be the actual resistance value
+
+M1 2 3 4 4 NMOS
+
+.END

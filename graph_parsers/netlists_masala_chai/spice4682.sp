@@ -1,0 +1,15 @@
+spice
+* Example SPICE Netlist
+V1 3 0 DC Vin
+V2 2 0 DC Vdc
+V3 2 0 DC Vbias
+
+RS 3 3 1k       ; Assign a suitable resistance value
+R1 2 2 1k       ; Assign a suitable resistance value
+R2 2 0 1k       ; Assign a suitable resistance value
+
+D1 3 2 D        ; D is the diode model name
+
+.model D D(Is=1e-14) ; Example diode model
+
+.end

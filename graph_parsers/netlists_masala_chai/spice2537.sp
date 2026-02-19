@@ -1,0 +1,4 @@
+spice
+M1 3 2 4 4 NMOS
+M2 3 5 4 4 NMOS
+M3 6 7 3 3 PMOS

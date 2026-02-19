@@ -1,0 +1,3 @@
+spice
+MN1 5 2 3 3 NMOS
+I1 5 4 DC i

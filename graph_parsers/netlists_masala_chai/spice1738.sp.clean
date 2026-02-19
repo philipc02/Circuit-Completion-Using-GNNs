@@ -1,0 +1,6 @@
+* SPICE Netlist
+Q1 2 3 1 NPN
+Rs 5 3 1k ; Replace 1k with actual resistor value if known
+I1 4 2 DC 1mA ; Replace 1mA with actual current source value if known
+Vcc 4 1 DC 10V ; Replace 10V with actual Vcc value if known
+Vin 5 1 DC 0V ; Replace 0V with actual Vin value if known

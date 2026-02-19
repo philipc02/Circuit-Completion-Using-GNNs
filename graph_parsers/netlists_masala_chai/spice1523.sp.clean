@@ -1,0 +1,21 @@
+spice
+* NMOS Transistors
+M1 X 1 P 1 NMOS_MODEL
+M2 Y 2 P 2 NMOS_MODEL
+
+* Resistors
+RD1 3 X 3 100k
+RD2 3 Y 3 100k
+
+* Current Source
+I1 P 0 DC ISS
+
+* Voltage Source
+VDD 3 0 DC VDD_VALUE
+
+* Node Annotations
+* 0 - Ground
+* 1 - Source/Body of M1
+* 2 - Source/Body of M2
+* 3 - VDD
+* 4 - Drain of M2

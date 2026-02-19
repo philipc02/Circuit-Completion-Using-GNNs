@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist
+V1 8 0 DC 15
+
+RB1 8 2 100k
+RB2 2 7 50k
+RC1 2 1 5k
+RC2 6 3 2.7k
+RE 4 3 3k
+RE2 6 3 2k
+
+Q1 2 2 4 NPN
+Q2 3 26 33 NPN
+
+.MODEL NPN NPN
+.END

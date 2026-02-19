@@ -1,0 +1,6 @@
+* RLC Circuit
+Vin 5 1 AC 1
+L1 5 3 L
+C1 3 2 C
+R1 2 4 R
+V0 4 6 0

@@ -1,0 +1,7 @@
+spice
+V1 7 5 DC 10V
+V2 6 5 DC 20V
+R1 7 3 10k
+R2 2 3 10k
+D1 3 4 D
+GND 5 0

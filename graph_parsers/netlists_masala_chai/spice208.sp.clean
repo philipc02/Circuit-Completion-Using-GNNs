@@ -1,0 +1,16 @@
+plaintext
+* SPICE Netlist
+
+VDD  3 0 DC VDD
+VSS  6 0 DC -VSS
+V2t  5 0 DC V2t
+Vs11 4 0 DC Vs11
+
+M21 3 5 3 3 PMOS
+M22 3 4 3 3 PMOS
+M23 2 2 6 6 NMOS
+M24 4 2 6 6 NMOS
+M25 2 2 6 6 NMOS
+M26 2 2 6 6 NMOS
+
+*.end

@@ -1,0 +1,20 @@
+spice
+* Netlist for the given circuit
+R1 1 4 1k
+RF 5 3 10k
+Vin 1 0 DC 0
+XOPAMP 0 2 3 2 MyOpamp
+
+* Subcircuit definition for MyOpamp
+.subckt MyOpamp NonInv Inv Out Gnd
+* Example model, replace with actual op-amp model if available
+.ends MyOpamp
+
+* Connections
+* 1 - Input connection
+* 4 - Node between input resistor and inverting input
+* 5 - Node between feedback resistor and non-inverting input
+* 3 - Output of the opamp
+* 2 - Ground
+
+.end

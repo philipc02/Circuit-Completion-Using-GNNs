@@ -1,0 +1,16 @@
+plaintext
+* Netlist for the given circuit schematic
+
+VIN 2 0 DC 
+
+V1 2 4 DC 
+
+G1 4 3 3 0 1
+
+RS 3 0 1k
+
+RD 4 VOUT 1k
+
+* Analysis
+.TRAN 1n 100n
+.END

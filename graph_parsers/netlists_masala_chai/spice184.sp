@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist
+VDD 8 0 DC 3V
+R1 8 2 50
+R2 2 2 50
+R3 2 2 50
+R4 3 6 100
+M1 6 3 7 7 NMOS L=1u W=1u
+M2 6 3 4 4 NMOS L=1u W=1u
+M3 6 2 8 8 PMOS L=1u W=1u
+M4 2 2 8 8 PMOS L=1u W=1u
+Q1 4 3 5 NPN
+Q2 7 3 5 NPN
+IBIAS 8 2 DC 0.05A
+C1 5 0 1p
+*
+.model NMOS NMOS (LEVEL=1)
+.model PMOS PMOS (LEVEL=1)
+.model NPN NPN (IS=1e-14 BF=100)
+.end

@@ -1,0 +1,6 @@
+plaintext
+M1 N Vin1 0 0 NMOS
+M2 Vout Vin2 0 0 NMOS
+M3 VCC N VCC VCC PMOS
+M4 VCC Vout VCC VCC PMOS
+I1 0 IEE DC

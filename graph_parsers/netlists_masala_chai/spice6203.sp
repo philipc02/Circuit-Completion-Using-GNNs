@@ -1,0 +1,12 @@
+spice
+* SPICE Netlist
+V1 4 0 DC 15
+R1 4 2 15k
+R2 7 2 7.5k
+R3 4 5 10k
+R4 2 3 4.7k
+C1 2 44
+C2 7 0
+Q1 2 44 3 QMODEL
+
+.model QMODEL NPN

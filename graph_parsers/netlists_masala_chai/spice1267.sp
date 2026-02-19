@@ -1,0 +1,7 @@
+* Simple Analog Circuit
+M1 Vout Vin VDD VDD PMOS
+M2 Vout Vb 2 2 NMOS
+RS 2 0 1k
+VDD VDD 0 DC 5V
+Vin Vin 0 DC 1V
+Vb Vb 0 DC 1V

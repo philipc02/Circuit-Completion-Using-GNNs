@@ -1,0 +1,11 @@
+spice
+* SPICE Netlist for the given schematic
+
+Vsig 1 6 DC 0
+Rsig 6 2 200k
+R1 103 2 10Meg
+R2 222 2 5Meg
+R3 27 2 7k
+R4 24 23 16k
+R5 33 3 16k
+R6 26 32 16k

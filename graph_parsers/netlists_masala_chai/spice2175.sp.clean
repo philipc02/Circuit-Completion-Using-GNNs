@@ -1,0 +1,4 @@
+plaintext
+M1 Drain Gate Source Source NMOS
+VDD Drain 0 DC 5
+R1 Gate 0 R_Therm_value

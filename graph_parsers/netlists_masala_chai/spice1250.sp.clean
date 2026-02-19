@@ -1,0 +1,18 @@
+plaintext
+* SPICE netlist for the given circuit
+
+VDD 5 0 DC 1.8V
+Vin 2 0 DC
+
+R1 5 2 1k
+RD 5 1 1k
+R2 2 2 1k
+
+C1 2 2 1uF
+C1 3 0 1uF
+
+M1 1 2 3 3 PMOS L=1u W=1u
+
+I1 3 0 DC 10uA
+
+.END

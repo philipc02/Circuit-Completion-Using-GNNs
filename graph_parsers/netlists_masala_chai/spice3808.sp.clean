@@ -1,0 +1,9 @@
+* Example SPICE netlist
+Vi 4 0 DC 0
+Vdd 2 0 DC VDD
+RG 4 1 RG
+RS 5 0 RS
+RL 6 0 RL
+CC1 4 1 CC1
+CC2 1 3 CC2
+M1 3 1 5 5 NMOS

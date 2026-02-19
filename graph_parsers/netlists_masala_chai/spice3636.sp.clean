@@ -1,0 +1,10 @@
+Vi 3 6 DC 0
+R1 5 6 2.2k
+R2 2 6 2.2k
+RL 2 4 2.2k
+D1 3 5 D_model
+D2 2 3 D_model
+* Ground connections
+Vg 4 0 DC 0 
+Vg 6 0 DC 0 
+.model D_model D

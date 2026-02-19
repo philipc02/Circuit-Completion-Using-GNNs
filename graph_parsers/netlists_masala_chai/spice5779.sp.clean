@@ -1,0 +1,17 @@
+* Components
+   I4 2 5 DC 0.1A
+   Q1 3 4 2 NPN
+   R1 1 3 3.6k
+   R2 2 5 4.7k
+   V1 1 0 DC 3V
+   V2 5 0 DC -3V
+
+   * Nodes
+   * 1 -> +3V
+   * 2 -> Collector of Q1 and one end of R2, I4
+   * 3 -> Base of Q1 and one end of R1
+   * 4 -> Ground and emitter of Q1
+   * 5 -> -3V and other end of R2, I4
+
+   .model NPN NPN
+   .end

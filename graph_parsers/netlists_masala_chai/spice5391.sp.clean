@@ -1,0 +1,6 @@
+plaintext
+* Example Circuit
+
+Vs 2 4 AC 5V
+XC 5 3 2k
+R 5 6 1k

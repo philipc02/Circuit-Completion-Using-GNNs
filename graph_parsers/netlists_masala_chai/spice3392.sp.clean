@@ -1,0 +1,3 @@
+* SPICE netlist
+I1 0 C DC I_BIAS
+Q1 C B E NPN

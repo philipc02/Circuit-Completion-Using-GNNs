@@ -1,0 +1,15 @@
+plaintext
+* SPICE Netlist
+
+Vi 7 0 DC 0       * Input voltage source
+RS 8 5 1000       * Source resistance
+RL 4 6 1000       * Load resistance
+M1 4 5 3 3 NMOS   * NMOS transistor (Drain, Gate, Source, Body connected to Source)
+
+* Connections based on annotated image
+* 7 - Positive terminal of vi
+* 8 - Other terminal of RS
+* 5 - Gate of M1
+* 4 - Drain of M1 and one terminal of RL
+* 6 - Other terminal of RL connected to ground
+* 3 - Source and body of M1 connected to ground

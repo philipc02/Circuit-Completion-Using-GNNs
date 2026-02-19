@@ -1,0 +1,31 @@
+spice
+* SPICE Netlist
+
+* Voltage Sources
+VCC1 6 0 DC
+VCC2 4 0 DC
+
+* Current Sources
+IBIAS1 2 3 DC
+IBIAS2 2 3 DC
+
+* Resistors
+R1 2 0 
+R2 2 5 
+
+* BJTs
+Q1 6 2 3 NPN
+Q2 3 3 3 NPN
+Q3 4 2 6 NPN
+Q4 5 2 3 NPN
+Q5 2 2 3 NPN
+
+* Diodes
+D1 6 6 D
+D2 3 3 D
+
+* Zener Diodes
+Z1 2 2 ZENER
+Z2 3 3 ZENER
+
+* End of Netlist

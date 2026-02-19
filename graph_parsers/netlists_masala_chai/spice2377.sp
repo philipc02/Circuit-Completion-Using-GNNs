@@ -1,0 +1,33 @@
+spice
+* SPICE Netlist
+
+* Voltage Sources
+VDD 2 0 DC 5V
+VSS 5 0 DC 0V
+
+* Current Source
+IBIAS 2 4 DC 10uA
+
+* NMOS Transistors (Drain Gate Source)
+MB51 4 2 5 NMOS
+MB52 0 2 4 NMOS
+MB52P 2 2 4 NMOS
+MB53 2 3 5 NMOS
+MB55 3 2 5 NMOS
+MD1 5 6 3 NMOS
+
+* PMOS Transistors (Drain Gate Source)
+MB54 2 2 3 PMOS
+MB56 7 2 3 PMOS
+MD2 5 8 7 PMOS
+
+* Node Labels
+* Node 2 = VDD and PMOS Gate
+* Node 3 = Common node for MB55 and MD1 drains and MB53 gate
+* Node 4 = Common node for MB51 and MB52 sources, MB52' drains
+* Node 5 = Ground (VSS)
+* Node 6 = VIN11
+* Node 7 = VOUT12
+* Node 8 = VIN12
+
+.ends

@@ -1,0 +1,8 @@
+spice
+Vin 1 0 SIN(0 1 1k)
+D1 2 0 D
+D2 2 1 D
+D3 2 3 D
+D4 4 3 D
+R1 2 3 100
+.MODEL D D(IS=1e-14)

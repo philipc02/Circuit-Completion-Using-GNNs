@@ -1,0 +1,8 @@
+plaintext
+* SPICE Netlist
+V1 Vin 4 DC 0
+R1 Vin 2 10k
+C1 2 3 10uF
+R2 3 0 5k
+C2 3 0 4.7uF
+Vout 3 0 DC 0

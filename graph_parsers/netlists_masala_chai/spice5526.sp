@@ -1,0 +1,19 @@
+* SPICE netlist for the given op-amp circuit
+
+V_in 1 0 DC 0 
+R1 1 2 25k
+C1 2 0 0.01uF
+C2 2 2 0.01uF
+R2 2 0 50k
+XU1 2 2 4 opamp
+R3 4 3 15k
+R4 3 3 15k
+C3 4 3 0.01uF
+XU2 3 3 5 opamp
+R5 5 3 2k
+C4 5 0 0.007uF
+Vout 3 0 
+
+* .model opamp macromodel 
+
+.END

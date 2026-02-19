@@ -1,0 +1,4 @@
+spice
+M1 2 Vin 0 NMOS
+M2 Vout Vb 2 PMOS
+VDD 3 0 DC 1.8V

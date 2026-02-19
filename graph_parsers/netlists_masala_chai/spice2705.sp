@@ -1,0 +1,9 @@
+spice
+*SPICE Netlist for the given circuit
+* Components: PMOS, NMOS, Current Source, Capacitor, Resistor
+
+M2 2 4 8 8 PMOS
+M1 4 6 5 5 NMOS
+I1 8 2 DC 1mA
+C1 2 3 10pF
+RF 6 4 1k

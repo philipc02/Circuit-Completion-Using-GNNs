@@ -1,0 +1,8 @@
+spice
+* Netlist for the given circuit
+M1 2 4 3 3 NMOS
+M2 2 6 5 5 NMOS
+VCC 3 0 DC VCC
+VEE 5 0 DC VEE
+RL 2 0 RL
+Vin 4 0 DC Vin

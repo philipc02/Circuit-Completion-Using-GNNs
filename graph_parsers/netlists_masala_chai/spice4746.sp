@@ -1,0 +1,5 @@
+VCC 4 0 DC 15V
+VBB 2 0 DC 15V
+RC 4 3 4.7k
+RE 2 0 2k
+Q1 3 2 0 NPN

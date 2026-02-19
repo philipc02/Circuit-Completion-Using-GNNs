@@ -1,0 +1,20 @@
+spice
+* Voltage Source
+V1 5 6 DC Vi
+
+* Resistors
+RS 6 1 0.5k
+Rpi 1 4 rpi
+RB 4 3 100k
+Ro 3 0 ro
+RE 3 2 10k
+RL 2 5 10k
+
+* Capacitor
+CC2 2 5 Cc2
+
+* Dependent Current Source
+G1 3 2 4 0 gm
+
+* Ground
+Rground 0 5 0.01

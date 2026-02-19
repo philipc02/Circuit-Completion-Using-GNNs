@@ -1,0 +1,16 @@
+* NMOS Amplifier Circuit
+VDD 2 0 DC 20V
+Vg 1 0 AC 1V
+
+RG 1 2 50
+R1 2 0 2MEG
+R2 3 0 1MEG
+RD 2 5 1K
+RL 5 0 10K
+
+C1 2 3 0.01uF
+C2 5 3 1uF
+
+M1 5 3 6 6 2N7000
+
+.END

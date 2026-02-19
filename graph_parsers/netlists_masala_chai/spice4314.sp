@@ -1,0 +1,10 @@
+spice
+* SPICE netlist for the given circuit
+* Voltage-Controlled Current Sources
+G1 2 7 1 3 gm/2
+G2 4 3 1 3 gm/2
+
+* Resistors
+R1 8 4 ro4
+R2 3 5 ro2
+R3 5 0 RL

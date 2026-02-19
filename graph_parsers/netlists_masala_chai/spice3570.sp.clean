@@ -1,0 +1,8 @@
+plaintext
+* Netlist for given schematic
+
+I1 3 2 DC <current_value>  ; Current source I from node 3 to node 2
+RC 3 4 <resistor_value>    ; Resistor RC between node 3 and 4
+Q1 5 4 7 Q_D               ; NPN transistor Q_D with collector at node 5, base at node 4, emitter at node 7
+VCC 6 2 DC <voltage_value> ; VCC at node 6, reference node 2
+VIN 8 2 DC <input_voltage> ; VIN at node 8, reference node 2

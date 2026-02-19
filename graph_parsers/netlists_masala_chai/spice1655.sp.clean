@@ -1,0 +1,4 @@
+spice
+Iin 2 0 DC 1A
+Cin 2 0 1uF
+M1 5 2 0 0 NMOS

@@ -1,0 +1,8 @@
+* SPICE netlist
+Vs 5 7 AC 1
+R1 5 6 1k
+R2 6 2 1k
+L 6 3 10mH
+V2 2 0 DC 0
+V3 3 0 DC 0
+V4 4 0 DC 0

@@ -1,0 +1,18 @@
+* SPICE Netlist
+Vsig 3 0 DC 0
+VCC 5 0 DC VCC
+
+Rsig 3 7 Rsig
+RB1 5 7 RB1
+RB2 7 6 RB2
+RC 5 4 RC
+RE 6 0 RE
+RL 666 0 RL
+
+CC1 7 3 CC1
+CC2 4 666 CC2
+CE 6 2 CE
+
+Q1 4 7 6 NPN
+
+.END

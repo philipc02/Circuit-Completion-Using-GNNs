@@ -1,0 +1,19 @@
+* SPICE Netlist for Given Schematic
+
+* Voltage source
+Vs 3 0 DC
+
+* Resistors
+RS 3 4 1k
+RL 2 6 1k
+
+* Capacitors
+Cgs 4 3 10p
+Cf 4 2 5p
+
+* Voltage-controlled current source
+Gm 0 2 5 6 1m
+
+* Node Definitions
+V1 4 0
+Vo 2 0

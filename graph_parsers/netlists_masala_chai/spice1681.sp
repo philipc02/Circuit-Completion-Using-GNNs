@@ -1,0 +1,11 @@
+plaintext
+* SPICE Netlist for the given schematic
+
+.subckt mycircuit Vin Vout Vcc
+Q1 X Gnd Y Y NPN
+Rs Vin X 1k
+Cmu X Vcc 1u
+Cpi X Y 1u
+Cl Vout 0 1u
+I1 Y 0 DC 1mA
+.ends mycircuit

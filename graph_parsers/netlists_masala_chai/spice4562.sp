@@ -1,0 +1,12 @@
+spice
+* SPICE Netlist
+VDD 4 0 DC 2.5
+
+* MOSFETs
+MNA v1 A vO1 vO1 NMOS
+MNB vO1 B vO2 vO2 NMOS
+MNC vO2 C vO3 vO3 NMOS
+ML vO 3 4 4 PMOS
+MD vO3 3 0 0 NMOS
+
+* End of Netlist

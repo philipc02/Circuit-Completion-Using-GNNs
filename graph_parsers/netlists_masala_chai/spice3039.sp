@@ -1,0 +1,19 @@
+plaintext
+* SPICE Netlist
+* Transistor Definitions
+M1 4 5 7 7 NMOS
+M2 4 6 7 7 NMOS
+M3 3 3 25 25 PMOS
+M4 4 3 25 25 PMOS
+M5 25 5 3 3 PMOS
+M6 25 6 4 4 PMOS
+M7 7 2 22 22 NMOS
+M8 7 22 2 2 NMOS
+
+* Current Source
+I1 7 0 DC ISS
+
+* Voltage Sources
+VDD 25 0 DC V_DD
+Vb1 3 0 DC V_b1
+Vb2 2 0 DC V_b2

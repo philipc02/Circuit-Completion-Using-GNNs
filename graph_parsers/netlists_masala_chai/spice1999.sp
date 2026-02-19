@@ -1,0 +1,5 @@
+* Circuit Netlist
+V1 4 2 DC 0        * Voltage source Z2
+L1 4 2 1uH         * Inductor L1
+C1 2 3 1uF         * Capacitor C1
+R1 3 2 1k          * Resistor R1

@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist
+* Components
+C1 Vin X  C1_value
+Cin X 0   Cin_value
+C2 X Vout C2_value
+* Op-Amp (Assumed as an ideal op-amp)
+Eop Vout 0 X 0 A_v1
+
+* End of Netlist

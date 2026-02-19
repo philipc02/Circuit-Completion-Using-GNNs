@@ -1,0 +1,20 @@
+plaintext
+* SPICE Netlist for the Circuit
+
+* Current sources
+I1 7 2 DC 
+I2 0 2 DC 
+
+* Voltage controlled current source (dependent)
+G1 4 5 3 0 
+
+* Resistors
+R1 3 2 
+R2 5 2 
+
+* Voltage source (to model dependent source - usually needs amendment based on exact behavior)
+V1 4 3 DC 
+
+* Connections
+* Nodes
+* 1, 2, 3, 4, 5 as labeled in the annotated image

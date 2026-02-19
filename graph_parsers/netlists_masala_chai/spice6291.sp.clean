@@ -1,0 +1,3 @@
+VDD 1 0 DC VDD
+RPU 1 2 RPU
+C 2 3 C

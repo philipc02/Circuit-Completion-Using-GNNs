@@ -1,0 +1,20 @@
+* NPN BJT Amplifier Circuit
+
+Vcc 8 0 DC 10V
+Vg 3 0 AC 2mV
+
+RG 3 7 600
+R1 4 8 10k
+R2 4 0 2.2k
+RC 5 8 3.6k
+RE 4 22 1k
+RL 6 0 10k
+
+C1 7 4 
+C2 5 6 
+
+Q1 4 4 22 QNPN
+
+.model QNPN NPN
+
+.end

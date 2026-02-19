@@ -1,0 +1,23 @@
+plaintext
+* Transistors
+M1 X Vb 0 0 NMOS_L W=L
+M2 Vout VDD Y Y PMOS_L W=L
+
+* Voltage Sources
+Vin X 0 DC 0
+Vb Vb 0 DC Vb_value
+VDD VDD 0 DC VDD_value
+
+* Resistor
+Rs X Vin Rs_value
+
+* Capacitors
+CSB1_Y 0 CSB1
+CGS1_X 0 CGS1
+CSB2_VDD VDD 0 CSB2
+CDB1 Vout Y CDB1_value
+CGD1 Vout Y CGD1_value
+CGS2 Y 0 CGS2_value
+CDB2 Vout 0 CDB2_value
+
+* End of Netlist

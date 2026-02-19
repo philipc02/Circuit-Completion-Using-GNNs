@@ -1,0 +1,19 @@
+spice
+* Netlist for the given circuit
+
+* NMOS Transistor
+M1 2 3 0 0 NMOS  
+
+* PMOS Transistor
+M2 5 2 4 4 PMOS 
+
+* Resistors
+RD 5 2 1k
+RF 2 3 1k
+RL 4 0 1k
+
+* Current Source
+Iin 3 0 DC 1mA
+
+* Voltages
+VDD 5 0 DC 5V

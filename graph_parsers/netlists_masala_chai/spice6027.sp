@@ -1,0 +1,14 @@
+spice
+* NMOS Transistors
+M1 5 7 2 2 NMOS
+M2 5 4 2 2 NMOS
+
+* Resistors
+R1 8 5 RD1
+R2 3 5 RD2
+
+* Current Source
+I1 2 6 DC I
+
+* Voltage Supply
+VDD 8 3 DC VDD

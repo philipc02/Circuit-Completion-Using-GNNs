@@ -1,0 +1,7 @@
+plaintext
+* SPICE Netlist for the circuit
+VS1 5 0 DC 20V
+R1 5 2 1k
+R2 2 3 1k
+R3 2 4 2.2k
+VS2 3 0 DC 15V

@@ -1,0 +1,15 @@
+* SPICE Netlist for the given circuit
+
+VDD 4 0 DC 10V
+
+R1 4 8 1k
+RD 4 3 1k
+R2 7 6 1k
+RS 2 5 1k
+
+C1 7 8 1uF
+
+M1 3 7 2 2 NMOS
+
+* Define the ground node
+0 GND

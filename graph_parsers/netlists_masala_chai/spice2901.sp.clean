@@ -1,0 +1,18 @@
+spice
+* SPICE Netlist
+* Components and Nodes
+VDD 8 0 DC 5V
+Vin 2 0 DC 1V
+Vb 4 0 DC 1V
+
+R1 2 3 1k
+RD 6 8 1k
+M1 6 4 5 5 NMOS L=1u W=1u
+
+* Connections
+* 2 - Vin
+* 3 - R1 node
+* 4 - Vb (Gate of M1)
+* 5 - Source of M1
+* 6 - Drain of M1 and RD
+* 7 - VDD node

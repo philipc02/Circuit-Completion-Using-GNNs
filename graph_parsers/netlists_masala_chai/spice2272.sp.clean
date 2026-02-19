@@ -1,0 +1,10 @@
+* NMOS Amplifier Circuit
+
+M1 X Vn 2 2 NMOS 
+
+RG Vn 2 10k
+RS X 3 1k 
+RL Vout 3 50
+C1 X Vout 10u
+
+VDD 2 0 DC 1.8

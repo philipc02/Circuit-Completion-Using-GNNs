@@ -1,0 +1,21 @@
+* NMOS Transistors
+M1 2 4 6 6 NMOS
+M2 2 6 6 6 NMOS
+M3 5 3 4 4 NMOS
+M4 5 6 4 4 NMOS
+
+* PMOS Transistors
+M5 2 3 7 7 PMOS 
+M6 2 6 7 7 PMOS
+M7 1 8 7 7 PMOS
+M8 1 7 7 7 PMOS
+
+* Current Source
+I1 4 8 DC ISS
+
+* Voltage nodes
+V1 8 0 DC Vin
+V2 3 0 DC Vb1
+V3 4 0 DC Vb2
+V4 5 0 DC Vb3
+V5 1 0 DC VDD

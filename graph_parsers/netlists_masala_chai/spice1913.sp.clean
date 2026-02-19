@@ -1,0 +1,18 @@
+plaintext
+* SPICE Netlist
+C1 1 2
+C2 2 3
+C3 2 4
+R1 2 3
+R2 2 4
+R4 2 5
+RF 5 2
+D1 2 2
+D2 2 2
+* Op-amp connections
+XOPAMP 4 2 5 OPAMP
+
+* Additional setup
+* Add additional setup for models, if necessary
+.tran 0.1u 100u
+.end

@@ -1,0 +1,22 @@
+* Resistors
+RD1 2 6 RD
+RD2 2 5 RD
+RSS 7 0 RSS
+
+* Voltage Sources
+Vcm1 4 2 Vcm
+Vcm2 2 2 Vcm
+
+* Controlled Current Sources
+G1 2 1 2 1 Gm
+G2 2 3 2 3 Gm
+
+* Ground
+Vgnd 0 0 DC 0
+
+* Connections (Based on the information provided)
+R1 2 0 RD1_val
+R2 5 0 RD2_val
+R3 2 7 RSS_val
+VS1 4 1 DC Vcm1_val
+VS2 3 1 DC Vcm2_val

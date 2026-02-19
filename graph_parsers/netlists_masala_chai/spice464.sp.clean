@@ -1,0 +1,17 @@
+spice
+* SPICE Netlist for the given BJT circuit
+
+VCC 8 10 DC 15             * Power supply, assuming 15V
+
+IB 9 10 DC ???             * Current source IB; specify current value
+
+II 4 7 DC ???              * Current source II; specify current value
+
+Q1 4 5 10 NPN_MODEL       * NPN Transistor Q1
+Q2 8 4 9 NPN_MODEL        * NPN Transistor Q2
+Q3 3 4 6 NPN_MODEL        * NPN Transistor Q3
+Q4 6 7 2 NPN_MODEL        * NPN Transistor Q4
+
+.model NPN_MODEL NPN(IS=1e-14 BF=100)  * Sample NPN model parameters
+
+.end

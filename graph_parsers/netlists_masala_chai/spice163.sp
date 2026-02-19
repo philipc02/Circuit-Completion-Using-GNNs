@@ -1,0 +1,19 @@
+plaintext
+* Transistors
+Q1 2 10 7 NPN
+Q2 8 2 9 NPN
+Q3 6 4 9 NPN
+Q4 5 6 3 PNP
+
+* Resistors
+R1 3 7 1k
+R2 4 6 1k
+R3 8 9 1k
+
+* Current Source
+I1 5 3 DC 1mA
+
+* Voltage Sources
+V1 10 0 DC 5V
+V2 9 0 DC 5V
+VCC 5 0 DC 15V

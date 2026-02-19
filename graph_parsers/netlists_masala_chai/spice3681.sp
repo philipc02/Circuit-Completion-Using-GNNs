@@ -1,0 +1,14 @@
+spice
+* SPICE Netlist
+V1 6 0 DC 2.2V
+V2 7 0 DC -2.2V
+
+R1 6 4 255k
+R2 5 7 345k
+RS 6 3 6k
+RD 3 5 42k
+
+* PMOS Transistor
+M1 5 2 3 3 PMOS L=1u W=1u
+
+.END

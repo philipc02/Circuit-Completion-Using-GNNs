@@ -1,0 +1,5 @@
+spice
+* SPICE netlist for the given circuit
+V1 4 0 DC 5V
+Q1 9 4 5 NPN
+R1 9 5 4.3k

@@ -1,0 +1,23 @@
+plaintext
+* SPICE Netlist
+
+* NMOS transistor
+M1 3 1 3 3 NMOS_MODEL
+
+* PMOS transistors
+M2 3 5 3 3 PMOS_MODEL
+M3 4 3 3 3 PMOS_MODEL
+
+* Current source
+I1 4 2 DC 1mA
+
+* Voltage sources (Vb, Vin, and VDD are implied from context)
+VDD 5 0 DC 5V
+Vb 1 0 DC 1V
+Vin 2 0 AC 1V
+
+* Models (placeholder for actual model parameters)
+.model NMOS_MODEL NMOS (level=1)
+.model PMOS_MODEL PMOS (level=1)
+
+.end

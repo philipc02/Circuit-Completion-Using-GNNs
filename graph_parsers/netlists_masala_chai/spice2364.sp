@@ -1,0 +1,23 @@
+plaintext
+* PMOS Transistors
+MB2 3 5 5 PMOS_MODEL
+MB3 3 5 5 PMOS_MODEL
+
+* NMOS Transistors
+MC1 2 2 1 NMOS_MODEL
+MC2 2 3 1 NMOS_MODEL
+MC3 3 4 1 NMOS_MODEL
+MC4 3 5 1 NMOS_MODEL
+MC5 2 2 0 NMOS_MODEL
+MC6 2 3 0 NMOS_MODEL
+
+* Voltage Sources (Assumed from image context)
+VDD 5 0 DC
+VSS 0 0 DC
+
+* Current Source
+ICMFB 2 0 DC
+
+* Control voltages (bias points)
+VBIA 4 0 DC
+VCMFB 2 0 DC

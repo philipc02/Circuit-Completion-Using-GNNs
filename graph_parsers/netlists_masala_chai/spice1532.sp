@@ -1,0 +1,16 @@
+* NMOS: M1
+M1 2 2 0 0 NMOS
+
+* PMOS: M3
+M3 2 4 2 2 PMOS
+
+* Voltage source Vin1
+Vin1 2 0 DC 0
+
+* Voltage source Vout1
+Vout1 2 0 DC 0
+
+* Connections
+* Node 2 is the common node
+
+.end

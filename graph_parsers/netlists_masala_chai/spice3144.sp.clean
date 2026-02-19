@@ -1,0 +1,18 @@
+spice
+* NMOS transistors
+M1 3 2 33 33 NMOS L=80n W=180u
+M2 4 2 22 22 NMOS L=40n W=45u
+M3 10 3 2 2 NMOS L=80n W=90u
+M4 2 4 2 2 NMOS L=80n W=90u
+
+* PMOS transistors
+M5 5 10 5 8 PMOS L=80n W=50u
+M6 8 2 5 8 PMOS L=80n W=50u
+M7 5 9 5 5 PMOS L=80n W=50u
+M8 5 8 5 5 PMOS L=80n W=50u
+
+* Voltage sources
+VDD 5 0 DC 1.8V
+Vb1 10 0 DC 1.2V
+Vb2 9 0 DC 1.0V
+Vb3 8 0 DC 0.9V

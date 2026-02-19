@@ -1,0 +1,14 @@
+spice
+* NMOS Transistors
+M1 2 Vin 0 0 NMOS
+M2 2 Vb1 2 0 NMOS
+
+* PMOS Transistors
+M3 2 Vb2 3 3 PMOS
+M4 VDD Vb2 3 3 PMOS
+
+* Resistors
+Rop 2 3 R_op_value
+Ron Vout 2 R_on_value
+
+* Voltage and current sources not explicitly given

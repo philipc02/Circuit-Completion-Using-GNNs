@@ -1,0 +1,17 @@
+spice
+* SPICE netlist for the given circuit
+
+* Voltage source
+V1 5 2 DC 1/(g_m + g_mb)
+
+* Resistor
+R1 4 8 r_o
+
+* Current Source
+I1 7 8 (g_m + g_mb)*v(2,5)
+
+* Connections
+Rload 4 3 r_o
+
+* Voltage
+V_vsg 8 2 DC v_sg

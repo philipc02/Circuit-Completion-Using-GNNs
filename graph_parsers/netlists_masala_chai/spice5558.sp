@@ -1,0 +1,19 @@
+plaintext
+* SPICE netlist for the given schematic
+* Voltage source
+V1 7 2 DC 1V
+
+* Resistors
+R1 7 3 1k
+R2 5 2 10k
+R3 4 6 1k
+
+* Operational amplifier
+* A generic op-amp, using an ideal model (control voltage source)
+E_OPAMP 5 4 3 2 1MEG
+
+* Ground
+V3 2 0 DC 0V
+V4 3 0 DC 0V
+V5 4 0 DC 0V
+V6 6 0 DC 0V

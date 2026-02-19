@@ -1,0 +1,32 @@
+plaintext
+* SPICE Netlist for the given schematic
+
+Vdd 10 0 DC VDD
+Vss 2 0 DC VSS
+Vcom 6 0 DC VCOM
+Vcm 6 0 DC VCM
+
+* Transistors
+M1 3 3 6 6 PMOS
+M2 3 3 6 6 PMOS
+M3 2 7 6 6 PMOS
+M4 2 8 6 6 PMOS
+M5 4 9 6 6 PMOS
+M6 4 9 6 6 PMOS
+M7 4 5 2 2 NMOS
+M8 5 2 2 2 NMOS
+M9 5 3 2 2 NMOS
+M10 3 4 10 10 NMOS
+M11 3 4 9 9 NMOS
+M12 4 4 9 9 NMOS
+M13 5 3 9 9 NMOS
+M14 4 4 2 2 NMOS
+M15 5 5 2 2 NMOS
+M16 5 5 2 2 NMOS
+M17 5 4 2 2 NMOS
+
+* Capacitors
+C1 7 8 C
+C2 5 6 C
+
+.END

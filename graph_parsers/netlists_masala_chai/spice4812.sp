@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist
+
+* Voltage Source
+Vin 5 0 AC 1
+
+* Resistors
+R1 5 6 1k
+R2 6 2 1k
+Re 2 8 1k
+
+* Connections
+B 7 2

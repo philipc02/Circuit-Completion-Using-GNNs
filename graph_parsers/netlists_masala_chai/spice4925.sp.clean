@@ -1,0 +1,6 @@
+spice
+* Netlist for the schematic
+I1 5 3 DC 1A
+L1 3 2 1uH
+C1 2 4 1uF
+R1 2 6 1k

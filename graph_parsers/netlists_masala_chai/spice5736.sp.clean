@@ -1,0 +1,9 @@
+spice
+* SPICE Netlist
+
+M1 5 4 2 2 nmos
+M2 6 3 2 2 nmos
+R1 9 5 20k
+R2 9 6 20k
+I1 8 2 DC 200u
+V1 9 0 DC 2.5V

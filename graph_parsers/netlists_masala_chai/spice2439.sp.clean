@@ -1,0 +1,4 @@
+plaintext
+M1 4 2 0 0 NMOS
+I1 2 0 DC
+C1 4 5 1uF

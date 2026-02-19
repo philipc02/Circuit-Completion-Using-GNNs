@@ -1,0 +1,25 @@
+spice
+* NMOS (Drain Gate Source)
+* PMOS (Drain Gate Source)
+
+VDD 6 0 DC 5V
+VIN 1 0 DC
+
+M1 2 1 3 3 NMOS
+M2 2 2 6 6 PMOS
+M3 2 2 3 3 NMOS
+M4 6 2 3 3 NMOS
+M5 0 0 3 3 NMOS
+M6 3 2 3 3 NMOS
+M7 3 2 3 3 NMOS
+M8 0 2 3 3 NMOS
+M10 2 2 3 3 NMOS
+M11 0 2 3 3 NMOS
+
+R1 2 6 1k
+R2 6 2 1k
+
+I1 2 3 DC 1mA
+ISS 3 0 DC 100uA
+
+.END

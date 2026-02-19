@@ -1,0 +1,23 @@
+plaintext
+* SPICE Netlist
+VDD 5 0 DC VDD
+ISS 5 2 DC ISS
+
+* PMOS Transistors
+M1 2 8 5 5 PMOS L=?? W=??
+M2 2 9 6 6 PMOS L=?? W=??
+
+* NMOS Transistors
+M3 1 8 7 7 NMOS L=?? W=??
+M4 2 9 3 3 NMOS L=?? W=??
+
+* Source Definitions
+Vin1 8 0 DC 0
+Vin2 9 0 DC 0
+Iout1 1 0 DC 0
+Iout2 2 0 DC 0
+
+* Capacitors not explicitly specified, presumed to ground
+* Resistors not specified, use ideal connections
+
+.END

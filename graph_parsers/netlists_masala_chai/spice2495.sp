@@ -1,0 +1,17 @@
+spice
+* Netlist for the given circuit
+
+VDD 2 0 DC 5V
+Vin 5 0 DC 1V
+I1 3 0 DC 1mA
+RD 2 1 1k
+C1 5 3 10uF
+
+M1 1 44 3 3 NMOS
+
+* M1: Drain (1), Gate (44), Source (3), Body (3)
+* RD: Connected between VDD and Drain of M1
+* C1: Connected between Vin and Gate of M1
+* I1: Current source connected to source of M1
+
+.end

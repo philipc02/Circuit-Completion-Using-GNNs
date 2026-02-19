@@ -1,0 +1,7 @@
+spice
+* NMOS Inverter Circuit
+M1 4 4 2 2 NMOS
+VDD 3 4 DC VDD
+RD 3 2 RD
+* Ground
+VSS 2 0 0

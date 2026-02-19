@@ -1,0 +1,18 @@
+plaintext
+*MOSFET Transistors
+M1 2 1 0 0 NMOS
+M11 2 2 2 2 PMOS
+M1A 2 2 2 2 PMOS
+M3A 3 3 0 0 NMOS
+M3 3 4 0 0 NMOS
+
+*Capacitor
+C1 3 0 CL_VALUE
+
+*Voltage Sources
+VbiasB 2 0 DC BIAS_B
+VbiasC 2 0 DC BIAS_C
+VbiasD 3 0 DC BIAS_D
+VbiasA 4 0 DC BIAS_A
+VDD 2 0 DC VDD_VALUE
+Vin 1 0 DC (VDD/2) AC 1

@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist for the given schematic
+Vs 5 6 DC 0
+Rb 5 3 rb
+Rpi 3 2 rpi
+Re 2 4 RE
+Vfb 4 0 DC 0

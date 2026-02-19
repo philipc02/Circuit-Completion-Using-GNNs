@@ -1,0 +1,17 @@
+* Components
+Q1 X 0 5 QNPN
+Q2 Y 0 5 QNPN
+
+RC1 X 5 10k
+RC2 Y 4 10k
+
+Vcc 5 0 DC 12V
+
+* Op-amp Configuration
+* Assuming ideal op-amp with inputs connected
+A1 2 3 0
+
+* Net Definitions
+* X: Node 3
+* Y: Node 2
+* 0: Ground

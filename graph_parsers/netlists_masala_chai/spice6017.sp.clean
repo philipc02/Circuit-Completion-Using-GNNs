@@ -1,0 +1,18 @@
+plaintext
+* Differential Pair Netlist
+V1 1 0 DC 15
+V2 3 0 DC -7.5
+V3 5 0 DC 7.5
+
+RC1 1 4 1k
+RC2 1 2 1k
+
+M1 4 3 0 0 NMOS
+M2 2 5 0 0 NMOS
+
+* Voltage sources
+V_id1 3 0 DC 0.5  ; Represents v_id/2
+V_id2 5 0 DC -0.5 ; Represents -v_id/2
+
+* Models
+.model NMOS NMOS

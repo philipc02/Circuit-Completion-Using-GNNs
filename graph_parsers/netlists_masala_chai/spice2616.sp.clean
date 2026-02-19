@@ -1,0 +1,25 @@
+spice
+* Components
+M1 2 9 6 6 NMOS
+M2 3 2 6 6 NMOS
+M3 2 7 5 5 NMOS
+M4 3 2 5 5 NMOS
+
+I1 6 0 DC Vcont1
+I2 5 0 DC Vcont2
+
+RD1 4 2 RD
+RD2 8 2 RD
+
+VDD 4 0 DC VDD
+
+* Nodes
+* 0 - Ground
+* 2 - Common node in the middle (connected to RD1, RD2, and the gates of M2 and M4)
+* 3 - Output node (Vout)
+* 4 - VDD node
+* 5 - Source of I2 and M3, M4
+* 6 - Source of I1 and M1, M2
+* 7 - Gate of M3
+* 8 - Node after RD1 (connected to Vout)
+* 9 - Gate of M1

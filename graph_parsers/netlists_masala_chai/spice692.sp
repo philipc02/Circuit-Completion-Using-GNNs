@@ -1,0 +1,6 @@
+Iin 2 3 DC 1A             ; Current source of 1A
+D1 2 0 D_model            ; Diode D1 connected between node 2 and ground
+D2 3 0 D_model            ; Diode D2 connected between node 3 and ground
+R1 2 3 1k                 ; Resistor R1 connected between node 2 and 3
+
+.model D_model D

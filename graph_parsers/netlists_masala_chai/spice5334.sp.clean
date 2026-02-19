@@ -1,0 +1,11 @@
+spice
+* SPICE Netlist for the given circuit
+
+VS 4 5 DC 24
+R1 4 2 12k
+R2 2 3 6.2k
+RB 3 0 5.84k
+RL1 2 0 100k
+
+* Define ground
+0 GND

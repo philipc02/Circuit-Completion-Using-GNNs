@@ -1,0 +1,6 @@
+plaintext
+* SPICE Netlist
+V1 3 0 AC
+L1 3 2 9.55m
+C1 2 0 2.65u
+R1 2 4 600

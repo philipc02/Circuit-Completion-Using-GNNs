@@ -1,0 +1,7 @@
+plaintext
+* SPICE netlist for the schematic
+I1 1 3 DC 1A
+V1 3 2 DC 1V
+D1 2 2 D
+C1 5 4 1u
+M1 2 5 2 2 NMOS

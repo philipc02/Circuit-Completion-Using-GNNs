@@ -1,0 +1,17 @@
+spice
+* Capacitors
+Cgd 5 3 Cgd
+Cgs 3 2 Cgs
+Cdb 4 2 Cdb
+Csb 3 2 Csb
+
+* Voltage Sources
+Vgs 5 3 Vgs
+Vbs 3 2 Vbs
+
+* Current Sources
+Gmg 4 2 5 3 gm
+Gmb 4 2 3 2 gmb
+
+* Resistor
+Ro 4 2 ro

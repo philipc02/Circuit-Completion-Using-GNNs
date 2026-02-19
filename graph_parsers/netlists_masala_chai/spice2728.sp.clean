@@ -1,0 +1,19 @@
+spice
+* SPICE Netlist
+VDD 6 0 DC VDD
+
+* Current source
+IREF 6 4 DC I_REF
+
+* Resistors
+R1 2 6 R1
+R2 4 2 R2
+
+* NMOS Transistors
+M1 2 5 3 3 NMOS
+M2 4 3 3 3 NMOS
+
+* Ground
+VSS 3 0 DC 0
+
+*.end

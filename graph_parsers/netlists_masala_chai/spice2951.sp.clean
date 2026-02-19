@@ -1,0 +1,9 @@
+VDD 4 0 DC 5V
+
+RS 2 0 1k
+RF 2 3 500
+RD 3 4 1k
+
+M1 3 2 1 1 NMOS
+
+.END

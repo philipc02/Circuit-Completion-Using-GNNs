@@ -1,0 +1,16 @@
+plaintext
+* SPICE Netlist
+V1 7 0 DC 2.5
+V2 6 0 DC -2.5
+Q1 7 5 8 NPN
+
+* Resistors
+RE 7 3 1k
+RC 3 8 1k
+
+* Voltage Sources
+V+ 7 0 DC 2.5
+V- 6 0 DC -2.5
+
+* Ground
+0 2

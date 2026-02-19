@@ -1,0 +1,7 @@
+spice
+M1 C A E NMOD
+M2 C B N NMOD
+M3 F C C PMOD
+
+.model NMOD NMOS
+.model PMOD PMOS

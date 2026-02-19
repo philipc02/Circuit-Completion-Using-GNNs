@@ -1,0 +1,3 @@
+L1 4 3 L1_value
+C1 4 2 C1_value
+RS 3 5 RS_value

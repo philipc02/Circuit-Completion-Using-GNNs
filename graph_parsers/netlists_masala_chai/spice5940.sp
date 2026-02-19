@@ -1,0 +1,15 @@
+plaintext
+*SPICE Netlist
+V1 1 0 DC 10V
+R1 1 8 1k
+Q1 8 9 8 NPN
+IREF 8 3 DC 1mA
+Q2 3 2 3 NPN
+IO 3 0 DC 1mA
+
+V2 7 0 DC 10V
+R2 7 5 1k
+Q1 5 2 5 NPN
+IREF 5 2 DC 1mA
+Q2 2 4 2 NPN
+R3 2 0 1k

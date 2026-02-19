@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist for BJT Amplifier Circuit
+
+Vg 5 0 DC 3mV
+VDD 6 0 DC 15V
+VEE 3 0 DC -10V
+
+RGEN 5 9 50
+RG 9 2 10Meg
+RD 6 8 3.3k
+RE 2 3 4.7k
+RL 7 0 15k
+
+Q1 1 3 2 NPN
+Q2 6 8 2 PNP

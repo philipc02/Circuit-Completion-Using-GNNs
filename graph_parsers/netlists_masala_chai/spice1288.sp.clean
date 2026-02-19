@@ -1,0 +1,16 @@
+spice
+* NMOS model
+.model NMOS NMOS
+
+* Components
+M1 Vout Vin 3 3 NMOS
+M2 Vout Vb 2 2 NMOS
+R1 Vout VDD 1k
+I1 2 0 DC 1mA
+
+* Voltage sources
+Vin Vin 0 DC 0V
+VDD VDD 0 DC 0V
+Vb Vb 0 DC 0V
+
+.end

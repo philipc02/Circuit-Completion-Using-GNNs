@@ -1,0 +1,3 @@
+spice
+M1 3 3B 22 22 NMOS
+V1 22 0 DC 0.5

@@ -1,0 +1,13 @@
+spice
+* Components
+M1 5 6 4 4 NMOS
+M2 3 2 4 4 PMOS
+I1 0 4 DC 1A
+Rout 5 3 1k
+
+* Voltage sources
+VDD 3 0 DC 5V
+Vin 6 0 DC 1V
+Vb 2 0 DC 1V
+
+* End of netlist

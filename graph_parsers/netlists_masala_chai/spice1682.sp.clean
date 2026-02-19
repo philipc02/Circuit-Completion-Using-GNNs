@@ -1,0 +1,28 @@
+spice
+* SPICE netlist for the given schematic
+
+* MOSFETs
+M1 2 4 5 5 NMOS
+
+* Capacitors
+CGD 2 4  CGD_value
+CGS 6 5  CGS_value
+CDB 2 23 CDB_value
+CSB_CL 5 0 CSB_CL_value
+
+* Resistors
+RS 1 6  RS_value
+
+* Current Source
+I1 5 0 I1_value
+
+* Voltage Source
+VDD 23 0 DC VDD_value
+
+* Nodes
+* 1 : Vin
+* 2 : Node X
+* 4 : Drain of M1
+* 5 : Source of M1 (connected to ground)
+* 6 : Gate of M1 (connected to Rs)
+* 23 : VDD

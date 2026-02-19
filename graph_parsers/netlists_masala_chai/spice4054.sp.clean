@@ -1,0 +1,7 @@
+plaintext
+* SPICE Netlist
+R_rb 6 4 r_b
+R_rpi 4 5 r_pi
+R_rex 5 3 r_ex
+C_cpi 2 5 C_pi
+V_vpi 4 5 V_pi

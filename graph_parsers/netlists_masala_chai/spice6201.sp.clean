@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist
+.IS 8 0 DC 1.0
+.RDIN 8 0 RIN
+.RD1 5 VDD 10k
+.RD2 6 VDD 10k
+.RF 3 2 10k
+.M1 5 3 3 3 PMOS
+.M2 6 3 2 2 NMOS
+.VDD VDD 0 DC 5.0

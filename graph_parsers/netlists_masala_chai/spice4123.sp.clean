@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist
+Vi 5 4 DC 0
+Ri 5 8 10k
+Cgd 8 2 12f
+Cgs 6 2 80f
+Gm 2 3 Vgs 0 gm
+Ro 3 7 120k
+Rd 3 7 10k
+Vgs 6 4 DC 0

@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist
+
+VCC 5 0 DC VCC
+VEE 0 4 DC VEE
+
+RL 3 0 RL_VALUE
+
+M1 3 5 5 5 PMOS_MODEL
+M2 3 2 4 4 NMOS_MODEL
+M3 2 1 4 4 NMOS_MODEL
+
+* Input Voltage
+Vin 1 0 PULSE(...)
+
+* Models
+.model PMOS_MODEL PMOS (KP=VALUE)
+.model NMOS_MODEL NMOS (KP=VALUE)
+
+.end

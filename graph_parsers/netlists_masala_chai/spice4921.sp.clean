@@ -1,0 +1,17 @@
+* SPICE Netlist
+
+VCC 9 0 DC VCC
+VIN 1 0 AC 1
+
+RB 2 3 RB
+RL 4 6 RL
+
+C1 1 2 C1
+C2 8 4 C2
+C3 4 6 C3
+
+L1 9 8 L1
+
+Q1 4 2 0 QMOD
+
+.model QMOD NPN

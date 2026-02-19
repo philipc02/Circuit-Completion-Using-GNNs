@@ -1,0 +1,21 @@
+spice
+* SPICE Netlist
+* Components
+I1 2 6 DC 0 ; Current source Is from node 2 to node 6
+RB 2 3 10k  ; Resistor RB from node 2 to node 3
+Rpi 3 5 2k  ; Resistor Rpi from node 3 to node 5
+Cpi 3 5 1p  ; Capacitor Cpi from node 3 to node 5
+Cmu 5 2 1p  ; Capacitor Cmu from node 5 to node 2
+E_VO 0 5 5 5 1 ; Controlled voltage source Vo (treated as ideal)
+Ggm 4 5 5 0 gm ; Voltage-controlled current source gmVpi
+Rc 4 2 5k  ; Resistor Rc from node 4 to node 2
+Rl 2 0 1k  ; Resistor RL from node 2 to node 0
+
+* Nodes
+* 2: Vout
+* 5: Intermediate node
+* 3: Base
+* 4: Collector
+* 6: Ground
+
+.ends

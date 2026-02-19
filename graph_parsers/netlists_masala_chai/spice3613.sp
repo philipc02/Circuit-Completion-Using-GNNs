@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist
+
+V3 6 4 AC 1 DC 0
+
+D1 3 4 1N4002
+D2 2 4 1N4002
+D3 6 2 1N4002
+D4 3 4 1N4002
+
+C1 2 3 1667u
+
+R1 2 3 100
+
+.END
+\

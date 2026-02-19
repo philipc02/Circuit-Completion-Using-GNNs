@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist
+Vsig 9 5 DC 0 AC 1
+Rin 5 3 10k
+C1 3 7 inf
+R1 7 2 20k
+R2 2 0 20k
+R3 2 4 10k
+V1 4 0 DC 9
+MN1 4 3 3 3 NMOS
+CB 4 6 inf
+R4 6 0 2k
+Vo 6 0 DC

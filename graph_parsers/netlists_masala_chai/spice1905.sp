@@ -1,0 +1,23 @@
+spice
+* SPICE netlist for the circuit
+
+VDD 3 0 DC 10V
+
+C1_left 8 7 10n
+C1_right 2 3 10n
+
+L1_left 6 5 1u
+L1_right 3 2 1u
+
+Rp_left 8 5 1k
+Rp_right 3 2 1k
+
+M1 X Y 4 4 NMOS
+M2 Y X 4 4 NMOS
+
+Iss 4 0 DC 1mA
+
+* Model parameters for NMOS
+.model NMOS NMOS (LEVEL=1 VTO=1 KP=120u)
+
+.end

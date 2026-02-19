@@ -1,0 +1,13 @@
+plaintext
+* Transistor Definitions
+M1 2 Vin 2 2 NMOS
+M3 2 0 2 2 NMOS
+M2 4 Vb 2 4 PMOS
+
+* Voltage Source
+VDD 4 0 DC VDD
+
+* Input
+Vin Vin 0 DC Vin
+
+* Body connections assumed to be connected to source

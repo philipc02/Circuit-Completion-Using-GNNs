@@ -1,0 +1,21 @@
+plaintext
+*SPICE netlist for the schematic
+
+* Voltage Sources
+VDD 7 0 DC VDD
+Vin 10 0 DC Vin
+Vb 5 0 DC Vb
+
+* Resistors
+R1 7 3 R1_value
+RS 6 8 RS_value
+RS 8 4 RS_value
+
+* PMOS Transistors
+M1 3 10 6 6 PMOS_MODEL
+M2 3 2 4 4 PMOS_MODEL
+
+* NMOS Transistor
+M3 8 5 0 0 NMOS_MODEL
+
+* End of Netlist

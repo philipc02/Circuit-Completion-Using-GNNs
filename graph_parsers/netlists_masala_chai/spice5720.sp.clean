@@ -1,0 +1,18 @@
+spice
+* NMOS Transistor Model
+M1 3 2 2 NMOS_MODEL 
+
+* Current Source
+I1 3 0 DC 100u
+
+* Voltage Source
+V1 1 0 DC 5V
+
+* Net Definitions
+V2 3 0
+
+.control
+run
+.endc
+
+.model NMOS_MODEL NMOS

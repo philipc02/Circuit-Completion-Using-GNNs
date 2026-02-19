@@ -1,0 +1,11 @@
+* SPICE Netlist for the given schematic
+
+M1 2 Vin 0 0 NMOS
+R1 VCC 2 1k
+CL 2 0 1u
+VCC VCC 0 DC 5V
+
+* NMOS Model
+.model NMOS NMOS (level=1)
+
+.end

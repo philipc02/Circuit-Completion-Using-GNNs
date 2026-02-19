@@ -1,0 +1,17 @@
+spice
+* SPICE Netlist for the Circuit
+
+Vi 6 0 DC 0V
+RG 6 2 1k          * Resistance value for RG
+RS 2 8 1k          * Resistance value for RS
+RL 8 4 1k          * Resistance value for RL
+ro 3 0 1k          * Resistance value for ro
+G1 2 3 8 0 gm      * Current source with transconductance gm
+
+* Nodes 6 and 0 connected to Vi
+* Node 2 is common node for RG, RS, and G1 source terminal
+* Node 8 common node for RS and RL
+* Node 3 is a node for ro and G1's drain
+* Node 4 is Vout (Vo) connection point
+* Replace 1k and gm with actual values for simulation
+.end

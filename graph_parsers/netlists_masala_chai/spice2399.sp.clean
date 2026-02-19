@@ -1,0 +1,28 @@
+spice
+* NMOS and PMOS device dimensions: Length/Width in micrometers
+
+* Current Sources
+I1 6 0 DC 2.5uA
+
+* NMOS Transistors
+M1 2 5 3 3 NMOS L=0.5u W=20u
+M2 3 6 3 3 NMOS L=0.5u W=10u
+
+* PMOS Transistors
+M3 8 2 2 4 PMOS L=0.25u W=125u
+M4 4 22 2 4 PMOS L=0.25u W=125u
+M5 22 2 3 3 NMOS L=0.5u W=20u
+M6 3 22 3 3 NMOS L=0.5u W=10u
+
+* Voltage Sources
+VDD 8 0 DC 1.8V
+VSS 0 3 DC 0V
+
+* Node Assignments
+* 2 - V_OUT21
+* 22 - V_OUT22
+* 3 - V_SS
+* 4 - V_IN22
+* 5 - V_IN21
+* 6 - Gate of bias transistor
+* 8 - V_DD

@@ -1,0 +1,18 @@
+spice
+* Transistor Q1
+Q1 N4 Vin N5 Q1_model
+
+* Transistor Q2
+Q2 VCC N3 N4 Q2_model
+
+* Resistors
+R1 N4 Vout 1k
+RE N5 0 1k
+
+* Voltage Sources
+Vin Vin 0 DC 0
+VCC VCC 0 DC 10
+
+.model Q1_model NPN
+.model Q2_model NPN
+.end

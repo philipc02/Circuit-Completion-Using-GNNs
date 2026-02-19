@@ -1,0 +1,18 @@
+spice
+* SPICE Netlist
+
+I1 2 4 DC 4mA
+
+R1 6 3 25k
+R2 2 0 RL
+R3 2 0 Ro
+
+Q1 3 7 6 QMODEL
+Q2 2 7 5 QMODEL
+Q3 0 3 5 QMODEL
+
+V1 4 0 V+
+V2 5 0 V-
+
+.model QMODEL NPN
+.end

@@ -1,0 +1,13 @@
+plaintext
+* SPICE Netlist for the given schematic
+
+V1 3 10 DC 0  ; Voltage Source vi
+Q1 2 3 6 NPN  ; NPN Transistor
+RC 2 8 1000   ; Resistor RC with 1k ohm (assumed resistance value)
+
+* Connections
+* Node 3 - Base of transistor, connected to voltage source
+* Node 2 - Collector of transistor, connected to resistor
+* Node 6 - Emitter of transistor, connected to ground
+* Node 8 - Other end of resistor, connected to ground
+* Node 10 - Ground node for voltage source

@@ -1,0 +1,6 @@
+* SPICE Netlist
+I1 2 5 DC 1A
+R1 2 3 120
+R2 2 2 180
+V1 3 0 DC 0V
+V2 2 0 DC 0V

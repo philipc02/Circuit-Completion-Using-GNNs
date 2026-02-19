@@ -1,0 +1,19 @@
+spice
+* Transistor Definitions
+M1 2 6 3 3 NMOS
+M2 3 2 3 3 PMOS
+
+* Resistors
+RD 2 VDD 2k
+RF1 6 3 1k
+RF2 3 4 1k
+RM 4 5 1k
+
+* Current Source
+IX 5 0 DC 1mA
+
+* Voltage Source
+VX 5 0 DC
+
+* Voltage Definition
+VDD 3 0 DC 5V

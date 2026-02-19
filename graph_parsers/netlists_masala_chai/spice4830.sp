@@ -1,0 +1,4 @@
+plaintext
+I1 4 3 DC 1A
+Rr_e 3 2 100 Ohm
+Rr_c 3 2 200 Ohm

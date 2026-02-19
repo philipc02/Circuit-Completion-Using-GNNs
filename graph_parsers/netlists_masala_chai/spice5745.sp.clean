@@ -1,0 +1,7 @@
+plaintext
+* SPICE Netlist
+VCC 5 0 DC 10V
+VBB 2 0 DC 0V
+RB 2 6 10k
+RC 5 3 1k
+Q1 3 6 4 NPN

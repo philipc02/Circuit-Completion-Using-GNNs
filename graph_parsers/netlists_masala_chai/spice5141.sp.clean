@@ -1,0 +1,14 @@
+spice
+* Circuit Netlist
+Vin 6 2 AC 1
+
+L1 6 5 1u
+C1 5 2 1uF
+
+L2 5 4 1u
+C2 4 2 1uF
+
+L3 4 3 1u
+C3 3 2 1uF
+
+Rload 3 2 1k

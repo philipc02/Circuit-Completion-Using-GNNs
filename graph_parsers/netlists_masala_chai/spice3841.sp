@@ -1,0 +1,9 @@
+spice
+VBB 3 8 DC VALUE
+VCC 7 2 DC VALUE
+RB 3 5 1k ; Assuming 1k Ohm for example
+RC 5 7 1k ; Assuming 1k Ohm for example
+IB 3 5 DC VALUE ; Assuming some DC value for IB
+
+* Dependent current source βIB is a current-controlled current source
+G_BIB 6 5 VOL 3 5 1 ; Example coefficient, should be β*IB current gain

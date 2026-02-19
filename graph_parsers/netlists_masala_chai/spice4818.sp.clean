@@ -1,0 +1,19 @@
+spice
+* Netlist for the given schematic
+
+* Voltage Source 
+V1 7 6 AC 1
+
+* Current Source
+I1 5 7 DC 1
+
+* Resistors
+R1 6 4 10k
+R2 4 3 2.2k
+RC 5 2 3.6k
+RL 2 0 100k
+
+* Connections
+RB 3 5 0.7k  ; Assuming Re (not defined explicity) or can be omitted if not a resistor.
+
+* End of Netlist

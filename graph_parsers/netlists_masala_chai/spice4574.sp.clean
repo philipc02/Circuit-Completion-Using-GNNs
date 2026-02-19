@@ -1,0 +1,9 @@
+spice
+* List of Components
+* Transistors
+M1 Y 2 3 3 NMOS
+M2 2 A 3 3 NMOS
+M3 2 B 5 5 PMOS
+M4 2 C 4 4 PMOS
+* Voltage Source
+VDD 2 0 DC VDD

@@ -1,0 +1,13 @@
+* SPICE netlist for the given schematic
+
+VS 2 4 DC 1.0V  ; Voltage source 1.0V with node 2 and ground
+
+RS 2 5 50       ; Resistor 50 ohms connected between nodes 2 and 5
+
+L1 5 3 560u     ; Inductor 560uH between nodes 5 and 3
+
+C1 3 7 27n      ; Capacitor 27nF between nodes 3 and 7
+
+RLOAD 7 4 1MEG  ; Load resistor to simulate open circuit - replace 1MEG with actual value if applicable
+
+.END

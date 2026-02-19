@@ -1,0 +1,7 @@
+spice
+* NMOS Amplifier Circuit
+VDD 5 0 DC 25V
+RG 2 7 1.5MEG
+RD 3 5 8.2K
+RS 4 6 1K
+M1 3 2 4 4 NMOS

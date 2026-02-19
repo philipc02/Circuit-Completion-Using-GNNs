@@ -1,0 +1,22 @@
+plaintext
+* CMOS Amplifier Circuit
+
+* NMOS Transistors
+M1 2 1 0 0 NMOS
+M2 5 2 0 0 NMOS
+
+* PMOS Transistors
+M3 3 3 7 7 PMOS
+M4 3 3 5 7 PMOS
+
+* Current Source
+I1 2 66 DC Iss
+
+* Resistors
+R1 2 0 
+R2 2 4 
+
+* Voltage Source
+VDD 7 0 DC VDD
+
+* End of Netlist

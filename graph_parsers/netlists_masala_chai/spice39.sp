@@ -1,0 +1,7 @@
+spice
+* NPN BJT Amplifier
+VCC 3 0 DC VCC
+Rc 3 3 1000k
+Q1 3 5 2 NPN
+Vin 5 0 AC 1
+Vout 4 0

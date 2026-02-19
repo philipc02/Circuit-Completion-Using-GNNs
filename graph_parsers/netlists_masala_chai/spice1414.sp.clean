@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist
+
+Q1 N001 Vb1 N002 NPN
+Q2 N002 Vb2 0 NPN
+RB Vb2 N002 1000
+Rout N001 0 1k
+
+Vb1 Vb1 0 DC 5V
+Vb2 Vb2 0 DC 2V

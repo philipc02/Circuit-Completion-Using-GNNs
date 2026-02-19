@@ -1,0 +1,21 @@
+spice
+* Transistors
+Q1 2 3 5 NPN
+Q2 3 2 1 NPN
+Q3 4 2 2 NPN
+Q4 2 5 6 NPN
+Q5 2 2 7 PNP
+Q6 2 2 22 NPN
+Q7 22 2 2 NPN
+
+* Current Source
+I1 22 2 DC  IBIAS 
+
+* Voltage Source
+VCC 2 0 DC VCC
+
+* Resistors
+R 2 2 R
+RL 2 4 RL
+
+.end

@@ -1,0 +1,7 @@
+* Netlist for the given schematic
+R_RS 4 3 RS
+R_rpi 3 5 rpi
+R_ro 2 5 ro
+I_gmv1 5 7 gmv1
+V_1 4 5 V1
+V_t 5 2 Vt

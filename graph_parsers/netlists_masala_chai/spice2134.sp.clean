@@ -1,0 +1,8 @@
+spice
+* SPICE Netlist
+VDD 3 0 DC 1.8V
+R1 5 3 100k
+R2 3 4 50k
+Rd 3 6 RD_VALUE
+Rout 6 2 1k
+M1 2 2 1 1 NMOS

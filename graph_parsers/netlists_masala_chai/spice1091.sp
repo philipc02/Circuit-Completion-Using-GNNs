@@ -1,0 +1,5 @@
+* NMOS Amplifier Circuit
+M1 Vout VG 2 2 NMOS_MODEL
+VGG VG 0 DC <Voltage_Value_G>
+VIN VIn 0 DC <Voltage_Value_in>
+RL Vout 0 <Resistance_Value>

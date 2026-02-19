@@ -1,0 +1,18 @@
+.MODEL NPN NPN
+   .MODEL PNP PNP
+
+   VCC 4 0 DC VCC
+   VS 6 0 DC 0
+
+   RC1 2 4 RC1
+   RC2 8 4 RC2
+   RE 3 0 RE
+   RF 2 5 RF
+
+   Q1 2 6 3 NPN
+   Q2 2 2 2 NPN
+   Q3 7 2 8 NPN
+
+   I1 5 0 DC I1
+
+   .END

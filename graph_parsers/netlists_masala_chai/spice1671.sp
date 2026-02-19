@@ -1,0 +1,20 @@
+* Transistors
+M1 3 4 0 0 NMOS
+M2 5 3 2 2 PMOS 
+
+* Capacitors
+C_GS1 4 0 C_GS1_VALUE
+C_GD1 3 5 C_GD1_VALUE
+C_DB1 3 0 C_DB1_VALUE
+C_SB2 0 2 C_SB2_VALUE
+C_GD2 3 5 C_GD2_VALUE
+C_DB2 5 2 C_DB2_VALUE
+
+* Resistor
+R_RS 4 4 Rs_VALUE
+
+* Voltage Source
+V_VIN 4 0 DC Vin_VALUE
+
+* Output
+V_OUT 5 0 DC

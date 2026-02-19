@@ -1,0 +1,17 @@
+plaintext
+* NMOS Transistors
+M1 3 5 2 2 NMOS L=0.18u W=5u
+M2 6 8 4 4 NMOS L=0.18u W=10u
+
+* Resistors
+R1 3 5 1k
+R2 4 7 500
+
+* Voltage Source
+VDD 5 0 1.8V
+
+* Voltage Input and Output
+Vin 8 0 DC 0V
+Vout 6 0
+
+.END

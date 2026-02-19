@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist
+Vn_in 5 0 DC {V_value} 
+R1 5 2 {R1_value}
+Cin 2 0 {Cin_value}
+M1 3 2 4 4 NMOS_MODEL
+RD 6 3 {RD_value}
+VDD 6 0 DC {VDD_value}
+
+.model NMOS_MODEL NMOS

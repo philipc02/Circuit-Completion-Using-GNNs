@@ -1,0 +1,21 @@
+* NMOS Transistors
+M1 8 10 4 4 NMOS
+M2 9 8 2 2 NMOS
+M3 4 8 6 6 NMOS
+M4 6 9 8 8 NMOS
+M6 10 2 3 3 NMOS
+M8 2 2 10 10 NMOS
+M9 3 4 4 4 NMOS
+
+* PMOS Transistors
+M5 2 2 8 8 PMOS
+M7 2 2 2 2 PMOS
+Mb1 4 4 4 4 PMOS
+Mb2 2 2 2 2 PMOS
+
+* Current Sources
+IREF1 4 0 DC
+IREF2 2 0 DC
+
+* Voltage Source
+VDD 2 0 DC

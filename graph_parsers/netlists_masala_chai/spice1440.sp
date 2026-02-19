@@ -1,0 +1,11 @@
+plaintext
+I1 2 3 DC
+
+Q2 3 5 4 NPN
+Q1 4 6 0 NPN
+
+VCC 2 0 DC XX
+
+Vb2 5 0 DC XX
+Vb1 6 0 DC XX
+Vin 0 0 DC XX

@@ -1,0 +1,15 @@
+plaintext
+* NMOS Transistors
+M1 Vout Vin 2 2 NMOS
+M2 2 Vb 0 0 NMOS
+
+* Resistor
+RD VDD Vout RD
+
+* Voltage Sources
+VDD VDD 0 DC <value>
+Vin Vin 0 DC <value>
+Vb Vb 0 DC <value>
+
+* Model Definitions
+.model NMOS NMOS (LEVEL=1 <other parameters>)

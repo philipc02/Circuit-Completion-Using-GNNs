@@ -1,0 +1,7 @@
+plaintext
+* SPICE Netlist
+* Frequency of the source: 5.0 kHz
+
+Vs 2 3 AC 1 SIN(0 1 5k)
+C1 2 4 0.01u
+C2 4 6 0.068u

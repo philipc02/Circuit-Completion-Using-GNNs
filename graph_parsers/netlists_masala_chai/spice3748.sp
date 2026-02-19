@@ -1,0 +1,16 @@
+plaintext
+* SPICE Netlist for the provided circuit
+Vi 5 0 DC 0
+RSi 9 7 10k
+Ri 7 2 2k
+R1R2 2 5 1k  ; Replacing parallel combination (assumed)
+RD 3 8 4k
+Ro 3 0 5k
+Gm 3 2 5 0 gm
+Ro_dep 3 4 5 0 rom ; Supposedly dependent voltage-controlled current source
+
+*.include standard SPICE models (if necessary)
+
+.control
+run
+.endc

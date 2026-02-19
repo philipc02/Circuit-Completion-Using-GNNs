@@ -1,0 +1,20 @@
+plaintext
+* SPICE Netlist
+
+* Voltage Source
+V1 9 5 DC
+
+* Current Source
+I1 4 5 VALUE = {gm * V(4,6)}
+
+* Resistors
+RT 9 3 RT
+RIN 3 2 RIN
+RI 4 4 RI
+RO 5 6 RO
+RE 5 7 RE
+RL 10 5 RL
+
+* Analysis
+.TRAN 1n 10u
+.END

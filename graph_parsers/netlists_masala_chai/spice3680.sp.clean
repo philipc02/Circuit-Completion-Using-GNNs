@@ -1,0 +1,17 @@
+spice
+* SPICE Netlist for the given circuit
+
+* Voltage Sources
+Vplus 6 0 DC 2.5V
+Vminus 4 0 DC -2.5V
+
+* Resistors
+R1 7 3 1k  ; assuming resistance value
+R2 3 5 1k  ; assuming resistance value
+RS 6 2 1k  ; assuming resistance value
+RD 5 2 1k  ; assuming resistance value
+
+* Voltage symbol
+VG 3 0 DC 0V ; reference voltage
+
+.END

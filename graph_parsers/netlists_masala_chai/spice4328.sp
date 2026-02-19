@@ -1,0 +1,15 @@
+spice
+* Transistors
+Q1 2 5 0 NPN_A 
+Q2 4 2 3 NPN_B 
+
+* Resistors
+R1 5 0 300k
+R2 2 5 RoA
+R3 4 3 Ro
+R4 3 0 10k
+
+* The net 2 is connected to Vcc or another power supply, assumed grounded in schematic input
+
+.model NPN_A npn
+.model NPN_B npn

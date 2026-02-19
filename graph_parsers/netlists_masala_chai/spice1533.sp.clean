@@ -1,0 +1,17 @@
+plaintext
+* MOSFET definitions
+M1 3 6 5 5 NMOS
+M2 4 2 7 7 PMOS
+M3 2 6 7 7 PMOS
+M4 2 7 4 4 PMOS
+
+* Current sources
+I_VDD 3 0 DC 1
+I_SS1 8 5 DC 1
+I_SS2 8 2 DC 1
+
+* Voltage nodes
+Vin1 6 0 DC 1
+Vin2 7 0 DC 1
+
+.end

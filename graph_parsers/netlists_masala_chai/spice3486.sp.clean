@@ -1,0 +1,22 @@
+spice
+* SPICE Netlist for given schematic
+
+Vsource1 6 0 DC 3V
+Vsource2 5 0 DC -3V
+
+* Transistors
+Q1 3 4 2 NMOS
+Q2 2 5 2 NMOS
+
+* Resistors
+R1 3 7 1k
+R1 2 7 1k
+R2 5 6 1k
+
+* Voltage Sources
+V1 4 0 DC <V1_value>
+V2 5 0 DC <V2_value>
+
+.model NMOS NMOS (LEVEL=1)
+
+.end

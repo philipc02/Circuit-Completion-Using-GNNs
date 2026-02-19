@@ -1,0 +1,14 @@
+spice
+* Voltage Source
+Vi 1 2 DC 0
+
+* Resistors
+RBB 2 7 100k
+RPi 7 3 rpi
+RC 8 3 3k
+
+* Voltage-Controlled Current Source
+Gm 3 4 VALUE = {gm*(V(7,3))}
+
+* Ground
+VEE 3 0 0

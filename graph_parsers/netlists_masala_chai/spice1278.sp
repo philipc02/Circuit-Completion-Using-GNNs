@@ -1,0 +1,21 @@
+spice
+* NMOS transistor M1
+M1 N_Out V_in 0 0 NMOS
+
+* PMOS transistor M2
+M2 N_Out V_b N_VDD N_VDD PMOS
+
+* Resistor RS
+RS N_VDD N_Out 1k
+
+* Voltage Source VDD
+VDD N_VDD 0 DC 1.8
+
+* Voltage Source Vin (for input)
+Vin V_in 0 DC 0
+
+* Voltage Source Vb (for bias)
+Vb V_b 0 DC 0.9
+
+* Output
+* Connecting node N_Out as Vout

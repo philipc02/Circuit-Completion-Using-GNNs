@@ -1,0 +1,6 @@
+spice
+V1 1 3 DC 0
+RS 3 0 10k
+GM 2 3 VCVS 1
+RD 2 0 10k
+VX 2 0 0 DC

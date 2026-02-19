@@ -1,0 +1,10 @@
+spice
+* NPN BJT
+Q1 5 4 3 NPN
+
+* Resistors
+R1 3 0 re
+R2 3 2 rf
+
+* Voltage Output
+Vout 2 0 DC 0

@@ -1,0 +1,29 @@
+spice
+*SPICE Netlist for the given schematic
+
+* NMOS Transistors
+MNMOS1 1 2 0 0 NMOS
+MNMOS2 5 2 3 3 NMOS
+MNMOS3 7 2 6 6 NMOS
+MNMOS4 9 2 8 8 NMOS
+
+* PMOS Transistors
+MPMOS1 1 2 VDD VDD PMOS
+MPMOS2 5 2 VDD VDD PMOS
+MPMOS3 7 2 VDD VDD PMOS
+MPMOS4 9 2 VDD VDD PMOS
+
+* Additional Leads
+M_NC1 35 2 24 24 NMOS
+M_NB1 55 2 0 0 NMOS
+M_NB2 47 2 0 0 NMOS
+M_NX1 1 2 0 0 NMOS
+M_NA1 1 2 24 24 NMOS
+M_NB12 37 2 0 0 NMOS
+M_XC1 7 2 29 29 NMOS
+M_BC2 35 2 0 0 NMOS
+
+* Voltage Source
+VDD VDD 0 DC 5V
+
+* End of the netlist

@@ -1,0 +1,27 @@
+spice
+* NMOS Transistors
+M1 3 5 33 33 NMOS
+M2 3 5 6 6 NMOS
+M11 6 9 33 33 NMOS
+M11A 6 6 9 9 NMOS
+M12 6 6 11 11 NMOS
+M2A 10 2 6 6 NMOS
+
+* PMOS Transistors
+M3 2 4 10 10 PMOS
+M3A 4 4 10 10 PMOS
+M4 8 44 10 10 PMOS
+M4A 44 44 10 10 PMOS
+M5 5 5 10 10 PMOS
+
+* Voltage Sources
+VDD 10 0 DC
+VSS 0 11 DC
+VBIAS1 5 0 DC
+VBIAS2 9 0 DC
+VBIAS3 33 0 DC
+
+* Capacitor
+CL 6 8
+
+* End of Netlist

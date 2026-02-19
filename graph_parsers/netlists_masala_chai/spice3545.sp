@@ -1,0 +1,8 @@
+spice
+* Netlist generated from schematic
+V1 9 2 DC 0
+RT 9 7 1k
+CGS 7 2 1p
+CGD 7 6 1p
+G1 5 3 2 0 gm
+RL 5 4 10k

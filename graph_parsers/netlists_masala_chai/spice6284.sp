@@ -1,0 +1,17 @@
+spice
+* SPICE Netlist
+
+* Voltage Sources
+VDD 5 4 DC 5V
+V1 9 0 DC 1V
+
+* Transistors
+M_QP 8 3 5 5 PMOS
+M_QN 8 2 7 7 NMOS
+
+* Capacitor
+C1 6 4 1uF
+
+* Connections
+* Assuming node 7 is connected to ground
+VSS 7 0 DC 0V

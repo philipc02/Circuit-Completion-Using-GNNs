@@ -1,0 +1,24 @@
+* Transistors
+Q1 2 8 7 NPN
+Q2 4 3 7 PNP
+Q3 3 5 6 PNP
+
+* Diodes
+D1 5 3 D
+D2 6 7 D
+
+* Resistors
+R1 5 5 Res
+R2 7 8 Res
+
+* Current Sources
+I_C1 8 2 DC 0
+I_C2 4 6 DC 0
+I_Q3 4 3 DC 0
+
+* Voltage Sources
+VCC 6 5 DC VCC
+Vi 8 5 DC Vi
+
+* Load Resistor
+RL 7 5 Res

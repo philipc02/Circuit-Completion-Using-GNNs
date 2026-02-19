@@ -1,0 +1,12 @@
+spice
+* SPICE Netlist
+V1 VCC 0 DC 5V
+Q1 VOUT BASE VCC NPN
+M1 VOUT VIN 0 0 NMOS
+R1 BASE 2 1k
+C1 VOUT 0 10u
+
+.model NPN NPN
+.model NMOS NMOS
+
+.end

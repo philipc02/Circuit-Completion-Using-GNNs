@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist for the given circuit
+* NMOS transistor Q1
+M1 2 2 4 4 NMOS
+
+* NMOS transistor Q2
+M2 2 3 2 2 NMOS
+
+* Voltage source V1
+V1 3 2 DC VI
+
+* Voltage source VDD
+VDD 2 5 DC VDD
+
+* Current source I
+I1 5 2 DC I

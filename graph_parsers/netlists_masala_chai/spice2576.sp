@@ -1,0 +1,16 @@
+spice
+* Transistor Connections
+M1 9 5 6 6 NMOS
+M2 4 2 2 2 NMOS
+
+* Resistor Connections
+RD1 3 9 1000
+RD2 3 4 1000
+
+* Current Source
+ISS 6 0 DC 1mA
+
+* Voltage Sources
+Vin1 5 0 DC 0V
+Vin2 2 0 DC 0V
+VDD 3 0 DC 5V

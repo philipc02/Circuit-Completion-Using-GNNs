@@ -1,0 +1,8 @@
+plaintext
+* SPICE Netlist
+R1 6 3 100k
+R2 3 5 100k
+V1 7 9 DC 1 ; Vi
+C1 6 8 Cin
+I1 5 2 DC af(s)*vx
+V2 5 4 DC 0 ; Vo

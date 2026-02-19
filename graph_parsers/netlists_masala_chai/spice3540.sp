@@ -1,0 +1,23 @@
+plaintext
+* Netlist for the given schematic
+
+* Voltage Sources
+V1 1 0 DC 5V
+V2 2 0 DC -5V
+VIN1 3 5 DC
+VIN2 4 6 DC
+
+* Transistors
+M1 10 3 2 2 PMOS
+M2 11 3 2 2 PMOS
+M3 10 5 7 7 NMOS
+M4 11 5 7 7 NMOS
+M5 7 4 2 2 NMOS
+M6 7 4 6 6 NMOS
+
+* Resistors
+R1 1 3 R1_value
+R2 6 0 10k
+
+* Output
+VOUT 6 0

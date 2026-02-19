@@ -1,0 +1,4 @@
+* NMOS Inverter Circuit
+M1 3 4 0 0 NMOS
+Vin 4 0 DC 0V
+Vdd 3 0 DC VDD

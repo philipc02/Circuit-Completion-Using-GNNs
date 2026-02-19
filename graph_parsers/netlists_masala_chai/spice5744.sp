@@ -1,0 +1,4 @@
+plaintext
+I1 7 3 DC <current_value>  ; Specify the DC current value
+Q1 2 3 4 NPN               ; NPN BJT with Collector (C), Base (B), Emitter (E)
+C1 2 6 <capacitance_value> ; Specify the capacitance value

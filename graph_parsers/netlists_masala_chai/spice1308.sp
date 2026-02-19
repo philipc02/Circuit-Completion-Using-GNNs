@@ -1,0 +1,20 @@
+spice
+* Voltage Follower with Feedback
+Vosc 1 3 DC <vos_value>
+Xopamp 3 2 3 opamp
+R1 3 2 <R1_value>
+R2 2 0 <R2_value>
+
+* Define the operational amplifier as a subcircuit
+.subckt opamp non_inv inv out
+* Dummy model for operational amplifier
+* Replace with actual behavioral model if necessary
+Eout out 0 value = {V(non_inv) - V(inv)}
+.ends opamp
+
+* Specify values
+.param vos_value=1
+.param R1_value=1k
+.param R2_value=1k
+
+.end

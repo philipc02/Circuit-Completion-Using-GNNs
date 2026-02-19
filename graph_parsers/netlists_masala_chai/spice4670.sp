@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist Example
+V1 2 4 AC 1
+C1 2 3 1u
+D1 4 3 D
+RL 5 6 1k

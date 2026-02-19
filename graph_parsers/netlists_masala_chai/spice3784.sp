@@ -1,0 +1,21 @@
+spice
+* SPICE Netlist
+
+V1 8 6 DC Vi     ; Voltage source
+Rparallel 6 3 RTP ; Represents R1 || R2
+G1 4 3 3 0 GM     ; Voltage-controlled current source
+Ro 3 5 RO         ; Resistor r_o
+RD 4 7 RD         ; Resistor RD
+RL 7 2 RL         ; Resistor RL
+
+* Nodes
+* 1 - Vo
+* 2 - Vo
+* 3 - Common node
+* 4 - Connection for V-controlled current source
+* 5 - r_o connected node
+* 6 - Ground/reference for V_i
+* 7 - Connection between RD and RL
+* 8 - Positive terminal of V_i
+
+.END

@@ -1,0 +1,15 @@
+*MOSFET
+M1 4 3 4 4 NMOS
+
+*Inductor
+L1 Vb 3 L1_value
+
+*Capacitors
+C1 3 0 C1_value
+C2 4 0 C2_value
+
+*Voltage Source
+VDD 5 0 DC VDD_value
+
+*Current Source
+I1 4 0 DC I1_value

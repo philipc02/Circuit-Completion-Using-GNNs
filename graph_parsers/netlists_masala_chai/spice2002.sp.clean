@@ -1,0 +1,18 @@
+plaintext
+* SPICE Netlist
+
+* Voltage Source
+V1 4 0 DC <value>
+
+* Resistors
+R1 4 2 <value>
+R2 2 3 <value>
+
+* Capacitors
+C1 2 3 <value>
+C2 3 0 <value>
+
+* Op-Amp
+XOP 3 3 Vout opamp_model
+
+* End of Netlist

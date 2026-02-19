@@ -1,0 +1,14 @@
+* SPICE Netlist for the given schematic
+
+* Transistors
+M10 net1 net2 VDD VDD PMOS
+M12 net3 net3 GND GND NMOS
+
+* Capacitor
+C1 net1 net4 0.8p
+
+* Resistor
+R1 net4 net2 450
+
+* Nets
+VDD net3 0 DC 1.8V

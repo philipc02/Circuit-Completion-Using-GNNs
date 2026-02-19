@@ -1,0 +1,22 @@
+spice
+* NMOS Transistors
+M_Q1 2 1 3 3 NMOS
+M_Q2 4 1 3 3 NMOS
+
+* Resistors
+R_RP_left 6 2 RP
+R_RP_right 8 4 RP
+
+* Inductors
+L_left 2 6 L
+L_right 4 8 L
+
+* Capacitors
+C_left 2 0 C
+C_right 4 0 C
+
+* Current Source
+I_1 3 7 DC I
+
+* Voltage Source
+V_DD 1 0 DC VDD

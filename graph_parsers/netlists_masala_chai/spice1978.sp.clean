@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist
+Q1 3 1 4 NPN
+Q2 3 2 4 NPN
+
+VCC 1 0 DC <value_of_VCC>
+VB  3 0 DC <value_of_VB>
+Vin 2 0 DC <value_of_Vin>
+VEE 4 0 DC <value_of_VEE>
+
+RL  4 0 <value_of_RL>
+
+* Define .model parameters if needed
+.model NPN NPN(IS=1e-15 BF=100 NF=1 VAF=100)
+.end

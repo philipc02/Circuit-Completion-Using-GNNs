@@ -1,0 +1,17 @@
+plaintext
+* SPICE Netlist
+
+V1 4 0 DC VDD
+I1 5 4 DC IREF
+
+* NMOS Transistors
+M1 2 5 0 0 NMOS
+M2 5 5 0 0 NMOS
+
+* PMOS Transistor
+M3 3 2 3 3 PMOS
+
+* Capacitor
+C1 3 6 C1
+
+.END

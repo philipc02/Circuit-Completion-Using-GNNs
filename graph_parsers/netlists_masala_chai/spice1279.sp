@@ -1,0 +1,3 @@
+M1 3 Vin 0 0 NMOS
+M2 2 Vout 3 2 PMOS
+VDD 2 0 DC 1.8V

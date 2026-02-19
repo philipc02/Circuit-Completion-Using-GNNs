@@ -1,0 +1,19 @@
+plaintext
+* SPICE netlist for the given schematic
+VCC 2 0 DC 9V
+VEE 4 0 DC -9V
+Vs 7 8 DC 0V AC 1V
+
+Q1 3 2 5 NPN
+
+R1 1 2 10k
+R2 3 4 10k
+RS 7 1 1k
+RE 5 4 500
+RL 5 6 300
+
+CC1 1 3
+CC2 5 6
+
+* Ground reference
+Rground 8 0 1Meg

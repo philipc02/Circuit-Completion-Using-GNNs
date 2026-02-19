@@ -1,0 +1,5 @@
+spice
+V1 5 0 DC
+RG 4 5 RG_value
+M1 2 4 4 4 NMOS_MODEL
+I1 3 2 DC 1

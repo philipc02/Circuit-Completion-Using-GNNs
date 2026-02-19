@@ -1,0 +1,12 @@
+*MOSFET Parameters
+.model PMOS PMOS (LEVEL=1 VTO=-0.7 KP=20u)
+
+*Components
+M3 2 A 3 3 PMOS
+M4 2 B 3 3 PMOS
+
+*Voltage Sources
+VDD 3 0 DC 5V
+
+*Output
+Vout 2 0

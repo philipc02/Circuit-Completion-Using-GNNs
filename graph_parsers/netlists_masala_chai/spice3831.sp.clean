@@ -1,0 +1,11 @@
+plaintext
+* SPICE Netlist
+V1 7 8 DC 0
+R1 3 6 1k
+R2 5 8 1k
+R3 5 3 1k
+RD 2 3 1k
+RS 9 2 1k
+RL 4 8 1k
+C1 5 3 1u
+C2 2 4 1u

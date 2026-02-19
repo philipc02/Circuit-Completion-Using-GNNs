@@ -1,0 +1,4 @@
+* SPICE Netlist
+V1 VDD 0 DC VDD
+RD VDD 2 RD
+Ron1 2 0 Ron1

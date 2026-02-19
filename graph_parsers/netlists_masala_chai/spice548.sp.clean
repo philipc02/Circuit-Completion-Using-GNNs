@@ -1,0 +1,7 @@
+V1 6 0 DC (v_sd/2)
+   R1 6 4 R
+   I1 4 0 DC (i_Rc/2)
+   R2 4 2 R3
+   V2 2 0 DC (V_id/2)
+   I2 2 3 DC (a_dm * V_id/2)
+   V3 3 5 DC (V_id/2)

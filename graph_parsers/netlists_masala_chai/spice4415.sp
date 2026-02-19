@@ -1,0 +1,6 @@
+I1 4 2 Ii
+R1 2 3 r_pi
+G1 0 3 2 3 gm
+R2 2 0 RF
+R3 3 5 RC
+Vout 5 0 DC 0

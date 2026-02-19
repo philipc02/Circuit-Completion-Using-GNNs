@@ -1,0 +1,15 @@
+* NMOS Transistor
+M1 R_out1 4 rO rO NMOS
+
+* Resistors
+RrO rO 4 r_O_value
+R_RD 3 2 RD_value
+
+* Capacitor
+C1 rO 4 C_value
+
+* Nodes
+VDD 3 0 DC VDD_value
+
+* Ground
+VSS 2 0 0

@@ -1,0 +1,23 @@
+* SPICE Netlist
+V1 3 2 DC 5V
+I1 6 0 DC 100uA
+
+* Transistors
+M1 3 3 2 2 NMOS
+M2 3 3 6 6 NMOS
+M3 4 3 4 4 PMOS
+M4 4 3 6 6 PMOS
+M5 2 2 6 6 NMOS
+M6 3 3 2 2 NMOS
+M7 7 9 2 2 NMOS
+M8 8 3 9 9 PMOS
+
+* Resistors
+R1 5 8 20k
+R2 8 7 1k
+
+* Additional Nodes
+VDD 4 0 DC 5V
+VSS 2 0 DC -5V
+
+.END

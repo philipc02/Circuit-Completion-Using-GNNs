@@ -1,0 +1,13 @@
+* Nodes are labeled based on the second schematic
+* Netlist begins
+
+VS 6 8 DC 0
+RS 6 2  RS_value
+RF 2 7  RF_value
+RI 8 3  rI_value
+Vx 3 0  0
+G1 4 0  3 0  a
+VI 4 5  Vi_value
+RO 5 7  rO_value
+
+*.end

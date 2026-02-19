@@ -1,0 +1,5 @@
+* SPICE Netlist
+VCC 1 0 DC VCC
+RS  1 2  RS
+RB  4 0  RB
+Q1  1 4 2 NPN

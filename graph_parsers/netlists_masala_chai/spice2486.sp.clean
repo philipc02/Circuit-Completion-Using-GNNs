@@ -1,0 +1,5 @@
+spice
+* SPICE netlist for the given schematic
+V1 2 0 DC Vin
+R1 4 3 1/gm
+R2 3 0 1/gmb

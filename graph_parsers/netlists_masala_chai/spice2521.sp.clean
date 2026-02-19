@@ -1,0 +1,8 @@
+plaintext
+* SPICE netlist for the schematic
+M1 5 1 2 2 NMOS
+M2 3 4 2 2 NMOS
+RD 5 3 RD_VALUE
+VDD 5 0 DC VDD_VALUE
+VIN 1 0 DC VIN_VALUE
+VB 4 0 DC VB_VALUE

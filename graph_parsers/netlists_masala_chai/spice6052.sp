@@ -1,0 +1,19 @@
+spice
+* SPICE Netlist
+VDD 4 0 DC VDD
+VSS 5 0 DC -VSS
+
+* PMOS Q1
+M1 2 4 1 1 PMOSModel
+RD1 4 2 RD
+
+* PMOS Q2
+M2 2 3 1 1 PMOSModel
+RD2 3 2 RD
+
+* NMOS Q3
+M3 2 2 5 2 NMOSModel
+
+* Current Sources
+I1 4 5 DC I/2
+I2 2 5 DC I/2

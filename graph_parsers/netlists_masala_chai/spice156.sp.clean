@@ -1,0 +1,17 @@
+plaintext
+* SPICE netlist
+
+M1 2 8 1 1 NMOS
+M2 6 8 4 4 NMOS
+M3 4 7 4 4 NMOS
+M4 2 9 9 9 PMOS
+M5 6 2 2 2 PMOS
+M6 5 2 2 2 PMOS
+
+IIN 8 1 DC
+IBIAS1 7 4 DC
+IBIAS2 5 2 DC
+
+R1 4 0 R
+
+*.MODEL statements for NMOS and PMOS should be provided separately

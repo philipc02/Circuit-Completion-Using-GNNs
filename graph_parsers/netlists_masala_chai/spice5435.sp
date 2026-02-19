@@ -1,0 +1,6 @@
+spice
+* RLC Circuit
+V1 5 0 AC 1
+R1 5 4 100
+L1 4 3 0.6366m
+C1 3 2 0.002

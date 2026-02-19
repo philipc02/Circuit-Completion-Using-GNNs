@@ -1,0 +1,9 @@
+spice
+* SPICE Netlist for Schematic
+
+M2 Vout 2 VDD VDD PMOS
+M1 Vout Vin 2 3 NMOS
+M3 2 3 3 3 NMOS
+
+VDD VDD 0 DC 5V
+Vin Vin 0 DC 1V

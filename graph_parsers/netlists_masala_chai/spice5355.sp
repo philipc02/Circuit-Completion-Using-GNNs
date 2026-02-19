@@ -1,0 +1,6 @@
+plaintext
+* Example Circuit Netlist
+V1 1 2 DC 3
+R1 4 3 100
+R2 5 3 270
+RL 6 3 RL_VALUE

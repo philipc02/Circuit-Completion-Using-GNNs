@@ -1,0 +1,6 @@
+plaintext
+* SPICE Netlist
+VDD 4 3 DC 20
+R1 4 2  <value_of_R1>
+R2 2 3  <value_of_R2>
+RS 2 3  <value_of_RS>

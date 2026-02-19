@@ -1,0 +1,17 @@
+spice
+* NMOS and PMOS model parameters
+.model NMOS NMOS
+.model PMOS PMOS
+
+* Components
+M1 0 2 0 0 NMOS  ; NMOS: Drain=0, Gate=2, Source=0, Body=0
+M2 2 1 2 2 PMOS  ; PMOS: Drain=2, Gate=1, Source=2, Body=2
+
+I1 1 5 DC  ; Current source from Node 5 to Node 1 (DC current source)
+
+VX 3 0 DC  ; Voltage source VX between Node 3 and ground
+
+* Voltage supply
+VDD 1 0 DC  ; Supply voltage VDD
+
+* End of netlist

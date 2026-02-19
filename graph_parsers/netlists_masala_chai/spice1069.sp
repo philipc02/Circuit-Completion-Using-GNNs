@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist for the Given Circuit
+
+Q1 5 X 3 NPN
+Q2 1 X 0 NPN
+
+RE 3 0 RE_VALUE
+RC 4 1 RC_VALUE
+
+VCC 4 0 DC VCC_VALUE
+
+* Input
+VIN X 0 DC VIN_VALUE
+
+.model NPN NPN

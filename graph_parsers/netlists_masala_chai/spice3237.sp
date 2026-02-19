@@ -1,0 +1,17 @@
+spice
+* Transistors
+M1 2 1 3 3 NMOS
+M2 2 5 6 6 NMOS
+M3 4 3 4 4 PMOS
+M4 4 2 4 4 PMOS
+M5 2 2 0 0 NMOS
+
+* Capacitors
+C1 3 2 1u
+C2 2 6 1u
+
+* Voltage Sources
+VDD 4 0 DC 5V
+Vb 2 0 DC 
+
+* End of Netlist

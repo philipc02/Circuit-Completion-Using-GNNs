@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist
+
+M_PA 2 Y 3 3 PMOS L=3.75u W=0.25u
+M_PB 2 7 3 3 PMOS L=3.75u W=0.25u
+M_PC VDD 2 3 3 PMOS L=3.75u W=0.25u
+M_PD VDD 2 3 3 PMOS L=3.75u W=0.25u
+
+M_NA 6 A 6 6 NMOS L=0.375u W=0.25u
+M_NB 3 B 3 3 NMOS L=0.75u W=0.25u
+M_NC 3 C 3 3 NMOS L=0.75u W=0.25u
+M_ND 3 C 3 3 NMOS L=0.75u W=0.25u
+
+VDD VDD 0 DC 1.8V
+
+* End of SPICE Netlist

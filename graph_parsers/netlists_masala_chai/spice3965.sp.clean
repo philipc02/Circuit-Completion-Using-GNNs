@@ -1,0 +1,9 @@
+Vs 6 5 DC
+Rs 6 2 0.5k
+Rpi 2 4 rpi
+Vpi 4 5 Vpi
+Rpar 4 5 R1||R2
+Ib 2 4 DC Ib
+G1 3 5 4 5 beta
+RE 4 5 RE
+Ro 3 5 ro

@@ -1,0 +1,18 @@
+spice
+* NMOS Transistor
+M1 4 5 2 2 NMOS
+
+* Voltage Source V_DD
+VDD 4 0 DC 5
+
+* Voltage Source V_i
+Vi 5 0 DC 3
+
+* Current Source
+I1 2 0 DC 200u
+
+* Resistor
+R1 2 3 R
+
+* Load or Output
+Vout 3 0

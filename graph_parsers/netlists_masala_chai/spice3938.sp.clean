@@ -1,0 +1,6 @@
+* SPICE netlist for the circuit
+Rin 5 4 Ri
+Ro 2 6 Ro
+F1 2 4 V1 Ais
+V1 5 0 DC 0
+V2 2 7 DC 0

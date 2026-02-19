@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist for the given schematic
+* Nodes: 1 = Vo, 2 = Common, 3 = Vcc, 4 = RB, 5 = ro, 6 = gnd, 7 = rc
+
+V1 8 2 DC 0               ; Voltage source Vs
+RB 8 4 5k                 ; Resistor RB
+Rp 4 2 1k                 ; Resistor rπ
+Gm 2 6 4 2 GM            ; Controlled current source Gm = g_m * Vπ
+Ro 2 5 100k               ; Resistor ro
+Rc 5 7 500                ; Resistor rc
+Vo 7 1                    ; Output node
+
+.END

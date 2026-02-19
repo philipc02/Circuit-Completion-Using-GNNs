@@ -1,0 +1,16 @@
+spice
+* Transistor Q1 (NPN)
+Q1 Vout Q1_base 0 NPN
+
+* Transistor Q2 (NPN)
+Q2 VCC Vin Vout NPN
+
+* Resistor RE
+RE Q1_base 0 1000 ; Example value, replace with actual if known
+
+* Voltage Sources
+Vin Vin 0 DC 5V ; Example value, replace with actual if known
+Vb Vb 0 DC 2.5V ; Example value, replace with actual if known
+Vcc VCC 0 DC 10V ; Example value, replace with actual if known
+
+.model NPN NPN (IS=1e-14 BF=100)

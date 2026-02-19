@@ -1,0 +1,15 @@
+spice
+* List of Components:
+* PMOS: MP1, MP2
+* NMOS: MNA, MNB, MN1, MN2
+* Nets: CLK, A, B, vo1, vO, VDD, GND
+
+MP1 3 3 0 VDD PMOS
+MP2 5 2 6 VDD PMOS
+MNA 3 3 3 0 NMOS
+MNB 5 3 2 0 NMOS
+MN1 3 3 0 0 NMOS
+MN2 5 2 0 0 NMOS
+
+* Voltage Supplies
+VDD VDD 0 DC 5V

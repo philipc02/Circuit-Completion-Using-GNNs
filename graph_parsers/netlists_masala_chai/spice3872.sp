@@ -1,0 +1,17 @@
+spice
+* BJT Circuit SPICE Netlist
+
+VTH 7 5 DC <value>
+VCC 6 0 DC 5
+VEE 10 0 DC -5
+
+RTH 7 1 <value>
+RC1 3 6 5k
+RE1 4 10 2k
+RC2 8 6 1.5k
+RE2 9 10 2k
+
+Q1 2 1 4 <model>
+Q2 2 3 9 <model>
+
+IB1 7 2 DC <value>

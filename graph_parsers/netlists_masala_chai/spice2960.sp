@@ -1,0 +1,11 @@
+* PMOS Transistors
+M1 3 5 2 2 PMOS
+M2 8 5 2 2 PMOS
+M3 7 5 2 2 PMOS
+
+* Resistors
+R1 0 5 <value> 
+R2 3 4 <value>
+R3 8 5 <value>
+R4 7 5 <value>
+R5 2 2 <value>

@@ -1,0 +1,9 @@
+spice
+* SPICE Netlist for the given schematic
+IREF 3 2 DC 1A ; Current source from node 3 to node 2
+
+M1 2 3 7 7 NMOS ; M1 NMOS: Drain 2, Gate 3, Source 7, Body 7
+M2 6 2 8 8 NMOS ; M2 NMOS: Drain 6, Gate 2, Source 8, Body 8
+M3 9 4 5 5 PMOS ; M3 PMOS: Drain 9, Gate 4, Source 5, Body 5
+
+VDD 5 0 DC VDD ; Power supply voltage (connected to node 5)

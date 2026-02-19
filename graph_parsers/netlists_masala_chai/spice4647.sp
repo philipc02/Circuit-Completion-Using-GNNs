@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+
+VS 6 4 DC 12V
+D1 4 2 D 
+RL 2 5 1k

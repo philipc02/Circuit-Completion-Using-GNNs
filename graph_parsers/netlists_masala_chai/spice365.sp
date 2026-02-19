@@ -1,0 +1,5 @@
+plaintext
+I1 6 7 DC 1A
+V2 2 3 DC 1V
+R_E 5 4 1k
+R_F 22 2 1k

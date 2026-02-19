@@ -1,0 +1,20 @@
+plaintext
+* SPICE Netlist
+
+* Voltage Source
+V1 2 3 DC 1V
+
+* Resistor RG
+R1 2 0 600
+
+* Resistor Zin
+R2 2 4 5k
+
+* Current Source
+I1 5 8 DC 1A
+
+* Resistor re
+R3 8 7 3.03k
+
+* Ground Node
+0 3 4 7 5 0

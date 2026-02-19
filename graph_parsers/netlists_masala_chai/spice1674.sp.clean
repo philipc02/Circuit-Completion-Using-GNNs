@@ -1,0 +1,23 @@
+spice
+* NMOS Transistor
+M1 2 1 0 0 MNMOS
+
+* Resistor
+RD 3 2 RD_value
+
+* Capacitors
+CGD 3 2 CGD_value
+CGS 1 0 CGS_value
+CDB 2 0 CDB_value
+
+* Voltage Source
+VDD 3 0 VDD_value
+
+* Input Source
+Vin 1 0 DC 0
+
+* Specify the model for the NMOS
+.model MNMOS NMOS (Level=1 KP=0.5u VTO=1.0)
+
+* End of netlist
+.end

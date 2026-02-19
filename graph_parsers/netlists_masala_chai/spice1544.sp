@@ -1,0 +1,8 @@
+plaintext
+* Transistor Connections
+M1 2 Vin1 0 0 NMOS
+M2 Vout1 5 2 5 PMOS
+
+* Voltage Inputs
+Vin1 Vin1 0 DC 0
+Vout1 Vout1 0 DC 0

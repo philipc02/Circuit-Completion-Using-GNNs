@@ -1,0 +1,27 @@
+spice
+* SPICE Netlist
+
+* Voltage source
+VDD VDD 0 DC 1.8
+
+* Input voltage source
+VIN Vin 0 DC 0
+
+* NMOS Transistor
+M1 VDD Vin 1 1 NMOS
+
+* Current Source
+I1 1 0 DC 1
+
+* Capacitor
+C1 1 2 1uF
+
+* Load Resistor
+RL 2 0 50
+
+* Model definition
+.model NMOS NMOS
+
+* Simulation commands
+.tran 1n 100n
+.end

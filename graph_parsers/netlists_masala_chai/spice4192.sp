@@ -1,0 +1,9 @@
+spice
+* SPICE Netlist
+Vi 1 3 DC 0
+R1 3 33 1k
+R2 3 4 2k
+R3 4 2 3k
+R4 2 22 4k
+XU1 33 0 3 TL081
+XU2 2 0 22 TL081

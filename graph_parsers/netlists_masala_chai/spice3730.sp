@@ -1,0 +1,10 @@
+spice
+* NMOS Inverter Circuit
+
+VDD 4 0 DC 5V
+VI 2 0 DC 1V
+RD 4 3 1000
+
+M1 3 2 5 5 NMOS L=1u W=2u
+
+.END

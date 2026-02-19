@@ -1,0 +1,35 @@
+// List of Components
+// Transistors: M1, M2, M3, M4
+// Resistors: R1, R2 (both 1 kΩ)
+// Current Source: I_Q (0.2 mA)
+// Voltage Sources: V+, V-
+
+* Two-stage differential amplifier
+
+* Voltage Sources
+V+ 6 0 DC 10
+V- 7 0 DC -10
+
+* Resistors
+R1 6 5 1k
+R2 6 2 1k
+
+* Current Source
+IQ 1 7 DC 0.2m
+
+* MOSFETs
+M1 3 1 4 4 NMOS
+M2 3 2 4 4 NMOS
+M3 5 3 5 5 PMOS
+M4 2 3 5 5 PMOS
+
+* Nodes
+* 1: Common Source Nodes of M1 and M2
+* 2: Drain Node of M2 and Gate Node of M4
+* 3: Gate Node of M1 and M2, Common Drain Node of M3 and M4
+* 4: Source Node for M1 and M2 (connected to I_Q)
+* 5: Common Source Node of M3 and M4, connected to R1 and R2
+* 6: Positive Voltage Source Node (V+)
+* 7: Negative Voltage Source Node (V-)
+
+.end

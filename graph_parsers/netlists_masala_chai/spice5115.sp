@@ -1,0 +1,19 @@
+plaintext
+* Differential Amplifier Circuit
+
+* Voltage Sources
+VinCM 2 0 DC 
+Vin 4 2 DC 
+
+* Resistors
+R1 2 3  R1_value
+R1' 4 3 R1'_value
+R2 3 Vout R2_value
+R2' 3 0 R2'_value
+
+* Op-Amps
+XU1 2 4 2 opamp
+XU2 4 2 3 opamp
+
+* Model Definitions
+.model opamp OPAMP

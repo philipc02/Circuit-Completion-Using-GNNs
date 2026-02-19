@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist for the Circuit
+
+VIN 2 0 DC 0V
+VDD 6 0 DC 5V
+
+M1 4 2 8 8 NMOS
+M2 5 4 8 8 NMOS
+M3 3 5 6 6 PMOS
+
+ISS 8 0 DC 1mA
+
+R1 3 0 1k
+
+.model NMOS nmos
+.model PMOS pmos

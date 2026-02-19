@@ -1,0 +1,24 @@
+plaintext
+* SPICE Netlist
+
+Vpi1 7 3 DC <value> 
+Rpi1 2 3 rpi1 
+Cpi1 2 3 Cpi1 
+Gm1 4 0 6 5 gm1
+
+Cmu1 6 9 Cmu1 
+
+Vpi2 5 5 DC <value> 
+Rpi2 5 3 rpi2 
+Cpi2 5 10 Cpi2 
+Gm2 3 0 8 5 gm2
+
+Cmu2 8 3 Cmu2
+
+Vin 9 0 DC <value>
+
+Vout 10 0 DC <value>
+
+* Define values for components
+.param rpi1=<value> rpi2=<value> Cpi1=<value> Cpi2=<value> 
+.param Cmu1=<value> Cmu2=<value> gm1=<value> gm2=<value>

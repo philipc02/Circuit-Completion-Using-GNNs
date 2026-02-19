@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist
+
+VDD VDD 0 DC <value>
+Vin Vin 0 DC <value>
+Vb Vb 0 DC <value>
+
+M1 Vout Vin VDD VDD <NMOS_MODEL>
+Rs Vout Vout_mid <value>
+M2 0 Vb Vout_mid 0 <NMOS_MODEL>
+
+* The <value> and <NMOS_MODEL> need to be specified as per design specifics
+* The net Vout_mid is introduced to connect Rs and M2 appropriately

@@ -1,0 +1,21 @@
+* NMOS Transistors
+M1 2 3 10 10 NMOS
+M2 6 2 11 11 NMOS
+
+* PMOS Transistors
+M3 7 2 4 4 PMOS
+M4 8 2 5 5 PMOS
+
+* Voltage Sources
+VDD 7 2 DC VDD
+VSS 10 12 DC VSS
+VIN 12 3 DC VIN
+
+* Capacitors
+C1 2 5 CO
+C2 3 12 CS
+
+* Resistors
+R1 12 3 RT
+R2 3 9 RS1
+R3 9 11 RS2

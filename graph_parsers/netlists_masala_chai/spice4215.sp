@@ -1,0 +1,14 @@
+plaintext
+* Op-Amp Circuit
+R1 1 2 R1_value
+R2 2 3 R2_value
+C2 3 4 C2_value
+V1 1 0 Vi  ; Vi is the input voltage source
+X1 2 0 4 OpAmp ; Op-Amp with nodes (in-, in+, out)
+
+* Op-Amp subcircuit
+.subckt OpAmp in- in+ out
+* Assume ideal op-amp characteristics here
+.ends OpAmp
+
+.end

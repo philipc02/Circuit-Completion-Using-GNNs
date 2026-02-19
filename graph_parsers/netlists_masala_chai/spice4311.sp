@@ -1,0 +1,33 @@
+plaintext
+* Transistor Q1 (NMOS)
+M1 2 4 6 6 NMOS 
+
+* Transistor Q2 (NMOS)
+M2 7 8 6 6 NMOS 
+
+* Transistor Q3 (PMOS)
+M3 5 3 3 3 PMOS 
+
+* Transistor Q4 (PMOS)
+M4 5 3 3 3 PMOS 
+
+* Current Source I1
+I1 3 2 IDC 
+
+* Current Source I2
+I2 3 7 IDC 
+
+* Current Source I3
+I3 5 4 IDC 
+
+* Current Source I4
+I4 5 8 IDC 
+
+* Current Source IQ
+IQ 6 6 IDC 
+
+* Voltage Definitions
+V+ 5 0 DC 
+V- 6 0 DC 
+VCM 4 0 DC 
+VO 8 0 DC

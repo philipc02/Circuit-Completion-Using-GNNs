@@ -1,0 +1,16 @@
+* Circuit Description
+* Node numbers reference the second schematic
+
+C1 4 1 
+C2 1 2 
+R1 1 0 
+R2 2 0 
+R3 2 3 
+C3 2 0 
+* Operational Amplifier Model
+* Assumed as an ideal op-amp for SPICE, not explicitly described in basic SPICE syntax
+* Placeholder for op-amp connection: You need a subckt/model for the op-amp
+XU1 2 3 0 opamp
+
+* Voltage output
+Vout 3 0

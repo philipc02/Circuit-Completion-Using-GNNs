@@ -1,0 +1,24 @@
+plaintext
+* Transistors
+M1 2 3 6 6 NMOS
+M2 5 2 6 6 NMOS
+M3 2 7 8 8 NMOS
+M4 8 7 5 5 NMOS
+M5 5 4 9 9 NMOS
+M6 9 4 5 5 NMOS
+M7 7 7 4 4 NMOS
+M8 4 0 5 5 NMOS
+M11 Vo 3 2 2 PMOS
+M12 10 2 Vo Vo PMOS
+
+* Voltage and Current Sources
+V1 2 0 DC 0
+Vi 5 0 DC 0
+VDD 4 0 DC 5V
+VSS 6 0 DC -5V
+VOS 3 2 DC 0.7V
+
+* Resistor
+RL Vo 10 1k
+
+* End of netlist

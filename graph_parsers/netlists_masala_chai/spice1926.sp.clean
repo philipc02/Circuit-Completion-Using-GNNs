@@ -1,0 +1,16 @@
+plaintext
+* List of Components
+* L1: Inductor
+* RF: Resistor
+* Q1: Transistor (Assumed NPN BJT based on arrow symbol)
+* CA, CB: Capacitors
+* VCC: Voltage Source
+
+* SPICE Netlist
+VCC 4 0 DC 15V
+
+L1 4 2 100uH
+RF 2 2 1k
+Q1 2 2 3 NPN
+CA 2 3 10u
+CB 2 3 10u

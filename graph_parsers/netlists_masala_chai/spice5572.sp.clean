@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist for the given circuit
+
+C1 1 2
+R1 2 3
+R2 3 4
+XOPAMP 3 0 4 opamp
+
+* Ideal operational amplifier model
+.subckt opamp in+ in- out
+V1 out in+ 0
+E1 out in+ value={V(in+, in-)}
+.ends opamp
+
+.end

@@ -1,0 +1,4 @@
+plaintext
+VDD 1 0 DC 15V
+RD 1 2 5k
+RDSon 2 0 667

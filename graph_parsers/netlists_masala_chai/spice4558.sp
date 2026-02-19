@@ -1,0 +1,12 @@
+* PMOS Transistors
+MPA 7 10 8 8 PMOS
+MPB 2 7 8 8 PMOS
+MP'A 2 5 8 8 PMOS
+
+* NMOS Transistors
+MNA 5 3 6 6 NMOS
+MNB 3 3 0 0 NMOS
+MN'B 2 6 0 0 NMOS
+
+* Voltage Source
+VDD 8 0 DC VDD

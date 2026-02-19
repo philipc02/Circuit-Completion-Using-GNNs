@@ -1,0 +1,28 @@
+plaintext
+* SPICE Netlist for the given schematic
+
+VPLUS 8 0 DC 10V
+VMINUS 4 0 DC -10V
+VBIAS 2 6 DC V_D
+
+IBIAS 8 2 DC I_Bias
+
+RA 2 6 RA
+RB 2 6 RB
+R1 3 2 R1
+R2 3 5 R2
+RL 5 0 RL
+
+Q1 2 8 3 QMODEL
+Q2 3 3 4 QMODEL
+Q3 2 2 2 QMODEL
+Q4 6 2 4 QMODEL
+
+MN 5 3 5 MNMODEL
+MP 5 3 5 MPMODEL
+
+.model QMODEL NPN
+.model MNMODEL NMOS
+.model MPMODEL PMOS
+
+.END

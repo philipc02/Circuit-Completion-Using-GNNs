@@ -1,0 +1,26 @@
+plaintext
+* SPICE Netlist
+
+* Voltage Sources
+V1 Vin 2 DC 0
+VDD VDD 0 DC VDD
+
+* Resistor
+RS X 2 1k
+
+* MOSFETs
+M1 Y X VDD VDD PMOS
+M2 Y X 4 4 NMOS
+
+* Current Source
+I1 Y 3 DC I_value
+
+* Capacitor
+CL Y 4 10p
+
+* Connections
+* Vin - input voltage to gate of M2
+* VDD - positive voltage supply
+* Vout - output voltage at node Y
+
+.end

@@ -1,0 +1,23 @@
+plaintext
+* Op-Amp Inverting Amplifier Circuit
+
+* Resistors
+R1 1 2 20k    
+R2 3 4 200k   
+R3 4 5 20k    
+
+* Voltage Input
+Vi 1 0 DC 0
+
+* Operational Amplifier
+* Assuming a generic op-amp model
+XU1 2 3 4 opamp
+
+* Ground Connection
+Vgnd 2 0 DC 0
+Vgnd 5 0 DC 0
+
+* .MODEL statement for the opamp if needed (depends on SPICE library)
+* .model OPAMP opamp (parameters...)
+
+.end

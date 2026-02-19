@@ -1,0 +1,7 @@
+spice
+* Circuit Description
+V1 4 0 DC Vs
+Q1 5 4 3 NPN
+R1 3 0 1k
+R2 6 0 10k
+Vout 5 6 DC Vo

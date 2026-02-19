@@ -1,0 +1,8 @@
+spice
+* SPICE Netlist for the given schematic
+Vgs 5 7 DC 0
+Cgs  5 0 1p
+Cgd 2 4 1p
+Gm  4 0 VALUE={gm*(V(5,0))}
+Rsig 6 5 1k
+RL  4 3 1k

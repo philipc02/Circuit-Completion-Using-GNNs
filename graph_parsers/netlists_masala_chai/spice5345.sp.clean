@@ -1,0 +1,7 @@
+* SPICE Netlist for the Circuit
+
+V1 5 9 DC 10
+V2 6 7 DC 5
+R1 5 8 100
+R2 8 9 220
+R3 8 4 330

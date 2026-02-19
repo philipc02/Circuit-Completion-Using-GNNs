@@ -1,0 +1,10 @@
+spice
+* Differential Pair with Active Load
+M1 3 4 5 5 NMOS
+M2 2 6 5 5 NMOS
+M3 3 2 1 1 PMOS
+M4 2 3 1 1 PMOS
+Iss 5 3 DC
+VDD 1 0 DC 1.8V
+VIN1 4 0 DC
+VIN2 6 0 DC

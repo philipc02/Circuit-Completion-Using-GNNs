@@ -1,0 +1,17 @@
+spice
+* SPICE netlist for the given circuit
+
+R1 5 2 10k     * Resistor R1 between nodes 5 and 2
+R2 3 2 10k     * Resistor R2 between nodes 3 and 2
+C2 2 2 1uF     * Capacitor C2 connected from node 2 to node 2 (short circuit error assumed)
+
+* Op-amp configuration
+XOPAMP 3 4 2 OPAMP_MODEL * Op-amp with + connected to net 3, - to net 4, output to net 2
+
+V1 5 0 DC 5V  * Input voltage source Vi
+VOUT 2 0 DC   * Output node Vo
+
+* Define model for op-amp
+.model OPAMP_MODEL opamp
+
+.END

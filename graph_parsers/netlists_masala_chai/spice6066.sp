@@ -1,0 +1,6 @@
+plaintext
+I1 3 3 DC 1A
+M1 3 5 3 3 NMOS
+M2 3 5 4 4 NMOS
+M3 2 2 2 2 NMOS
+M4 2 2 4 4 NMOS

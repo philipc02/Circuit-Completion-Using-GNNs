@@ -1,0 +1,23 @@
+spice
+* SPICE Netlist
+* Node 0 is considered as ground
+
+R1 3 0  R1_value
+R2 3 2  R2_value
+R3 1 3  R3_value
+C1 3 0  C1_value
+
+* Input and Output
+Vin 1 0 DC 0V
+Vout 2 0
+
+* Op-Amp
+* Op-amp model 
+.subckt opamp 3 2 
+* connections for inverting input, non-inverting input, and output
+
+.end
+
+XU1 3 2 opamp
+
+.end

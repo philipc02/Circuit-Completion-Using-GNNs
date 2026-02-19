@@ -1,0 +1,11 @@
+spice
+* SPICE Netlist
+
+* Components
+I1 6 7 DC 1A         * Current source between nodes 6 and 7
+C1 3 2 1F            * Capacitor between nodes 3 and 2
+
+* Nodes
+v1 6 0 DC            * Voltage source at node 6
+
+.end

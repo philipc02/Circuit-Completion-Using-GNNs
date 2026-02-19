@@ -1,0 +1,10 @@
+spice
+* NMOS Transistor
+M1 net1 Vb net2 net2 NMOS
+
+* Resistors
+Rout net1 net3 Rout_value
+rO2 net2 0 rO2_value
+
+* Net Annotations
+Vb net2 0 DC Vb_value

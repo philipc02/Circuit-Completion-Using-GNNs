@@ -1,0 +1,22 @@
+spice
+* Voltage Sources
+V1 6 7
+V2 3 5
+
+* Controlled Current Sources
+Gm1 1 2 VALUE = {gm1 * V(6,7)}
+Gm2 4 2 VALUE = {gm2 * V(3,5)}
+
+* Resistors
+RC1 2 0
+RC2 2 0
+
+* Nodes
+* 0 - Ground
+* 1 - Connection to controlled source gm1
+* 2 - Common Node for RC, gm1, gm2
+* 3 - Positive terminal of Vin2
+* 4 - Connection to controlled source gm2
+* 5 - Negative terminal of Vin2
+* 6 - Positive terminal of Vin1
+* 7 - Negative terminal of Vin1

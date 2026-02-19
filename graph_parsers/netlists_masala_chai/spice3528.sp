@@ -1,0 +1,16 @@
+plaintext
+* SPICE Netlist
+
+M_Q1 2 10 0 0 NMOS
+M_Q2 4 2 5 5 PMOS
+M_Q3 2 8 0 0 NMOS
+M_Q4 2 8 0 0 NMOS
+M_Q5 4 3 5 5 PMOS
+M_Q6 4 2 5 5 PMOS
+
+R_R2 4 5 R2_Value
+
+I_IBIAS1 2 0 DC IBIAS1_Value
+I_IBIAS2 5 0 DC IBIAS2_Value
+
+.END

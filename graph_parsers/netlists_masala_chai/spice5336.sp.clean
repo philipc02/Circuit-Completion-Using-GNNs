@@ -1,0 +1,5 @@
+spice
+* SPICE Netlist
+VS 3 4 DC 24V
+R1 3 2 12k
+RA 2 5 10.7k

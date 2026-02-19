@@ -1,0 +1,7 @@
+spice
+* Nodes: 1 = Vin, 2 = node between C1 and R1, 3 = Vout
+* Components
+Vin 1 0 DC 0V
+C1 1 2 1u
+R1 2 0 1k
+C2 2 3 2u

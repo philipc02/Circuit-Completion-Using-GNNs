@@ -1,0 +1,14 @@
+* SPICE Netlist
+VDD VDD 0 DC 5V
+RD VDD Vout 1k
+RS Vin Vb 10k
+RP Vb 0 10k
+
+* Transistor Definitions
+M1 Vb Vin 0 0 NMOS
+M2 Vout Vb 0 0 NMOS
+
+* Input Voltage
+Vin Vin 0 DC 0V
+
+* End of Netlist

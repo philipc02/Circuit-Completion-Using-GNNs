@@ -1,0 +1,13 @@
+spice
+* SPICE netlist for the provided circuit
+
+V1 n_in 0 DC ?
+I1 n_in n_cs_dc DC -I_B2_R2
+R1 n_out n_in R1_value
+R2 n_in 0 R2_value
+XOP n_in n_inv n_out OPAMP   ; Define op-amp with nodes
+
+* Note: Replace ? with the appropriate voltage for V1 (if known), 
+* and replace R1_value, R2_value with the respective resistance values.
+
+.END

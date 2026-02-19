@@ -1,0 +1,27 @@
+* SPICE netlist for the given circuit
+
+* Resistors
+R_AI1 4 9 R_AI1_VALUE
+R_F1 3 8 R_F1_VALUE
+R_A12 8 33 R_A12_VALUE
+R_1 33 2 R_1_VALUE
+R_2 2 0 R_2_VALUE
+R_F2 33 3 R_F2_VALUE
+R_3 33 2 R_3_VALUE
+R_A13 2 8 R_A13_VALUE
+R_F3 28 2 R_F3_VALUE
+
+* Capacitors
+C_1 4 0 C_1_VALUE
+C_2 2 0 C_2_VALUE
+C_3 2 0 C_3_VALUE
+
+* Op-Amps
+A1 4 5 9 OPAMP_MODEL
+A2 8 33 2 OPAMP_MODEL
+A3 2 28 0 OPAMP_MODEL
+
+* Model Definitions
+.model OPAMP_MODEL opamp
+
+.END

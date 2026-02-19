@@ -1,0 +1,4 @@
+* SPICE Netlist
+V1 3 4 AC
+R1 3 5 Zout
+C1 5 6 CE

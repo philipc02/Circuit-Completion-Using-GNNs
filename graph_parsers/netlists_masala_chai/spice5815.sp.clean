@@ -1,0 +1,18 @@
+plaintext
+* SPICE netlist for the given schematic
+
+V1 5 0 DC 10V      ; Voltage source at node 5 with respect to ground
+I1 2 3 DC 1mA      ; Current source from node 2 to node 3
+
+R1 6 3 10k         ; Resistor between node 6 and node 3
+R2 5 4 8k          ; Resistor between node 5 and node 4
+
+C1 X 6 inf         ; Capacitor between node X and node 6
+C2 Z 2 inf         ; Capacitor between node Z and node 2
+C3 4 Y inf         ; Capacitor between node 4 and node Y
+
+Q1 5 6 2 BJT_NPN   ; NPN BJT with collector node 5, base node 6, emitter node 2
+
+.model BJT_NPN NPN ; Default NPN model
+
+.END

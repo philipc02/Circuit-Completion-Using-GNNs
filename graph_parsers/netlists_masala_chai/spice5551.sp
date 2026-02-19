@@ -1,0 +1,19 @@
+plaintext
+* SPICE Netlist for R-C Amplifier Circuit
+
+* Voltage Source
+V1 10 0 DC Vi
+
+* Resistors
+R1 10 2 R
+R2 9 2 R
+R3 12 2 R
+R4 3 2 R
+
+* Capacitors
+C1 2 8 C
+C2 2 5 C
+C3 2 3 C
+
+* Voltage Amplifiers (Ideal)
+E1 2 2 2 2 1

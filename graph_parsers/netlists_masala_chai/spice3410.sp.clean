@@ -1,0 +1,11 @@
+* SPICE Netlist
+V1 10 g DC 0 ; Voltage source V1
+RT 10 5  ; Resistor RT
+RB 5 9  ; Resistor RB
+RE1 6 g  ; Resistor RE1
+I1 6 2 ; Current Source βVin/RE1
+RE2 2 11 ; Resistor RE2
+RC 3 11 ; Resistor RC
+RL 4 4 ; Resistor RL
+
+.END

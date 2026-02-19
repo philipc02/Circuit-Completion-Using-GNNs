@@ -1,0 +1,22 @@
+plaintext
+* Circuit Description
+* Components Naming
+C1L 6 8 C1
+L1L 8 3 L1
+RpL 3 2 Rp
+C1R 4 2 C1
+L1R 4 7 L1
+RpR 7 5 Rp
+
+* NMOS Transistors
+M1 2 9 9 NMOS
+M2 5 2 5 NMOS
+
+* Voltage Supply
+VDD 6 0 DC VDD
+
+* Connect nodes
+X 2
+Y 5
+
+.end

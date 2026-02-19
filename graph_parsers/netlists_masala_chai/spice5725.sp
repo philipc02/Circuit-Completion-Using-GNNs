@@ -1,0 +1,5 @@
+plaintext
+I1 6 2 DC 1mA
+C1 2 4
+D1 4 2
+V5 2 0 DC 0

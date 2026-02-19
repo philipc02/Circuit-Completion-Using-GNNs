@@ -1,0 +1,15 @@
+plaintext
+* Circuit Description
+VDD VDD 0 DC 5V
+Vb Vb 0 DC 1V
+Vin Vin 0 AC 1V
+
+RD VDD vout 10k
+R1 M1_Source 0 5k
+
+C1 Vin M1_Gate 10u
+M1 vout M1_Gate M1_Source M1_Source NMOS
+
+Gm vout 0 VALUE = {1/gm}
+
+.END

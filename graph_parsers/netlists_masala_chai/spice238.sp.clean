@@ -1,0 +1,14 @@
+spice
+* Voltage-controlled current source
+G1 5 7 5 7 gm_vgs
+G2 3 4 3 4 gmb_vsb
+
+* Resistor
+R1 2 6 ro
+
+* Voltage source
+V1 6 2 vs
+
+* Ground connections
+VSS 7 0 0
+VSS 3 0 0

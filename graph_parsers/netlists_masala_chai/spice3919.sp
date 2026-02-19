@@ -1,0 +1,15 @@
+spice
+* Transistor
+Q1 3 4 2 NPN
+
+* Resistors
+R1 4 +5V 10k  ; Value assumed for illustration
+R2 5 -5V 10k  ; Value assumed for illustration
+RE 2 +10V 10k ; Value assumed for illustration
+RC 3 -10V 10k ; Value assumed for illustration
+
+* Voltage Sources (for completeness, actual values are directly taken from image labels)
+V1 +5V 0 DC 5
+V2 -5V 0 DC -5
+V3 +10V 0 DC 10
+V4 -10V 0 DC -10

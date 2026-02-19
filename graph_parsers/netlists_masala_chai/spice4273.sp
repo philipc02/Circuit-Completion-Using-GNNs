@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist
+
+.MODEL NPN NPN (IS=1E-14 BF=100)
+.MODEL PNP PNP (IS=1E-14 BF=100)
+
+IREF 9 7 DC 1mA
+Q1 3 7 2 NPN
+Q2 7 2 4 PNP
+Q3 6 7 8 NPN
+RE 8 5 100
+
+VCC 9 0 DC 12V
+GND 5 0
+
+* End of Netlist

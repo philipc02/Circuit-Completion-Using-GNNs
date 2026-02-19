@@ -1,0 +1,26 @@
+spice
+* PMOS Transistors
+M1 2 1 5 5 PMOS 
+M2 8 9 5 5 PMOS
+M3 4 6 5 5 PMOS
+M4 12 11 5 5 PMOS
+M5 5 7 5 5 PMOS
+M6 10 3 5 5 PMOS
+
+* NMOS Transistors
+M7 5 5 7 3 NMOS
+M8 9 9 11 3 NMOS
+M9 6 6 9 3 NMOS
+M10 12 12 9 3 NMOS
+M11 7 7 10 3 NMOS
+M12 3 3 12 3 NMOS
+
+* Voltage Sources
+VDD 5 0 DC 5
+VGND 3 0 DC 0
+
+* .MODEL statement for MOSFETs
+.model PMOS PMOS
+.model NMOS NMOS
+
+.end

@@ -1,0 +1,4 @@
+spice
+* SPICE Netlist
+I1 5 6 DC 1A
+R1 3 4 Rn

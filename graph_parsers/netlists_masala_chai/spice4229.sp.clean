@@ -1,0 +1,11 @@
+spice
+* BJT Definitions
+Q1 3 5 4 NPN
+Q2 2 5 4 NPN
+Q3 6 2 3 NPN
+
+* Current Source
+IREF 3 6 DC
+
+* Global Definitions
+VPLUS 3 0 DC

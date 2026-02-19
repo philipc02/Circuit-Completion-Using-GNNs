@@ -1,0 +1,5 @@
+plaintext
+M_Q1 4 2 2 NMOS
+M_Q2 8 3 6 NMOS
+M_Q3 3 3 9 PMOS
+I_REF 5 5 DC

@@ -1,0 +1,9 @@
+* NMOS
+M1 6 4 5 5 NMOS
+
+* Voltage Sources
+V1 2 3 DC 1.5
+V2 5 3 DC 0.5
+V3 6 3 DC 2
+
+.model NMOS NMOS

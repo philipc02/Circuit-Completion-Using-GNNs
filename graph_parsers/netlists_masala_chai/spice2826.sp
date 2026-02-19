@@ -1,0 +1,4 @@
+spice
+R1 2 3 R
+C1 3 2 C
+Vout 3 2 DC 0

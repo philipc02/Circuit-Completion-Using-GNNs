@@ -1,0 +1,15 @@
+plaintext
+* Example SPICE Netlist
+
+Vs 0 2 DC 0
+I1 2 0 DC 0
+R1 0 2 1k
+M1 5 2 3 3 NMOS W=1u L=1u
+XOPAMP 2 4 0 OPAMP
+
+* Models
+.model NMOS NMOS
+.subckt OPAMP +out -in vdd 
+.ends OPAMP
+
+.end

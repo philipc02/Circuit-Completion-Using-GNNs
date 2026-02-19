@@ -1,0 +1,21 @@
+spice
+* SPICE Netlist
+* Node numbers are according to the annotated schematic.
+
+VDD 7 0 DC VDD
+
+* Resistors
+RD1 7 8 RD
+RD2 9 5 RD
+R_2RS 3 4 2RS
+
+* NMOS Transistors
+M1 8 1 3 3 NMOS
+M2 5 4 6 6 NMOS
+
+* Current Sources
+I1 1 3 DC ISS/2
+I2 6 2 DC ISS/2
+
+* Voltage Definitions
+Vin 1 0 AC 0

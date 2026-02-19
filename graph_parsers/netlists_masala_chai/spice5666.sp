@@ -1,0 +1,26 @@
+spice
+* SPICE Netlist for the schematic
+
+* Voltage source
+Vi 4 0 DC 
+
+* Operational Amplifier
+* (Ideal, representing as a controlled source)
+E1 2 0 4 6 100k
+
+* Resistor R
+R1 6 0 1k
+R2 2 6 1k
+
+* Diode
+D1 2 5 D
+
+* Load Resistor R_L
+RL 5 3 1k
+
+* Models
+.model D D
+
+* Analysis
+.op
+.end

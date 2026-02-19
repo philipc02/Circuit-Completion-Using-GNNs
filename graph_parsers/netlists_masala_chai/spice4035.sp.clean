@@ -1,0 +1,11 @@
+spice
+* SPICE Netlist
+
+Vi 5 6 DC 0
+RS 5 8 1000  ; Example resistance value
+r_pi 8 7 10000  ; Example resistance value
+Gm 3 7 3 3 gm  ; VCCS, gm as transconductance gain
+RL 3 4 1000  ; Example resistance value
+CL 4 2 1n  ; Example capacitance value
+
+* Node 2 is grounded (common ground in the circuit)

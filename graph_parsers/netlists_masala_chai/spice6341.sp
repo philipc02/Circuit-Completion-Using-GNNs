@@ -1,0 +1,14 @@
+* SRAM Cell
+
+* NMOS Transistors
+M1 3 6 4 4 NMOS
+M3 2 3 4 4 NMOS
+
+* PMOS Transistors
+M2 3 3 5 5 PMOS
+M4 2 3 5 5 PMOS
+M5 5 3 1 1 PMOS
+M6 7 3 1 1 PMOS
+
+* Voltage source
+VDD 5 0 DC VDD

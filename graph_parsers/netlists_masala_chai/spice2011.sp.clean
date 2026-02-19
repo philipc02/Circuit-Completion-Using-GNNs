@@ -1,0 +1,28 @@
+spice
+* SPICE Netlist for the given schematic
+
+* Voltage source
+V1 Vin 0 DC 0
+
+* Resistors
+R1 Vin 1 R1_value
+RX1 1 2 RX_value
+RX2 3 4 RX_value
+RX3 4 5 RX_value
+
+* Capacitors
+C1 2 3 C_value
+C2 5 0 C_value
+
+* Operational Amplifiers
+* Note: Ideal op-amps are often modelled as a voltage-controlled voltage source in SPICE
+A1 0 2 3 opamp
+A2 0 4 3 opamp
+
+* Additional Elements
+* opamp subcircuit definition if needed
+.subckt opamp in+ in- out
+EOPA out 0 in+ in- 100MEG
+.ends opamp
+
+.end

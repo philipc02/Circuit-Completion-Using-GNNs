@@ -1,0 +1,5 @@
+plaintext
+* SPICE Netlist
+I1 3 5 DC 0 ; Current source i_c connected between node 3 and ground (node 5)
+RC 4 6 100 ; Resistor RC connected between nodes 4 and 6
+RL 2 7 100 ; Resistor RL connected between nodes 2 and 7

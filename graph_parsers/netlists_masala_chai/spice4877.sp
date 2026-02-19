@@ -1,0 +1,8 @@
+plaintext
+* SPICE Netlist
+
+V1 1 0 DC Vin
+Q1 3 2 4 NPN
+R1 2 22 1k
+R2 3 6 1k
+D1 4 7 D_ZENER

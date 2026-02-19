@@ -1,0 +1,15 @@
+* SPICE Netlist
+
+V1 4 3 DC 0
+V2 5 3 DC 0
+VAC 6 8 AC 1
+
+RS 6 7 1000
+RL 7 3 1000
+
+D1 6 4 DMODEL
+D2 5 2 DMODEL
+
+.model DMODEL D
+
+*.end

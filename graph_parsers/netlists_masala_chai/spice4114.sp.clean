@@ -1,0 +1,18 @@
+* SPICE Netlist for given circuit
+
+VDD 2 0 DC 10V
+Vi 3 0 AC 1V
+
+R1 2 1 234k
+Ri 1 3 2k
+R2 4 3 166k
+R5 5 6 0.5k
+RL 7 6 4k
+
+CC1 1 4 10uF
+CC2 5 6 10uF
+
+M1 5 1 4 4 NMOSMODEL
+
+* Load capacitor (represented symbolically as CL)
+Cload 7 0 CL

@@ -1,0 +1,18 @@
+spice
+* SPICE Netlist
+
+VCC 3 0 DC 2.5V
+
+IREF 3 2 DC 1mA
+
+* Transistors
+* Qname Drain Gate Source Model
+QREF 2 Vin 2 NMOS_MODEL
+Q1 4 Vin 2 NMOS_MODEL
+Q2 3 Vin 4 PMOS_MODEL
+
+* Models
+.model NMOS_MODEL NMOS (Level=1)
+.model PMOS_MODEL PMOS (Level=1)
+
+.end

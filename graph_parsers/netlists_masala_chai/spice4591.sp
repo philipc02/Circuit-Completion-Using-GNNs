@@ -1,0 +1,26 @@
+* Circuit Description
+   .include my_model.lib
+
+   * PMOS Transistor M_P
+   M1 3 5 4 4 PMOS
+
+   * NMOS Transistor M_N
+   M2 9 5 2 2 NMOS
+
+   * BJT Q1
+   Q1 4 3 9 QMODEL
+
+   * BJT Q2
+   Q2 9 2 8 QMODEL
+
+   * Voltage Source
+   V1 4 7 DC VDD
+
+   * Load
+   V2 10 0 VIN
+
+   .model PMOS PMOS
+   .model NMOS NMOS
+   .model QMODEL NPN
+
+   .end

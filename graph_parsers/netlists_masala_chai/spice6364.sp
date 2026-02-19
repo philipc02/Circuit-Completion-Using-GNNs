@@ -1,0 +1,5 @@
+* SPICE Netlist
+R1 2 3 R1_value
+R2 4 3 R2_value
+C3 2 3 C3_value
+C4 5 0 C4_value

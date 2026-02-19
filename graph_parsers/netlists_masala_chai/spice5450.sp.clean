@@ -1,0 +1,5 @@
+* SPICE Netlist
+Vs 1 0 DC 1.0
+L1 2 3 560u
+C1 2 0 27n
+RL 2 5 1k

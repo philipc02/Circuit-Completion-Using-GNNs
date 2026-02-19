@@ -1,0 +1,19 @@
+spice
+* SPICE netlist for the given schematic
+
+* Voltage Source
+Vi 3 0 DC
+
+* Resistors
+RG 3 2 50k
+RS 2 0 5k
+RD 1 2 6.7k
+RL 4 0 10k
+
+* Capacitor
+CC 1 4
+
+* Voltage Controlled Current Source (gmVgs)
+Gm 1 2 VALUE={gm*v(2,0)}
+
+.END

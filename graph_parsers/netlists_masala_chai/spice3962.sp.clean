@@ -1,0 +1,23 @@
+spice
+* Transistor Amplifier Circuit
+
+* Voltage Source
+Vs 5 6 DC 
+
+* Resistors
+R_parallel 5 8 
+R_pi 8 3 
+Rc 3 2 
+Rl 2 7 
+
+* Dependent Current Source
+Gm 3 0 POLY(1) Vpi 3 8 0 gm 
+
+* Nodes
+* 5 - Node B
+* 6 - Ground (E)
+* 7 - Vo
+* 8 - Vpi
+
+* Vpi is across nodes 8 and 3
+* gm is the transconductance of the dependent current source

@@ -1,0 +1,4 @@
+spice
+* SPICE Netlist
+R1 Vin 2 R1_value
+rd 2 0 rd_value

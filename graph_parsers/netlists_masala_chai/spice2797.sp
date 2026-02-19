@@ -1,0 +1,12 @@
+spice
+* NMOS Amplifier Circuit
+M1 3 2 4 4 NMOS_MODEL
+RS 2 4 100k
+RD 1 3 10k
+CF 2 3 10pF
+VDD 1 0 DC 5V
+V1 4 0 DC 1V
+I1 3 0 DC 100uA
+
+.model NMOS_MODEL NMOS (LEVEL=1)
+.end

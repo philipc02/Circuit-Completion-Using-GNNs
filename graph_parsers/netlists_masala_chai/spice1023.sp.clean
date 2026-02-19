@@ -1,0 +1,17 @@
+* NMOS Transistor Q1
+M1 Vout Vin 0 0 NMOS
+
+* PMOS Transistor Q2
+M2 VCC Vout Vout VCC PMOS
+
+* Resistor
+R1 Vout 2 R1_Value
+
+* Voltage Source VCC
+VCC VCC 0 DC VCC_Value
+
+* Voltage Source Vin
+Vin Vin 0 DC Vin_Value
+
+.model NMOS NMOS
+.model PMOS PMOS

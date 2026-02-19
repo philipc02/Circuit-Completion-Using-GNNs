@@ -1,0 +1,5 @@
+plaintext
+V1 5 6 DC 5V
+R1 5 2 10
+D1 2 3
+V2 4 3 DC 8V

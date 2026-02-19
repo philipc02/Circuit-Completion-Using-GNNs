@@ -1,0 +1,24 @@
+spice
+* SPICE Netlist
+
+* Voltage sources
+VDD 7 0 DC 2.5V
+VSS 8 0 DC -2.5V
+
+* Input voltage source
+VI 5 0
+
+* PMOS Transistor
+M1 6 4 7 6 PMOS
+
+* NMOS Transistor
+M2 6 2 8 8 NMOS
+
+* Resistor
+R1 6 3 10k
+
+* Connections
+VINPUT 5 2 DC 0V
+VOUTPUT 3 0 
+
+.END

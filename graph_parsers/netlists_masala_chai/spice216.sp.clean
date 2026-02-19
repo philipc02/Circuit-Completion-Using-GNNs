@@ -1,0 +1,20 @@
+* SPICE Netlist
+
+* Voltage Source
+Vs 3 2 DC 0
+
+* Capacitor
+C1 3 2 C
+
+* Resistor
+R1 2 5 R
+
+* Operational Amplifier
+* Positive input is connected to ground
+* Negative input node is 2, output node is 5
+XU1 2 2 5 OPAMP
+
+* Ground Reference
+V2 2 0 DC 0
+
+.end

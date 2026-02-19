@@ -1,0 +1,4 @@
+spice
+Q1 4 5 2 QNPN
+Q2 2 3 2 QNPN
+I1 2 3 DC I

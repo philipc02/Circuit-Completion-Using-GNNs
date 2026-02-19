@@ -1,0 +1,5 @@
+Q3 6 5 2 NPN
+Q4 3 2 4 NPN
+I1 5 6 DC (IEE/2 + ΔI)
+RL 4 3 RL
+VCC 3 0 DC VCC

@@ -1,0 +1,17 @@
+* SPICE Netlist
+* Components and Nodes
+
+VIN IN 0 DC 0
+RS IN 3 50k
+I1 2 0 DC 0.1mA
+VDD 2 0 DC 5V
+
+* PMOS: M2ed
+M2 2 3 2 PMOS
+
+* NMOS: M1
+M1 3 Vb 0 NMOS
+
+.MODEL NMOS NMOS (LEVEL=1)
+.MODEL PMOS PMOS (LEVEL=1)
+.END

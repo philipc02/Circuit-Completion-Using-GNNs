@@ -1,0 +1,13 @@
+spice
+* PMOS with W/L = 20/0.18
+M1 Vout Vin Vdd Vdd PMOS L=0.18u W=20u
+
+* NMOS with W/L = 10/0.18
+M2 Vout 3 0 0 NMOS L=0.18u W=10u
+
+* Voltage sources
+Vdd Vdd 0 DC 1.8V
+Vin Vin 0 DC Vin_value
+V_M2 3 0 DC 0.8V
+
+.include 'models.lib'

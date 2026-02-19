@@ -1,0 +1,6 @@
+plaintext
+V1 3 5 DC Vi
+L1 2 3 L
+C1 2 3 C1
+C2 2 4 C2
+R1 2 4 R

@@ -1,0 +1,6 @@
+spice
+* NMOS transistor netlist
+M1 5 3 3 2 NMOS
+VDD 5 0 DC VDD_VALUE
+VG 3 0 DC VG_VALUE
+VB 2 0 DC 0

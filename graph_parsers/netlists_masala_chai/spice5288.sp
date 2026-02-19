@@ -1,0 +1,4 @@
+spice
+R1 2 3 R1_VALUE
+R2 2 3 R2_VALUE
+V1 3 2 DC 0

@@ -1,0 +1,20 @@
+spice
+* SPICE netlist for the schematic
+
+* Diode
+D1 2 5 D_model
+
+* Current source Beta_F*I_B
+I1 4 5 DC 0
+
+* Voltage source V_BE
+V1 2 5 DC 0
+
+* Current source I_B
+I2 2 0 DC I_B_value
+
+* Nodes
+* 2: B (connected to positive of the voltage source and negative of the current source I_B)
+* 3: C (connected to current source Beta_F*I_B)
+* 4: Connected between current source Beta_F*I_B and node E
+* 5: E (connected to diode cathode, negative of V_BE, and Beta_F*I_B)

@@ -1,0 +1,8 @@
+plaintext
+* SPICE Netlist
+
+M7 1 2 0 0 NMOS
+M8 5 3 0 0 NMOS
+R3 1 2 1000  * Assume a resistance value if not provided
+R4 3 2 1000  * Assume a resistance value if not provided
+I1 2 0 DC 1u  * Assume a current value if not provided

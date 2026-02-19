@@ -1,0 +1,11 @@
+plaintext
+* SPICE Netlist
+M1 n2 Vin 0 NMOS
+M2 n2 Vb n3 PMOS
+M3 Vout n2 n3 PMOS
+
+Vin Vin 0 DC [value] 
+Vb Vb 0 DC [value]
+VDD n3 0 DC [value]
+
+.ends

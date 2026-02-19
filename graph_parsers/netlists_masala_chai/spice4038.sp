@@ -1,0 +1,20 @@
+plaintext
+* SPICE Netlist for the Circuit
+
+* Voltage Source
+V1 5 2 AC 1
+
+* Resistors
+RS 5 3  <value_of_RS>
+RP 3 6  <value_of_RP>
+
+* Capacitor
+C1 3 4 <value_of_CP>
+
+* Ground
+VSS 4 0 0
+
+* Output node
+.vo 3 out 
+
+.END

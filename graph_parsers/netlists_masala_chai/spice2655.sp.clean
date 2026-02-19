@@ -1,0 +1,5 @@
+I6 4 3 DC 0 ; Current source I6 from node 4 to node 3
+R6 3 6 1k ; Resistor R6 from node 3 to node 6 with resistance 1 kOhm
+M5 6 5 5 5 NMOS ; NMOS transistor M5 with drain at node 6, gate at node 5, and source tied to node 5 (ground)
+VDD 8 4 DC Vdd_value ; Voltage source for VDD from node 8 to node 4
+Vb 2 3 DC Vb_value ; Voltage at bias node Vb connected to node 2

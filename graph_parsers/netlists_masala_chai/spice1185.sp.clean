@@ -1,0 +1,13 @@
+spice
+* SPICE netlist for the given schematic
+
+M1 3 5 0 0 NMOS
+RD 3 VDD RD_VALUE
+RG 2 4 RG_VALUE
+VIN 5 0 DC VIN_VALUE
+
+* Define the model for NMOS
+.model NMOS NMOS(LEVEL=1 TOX=1e-8 UO=600 VTO=0.7)
+
+* Supply and values (to be defined as needed)
+VDD VDD 0 DC VDD_VALUE

@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+C1 4 2 VBEON
+C2 6 2 VCESAT
+
+.END

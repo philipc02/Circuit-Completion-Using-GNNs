@@ -1,0 +1,15 @@
+plaintext
+* SPICE Netlist
+M1 5 2 4 4 NMOS W=1u L=1u
+Rif 2 2 1k
+Rs 4 3 100
+Rof 5 4 1k
+VDD 5 0 DC 5V
+Vfb 3 0 DC 0V
+
+* Connections
+* Node 1 -> Connected to source of M1 and Rs
+* Node 2 -> Connected to gate of M1 and Rif
+* Node 3 -> Connected to ground and Rs
+* Node 4 -> Connected to drain of M1 and Rof
+* Node 5 -> Connected to VDD and Rof

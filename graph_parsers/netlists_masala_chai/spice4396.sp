@@ -1,0 +1,30 @@
+plaintext
+* NMOS Transistors
+M1 Drain1 Gate1 Source1 Source1 NMOS
+M2 Drain2 Gate2 Source2 Source2 NMOS
+M3 Drain3 Gate3 Source3 Source3 NMOS
+M4 Drain4 Gate4 Source4 Source4 NMOS
+
+* Voltage Sources
+V1 1 3 DC V1
+V2 2 3 DC V2
+V+ 5 0 DC 5V
+V- 7 0 DC -5V
+
+* Current Source
+I_Q 4 7 DC 0.5mA
+
+* Resistors
+R1 5 4 R
+R2 2 5 R
+RD 5 6 RD
+RS1 2 4 RS1
+RS2 8 7 RS2
+
+* Connections
+M1 4 1 3 Drain1
+M2 4 1 3 Gate2
+M3 6 2 7 Source3
+M4 8 1 3 Source4
+
+.END

@@ -1,0 +1,8 @@
+plaintext
+* SPICE netlist
+
+M1 3 8 7 7 NMOS
+Vi 8 7 DC 0
+RL 3 9 1k
+CL 3 2 1uF
+L 3 5 1uH

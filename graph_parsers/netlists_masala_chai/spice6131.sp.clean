@@ -1,0 +1,25 @@
+* SPICE netlist for the given schematic
+
+* Transistors
+Q1 6 10 5 NPN
+Q2 8 5 9 NPN
+
+* Current Sources
+I1 4 8 DC I
+I2 2 9 DC 2I
+
+* Capacitors
+C1 6 4
+C2 8 7
+
+* Voltage Sources
+VCC 4 0 DC VCC
+VEE 0 2 DC -VEE
+
+* Input Resistance
+Rin 10 0
+
+* Output
+Vout 7 0 
+
+.END

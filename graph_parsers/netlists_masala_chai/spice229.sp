@@ -1,0 +1,23 @@
+spice
+* NMOS Transistor Instances
+M1 2 1 4 4 NMOS
+M2 3 2 7 7 NMOS
+M3 8 3 7 7 NMOS
+
+* PMOS Transistor Instances
+M4 5 2 2 5 PMOS
+M5 5 2 2 5 PMOS
+M6 5 8 2 5 PMOS
+
+* Current Sources
+I1 5 2 DC ?
+I2 5 8 DC ?
+
+* Capacitor
+CC 3 7 C_C
+
+* Voltage Sources
+VDD 5 0 DC ?
+VSS 0 7 DC ?
+
+* End of Netlist

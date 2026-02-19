@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+IREF 3 VCC DC 0
+QREF 3 4 0 NPN
+Q1 I1 4 0 NPN
+RP 3 4 1000 ; Assuming 1k ohm for RP
+VCC VCC 0 DC 5 ; Assuming VCC is 5V

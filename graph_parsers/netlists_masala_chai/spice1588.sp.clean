@@ -1,0 +1,12 @@
+spice
+* Differential pair with current mirror load
+Q1 2 1 3 NPN
+Q2 4 6 3 NPN
+Q3 7 2 1 PNP
+Q4 7 4 5 PNP
+R1 7 2 R1_value
+R2 7 4 R2_value
+I1 3 0 DC IEE_value
+VCC 7 0 DC VCC_value
+Vin1 1 0 DC Vin1_value
+Vin2 6 0 DC Vin2_value

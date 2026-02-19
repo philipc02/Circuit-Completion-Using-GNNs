@@ -1,0 +1,2 @@
+VTH 3 2 DC <Voltage_Value>
+RTH 3 4 <Resistance_Value>

@@ -1,0 +1,3 @@
+* SPICE Netlist
+I1 B 2 DC Ib
+G1 2 3 B 2 {beta * Ib}

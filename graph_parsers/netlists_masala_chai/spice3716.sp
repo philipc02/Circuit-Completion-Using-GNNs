@@ -1,0 +1,7 @@
+* NMOS Transistor Circuit
+M1 5 4 3 3 NMOS
+I1 2 5 DC 0.4mA
+RG 6 4 50k
+RD 5 3 5k
+V1 2 0 DC 5V
+V2 3 0 DC -5V

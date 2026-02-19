@@ -1,0 +1,12 @@
+spice
+* SPICE Netlist for the given circuit
+* Components
+VCC VCC 0 DC 10V
+RB Vin X 1k
+RF X Vout 10k
+RC VCC Vout 10k
+Q1 Vout X 0 NPN
+
+.model NPN NPN (Is=1e-15 Vaf=100 Bf=100)
+
+.END

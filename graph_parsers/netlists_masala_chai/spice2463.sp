@@ -1,0 +1,3 @@
+M1 3 2 4 4 NMOS
+Ix 3 4 DC
+Vx 2 4 DC

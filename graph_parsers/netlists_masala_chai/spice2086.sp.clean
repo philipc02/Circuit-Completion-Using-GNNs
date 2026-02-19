@@ -1,0 +1,1 @@
+M1 2 0 0 0 NMOS_MODEL

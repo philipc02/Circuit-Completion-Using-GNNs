@@ -1,0 +1,9 @@
+spice
+* NMOS Transistor Circuit Netlist
+M1 6 5 3 3 NMOS L=1u W=1u
+R1 6 2 1k
+VGS 5 0 DC [Value_here]
+VDD 2 0 DC [Supply_voltage_here]
+
+.model NMOS NMOS(Level=1) 
+.END

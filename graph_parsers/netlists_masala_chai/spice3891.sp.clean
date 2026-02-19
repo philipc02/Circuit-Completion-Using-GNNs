@@ -1,0 +1,10 @@
+* SPICE Netlist for the NPN Transistor Circuit
+
+VCC 3 0 DC 5V
+VEE 2 0 DC -5V
+VBB 1 0 DC 0V
+
+RC 3 2 10k
+RE 2 0 3k
+
+Q1 3 1 2 NPN

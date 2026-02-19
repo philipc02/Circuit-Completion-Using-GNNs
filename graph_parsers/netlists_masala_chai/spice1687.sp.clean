@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist for the given circuit
+
+* Voltage Source
+VDD 4 0 DC <VDD_value>
+
+* MOSFET
+M1 4 3 2 2 NMOS
+
+* Capacitors
+C_GD 4 3 <CGD_value>
+C_GS 3 2 <CGS_value>
+C_DB 4 0 <CDB_value>
+C_L_CS 2 0 <CL_plus_CSB_value>
+
+* Resistor
+R_L 2 0 <RL_value>
+
+* .MODEL Definitions (assuming generic NMOS model)
+.model NMOS NMOS (LEVEL=1)

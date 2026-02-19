@@ -1,0 +1,33 @@
+* Transistors
+M5 N1 N2 N8 N8 PMOS
+M6 N8 N2 N8 N8 PMOS
+M7 N2 N25 N2 N2 NMOS
+M10 N8 N2 N8 N8 PMOS
+M11 N8 N2 N8 N8 PMOS
+M8 N8 N2 N8 N8 PMOS
+M9 N2 N7 N2 N2 NMOS
+M3 N8 N2 N8 N8 PMOS
+M4 N7 N2 N7 N7 NMOS
+M12 N25 N2 0 0 NMOS
+
+* Current Source
+IBIAS N25 0 DC 1mA
+
+* Resistor
+R N7 N6 10k
+
+* BJTs
+Q1 N4 N4 0 NPN
+Q2 N6 N4 0 NPN
+
+* Voltage Source
+VDD N2 0 DC 5V
+
+* Node List:
+* N1 - Source of M5
+* N2 - VDD, Gate of M7, M9, and Drain of M7, M9, M12
+* N4 - Base of Q1, Q2
+* N6 - Collector of Q2, one side of R
+* N7 - Source/Drain of M4, M9
+* N8 - Source of M6, Drain of M5, M10
+* N25 - Drain of M12, IBIAS

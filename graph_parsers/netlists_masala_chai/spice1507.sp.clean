@@ -1,0 +1,19 @@
+* Transistors
+Q1 Vout Vin1 P NPN
+Q2 Vout Vin2 P NPN
+Q3 VCC Vb Vout PNP
+Q4 VCC Vout V2 PNP
+
+* Current Source
+IEE P 0 DC 1mA
+
+* Supply Voltage
+VCC VCC 0 DC 15V
+
+* Control Voltages
+Vb Vb 0 DC 2.7V
+Vin1 Vin1 0 DC 2.5V
+Vin2 Vin2 0 DC 2.5V
+
+* End of netlist
+.end

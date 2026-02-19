@@ -1,0 +1,16 @@
+* SPICE Netlist for CMOS Inverter
+* Components
+I1 4 5 DC IBIAS
+V1 4 0 DC VBIAS
+
+* PMOS Transistors
+M1 4 4 6 6 PMOS
+M2 3 4 22 22 PMOS
+
+* NMOS Transistors
+M3 4 6 7 7 NMOS
+M4 8 6 7 7 NMOS
+
+* Output connection
+* Node 3 connects to the output
+* Node 22 is the ground

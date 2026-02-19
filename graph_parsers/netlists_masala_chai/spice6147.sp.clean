@@ -1,0 +1,18 @@
+plaintext
+* SPICE Netlist
+
+Vsig 6 3 DC 0
+Rsig 3 8 10k
+I1 4 0 DC 100u
+I2 5 0 DC 100u
+CL 2 0 1pF
+
+* Transistors
+* Q1: NPN BJT
+Q1 4 3 2 NPN
+
+* Q2: NPN BJT
+Q2 2 7 5 NPN
+
+* Define Ground
+V0 0 0 DC 0

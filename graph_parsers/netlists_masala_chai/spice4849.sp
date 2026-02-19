@@ -1,0 +1,5 @@
+spice
+* SPICE Netlist for Circuit
+Vg 2 4 AC 1
+RG 2 3 1k
+Zin 3 4 1k

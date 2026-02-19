@@ -1,0 +1,19 @@
+* Components
+C1 1 2
+R1 3 4 1k
+R2 2 0
+RD 3 5 1k
+M1 5 4 2 2 NMOS
+
+* Voltage Source
+VDD 3 0 1.8V
+
+* Node Definitions
+* 0: Ground
+* 1: Input
+* 2: Node X
+* 3: VDD
+* 4: Gate of M1
+* 5: Drain of M1 / Vout
+
+.end

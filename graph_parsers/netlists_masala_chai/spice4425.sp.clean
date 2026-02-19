@@ -1,0 +1,25 @@
+plaintext
+* SPICE Netlist for the given circuit
+
+VCC 6 8 DC 10V 
+
+* Current source
+I1 7 8 DC 1mA
+
+* Transistors
+Q1 4 3 5 NPN
+
+* Resistors
+R1 6 4 10k
+R2 3 9 2k
+RC 6 2 5k
+RL 2 8 4k
+
+* Capacitors
+CC1 7 3 1uF
+CC2 2 8 1uF
+
+* Ground
+Vground 8 0 DC 0
+
+.end

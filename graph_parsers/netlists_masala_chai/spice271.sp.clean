@@ -1,0 +1,21 @@
+spice
+* SPICE Netlist
+* Components and Connections
+
+* Resistors
+R1 1 2 1k
+R2 6 7 1k
+
+* Diode
+D1 5 7 D
+
+* Voltage Sources
+Vin 8 1 DC
+Vout 7 4 DC 0
+
+* Op-Amp
+* Assuming an ideal operational amplifier
+XU1 3 2 5 opamp
+
+* Ground
+Vgnd 2 0 DC 0

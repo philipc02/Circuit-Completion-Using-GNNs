@@ -1,0 +1,32 @@
+spice
+* SPICE Netlist
+
+***********************
+* Voltage Sources
+***********************
+VCC 3 1 DC 3V
+Vi 6 8 DC 0V
+VB 8 1 DC 0V
+
+***********************
+* Resistors
+***********************
+RB 7 8 1k
+RL 3 5 1k
+
+***********************
+* Transistors
+***********************
+* NMOS Transistor
+M1 7 6 8 8 NMOS_model
+
+* BJT Transistor (assumed NPN)
+Q2 5 7 1 npn
+
+***********************
+* Models
+***********************
+.model NMOS_model NMOS (LEVEL=1)
+.model npn NPN
+
+.end

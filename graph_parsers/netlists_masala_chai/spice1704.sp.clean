@@ -1,0 +1,19 @@
+* Resistors
+Rs X Vin 10k
+RD VDD Vout 10k
+
+* Capacitors
+C1 Vout 0 CQD3+CDB3
+C2 X 0 CGD1
+
+* Transistors
+M1 Y X 0 0 NMOS
+M3 Y Vb VDD VDD PMOS
+
+* Voltage Sources
+V1 Vin 0 DC 0V
+VDD VDD 0 DC 5V
+Vb Vb 0 DC 2.5V
+
+* Connections
+.nodeset V(X)=0 V(Y)=0

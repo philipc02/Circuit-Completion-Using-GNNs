@@ -1,0 +1,22 @@
+spice
+* SPICE Netlist for the given schematic
+
+* Voltage Source
+VDD 1 0 DC XX  ; Replace XX with actual voltage value
+
+* PMOS Transistor
+MP QP 5 3 1 PCH ; Drain Gate Source Model
+
+* NMOS Transistor
+MN QN 5 3 10 NCH ; Drain Gate Source Model
+
+* NPN BJT Transistors
+Q1 6 5 4 QNPN   ; Collector Base Emitter Model
+Q2 4 10 7 QNPN  ; Collector Base Emitter Model
+
+* Resistors
+R1 5 8 XX  ; Replace XX with actual resistance value
+R2 10 7 XX ; Replace XX with actual resistance value
+
+* Additional Nodes
+V1 3 2 DC XX ; Input voltage source

@@ -1,0 +1,14 @@
+spice
+* Transistors
+M1 2 Vin 0 0 NMOS
+M2 Rout Vb 2 2 PMOS
+M3 2 2 0 0 NMOS
+
+* Resistor
+Rout Rout 3
+
+* Models (Add your specific parameters here)
+.model NMOS nmos(Level=1)
+.model PMOS pmos(Level=1)
+
+.end

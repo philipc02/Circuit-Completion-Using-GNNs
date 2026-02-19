@@ -1,0 +1,14 @@
+plaintext
+* NMOS Amplifier Circuit
+M1 Vout Vin 0 0 nmos
+
+RD VDD Vout RD_value
+R1 Vout 0 R1_value
+R2 Vout 0 R2_value
+
+VDD VDD 0 DC VDD_value
+Vin Vin 0 DC Vin_value
+
+.model nmos NMOS (Level=1)
+
+*.end

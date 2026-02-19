@@ -1,0 +1,19 @@
+plaintext
+* Differential Amplifier Circuit
+
+VCC 3 0 DC <VCC_value>
+
+Vin1 Vin1 0 DC <Vin1_value>
+Vin2 Vin2 0 DC <Vin2_value>
+
+RC1 3 Q1_col <RC_value>
+RC2 3 Q2_col <RC_value>
+
+Q1 Q1_col Vin1 P NPN_model
+Q2 Q2_col Vin2 P NPN_model
+
+IEE P 0 DC <IEE_value>
+
+.model NPN_model NPN (elements if needed)
+
+.end

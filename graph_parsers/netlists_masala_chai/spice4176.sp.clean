@@ -1,0 +1,17 @@
+* Schematic SPICE netlist
+
+V1 v1a 0 DC 0          * Input voltage source
+R1 v1a 2 R1_value      * Resistor R1
+R2 2 3 R2_value        * Resistor R2
+R3 2 0 R3_value        * Resistor R3
+R4 2 0 R4_value        * Resistor R4
+
+* Operational Amplifier
+* Negative terminal is node 2, positive terminal is connected to node 0
+* Output is node 3
+U1 2 0 3 OPAMP
+
+* Define op-amp model (Ideal)
+.model OPAMP anopamp
+
+* End of netlist

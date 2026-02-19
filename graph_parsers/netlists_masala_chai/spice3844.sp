@@ -1,0 +1,21 @@
+spice
+* SPICE Netlist for the given schematic
+
+* Input voltage
+V1 1 0 DC
+
+* Resistors
+RB 1 2 640
+RC 3 2 440
+
+* NPN Transistor
+Q1 2 1 4 NPN
+
+* Power supply
+VCC 3 0 DC 5
+
+* Ground
+0 GND
+
+* Output
+VO 2 0

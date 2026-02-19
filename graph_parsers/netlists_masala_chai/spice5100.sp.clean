@@ -1,0 +1,17 @@
+spice
+* Inverting Amplifier Circuit
+
+Iin 2 0 DC 10u        ; Current Source Iin connected from node 2 to ground (0)
+Rf 2 3 1k             ; Feedback resistor Rf connected between node 2 and node 3
+
+* Operational Amplifier
+* Ideal op-amp model (controlled source)
+* Vout = A(V+ - V-), A is assumed to be very large here
+*.subckt opamp 1 2 3  ; Non-inverting input, Inverting input, Output
+Eopamp 3 2 3 2 1MEG   ; Voltage controlled voltage source (E) for op-amp model
+
+* Connections
+* - Node 2: Inverting input and input for the current source
+* - Node 3: Vout node
+
+.end

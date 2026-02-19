@@ -1,0 +1,20 @@
+plaintext
+*MOSFET Transistors
+M1 2 5 3 3 NMOS
+M2 4 2 2 2 PMOS
+
+*Resistors
+Rs 5 2 Rs
+
+*Net Definitions
+* 1 - VDD
+* 2 - Vout
+* 3 - Vb
+* 4 - VDD
+* 5 - Vin
+
+*Voltage Sources and Ground
+VDD 4 0 DC VDD
+Vin 5 0 DC Vin
+
+*.end

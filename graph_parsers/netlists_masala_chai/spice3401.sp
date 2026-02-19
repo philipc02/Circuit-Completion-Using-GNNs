@@ -1,0 +1,22 @@
+spice
+* SPICE Netlist
+
+VCC 4 0 DC VCC
+VT 9 6 DC V_T
+
+RT 1 9 1k
+RB1 4 5 100k
+RB2 5 7 10k
+RC 4 2 1k
+RE 2 7 100
+RL 3 8 1k
+
+CJ 9 5 1u
+CO 3 8 1u
+CE 2 7 10u
+
+Q1 2 5 7 QMODEL
+
+.model QMODEL NPN(IS=1e-14 BF=100)
+
+.end

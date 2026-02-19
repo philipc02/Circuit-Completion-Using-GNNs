@@ -1,0 +1,13 @@
+spice
+* NMOS Transistor
+M1 2 1 5 5 NMOS
+
+* Current Source
+I1 2 5 DC 1mA
+
+* Resistor
+RL 3 4 1k
+
+* Voltage Sources
+VCC 2 0 DC 5V
+VEE 5 0 DC -5V

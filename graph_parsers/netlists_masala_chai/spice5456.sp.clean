@@ -1,0 +1,5 @@
+* RLC circuit
+V1 4 3 AC 5 SIN(0 5 10k)
+L1 4 2 10m
+R1 2 3 80
+C1 4 3 15n
