@@ -29,15 +29,36 @@ def clean_netlist_file(input_path, cleaned_path):
         lines = f.readlines()
 
     cleaned_lines = []
+    name_counter = {}
+
     for line in lines:
-        if any(param in line.lower() for param in ["rser=", "rpar=", "tol=", "temp=", "ic=", "tc="]):
-            tokens = line.split()
-            # keep element name, node connections, first numeric/model token
+        stripped = line.strip()
+
+        # Skip empty or comment lines
+        if not stripped or stripped.startswith("*"):
+            cleaned_lines.append(line)
+            continue
+
+        tokens = stripped.split()
+
+        # Only process element lines (not directives)
+        if not stripped.startswith(".") and not stripped.startswith("+"):
+            element_name = tokens[0]
+
+            # Check for duplicate
+            if element_name in name_counter:
+                name_counter[element_name] += 1
+                new_name = f"{element_name}_{name_counter[element_name]}"
+                tokens[0] = new_name
+            else:
+                name_counter[element_name] = 0
+
             keep = []
             for tok in tokens:
-                if "=" in tok:  # stop before params
+                if "=" in tok:
                     break
                 keep.append(tok)
+
             cleaned_lines.append(" ".join(keep) + "\n")
         else:
             cleaned_lines.append(line)
@@ -361,8 +382,8 @@ def analyze_dataset(folder):
 if __name__ == "__main__":
     print("Netlist parser running...")
     
-    input_folder = "netlists_masala_chai"
-    output_folder = "graphs_masala_chai/graphs_component_pin_net"
+    input_folder = "netlists_analoggenie"
+    output_folder = "graphs_analoggenie/graphs_component_pin_net"
     process_folder(input_folder, output_folder)
     remove_duplicate_graphs(output_folder)
     analyze_dataset(output_folder)
