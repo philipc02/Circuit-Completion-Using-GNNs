@@ -47,7 +47,7 @@ def run_experiment(representation, layers, seed, output_dir):
 
     cmd = [
         'python3', 'main.py',
-        '--data', 'masala_chai',
+        '--data', 'analoggenie',
         '--representation', representation,
         '--model', 'FEGIN',
         '--layers', str(layers),
