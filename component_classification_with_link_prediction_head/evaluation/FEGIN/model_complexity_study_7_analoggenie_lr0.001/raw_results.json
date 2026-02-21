@@ -1,0 +1,842 @@
+[
+  {
+    "representation": "component_component",
+    "layers": 2,
+    "seed": 0,
+    "f1": 0.9233
+  },
+  {
+    "representation": "component_component",
+    "layers": 2,
+    "seed": 1,
+    "f1": 0.9186
+  },
+  {
+    "representation": "component_component",
+    "layers": 2,
+    "seed": 2,
+    "f1": 0.9234
+  },
+  {
+    "representation": "component_component",
+    "layers": 2,
+    "seed": 3,
+    "f1": 0.9295
+  },
+  {
+    "representation": "component_component",
+    "layers": 2,
+    "seed": 4,
+    "f1": 0.9196
+  },
+  {
+    "representation": "component_component",
+    "layers": 3,
+    "seed": 0,
+    "f1": 0.921
+  },
+  {
+    "representation": "component_component",
+    "layers": 3,
+    "seed": 1,
+    "f1": 0.9173
+  },
+  {
+    "representation": "component_component",
+    "layers": 3,
+    "seed": 2,
+    "f1": 0.9148
+  },
+  {
+    "representation": "component_component",
+    "layers": 3,
+    "seed": 3,
+    "f1": 0.9198
+  },
+  {
+    "representation": "component_component",
+    "layers": 3,
+    "seed": 4,
+    "f1": 0.9209
+  },
+  {
+    "representation": "component_component",
+    "layers": 4,
+    "seed": 0,
+    "f1": 0.9161
+  },
+  {
+    "representation": "component_component",
+    "layers": 4,
+    "seed": 1,
+    "f1": 0.9149
+  },
+  {
+    "representation": "component_component",
+    "layers": 4,
+    "seed": 2,
+    "f1": 0.9234
+  },
+  {
+    "representation": "component_component",
+    "layers": 4,
+    "seed": 3,
+    "f1": 0.9172
+  },
+  {
+    "representation": "component_component",
+    "layers": 4,
+    "seed": 4,
+    "f1": 0.9173
+  },
+  {
+    "representation": "component_component",
+    "layers": 5,
+    "seed": 0,
+    "f1": 0.9149
+  },
+  {
+    "representation": "component_component",
+    "layers": 5,
+    "seed": 1,
+    "f1": 0.9135
+  },
+  {
+    "representation": "component_component",
+    "layers": 5,
+    "seed": 2,
+    "f1": 0.9186
+  },
+  {
+    "representation": "component_component",
+    "layers": 5,
+    "seed": 3,
+    "f1": 0.9149
+  },
+  {
+    "representation": "component_component",
+    "layers": 5,
+    "seed": 4,
+    "f1": 0.9198
+  },
+  {
+    "representation": "component_component",
+    "layers": 6,
+    "seed": 0,
+    "f1": 0.9197
+  },
+  {
+    "representation": "component_component",
+    "layers": 6,
+    "seed": 1,
+    "f1": 0.9124
+  },
+  {
+    "representation": "component_component",
+    "layers": 6,
+    "seed": 2,
+    "f1": 0.9198
+  },
+  {
+    "representation": "component_component",
+    "layers": 6,
+    "seed": 3,
+    "f1": 0.9137
+  },
+  {
+    "representation": "component_component",
+    "layers": 6,
+    "seed": 4,
+    "f1": 0.9149
+  },
+  {
+    "representation": "component_component",
+    "layers": 7,
+    "seed": 0,
+    "f1": 0.9112
+  },
+  {
+    "representation": "component_component",
+    "layers": 7,
+    "seed": 1,
+    "f1": 0.9173
+  },
+  {
+    "representation": "component_component",
+    "layers": 7,
+    "seed": 2,
+    "f1": 0.9172
+  },
+  {
+    "representation": "component_component",
+    "layers": 7,
+    "seed": 3,
+    "f1": 0.9076
+  },
+  {
+    "representation": "component_component",
+    "layers": 7,
+    "seed": 4,
+    "f1": 0.9088
+  },
+  {
+    "representation": "component_component",
+    "layers": 8,
+    "seed": 0,
+    "f1": 0.9161
+  },
+  {
+    "representation": "component_component",
+    "layers": 8,
+    "seed": 1,
+    "f1": 0.9077
+  },
+  {
+    "representation": "component_component",
+    "layers": 8,
+    "seed": 2,
+    "f1": 0.9173
+  },
+  {
+    "representation": "component_component",
+    "layers": 8,
+    "seed": 3,
+    "f1": 0.91
+  },
+  {
+    "representation": "component_component",
+    "layers": 8,
+    "seed": 4,
+    "f1": 0.9136
+  },
+  {
+    "representation": "component_net",
+    "layers": 2,
+    "seed": 0,
+    "f1": 0.9302
+  },
+  {
+    "representation": "component_net",
+    "layers": 2,
+    "seed": 1,
+    "f1": 0.9351
+  },
+  {
+    "representation": "component_net",
+    "layers": 2,
+    "seed": 2,
+    "f1": 0.9302
+  },
+  {
+    "representation": "component_net",
+    "layers": 2,
+    "seed": 3,
+    "f1": 0.9263
+  },
+  {
+    "representation": "component_net",
+    "layers": 2,
+    "seed": 4,
+    "f1": 0.9361
+  },
+  {
+    "representation": "component_net",
+    "layers": 3,
+    "seed": 0,
+    "f1": 0.9283
+  },
+  {
+    "representation": "component_net",
+    "layers": 3,
+    "seed": 1,
+    "f1": 0.9253
+  },
+  {
+    "representation": "component_net",
+    "layers": 3,
+    "seed": 2,
+    "f1": 0.9253
+  },
+  {
+    "representation": "component_net",
+    "layers": 3,
+    "seed": 3,
+    "f1": 0.9243
+  },
+  {
+    "representation": "component_net",
+    "layers": 3,
+    "seed": 4,
+    "f1": 0.9311
+  },
+  {
+    "representation": "component_net",
+    "layers": 4,
+    "seed": 0,
+    "f1": 0.9312
+  },
+  {
+    "representation": "component_net",
+    "layers": 4,
+    "seed": 1,
+    "f1": 0.9282
+  },
+  {
+    "representation": "component_net",
+    "layers": 4,
+    "seed": 2,
+    "f1": 0.9292
+  },
+  {
+    "representation": "component_net",
+    "layers": 4,
+    "seed": 3,
+    "f1": 0.9292
+  },
+  {
+    "representation": "component_net",
+    "layers": 4,
+    "seed": 4,
+    "f1": 0.9273
+  },
+  {
+    "representation": "component_net",
+    "layers": 5,
+    "seed": 0,
+    "f1": 0.9321
+  },
+  {
+    "representation": "component_net",
+    "layers": 5,
+    "seed": 1,
+    "f1": 0.9262
+  },
+  {
+    "representation": "component_net",
+    "layers": 5,
+    "seed": 2,
+    "f1": 0.9282
+  },
+  {
+    "representation": "component_net",
+    "layers": 5,
+    "seed": 3,
+    "f1": 0.9262
+  },
+  {
+    "representation": "component_net",
+    "layers": 5,
+    "seed": 4,
+    "f1": 0.934
+  },
+  {
+    "representation": "component_net",
+    "layers": 6,
+    "seed": 0,
+    "f1": 0.9282
+  },
+  {
+    "representation": "component_net",
+    "layers": 6,
+    "seed": 1,
+    "f1": 0.9292
+  },
+  {
+    "representation": "component_net",
+    "layers": 6,
+    "seed": 2,
+    "f1": 0.9282
+  },
+  {
+    "representation": "component_net",
+    "layers": 6,
+    "seed": 3,
+    "f1": 0.9273
+  },
+  {
+    "representation": "component_net",
+    "layers": 6,
+    "seed": 4,
+    "f1": 0.9351
+  },
+  {
+    "representation": "component_net",
+    "layers": 7,
+    "seed": 0,
+    "f1": 0.9291
+  },
+  {
+    "representation": "component_net",
+    "layers": 7,
+    "seed": 1,
+    "f1": 0.9292
+  },
+  {
+    "representation": "component_net",
+    "layers": 7,
+    "seed": 2,
+    "f1": 0.9322
+  },
+  {
+    "representation": "component_net",
+    "layers": 7,
+    "seed": 3,
+    "f1": 0.9311
+  },
+  {
+    "representation": "component_net",
+    "layers": 7,
+    "seed": 4,
+    "f1": 0.9272
+  },
+  {
+    "representation": "component_net",
+    "layers": 8,
+    "seed": 0,
+    "f1": 0.9262
+  },
+  {
+    "representation": "component_net",
+    "layers": 8,
+    "seed": 1,
+    "f1": 0.9282
+  },
+  {
+    "representation": "component_net",
+    "layers": 8,
+    "seed": 2,
+    "f1": 0.935
+  },
+  {
+    "representation": "component_net",
+    "layers": 8,
+    "seed": 3,
+    "f1": 0.9311
+  },
+  {
+    "representation": "component_net",
+    "layers": 8,
+    "seed": 4,
+    "f1": 0.9282
+  },
+  {
+    "representation": "component_pin",
+    "layers": 2,
+    "seed": 0,
+    "f1": 0.9332
+  },
+  {
+    "representation": "component_pin",
+    "layers": 2,
+    "seed": 1,
+    "f1": 0.9361
+  },
+  {
+    "representation": "component_pin",
+    "layers": 2,
+    "seed": 2,
+    "f1": 0.9322
+  },
+  {
+    "representation": "component_pin",
+    "layers": 2,
+    "seed": 3,
+    "f1": 0.9302
+  },
+  {
+    "representation": "component_pin",
+    "layers": 2,
+    "seed": 4,
+    "f1": 0.9342
+  },
+  {
+    "representation": "component_pin",
+    "layers": 3,
+    "seed": 0,
+    "f1": 0.9322
+  },
+  {
+    "representation": "component_pin",
+    "layers": 3,
+    "seed": 1,
+    "f1": 0.9332
+  },
+  {
+    "representation": "component_pin",
+    "layers": 3,
+    "seed": 2,
+    "f1": 0.9302
+  },
+  {
+    "representation": "component_pin",
+    "layers": 3,
+    "seed": 3,
+    "f1": 0.9391
+  },
+  {
+    "representation": "component_pin",
+    "layers": 3,
+    "seed": 4,
+    "f1": 0.9341
+  },
+  {
+    "representation": "component_pin",
+    "layers": 4,
+    "seed": 0,
+    "f1": 0.9361
+  },
+  {
+    "representation": "component_pin",
+    "layers": 4,
+    "seed": 1,
+    "f1": 0.9292
+  },
+  {
+    "representation": "component_pin",
+    "layers": 4,
+    "seed": 2,
+    "f1": 0.9351
+  },
+  {
+    "representation": "component_pin",
+    "layers": 4,
+    "seed": 3,
+    "f1": 0.9322
+  },
+  {
+    "representation": "component_pin",
+    "layers": 4,
+    "seed": 4,
+    "f1": 0.9351
+  },
+  {
+    "representation": "component_pin",
+    "layers": 5,
+    "seed": 0,
+    "f1": 0.9332
+  },
+  {
+    "representation": "component_pin",
+    "layers": 5,
+    "seed": 1,
+    "f1": 0.9322
+  },
+  {
+    "representation": "component_pin",
+    "layers": 5,
+    "seed": 2,
+    "f1": 0.9351
+  },
+  {
+    "representation": "component_pin",
+    "layers": 5,
+    "seed": 3,
+    "f1": 0.9322
+  },
+  {
+    "representation": "component_pin",
+    "layers": 5,
+    "seed": 4,
+    "f1": 0.9302
+  },
+  {
+    "representation": "component_pin",
+    "layers": 6,
+    "seed": 0,
+    "f1": 0.9312
+  },
+  {
+    "representation": "component_pin",
+    "layers": 6,
+    "seed": 1,
+    "f1": 0.9351
+  },
+  {
+    "representation": "component_pin",
+    "layers": 6,
+    "seed": 2,
+    "f1": 0.9361
+  },
+  {
+    "representation": "component_pin",
+    "layers": 6,
+    "seed": 3,
+    "f1": 0.9302
+  },
+  {
+    "representation": "component_pin",
+    "layers": 6,
+    "seed": 4,
+    "f1": 0.9302
+  },
+  {
+    "representation": "component_pin",
+    "layers": 7,
+    "seed": 0,
+    "f1": 0.9312
+  },
+  {
+    "representation": "component_pin",
+    "layers": 7,
+    "seed": 1,
+    "f1": 0.9371
+  },
+  {
+    "representation": "component_pin",
+    "layers": 7,
+    "seed": 2,
+    "f1": 0.9332
+  },
+  {
+    "representation": "component_pin",
+    "layers": 7,
+    "seed": 3,
+    "f1": 0.9312
+  },
+  {
+    "representation": "component_pin",
+    "layers": 7,
+    "seed": 4,
+    "f1": 0.9292
+  },
+  {
+    "representation": "component_pin",
+    "layers": 8,
+    "seed": 0,
+    "f1": 0.9332
+  },
+  {
+    "representation": "component_pin",
+    "layers": 8,
+    "seed": 1,
+    "f1": 0.9351
+  },
+  {
+    "representation": "component_pin",
+    "layers": 8,
+    "seed": 2,
+    "f1": 0.9342
+  },
+  {
+    "representation": "component_pin",
+    "layers": 8,
+    "seed": 3,
+    "f1": 0.9321
+  },
+  {
+    "representation": "component_pin",
+    "layers": 8,
+    "seed": 4,
+    "f1": 0.9322
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 2,
+    "seed": 0,
+    "f1": 0.9332
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 2,
+    "seed": 1,
+    "f1": 0.9322
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 2,
+    "seed": 2,
+    "f1": 0.9341
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 2,
+    "seed": 3,
+    "f1": 0.9312
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 2,
+    "seed": 4,
+    "f1": 0.9351
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 3,
+    "seed": 0,
+    "f1": 0.9322
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 3,
+    "seed": 1,
+    "f1": 0.9302
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 3,
+    "seed": 2,
+    "f1": 0.9361
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 3,
+    "seed": 3,
+    "f1": 0.9332
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 3,
+    "seed": 4,
+    "f1": 0.9312
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 4,
+    "seed": 0,
+    "f1": 0.9342
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 4,
+    "seed": 1,
+    "f1": 0.9341
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 4,
+    "seed": 2,
+    "f1": 0.9371
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 4,
+    "seed": 3,
+    "f1": 0.9371
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 4,
+    "seed": 4,
+    "f1": 0.9332
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 5,
+    "seed": 0,
+    "f1": 0.9322
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 5,
+    "seed": 1,
+    "f1": 0.9312
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 5,
+    "seed": 2,
+    "f1": 0.9342
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 5,
+    "seed": 3,
+    "f1": 0.9351
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 5,
+    "seed": 4,
+    "f1": 0.9322
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 6,
+    "seed": 0,
+    "f1": 0.9341
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 6,
+    "seed": 1,
+    "f1": 0.9322
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 6,
+    "seed": 2,
+    "f1": 0.9332
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 6,
+    "seed": 3,
+    "f1": 0.9322
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 6,
+    "seed": 4,
+    "f1": 0.9322
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 7,
+    "seed": 0,
+    "f1": 0.9332
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 7,
+    "seed": 1,
+    "f1": 0.9292
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 7,
+    "seed": 2,
+    "f1": 0.9292
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 7,
+    "seed": 3,
+    "f1": 0.9332
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 7,
+    "seed": 4,
+    "f1": 0.9341
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 8,
+    "seed": 0,
+    "f1": 0.9322
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 8,
+    "seed": 1,
+    "f1": 0.9302
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 8,
+    "seed": 2,
+    "f1": 0.9312
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 8,
+    "seed": 3,
+    "f1": 0.9273
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 8,
+    "seed": 4,
+    "f1": 0.9302
+  }
+]
