@@ -18,6 +18,6 @@ Q1 3 7 6 NPN
 
 * Connectors
 Vout 8 0
-Vin 7 1
+Vin_1 7 1
 
 * End of netlist

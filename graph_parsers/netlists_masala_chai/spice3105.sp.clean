@@ -4,7 +4,7 @@ spice
 * Transistors
 M13 3 5 3 3 PMOS
 M14 1 5 3 3 PMOS
-M9  4 8 3 4 NMOS
+M9 4 8 3 4 NMOS
 M15 3 7 2 2 PMOS
 M11 4 2 4 4 NMOS
 

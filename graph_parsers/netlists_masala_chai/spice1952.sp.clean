@@ -11,4 +11,4 @@ Vcc Vcc 0 DC 5
 Vb1 5 0 DC 1.2
 
 * Nodes
-Vcc 2
+Vcc_1 2

@@ -1,5 +1,5 @@
 spice
 * Netlist for the schematic
-I1 2 5 DC 1A      ; Current source from node 2 to ground (node 5)
-L1 2 4 1uH        ; Inductor from node 2 to node 4 (ground)
-C1 6 3 1uF        ; Capacitor from node 6 to node 3 (ground)
+I1 2 5 DC 1A ; Current source from node 2 to ground (node 5)
+L1 2 4 1uH ; Inductor from node 2 to node 4 (ground)
+C1 6 3 1uF ; Capacitor from node 6 to node 3 (ground)

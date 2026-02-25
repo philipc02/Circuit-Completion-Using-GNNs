@@ -1,11 +1,11 @@
 spice
 * SPICE Netlist for the Given Circuit
 
-Q1 5 6 3 NPN       ;NPN Transistor
-RB 4 6  R_B        ;Base Resistor
-RC 5 2  R_C        ;Collector Resistor
-VBB 4 3 DC         ;Base Bias Voltage
-VCC 2 3 DC         ;Collector Supply Voltage
+Q1 5 6 3 NPN ;NPN Transistor
+RB 4 6 R_B ;Base Resistor
+RC 5 2 R_C ;Collector Resistor
+VBB 4 3 DC ;Base Bias Voltage
+VCC 2 3 DC ;Collector Supply Voltage
 
 .model NPN NPN (IS=1e-14 BF=100)
 

@@ -4,9 +4,9 @@ plaintext
 * Insert the opamp model here
 .ends opamp
 
-X1 5 4 3 opamp  ; A1
-X2 2 2 1 opamp  ; A2
-X3 3 6 7 opamp  ; A3
+X1 5 4 3 opamp ; A1
+X2 2 2 1 opamp ; A2
+X3 3 6 7 opamp ; A3
 
 * Resistors
 R1 4 2 2R1

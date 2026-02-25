@@ -9,6 +9,6 @@ RS 6 3 6k
 RD 3 5 42k
 
 * PMOS Transistor
-M1 5 2 3 3 PMOS L=1u W=1u
+M1 5 2 3 3 PMOS
 
 .END

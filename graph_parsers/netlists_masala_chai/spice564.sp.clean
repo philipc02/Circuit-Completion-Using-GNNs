@@ -4,12 +4,12 @@ VDD 9 0 DC 5V
 VSS 0 5 DC -5V
 
 * PMOS Transistors
-M3 8 2 7 7 PMOS L=1u W=10u
-M4 4 2 7 7 PMOS L=1u W=10u
+M3 8 2 7 7 PMOS
+M4 4 2 7 7 PMOS
 
 * NMOS Transistors
-M1 8 6 5 5 NMOS L=1u W=10u
-M2 4 4 5 5 NMOS L=1u W=10u
+M1 8 6 5 5 NMOS
+M2 4 4 5 5 NMOS
 
 * Connections
 VBIAS 2 0 DC 1V

@@ -13,9 +13,9 @@ D4 4 2 D4_model
 .model D4_model D (m=1)
 
 * Resistors
-RB B 2  RB_value
-RC C 3  RC_value
-RE 2 E  RE_value
+RB B 2 RB_value
+RC C 3 RC_value
+RE 2 E RE_value
 
 * Current Source
 I1 4 2 DC (betaIp-betaIR)

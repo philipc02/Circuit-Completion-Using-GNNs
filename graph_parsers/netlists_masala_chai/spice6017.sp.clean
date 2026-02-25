@@ -11,7 +11,7 @@ M1 4 3 0 0 NMOS
 M2 2 5 0 0 NMOS
 
 * Voltage sources
-V_id1 3 0 DC 0.5  ; Represents v_id/2
+V_id1 3 0 DC 0.5 ; Represents v_id/2
 V_id2 5 0 DC -0.5 ; Represents -v_id/2
 
 * Models

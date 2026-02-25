@@ -22,7 +22,7 @@ XU2 9 3 5 opamp
 XU3 3 6 0 opamp
 
 * Inputs and Outputs
-Vin 1 0 DC 0V 
+Vin 1 0 DC 0V
 VoutHP 4 0
 VoutLP 6 0
 VoutBP 7 0

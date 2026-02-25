@@ -4,13 +4,13 @@ spice
 VCC 2 0 DC 5V
 IIN 7 2 DC 1A
 
-Q1 2 7 0 NPN  ; Q1: NPN Transistor
-Q2 2 2 4 NPN  ; Q2: NPN Transistor
-Q3 3 4 6 NPN  ; Q3: NPN Transistor
-Q4 3 4 6 NPN  ; Q4: NPN Transistor
+Q1 2 7 0 NPN ; Q1: NPN Transistor
+Q2 2 2 4 NPN ; Q2: NPN Transistor
+Q3 3 4 6 NPN ; Q3: NPN Transistor
+Q4 3 4 6 NPN ; Q4: NPN Transistor
 
-R1 7 0 1k     ; R1: Resistor
-R3 4 6 1k     ; R3: Resistor
-R4 3 6 1k     ; R4: Resistor
+R1 7 0 1k ; R1: Resistor
+R3 4 6 1k ; R3: Resistor
+R4 3 6 1k ; R4: Resistor
 
 .model NPN NPN

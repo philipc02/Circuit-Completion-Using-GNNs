@@ -1,10 +1,10 @@
 plaintext
 * SPICE netlist for the given schematic
 
-Vin 1 0 DC 0        * Voltage source
-R1 1 4 1k           * Resistor, 1k ohm example value
-C1 3 2 10uF         * Capacitor, 10uF example value
-A0 3 4 0 OPAMP      * Op-Amp model call example
+Vin 1 0 DC 0 * Voltage source
+R1 1 4 1k * Resistor, 1k ohm example value
+C1 3 2 10uF * Capacitor, 10uF example value
+A0 3 4 0 OPAMP * Op-Amp model call example
 
 * Connections:
 * Vin is connected to net 1; the other terminal is grounded (net 0)

@@ -16,10 +16,10 @@ CGD 2 2 1u
 CL 7 0 1u
 
 * Current Source
-Gm 2 4 VOL=1
+Gm 2 4
 
 * Control Voltage Source for Current Source
-EPWR 2 4 VALUE={V(2,4)}
+EPWR 2 4
 
 * Connections
 Vout 3 0

@@ -1,12 +1,12 @@
 * Transistor
-   Q1 3 2 4 NPN
+Q1 3 2 4 NPN
 
    * Current Source
-   I1 2 0 DC 2*R_icm
+I1 2 0 DC 2*R_icm
 
    * Resistors
-   RC 3 0 RC
-   REE 4 6 2*REE
+RC 3 0 RC
+REE 4 6 2*REE
 
    .model NPN NPN
    .end

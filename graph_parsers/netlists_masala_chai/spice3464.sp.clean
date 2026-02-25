@@ -1,15 +1,15 @@
 * SPICE Netlist
    * Voltage Source
-   V1 8 22 DC
+V1 8 22 DC
 
    * Resistor r_x
-   R1 6 66 r_x
+R1 6 66 r_x
 
    * Current Source
-   I1 5 22 g_mV_id
+I1 5 22 g_mV_id
 
    * Resistor R_C
-   R2 5 9 R_C
+R2 5 9 R_C
 
    * Voltage at output
-   Vout 9 2 DC
+Vout 9 2 DC

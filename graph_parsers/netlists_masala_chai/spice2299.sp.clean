@@ -1,7 +1,7 @@
 plaintext
 * NMOS Transistors
-M1 3 5 2 2 NMOS L=0.18u W=5u
-M2 6 8 4 4 NMOS L=0.18u W=10u
+M1 3 5 2 2 NMOS
+M2 6 8 4 4 NMOS
 
 * Resistors
 R1 3 5 1k

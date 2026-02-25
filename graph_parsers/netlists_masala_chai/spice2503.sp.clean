@@ -1,6 +1,6 @@
 spice
 * NMOS Transistor M1
-M1 2 4 7 7 NMOS 
+M1 2 4 7 7 NMOS
 
 * Current Source I1
 I1 5 2 DC 1A

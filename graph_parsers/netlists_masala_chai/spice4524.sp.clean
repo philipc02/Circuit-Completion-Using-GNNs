@@ -1,12 +1,12 @@
 * SPICE Netlist
 * Components
-R1 1 2  R1_value
-R2 2 3  R2_value
-R3 3 4  R3_value
+R1 1 2 R1_value
+R2 2 3 R2_value
+R3 3 4 R3_value
 R4 vi 1 R4_value
-R5 3 4  R5_value
-C1 2 5  C1_value
-C2 3 3  C2_value
+R5 3 4 R5_value
+C1 2 5 C1_value
+C2 3 3 C2_value
 
 * Op-Amp Definitions (Assumed ideal modeling with high gain)
 XU1 1 2 2 opamp

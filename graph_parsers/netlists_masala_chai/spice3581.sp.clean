@@ -16,7 +16,7 @@ Q3 5 2 3 QNPN
 Q4 2 3 7 QNPN
 
 * Diode
-DL  2 3 DL
+DL 2 3 DL
 
 * Model Definitions
 .model QNPN NPN (IS=1e-14 BF=100)

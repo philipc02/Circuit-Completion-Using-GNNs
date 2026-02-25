@@ -5,8 +5,8 @@ spice
 VCC 10 0 DC 12V
 
 * Transistors
-Q1 2 8 3 NPN 
-Q2 3 2 4 PNP 
+Q1 2 8 3 NPN
+Q2 3 2 4 PNP
 Q3 3 2 9 NPN
 Q4 5 2 3 PNP
 Q5 10 2 5 PNP
@@ -28,6 +28,6 @@ CF 2 3 1u
 
 * Connections
 Vinput 1 0
-Voutput 7 0 
+Voutput 7 0
 
 * End of netlist

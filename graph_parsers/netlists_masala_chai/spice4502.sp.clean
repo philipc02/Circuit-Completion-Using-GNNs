@@ -16,7 +16,7 @@ C1 2 0 C_value
 
 .subckt OPAMP 2 3
 * 2 = Inverting input, 3 = Output
-Rin 100Meg 
+Rin 100Meg
 Vp Vcc Vee DC 0
 .model op-amp opamp(p=1m)
 .ends

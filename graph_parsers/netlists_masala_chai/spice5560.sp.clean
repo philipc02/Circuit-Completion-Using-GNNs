@@ -8,6 +8,6 @@ R1 4 2 10k
 R2 5 2 10k
 
 * Op-amp as E source
-E1 5 0 1 2 1MEG 
+E1 5 0 1 2 1MEG
 
 * .END

@@ -2,24 +2,24 @@ spice
 * SPICE Netlist
 
 * Current Sources
-IS   4  5   DC 0
-ISR  8  10  DC 0
-ISV  9  6   DC 0
+IS 4 5 DC 0
+ISR 8 10 DC 0
+ISV 9 6 DC 0
 
 * Voltage Source
-IBV  4  4   DC 0
+IBV 4 4 DC 0
 
 * Diodes
-D1   5  3   D_model
-D2   2  2   D_model
+D1 5 3 D_model
+D2 2 2 D_model
 
 * Resistors
-RE   8  9   0
-RP   9  7   0
-RS   3  2   0
+RE 8 9 0
+RP 9 7 0
+RS 3 2 0
 
 * Capacitor
-C1   2  6   1F
+C1 2 6 1F
 
 * Models (example diode model)
 .model D_model D(IS=1e-14 N=1)

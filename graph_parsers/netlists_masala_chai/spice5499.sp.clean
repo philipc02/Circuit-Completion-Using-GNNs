@@ -6,7 +6,7 @@ VIN 4 0 DC 1
 RB 4 2 22k
 RC 1 6 1k
 
-Q1 6 2 3 NPN bf=50
+Q1 6 2 3 NPN
 
 * Connections:
 * VCC is connected to node 1

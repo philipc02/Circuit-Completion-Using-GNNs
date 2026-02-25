@@ -2,18 +2,18 @@ spice
 * SPICE Netlist for the schematic
 
 VDD 1 0 DC 5V * Voltage source
-RE 1 2 1k     * Resistor RE connected to net 1 and M2 drain
-RS 3 0 1k     * Resistor RS connected from net 3 to ground
+RE 1 2 1k * Resistor RE connected to net 1 and M2 drain
+RS 3 0 1k * Resistor RS connected from net 3 to ground
 
 * Transistors
-M1 2 3 3 NMOS L=1u W=1u  * NMOS M1
-M2 1 2 2 PMOS L=1u W=1u  * PMOS M2
+M1 2 3 3 NMOS
+M2 1 2 2 PMOS
 
 * Voltage Inputs
 Vin 3 0 DC 1V * Voltage source for Vin
 Vb1 2 0 DC 1V * Voltage source for Vb1
 
 * Output
-Vout 2        * Output node
+Vout 2 * Output node
 
 .end

@@ -8,8 +8,8 @@ VCC 6 0 DC 2.5V
 Iin 5 0 DC
 
 * Resistors
-RC 3 6 1k  ; Value assumed for RC
-RF 4 2 1k  ; Value assumed for RF
+RC 3 6 1k ; Value assumed for RC
+RF 4 2 1k ; Value assumed for RF
 
 * Transistors
 Q1 3 5 2 NPN

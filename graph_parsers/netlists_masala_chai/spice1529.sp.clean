@@ -10,8 +10,8 @@ Gm1 6 4 V1 1
 Gm2 2 4 V2 1
 
 * Resistors
-RD1 6 1  RD
-RD2 2 1  RD
+RD1 6 1 RD
+RD2 2 1 RD
 
 * Nodes description
 * 0: Ground

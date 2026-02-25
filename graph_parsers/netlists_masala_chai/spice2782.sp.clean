@@ -16,7 +16,7 @@ CL_left 2 0
 CL_right 4 0
 
 .control
-  run
+run
 .endc
 
 .end

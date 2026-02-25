@@ -5,8 +5,8 @@ IIN 2 5 DC Iin
 
 R1 2 5 1k
 
-M1 4 2 6 6 NMOS W=1u L=0.18u
-M2 3 2 4 4 NMOS W=1u L=0.18u
+M1 4 2 6 6 NMOS
+M2 3 2 4 4 NMOS
 
 * Connections:
 * VDD connected to net 5

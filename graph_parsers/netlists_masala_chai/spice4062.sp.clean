@@ -5,7 +5,7 @@ R_C 3 5 R_C
 C_pi 1 4 C_pi
 C_mu 4 5 C_mu
 
-Gm 2 3 VOL=VALUE(gm*v(V(pi)))
+Gm 2 3
 V(pi) 1 4 DC 0
 
 * Node assignments

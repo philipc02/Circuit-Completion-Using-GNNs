@@ -1,13 +1,13 @@
 * SPICE Netlist
 M1 7 2 4 4 NMOS
 M2 2 8 6 6 PMOS
-Iin 2 4 DC 0  ; assuming DC current source
-Vb 2 0 DC  ; assuming a DC voltage source for bias
+Iin 2 4 DC 0 ; assuming DC current source
+Vb 2 0 DC ; assuming a DC voltage source for bias
 
-RD 2 6  ; RD resistor
-RF 2 7  ; RF resistor
-RM 7 3  ; RM resistor
+RD 2 6 ; RD resistor
+RF 2 7 ; RF resistor
+RM 7 3 ; RM resistor
 
-VDD 6 0 DC  ; Power supply voltage
+VDD 6 0 DC ; Power supply voltage
 
 .END

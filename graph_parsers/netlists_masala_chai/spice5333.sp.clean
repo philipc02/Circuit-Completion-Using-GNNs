@@ -1,11 +1,11 @@
 spice
    * Voltage Source
-   V1 2 4 DC 5
+V1 2 4 DC 5
 
    * Resistors
-   R1 2 3 4.7k
-   R2 3 4 10k
-   RL 3 4 1k
+R1 2 3 4.7k
+R2 3 4 10k
+RL 3 4 1k
 
    * Ground
    .end

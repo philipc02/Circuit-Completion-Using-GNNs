@@ -1,15 +1,15 @@
 plaintext
 * Op-Amp Circuit
 
-V1 1 0 DC <Vs_value>  ; Voltage source Vs with positive at node 1, grounded
-Rs 1 2 <Rs_value>    ; Resistor Rs between nodes 1 and 2
+V1 1 0 DC <Vs_value> ; Voltage source Vs with positive at node 1, grounded
+Rs 1 2 <Rs_value> ; Resistor Rs between nodes 1 and 2
 
 * Ideal op-amp model
 * Connecting op-amp inputs and outputs
-Vin_p 2 0 DC 0     ; Non-inverting input at node 2
-Vin_n 3 0 DC 0     ; Inverting input not used
-Vout 4 0           ; Output at node 4
+Vin_p 2 0 DC 0 ; Non-inverting input at node 2
+Vin_n 3 0 DC 0 ; Inverting input not used
+Vout 4 0 ; Output at node 4
 
-Rl 4 0 <Rl_value>  ; Load resistor RL between node 4 and ground
+Rl 4 0 <Rl_value> ; Load resistor RL between node 4 and ground
 
 .end

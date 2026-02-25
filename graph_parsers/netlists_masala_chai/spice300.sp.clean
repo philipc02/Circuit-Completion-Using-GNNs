@@ -12,6 +12,6 @@ CIN 6 9 CIN
 VI 5 0 DC VI
 
 * Current Source (Dependent)
-G1 9 0 VALUE={gm*V(2,3)}
+G1 9 0
 
 .end

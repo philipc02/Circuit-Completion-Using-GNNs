@@ -4,7 +4,7 @@ spice
 Vt 3 0 DC 0
 RF 3 4 1k
 RD 1 2 1k
-M1 2 4 0 0 NMOS L=1u W=3u
+M1 2 4 0 0 NMOS
 
 * Define other model parameters if necessary
 .model NMOS NMOS level=1

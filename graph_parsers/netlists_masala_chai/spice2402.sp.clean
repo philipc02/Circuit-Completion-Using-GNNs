@@ -1,7 +1,7 @@
 plaintext
 * NMOS Transistor Circuit
 
-M1 3 2 2 2 NMOS 
+M1 3 2 2 2 NMOS
 V1 3 2 DC VD
 
 *.MODEL NMOS NMOS (Level=1)

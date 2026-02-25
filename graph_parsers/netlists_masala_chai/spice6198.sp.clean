@@ -3,12 +3,12 @@ spice
 
 VCC 7 0 DC 1.2
 VEE 555 0 DC -1.2
-Vs 8 9 DC 
+Vs 8 9 DC
 
 * Resistor Definitions
 R1 8 1 10k
 RF 9 4 10k
-Rload 3 2 
+Rload 3 2
 
 * Current Sources
 I1 555 0 DC 0.2m

@@ -5,8 +5,8 @@ plaintext
 
 I1 C B DC BETA_Ib ; Current Source
 
-D1 B E DIODE_BE_MODEL; Diode with V_BE, ON = 0.6V
-D2 C B DIODE_BC_MODEL; Diode with V_BC, ON = 0.4V
+D1 B E DIODE_BE_MODEL; Diode with V_BE, ON
+D2 C B DIODE_BC_MODEL; Diode with V_BC, ON
 
 .model DIODE_BE_MODEL D (IS=1e-14 N=1.0 VJE=0.6)
 .model DIODE_BC_MODEL D (IS=1e-14 N=1.0 VJE=0.4)

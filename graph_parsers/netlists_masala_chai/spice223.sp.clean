@@ -2,7 +2,7 @@ plaintext
 * SPICE netlist for the provided circuit
 
 * Voltage Source
-V1 1 6 DC <voltage_value> 
+V1 1 6 DC <voltage_value>
 
 * Resistor
 R1 1 2 <resistance_value>

@@ -6,29 +6,29 @@ M1 6 3 5 5 NMOS
 M2 6 3 7 7 NMOS
 
 * Resistors
-RD1 6 2  RD_value
+RD1 6 2 RD_value
 RD2 6 22 RD_value
-RS1 3 4  RS_value
-RS2 3 3  RS_value
+RS1 3 4 RS_value
+RS2 3 3 RS_value
 
 * Capacitors
-CDB1 6 4  CDB1_value
-CDB2 6 6  CDB2_value
-CGS1 3 5  CGS1_value
-CGS2 3 7  CGS2_value
-CSB1 5 0  CSB1_value
-CSB2 7 0  CSB2_value
-CGD1 4 6  CGD1_value
-CGD2 4 6  CGD2_value
+CDB1 6 4 CDB1_value
+CDB2 6 6 CDB2_value
+CGS1 3 5 CGS1_value
+CGS2 3 7 CGS2_value
+CSB1 5 0 CSB1_value
+CSB2 7 0 CSB2_value
+CGD1 4 6 CGD1_value
+CGD2 4 6 CGD2_value
 
 * Current Source
-ISS 5 4  ISS_value
+ISS 5 4 ISS_value
 
 * Voltage Source
-VDD 2 0  VDD_value
+VDD 2 0 VDD_value
 
 * Input Voltages
-VIN1 4 0  VIN1_value
-VIN2 3 0  VIN2_value
+VIN1 4 0 VIN1_value
+VIN2 3 0 VIN2_value
 
 * End of netlist

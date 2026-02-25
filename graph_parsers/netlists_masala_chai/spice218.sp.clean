@@ -18,7 +18,7 @@ S5 4 5 <model_S5> <control_node> 0
 * Operational Amplifier
 .subckt opamp noninverting_input inverting_input output
 R1 noninverting_input output <value_R>
-C1 noninverting_input output <value_C>
+C1_1 noninverting_input output <value_C>
 .ends opamp
 
 XOPAMP 3 4 5 opamp

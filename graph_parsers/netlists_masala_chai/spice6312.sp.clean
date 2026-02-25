@@ -1,10 +1,10 @@
 plaintext
 * SPICE netlist for given schematic
 
-M1 3 7 8 8 PMOS L=1u W=1u
-M2 2 5 2 2 NMOS L=1u W=1u
-M3 2 6 2 2 NMOS L=1u W=1u
-M4 3 4 6 6 NMOS L=1u W=1u
+M1 3 7 8 8 PMOS
+M2 2 5 2 2 NMOS
+M3 2 6 2 2 NMOS
+M4 3 4 6 6 NMOS
 
 VDD 8 0 DC 5V
 

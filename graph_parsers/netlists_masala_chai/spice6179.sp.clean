@@ -1,8 +1,8 @@
 * SPICE Netlist for the schematic
 
-Ix B' B DC 0  ; Current source I_x connected between B' and B
-Rx B' B 1k    ; Resistor R_x connected between B' and B
-Cx B' B 1uF   ; Capacitor C_x connected between B' and B
-Cc C B' 1uF   ; Capacitor C_C connected between C and B'
+Ix B' B DC 0 ; Current source I_x connected between B' and B
+Rx B' B 1k ; Resistor R_x connected between B' and B
+Cx B' B 1uF ; Capacitor C_x connected between B' and B
+Cc C B' 1uF ; Capacitor C_C connected between C and B'
 
 .END

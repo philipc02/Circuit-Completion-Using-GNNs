@@ -6,8 +6,8 @@ C3 3 2 5f
 C4 2 B 6f
 C5 2 3 4f
 
-G1 4 2 VALUE = {632u * V(6,4)}
-G2 4 2 VALUE = {125u * V(2,B)}
+G1 4 2 VALUE
+G2 4 2 VALUE
 
 R1 2 4 500k
 

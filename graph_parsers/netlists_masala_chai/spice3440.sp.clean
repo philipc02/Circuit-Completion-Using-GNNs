@@ -1,12 +1,12 @@
 plaintext
 * Voltage Source
-Vi 8 6 DC 
+Vi 8 6 DC
 
 * Resistors
-RG 7 5 
-RS 3 6 
-RD 4 2 
-RL 4 2 
+RG 7 5
+RS 3 6
+RD 4 2
+RL 4 2
 
 * Current Source (controlled)
 Gm 4 3 Vgs 1

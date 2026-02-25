@@ -9,7 +9,7 @@ R2 2 0 <R2_value>
 .subckt opamp non_inv inv out
 * Dummy model for operational amplifier
 * Replace with actual behavioral model if necessary
-Eout out 0 value = {V(non_inv) - V(inv)}
+Eout out 0 value
 .ends opamp
 
 * Specify values

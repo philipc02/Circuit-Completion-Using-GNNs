@@ -13,8 +13,8 @@ Re 5 8 1k
 Rl 4 6 10k
 
 * Capacitors
-C1 2 4 1u  ; Assuming value for capacitor
-C2 5 8 1u  ; Assuming value for capacitor
+C1 2 4 1u ; Assuming value for capacitor
+C2 5 8 1u ; Assuming value for capacitor
 
 * Model for BJT
 .model QNPN NPN

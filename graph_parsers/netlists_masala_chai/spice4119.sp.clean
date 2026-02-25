@@ -1,5 +1,5 @@
 * SPICE Netlist
-Vi 7 4 DC 
+Vi 7 4 DC
 
 Rb 7 3 rb
 Rpi 3 5 rpi

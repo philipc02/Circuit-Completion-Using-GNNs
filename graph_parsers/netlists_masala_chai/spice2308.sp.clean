@@ -1,6 +1,6 @@
 spice
 * NMOS Amplifier Circuit
-M1 Vout Vb Vin Vin NMOS_L W=10u L=1u
+M1 Vout Vb Vin Vin NMOS_L
 RD VDD Vout 1k
 RS Vin Vin 500
 VDD VDD 0 DC 5V

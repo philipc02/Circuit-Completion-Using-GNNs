@@ -7,7 +7,7 @@ VSS 4 0 DC -5V
 VI 3 0 DC ??? * Input voltage (not specified)
 
 * Components
-RD 5 2 10k  * Resistor, adjust value as needed
+RD 5 2 10k * Resistor, adjust value as needed
 
 * Transistors
 * NMOS (Q1)

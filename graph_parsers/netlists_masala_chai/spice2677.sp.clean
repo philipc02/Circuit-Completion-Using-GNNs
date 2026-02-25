@@ -12,4 +12,4 @@ M3 5 2 1 1 PMOS
 M4 3 3 5 5 PMOS
 
 * Simulation commands
-.options
+.options TEMP=27

@@ -4,11 +4,11 @@ plaintext
 V1 11 0 DC 0
 R1 11 9 2k
 RG 9 8 400k
-C1 9 10 
+C1 9 10
 
 * PMOS Transistor M1: Drain, Gate, Source, Body
 M1 8 8 4 4 PMOS
-C2 4 2 
+C2 4 2
 
 RS1 4 10 10k
 RS2 10 2 10k
@@ -17,7 +17,7 @@ RS2 10 2 10k
 M2 2 2 5 5 NMOS
 
 RD 5 3 5k
-C3 3 5 
+C3 3 5
 RL 3 0 2k
 
 * Voltage Sources

@@ -2,7 +2,7 @@ spice
 * SPICE Netlist for the schematic
 
 * Voltage source
-Vi 4 0 DC 
+Vi 4 0 DC
 
 * Operational Amplifier
 * (Ideal, representing as a controlled source)

@@ -18,8 +18,8 @@ I2 2 0 DC
 IS 4 0 DC
 
 * Input Drivers
-V1 1 0 DC v1
-V2 2 0 DC v2
+V1_1 1 0 DC v1
+V2_1 2 0 DC v2
 
 * .model statement for NMOS
 .model NMOS NMOS (Level=1)

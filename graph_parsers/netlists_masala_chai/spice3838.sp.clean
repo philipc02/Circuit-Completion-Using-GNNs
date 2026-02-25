@@ -2,7 +2,7 @@ plaintext
 * SPICE Netlist
 
 Q1 4 3 2 NPN
-RC 5 4 1000 ; Assuming RC = 1k Ohm
+RC 5 4 1000 ; Assuming RC
 I1 2 1 DC 10mA ; Current source with assumed value
 V1 3 0 DC 5V ; Voltage between Node 3 and ground
 

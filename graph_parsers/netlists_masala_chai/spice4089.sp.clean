@@ -1,8 +1,8 @@
 * RC Low Pass Filter
 
-Vi 1 0 DC 0        ; Input Voltage Source
-R1 1 4 1k          ; Resistor
-C1 4 0 1u          ; Capacitor
-Vout 4 3 DC 0      ; Output Node Connection
+Vi 1 0 DC 0 ; Input Voltage Source
+R1 1 4 1k ; Resistor
+C1 4 0 1u ; Capacitor
+Vout 4 3 DC 0 ; Output Node Connection
 
 .END

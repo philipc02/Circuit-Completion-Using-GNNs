@@ -1,7 +1,7 @@
 spice
 * Example SPICE Netlist
 
-V1 2 0 DC V_in      ; Voltage source from node 2 to ground
-F1 4 0 V1 gm        ; Current source controlled by V_in (g_m represents transconductance)
-R1 2 3 RD           ; Resistor connected between node 2 and node 3 (R_D represents resistance)
-C1 3 0 CL           ; Capacitor connected between node 3 and ground (C_L represents capacitance)
+V1 2 0 DC V_in ; Voltage source from node 2 to ground
+F1 4 0 V1 gm ; Current source controlled by V_in (g_m represents transconductance)
+R1 2 3 RD ; Resistor connected between node 2 and node 3 (R_D represents resistance)
+C1 3 0 CL ; Capacitor connected between node 3 and ground (C_L represents capacitance)

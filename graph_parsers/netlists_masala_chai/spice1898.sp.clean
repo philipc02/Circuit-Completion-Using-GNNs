@@ -1,9 +1,9 @@
 * Circuit Netlist
 V1 3 4 DC 0 ; Voltage source Vin
-R1 5 4 Z2   ; Impedance Z2
-R2 6 7 Rp   ; Resistor Rp
-L1 6 2 L1   ; Inductor L1
-C1 3 4 C1   ; Capacitor C1
+R1 5 4 Z2 ; Impedance Z2
+R2 6 7 Rp ; Resistor Rp
+L1 6 2 L1 ; Inductor L1
+C1 3 4 C1 ; Capacitor C1
 
 * Connectors
 Iin 5 3 DC 0 ; Current through Iin is not defined yet

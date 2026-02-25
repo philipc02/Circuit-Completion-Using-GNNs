@@ -16,7 +16,7 @@ C2 2 3 C2_value
 *. Resistors
 R1 8 9 R1_value
 R2 2 3 R2_value
-R2 2 3 R2_value
+R2_1 2 3 R2_value
 
 *. Current Source
 I1 9 0 Iss_value

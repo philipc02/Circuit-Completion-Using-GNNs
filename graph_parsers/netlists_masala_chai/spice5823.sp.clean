@@ -1,7 +1,7 @@
 plaintext
 * SPICE Netlist
 
-Vsig 4 3 DC 
+Vsig 4 3 DC
 
 Rsig 4 2 1k
 

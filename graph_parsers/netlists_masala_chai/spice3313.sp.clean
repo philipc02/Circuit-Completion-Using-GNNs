@@ -4,8 +4,8 @@ VDD 2 0 DC 5V
 Vin 5 0 DC 0V
 
 * Transistors
-MPMOS 3 3 6 6 PMOS L=1u W=10u
-MNMOS 3 3 0 0 NMOS L=1u W=10u
+MPMOS 3 3 6 6 PMOS
+MNMOS 3 3 0 0 NMOS
 
 * Current Source
 I1 3 0 DC 1mA

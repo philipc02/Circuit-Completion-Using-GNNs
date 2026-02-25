@@ -22,5 +22,5 @@ VDD 22 0 DC VDD_value
 
 * .model and .options are required for simulating the circuit
 .model NMOS NMOS_level_params
-.options
+.options reltol=1e-3
 .end

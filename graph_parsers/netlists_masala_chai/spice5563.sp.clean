@@ -18,8 +18,8 @@ XOPAMP 2 3 7 opamp
 
 * Ground
 GND 6 0
-GND 8 0
-GND 5 0
+GND_1 8 0
+GND_2 5 0
 
 * Define the Op-Amp model
 .model opamp opamp

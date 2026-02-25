@@ -19,6 +19,6 @@ R1 6 3 10k
 
 * Connections
 VINPUT 5 2 DC 0V
-VOUTPUT 3 0 
+VOUTPUT 3 0
 
 .END

@@ -1,10 +1,10 @@
 plaintext
 * SPICE netlist for the schematic
-V1 6 8 DC <VALUE_OF_VE>    ; Voltage source ve
-R1 6 8 <VALUE_OF_RE>       ; Resistor re
-C1 6 10 <VALUE_OF_CPI>     ; Capacitor Cpi
-C2 5 2 <VALUE_OF_CMU>      ; Capacitor Cmu
-G1 7 5 V1 <VALUE_OF_GM>    ; Dependent current source gm*vpi
+V1 6 8 DC <VALUE_OF_VE> ; Voltage source ve
+R1 6 8 <VALUE_OF_RE> ; Resistor re
+C1 6 10 <VALUE_OF_CPI> ; Capacitor Cpi
+C2 5 2 <VALUE_OF_CMU> ; Capacitor Cmu
+G1 7 5 V1 <VALUE_OF_GM> ; Dependent current source gm*vpi
 
 * Nodes
 * 6: Positive terminal of ve and connection to re

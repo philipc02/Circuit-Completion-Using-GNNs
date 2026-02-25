@@ -7,4 +7,4 @@ RP 3 Vb 1k
 RS 2 Vin 1k
 CL 3 0 10p
 Cin 2 0 10p
-Mnmos 3 Vb 2 2 NMOS L=1u W=1u
+Mnmos 3 Vb 2 2 NMOS

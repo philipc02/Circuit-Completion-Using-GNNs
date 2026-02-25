@@ -17,7 +17,7 @@ Cmu 2 4 Cmu
 Cpi 2 0 Cpi
 
 * Voltage-Controlled Current Source
-Gm 2 4 VALUE = {g_m * V(2, 0)}
+Gm 2 4 VALUE
 
 * Ground
 R_GND 0 0 0

@@ -6,7 +6,7 @@ ro2 2 3 R_VALUE
 Vpi2 7 6 DC VALUE
 rpi2 7 6 R_VALUE
 RE 5 6 R_VALUE
-G1 2 5 VPI2 gm2ro2 
+G1 2 5 VPI2 gm2ro2
 
 * Dependent source G1 is a voltage-controlled current source, where gm2ro2 is the transconductance
 

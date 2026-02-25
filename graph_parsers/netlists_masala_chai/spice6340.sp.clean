@@ -1,11 +1,11 @@
 spice
 * SPICE netlist for the given schematic
 
-M1 0 6 0 0 NMOS   * Q1
-M2 1 5 6 6 PMOS   * Q2
-M3 0 2 0 0 NMOS   * Q3
-M4 1 3 2 2 PMOS   * Q4
-M5 5 4 1 1 PMOS   * Q5
-M6 4 4 1 1 PMOS   * Q6
+M1 0 6 0 0 NMOS * Q1
+M2 1 5 6 6 PMOS * Q2
+M3 0 2 0 0 NMOS * Q3
+M4 1 3 2 2 PMOS * Q4
+M5 5 4 1 1 PMOS * Q5
+M6 4 4 1 1 PMOS * Q6
 
 VDD 1 0 DC 5V

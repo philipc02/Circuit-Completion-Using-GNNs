@@ -3,7 +3,7 @@
 Vin 6 0 DC 0V
 
 * Current Source
-I1 8 0 DC 1/8 
+I1 8 0 DC 1/8
 
 * Transistors
 Q12 3 6 0 QNPN

@@ -22,6 +22,6 @@ M6 6 5 9 9 PMOS
 
 * Capacitors
 CL 4 0 1uF
-CL 5 0 1uF
+CL_1 5 0 1uF
 
 * End of Netlist

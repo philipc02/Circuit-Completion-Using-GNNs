@@ -7,5 +7,5 @@ Cg1 4 2 C
 Cgs1 6 2 C
 Cpd2 2 2 C
 Cgs2 2 3 C
-Gm1 3 5 VOL=gm1*v(pi1)
-Gm2 2 3 VOL=gm2*v(pi2)
+Gm1 3 5
+Gm2 2 3

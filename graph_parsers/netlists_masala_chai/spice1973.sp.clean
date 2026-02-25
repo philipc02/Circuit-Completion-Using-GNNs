@@ -2,6 +2,6 @@ plaintext
 * SPICE Netlist
 Q1 2 2 3 NPN
 I1 3 0 DC <I1_value> ; Replace <I1_value> with actual current value
-RL 2 3 <RL_value>    ; Replace <RL_value> with actual resistance value
+RL 2 3 <RL_value> ; Replace <RL_value> with actual resistance value
 VCC 2 0 DC <VCC_value> ; Replace <VCC_value> with actual voltage value
 VEE 3 0 DC 0

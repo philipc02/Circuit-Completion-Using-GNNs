@@ -4,6 +4,6 @@ R1 0 7
 R2 7 4
 R3 9 4
 R4 9 5
-R5 5 6  ; Assuming B as node 6
+R5 5 6 ; Assuming B as node 6
 
 .end

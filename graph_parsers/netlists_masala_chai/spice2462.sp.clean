@@ -1,13 +1,13 @@
 spice
 * NMOS Amplifier Circuit
 
-VDD 3 0 DC <value>  ; Define the voltage value for VDD
-RD 3 2 <value>      ; Define the resistor value for RD
-M1 2 1 0 0 NMOS     ; NMOS (Drain=2, Gate=1, Source=0, Body=0)
+VDD 3 0 DC <value> ; Define the voltage value for VDD
+RD 3 2 <value> ; Define the resistor value for RD
+M1 2 1 0 0 NMOS ; NMOS
 
 * Input/Output connections
-Vin 1 0 DC <value>  ; Define the voltage level for Vin
-Vb 1 0 DC <value>   ; Define the voltage level for Vb
+Vin 1 0 DC <value> ; Define the voltage level for Vin
+Vb 1 0 DC <value> ; Define the voltage level for Vb
 
 .model NMOS NMOS    ; Model parameters may be required
 

@@ -5,7 +5,7 @@ V1 3 0 DC 0 AC 50m
 VDD 2 0 DC 9
 
 * MOSFET
-M1 2 3 0 0 2N7000 
+M1 2 3 0 0 2N7000
 
 * Resistors
 R1 2 4 2Meg

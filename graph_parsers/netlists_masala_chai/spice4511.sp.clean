@@ -1,6 +1,6 @@
 spice
 *C1 connected between vin and ground
-C1 6 2 
+C1 6 2
 
 *Voltage source Phi1 connected at node 3 and ground
 VPHI1 3 2 DC 0
@@ -9,10 +9,10 @@ VPHI1 3 2 DC 0
 VPHI2 3 2 DC 0
 
 *C2 connected between node 3 and node 4
-C2 3 4 
+C2 3 4
 
 *Feedback capacitor CF connected between nodes 3 and 5
-CF 3 5 
+CF 3 5
 
 *Operational Amplifier
 *Inverting input connected to node 3

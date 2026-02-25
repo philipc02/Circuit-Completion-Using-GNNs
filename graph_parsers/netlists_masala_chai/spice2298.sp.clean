@@ -2,7 +2,7 @@ spice
 * SPICE netlist for the given schematic
 
 * NMOS Transistor
-M1 out in mid mid NMOS L=0.18u W=10u
+M1 out in mid mid NMOS
 
 * Resistor
 RD out VDD 1k

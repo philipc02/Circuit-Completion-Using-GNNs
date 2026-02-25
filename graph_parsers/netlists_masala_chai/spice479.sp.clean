@@ -13,7 +13,7 @@ RF 3 4 <R_F_value>
 
 * Operational Amplifier
 * Note: You may have to define the op-amp model elsewhere in your SPICE environment
-XU1 5 3 4 2 opamp 
+XU1 5 3 4 2 opamp
 
 * Connections to Ground
 * Assume node 2/6 is ground based on standard schematic practices

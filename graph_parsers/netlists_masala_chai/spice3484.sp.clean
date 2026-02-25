@@ -6,9 +6,9 @@ VNEG 0 3 DC V-
 
 I1 2 3 DC 1A
 
-RL_left 7 8 RL 
+RL_left 7 8 RL
 RL_right 7 4 RL
-RE_left 5 0 RE 
+RE_left 5 0 RE
 RE_right 5 0 RE
 RO 2 3 RO
 

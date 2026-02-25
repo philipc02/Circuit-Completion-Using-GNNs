@@ -16,7 +16,7 @@ RC 2 6 1.5k
 RL 6 2 2.5k
 
 * Capacitor
-C1 6 2 <capacitance_value> 
+C1 6 2 <capacitance_value>
 
 * DC voltage source
 Vi 1 5 DC <input_voltage_value>

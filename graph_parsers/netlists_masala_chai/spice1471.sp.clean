@@ -8,6 +8,6 @@ M3 Vout Vb2 N2 N2 NMOS
 M4 VCC Vb3 Vout Vout NMOS
 
 VCC VCC 0 DC 2.5V
-VIN VIN 0 DC <input_voltage> 
+VIN VIN 0 DC <input_voltage>
 
 * End of Netlist

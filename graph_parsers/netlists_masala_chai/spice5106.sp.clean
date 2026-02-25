@@ -8,7 +8,7 @@ Iin 1 0 DC 1uA
 Rf1 2 3 10k
 Rf2 3 4 99k
 R1 0 3 1k
-RL 4 0 
+RL 4 0
 
 * Operational Amplifiers
 XU1 2 0 3 opamp

@@ -2,10 +2,10 @@ spice
 * List of components
 I1 4 8 DC 25uA
 R1 8 7 8k
-M12 7 8 0 0 NMOS L=40n W=8u
-M1 2 5 7 7 PMOS L=40n W=600u
-M2 3 5 6 6 PMOS L=40n W=600u
-M11 6 7 0 0 NMOS L=40n W=8u
+M12 7 8 0 0 NMOS
+M1 2 5 7 7 PMOS
+M2 3 5 6 6 PMOS
+M11 6 7 0 0 NMOS
 VDD 4 0 DC
 
 * Voltage sources

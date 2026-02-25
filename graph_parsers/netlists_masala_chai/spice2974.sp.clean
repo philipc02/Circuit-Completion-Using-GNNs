@@ -1,11 +1,11 @@
 spice
 * NMOS Amplifier Circuit
 
-M1 2 1 3 3 NMOS  ; NMOS transistor M1: Drain (2), Gate (1), Source (3), Body (3)
-RS 3 5 1000      ; Resistor RS: connected between Node 3 and Ground (5)
+M1 2 1 3 3 NMOS ; NMOS transistor M1: Drain (2), Gate (1), Source (3), Body (3)
+RS 3 5 1000 ; Resistor RS: connected between Node 3 and Ground (5)
 
-VDD 2 0 DC 5V    ; VDD power supply: 5V connected to Node 2
-VIN 1 0 DC 1V    ; Input voltage VIN: 1V connected to Node 1
+VDD 2 0 DC 5V ; VDD power supply: 5V connected to Node 2
+VIN 1 0 DC 1V ; Input voltage VIN: 1V connected to Node 1
 
 .model NMOS NMOS (LEVEL=1)
 .END

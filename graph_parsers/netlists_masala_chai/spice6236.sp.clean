@@ -9,7 +9,7 @@ Q6 2 2 22 NPN
 Q7 22 2 2 NPN
 
 * Current Source
-I1 22 2 DC  IBIAS 
+I1 22 2 DC IBIAS
 
 * Voltage Source
 VCC 2 0 DC VCC

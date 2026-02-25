@@ -1,11 +1,11 @@
 plaintext
 * NMOS Amplifier Circuit
-M1 4 6 3 3 NMOS  ; NMOS M1, D=4, G=6, S=3, B=3
-RD 4 1 10k       ; Resistor RD connected between 4 and VDD (1)
-RF 5 3 1k        ; Resistor RF connected between 5 and 3
+M1 4 6 3 3 NMOS ; NMOS M1,
+RD 4 1 10k ; Resistor RD connected between 4 and VDD (1)
+RF 5 3 1k ; Resistor RF connected between 5 and 3
 
-VDD 1 0 DC 5V    ; DC Voltage source VDD
+VDD 1 0 DC 5V ; DC Voltage source VDD
 
-VIN 3 0 DC 1V    ; Input voltage source
+VIN 3 0 DC 1V ; Input voltage source
 
-Vb 6 0 DC 2V     ; Bias voltage source
+Vb 6 0 DC 2V ; Bias voltage source

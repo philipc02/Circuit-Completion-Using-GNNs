@@ -2,10 +2,10 @@
 
 * Transistor Definitions
 * PMOS: M1 drain gate source bulk model length width
-MD 4 2 3 3 PMOS_MODEL L=W=YOUR_PMOS_DIMENSIONS
+MD 4 2 3 3 PMOS_MODEL
 
 * NMOS: M2 drain gate source bulk model length width
-ML 4 5 0 0 NMOS_MODEL L=W=YOUR_NMOS_DIMENSIONS
+ML 4 5 0 0 NMOS_MODEL
 
 * Voltage Source
 Vplus 3 0 DC 2.5V

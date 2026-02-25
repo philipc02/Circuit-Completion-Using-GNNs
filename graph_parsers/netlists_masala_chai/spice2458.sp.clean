@@ -1,6 +1,6 @@
 plaintext
 * NMOS transistor with drain at node 3, gate at node 1 (Vin), source at node 4 (ground)
-M1 3 1 4 4 NMOS 
+M1 3 1 4 4 NMOS
 
 * Resistor RD connected between nodes 3 and 5
 RD 3 5 1k

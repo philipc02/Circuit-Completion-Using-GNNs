@@ -2,8 +2,8 @@ spice
 *SPICE netlist
 
 *C1 and C2 are capacitors
-C1 5 2 
-C2 2 3 
+C1 5 2
+C2 2 3
 
 *Operational Amplifier
 *Opamp ideal model

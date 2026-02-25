@@ -1,7 +1,7 @@
 plaintext
 * Transistors
-M1 X Vb 0 0 NMOS_L W=L
-M2 Vout VDD Y Y PMOS_L W=L
+M1 X Vb 0 0 NMOS_L
+M2 Vout VDD Y Y PMOS_L
 
 * Voltage Sources
 Vin X 0 DC 0

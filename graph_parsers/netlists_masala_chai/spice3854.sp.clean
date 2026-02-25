@@ -1,13 +1,13 @@
 * Netlist for BJT Circuit
 
-Q1 4 2 5 NPN            ; NPN BJT with Collector at 4, Base at 2, Emitter at 5
+Q1 4 2 5 NPN ; NPN BJT with Collector at 4, Base at 2, Emitter at 5
 
-R_E 5 2 1k              ; Resistor RE between 5 and 2
-R_C 4 3 2.5k            ; Resistor RC between 4 and 3
-R_B 2 0 10k             ; Resistor RB between 2 and Ground (Node 0)
+R_E 5 2 1k ; Resistor RE between 5 and 2
+R_C 4 3 2.5k ; Resistor RC between 4 and 3
+R_B 2 0 10k ; Resistor RB between 2 and Ground (Node 0)
 
-V_BB 2 5 DC 2V          ; Voltage source VBB between 2 and 5
-V_CC 3 0 DC 8V          ; Voltage source VCC between 3 and Ground (Node 0)
+V_BB 2 5 DC 2V ; Voltage source VBB between 2 and 5
+V_CC 3 0 DC 8V ; Voltage source VCC between 3 and Ground (Node 0)
 
 .model NPN NPN          ; Define the NPN BJT model
 

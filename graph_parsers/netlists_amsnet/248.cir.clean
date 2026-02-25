@@ -1,7 +1,7 @@
 *SPICE Netlist for circuit 248
-M3 1 2 0 0 NMOS W=1u L=1u
-M1 4 8 1 1 NMOS W=1u L=1u
-M2 5 10 1 1 NMOS W=1u L=1u
+M3 1 2 0 0 NMOS
+M1 4 8 1 1 NMOS
+M2 5 10 1 1 NMOS
 R3 1 5 1k
 R2 4 VDD 1k
 R1 5 VDD 1k

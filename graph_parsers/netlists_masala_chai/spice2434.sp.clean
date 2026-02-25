@@ -9,9 +9,9 @@ M1 Vout N3 N2 N2 NMOS
 R1 VDD Vout 1k
 
 * Components
-VDD VDD 0 DC 5
-V1 N1 0 DC 2
-Vin N3 0
+VDD_1 VDD 0 DC 5
+V1_1 N1 0 DC 2
+Vin_1 N3 0
 
 * Analysis
 .op

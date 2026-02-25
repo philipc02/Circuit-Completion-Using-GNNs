@@ -2,8 +2,8 @@ spice
 * Netlist for the given circuit
 
 * Voltage sources
-V1 3 0 DC 
-V2 5 0 DC 
+V1 3 0 DC
+V2 5 0 DC
 
 * Resistors
 R1 3 2 50k

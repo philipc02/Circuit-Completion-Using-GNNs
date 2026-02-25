@@ -1,8 +1,8 @@
 // List of Components
-// Transistors: M1, M2, M3, M4
-// Resistors: R1, R2 (both 1 kΩ)
-// Current Source: I_Q (0.2 mA)
-// Voltage Sources: V+, V-
+//_1 Transistors: M1, M2, M3, M4
+//_2 Resistors: R1, R2 (both 1 kΩ)
+//_3 Current Source: I_Q (0.2 mA)
+//_4 Voltage Sources: V+, V-
 
 * Two-stage differential amplifier
 

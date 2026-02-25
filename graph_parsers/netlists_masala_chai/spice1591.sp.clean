@@ -11,11 +11,11 @@ Q2 Vout 4 3 NPN
 
 * Resistors
 RC 2 Vout 1k
-RC 2 Vout 1k
+RC_1 2 Vout 1k
 R1 1 Vin1 1k
 R2 4 Vin2 1k
 RE 3 0 500
-RE 3 0 500
+RE_1 3 0 500
 RSS 3 0 100
 
 * Additional connections

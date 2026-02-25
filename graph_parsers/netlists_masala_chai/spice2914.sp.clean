@@ -9,7 +9,7 @@ Vb 5 0 DC Vb
 * Resistors
 R1 7 3 R1_value
 RS 6 8 RS_value
-RS 8 4 RS_value
+RS_1 8 4 RS_value
 
 * PMOS Transistors
 M1 3 10 6 6 PMOS_MODEL

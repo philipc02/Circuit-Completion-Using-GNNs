@@ -14,7 +14,7 @@ C1 1 5 1u
 C2 3 10 1u
 
 * NMOS Transistor
-M1 4 5 3 3 NMOS L=1u W=1u
+M1 4 5 3 3 NMOS
 
 * Voltage Source
 Vin 1 0 DC 0V

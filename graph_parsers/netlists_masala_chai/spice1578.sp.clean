@@ -1,10 +1,10 @@
 * Netlist for the given circuit
 
-   R1 2 1 R_C
-   R2 2 3 R_C
-   VCC 2 0 DC V_CC
+R1 2 1 R_C
+R2 2 3 R_C
+VCC 2 0 DC V_CC
 
-   I1 1 0 DC I_1
-   I2 3 0 DC I_2
+I1 1 0 DC I_1
+I2 3 0 DC I_2
 
-   RP 3 4 R_P
+RP 3 4 R_P

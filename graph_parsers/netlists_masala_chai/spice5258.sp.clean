@@ -3,5 +3,5 @@ plaintext
 V1 3 4 DC 24V
 R1 3 2 1.5k
 * Ground connections
-V1 4 0
-R1 2 0
+V1_1 4 0
+R1_1 2 0

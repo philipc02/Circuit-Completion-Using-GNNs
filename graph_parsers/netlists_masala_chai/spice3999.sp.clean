@@ -3,7 +3,7 @@ spice
 Vs 1 4 DC 0V
 Vplus 7 0 DC 5V
 Vminus 0 6 DC -5V
-Rc 7 3  R
+Rc 7 3 R
 Rs 1 4 2.5k
 Rl 5 0 5k
 Cc 3 5 C

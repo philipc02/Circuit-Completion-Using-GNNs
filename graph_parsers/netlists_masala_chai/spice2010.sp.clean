@@ -7,7 +7,7 @@ V1 Vin 1 DC 0
 * Resistors
 R1 Vin 2 R1
 RX 3 4 RX
-RX 4 5 RX
+RX_1 4 5 RX
 
 * Capacitor
 C1 2 0 C

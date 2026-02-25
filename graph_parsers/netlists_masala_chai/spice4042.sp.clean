@@ -14,6 +14,6 @@ RL 4 0 10k
 CC 1 4
 
 * Voltage Controlled Current Source (gmVgs)
-Gm 1 2 VALUE={gm*v(2,0)}
+Gm 1 2
 
 .END

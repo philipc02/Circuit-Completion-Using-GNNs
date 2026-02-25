@@ -2,10 +2,10 @@ spice
 * Netlist for the given circuit
 
 * NMOS Transistor
-M1 2 3 0 0 NMOS  
+M1 2 3 0 0 NMOS
 
 * PMOS Transistor
-M2 5 2 4 4 PMOS 
+M2 5 2 4 4 PMOS
 
 * Resistors
 RD 5 2 1k

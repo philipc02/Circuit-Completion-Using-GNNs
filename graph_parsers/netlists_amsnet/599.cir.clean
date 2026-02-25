@@ -1,7 +1,7 @@
 *SPICE Netlist for circuit 599
 C1 0 1 1nF
-M1 2 6 0 0 NMOS W=1u L=1u
-M2 1 0 4 4 NMOS W=1u L=1u
+M1 2 6 0 0 NMOS
+M2 1 0 4 4 NMOS
 V1 6 0 5V
 R3 0 4 1k
 R4 4 2 1k

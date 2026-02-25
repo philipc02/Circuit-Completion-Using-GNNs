@@ -8,7 +8,7 @@ VDD VDD 0 DC 1.8
 RD VDD Vout 1k
 
 * NMOS Transistor
-M1 Vout Vin 0 0 NMOS W=10u L=0.18u
+M1 Vout Vin 0 0 NMOS
 
 * Model Definition
 .model NMOS NMOS

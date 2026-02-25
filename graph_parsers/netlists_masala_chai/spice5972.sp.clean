@@ -1,6 +1,6 @@
 plaintext
 * SPICE Netlist
-VCCS G1 3 6 VOL=2*i_sig
+VCCS G1 3 6
 R1 3 4 R_out
 
 * Control source

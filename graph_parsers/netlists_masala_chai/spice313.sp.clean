@@ -1,16 +1,16 @@
 plaintext
 * SPICE Netlist for the Given Circuit
 Vi 11 12 DC 0
-Rs 5 11 1k        ; Resistor Rs
-Cgs1 5 8 1uF      ; Capacitor Cgs1
-Gm1 8 7 5 0.5m    ; Current Source Gm1
-Cdb1 5 7 1uF      ; Capacitor Cdb1
-Rd1 6 7 1k        ; Resistor Rd1
-V2 6 2 DC 0       ; Voltage Source V2
-Cgs2 2 9 1uF      ; Capacitor Cgs2
-Gm2 9 3 2 0.5m    ; Current Source Gm2
-RL2 9 3 1k        ; Resistor RL2
-Vout 3 0 DC 0     ; Output Voltage Vout
+Rs 5 11 1k ; Resistor Rs
+Cgs1 5 8 1uF ; Capacitor Cgs1
+Gm1 8 7 5 0.5m ; Current Source Gm1
+Cdb1 5 7 1uF ; Capacitor Cdb1
+Rd1 6 7 1k ; Resistor Rd1
+V2 6 2 DC 0 ; Voltage Source V2
+Cgs2 2 9 1uF ; Capacitor Cgs2
+Gm2 9 3 2 0.5m ; Current Source Gm2
+RL2 9 3 1k ; Resistor RL2
+Vout 3 0 DC 0 ; Output Voltage Vout
 
 .model NMOS NMOS
 .model PMOS PMOS

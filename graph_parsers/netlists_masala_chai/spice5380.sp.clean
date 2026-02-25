@@ -1,9 +1,9 @@
 * Example SPICE Netlist
    .title Circuit Example
 
-   Vs 2 6 DC 5V
+Vs 2 6 DC 5V
 
-   C1 5 4 330p
-   C2 2 3 220p
+C1 5 4 330p
+C2 2 3 220p
 
    .end

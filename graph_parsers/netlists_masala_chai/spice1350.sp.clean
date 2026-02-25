@@ -1,8 +1,8 @@
 * MOSFET Transistor
-M1  3 2 0 0 NMOS
+M1 3 2 0 0 NMOS
 
 * Current Source
-I1  0 2 DC 1
+I1 0 2 DC 1
 
 * Resistors
 Rout 3 1 ROUT

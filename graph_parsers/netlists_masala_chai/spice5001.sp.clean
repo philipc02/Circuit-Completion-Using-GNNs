@@ -9,11 +9,11 @@ R1 6 8 10k
 R_L 222 0 5
 
 * NMOS Transistor
-M1 222 7 0 0 NMOS L=1u W=1u
+M1 222 7 0 0 NMOS
 RS1 7 0 1
 
 * PMOS Transistor
-M2 222 6 5 5 PMOS L=1u W=1u
+M2 222 6 5 5 PMOS
 
 * Control Voltage Source
 V_EN 4 0 PULSE(0 5 1n)

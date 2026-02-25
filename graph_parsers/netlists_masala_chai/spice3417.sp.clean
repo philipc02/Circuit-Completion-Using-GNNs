@@ -5,7 +5,7 @@ plaintext
 V1 9 5 DC
 
 * Current Source
-I1 4 5 VALUE = {gm * V(4,6)}
+I1 4 5 VALUE
 
 * Resistors
 RT 9 3 RT

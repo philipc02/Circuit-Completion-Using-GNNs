@@ -15,7 +15,7 @@ I2 2 2 DC 1mA
 V1 8 4 DC VDD
 
 * Connections
-V1 vi 1 DC 0
+V1_1 vi 1 DC 0
 V2 vg2 3 DC 0
 V3 2 vo 0
 

@@ -1,7 +1,7 @@
 spice
    * PMOS Transistors
-   M1 2 A 3 3 PMOS_MODEL
-   M2 2 B 3 3 PMOS_MODEL
+M1 2 A 3 3 PMOS_MODEL
+M2 2 B 3 3 PMOS_MODEL
 
    * Voltage Supply
-   VDD 3 0 DC VDD_VALUE
+VDD 3 0 DC VDD_VALUE

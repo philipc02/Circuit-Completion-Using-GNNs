@@ -16,9 +16,9 @@ R4 10 3 150k
 R5 8 3 150k
 
 * Capacitors
-C1 9 2 
-C2 5 7 
-C3 6 8 
+C1 9 2
+C2 5 7
+C3 6 8
 C4 7 12
 
 * Voltage Source

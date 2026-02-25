@@ -14,14 +14,16 @@ PIN_ROLES = {
     "V" : ["pos", "neg"],   # voltage source
     "X" : None, # subcircuits, using None as we have dynamic number of pins
     "N" : ["drain", "gate", "source"], # nmos
-    "P" : ["drain", "gate", "source"] # pmos
+    "P" : ["drain", "gate", "source"], # pmos
+    "I" : ["pos", "neg"], # voltage source
+    "Q" : ["base", "collector", "emitter"] # BJT
 }
 
 NODE_TYPES = ["component", "pin", "net"] # subcircuits also under component
 
-COMPONENT_TYPES = ["R", "C", "V", "X", "N", "P"]
+COMPONENT_TYPES = ["R", "C", "V", "X", "N", "P", "I", "Q"]
 
-PIN_TYPES = ["1", "2", "pos", "neg", "drain", "gate", "source"] 
+PIN_TYPES = ["1", "2", "pos", "neg", "drain", "gate", "source", "base", "collector", "emitter"] 
 
 
 def clean_netlist_file(input_path, cleaned_path):
@@ -88,7 +90,7 @@ def check_circuit_has_only_allowed_components(file_path):
             filtered_lines.append(l)
     
     # check for components
-    allowed_prefixes = {'R', 'C', 'V', 'X', 'M', '.', 'K', '+'}  # . for directives, K for coupling, + for continuation
+    allowed_prefixes = {'R', 'C', 'V', 'X', 'M', '.', 'K', '+', 'I', 'Q'}  # . for directives, K for coupling, + for continuation
     
     for line in filtered_lines:
         if not line:
@@ -101,7 +103,7 @@ def check_circuit_has_only_allowed_components(file_path):
         
         # Check if component type is allowed
         if first_char not in allowed_prefixes:
-            print(f"Contains component type other than R, C, V, X, M: {first_char}")
+            print(f"Contains component type other than R, C, V, X, M, I, Q: {first_char}")
             return False
     
     return True
@@ -382,8 +384,8 @@ def analyze_dataset(folder):
 if __name__ == "__main__":
     print("Netlist parser running...")
     
-    input_folder = "netlists_analoggenie"
-    output_folder = "graphs_analoggenie/graphs_component_pin_net"
+    input_folder = "netlists_amsnet"
+    output_folder = "graphs_amsnet/graphs_component_pin_net"
     process_folder(input_folder, output_folder)
     remove_duplicate_graphs(output_folder)
     analyze_dataset(output_folder)

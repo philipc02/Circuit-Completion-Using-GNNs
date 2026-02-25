@@ -4,20 +4,20 @@
 Vin 4 0 DC 0
 
 * Resistors
-RS 4 2 1000  ; Replace with actual resistance value
-RZ 2 5 1000  ; Replace with actual resistance value
-RL 5 6 1000  ; Replace with actual resistance value
+RS 4 2 1000 ; Replace with actual resistance value
+RZ 2 5 1000 ; Replace with actual resistance value
+RL 5 6 1000 ; Replace with actual resistance value
 
 * Capacitors
-CE 7 2 1u    ; Replace with actual capacitance value
-CC 3 5 1u    ; Replace with actual capacitance value
-CL 6 0 1u    ; Replace with actual capacitance value
+CE 7 2 1u ; Replace with actual capacitance value
+CC 3 5 1u ; Replace with actual capacitance value
+CL 6 0 1u ; Replace with actual capacitance value
 
 * NMOS Transistor
 M9 5 2 0 0 NMOS_LVT
 
 * Voltage Supply
-VDD 3 0 DC 5  ; Replace with actual voltage value
+VDD 3 0 DC 5 ; Replace with actual voltage value
 
 * Models (Add actual model parameters)
 .model NMOS_LVT NMOS (LEVEL=1 VTO=0.7 KP=200u)

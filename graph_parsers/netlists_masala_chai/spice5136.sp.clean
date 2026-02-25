@@ -18,6 +18,6 @@ VEE VEE GND DC -15
 * Pin 5 (Offset null) not used
 * Pin 6 (Output)
 * Pin 7 (VCC)
-X1 C D VEE VCC VEE OA741
-X2 E F VEE VCC VEE OA741
+X1_1 C D VEE VCC VEE OA741
+X2_1 E F VEE VCC VEE OA741
 .END

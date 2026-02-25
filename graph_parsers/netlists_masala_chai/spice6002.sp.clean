@@ -2,8 +2,8 @@ spice
 * NMOS Differential Pair Circuit
 
 * NMOS Transistor
-M1 2 4 1 1 NMOS 
-M2 2 2 1 1 NMOS 
+M1 2 4 1 1 NMOS
+M2 2 2 1 1 NMOS
 
 * Resistors
 RD1 5 3 RD

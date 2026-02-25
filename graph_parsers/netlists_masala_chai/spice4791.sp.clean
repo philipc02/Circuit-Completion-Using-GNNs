@@ -1,9 +1,9 @@
 * PNP Transistor Amplifier Circuit
-   VCC 5 0 DC -10V
-   Q1 2 3 6 6 2N3906
-   R1 5 4 10k
-   R2 4 0 2.2k
-   RC 2 3 3.6k
-   RE 6 0 1k
+VCC 5 0 DC -10V
+Q1 2 3 6 6 2N3906
+R1 5 4 10k
+R2 4 0 2.2k
+RC 2 3 3.6k
+RE 6 0 1k
    .model 2N3906 PNP
    .end

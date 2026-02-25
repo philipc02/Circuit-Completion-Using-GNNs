@@ -1,10 +1,10 @@
 spice
 * SPICE Netlist for Inverting Amplifier Circuit
 
-V1 1 0 DC Vin    ; Voltage source Vin connected to Net 1
-R1 1 3 10k       ; Resistor R1 between Net 1 and Net 3
-R2 4 3 10k       ; Resistor R2 between Net 4 and Net 3
-XU1 0 3 4 opamp  ; Operational amplifier with non-inverting input at Net 2, inverting input at Net 3, output at Net 4
+V1 1 0 DC Vin ; Voltage source Vin connected to Net 1
+R1 1 3 10k ; Resistor R1 between Net 1 and Net 3
+R2 4 3 10k ; Resistor R2 between Net 4 and Net 3
+XU1 0 3 4 opamp ; Operational amplifier with non-inverting input at Net 2, inverting input at Net 3, output at Net 4
 
 * Models
 .model opamp opamp

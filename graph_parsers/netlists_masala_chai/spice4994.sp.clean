@@ -14,6 +14,6 @@ C2 9 3 C2_value
 
 M1 3 2 4 4 NMOS_Model
 
-*.options
+*.options reltol=0.001
 
 *.end

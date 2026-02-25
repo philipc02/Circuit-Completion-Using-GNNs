@@ -3,13 +3,13 @@ plaintext
 
 * Capacitors
 C1 Vin X 1u
-C1 Y 3 1u
+C1_1 Y 3 1u
 C2 2 6 1u
-C2 3 4 1u
+C2_1 3 4 1u
 
 * Resistors
 RF X 6 10k
-RF 9 4 10k
+RF_1 9 4 10k
 
 * Operational Amplifier
 * Op-amp with non-inverting (+) and inverting (-) inputs and an output

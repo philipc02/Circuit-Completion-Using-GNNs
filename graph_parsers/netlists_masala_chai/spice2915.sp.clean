@@ -17,7 +17,7 @@ M3 7 4 4 4 PMOS
 M4 5 4 4 4 PMOS
 
 * Voltage Inputs
-Vin 8 0 DC Vin 
+Vin 8 0 DC Vin
 Vb 4 0 DC Vb
 
 * Output

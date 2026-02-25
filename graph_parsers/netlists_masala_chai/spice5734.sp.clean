@@ -1,6 +1,6 @@
 spice
 * PMOS Transistor (MP1)
-MP1 5 4 3 3 PMOS W=9u
+MP1 5 4 3 3 PMOS
 
 * NMOS Transistor (MN1)
 MN1 2 4 3 3 NMOS

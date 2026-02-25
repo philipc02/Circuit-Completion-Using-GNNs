@@ -4,6 +4,6 @@ plain
 VDD 3 4 DC 5V
 RD 4 2 1k
 Vin 1 0 DC 0V
-M1 2 1 0 0 NMOS L=1u W=10u
+M1 2 1 0 0 NMOS
 
 .model NMOS NMOS(Level=1 VTO=0.7 KP=20u)

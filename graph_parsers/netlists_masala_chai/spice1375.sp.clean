@@ -2,11 +2,11 @@ plaintext
 * SPICE Netlist for given schematic
 
 * Voltage Sources
-V_in 1 0 DC=V_in
-V_b1 3 0 DC=V_b1
-V_b2 5 0 DC=V_b2
-V_b3 6 0 DC=V_b3
-V_CC 4 0 DC=V_CC
+V_in 1 0
+V_b1 3 0
+V_b2 5 0
+V_b3 6 0
+V_CC 4 0
 
 * BJTs
 Q1 2 1 3 QNPN

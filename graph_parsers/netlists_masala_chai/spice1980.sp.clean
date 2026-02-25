@@ -2,7 +2,7 @@ spice
 * SPICE netlist
 
 * NPN Transistors
-Q1 4 3 5 NPN 
+Q1 4 3 5 NPN
 Q2 5 7 2 NPN
 
 * Current Source

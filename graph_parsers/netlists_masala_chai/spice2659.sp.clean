@@ -1,6 +1,6 @@
 spice
 * SPICE Netlist
-VDD 4 0 DC 
+VDD 4 0 DC
 I1 4 5 DC 1A
 Rb 3 5 10k
 

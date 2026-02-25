@@ -2,7 +2,7 @@ plaintext
 * SPICE Netlist for the given schematic
 
 * Voltage Source
-V_in 2 1 DC <value> 
+V_in 2 1 DC <value>
 
 * Resistors
 R1 6 7 <value>

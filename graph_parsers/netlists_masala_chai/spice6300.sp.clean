@@ -9,4 +9,4 @@ M4 Y C 5 5 NMOS
 M5 Y D 5 5 NMOS
 
 * Voltage Source
-VDD VDD 0 DC <value>  ; Replace <value> with the actual VDD voltage
+VDD VDD 0 DC <value> ; Replace <value> with the actual VDD voltage

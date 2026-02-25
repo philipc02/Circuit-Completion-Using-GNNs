@@ -1,8 +1,8 @@
 plaintext
 * NPN BJT Amplifier Circuit
-VCC 5 3 DC <value>      * Voltage source V_CC
-RB1 4 6 <value>         * Resistor R_B1
-RB2 6 3 <value>         * Resistor R_B2
-RC 4 7 <value>          * Resistor R_C
-RE 2 3 <value>          * Resistor R_E
-Q1 7 6 2 NPN            * NPN BJT with C=7, B=6, E=2
+VCC 5 3 DC <value> * Voltage source V_CC
+RB1 4 6 <value> * Resistor R_B1
+RB2 6 3 <value> * Resistor R_B2
+RC 4 7 <value> * Resistor R_C
+RE 2 3 <value> * Resistor R_E
+Q1 7 6 2 NPN * NPN BJT with

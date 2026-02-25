@@ -12,8 +12,8 @@ CGDOV 3 7
 CGDi 3 5
 
 * Current-Controlled Voltage Sources
-GMVG 5 3 VOL='g_m*v(3)'
-NGMVS 9 5 VOL='n*g_m*v(2)'
+GMVG 5 3
+NGMVS 9 5
 
 * Conductance
-GDS 2 4 VALUE='g_ds*v(2,4)'
+GDS 2 4

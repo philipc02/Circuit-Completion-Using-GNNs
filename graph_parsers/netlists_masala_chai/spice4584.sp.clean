@@ -12,7 +12,7 @@ MN1 7 2 4 4 NMOS
 MN2 7 3 4 4 NMOS
 
 * Voltage Source
-VDD 9 0 DC 3.3V
+VDD_1 9 0 DC 3.3V
 
 * Input and Output
 VI 2 0 DC 0V

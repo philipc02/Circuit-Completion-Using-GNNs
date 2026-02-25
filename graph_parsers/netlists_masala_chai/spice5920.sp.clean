@@ -4,7 +4,7 @@
 Vx 3 5 DC <value>
 
 * Dependent Current Source
-G1 2 3 VOL=Gm*vpi
+G1 2 3
 
 * Resistors
 Rc 6 3 rc

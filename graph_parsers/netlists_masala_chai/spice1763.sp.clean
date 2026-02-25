@@ -2,7 +2,7 @@ plaintext
 .SUBCKT op_amp 1 2 3
 * + (non-inv), - (inv), Out
 * Placeholder model for operational amplifier
-EGAIN 3 0 VALUE = {V(1, 2) * 1e6}
+EGAIN 3 0 VALUE
 RGAIN 3 0 1MEG
 .ENDS
 

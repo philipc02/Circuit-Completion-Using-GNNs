@@ -10,5 +10,5 @@ RD 5 3 RDValue
 
 * Ground
 VSS 2 0
-VSS 8 0
-VSS 3 0
+VSS_1 8 0
+VSS_2 3 0

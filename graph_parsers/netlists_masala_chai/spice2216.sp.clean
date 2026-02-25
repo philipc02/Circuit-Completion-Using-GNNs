@@ -6,7 +6,7 @@ M1 Vout Vb 0 0 NMOS
 M2 Vout Vin VDD VDD PMOS
 
 Vin Vin 0 DC
-Vb  Vb 0 DC
+Vb Vb 0 DC
 
 * NMOS model
 .model NMOS NMOS 

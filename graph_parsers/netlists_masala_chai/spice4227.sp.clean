@@ -13,10 +13,10 @@ Ro4 6 5 r_o4
 Ro2 2 4 r_o2
 
 *g_m4Vbe4 NetList
-Gm4 3 5 VALUE={gm4*(V(7,3))}
+Gm4 3 5
 
 *g_m2Vbe2 NetList
-Gm2 2 5 VALUE={gm2*V(9,2)}
+Gm2 2 5
 
 *Vx Source
 Vx 6 4 DC 0

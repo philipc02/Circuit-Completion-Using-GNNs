@@ -1,12 +1,12 @@
 spice
 * Transistors
-M1 2 9 2 2 PCH W=5u L=0.5u
-M2 2 7 3 3 PCH W=5u L=0.5u
-M3 2 8 4 4 PCH W=5u L=0.5u
-M4 2 4 9 9 PCH W=5u L=0.5u
-M5 4 5 9 9 NCH W=5u L=0.5u
-M6 3 6 0 0 NCH W=5u L=0.5u
-M7 0 9 6 6 NCH W=0.5u L=4u
+M1 2 9 2 2 PCH
+M2 2 7 3 3 PCH
+M3 2 8 4 4 PCH
+M4 2 4 9 9 PCH
+M5 4 5 9 9 NCH
+M6 3 6 0 0 NCH
+M7 0 9 6 6 NCH
 
 * Current Source
 I1 6 0 DC 2.5uA

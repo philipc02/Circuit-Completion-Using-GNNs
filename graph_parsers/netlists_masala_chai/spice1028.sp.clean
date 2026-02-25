@@ -3,7 +3,7 @@ plaintext
 Q1 Vout Vin 0 NPN
 
 * Resistors
-RC VCC Vout 1k ; Assume RC = 1k
+RC VCC Vout 1k ; Assume RC
 R1 Vin 0 200
 
 * Voltage Source

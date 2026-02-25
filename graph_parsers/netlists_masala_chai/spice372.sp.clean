@@ -1,11 +1,11 @@
 spice
 * SPICE Netlist
 Vi 6 8 DC 0
-Rs 6 4  R_S
-Rl1 7 4  R_L1
-Re 2 0  R_E
-Rf 5 3  R_F
-Zl 4 0  Z_L
+Rs 6 4 R_S
+Rl1 7 4 R_L1
+Re 2 0 R_E
+Rf 5 3 R_F
+Zl 4 0 Z_L
 
 * Q1 transistor
 Q1 7 6 4 QNPN

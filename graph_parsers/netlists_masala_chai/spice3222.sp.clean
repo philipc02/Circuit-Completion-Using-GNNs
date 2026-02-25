@@ -12,7 +12,7 @@ E1 Vout 0 2 0 Av1
 .ends OPAMP
 
 * Connections
-XOPAMP 2 0 Vout OPAMP Av1=GIVEN_GAIN
+XOPAMP 2 0 Vout OPAMP
 
 * Sources and simulation instructions would be added here in a full simulation setting
 

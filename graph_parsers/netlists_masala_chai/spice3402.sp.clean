@@ -17,6 +17,6 @@ Cmu 6 4 10u
 CE 3 9 10u
 CO 4 5 1u
 
-Gm 4 3 VOL='gm*V(3,3)'
+Gm 4 3
 
 * .end

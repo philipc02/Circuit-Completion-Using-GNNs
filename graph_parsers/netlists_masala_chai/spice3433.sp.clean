@@ -2,7 +2,7 @@ plaintext
 * SPICE Netlist
 
 * Current Source
-I1 3 2 I=Enob*V(t)
+I1 3 2
 
 * Resistors
 R1 5 4 Ro

@@ -11,7 +11,7 @@ V1 4 0 AC 1
 * Output: Node 2
 
 * Feedback Connection
-R1 2 3 1k  ; Example feedback resistor
+R1 2 3 1k ; Example feedback resistor
 
 * Output Node
 * Node 2 connects to Vout

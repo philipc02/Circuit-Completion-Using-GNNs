@@ -7,4 +7,4 @@ R1 33 3 10k
 RD 3 5 10k
 C1 1 2 1uF
 C1b 5 0 1uF
-M1 3 2 5 NMOS L=1u W=5u
+M1 3 2 5 NMOS

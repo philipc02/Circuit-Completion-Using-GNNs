@@ -10,7 +10,7 @@ Q2 2 5 2 NMOS
 
 * Resistors
 R1 3 7 1k
-R1 2 7 1k
+R1_1 2 7 1k
 R2 5 6 1k
 
 * Voltage Sources

@@ -1,12 +1,12 @@
 spice
 * SPICE Netlist
 
-V1 8 6 DC Vi     ; Voltage source
+V1 8 6 DC Vi ; Voltage source
 Rparallel 6 3 RTP ; Represents R1 || R2
-G1 4 3 3 0 GM     ; Voltage-controlled current source
-Ro 3 5 RO         ; Resistor r_o
-RD 4 7 RD         ; Resistor RD
-RL 7 2 RL         ; Resistor RL
+G1 4 3 3 0 GM ; Voltage-controlled current source
+Ro 3 5 RO ; Resistor r_o
+RD 4 7 RD ; Resistor RD
+RL 7 2 RL ; Resistor RL
 
 * Nodes
 * 1 - Vo

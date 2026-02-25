@@ -6,10 +6,10 @@ VDD 5 0 DC 20V
 VIN 1 0
 
 * PMOS Transistor
-M1 4 4 5 5 PMOS L=1u W=1u
+M1 4 4 5 5 PMOS
 
 * NMOS Transistor
-M2 4 3 2 2 NMOS L=1u W=1u
+M2 4 3 2 2 NMOS
 
 * Resistors
 RD 5 4 10k

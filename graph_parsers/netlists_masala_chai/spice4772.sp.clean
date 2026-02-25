@@ -1,14 +1,14 @@
 spice
    .TITLE PNP Transistor Amplifier
 
-   Q1 6 5 4 2N3906
+Q1 6 5 4 2N3906
 
-   R1 8 5 10k
-   R2 5 0 2.2k
-   RC 8 4 3.6k
-   RE 6 0 1k
+R1 8 5 10k
+R2 5 0 2.2k
+RC 8 4 3.6k
+RE 6 0 1k
 
-   VCC 8 0 -10V
+VCC 8 0 -10V
 
    .MODEL 2N3906 PNP(IS=1E-14 BF=200 VAF=100)
 

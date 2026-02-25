@@ -6,7 +6,7 @@ V1 5 3 DC 10V
 R1 5 2 0.5k
 
 * Load Resistor
-RL 2 4 
+RL 2 4
 
 * Zener Diode
 DZ 2 6 D

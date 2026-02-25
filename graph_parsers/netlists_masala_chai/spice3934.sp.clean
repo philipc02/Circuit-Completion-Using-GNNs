@@ -3,7 +3,7 @@ spice
 
 Rpi 4 2 rpi_value
 Ro 5 3 ro_value
-G1 2 5 VALUE = {beta * I(Veb)}
+G1 2 5 VALUE
 Veb 4 2 DC Veb_value
 Vec 3 7 DC Vec_value
 

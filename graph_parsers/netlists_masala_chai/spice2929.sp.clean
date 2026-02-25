@@ -13,6 +13,6 @@ Vb 4 0 DC 1V
 
 * Simulation Control
 .control
-  dc Vb 0 5 0.1
-  print V(3)
+dc Vb 0 5 0.1
+print V(3)
 .endc

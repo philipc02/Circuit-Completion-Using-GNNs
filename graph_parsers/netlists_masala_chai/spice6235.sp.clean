@@ -10,8 +10,8 @@ IBIAS1 2 3 DC
 IBIAS2 2 3 DC
 
 * Resistors
-R1 2 0 
-R2 2 5 
+R1 2 0
+R2 2 5
 
 * BJTs
 Q1 6 2 3 NPN

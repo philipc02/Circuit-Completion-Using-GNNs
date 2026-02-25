@@ -1,9 +1,9 @@
 spice
 * SPICE Netlist
 
-V1 4 8 AC 1 SIN(0 1 60Hz)  ; AC voltage source with node 4 and ground at node 8
-R1 4 2 600                 ; Resistor R1 between node 4 and node 2
-R2 2 2 1k                  ; Resistor R2 between node 2 and node 2 (ground)
-C1 2 5 1uF                 ; Capacitor between node 2 and node 5
+V1 4 8 AC 1 SIN(0 1 60Hz) ; AC voltage source with node 4 and ground at node 8
+R1 4 2 600 ; Resistor R1 between node 4 and node 2
+R2 2 2 1k ; Resistor R2 between node 2 and node 2 (ground)
+C1 2 5 1uF ; Capacitor between node 2 and node 5
 
 .end

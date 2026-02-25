@@ -1,14 +1,14 @@
 spice
 * Components
-I_nRD 4 5 DC  ; Current source from net 4 to net 5
-I_n1 8 3 DC   ; Current source from net 8 to net 3
-V_DD 4 0 DC   ; Voltage source from net 4 to ground
+I_nRD 4 5 DC ; Current source from net 4 to net 5
+I_n1 8 3 DC ; Current source from net 8 to net 3
+V_DD 4 0 DC ; Voltage source from net 4 to ground
 
 * Resistor
-R_D 4 5  ; Resistor RD between net 4 and net 5
+R_D 4 5 ; Resistor RD between net 4 and net 5
 
 * NMOS Transistor
-M1 5 6 3 3 NMOS  ; NMOS with drain at net 5, gate at net 6, source and body at net 3
+M1 5 6 3 3 NMOS ; NMOS with drain at net 5, gate at net 6, source and body at net 3
 
 * Connections
-V_b 6 0 DC   ; Bias voltage connected to the gate of M1
+V_b 6 0 DC ; Bias voltage connected to the gate of M1

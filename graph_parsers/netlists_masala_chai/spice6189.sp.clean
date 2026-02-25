@@ -12,13 +12,13 @@ I2 2 0 DC 300u
 I3 4 3 DC 0.8m
 
 * PMOS Transistors
-Q1 2 2 1 PMOS L=1u W=120u
-Q2 2 2 1 PMOS L=1u W=40u
+Q1 2 2 1 PMOS
+Q2 2 2 1 PMOS
 
 * NMOS Transistors
-Q3 6 5 3 NMOS L=1u W=20u
-Q4 4 2 3 NMOS L=1u W=120u
-Q5 0 4 3 NMOS L=1u W=20u
+Q3 6 5 3 NMOS
+Q4 4 2 3 NMOS
+Q5 0 4 3 NMOS
 
 * Nodes
 * 0: Ground

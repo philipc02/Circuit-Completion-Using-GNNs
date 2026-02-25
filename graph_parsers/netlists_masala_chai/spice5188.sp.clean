@@ -11,9 +11,9 @@ X1 2 0 3 5 opamp
 * Subcircuit for opamp
 .subckt opamp noninv inv out vcc vee
 * Ideal opamp model
-G1 out 0 value={V(noninv) - V(inv)}
-Ec 3 0 value={Vcc}
-Ev 5 0 value={Vee}
+G1 out 0
+Ec 3 0
+Ev 5 0
 .ends opamp
 
 .end

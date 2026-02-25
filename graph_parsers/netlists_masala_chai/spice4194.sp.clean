@@ -1,7 +1,7 @@
 spice
 * Op-amp negative feedback circuit
 
-V1 vi 0 DC 0   * Voltage source for input
+V1 vi 0 DC 0 * Voltage source for input
 
 * Resistors
 R1 vi 3 1k

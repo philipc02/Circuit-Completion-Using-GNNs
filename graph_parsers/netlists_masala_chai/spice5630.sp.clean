@@ -2,9 +2,9 @@ spice
 * SPICE Netlist
 
 V1 6 8 DC <Value_of_VI> ; Voltage source V_I
-C1 9 5 <Value_of_C>    ; Capacitor C
-D1 3 4 D_Model         ; Diode
-R1 3 2 1e9             ; Large resistor for DC path to ground
+C1 9 5 <Value_of_C> ; Capacitor C
+D1 3 4 D_Model ; Diode
+R1 3 2 1e9 ; Large resistor for DC path to ground
 
 .model D_Model D
 .end

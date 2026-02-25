@@ -19,8 +19,8 @@ I5 vb 0 DC
 D1 v_x Vbias D
 
 * Resistor
-R1 v_y 0 
+R1 v_y 0
 
 * Nodes
-Vin v_x 0 
+Vin v_x 0
 VBias v_y 7

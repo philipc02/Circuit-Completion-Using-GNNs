@@ -4,7 +4,7 @@
 M1 4 2 3 3 nmos
 M2 2 4 3 3 nmos
 
-RD1 6 4  RDvalue
+RD1 6 4 RDvalue
 RD2 22 4 RDvalue
 
 I1 24 3 AC 0 DC Ivalue

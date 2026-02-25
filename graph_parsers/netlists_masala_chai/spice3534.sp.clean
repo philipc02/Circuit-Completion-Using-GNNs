@@ -11,7 +11,7 @@ R2 3 4 1k
 V1 6 7 10V
 
 * Capacitor
-C1 5 2 
+C1 5 2
 
 * Ground
 0 7 0

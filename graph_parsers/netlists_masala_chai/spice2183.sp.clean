@@ -1,6 +1,6 @@
 spice
 * NMOS Transistor
-M1 3 4 0 0 NMOS_MODEL 
+M1 3 4 0 0 NMOS_MODEL
 
 * Capacitors
 C1 4 2 1uF

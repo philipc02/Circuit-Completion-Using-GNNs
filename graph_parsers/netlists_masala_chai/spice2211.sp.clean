@@ -1,9 +1,9 @@
 plaintext
 * PMOS Transistor M1
-M1 2 3 2 PMOS W=WL L=L
+M1 2 3 2 PMOS
 
 * PMOS Transistor M2
-M2 44 2 2 PMOS W=2*WL L=L
+M2 44 2 2 PMOS
 
 * Voltage Source VDD
 VDD 44 0 DC VDD_value

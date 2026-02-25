@@ -11,9 +11,9 @@ M2 3 2 9 9 PMOS_1
 IS 9 8 DC
 
 * Resistors
-RS 9 V+ 
-RD1 6 4 
-RD2 3 5 
+RS 9 V+
+RD1 6 4
+RD2 3 5
 
 * Voltage source for reference (node 8 as ground)
 V+ V+ 0 DC

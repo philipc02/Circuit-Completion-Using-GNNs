@@ -6,9 +6,9 @@ spice
 * Node 4: Intermediate node connected between resistors
 
 R1 1 4 4.7k
-R1 2 4 4.7k
+R1_1 2 4 4.7k
 R2 4 3 10k
-R2 2 2 10k
+R2_1 2 2 10k
 
 CL 3 2 10n
 

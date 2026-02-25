@@ -1,6 +1,6 @@
 plaintext
 * SPICE Netlist
-Vsig 7 0 DC Vsig_value  ; Replace Vsig_value with actual voltage value
-Rsig 7 2 Rsig_value     ; Replace Rsig_value with actual resistance value
-RC   5 3 RC_value       ; Replace RC_value with actual resistance value
-Q1   5 2 0 NPN          ; NPN Transistor with collector (5), base (2), emitter (0)
+Vsig 7 0 DC Vsig_value ; Replace Vsig_value with actual voltage value
+Rsig 7 2 Rsig_value ; Replace Rsig_value with actual resistance value
+RC 5 3 RC_value ; Replace RC_value with actual resistance value
+Q1 5 2 0 NPN ; NPN Transistor with collector (5), base (2), emitter (0)

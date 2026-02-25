@@ -11,7 +11,7 @@ RB 7 4 RB_value
 Rx 7 4 Rx_value
 
 * Current Source
-Gm 4 5 VALUE = {gm * Vx}
+Gm 4 5 VALUE
 
 * Additional Resistors
 Ro 5 2 Ro_value

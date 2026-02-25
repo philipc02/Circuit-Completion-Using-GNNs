@@ -3,14 +3,14 @@ spice
 V_in 1 3 DC 0
 
 * Resistor
-R1 1 2 10k  ; Assuming 10k as the resistor value
+R1 1 2 10k ; Assuming 10k as the resistor value
 
 * Capacitor
-C1 2 3 10n  ; Assuming 10nF as the capacitor value
+C1 2 3 10n ; Assuming 10nF as the capacitor value
 
 * Op-Amp Model
 * Note: A basic operational amplifier model is assumed here
-E_opamp 0 3 2 0 100k  ; Voltage controlled voltage source with high gain
+E_opamp 0 3 2 0 100k ; Voltage controlled voltage source with high gain
 
 * Ground
 V3 3 0 DC 0 ; 0V to ground node

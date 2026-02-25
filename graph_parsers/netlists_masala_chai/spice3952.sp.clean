@@ -8,7 +8,7 @@ Vsupply 1 4 DC
 RS 1 3 0.5k
 RB 3 0 100k
 
-Rc 2 8  [value]
+Rc 2 8 [value]
 Re1 7 5 [value]
 Re2 7 5 [value]
 

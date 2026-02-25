@@ -1,9 +1,9 @@
 spice
 * Netlist for schematic
 
-Vin 3 0 DC 0V       ; Input voltage source
-C1 3 2 1uF          ; Capacitor with value 1uF
-D1 2 4 Dmodel       ; Diode with anode at net 2 and cathode at net 4 (ground)
-Vout 2 0 DC 0V      ; Output voltage measurement
+Vin 3 0 DC 0V ; Input voltage source
+C1 3 2 1uF ; Capacitor with value 1uF
+D1 2 4 Dmodel ; Diode with anode at net 2 and cathode at net 4 (ground)
+Vout 2 0 DC 0V ; Output voltage measurement
 
 .model Dmodel D(Is=1e-14) ; Diode model for simulation

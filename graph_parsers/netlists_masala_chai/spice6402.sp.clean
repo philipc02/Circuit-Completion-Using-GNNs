@@ -2,11 +2,11 @@ spice
 * SPICE Netlist
 * Components and Connections
 
-V1 1 0 DC 0        ; Input voltage source vi, connected to net 1
-R1 1 2 R           ; Resistor R, between nets 1 and 2
-D1 3 2 Dmodel      ; Diode, anode at net 3, cathode at net 2
+V1 1 0 DC 0 ; Input voltage source vi, connected to net 1
+R1 1 2 R ; Resistor R, between nets 1 and 2
+D1 3 2 Dmodel ; Diode, anode at net 3, cathode at net 2
 XOPAMP 0 2 3 OPAMP ; Op-Amp, non-inverting input at ground (0), inverting input at net 2, output at net 3
-V2 3 0 DC 0        ; Output voltage source connection, net 3 to 0
+V2 3 0 DC 0 ; Output voltage source connection, net 3 to 0
 
 .model Dmodel D    ; Diode model
 .SUBCKT OPAMP 1 2 3 ; Op-Amp model (Non-inverting, Inverting, Output)

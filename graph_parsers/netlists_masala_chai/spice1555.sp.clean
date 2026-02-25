@@ -16,7 +16,7 @@ Q1 4 3 3 NPN
 Q2 5 7 3 NPN
 
 * Load resistor
-RL 6 5 RL
+RL_1 6 5 RL
 
 * Nodes
 * 0: Ground

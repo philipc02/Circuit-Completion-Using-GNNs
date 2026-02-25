@@ -4,7 +4,7 @@ V1 4 0 DC Vs
 R1 4 2 R
 C1 2 3 C
 XOPAMP 0 2 2 opamp
-VOUT 2 0 
+VOUT 2 0
 
 * Subcircuit for operational amplifier (ideal model)
 .subckt opamp in+ in- out

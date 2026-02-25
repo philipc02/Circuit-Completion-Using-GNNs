@@ -11,9 +11,9 @@ Iin 6 0 DC 0.5A
 * Resistors
 RD VDD 2 1k
 RF 6 0 1k
-RF 5 0 1k
+RF_1 5 0 1k
 RM 7 0 1k
-RM 5 0 1k
+RM_1 5 0 1k
 RL 23 22 1k
 rO2 22 Iout 1k
 

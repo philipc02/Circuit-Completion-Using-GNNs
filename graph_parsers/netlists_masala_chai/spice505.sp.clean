@@ -1,11 +1,11 @@
 plaintext
 * SPICE Netlist
-Is  6  0  DC  <value>
+Is 6 0 DC <value>
 
-RS  6  7  <value>
-R1  2  4  5k
+RS 6 7 <value>
+R1 2 4 5k
 
-Q1  5 6 0  QNPN
-Q2  4 5 0  QNPN
+Q1 5 6 0 QNPN
+Q2 4 5 0 QNPN
 
 .model QNPN NPN

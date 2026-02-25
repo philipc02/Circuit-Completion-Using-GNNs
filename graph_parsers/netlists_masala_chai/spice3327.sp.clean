@@ -1,6 +1,6 @@
 spice
 * NMOS Transistors
-M0 7 3 8 8 NMOS 
+M0 7 3 8 8 NMOS
 MREF 8 2 9 9 NMOS
 M1 6 2 2 2 NMOS
 M2 6 2 2 2 NMOS

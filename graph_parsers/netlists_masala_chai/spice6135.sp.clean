@@ -1,7 +1,7 @@
 * Components
 Vsig 7 0 DC
 Rsig 7 4 Rsig
-B1 4 3 V=2*I(Rsig)
+B1 4 3
 
 * Dependent source
 R1 4 3 2*rpi

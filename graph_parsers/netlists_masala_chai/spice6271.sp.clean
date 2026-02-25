@@ -1,6 +1,6 @@
 spice
 * Transistor Definitions
-Q13A 3 2 7 NPN 
+Q13A 3 2 7 NPN
 Q14 2 8 3 NPN
 Q18 2 2 0 NPN
 Q19 7 2 6 NPN

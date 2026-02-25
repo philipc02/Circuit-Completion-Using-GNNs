@@ -1,21 +1,21 @@
 plaintext
 * SPICE Netlist
 Vsig 3 0 DC 0
-Rsig 3 3 1000  ; Example resistance for Rsig
+Rsig 3 3 1000 ; Example resistance for Rsig
 
-RB1 3 3 1000  ; Example resistance for RB1
-RB2 3 0 1000  ; Example resistance for RB2
+RB1 3 3 1000 ; Example resistance for RB1
+RB2 3 0 1000 ; Example resistance for RB2
 
-RC 2 4 1000  ; Example resistance for RC
-RL 2 6 1000  ; Example resistance for RL
+RC 2 4 1000 ; Example resistance for RC
+RL 2 6 1000 ; Example resistance for RL
 
-re 5 3 100   ; Example resistance for re
-RE 3 0 100   ; Example resistance for RE
+re 5 3 100 ; Example resistance for re
+RE 3 0 100 ; Example resistance for RE
 
-CC1 3 5 1u   ; Example capacitance for CC1
-CC2 2 22 1u  ; Example capacitance for CC2
-CE 3 0 1u    ; Example capacitance for CE
+CC1 3 5 1u ; Example capacitance for CC1
+CC2 2 22 1u ; Example capacitance for CC2
+CE 3 0 1u ; Example capacitance for CE
 
-G1 5 0 Value={(1-alpha)*Ic} ; Controlled source current
+G1 5 0
 
 .END

@@ -13,7 +13,7 @@ CF 3 Vout 10pF
 M1 3 2 0 0 NMOS_MODEL
 
 * Voltage source
-VDD VDD 0 5V
+VDD_1 VDD 0 5V
 
 * Input voltage
 VIN 1 0 SIN(0 1V 1kHz)

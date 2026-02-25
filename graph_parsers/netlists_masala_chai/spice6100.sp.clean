@@ -11,7 +11,7 @@ RL 2 2 1k
 Cmu 4 2 1pF
 Cpi 4 2 1pF
 
-Gm 3 2 VALUE = {g_m * (V(4,2))}
+Gm 3 2 VALUE
 
 * Ground
 E 5 0 DC 0

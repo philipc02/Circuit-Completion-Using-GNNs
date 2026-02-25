@@ -1,13 +1,13 @@
 plaintext
 * SPICE Netlist
 
-Vs 3 5 DC 0   ; Voltage source Vs between net 3 (+) and net 5 (-)
-Ri 3 4 1k     ; Resistor Ri between net 3 and net 4
+Vs 3 5 DC 0 ; Voltage source Vs between net 3 (+) and net 5 (-)
+Ri 3 4 1k ; Resistor Ri between net 3 and net 4
 
 * Dependent Voltage Source
-E1 2 0 3 5 1  ; Voltage source Avs = A * vs between net 2 (+) and ground, 
-              ; controlled by voltage across 3 and 5
+E1 2 0 3 5 1 ; Voltage source Avs
+; controlled by voltage across 3 and 5
 
-Ro 2 0 1k     ; Resistor Ro between net 2 and output Vo (net 0)
+Ro 2 0 1k ; Resistor Ro between net 2 and output Vo (net 0)
 
 .END

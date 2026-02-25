@@ -11,7 +11,7 @@ R1 2 4 rpi
 C2 2 7 Cmu
 
 * Voltage-controlled current source gm*vπ
-G1 6 4 VOL=V(2,4)
+G1 6 4
 I1 6 5 gm
 
 * Resistor r₀

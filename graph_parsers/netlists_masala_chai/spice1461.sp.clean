@@ -10,4 +10,4 @@ IREF 4 6 DC <value>
 VCC 4 0 DC <value>
 
 * Connections
-VCC 4 0 DC <value>
+VCC_1 4 0 DC <value>

@@ -13,11 +13,11 @@ M2 Vout Vb M2_source 0 NMOS
 
 * Net Connections
 * Node Mappings
-M1_drain = 0
-M1_gate = Vin
-M1_source = 0
-M2_drain = Vout
-M2_gate = Vb
-M2_source = M1_drain
+M1_drain
+M1_gate
+M1_source
+M2_drain
+M2_gate
+M2_source
 
 * End of Netlist

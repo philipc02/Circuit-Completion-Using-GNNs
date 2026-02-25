@@ -1,6 +1,6 @@
 spice
 * SPICE Circuit Netlist
- Vx 3 5 DC 0
+Vx 3 5 DC 0
 
 * Resistors
 R1 2 9 R_1

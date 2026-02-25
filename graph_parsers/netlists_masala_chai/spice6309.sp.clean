@@ -10,7 +10,7 @@ M3 4 C 2 2 NMOS
 M4 2 C C C NMOS
 
 * Voltage and Current Sources
-VDD 5 0 DC VDD 
+VDD 5 0 DC VDD
 
 * Node Definitions
 * 0 - Ground

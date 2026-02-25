@@ -4,7 +4,7 @@ plaintext
 V1 1 0 DC V_i
 RT 1 3 RT_value
 RS 3 5 RS_value
-Gm 0 2 VALUE = {g_m * (1 + eta) * V(5)}
+Gm 0 2 VALUE
 RD 4 7 RD_value
 RL 4 6 RL_value
 

@@ -12,7 +12,7 @@ Cbs 2 7 Cbs_value
 Cdb 5 7 Cdb_value
 
 * Dependent Current Source
-Gm 4 5 VALUE = {gm*(V(1) - V(4)) + gmb*(V(2) - V(7))}
+Gm 4 5 VALUE
 
 * Resistor
 Rd 6 5 gd_value

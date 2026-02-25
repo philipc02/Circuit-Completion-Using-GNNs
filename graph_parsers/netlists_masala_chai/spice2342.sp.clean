@@ -1,8 +1,8 @@
 plaintext
 * Components
-M1 6 4 2 2 NMOS   * (Drain, Gate, Source, Body)
-M2 3 5 6 6 NMOS   * (Drain, Gate, Source, Body)
-IBIAS 3 6 DC  * Current Source from node 3 to 6
-VBIAS 3 0 DC 0V  * Voltage reference for node 3
+M1 6 4 2 2 NMOS * (Drain, Gate, Source, Body)
+M2 3 5 6 6 NMOS * (Drain, Gate, Source, Body)
+IBIAS 3 6 DC * Current Source from node 3 to 6
+VBIAS 3 0 DC 0V * Voltage reference for node 3
 
 * Netlist Ends

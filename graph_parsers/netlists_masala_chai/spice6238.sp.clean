@@ -12,7 +12,7 @@ M7 5 2 8 8 PMOS
 M8 7 2 9 9 PMOS
 
 * Current Source
-IREF 3 7 DC I_REF   
+IREF 3 7 DC I_REF
 
 * Capacitor
 CC 5 4 C_C

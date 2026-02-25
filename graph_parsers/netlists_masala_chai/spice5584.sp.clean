@@ -17,7 +17,7 @@ XOPAMP 2 3 4 OPAMP
 .subckt OPAMP non_inv inv out
 * Availability of power supply nodes for op-amp may be implicit in many simulators
 * Ideal op-amp model with gain A
-G  out inv VOL = A*(V(non_inv) - V(inv))
+G out inv VOL
 .ends OPAMP
 
 * Specify .end

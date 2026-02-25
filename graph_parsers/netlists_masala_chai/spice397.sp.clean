@@ -1,12 +1,12 @@
 plaintext
    * SPICE Netlist for the Circuit
 
-   VCC 7 0 DC <V_VALUE>
-   IREF 7 3 DC <I_VALUE>
+VCC 7 0 DC <V_VALUE>
+IREF 7 3 DC <I_VALUE>
    
-   Q1 2 6 5 QMODEL
-   Q2 4 3 5 QMODEL
-   Q3 3 2 5 QMODEL
+Q1 2 6 5 QMODEL
+Q2 4 3 5 QMODEL
+Q3 3 2 5 QMODEL
    
    .MODEL QMODEL NPN(IS=<IS_VALUE> BF=<BF_VALUE> VAF=<VAF_VALUE>)
    

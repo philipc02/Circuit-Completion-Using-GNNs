@@ -1,6 +1,6 @@
 plaintext
 * SPICE Netlist
-VDD 7 0 DC <Vdd_value> 
+VDD 7 0 DC <Vdd_value>
 VCM 6 0 DC <Vcm_value>
 
 RD 3 7 <RD_value>

@@ -1,14 +1,14 @@
 spice
 * SPICE netlist for the given schematic
 
-V1 8 4 AC 1          * Voltage source connected between net 8 and net 4
+V1 8 4 AC 1 * Voltage source connected between net 8 and net 4
 
-D1 6 5 DModel        * Diode D1 connected from net 6 (cathode) to net 5 (anode)
-D2 3 9 DModel        * Diode D2 connected from net 3 (cathode) to net 9 (anode)
+D1 6 5 DModel * Diode D1 connected from net 6 (cathode) to net 5 (anode)
+D2 3 9 DModel * Diode D2 connected from net 3 (cathode) to net 9 (anode)
 
-C1 7 4 1uF           * Capacitor C1 connected between net 7 and net 4
-C2 4 3 1uF           * Capacitor C2 connected between net 4 and net 3
+C1 7 4 1uF * Capacitor C1 connected between net 7 and net 4
+C2 4 3 1uF * Capacitor C2 connected between net 4 and net 3
 
-R1 5 2 1k            * Resistor R1 connected between net 5 and net 2
+R1 5 2 1k * Resistor R1 connected between net 5 and net 2
 
 .model DModel D      * Diode model

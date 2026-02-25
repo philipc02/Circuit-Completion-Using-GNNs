@@ -5,7 +5,7 @@ Vpi 3 1 V_pi
 Ccpi 2 1 C_pi
 Rrmu 2 3 r_mu
 Cc_mu 2 3 C_mu
-Ggm 3 4 VALUE={g_m*V(3,1)}
+Ggm 3 4
 Rro 4 5 r_o
 Rrc 5 6 r_c
 Cc_s 5 0 C_s

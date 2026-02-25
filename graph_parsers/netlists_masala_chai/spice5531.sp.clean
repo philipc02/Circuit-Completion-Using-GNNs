@@ -9,7 +9,7 @@ Iin 2 1 Ii
 R1 4 6 Ri
 
 * Voltage-Controlled Current Source (symbol gen2)
-G1 5 6 VALUE = {A * V(4, 6)}
+G1 5 6 VALUE
 
 * Resistor Ro
 R2 3 5 Ro

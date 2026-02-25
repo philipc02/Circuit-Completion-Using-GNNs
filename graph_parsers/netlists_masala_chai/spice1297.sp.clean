@@ -1,7 +1,7 @@
 * SPICE Netlist
 * Component Definitions
-R1 2 3 
-R2 4 2 
+R1 2 3
+R2 4 2
 Vin 4 0 DC
 XOPAMP 2 0 3 OPAMP
 

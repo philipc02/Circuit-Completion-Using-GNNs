@@ -4,11 +4,11 @@ VCC 5 6 DC 10V
 
 RB1 3 5 10k
 RB2 4 6 20k
-RE  7 6 1k
+RE 7 6 1k
 
-CI  2 4 10uF
-CO  3 2 10uF
-CE  7 6 100uF
+CI 2 4 10uF
+CO 3 2 10uF
+CE 7 6 100uF
 
 Q1 3 4 7 NPN
 

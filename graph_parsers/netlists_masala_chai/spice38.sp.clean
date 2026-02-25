@@ -10,7 +10,7 @@ R1 7 8 ro
 R2 5 4 RD
 
 * Node Connections
-V1 1 9 DC 0
-I1 2 6 DC 0
-R1 8 7 1k
-R2 5 4 1k
+V1_1 1 9 DC 0
+I1_1 2 6 DC 0
+R1_1 8 7 1k
+R2_1 5 4 1k

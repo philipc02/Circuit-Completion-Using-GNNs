@@ -5,7 +5,7 @@ Q1 6 7 0 NPN
 Q2 4 2 0 NPN
 Q3 3 5 2 NPN
 
-VCC VCC 0 DC <value_of_VCC> 
+VCC VCC 0 DC <value_of_VCC>
 VEE 0 VEE DC <value_of_VEE>
 
 R1 VCC 6 <value_of_R1>

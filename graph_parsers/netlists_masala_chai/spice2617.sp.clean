@@ -19,7 +19,7 @@ M2 2 6 3 3 PMOS
 
 * Define resistors
 RD 5 2 RD
-RD 4 2 RD
+RD_1 4 2 RD
 
 * Define current source
 Iss 3 8 DC Iss

@@ -9,18 +9,18 @@ It 6 7
 Rs 7 7 9 RS
 
 * Voltage sources
-Vgs 1 7 DC
+Vgs_1 1 7 DC
 
 * Current sources
-Igm 1 3 DC gm_vgs
-Igmb 3 2 DC gmb_vbs
+Igm_1 1 3 DC gm_vgs
+Igmb_1 3 2 DC gmb_vbs
 
 * Resistors
-Ro 4 6 ro
-Rs 9 7 RS
+Ro_1 4 6 ro
+Rs_1 9 7 RS
 
 * Control source
-Vt 6 7 DC
+Vt_1 6 7 DC
 
 * End of netlist
 .end

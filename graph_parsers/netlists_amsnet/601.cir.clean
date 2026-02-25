@@ -1,6 +1,6 @@
 *SPICE Netlist for circuit 601
 I1 3 1 DC 1mA
-M1 2 3 0 0 NMOS W=1u L=1u
+M1 2 3 0 0 NMOS
 R1 0 1 1k
 R4 1 2 1k
 R2 2 VDD 1k

@@ -7,6 +7,6 @@ CGD 2 5 1p
 CGS 5 0 1p
 CDB 2 0 1p
 
-M1 2 5 0 0 NMOS L=1u W=1u
+M1 2 5 0 0 NMOS
 
 .end

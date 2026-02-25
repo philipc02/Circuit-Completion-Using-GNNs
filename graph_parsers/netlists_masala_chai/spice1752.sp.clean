@@ -16,8 +16,8 @@ RD VDD Vout [RD_value]
 RG Vin 0 [RG_value]
 
 * Voltage Supplies
-VDD VDD 0 DC [VDD_value]
-Vb1 Vb1 0 DC [Vb1_value]
-Vb2 Vb2 0 DC [Vb2_value]
+VDD_1 VDD 0 DC [VDD_value]
+Vb1_1 Vb1 0 DC [Vb1_value]
+Vb2_1 Vb2 0 DC [Vb2_value]
 
 .end

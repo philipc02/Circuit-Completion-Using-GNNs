@@ -4,7 +4,7 @@ M1 Drain_M1 Gate_M1 Source_M1 Source_M1 NMOS
 M2 Drain_M2 Gate_M2 Source_M2 Source_M2 PMOS
 
 * Resistors
-RD Drain_M2 VDD  RD_VALUE
+RD Drain_M2 VDD RD_VALUE
 RF Gate_M2 Vout RF_VALUE
 
 * Voltage Source

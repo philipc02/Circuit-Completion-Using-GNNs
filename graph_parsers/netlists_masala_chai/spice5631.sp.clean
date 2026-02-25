@@ -1,9 +1,9 @@
 * SPICE Netlist
 
-V1 5 7 DC 0      * Voltage Source \(v_I\)
-C1 5 4 1uF       * Capacitor C
-D1 4 6 D         * Diode
-R1 4 2 1k        * Resistor R
-Vout 3 2 DC 0    * Output Voltage 
+V1 5 7 DC 0 * Voltage Source \(v_I\)
+C1 5 4 1uF * Capacitor C
+D1 4 6 D * Diode
+R1 4 2 1k * Resistor R
+Vout 3 2 DC 0 * Output Voltage
 
 * End of Netlist

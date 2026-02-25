@@ -5,10 +5,10 @@ plaintext
 Vi 3 0 DC
 
 * Resistors
-R1 3 2  R1_value
+R1 3 2 R1_value
 R2 2 77 R2_value
-R3 2 5  R3_value
-R4 4 5  R4_value
+R3 2 5 R3_value
+R4 4 5 R4_value
 
 * Operational Amplifier
 * In positive, in negative, out

@@ -6,7 +6,7 @@ Q2 5 7 4 NPN
 
 RC 8 5 10k
 RT1 6 1 1k
-RT1 7 2 1k
+RT1_1 7 2 1k
 
 VIN1 1 0 DC 0V
 VIN2 2 0 DC 0V

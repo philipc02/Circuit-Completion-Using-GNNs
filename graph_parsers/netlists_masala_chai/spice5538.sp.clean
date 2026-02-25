@@ -7,7 +7,7 @@ Vs 3 8 DC
 Rs 3 2 1k
 
 * Capacitor C
-C1 2 4 
+C1 2 4
 
 * Resistor Ri
 Ri 4 5 9k

@@ -8,7 +8,7 @@ V+ 9 0 DC 5V
 V- 0 10 DC -5V
 
 * Current Source
-IS 4 10 DC 
+IS 4 10 DC
 
 * NMOS Transistors
 M1 5 6 4 4 NMOS

@@ -4,13 +4,13 @@ M1 Y X 0 0 NMOS
 M2 V_DD V_b Y V_DD PMOS
 
 * Resistors
-R_L V_DD V_out 1k  ; assume 1k Ohm, specify the actual value as needed
-R_S V_in X 1k      ; assume 1k Ohm, specify the actual value as needed
+R_L V_DD V_out 1k ; assume 1k Ohm, specify the actual value as needed
+R_S V_in X 1k ; assume 1k Ohm, specify the actual value as needed
 
 * Capacitors
-C_GD1 X Y 1p       ; assume 1pF, specify the actual value as needed
+C_GD1 X Y 1p ; assume 1pF, specify the actual value as needed
 
 * Voltage source
-V_DD V_DD 0 DC 5V   ; assume 5V, specify the actual value as needed
+V_DD V_DD 0 DC 5V ; assume 5V, specify the actual value as needed
 
 * End of netlist

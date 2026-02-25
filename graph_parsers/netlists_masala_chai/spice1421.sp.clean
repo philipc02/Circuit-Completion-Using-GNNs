@@ -2,7 +2,7 @@ plaintext
 * SPICE Netlist
 
 * PMOS Transistor
-M1 3 N001 N002 PMOS 
+M1 3 N001 N002 PMOS
 
 * NMOS Transistor
 M2 N002 N002 0 NMOS

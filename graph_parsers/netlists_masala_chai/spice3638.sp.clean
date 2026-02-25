@@ -1,10 +1,10 @@
 plaintext
 * SPICE Netlist for the Circuit
 
-V1 2 5 DC 20V      * Voltage Source: 20V
-R1 2 4 12k         * Resistor: 12 kΩ
-R2 4 5 4k          * Resistor: 4 kΩ
-D1 4 3 DZ          * Zener Diode
+V1 2 5 DC 20V * Voltage Source: 20V
+R1 2 4 12k * Resistor: 12 kΩ
+R2 4 5 4k * Resistor: 4 kΩ
+D1 4 3 DZ * Zener Diode
 .model DZ D BV=Vz  * Zener Diode Model with breakdown voltage Vz
 
 * Nodes:

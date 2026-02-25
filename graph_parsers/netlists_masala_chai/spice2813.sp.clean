@@ -20,6 +20,6 @@ RS 4 3 50
 Vout 6 0
 
 * Connections
-VDD 1 0
+VDD_1 1 0
 
 * End of netlist

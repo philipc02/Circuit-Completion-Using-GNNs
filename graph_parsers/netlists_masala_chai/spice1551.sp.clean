@@ -5,9 +5,9 @@ Q1 3 2 4 NPN
 Q2 5 2 4 NPN
 
 * Resistors
-RC1 6 3  RC
-RC2 7 5  RC
-REE 4 0  REE
+RC1 6 3 RC
+RC2 7 5 RC
+REE 4 0 REE
 
 * Voltage Sources
 VCC 6 0 VCC

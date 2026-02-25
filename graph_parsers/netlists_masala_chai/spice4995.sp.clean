@@ -1,6 +1,6 @@
 spice
 * NMOS Amplifier Circuit
-M1 3 4 3 3 NMOS L=1u W=1u
+M1 3 4 3 3 NMOS
 VDD 4 0 DC 12V
 VIN 1 3 AC 100mV
 RD 4 5 470

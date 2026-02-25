@@ -22,9 +22,9 @@ D1 6 0 default
 .subckt OPAMP in+ in- out VCC VEE
 V1 in+ 7 DC 0
 V2 in- 8 DC 0
-E1 out 0 value={LIMIT((V(7,8)*(1e6)), VEE, VCC)}
-R1 7 out 1meg
-R2 out 8 1meg
+E1 out 0
+R1_1 7 out 1meg
+R2_1 out 8 1meg
 .ends OPAMP
 
 XOPAMP 5 2 3 VCC VEE OPAMP

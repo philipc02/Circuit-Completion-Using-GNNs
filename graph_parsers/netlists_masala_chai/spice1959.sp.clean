@@ -2,9 +2,9 @@ spice
 * Example circuit
 * Components
 Vpi 5 4 DC 0
-Ro3o4 4 3 r={r_o3 || r_o4}
-Rpi1pi2 5 4 r={r_pi1 || r_pi2}
-Gm 4 3 Value = {(g_m1 + g_m2)*V(4,3)}
+Ro3o4 4 3
+Rpi1pi2 5 4
+Gm 4 3 Value
 Ix 6 7 DC 0
 Vx 7 2 DC 0
 

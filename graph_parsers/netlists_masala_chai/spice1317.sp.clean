@@ -1,19 +1,19 @@
 * SPICE Netlist
 
 * Components
-R1 2 1 1000         ; Resistor R1 between node 2 and ground (node 1)
-C1 4 2 1u           ; Capacitor C1 between node 4 and node 2
-IB2 2 0 DC 1mA      ; Current Source IB2 from node 2 to ground (node 0)
-VOUT 4 3 DC 0       ; Voltage output from node 4 to node 3 (Vout)
+R1 2 1 1000 ; Resistor R1 between node 2 and ground (node 1)
+C1 4 2 1u ; Capacitor C1 between node 4 and node 2
+IB2 2 0 DC 1mA ; Current Source IB2 from node 2 to ground (node 0)
+VOUT 4 3 DC 0 ; Voltage output from node 4 to node 3 (Vout)
 
 * Operational Amplifier (Op-amp)
-XOP 2 2 4 opamp     ; Op-amp with non-inverting input at node 2, inverting input at node 2, output at node 4
+XOP 2 2 4 opamp ; Op-amp with non-inverting input at node 2, inverting input at node 2, output at node 4
 
 * Models and Subcircuits
 .subckt opamp in+ in- out 
 * Ideal op-amp model (for simplicity in this example)
 Rout out in+ 10meg
-E1 out 0 in+ in- 100meg 
+E1 out 0 in+ in- 100meg
 .ends opamp
 
 .end

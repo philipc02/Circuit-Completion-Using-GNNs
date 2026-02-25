@@ -26,6 +26,6 @@ V3 2 3 DC -1V
 V4 3 2 DC 0.25V
 
 * Capacitor
-CL 2 3  CL
+CL 2 3 CL
 
 *.end

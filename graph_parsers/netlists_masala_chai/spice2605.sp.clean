@@ -13,4 +13,4 @@ VDD VDD 0 DC 5V
 
 *Connections
 Vds Vout X 0
-Vds Vout Y 0
+Vds_1 Vout Y 0

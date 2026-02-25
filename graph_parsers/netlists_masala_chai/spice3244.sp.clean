@@ -1,6 +1,6 @@
 plaintext
 * NMOS Amplifier Circuit
-M1 2 Vin 3 3 NMOS_L W=1u L=1u
+M1 2 Vin 3 3 NMOS_L
 RD 4 2 1k
 RS 3 0 500
 VDD 4 0 DC 5V

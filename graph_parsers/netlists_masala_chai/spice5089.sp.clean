@@ -1,6 +1,6 @@
 spice
 * Voltage Source
-Vin 2 0 AC 1  
+Vin 2 0 AC 1
 
 * Operational Amplifier
 * Note: Op-Amp is often specified in sub-circuits, placeholder for model here.

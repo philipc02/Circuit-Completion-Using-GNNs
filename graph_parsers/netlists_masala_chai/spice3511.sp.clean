@@ -12,8 +12,8 @@ Ro1 4 7 r_o1_value
 Ro2 2 6 r_o2_value
 
 * Dependent voltage-controlled current sources
-GmVn1 4 5 VALUE = {gm * V(9, e')}
-Gm'Ro2Vx2 2 10 VALUE = {-gm_prime * r_o2 * V(9, e')}
+GmVn1 4 5 VALUE
+Gm'Ro2Vx2 2 10 VALUE
 
 * Node Definitions
 * 1 is connected in subcircuit definition

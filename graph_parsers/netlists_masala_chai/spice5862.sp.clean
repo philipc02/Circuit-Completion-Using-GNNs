@@ -15,8 +15,8 @@ RL 3 2 10k
 M1 3 7 6 6 NMOS
 
 * Capacitors (for connectivity, but considered as open in DC)
-C1 8 2 <cap_value> 
-C2 3 2 <cap_value> 
+C1 8 2 <cap_value>
+C2 3 2 <cap_value>
 
 * Voltage Definition
 VDD 4 0 DC <define_value>

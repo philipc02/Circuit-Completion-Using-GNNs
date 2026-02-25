@@ -2,8 +2,8 @@
 M1 2 1 4 4 NMOS
 
 * Resistors
-Rs 5 4  RS_VALUE
-ro 3 2  RO_VALUE
+Rs 5 4 RS_VALUE
+ro 3 2 RO_VALUE
 
 * Current Source
-Rout 3 0  R_CURRENT_SOURCE
+Rout 3 0 R_CURRENT_SOURCE

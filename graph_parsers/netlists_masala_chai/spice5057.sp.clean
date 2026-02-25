@@ -1,10 +1,10 @@
 spice
 * SPICE netlist for the provided schematic
 
-V1 4 0 DC Vcc      * Voltage source Vcc
-R1 3 5 R_value     * Resistor with value R_value
-Q1 4 5 2 NPN       * NPN transistor
-D1 5 0 D_model     * Diode model
+V1 4 0 DC Vcc * Voltage source Vcc
+R1 3 5 R_value * Resistor with value R_value
+Q1 4 5 2 NPN * NPN transistor
+D1 5 0 D_model * Diode model
 
 * Connections:
 * V1: Vcc connected to node 4

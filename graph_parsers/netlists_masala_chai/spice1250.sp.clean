@@ -9,9 +9,9 @@ RD 5 1 1k
 R2 2 2 1k
 
 C1 2 2 1uF
-C1 3 0 1uF
+C1_1 3 0 1uF
 
-M1 1 2 3 3 PMOS L=1u W=1u
+M1 1 2 3 3 PMOS
 
 I1 3 0 DC 10uA
 

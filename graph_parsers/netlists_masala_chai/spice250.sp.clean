@@ -1,13 +1,13 @@
 plaintext
 * SPICE Netlist for the given schematic
 
-Q1 4 1 5 NPN   ; Q1: Collector(4), Base(1), Emitter(5)
-Q2 9 2 6 NPN   ; Q2: Collector(9), Base(2), Emitter(6)
-Q3 4 4 0 NPN   ; Q3: Collector(4), Base(4), Emitter(0)
-Q4 5 5 0 NPN   ; Q4: Collector(5), Base(5), Emitter(0)
-Q5 3 8 4 PNP   ; Q5: Collector(3), Base(8), Emitter(4)
+Q1 4 1 5 NPN ; Q1: Collector(4), Base(1), Emitter(5)
+Q2 9 2 6 NPN ; Q2: Collector(9), Base(2), Emitter(6)
+Q3 4 4 0 NPN ; Q3: Collector(4), Base(4), Emitter(0)
+Q4 5 5 0 NPN ; Q4: Collector(5), Base(5), Emitter(0)
+Q5 3 8 4 PNP ; Q5: Collector(3), Base(8), Emitter(4)
 
-VCC 3 0 DC     ; Supply Voltage VCC
-VEE 0 0 DC     ; Supply Voltage VEE
+VCC 3 0 DC ; Supply Voltage VCC
+VEE 0 0 DC ; Supply Voltage VEE
 
 * End of Netlist

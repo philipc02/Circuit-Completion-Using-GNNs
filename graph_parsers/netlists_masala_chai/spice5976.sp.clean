@@ -3,7 +3,7 @@ spice
 .model NMOS NMOS(Level=1)
 
 * NMOS Transistor
-M1 2 6 4 4 NMOS W=W L=4L
+M1 2 6 4 4 NMOS
 
 * Current Source
 I1 8 2 DC I

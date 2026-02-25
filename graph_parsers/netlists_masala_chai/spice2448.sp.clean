@@ -3,7 +3,7 @@ plaintext
 
 M1 4 5 3 3 NMOS
 V1 6 3 DC 3V
-C1 3 6 1uF  ; assuming 1uF since capacitance value is not given
+C1 3 6 1uF ; assuming 1uF since capacitance value is not given
 VDD 2 4 DC 5V ; assuming a 5V supply for VDD
 V2 7 6 DC 3V ; voltage across the voltage source
 

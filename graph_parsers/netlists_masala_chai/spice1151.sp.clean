@@ -1,10 +1,10 @@
 spice
 * SPICE Netlist for the given schematic
 * PMOS transistor (M1)
-M1 1 4 3 3 PMOS L=0.36u W=5u
+M1 1 4 3 3 PMOS
 
 * PMOS transistor (M2)
-M2 4 4 3 3 PMOS L=0.36u W=5u
+M2 4 4 3 3 PMOS
 
 * Voltage Source
 V1 3 4 DC 0.9

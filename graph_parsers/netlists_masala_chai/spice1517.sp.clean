@@ -1,13 +1,13 @@
 * Differential Amplifier Circuit
 
    .MODEL NPN NPN(IS=1E-14 BF=100)
-   Q1 5 8 4 NPN
-   Q2 5 3 4 NPN
+Q1 5 8 4 NPN
+Q2 5 3 4 NPN
 
-   RC1 2 4 1k
-   RC2 2 4 1k
+RC1 2 4 1k
+RC2 2 4 1k
 
-   VX 8 7 DC 0
-   IEE 4 0 DC 1mA
+VX 8 7 DC 0
+IEE 4 0 DC 1mA
 
    .END

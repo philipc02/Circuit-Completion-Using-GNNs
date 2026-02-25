@@ -6,7 +6,7 @@ import pickle
 from PySpice.Spice.Parser import SpiceParser
 import numpy as np 
 
-COMPONENT_TYPES = ["R", "C", "V", "X", "N", "P"]
+COMPONENT_TYPES = ["R", "C", "V", "X", "N", "P", "I", "Q"]
 
 def clean_netlist_file(input_path, cleaned_path):
     with open(input_path, "r") as f:
@@ -72,7 +72,7 @@ def check_circuit_has_only_allowed_components(file_path):
             filtered_lines.append(l)
     
     # check for components
-    allowed_prefixes = {'R', 'C', 'V', 'X', 'M', '.', 'K', '+'}  # . for directives, K for coupling, + for continuation
+    allowed_prefixes = {'R', 'C', 'V', 'X', 'M', 'I', 'Q', '.', 'K', '+'}  # . for directives, K for coupling, + for continuation
     
     for line in filtered_lines:
         if not line:
@@ -85,7 +85,7 @@ def check_circuit_has_only_allowed_components(file_path):
         
         # Check if component type is allowed
         if first_char not in allowed_prefixes:
-            print(f"Contains component type other than R, C, V, X, M: {first_char}")
+            print(f"Contains component type other than R, C, V, X, M, I, Q: {first_char}")
             return False
     
     return True
@@ -324,8 +324,8 @@ def analyze_dataset(folder):
 if __name__ == "__main__":
     print("Netlist parser running...")
     
-    input_folder = "netlists_analoggenie"
-    output_folder = "graphs_analoggenie/graphs_component_component"
+    input_folder = "netlists_amsnet"
+    output_folder = "graphs_amsnet/graphs_component_component"
     process_folder(input_folder, output_folder)
     remove_duplicate_graphs(output_folder)
     analyze_dataset(output_folder)

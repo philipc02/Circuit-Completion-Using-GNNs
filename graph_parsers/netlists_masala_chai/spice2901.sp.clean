@@ -7,7 +7,7 @@ Vb 4 0 DC 1V
 
 R1 2 3 1k
 RD 6 8 1k
-M1 6 4 5 5 NMOS L=1u W=1u
+M1 6 4 5 5 NMOS
 
 * Connections
 * 2 - Vin

@@ -10,7 +10,7 @@ RO1 2 4 RO1_VALUE
 RO2 2 3 RO2_VALUE
 
 * Current Source
-Gm 2 3 VALUE={1/GM2_VALUE}
+Gm 2 3
 
 * Load resistor
 Rout1 2 0 ROUT1_VALUE

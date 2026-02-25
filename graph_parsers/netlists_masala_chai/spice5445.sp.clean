@@ -2,11 +2,11 @@ spice
 * SPICE netlist for the given schematic
 
 V1 2 7 AC 1
-RS 7 2 100    * Example resistance values; update as necessary
-RW 7 6 50     * Example resistance values; update as necessary
-RL 3 5 200    * Example resistance values; update as necessary
-L1 8 2 10m    * Example inductance; update as necessary
-C1 4 5 1u     * Example capacitance; update as necessary
+RS 7 2 100 * Example resistance values; update as necessary
+RW 7 6 50 * Example resistance values; update as necessary
+RL 3 5 200 * Example resistance values; update as necessary
+L1 8 2 10m * Example inductance; update as necessary
+C1 4 5 1u * Example capacitance; update as necessary
 
 * .AC analysis command
 .AC LIN 1 1 1

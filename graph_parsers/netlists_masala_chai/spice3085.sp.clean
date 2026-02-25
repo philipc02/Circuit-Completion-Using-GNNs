@@ -19,8 +19,8 @@ Vin+ Vin+ 0 DC 1V
 Vin- Vin- 0 DC 0V
 
 * Current Sources
-IISS1  5 0 DC 10uA
-IISS2  6 0 DC 10uA
+IISS1 5 0 DC 10uA
+IISS2 6 0 DC 10uA
 
 * Capacitors
 CL1 Vout1 0 1pF

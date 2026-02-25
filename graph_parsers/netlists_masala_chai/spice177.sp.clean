@@ -4,8 +4,8 @@ spice
 * Voltage Sources
 V1 4 0 DC 1.3V
 V_SUP 3 0 DC +VSUP
-V_INP 5 0 DC Vi={Vi} AC 1
-V_INN 7 0 DC Vi={Vi} AC 1
+V_INP 5 0 DC
+V_INN 7 0 DC
 V_TAIL 2 0 DC -VSUP
 
 * Current Source

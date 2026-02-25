@@ -14,7 +14,7 @@ V_X C 5 Vx
 G_gm 4 B E V_pi gm
 
 * Voltage-controlled voltage source to reflect V_pi
-E_Vpi B E VALUE = {V(1) - V(E)}
+E_Vpi B E VALUE
 
 .tran 0.1s 10s
 .end

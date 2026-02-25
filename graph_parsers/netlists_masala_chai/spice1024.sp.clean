@@ -2,6 +2,6 @@ plaintext
 * SPICE Netlist
 Q1 4 5 0 NPN
 Q2 3 2 4 NPN
-Rc 3 4 1k  ; You can replace 1k with the specific resistance value if needed
+Rc 3 4 1k ; You can replace 1k with the specific resistance value if needed
 Vin 5 0 DC 0V ; Assuming a DC voltage source for input
 VCC 3 0 DC 10V ; Assuming a 10V DC supply for VCC

@@ -1,6 +1,6 @@
 spice
 * SPICE Netlist
-M1 3 3 2 NMOS 
+M1 3 3 2 NMOS
 Rout 4 3 Rout
 ro1 2 3 ro1
 I1 4 2 1/gm2

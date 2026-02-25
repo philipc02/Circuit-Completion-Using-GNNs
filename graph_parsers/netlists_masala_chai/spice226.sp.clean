@@ -13,6 +13,6 @@ VSS 4 0 DC -V_ss
 XOPAMP 2 2 VO 5 4 OPAMP_MODEL
 
 * Output
-VO 2 0 
+VO 2 0
 
 * End of Netlist

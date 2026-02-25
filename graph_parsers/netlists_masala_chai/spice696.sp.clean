@@ -5,8 +5,8 @@ Vout 2 0 DC 0
 VB 4 0 DC <V_value> ; Replace <V_value> with the actual voltage value
 
 D1 3 2 Dmodel
-R1 3 2 <R1_value>  ; Replace <R1_value> with the actual resistance
-R2 2 4 <R2_value>  ; Replace <R2_value> with the actual resistance
+R1 3 2 <R1_value> ; Replace <R1_value> with the actual resistance
+R2 2 4 <R2_value> ; Replace <R2_value> with the actual resistance
 
 * Define diode model
 .model Dmodel D

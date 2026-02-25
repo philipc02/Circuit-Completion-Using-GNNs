@@ -12,8 +12,8 @@ M4 4 5 3 3 PMOS
 M6 3 2 9 9 PMOS
 
 * Resistors
-RD1 7 4  RD
-RD2 4 4  RD
+RD1 7 4 RD
+RD2 4 4 RD
 
 * Current Source
 ISS 9 0 DC

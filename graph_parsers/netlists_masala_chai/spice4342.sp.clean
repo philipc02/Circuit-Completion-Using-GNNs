@@ -15,7 +15,7 @@ VCC 6 0 DC 5
 VEE 4 0 DC -5
 
 * Nodes
-V1 N2 0 
+V1 N2 0
 VOUT N5 0
 
 .END

@@ -13,7 +13,7 @@ R2 5 0 r2
 Rtail 0 9 rtail
 R3a 10 6 r3
 R3b 12 6 r4
-R4 1 12 rload 
+R4 1 12 rload
 
 * Voltage Source
 Vf 5 0 DC

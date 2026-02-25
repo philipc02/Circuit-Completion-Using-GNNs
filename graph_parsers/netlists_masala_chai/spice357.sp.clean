@@ -1,9 +1,9 @@
 plaintext
 * SPICE Netlist
-I1  5 6 DC 0
-V1  5 6 DC 0
+I1 5 6 DC 0
+V1 5 6 DC 0
 RE1 3 6 1000 ; Example resistance value
-RF  3 8 1000 ; Example resistance value
+RF 3 8 1000 ; Example resistance value
 RE2 8 7 1000 ; Example resistance value
-I2  2 4 DC 0
-V2  2 4 DC 0
+I2 2 4 DC 0
+V2 2 4 DC 0

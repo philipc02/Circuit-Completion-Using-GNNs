@@ -3,7 +3,7 @@ plaintext
 
 V1 1 2 DC 2.5
 I1 2 5 DC 0.5m
-R1 2 5 1k ; Assuming R = 1k for simulation
+R1 2 5 1k ; Assuming R
 
 * NMOS Transistor Models
 .model NMOS NMOS (LEVEL=1)

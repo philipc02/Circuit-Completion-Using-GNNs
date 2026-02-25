@@ -12,12 +12,12 @@ Q1 3 VIN 4 NPN
 
 * PMOS Transistor (Q2)
 * Note: PMOS, source (node 2), gate (node 2), drain (node 4)
-M1 4 2 2 2 PMOS L=1u W=1u
+M1 4 2 2 2 PMOS
 
 .model PMOS PMOS (VTO=-3.5 KP=0.1m)
 
 * Connections
 VOUT 4 0
-VIN 1 2 0 
+VIN 1 2 0
 
 * End of Netlist

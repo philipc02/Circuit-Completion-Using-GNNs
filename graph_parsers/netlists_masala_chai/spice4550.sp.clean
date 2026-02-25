@@ -12,7 +12,7 @@ M1 6 7 2 2 PMOS
 M2 6 3 8 3 NMOS
 
 * NMOS Transistor MDB
-M3 8 5 0 3 NMOS 
+M3 8 5 0 3 NMOS
 
 * Nodes
 * 2 -> VDD

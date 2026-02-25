@@ -1,14 +1,14 @@
 spice
 * SPICE Netlist for Given Schematic
 
-V1 6 0 DC 0         ; Voltage source Vin
-R1 6 1 1k           ; Resistor R1
-R2 1 4 1k           ; Resistor R2
-C1 2 3 1u           ; Capacitor C1
-C2 6 0 1u           ; Capacitor C2
+V1 6 0 DC 0 ; Voltage source Vin
+R1 6 1 1k ; Resistor R1
+R2 1 4 1k ; Resistor R2
+C1 2 3 1u ; Capacitor C1
+C2 6 0 1u ; Capacitor C2
 
 * Operational Amplifier (ideal model)
-E1 5 0 4 0 100k     ; Voltage-controlled voltage source as op-amp
+E1 5 0 4 0 100k ; Voltage-controlled voltage source as op-amp
 
 * Nodes
 * 6: Vin positive terminal

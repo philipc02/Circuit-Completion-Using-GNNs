@@ -12,13 +12,13 @@ M9 3 24 13 13 PMOS
 M10 2 21 2 2 PMOS
 
 * Capacitors
-CC 4 5  Cc_value
-CCc 2 5  CCc_value
-CCc 3 13 CCc_value
+CC 4 5 Cc_value
+CCc 2 5 CCc_value
+CCc_1 3 13 CCc_value
 
 * Load capacitors
 CL 4 0 CL_value
-CL 3 0 CL_value
+CL_1 3 0 CL_value
 
 * Voltage Sources
 VDD 2 0 DC VDD_value

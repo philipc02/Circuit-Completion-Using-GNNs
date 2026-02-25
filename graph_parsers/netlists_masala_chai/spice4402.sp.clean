@@ -1,6 +1,6 @@
 plaintext
 * SPICE Netlist
-M1 5 2 4 4 NMOS W=1u L=1u
+M1 5 2 4 4 NMOS
 Rif 2 2 1k
 Rs 4 3 100
 Rof 5 4 1k

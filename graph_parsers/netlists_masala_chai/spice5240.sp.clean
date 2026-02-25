@@ -2,7 +2,7 @@
 
 * Voltage Source
 VZ 0 4 DC <Voltage_value> ; Replace <Voltage_value> with the actual voltage of the Zener diode
-Vin 8 0 DC <Input_value>  ; Replace <Input_value> with the actual input voltage
+Vin 8 0 DC <Input_value> ; Replace <Input_value> with the actual input voltage
 
 * Resistors
 R1 3 5 R1_value ; Replace R1_value with the actual resistance

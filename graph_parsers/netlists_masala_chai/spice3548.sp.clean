@@ -1,15 +1,15 @@
 * SPICE Netlist
 V1 10 11 DC 0
 
-RS 10 3 1000  ; Replace 1000 with actual resistance value
-RPI 3 9 1000  ; Replace 1000 with actual resistance value
-RX 9 2 1000   ; Replace 1000 with actual resistance value
+RS 10 3 1000 ; Replace 1000 with actual resistance value
+RPI 3 9 1000 ; Replace 1000 with actual resistance value
+RX 9 2 1000 ; Replace 1000 with actual resistance value
 
 CPI 3 5 1E-12 ; Replace 1E-12 with actual capacitance value
 CMU 2 4 1E-12 ; Replace 1E-12 with actual capacitance value
 
-G1 4 6 VALUE {gm*V(3,9)} ; VOLTAGE-CONTROLLED CURRENT SOURCE, gm = transconductance gain
+G1 4 6 VALUE {gm*V(3,9)} ; VOLTAGE-CONTROLLED CURRENT SOURCE, gm
 
-ROL 6 7 1000  ; Replace 1000 with actual resistance value
+ROL 6 7 1000 ; Replace 1000 with actual resistance value
 
 .END

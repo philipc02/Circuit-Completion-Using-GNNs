@@ -1,5 +1,5 @@
 VCC 6 0 DC VCC
-Vin 7 0 
+Vin 7 0
 
 Q1 6 8 4 NPN
 Q2 8 2 9 PNP

@@ -9,5 +9,5 @@ R2 3 12 <value>
 Rc 8 6 <value>
 Re 9 2 <value>
 Rl 5 4 <value>
-Q1 8 3 9 QNPN ; NPN transistor (Collector=8, Base=3, Emitter=9)
+Q1 8 3 9 QNPN ; NPN transistor
 Vcc 6 0 DC <voltage_value>

@@ -21,7 +21,7 @@ R1 8 2 10k
 R2 9 2 10k
 
 * Output Nodes
-Vout1 8 0 
-Vout2 9 0 
+Vout1 8 0
+Vout2 9 0
 
 .END

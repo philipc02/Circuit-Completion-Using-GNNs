@@ -1,8 +1,8 @@
 * SPICE netlist for the given circuit
 
 * Current sources
-G1 2 3 VOL=gm*VD/2
-G2 2 4 VOL=gm*VD/2
+G1 2 3
+G2 2 4
 
 * Resistors
 Rro4 4 5 ro4

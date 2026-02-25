@@ -9,7 +9,7 @@ M4 3 4 6 6 NMOS
 C1 2 3 C
 
 * Voltage Sources
-VDD 4 0 DC VDD 
+VDD 4 0 DC VDD
 
 * Input Voltage
 Vin 7 0 DC vi0

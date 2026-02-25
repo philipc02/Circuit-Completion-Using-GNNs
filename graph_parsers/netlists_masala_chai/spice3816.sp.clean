@@ -2,7 +2,7 @@ spice
 * Netlist for CMOS Inverter
 
 VDD 3 0 DC 10V
-Vi  4 0 DC
+Vi 4 0 DC
 
 * Transistors
 * PMOS: ML (Drain 3, Gate 2, Source 3, Bulk connected to Source)

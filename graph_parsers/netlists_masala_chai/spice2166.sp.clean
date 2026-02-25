@@ -10,6 +10,6 @@ R1 M1_Source 0 5k
 C1 Vin M1_Gate 10u
 M1 vout M1_Gate M1_Source M1_Source NMOS
 
-Gm vout 0 VALUE = {1/gm}
+Gm vout 0 VALUE
 
 .END

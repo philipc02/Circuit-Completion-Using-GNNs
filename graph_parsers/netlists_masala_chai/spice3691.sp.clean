@@ -1,13 +1,13 @@
 spice
 * SPICE Netlist for the given schematic
 
-VDD 7 0 DC <value>      * Replace <value> with actual voltage
-Vi 2 0 DC <value>       * Replace <value> with actual input voltage
+VDD 7 0 DC <value> * Replace <value> with actual voltage
+Vi 2 0 DC <value> * Replace <value> with actual input voltage
 
-R1 5 2 <value>          * Replace <value> with resistance of R1
-R2 5 8 <value>          * Replace <value> with resistance of R2
-RD 7 3 <value>          * Replace <value> with resistance of RD
+R1 5 2 <value> * Replace <value> with resistance of R1
+R2 5 8 <value> * Replace <value> with resistance of R2
+RD 7 3 <value> * Replace <value> with resistance of RD
 
-CC 2 4 <value>          * Replace <value> with capacitance value
+CC 2 4 <value> * Replace <value> with capacitance value
 
-M1 7 3 8 8 NMOS         * NMOS Transistor model (assuming bulk connected to source)
+M1 7 3 8 8 NMOS * NMOS Transistor model (assuming bulk connected to source)

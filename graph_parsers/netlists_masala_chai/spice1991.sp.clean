@@ -1,5 +1,5 @@
 * SPICE Netlist
 
-Vin 1 0 DC 0           * Voltage source Vin
-R1 1 2 1k              * Resistor R1 between nodes 1 and 2
-C1 2 0 1uF             * Capacitor C1 between nodes 2 and 0
+Vin 1 0 DC 0 * Voltage source Vin
+R1 1 2 1k * Resistor R1 between nodes 1 and 2
+C1 2 0 1uF * Capacitor C1 between nodes 2 and 0

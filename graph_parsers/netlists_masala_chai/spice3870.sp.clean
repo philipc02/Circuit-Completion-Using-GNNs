@@ -9,13 +9,13 @@ Q2 5 3 7 NPN
 QO 4 2 5 NPN
 
 * Resistor R1
-R1 6 5 
+R1 6 5
 
 * Resistor RB
-RB 2 7 
+RB 2 7
 
 * Resistor RC
-RC 3 8 
+RC 3 8
 
 * Current Source I1
 I1 6 0 DC

@@ -1,6 +1,6 @@
 plaintext
 VDD 2 0 DC [Voltage Value]
-VinCM1 5 0 DC [Voltage Value] 
+VinCM1 5 0 DC [Voltage Value]
 VinCM2 4 0 DC [Voltage Value]
 Vb 1 0 DC [Voltage Value]
 

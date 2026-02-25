@@ -8,8 +8,8 @@ R3 5 2 33k
 
 * Ground connections
 V0 9 0 DC 0
-V0 7 0 DC 0
-V0 3 0 DC 0
-V0 2 0 DC 0
+V0_1 7 0 DC 0
+V0_2 3 0 DC 0
+V0_3 2 0 DC 0
 
 .END

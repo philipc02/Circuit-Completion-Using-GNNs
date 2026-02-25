@@ -23,9 +23,9 @@ Vsig 3 5 DC Vsig_value
 
 * Definitions (Replace with actual values)
 .model NMOS NMOS
-Cgs_value = xxx
-Cgd_value = xxx
-CL_value = xxx
-Rsig_value = xxx
-RL_value = xxx
-Vsig_value = xxx
+Cgs_value
+Cgd_value
+CL_value
+Rsig_value
+RL_value
+Vsig_value

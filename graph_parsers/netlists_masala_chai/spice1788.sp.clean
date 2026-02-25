@@ -2,11 +2,11 @@ spice
 * SPICE Netlist
 
 * Voltage Sources
-VDD 6 0 DC <value>  ; Define the voltage value accordingly
-Vin 7 0 DC <value>  ; Define the voltage value accordingly
+VDD 6 0 DC <value> ; Define the voltage value accordingly
+Vin 7 0 DC <value> ; Define the voltage value accordingly
 
 * Current Sources
-I1 3 5 DC <value>  ; Define the current value accordingly (ISS)
+I1 3 5 DC <value> ; Define the current value accordingly (ISS)
 
 * NMOS Transistors
 M1 3 7 5 5 NMOS_MODEL
@@ -17,8 +17,8 @@ M3 6 3 6 6 PMOS_MODEL
 M4 6 4 6 6 PMOS_MODEL
 
 * Resistors
-R1 4 2 <value>  ; Define the resistance value accordingly
-R2 2 0 <value>  ; Define the resistance value accordingly
+R1 4 2 <value> ; Define the resistance value accordingly
+R2 2 0 <value> ; Define the resistance value accordingly
 
 * Voltage across R2
 VF 2 0

@@ -13,8 +13,8 @@ M4 3 3 5 7 PMOS
 I1 2 66 DC Iss
 
 * Resistors
-R1 2 0 
-R2 2 4 
+R1 2 0
+R2 2 4
 
 * Voltage Source
 VDD 7 0 DC VDD

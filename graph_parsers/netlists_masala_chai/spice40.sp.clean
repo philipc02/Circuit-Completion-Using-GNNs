@@ -15,7 +15,7 @@ Cx 8 5 Cx
 V1 8 4 DC v1
 
 * Current Source
-Gm1 6 7 VALUE={g_m*v(8,4)}
+Gm1 6 7
 
 * Connectivity
 * Nodes: 

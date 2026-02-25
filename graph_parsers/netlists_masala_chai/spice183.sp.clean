@@ -1,11 +1,11 @@
 spice
 * NMOS Transistors
-M1 3 3 2 2 NMOS W=1u L=1u
-M2 4 4 2 2 NMOS W=2u L=1u
+M1 3 3 2 2 NMOS
+M2 4 4 2 2 NMOS
 
 * PMOS Transistors
-M3 5 3 6 6 PMOS W=1u L=1u
-M4 7 4 6 6 PMOS W=1u L=1u
+M3 5 3 6 6 PMOS
+M4 7 4 6 6 PMOS
 
 * Current Source
 I1 4 6 DC Ibias

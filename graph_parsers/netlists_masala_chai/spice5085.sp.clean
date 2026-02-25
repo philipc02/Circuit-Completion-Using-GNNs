@@ -1,8 +1,8 @@
 spice
 * Spice Netlist
-V1 4 3 AC 1          ; AC voltage source at node 4 referenced to ground (node 3)
-R1 4 2 1k            ; Resistor R1 between nodes 4 and 2
-Rf 2 2 10k           ; Resistor Rf between node 2 and 2 (feedback)
+V1 4 3 AC 1 ; AC voltage source at node 4 referenced to ground (node 3)
+R1 4 2 1k ; Resistor R1 between nodes 4 and 2
+Rf 2 2 10k ; Resistor Rf between node 2 and 2 (feedback)
 
 * Op-Amp Model
 * Assuming an ideal op-amp for simplicity
@@ -10,6 +10,6 @@ Rf 2 2 10k           ; Resistor Rf between node 2 and 2 (feedback)
 * Pins: 1 - Inverting input, 2- Non-inverting input, 3 - Output
 .ends opamp
 
-XOP 2 3 2 opamp      ; Instantiating the op-amp subcircuit 
+XOP 2 3 2 opamp ; Instantiating the op-amp subcircuit
 
 .end

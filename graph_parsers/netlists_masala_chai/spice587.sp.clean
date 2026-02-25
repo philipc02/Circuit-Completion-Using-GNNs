@@ -1,6 +1,6 @@
 spice
 * Voltage-Controlled Current Source
-G1 3 2 VALUE = {-gm * R_L * V(5, 2)}
+G1 3 2 VALUE
 
 * Resistor RL
 R1 3 4 RL

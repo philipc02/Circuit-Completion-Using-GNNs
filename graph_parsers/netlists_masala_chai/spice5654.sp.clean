@@ -1,14 +1,14 @@
 * SPICE Netlist for the circuit
 
-V1 8 4 DC 5V      * Voltage source 5V
-V2 3 6 DC 3V      * Voltage source 3V
+V1 8 4 DC 5V * Voltage source 5V
+V2 3 6 DC 3V * Voltage source 3V
 
-R1 8 3 10k        * Resistor from 8 to 3
-R2 3 6 10k        * Resistor from 3 to 6
-R3 4 2 10k        * Resistor from 4 to 2 (ground)
-R4 6 2 10k        * Resistor from 6 to 2 (ground)
+R1 8 3 10k * Resistor from 8 to 3
+R2 3 6 10k * Resistor from 3 to 6
+R3 4 2 10k * Resistor from 4 to 2 (ground)
+R4 6 2 10k * Resistor from 6 to 2 (ground)
 
-D1 4 3 D          * Diode from 4 (anode) to 3 (cathode)
+D1 4 3 D * Diode from 4 (anode) to 3 (cathode)
 
 .model D D        * Diode model
 

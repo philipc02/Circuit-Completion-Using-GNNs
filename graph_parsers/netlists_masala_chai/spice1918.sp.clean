@@ -2,7 +2,7 @@ plaintext
 * SPICE Netlist
 
 * NMOS Transistor
-M1 3 4 2 2 NMOS W=10u L=1u
+M1 3 4 2 2 NMOS
 
 * Capacitors
 CA 4 2 10u

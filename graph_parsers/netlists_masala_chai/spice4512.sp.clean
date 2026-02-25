@@ -3,7 +3,7 @@ spice
 .subckt opamp in+ in- out
 * Ideal opamp model, output feeds back into negative terminal
 Vdiff in in- dc 0V
-Eamp out 0 value = {V(in+, in-) * 1e6}
+Eamp out 0 value
 .ends opamp
 
 * Circuit Description

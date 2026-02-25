@@ -19,7 +19,7 @@ MB31 4 3 33 VDD PMOS
 MB32 41 23 33 VDD PMOS
 
 * Current Sources
-I1 33 2 DC 2 I2 72 4 DC 2 I3 8 41 DC 2 
+I1 33 2 DC 2 I2 72 4 DC 2 I3 8 41 DC 2
 
 * Capacitors
 CL 5 3 1pF

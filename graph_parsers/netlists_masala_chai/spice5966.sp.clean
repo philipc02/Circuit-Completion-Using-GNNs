@@ -19,7 +19,7 @@ M1 4 2 5 5 NMOS
 C2 3 4 1e9
 
 * 2MΩ Resistor
-R2 4 0 2e6 
+R2 4 0 2e6
 
 * Current Source 200 μA
 I1 3 7 DC 200u

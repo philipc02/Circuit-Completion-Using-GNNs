@@ -3,11 +3,11 @@ spice
 V1 1 8 DC 0
 
 * Resistors
-R_RT 1 e  R_T
-R_RG e 4  R_G
-R_Re 4 2  R_e
-R_RC 3 2  R_C
-R_RL 3 2  R_L
+R_RT 1 e R_T
+R_RG e 4 R_G
+R_Re 4 2 R_e
+R_RC 3 2 R_C
+R_RL 3 2 R_L
 
 * Dependent Current Source
 G_IC b 3 e 0 gm

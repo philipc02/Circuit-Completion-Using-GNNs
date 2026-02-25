@@ -1,9 +1,9 @@
 plaintext
 * SPICE Netlist
 
-VDD  3 0 DC VDD
-VSS  6 0 DC -VSS
-V2t  5 0 DC V2t
+VDD 3 0 DC VDD
+VSS 6 0 DC -VSS
+V2t 5 0 DC V2t
 Vs11 4 0 DC Vs11
 
 M21 3 5 3 3 PMOS

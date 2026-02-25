@@ -5,7 +5,7 @@ V1 6 0
 RS 6 2 0.1k
 CC 2 0 10u
 R1_R2 2 0 5k
-G1 2 4 VALUE={gm*V(2,0)}
+G1 2 4
 RE 4 0 0.5k
 RC 4 3 5k
 RL 3 5 10k

@@ -4,8 +4,8 @@ spice
 VDD 4 0 DC VDD
 
 * NMOS Transistors
-M1 5 1 4 4 NMOS W=W L=L
-M2 2 3 4 4 NMOS W=2W L=L
+M1 5 1 4 4 NMOS
+M2 2 3 4 4 NMOS
 
 * Resistors
 RD1 4 5 RD

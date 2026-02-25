@@ -9,7 +9,7 @@ R5 3 0 20k
 R6 4 0 20k
 
 * Voltage Source Ground Connection
-V1 6 0 0
+V1_1 6 0 0
 
 * End of Netlist
 .end

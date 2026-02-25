@@ -11,6 +11,6 @@ RC 2 3 50
 RL 2 3 100
 
 * Voltage Dependent Current Source
-G1 2 3 VALUE={gm*V(4,3)}
+G1 2 3
 
 * .END

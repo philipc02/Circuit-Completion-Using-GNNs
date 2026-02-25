@@ -15,7 +15,7 @@ C2 4 2 10u ; Capacitor C2
 * Non-ideal op-amp model
 .subckt opamp in+ in- out vcc vee
 * Volgage controlled voltage source
-E1 out 0 value = {v(in+) - v(in-)}
+E1 out 0 value
 * Voltage source for power supply connections
 VCC vcc 0 DC 15 ; Positive supply
 VEE vee 0 DC -15 ; Negative supply

@@ -13,7 +13,7 @@ VDD 4 0 DC 1.8V
 
 * Simulation Control
 .control
-  run
+run
   .endc
 
 .end

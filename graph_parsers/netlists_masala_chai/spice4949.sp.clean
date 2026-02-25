@@ -1,11 +1,11 @@
 * Define component values here if needed
-V1 vin 0 AC 1        * input AC source
+V1 vin 0 AC 1 * input AC source
 
-MN1 4 3 2 2 NMOS     * NMOS transistor: Drain=4, Gate=3, Source=2, Body=2 (connected to Source)
+MN1 4 3 2 2 NMOS * NMOS transistor:
 
-R1 vin 3 1k          * Resistor R1 between vin and node 3
-R2 3 0 1k            * Resistor R2 between node 3 and ground
-RS 5 2 1k            * Resistor RS between node 5 and node 2
-RL 2 0 1k            * Resistor RL between node 2 and ground
+R1 vin 3 1k * Resistor R1 between vin and node 3
+R2 3 0 1k * Resistor R2 between node 3 and ground
+RS 5 2 1k * Resistor RS between node 5 and node 2
+RL 2 0 1k * Resistor RL between node 2 and ground
 
 .END

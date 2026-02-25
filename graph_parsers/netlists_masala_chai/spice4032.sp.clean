@@ -1,7 +1,7 @@
 Vi 2 5 DC 0
-RS 2 3  RS_VALUE
-CS 3 4  CS_VALUE
-RP 3 5  RP_VALUE
+RS 2 3 RS_VALUE
+CS 3 4 CS_VALUE
+RP 3 5 RP_VALUE
 *
 * Define node 5 as ground
 Vg 5 0 DC 0

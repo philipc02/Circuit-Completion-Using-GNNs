@@ -5,7 +5,7 @@ RB 6 3 1000
 RX 3 3 1000
 RO 5 3 1000
 CM 3 4 1u
-EVM 8 4 VALUE={(Vm)}
+EVM 8 4
 CPI 5 4 1u
 RL 2 3 1000
 VOUT 2 3
@@ -13,6 +13,6 @@ VOUT 2 3
 * Define control sources
 * Voltage-dependent voltage source
 * Ename N+ N- NC+ NC- VALUE
-E_VM 4 9 5 3 VALUE={e_m*V(vin)}
+E_VM 4 9 5 3
 
 * End of netlist

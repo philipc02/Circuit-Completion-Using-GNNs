@@ -1,15 +1,15 @@
 spice
 * NPN BJT Amplifier
 
-VCC  4  0  DC 15
-VIN  1  0  AC 1
+VCC 4 0 DC 15
+VIN 1 0 AC 1
 
-RC   4  5  1k
-RS   1  2  100
-CI   2  3  10u
-I1   3  0  DC 0.001
+RC 4 5 1k
+RS 1 2 100
+CI 2 3 10u
+I1 3 0 DC 0.001
 
-Q1   5  2  3  NPN
+Q1 5 2 3 NPN
 
 .model NPN NPN (IS=1e-14 BF=100)
 

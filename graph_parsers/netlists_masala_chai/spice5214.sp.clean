@@ -18,7 +18,7 @@ R2 2 3 4.7k
 XU1 2 3 4 6 opamp318
 
 * Output
-Vout 6 0 
+Vout 6 0
 
 * Model for the operational amplifier
 .model opamp318 opamp

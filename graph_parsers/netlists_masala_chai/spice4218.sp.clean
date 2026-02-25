@@ -1,26 +1,26 @@
 * SPICE netlist for the schematic
 
 * NMOS Transistors
-M1 4 2 0 0 NMOS  ; Q1 
-M2 5 4 0 0 NMOS  ; Q2
+M1 4 2 0 0 NMOS ; Q1
+M2 5 4 0 0 NMOS ; Q2
 
 * Resistors
-R1 1 2 1k       ; R1 from v1 to net 2
-R2 5 8 1k       ; R2 from net 5 to v2
-R3 2 0 20k      ; Feedback Resistor for first Op-Amp
-R4 3 0 20k      ; Feedback Resistor for second Op-Amp
-R5 4 3 333k     ; Feedback Resistor for third Op-Amp
-R6 4 6 20k      ; Resistor connecting second Op-Amp to third Op-Amp
-R7 6 3 333k     ; Resistor in series with third Op-Amp
+R1 1 2 1k ; R1 from v1 to net 2
+R2 5 8 1k ; R2 from net 5 to v2
+R3 2 0 20k ; Feedback Resistor for first Op-Amp
+R4 3 0 20k ; Feedback Resistor for second Op-Amp
+R5 4 3 333k ; Feedback Resistor for third Op-Amp
+R6 4 6 20k ; Resistor connecting second Op-Amp to third Op-Amp
+R7 6 3 333k ; Resistor in series with third Op-Amp
 
 * Voltage Sources and Grounds
-V1 1 0 DC  ; Input voltage v1
-V2 8 0 DC  ; Input voltage v2
+V1 1 0 DC ; Input voltage v1
+V2 8 0 DC ; Input voltage v2
 
 * Amplifiers (Op-Amps)
-XU1 2 22 0 OPAMP  ; First Op-Amp
-XU2 5 4 0 OPAMP   ; Second Op-Amp
-XU3 6 4 3 OPAMP   ; Third Op-Amp
+XU1 2 22 0 OPAMP ; First Op-Amp
+XU2 5 4 0 OPAMP ; Second Op-Amp
+XU3 6 4 3 OPAMP ; Third Op-Amp
 
 * Definitions
 .model NMOS NMOS level=1

@@ -9,6 +9,6 @@ RL 7 4 RL
 .model NPN NPN (IS=1E-16 BF=100 + VAF=100)
 
 .control
-  run
+run
 .endc
 .end

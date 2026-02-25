@@ -1,7 +1,7 @@
 * SPICE Netlist
 
 * Current Source
-I1 3 2 DC 5mA 
+I1 3 2 DC 5mA
 
 * Diodes
 D1 2 6 D_model

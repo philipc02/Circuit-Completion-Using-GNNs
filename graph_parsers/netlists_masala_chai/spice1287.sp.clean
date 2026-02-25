@@ -1,7 +1,7 @@
 plaintext
 * NMOS Transistor Definitions
-M1 Vout Vin 2 2 NMOS W=20u L=0.18u
-M2 2 0.8V 0 0 NMOS W=10u L=0.18u
+M1 Vout Vin 2 2 NMOS
+M2 2 0.8V 0 0 NMOS
 
 * Voltage Source
 VDD Vout 0 DC 1.8

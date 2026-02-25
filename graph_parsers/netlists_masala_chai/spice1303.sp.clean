@@ -2,8 +2,8 @@ plaintext
 * SPICE Netlist
 
 Vin 3 0 DC 0
-C1 X 0 
-R1 2 0 
+C1 X 0
+R1 2 0
 X1 3 X 2 OPAMP_1
 
 * End of netlist

@@ -1,7 +1,7 @@
 spice
 * SPICE netlist for the given schematic
 * V1 connected between nodes 6 and 0
-V1 6 0 DC 
+V1 6 0 DC
 
 * Current sources
 I1 6 7 DC

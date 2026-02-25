@@ -1,6 +1,6 @@
 plaintext
 * NMOS Transistor
-M1 3 6 2 2 NMOS_L W=<desired_w> L=<desired_l>
+M1 3 6 2 2 NMOS_L
 
 * Voltage Sources
 VDD 4 0 DC 1.8V

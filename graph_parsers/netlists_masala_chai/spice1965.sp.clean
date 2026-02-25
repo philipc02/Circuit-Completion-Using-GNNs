@@ -2,9 +2,9 @@ spice
 * SPICE Netlist
 
 * Voltage sources
-VCC 3 0 DC <value>  ; VCC positive rail
-VEE 0 2 DC <value>  ; VEE negative rail
-Vb1 3 3 DC <value>  ; DC bias voltage
+VCC 3 0 DC <value> ; VCC positive rail
+VEE 0 2 DC <value> ; VEE negative rail
+Vb1 3 3 DC <value> ; DC bias voltage
 
 * Transistors
 Q1 3 5 2 NPN

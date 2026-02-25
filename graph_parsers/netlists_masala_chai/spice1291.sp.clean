@@ -1,6 +1,6 @@
 * Transistor Definitions
-M1 2 3 0 0 NMOS W=10u L=0.18u
-M2 2 3 4 4 PMOS W=W2 L=0.18u
+M1 2 3 0 0 NMOS
+M2 2 3 4 4 PMOS
 
 * Voltage Source
 VDD 4 0 DC 1.8V

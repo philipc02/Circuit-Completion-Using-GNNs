@@ -1,9 +1,9 @@
 spice
 * NMOSFET M1
-M1 Vout Vin GND GND NMOS W=10u L=0.18u
+M1 Vout Vin GND GND NMOS
 
 * PMOSFET M2
-M2 VDD Vout Vout Vout PMOS W=22u L=0.18u
+M2 VDD Vout Vout Vout PMOS
 
 * Voltage Source
 VDD VDD 0 DC 1.8V

@@ -21,6 +21,6 @@ VGND 2 0 0
 Vin Vin,CM 0 DC <Vin_CM_value>
 
 * Outputs for SPICE
-VOUT Vout,C 0 
+VOUT Vout,C 0
 
 .end

@@ -9,7 +9,7 @@ Vs 7 2 DC
 IQ 4 2 DC
 
 * Resistor
-RB 5 3 1k  ; Assumed resistance value
+RB 5 3 1k ; Assumed resistance value
 
 * Capacitors
 CC 7 5 1uF ; Assumed capacitance value

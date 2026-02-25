@@ -1,5 +1,5 @@
-Vin 1 0 DC 0  ; Define input voltage source, assumed DC for SPICE
-C1 1 2 1u     ; Capacitor C1 between Vin (node 1) and node 2, 1 microfarad
-R1 2 0 1k     ; Resistor R1 between node 2 and ground, 1 kilo-ohm
-L1 2 3 1m     ; Inductor L1 between node 2 and Vout (node 3), 1 millihenry
-Vout 3 0 0    ; Define output node Vout
+Vin 1 0 DC 0 ; Define input voltage source, assumed DC for SPICE
+C1 1 2 1u ; Capacitor C1 between Vin (node 1) and node 2, 1 microfarad
+R1 2 0 1k ; Resistor R1 between node 2 and ground, 1 kilo-ohm
+L1 2 3 1m ; Inductor L1 between node 2 and Vout (node 3), 1 millihenry
+Vout 3 0 0 ; Define output node Vout

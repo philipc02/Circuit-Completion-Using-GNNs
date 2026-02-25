@@ -9,7 +9,7 @@ XOP 0 2 3 OPAMP
 * Define OPAMP as a subcircuit
 .subckt OPAMP IN- IN+ OUT
 * Simple ideal op-amp model, replace with actual model as needed
-E1 OUT 0 VALUE = {IF(V(IN+) > V(IN-), VOUT_max, VOUT_min)}
+E1 OUT 0 VALUE
 .ends OPAMP
 
 * Connections:

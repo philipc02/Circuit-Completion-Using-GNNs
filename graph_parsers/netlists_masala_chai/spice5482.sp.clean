@@ -1,12 +1,12 @@
 plaintext
 * SPICE netlist for the schematic
 
-VCC 3 0 DC 10V        * Voltage source from node 3 to ground
-RC 3 4 1k             * Resistor RC from node 3 to node 4
-RB 5 3                * Resistor RB from VIN to node 3
+VCC 3 0 DC 10V * Voltage source from node 3 to ground
+RC 3 4 1k * Resistor RC from node 3 to node 4
+RB 5 3 * Resistor RB from VIN to node 3
 
-Q1 3 5 2 NPN          * NPN Transistor (collector=3, base=5, emitter=2)
-VIN 5 0 DC            * VIN is connected to node 5 and ground
+Q1 3 5 2 NPN * NPN Transistor
+VIN 5 0 DC * VIN is connected to node 5 and ground
 
 .MODEL NPN NPN (IS=1E-14 BF=100)
 

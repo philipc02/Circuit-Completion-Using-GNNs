@@ -1,6 +1,6 @@
 * Components
 V1 7 10 DC
-Q1 2 5 4  
+Q1 2 5 4
 RC 8 9 3.3k
 RE 2 4 3.6k
 R1 5 7 100k

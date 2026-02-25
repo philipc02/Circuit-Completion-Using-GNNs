@@ -1,9 +1,9 @@
 plaintext
 * SPICE Netlist
-Q1 2 4 3 NPN          ; NPN Transistor
-RB 6 4 <Value_RB>     ; Resistor RB
-RC 2 3 <Value_RC>     ; Resistor RC
-VBB 5 6 <Value_VBB>   ; Voltage source VBB
-VCC 2 3 <Value_VCC>   ; Voltage source VCC
+Q1 2 4 3 NPN ; NPN Transistor
+RB 6 4 <Value_RB> ; Resistor RB
+RC 2 3 <Value_RC> ; Resistor RC
+VBB 5 6 <Value_VBB> ; Voltage source VBB
+VCC 2 3 <Value_VCC> ; Voltage source VCC
 
 .model NPN NPN (Is=<IS> Bf=<BF> Vaf=<VAF>)

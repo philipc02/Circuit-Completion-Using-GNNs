@@ -2,7 +2,7 @@ plaintext
 * SPICE Netlist
 
 * Voltage Sources
-VDD VDD 0 DC <VALUE> 
+VDD VDD 0 DC <VALUE>
 Vb1 Vb1 0 DC <VALUE>
 Vb2 Vb2 0 DC <VALUE>
 Vin Vin 0 DC <VALUE>

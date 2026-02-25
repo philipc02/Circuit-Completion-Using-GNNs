@@ -2,23 +2,23 @@
 * Components: BJTs, Resistor, Current Sources
 
 * Transistors (Assuming NPN BJTs)
-QR  6 2 4 NPN  ; QR: Collector=6, Base=2, Emitter=4
-Q1  2 2 0 NPN  ; Q1: Collector=2, Base=2, Emitter=0 (Ground)
-Q2  3 2 0 NPN  ; Q2: Collector=3, Base=2, Emitter=0 (Ground)
-Q3  5 2 0 NPN  ; Q3: Collector=5, Base=2, Emitter=0 (Ground)
+QR 6 2 4 NPN ; QR:
+Q1 2 2 0 NPN ; Q1:
+Q2 3 2 0 NPN ; Q2:
+Q3 5 2 0 NPN ; Q3:
 
 * Resistor
-R1  V+ 2  R1_VALUE ; R1 connected from V+ to node 2
+R1 V+ 2 R1_VALUE ; R1 connected from V+ to node 2
 
 * Current Sources
-IREF   V+ 6  IREF_VALUE  ; I_REF connected from V+ to node 6
-I1     2 0  I1_VALUE     ; I1 connected from node 2 to ground
-I2     3 4  I2_VALUE     ; I2 connected from node 3 to node 4
-I3     5 4  I3_VALUE     ; I3 connected from node 5 to node 4
-IO     3 2  IO_VALUE     ; IO connected from node 3 to node 2
+IREF V+ 6 IREF_VALUE ; I_REF connected from V+ to node 6
+I1 2 0 I1_VALUE ; I1 connected from node 2 to ground
+I2 3 4 I2_VALUE ; I2 connected from node 3 to node 4
+I3 5 4 I3_VALUE ; I3 connected from node 5 to node 4
+IO 3 2 IO_VALUE ; IO connected from node 3 to node 2
 
 * Voltage Source for V+
-V+    V+ 0 DC  ; Defines the positive supply voltage
+V+ V+ 0 DC ; Defines the positive supply voltage
 
 * Models for NPN transistors
 .model NPN NPN

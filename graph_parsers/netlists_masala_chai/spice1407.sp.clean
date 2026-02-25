@@ -1,14 +1,14 @@
 * NMOS Transistors
-   M1 3 4 0 0 NMOS
-   M2 0 2 0 0 NMOS
+M1 3 4 0 0 NMOS
+M2 0 2 0 0 NMOS
 
    * Resistors
-   Rp 3 0 Rp_value
-   Rout 3 out Rout_value
+Rp 3 0 Rp_value
+Rout 3 out Rout_value
 
    * Voltage Nodes
-   Vb1 4 0 DC Vb1_value
-   Vb2 2 0 DC Vb2_value
+Vb1 4 0 DC Vb1_value
+Vb2 2 0 DC Vb2_value
 
    .model NMOS nmos
    .end

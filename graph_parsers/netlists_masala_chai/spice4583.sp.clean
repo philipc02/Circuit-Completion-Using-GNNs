@@ -19,5 +19,5 @@ M8 4 2 0 0 NMOS
 
 * Connections
 VDD 5 0 5V
-VDD 7 0 5V
-VDD 8 0 5V
+VDD_1 7 0 5V
+VDD_2 8 0 5V

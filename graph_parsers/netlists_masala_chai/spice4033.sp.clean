@@ -1,6 +1,6 @@
 plaintext
-Vi 5 6 DC 0       ; Voltage source Vi connected between nodes 5 and 6
-RS 5 4 1k         ; Resistor RS connected between nodes 5 and 4 (example value 1k)
-RP 4 2 1k         ; Resistor RP connected between nodes 4 and 2 (example value 1k)
-CP 4 3 1u         ; Capacitor CP connected between nodes 4 and 3 (example value 1uF)
-V0 3 2 DC 0       ; Vo output at node 3 with reference to ground node 2
+Vi 5 6 DC 0 ; Voltage source Vi connected between nodes 5 and 6
+RS 5 4 1k ; Resistor RS connected between nodes 5 and 4 (example value 1k)
+RP 4 2 1k ; Resistor RP connected between nodes 4 and 2 (example value 1k)
+CP 4 3 1u ; Capacitor CP connected between nodes 4 and 3 (example value 1uF)
+V0 3 2 DC 0 ; Vo output at node 3 with reference to ground node 2

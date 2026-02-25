@@ -1,7 +1,7 @@
 plaintext
 * Netlist for the schematic
 
-M1 3 2 4 4 NMOS    * NMOS Transistor: Drain=3, Gate=2, Source=4, Body=4
-RS 5 3 1k          * Resistor RS: connects node 5 to node 3
-RD 3 4 1k          * Resistor RD: connects node 3 to node 4
-V1 2 6 DC 5V       * Voltage source from node 2 to node 6
+M1 3 2 4 4 NMOS * NMOS Transistor:
+RS 5 3 1k * Resistor RS: connects node 5 to node 3
+RD 3 4 1k * Resistor RD: connects node 3 to node 4
+V1 2 6 DC 5V * Voltage source from node 2 to node 6

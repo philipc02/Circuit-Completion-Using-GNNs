@@ -5,8 +5,8 @@ R1 6 2 5k
 R2 8 5 5k
 R3 5 4 500
 R4 3 4 500
-D1 2 5 D 
-D2 3 4 D 
+D1 2 5 D
+D2 3 4 D
 * Diode model (simple)
 .model D D
 

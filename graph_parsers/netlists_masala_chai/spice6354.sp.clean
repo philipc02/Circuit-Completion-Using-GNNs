@@ -1,8 +1,8 @@
 spice
 * Netlist for given schematic
 Vi 0 10 DC 0
-Cl 2 4  C
-Rl 4 5  R
-Ll 4 9  L
+Cl 2 4 C
+Rl 4 5 R
+Ll 4 9 L
 Vo 9 3 DC 0
 C1 10 7 DC 0

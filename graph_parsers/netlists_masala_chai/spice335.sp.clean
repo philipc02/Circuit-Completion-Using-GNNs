@@ -1,9 +1,9 @@
 spice
 * NMOS transistor M1
-M1 2 5 3 3 NMOS L=1U W=100U
+M1 2 5 3 3 NMOS
 
 * PMOS transistor M2
-M2 2 2 4 4 PMOS L=1U W=4U
+M2 2 2 4 4 PMOS
 
 * Resistor Rs
 Rs 5 3 1k

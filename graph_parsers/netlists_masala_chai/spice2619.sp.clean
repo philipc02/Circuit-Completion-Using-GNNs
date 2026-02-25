@@ -9,7 +9,7 @@ M6 3 1 2 2 NMOS
 
 * Resistors
 RD 3 6 10k
-RD 3 6 10k
+RD_1 3 6 10k
 
 * Current Source
 ISS 2 0 DC 1mA

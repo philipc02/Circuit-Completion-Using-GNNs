@@ -1,11 +1,11 @@
 plaintext
 * SPICE Netlist
 Vi 6 8 DC 0
-RSi 6 11 1k  ; Replace '1k' with actual value if known
-CC 11 3 1uF  ; Replace '1uF' with actual value if known
-RB 3 5 10k   ; Replace '10k' with actual value if known
-Ri 3 4 1k    ; Replace '1k' with actual value if known
-Rpi 4 7 1k   ; Replace '1k' with actual value if known
-Gc 7 2 VOL=V(4,7)
-RE 9 2 1k    ; Replace '1k' with actual value if known
-RC 2 10 1k   ; Replace '1k' with actual value if known
+RSi 6 11 1k ; Replace '1k' with actual value if known
+CC 11 3 1uF ; Replace '1uF' with actual value if known
+RB 3 5 10k ; Replace '10k' with actual value if known
+Ri 3 4 1k ; Replace '1k' with actual value if known
+Rpi 4 7 1k ; Replace '1k' with actual value if known
+Gc 7 2
+RE 9 2 1k ; Replace '1k' with actual value if known
+RC 2 10 1k ; Replace '1k' with actual value if known

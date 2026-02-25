@@ -1,5 +1,5 @@
 * NMOS Transistor
-M1 2 3 2 2 NMOS W=2u L=0.18u
+M1 2 3 2 2 NMOS
 
 * Resistor
 R_D 5 4 5k

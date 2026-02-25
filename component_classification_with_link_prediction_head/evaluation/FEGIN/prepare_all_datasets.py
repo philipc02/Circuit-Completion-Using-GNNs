@@ -26,9 +26,9 @@ def prepare_all_datasets():
     ]
     
     # Load all graph files
-    base_graph_folder = "../../../graph_parsers/graphs_analoggenie"
+    base_graph_folder = "../../../graph_parsers/graphs_amsnet"
     
-    # TODO: Common list of circuits across all representations for fair comparison
+    # Common list of circuits across all representations for fair comparison
     # Dictionary to store circuit -> representation -> actual filenames
     circuit_to_files = {}
     
@@ -84,7 +84,7 @@ def prepare_all_datasets():
         'representations': representations
     }
     
-    with open('data/analoggenie_dataset.pkl', 'wb') as f:
+    with open('data/amsnet_dataset.pkl', 'wb') as f:
         pickle.dump(dataset_info, f)
     
     print(f"Created splits with {len(train_files)} train, {len(test_files)} test circuits")

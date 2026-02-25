@@ -12,8 +12,8 @@ I_IN 2 0 DC
 V_CC 2 0 DC
 
 * Resistors
-R1 6 0 
-R3 5 0 
-R4 8 0 
+R1 6 0
+R3 5 0
+R4 8 0
 
 * Note: Add actual values for current source, voltage source, and resistors as needed.

@@ -1,6 +1,6 @@
 *SPICE Netlist for circuit 18
 V1 3 0 5V
-M1 3 1 2 2 NMOS W=1u L=1u
+M1 3 1 2 2 NMOS
 .MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
 
 .OP

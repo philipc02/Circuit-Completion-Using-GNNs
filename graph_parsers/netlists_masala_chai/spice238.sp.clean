@@ -11,4 +11,4 @@ V1 6 2 vs
 
 * Ground connections
 VSS 7 0 0
-VSS 3 0 0
+VSS_1 3 0 0

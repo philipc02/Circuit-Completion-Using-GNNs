@@ -20,6 +20,6 @@ VEE 0 2 DC -VEE
 Rin 10 0
 
 * Output
-Vout 7 0 
+Vout 7 0
 
 .END

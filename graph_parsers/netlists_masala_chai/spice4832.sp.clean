@@ -1,4 +1,4 @@
 I1 2 4 DC 1A
-   R1 4 3 r'_e
-   R2 3 0 r_e
-   R3 2 0 r_c
+R1 4 3 r'_e
+R2 3 0 r_e
+R3 2 0 r_c

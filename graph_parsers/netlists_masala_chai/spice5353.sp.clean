@@ -4,7 +4,7 @@ V1 1 4 DC 22
 R1 2 3 10k
 R2 2 5 5.6k
 R3 5 4 2.7k
-V1 1 2 DC 22
+V1_1 1 2 DC 22
 
 * Node Descriptions
 * 1 - Positive terminal of V1

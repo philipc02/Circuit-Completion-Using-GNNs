@@ -8,8 +8,8 @@ R3 5 4 50k
 R4 4 2 100k
 
 * Capacitors
-C1 1 0 <value> 
-C2 5 0 <value> 
+C1 1 0 <value>
+C2 5 0 <value>
 
 * Op-Amp
 U1 3 5 2 4 opamp

@@ -1,14 +1,14 @@
 * SPICE Netlist
 
-VDD 3 0 DC 5V  * Voltage source for simulation
-I1 3 2 DC 1mA  * Current source with 1mA
+VDD 3 0 DC 5V * Voltage source for simulation
+I1 3 2 DC 1mA * Current source with 1mA
 
 *MOSFETs
-M1 2 4 0 0 NMOS * NMOS: Drain=2, Gate=Vin (4), Source=0 (Ground), Body=0
-M2 2 4 3 3 PMOS * PMOS: Drain=2, Gate=4, Source=3 (VDD), Body=3
+M1 2 4 0 0 NMOS * NMOS:
+M2 2 4 3 3 PMOS * PMOS:
 
 *Resistor
-R1 2 0 1kΩ    * Resistor: From Node 2 to Ground, 1kOhm
+R1 2 0 1kΩ * Resistor: From Node 2 to Ground, 1kOhm
 
 * Simulation commands
 .end

@@ -18,13 +18,13 @@ C3 Vout 0 CQD3 + CDB3
 
 * Connections
 * Netlist
-M1 2 1 0 0 NMOS
-M3 2 5 3 3 PMOS
-R1 3 5 RD
-VDD 3 0 DC VDD
-Vin 1 0 AC Vin
-C1 1 0 CGD1*(1+gm1/gm3)
-C2 1 2 CGS3+CGD1*(1+gm3/gm1)+CDBS
-C3 2 0 CQD3+CDB3
+M1_1 2 1 0 0 NMOS
+M3_1 2 5 3 3 PMOS
+R1_1 3 5 RD
+VDD_1 3 0 DC VDD
+Vin_1 1 0 AC Vin
+C1_1 1 0 CGD1*(1+gm1/gm3)
+C2_1 1 2 CGS3+CGD1*(1+gm3/gm1)+CDBS
+C3_1 2 0 CQD3+CDB3
 
 .end

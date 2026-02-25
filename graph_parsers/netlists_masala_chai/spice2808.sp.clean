@@ -2,7 +2,7 @@ spice
 * Example SPICE netlist
 
 VDD 3 0 DC 5V
-VIN 1 0 DC 
+VIN 1 0 DC
 
 RS 1 2 1k
 

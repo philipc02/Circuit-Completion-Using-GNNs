@@ -16,9 +16,9 @@ RE2 2 4 1k
 RL 3 4 10k
 
 * Capacitors
-C1 9 4 
-C2 5 6 
-C3 3 6 
+C1 9 4
+C2 5 6
+C3 3 6
 
 * Transistors
 Q1 5 1 2 NPN

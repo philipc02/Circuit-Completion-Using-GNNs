@@ -1,7 +1,7 @@
 spice
 * Transistors
-Q1 2 5 0 NPN_A 
-Q2 4 2 3 NPN_B 
+Q1 2 5 0 NPN_A
+Q2 4 2 3 NPN_B
 
 * Resistors
 R1 5 0 300k

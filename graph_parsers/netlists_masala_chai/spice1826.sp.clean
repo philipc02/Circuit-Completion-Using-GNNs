@@ -2,7 +2,7 @@ spice
 * Components
 VDD VDD 4 DC 15
 RD 2 4 1k
-M3 3 2 0 0 NMOS L=1u W=2u
+M3 3 2 0 0 NMOS
 * Op-amp
 E1 3 0 2 0 100k
 
@@ -13,6 +13,6 @@ E1 3 0 2 0 100k
 * 4: Node between RD and VDD
 
 * Voltage Sources
-VDD 4 0 DC 15
+VDD_1 4 0 DC 15
 
 * End of netlist

@@ -14,6 +14,6 @@ V1 3 0 DC 3V
 
 * Node Connections
 V2 3 0 DC
-V1 2 0 DC
+V1_1 2 0 DC
 
 * End of File

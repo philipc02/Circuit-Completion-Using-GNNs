@@ -2,12 +2,12 @@
 M1 Y X 0 0 NMOS
 
 * Resistors
-R1 2 3  /* Resistance between net 2 and VDD */
-RD Y 3  /* Resistance between net Y and VDD */
-R2 2 0  /* Resistance between net 2 and ground */
+R1 2 3 /* Resistance between net 2 and VDD */
+RD Y 3 /* Resistance between net Y and VDD */
+R2 2 0 /* Resistance between net 2 and ground */
 
 * Capacitor
-C1 D 2  /* Capacitance between input D and net 2 */
+C1 D 2 /* Capacitance between input D and net 2 */
 
 * Voltage Source
 VDD 3 0 DC /* DC Voltage source VDD between net 3 and ground */

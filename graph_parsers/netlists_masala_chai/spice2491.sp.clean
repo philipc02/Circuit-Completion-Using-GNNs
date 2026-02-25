@@ -1,11 +1,11 @@
 spice
 * NMOS Amplifier Circuit
 
-V1 1 0 DC 0        ; Input voltage source (V_in)
-VDD 2 0 DC VDD     ; Supply voltage source (V_DD)
+V1 1 0 DC 0 ; Input voltage source (V_in)
+VDD 2 0 DC VDD ; Supply voltage source (V_DD)
 
-M1 3 1 5 5 NMOS    ; NMOS transistor: Drain=3, Gate=1, Source=5, Body=5
-RL 2 3 RL          ; Load resistor: connected between V_DD (2) and node 3
+M1 3 1 5 5 NMOS ; NMOS transistor:
+RL 2 3 RL ; Load resistor: connected between V_DD (2) and node 3
 
 * Specify model for NMOS
 .model NMOS NMOS (level=1)

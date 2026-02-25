@@ -16,14 +16,14 @@ V1 6 3 DC
 I1 7 3 DC
 
 * VCCS
-G1 5 3 VOL=Gmv1
+G1 5 3
 
 * Resistors
-R1 8 4 R=Rpi
-R2 4 2 R=Rb
+R1 8 4
+R2 4 2
 
 * Capacitors
-C1 3 4 C=Cpi
-C2 3 5 C=Cmu
+C1 3 4
+C2 3 5
 
 .end

@@ -2,7 +2,7 @@ plaintext
 * Feedback Amplifier SPICE Netlist
 
 * Voltage Source
-Vs 1 7 
+Vs 1 7
 
 * Current Sources
 Is 7 3

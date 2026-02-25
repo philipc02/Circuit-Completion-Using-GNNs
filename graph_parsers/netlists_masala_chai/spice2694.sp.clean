@@ -1,6 +1,6 @@
 plaintext
 * NMOS Amplifier Circuit
-X1 2 3 0 NMOS_MODEL W=100u L=1u
+X1 2 3 0 NMOS_MODEL
 RD 4 2 10k
 CB 3 VIN 10u
 RB 3 VB 100k

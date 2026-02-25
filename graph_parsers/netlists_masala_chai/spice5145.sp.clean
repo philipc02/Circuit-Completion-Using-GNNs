@@ -1,9 +1,9 @@
 spice
 * SPICE Netlist for the given schematic
 
-V1 Vin 0 DC 0         * Voltage source
-C1 Vin 2 1uF          * Capacitor
-R1 2 0 1k             * Resistor
+V1 Vin 0 DC 0 * Voltage source
+C1 Vin 2 1uF * Capacitor
+R1 2 0 1k * Resistor
 X1 2 0 Vout Vout Opamp * Operational Amplifier
 
 * Model definition for Opamp

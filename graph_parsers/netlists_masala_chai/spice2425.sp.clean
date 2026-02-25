@@ -5,7 +5,7 @@ Vx 4 0 DC 5
 Ix 2 Vdd DC 1m
 R1 3 2 1k
 R2 2 4 1k
-M1 2 2 4 4 NMOS L=1u W=2u
+M1 2 2 4 4 NMOS
 
 .model NMOS NMOS (LEVEL=1)
 

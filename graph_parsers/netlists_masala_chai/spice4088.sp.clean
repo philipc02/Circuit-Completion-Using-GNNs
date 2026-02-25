@@ -3,7 +3,7 @@ spice
 
 Vi 3 12 DC 0
 
-C1 3 6  C1_value
+C1 3 6 C1_value
 C2 10 2 C2_value
 
 Rpar1 6 11 Rpar_value

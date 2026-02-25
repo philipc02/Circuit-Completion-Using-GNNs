@@ -1,9 +1,9 @@
 spice
 * PMOS with W/L = 20/0.18
-M1 Vout Vin Vdd Vdd PMOS L=0.18u W=20u
+M1 Vout Vin Vdd Vdd PMOS
 
 * NMOS with W/L = 10/0.18
-M2 Vout 3 0 0 NMOS L=0.18u W=10u
+M2 Vout 3 0 0 NMOS
 
 * Voltage sources
 Vdd Vdd 0 DC 1.8V

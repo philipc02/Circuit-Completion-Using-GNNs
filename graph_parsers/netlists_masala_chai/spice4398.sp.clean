@@ -1,6 +1,6 @@
 spice
 * Voltage Source
-Vi 7 3 DC <value> 
+Vi 7 3 DC <value>
 
 * Input Resistor
 RS 7 5 <value>

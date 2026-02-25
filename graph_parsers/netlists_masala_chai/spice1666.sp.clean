@@ -1,5 +1,5 @@
 * NMOS equivalent:
-M1 3 2 0 0 NMOS 
+M1 3 2 0 0 NMOS
 
 * Capacitors:
 C_GS 2 4 CGS

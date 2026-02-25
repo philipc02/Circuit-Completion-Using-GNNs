@@ -6,6 +6,6 @@ R2plusB 4 6 12k
 RL1 4 3 100k
 * Ground connections
 Vgnd 6 0 0V
-Vgnd 3 0 0V
-Vgnd 7 0 0V
+Vgnd_1 3 0 0V
+Vgnd_2 7 0 0V
 .end

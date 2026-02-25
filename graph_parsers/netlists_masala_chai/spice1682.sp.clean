@@ -5,13 +5,13 @@ spice
 M1 2 4 5 5 NMOS
 
 * Capacitors
-CGD 2 4  CGD_value
-CGS 6 5  CGS_value
+CGD 2 4 CGD_value
+CGS 6 5 CGS_value
 CDB 2 23 CDB_value
 CSB_CL 5 0 CSB_CL_value
 
 * Resistors
-RS 1 6  RS_value
+RS 1 6 RS_value
 
 * Current Source
 I1 5 0 I1_value

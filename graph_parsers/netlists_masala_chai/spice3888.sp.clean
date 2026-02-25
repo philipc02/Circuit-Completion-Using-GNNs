@@ -1,10 +1,10 @@
 spice
 * SPICE netlist for the given schematic
 
-Q1 2 5 8 NPN   * NPN BJT (Collector=2, Base=5, Emitter=8)
-RC 2 6 4k      * Resistor RC (4k Ohms, connected between Node 2 and GND)
-RE 8 3 1.5k    * Resistor RE (1.5k Ohms, connected between Node 8 and Node 3)
-VBB 5 6 DC 2   * Voltage Source VBB (2V, connected between Node 5 and GND)
+Q1 2 5 8 NPN * NPN BJT
+RC 2 6 4k * Resistor RC (4k Ohms, connected between Node 2 and GND)
+RE 8 3 1.5k * Resistor RE (1.5k Ohms, connected between Node 8 and Node 3)
+VBB 5 6 DC 2 * Voltage Source VBB (2V, connected between Node 5 and GND)
 VPLUS 3 6 DC 2 * Voltage Source V+ (2V, connected between Node 3 and GND)
 
 .END

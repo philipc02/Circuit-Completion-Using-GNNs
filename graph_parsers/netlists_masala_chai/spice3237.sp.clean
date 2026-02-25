@@ -12,6 +12,6 @@ C2 2 6 1u
 
 * Voltage Sources
 VDD 4 0 DC 5V
-Vb 2 0 DC 
+Vb 2 0 DC
 
 * End of Netlist

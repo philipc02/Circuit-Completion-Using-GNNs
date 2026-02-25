@@ -13,7 +13,7 @@ RL 7 6 RL
 
 I0 6 7 DC Io
 
-Gm 0 2 Value = {gm * V(5,2)}
+Gm 0 2 Value
 
 * Ground Node
 0 9 0

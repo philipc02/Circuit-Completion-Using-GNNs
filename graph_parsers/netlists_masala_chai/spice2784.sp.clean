@@ -3,14 +3,14 @@
 M1 4 2 0 0 NMOS
 
 * Capacitors
-CGD1 2 4  CGD1_value
-CL 3 0  CL_value
+CGD1 2 4 CGD1_value
+CL 3 0 CL_value
 
 * Resistors
-R01R03 4 3  R_value
+R01R03 4 3 R_value
 
 * Voltage Source
-Vin1 1 0  Vin1_value
+Vin1 1 0 Vin1_value
 
 * Nodes
 * 1 - Vin1

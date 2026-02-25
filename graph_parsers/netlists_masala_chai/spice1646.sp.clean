@@ -1,7 +1,7 @@
 plaintext
 * SPICE Netlist
 * Components
-C_Cx  B E CxValue
+C_Cx B E CxValue
 C_Cmu 2 C CmuValue
 C_Ccs C 0 CcsValue
 R_rpi 2 3 rpiValue

@@ -7,6 +7,6 @@ RS 3 0 RS_VALUE
 
 * Model and Value definitions
 .model NMOS_MODEL NMOS
-RS_VALUE = 1k
-VDD_VALUE = 5
-Vi_VALUE = 1
+RS_VALUE
+VDD_VALUE
+Vi_VALUE

@@ -8,7 +8,7 @@ Rof 2 3 2k
 RL 3 0 1k
 
 * Voltage Source
-V1 5 4 DC <value>  ; Please specify the DC value for V1
+V1_1 5 4 DC <value> ; Please specify the DC value for V1
 
 * Operational Amplifier
 * Assuming an ideal op-amp model

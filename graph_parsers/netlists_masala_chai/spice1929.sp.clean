@@ -1,12 +1,12 @@
 spice
 * SPICE Netlist
-M1 2 5 2 2 NMOS ; M1: Source=2, Gate=5, Drain=2
-M2 2 6 2 2 NMOS ; M2: Source=2, Gate=6, Drain=2
-M3 4 5 33 33 PMOS ; M3: Source=33, Gate=5, Drain=4
-M4 33 6 4 4 PMOS ; M4: Source=4, Gate=6, Drain=33
+M1 2 5 2 2 NMOS ; M1:
+M2 2 6 2 2 NMOS ; M2:
+M3 4 5 33 33 PMOS ; M3:
+M4 33 6 4 4 PMOS ; M4:
 
 VDD 4 0 DC VDD ; Voltage source VDD connected to net 4 and 0
-VDD 33 0 DC VDD ; Voltage source VDD connected to net 33 and 0
+VDD_1 33 0 DC VDD ; Voltage source VDD connected to net 33 and 0
 
 IISS 2 0 DC IISS ; Current source IISS between net 2 and ground
 

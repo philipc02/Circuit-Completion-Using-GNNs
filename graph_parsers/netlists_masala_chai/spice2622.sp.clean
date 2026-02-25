@@ -9,12 +9,12 @@ RD1 7 6 10k
 RD2 7 6 10k
 
 * NMOS Transistors (M5, M6)
-M5 6 1 4 4 NMOS L=1u W=10u
-M6 6 2 4 4 NMOS L=1u W=10u
+M5 6 1 4 4 NMOS
+M6 6 2 4 4 NMOS
 
 * PMOS Transistors (M4, M2)
-M4 6 2 3 3 PMOS L=1u W=10u
-M2 6 3 3 3 PMOS L=1u W=10u
+M4 6 2 3 3 PMOS
+M2 6 3 3 3 PMOS
 
 * Connections
 * Vout node 6

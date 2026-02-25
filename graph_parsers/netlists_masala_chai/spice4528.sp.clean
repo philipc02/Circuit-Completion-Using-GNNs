@@ -18,7 +18,7 @@ G1 7 0 5 4 1e-3
 E1 4 0 8 0 1e6
 Rout 8 7 10
 Cout 8 0 1u
-R1 4 8 200
+R1_1 4 8 200
 .ends
 
 * End of Netlist

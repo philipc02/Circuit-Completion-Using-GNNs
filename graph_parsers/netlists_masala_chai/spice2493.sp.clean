@@ -5,7 +5,7 @@ M2 2 3 VDD VDD PMOS
 M3 3 Vin 4 4 NMOS
 
 *Current Source
-I1 2 6 DC 
+I1 2 6 DC
 
 *Capacitor
 C1 2 6 <value>

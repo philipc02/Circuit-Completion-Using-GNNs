@@ -2,19 +2,19 @@ plaintext
 * Inverting Amplifier Circuit
 
 * Components
-R1 2 0  R1_value   * Resistor R1
-RF 2 3  RF_value   * Resistor RF
-CF 2 3  CF_value   * Capacitor CF
+R1 2 0 R1_value * Resistor R1
+RF 2 3 RF_value * Resistor RF
+CF 2 3 CF_value * Capacitor CF
 
 * Voltage Source
-Vin 1 2 DC Vin_value  * Input Voltage Source
+Vin 1 2 DC Vin_value * Input Voltage Source
 
 * Op-Amp (Ideal)
 * Note: Ideal op-amps are often represented with separate subcircuit definitions
 * Here, we use a simplified notation
-E1 3 0 2 0 999K  * Voltage-controlled voltage source representing ideal op-amp
+E1 3 0 2 0 999K * Voltage-controlled voltage source representing ideal op-amp
 
 * Ground
-V0 0 GND DC 0  * Ground reference
+V0 0 GND DC 0 * Ground reference
 
 .END

@@ -9,7 +9,7 @@ XOPAMP 3 0 4 opamp
 * Ideal operational amplifier model
 .subckt opamp in+ in- out
 V1 out in+ 0
-E1 out in+ value={V(in+, in-)}
+E1 out in+
 .ends opamp
 
 .end

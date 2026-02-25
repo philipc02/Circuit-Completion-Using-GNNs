@@ -9,7 +9,7 @@ spice
 VDD 3 0 DC
 r04 3 5 1k
 r02 5 4 1k
-M2 3 2 5 NMOS L=1u W=1u
+M2 3 2 5 NMOS
 r01 4 1 1k
 I_gm1 4 1 DC gm1
 

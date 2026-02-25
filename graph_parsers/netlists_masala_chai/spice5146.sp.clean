@@ -3,12 +3,12 @@ plaintext
 V1 Vin 0 DC 0
 
 * Capacitor
-C1 Vin N001 C=1uF
+C1 Vin N001
 
 * Resistors
-R3 N001 0 R=10k
-R1 N002 0 R=1k
-R2 N002 Vout R=100k
+R3 N001 0
+R1 N002 0
+R2 N002 Vout
 
 * Operational Amplifier
 * (Assuming ideal op-amp)

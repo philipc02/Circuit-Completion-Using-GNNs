@@ -18,8 +18,8 @@ Q10 9 4 3 NMOS
 Q11 2 7 9 PMOS
 Q12 10 3 2 PMOS
 
-R1 5 1 1k  * Assume resistance value
-R2 2 3 1k  * Assume resistance value
-R3 3 3 1k  * Assume resistance value
+R1 5 1 1k * Assume resistance value
+R2 2 3 1k * Assume resistance value
+R3 3 3 1k * Assume resistance value
 
 .END

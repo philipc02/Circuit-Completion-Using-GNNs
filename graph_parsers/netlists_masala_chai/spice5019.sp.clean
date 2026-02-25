@@ -1,6 +1,6 @@
 spice
 I1 2 5 DC
-R_C 2 6 1k  ; 1k ohm resistor
-C_C 6 0 1u  ; 1uF capacitor
-C_stray 4 0 0.1u  ; 0.1uF capacitor
-R_L 2 3 1k  ; 1k ohm resistor
+R_C 2 6 1k ; 1k ohm resistor
+C_C 6 0 1u ; 1uF capacitor
+C_stray 4 0 0.1u ; 0.1uF capacitor
+R_L 2 3 1k ; 1k ohm resistor

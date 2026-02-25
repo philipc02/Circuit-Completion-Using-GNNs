@@ -14,7 +14,7 @@ R3 2 4 R3_VALUE
 V1 2 0 DC VT_VALUE
 
 * Operational Amplifier (Using E source for simplicity)
-E1 3 0 VALUE = {LIMIT(1000*(V(2) - V(3)), -15, 15)}
+E1 3 0 VALUE
 
 * Load and Output
 Rload 3 0 RLOAD_VALUE

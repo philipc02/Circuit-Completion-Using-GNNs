@@ -13,7 +13,7 @@ Q9 10 2 2 NMOS
 Q10 6 2 2 NMOS
 
 * Diodes
-D1 9 2 
+D1 9 2
 D2 12 8
 
 * Resistor
@@ -26,5 +26,5 @@ V+ 2 0 DC V+
 V- 5 0 DC V-
 
 * Output
-RL 8 0 
+RL 8 0
 VOUT 12 0

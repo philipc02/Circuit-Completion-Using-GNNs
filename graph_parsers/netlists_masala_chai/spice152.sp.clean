@@ -11,8 +11,8 @@ IIN 7 8 DC IIN
 R1 8 2 R
 
 * Transistors
-Q1 4 2 8 4 NPN 
-Q2 3 2 6 4 NPN 
+Q1 4 2 8 4 NPN
+Q2 3 2 6 4 NPN
 
 * Output
 VOUT 3 0 DC VOUT

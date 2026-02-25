@@ -1,10 +1,10 @@
 * Components
-M1 2 4 3 3 NMOS  * Q1 NMOS: Drain=2, Gate=4, Source=3
-M2 8 2 0 0 NMOS  * Q2 NMOS: Drain=8, Gate=2, Source=0
-Vs 10 2 DC 0     * Voltage Source: Positive=10, Negative=2
+M1 2 4 3 3 NMOS * Q1 NMOS:
+M2 8 2 0 0 NMOS * Q2 NMOS:
+Vs 10 2 DC 0 * Voltage Source:
 
 * Resistors
-RD1 10 2 RD1     * RD1: Connected between nodes 10 and 2
-RD2 8 2 RD2      * RD2: Connected between nodes 8 and 2
-R1 3 0 R1        * R1: Connected between nodes 3 and 0 (Ground)
-R2 2 5 R2        * R2: Connected between nodes 2 and 5
+RD1 10 2 RD1 * RD1: Connected between nodes 10 and 2
+RD2 8 2 RD2 * RD2: Connected between nodes 8 and 2
+R1 3 0 R1 * R1: Connected between nodes 3 and 0 (Ground)
+R2 2 5 R2 * R2: Connected between nodes 2 and 5

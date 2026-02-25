@@ -15,6 +15,6 @@ RS 3 0 5k
 Vin Vin 0 DC 0
 
 * Output
-Vout 2 0 
+Vout 2 0
 
 .end

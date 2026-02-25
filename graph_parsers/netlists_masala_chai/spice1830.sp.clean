@@ -1,6 +1,6 @@
 plaintext
 * SPICE Netlist
-M1 Vout Vin VF NMOS L=1u W=1u
+M1 Vout Vin VF NMOS
 RD VDD Vout 10k
 C1 Vout 2 10p
 C2 2 0 10p

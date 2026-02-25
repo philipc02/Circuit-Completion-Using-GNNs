@@ -1,7 +1,7 @@
 *SPICE Netlist for circuit 584
 I1 0 3 DC 1mA
-M1 VDD 5 4 4 NMOS W=1u L=1u
-M2 5 3 0 0 NMOS W=1u L=1u
+M1 VDD 5 4 4 NMOS
+M2 5 3 0 0 NMOS
 R2 0 1 1k
 R3 0 4 1k
 R4 0 4 1k

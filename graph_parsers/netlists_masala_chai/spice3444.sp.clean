@@ -1,7 +1,7 @@
 spice
 * SPICE netlist
-V1 7 3 DC <value>  ; Define the voltage for V1
+V1 7 3 DC <value> ; Define the voltage for V1
 Iin 5 3 DC <value> ; Define the current for Iin
-RT 8 7 <value>     ; Define the resistance for RT
-RS 5 4 <value>     ; Define the resistance for RS
-RL 5 6 <value>     ; Define the resistance for RL
+RT 8 7 <value> ; Define the resistance for RT
+RS 5 4 <value> ; Define the resistance for RS
+RL 5 6 <value> ; Define the resistance for RL

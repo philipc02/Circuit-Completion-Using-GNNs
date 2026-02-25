@@ -1,6 +1,6 @@
 spice
    * SPICE Netlist Example
-   Vs 2 4 AC 1 SIN(0 1 200k)
-   L1 2 3 2.7m
-   L2 3 0 4.7m
+Vs 2 4 AC 1 SIN(0 1 200k)
+L1 2 3 2.7m
+L2 3 0 4.7m
    .end

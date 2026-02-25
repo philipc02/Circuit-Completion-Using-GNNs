@@ -17,8 +17,8 @@ M12 3 3 11 11 PMOS
 
 IREF 8 3 DC
 
-C1 2 6 
-C2 2 7 
+C1 2 6
+C2 2 7
 
 Vdd 3 0 DC
 Vss 5 0 DC

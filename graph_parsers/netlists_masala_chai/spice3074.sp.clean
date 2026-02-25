@@ -20,5 +20,5 @@ ISS2 0 5 DC
 
 VDD 9 0 DC 5
 Vin1 0 1
-Vin2 3 0 
+Vin2 3 0
 Vout 4 0

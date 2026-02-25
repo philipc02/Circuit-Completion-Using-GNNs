@@ -6,7 +6,7 @@ M2 2 Vin 5 5 NMOS
 M3 2 3 6 6 PMOS
 
 * Voltage Sources
-VDD 6 0 DC <value> 
+VDD 6 0 DC <value>
 
 * Bias Voltages
 Vb1 3 0 DC <value>

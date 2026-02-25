@@ -1,9 +1,9 @@
 plaintext
 * Netlist for the given circuit schematic
 
-VIN 2 0 DC 
+VIN 2 0 DC
 
-V1 2 4 DC 
+V1 2 4 DC
 
 G1 4 3 3 0 1
 

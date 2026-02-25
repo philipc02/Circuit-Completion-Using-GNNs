@@ -9,7 +9,7 @@ RP 3 0 1k
 Cin 2 3 1u
 CL 4 5 1u
 
-M1 4 2 3 3 NMOS L=1u W=1u
+M1 4 2 3 3 NMOS
 
 * model definition
 .model NMOS NMOS LEVEL=1

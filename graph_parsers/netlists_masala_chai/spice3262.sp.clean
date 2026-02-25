@@ -2,7 +2,7 @@ plaintext
 * SPICE Netlist for the given schematic
 
 VDD 1 0 DC 5V
-Vb 6 9 DC 1.2V 
+Vb 6 9 DC 1.2V
 
 * PMOS Transistors
 M1 3 2 1 1 PMOS

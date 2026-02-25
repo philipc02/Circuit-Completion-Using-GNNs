@@ -1,16 +1,16 @@
 * SPICE netlist for the given circuit
 
 * Resistors
-Rx 1 4  r_x
-Rin 4 5  r_in
-Ro 3 5  r_o
+Rx 1 4 r_x
+Rin 4 5 r_in
+Ro 3 5 r_o
 
 * Capacitors
-Cin 5 7  C_in
-Cf 4 2  C_f
+Cin 5 7 C_in
+Cf 4 2 C_f
 
 * Voltage-controlled current source
-Gm 3 8 6 8  g_m
+Gm 3 8 6 8 g_m
 
 * Voltage source for V1
 V1 7 8 DC 0

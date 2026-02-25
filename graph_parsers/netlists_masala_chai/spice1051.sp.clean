@@ -1,10 +1,10 @@
 spice
 * SPICE Netlist for the given schematic
 
-VCC 4 0 DC <VCC_value>  ; Voltage source VCC, plus at net 4
-R1 7 4 <R1_value>       ; Resistor R1 between net 7 and net 4
-Q1 8 3 3 NPN            ; NPN transistor Q1, collector at net 8, base at net 3, emitter at net 3
-Q2 6 8 2 NPN            ; NPN transistor Q2, collector at net 6, base at net 8, emitter at net 2
+VCC 4 0 DC <VCC_value> ; Voltage source VCC, plus at net 4
+R1 7 4 <R1_value> ; Resistor R1 between net 7 and net 4
+Q1 8 3 3 NPN ; NPN transistor Q1, collector at net 8, base at net 3, emitter at net 3
+Q2 6 8 2 NPN ; NPN transistor Q2, collector at net 6, base at net 8, emitter at net 2
 
 * .MODEL NPN NPN(...) ; Define NPN model parameters here
 .ends

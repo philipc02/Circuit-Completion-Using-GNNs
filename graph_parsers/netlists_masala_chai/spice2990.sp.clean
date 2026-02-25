@@ -3,10 +3,10 @@ spice
 M2 3 5 2 2 NMOS
 
 *Voltage Source
-V1 6 7 DC <Value> 
+V1 6 7 DC <Value>
 
 *Current Source
-I1 5 7 DC <Value> 
+I1 5 7 DC <Value>
 
 *Resistors
 RD1 3 5 <Value>

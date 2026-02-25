@@ -14,8 +14,8 @@ Rb 7 3 50k
 Eopamp 4 5 2 3 1Meg
 
 * Connections
-V1 6 5 DC
-V2 7 5 DC
+V1_1 6 5 DC
+V2_1 7 5 DC
 
 * Ground
 .option nopage

@@ -3,7 +3,7 @@ spice
 
 Vsig 3 7 DC 0V AC 1V
 Rsig 3 4 1k
-M1 5 4 6 6 NMOS L=1u W=10u
+M1 5 4 6 6 NMOS
 RS 5 2 1k
 CS 5 8 10u
 RD 6 1 1k

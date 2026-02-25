@@ -3,8 +3,8 @@ plaintext
 
 MN1 3 1 2 2 NMOS
 MN2 4 2 5 5 NMOS
-RL  6 4 RL_value
-IQ  2 5 DC I_value
+RL 6 4 RL_value
+IQ 2 5 DC I_value
 
 * Voltage source configuration assumptions
 VX 1 0 DC VX_value

@@ -13,8 +13,8 @@ RE 3 0 1k
 RL 2 4 100k
 
 * Capacitors
-C1 6 5 
-C2 8 2 
+C1 6 5
+C2 8 2
 
 * NPN BJT
 Q1 8 5 3 NPN

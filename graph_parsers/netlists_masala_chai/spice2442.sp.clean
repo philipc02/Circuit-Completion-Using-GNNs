@@ -1,7 +1,7 @@
 spice
    * SPICE Netlist
-   V1 2 0 DC 2V
-   Ix 1 2 DC 0A
-   M1 1 2 3 3 NMOS
-   C1 1 Vx 1uF
-   C2 3 0 1uF
+V1 2 0 DC 2V
+Ix 1 2 DC 0A
+M1 1 2 3 3 NMOS
+C1 1 Vx 1uF
+C2 3 0 1uF

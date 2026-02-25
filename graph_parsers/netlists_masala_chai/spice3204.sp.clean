@@ -14,7 +14,7 @@ R 3 3 1k ; Assuming 1k ohm for R
 IREF 3 0 DC 1mA ; Assuming a current of 1mA
 
 * Power Supply
-VDD 2 0 DC 5V ; Assuming VDD = 5V
+VDD 2 0 DC 5V ; Assuming VDD
 
 .model NMOS NMOS (level=1)
 .end

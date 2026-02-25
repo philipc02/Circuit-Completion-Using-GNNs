@@ -7,7 +7,7 @@ Q2 4 3 8 NPN
 R1 1 7 R1_value
 R2 4 7 R2_value
 R0 2 6 R0_value
-R0 6 4 R0_value
+R0_1 6 4 R0_value
 
 * Current Source
 I_BIAS 8 9 I_value

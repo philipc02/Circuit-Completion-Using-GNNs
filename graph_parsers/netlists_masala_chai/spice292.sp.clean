@@ -14,8 +14,8 @@ RL1 8 4 RL
 RL2 7 6 RL
 
 * NMOS Transistors
-M1 4 9 3 3 NMOS  ; Left NMOS
-M2 6 3 3 3 NMOS  ; Right NMOS
+M1 4 9 3 3 NMOS ; Left NMOS
+M2 6 3 3 3 NMOS ; Right NMOS
 
 * Voltage Probes
 Vinput 1 0 DC 0

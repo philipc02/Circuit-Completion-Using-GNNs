@@ -1,8 +1,8 @@
 spice
 * Amplifier Circuit
 
-V1 4 2 DC Vcc     * Voltage source from node 4 to node 2
-XAMP 2 3 2 AMP    * Amplifier with input at node 2, output at node 3, referenced to node 2
+V1 4 2 DC Vcc * Voltage source from node 4 to node 2
+XAMP 2 3 2 AMP * Amplifier with input at node 2, output at node 3, referenced to node 2
 
 * Model or subcircuit for AMP
 .model AMP OPAMP   * Simple OpAmp model, replace with actual details if needed

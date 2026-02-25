@@ -10,5 +10,5 @@ RS 7 4 5k
 CC1 6 2 10u
 CC2 2 3 10u
 RL 3 4 10k
-M1 2 5 4 4 NMOS L=1u W=10u
+M1 2 5 4 4 NMOS
 .ends

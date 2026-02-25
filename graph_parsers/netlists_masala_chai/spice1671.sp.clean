@@ -1,6 +1,6 @@
 * Transistors
 M1 3 4 0 0 NMOS
-M2 5 3 2 2 PMOS 
+M2 5 3 2 2 PMOS
 
 * Capacitors
 C_GS1 4 0 C_GS1_VALUE

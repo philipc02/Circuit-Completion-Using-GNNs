@@ -6,7 +6,7 @@ VDD 1 0 DC
 VSS 11 0 DC
  
 * Current Sources
-IBIAS_N3 3 0 DC 
+IBIAS_N3 3 0 DC
 
 * PMOS Transistors
 MU1 2 4 1 1 PMOS

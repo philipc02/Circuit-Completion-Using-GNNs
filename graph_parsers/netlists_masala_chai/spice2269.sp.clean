@@ -1,7 +1,7 @@
 spice
 * NMOS Common Source Amplifier
 
-M1 Vout 3 0 0 NMOS_L W=1u L=0.18u
+M1 Vout 3 0 0 NMOS_L
 
 RD 4 Vout 10k
 RG 3 2 5k
