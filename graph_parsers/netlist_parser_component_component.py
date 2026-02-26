@@ -324,8 +324,8 @@ def analyze_dataset(folder):
 if __name__ == "__main__":
     print("Netlist parser running...")
     
-    input_folder = "netlists_masala_chai"
-    output_folder = "graphs_masala_chai/graphs_component_component"
+    input_folder = "netlists_analoggenie"
+    output_folder = "graphs_analoggenie/graphs_component_component"
     process_folder(input_folder, output_folder)
     remove_duplicate_graphs(output_folder)
     analyze_dataset(output_folder)
