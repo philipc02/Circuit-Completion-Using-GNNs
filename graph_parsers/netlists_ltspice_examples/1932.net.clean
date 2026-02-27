@@ -5,7 +5,7 @@ V1 IN 0 2
 D5 N001 N002 MBR0540
 C1 N002 0 1µ
 XU1 N001 0 N004 N003 IN IN LT1932
-D1 N002 N004 NSPW500BS N=4
+D1 N002 N004 NSPW500BS
 .model D D
 .lib C:\users\brian\My Documents\LTspiceXVII\lib\cmp\standard.dio
 .tran 500u startup

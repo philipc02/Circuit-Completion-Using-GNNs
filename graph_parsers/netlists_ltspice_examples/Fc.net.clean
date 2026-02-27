@@ -2,10 +2,10 @@
 V1 bias 0 pwl(0 -10 1m 10)
 R9 bias N001 100
 D1 0 N001 DX
-B1 0 0 I={Cjo}/(1+max(V(bias),-.5*{Vj})/{Vj})**{m}
-XU1 N001 0 bias res cap capometer current=1m freq=3Meg C=.25µ
-B2 0 0 I=max(0.,({Cjo}/(1-{Fc})**{1+m})*({1-Fc*(1+m)}-{m/Vj}*V(bias)))
-B3 0 0 I=V(cap)
+B1 0 0
+XU1 N001 0 bias res cap capometer
+B2 0 0
+B3 0 0
 .model D D
 .lib C:\users\brian\My Documents\LTspiceXVII\lib\cmp\standard.dio
 .tran 1m

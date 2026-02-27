@@ -7,7 +7,7 @@ R2 OUT N003 315K
 R3 N003 0 105K
 C3 N006 0 .01µ
 V1 IN 0 2.5
-XU1 0 N005 N002 N003 N004 IN N001 0 LT1302 top=1K bot=1T
+XU1 0 N005 N002 N003 N004 IN N001 0 LT1302
 R4 OUT 0 10
 .model D D
 .lib C:\users\brian\My Documents\LTspiceXVII\lib\cmp\standard.dio

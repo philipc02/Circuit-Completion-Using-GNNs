@@ -1,5 +1,5 @@
 * Z:\mnt\design.r\spice\examples\3595.asc
-D1 N002 N001 QTLP690C N=5
+D1 N002 N001 QTLP690C
 L1 N001 N004 100µ
 C1 IN N001 .47µ
 V1 IN 0 30

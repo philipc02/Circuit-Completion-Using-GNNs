@@ -5,7 +5,7 @@ D1 0 N001 MBR0530L
 R2 OUT N004 1.68Meg
 R3 N004 0 1Meg
 C1 OUT 0 100µ
-XU1 N004 N002 IN 0 N001 IN IN N003 LTC1475 top=10 bot=1T
+XU1 N004 N002 IN 0 N001 IN IN N003 LTC1475
 Rload OUT 0 20
 .model D D
 .lib C:\users\brian\My Documents\LTspiceXVII\lib\cmp\standard.dio

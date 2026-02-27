@@ -9,7 +9,7 @@ C2 OUT 0 100µ
 L1 N003 OUT 10µ
 V1 IN 0 6.2
 C4 N004 0 10n
-XU1 N001 IN N003 N002 MP_01 0 N006 N005 LT1375 top=1K bot=1T
+XU1 N001 IN N003 N002 MP_01 0 N006 N005 LT1375
 R4 OUT 0 10
 .model D D
 .lib C:\users\brian\My Documents\LTspiceXVII\lib\cmp\standard.dio

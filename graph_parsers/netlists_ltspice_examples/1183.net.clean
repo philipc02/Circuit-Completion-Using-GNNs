@@ -41,7 +41,7 @@ D4 N019 0 1N914
 K1 L1 L2 L3 L4 1
 * BAT
 .model NP NPN
-K1 L6 L7 1
+K1_1 L6 L7 1
 .lib LT1183.sub
 .backanno
 .end

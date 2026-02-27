@@ -16,7 +16,7 @@ R5 N006 N003 2.5Meg
 R6 +V N006 25K
 R7 N002 N005 3K
 V3 +V 0 5
-B1 Exact 0 V=-Log10(V(in)/10m)
+B1 Exact 0
 XU3 N006 0 NC_01 LT1009
 .model D D
 .lib C:\users\brian\My Documents\LTspiceXVII\lib\cmp\standard.dio

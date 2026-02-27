@@ -3,7 +3,7 @@ C2 OUT 0 100µ
 D1 N001 OUT MBRS140
 L1 IN N001 22µ
 V1 IN 0 2
-XU1 N003 N004 IN N001 0 N002 IN OUT LT1304 top=590K bot=355K
+XU1 N003 N004 IN N001 0 N002 IN OUT LT1304
 Rload OUT 0 20
 .model D D
 .lib C:\users\brian\My Documents\LTspiceXVII\lib\cmp\standard.dio

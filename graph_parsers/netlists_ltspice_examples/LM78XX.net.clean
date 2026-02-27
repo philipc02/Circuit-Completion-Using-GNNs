@@ -52,8 +52,8 @@ Q18 0 N016 N013 0 PN
 .model PN LPNP(BF=25 Cje=.3p Cjc=1.5p Rb=250)
 .tran 10m
 ;.param Rx 905 ; 5V
-;.param Rx 5.78K ; 12V
-;.param Rx 7.87K ; 15V
+;.param_1 Rx 5.78K ; 12V
+;.param_2 Rx 7.87K ; 15V
 * This example schematic is supplied for informational/educational purposes only.
 .step param Rx list 905 5.78K 7.87K
 .backanno

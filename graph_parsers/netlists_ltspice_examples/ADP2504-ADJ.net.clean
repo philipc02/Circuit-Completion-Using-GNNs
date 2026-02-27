@@ -5,7 +5,7 @@ V1 IN 0 3.3
 Rload OUT 0 50
 R1 OUT N003 900K
 R2 N003 0 100K
-XU1 N001 N002 N003 IN IN 0 OUT NC_01 ADP2503_4 Vout=0.5001 Limit=1.65 R2=1G
+XU1 N001 N002 N003 IN IN 0 OUT NC_01 ADP2503_4
 .tran 400u startup
 * PSM and forced PWM modes are modelled\nClock Sync is not modelled
 .lib ADP2503_4.sub

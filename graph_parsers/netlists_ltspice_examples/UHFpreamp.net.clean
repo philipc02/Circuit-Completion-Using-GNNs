@@ -2,8 +2,8 @@
 L2 0 N007 30n
 L1 0 N006 45n
 V1 N005 0 ac 2 sine(0 25m 180Meg)
-T1 N001 0 N002 0 Td=52.5n Z0=75
-T2 N003 0 N004 0 Td=52.5n Z0=75
+T1 N001 0 N002 0
+T2 N003 0 N004 0
 R6 N003 N002 36
 R7 N002 N009 331
 R8 N003 N009 331
@@ -33,7 +33,7 @@ D2 N011 0 1N4148
 ;.noise V(out) V1 oct 1000 170Meg 700Meg
 * To plot noise figure[dB]:  10*log10(V(inoise)*V(inoise)/(4*k*300.15*75))
 ;.tran 0 11u 1u .02n
-;.optoins plotwinsize=0
+;.optoins
 ;.dc temp -55 125 1
 * Noise Model of 85 feet of RG6QS
 * Model Copyright © 1991 Analog and RF Models

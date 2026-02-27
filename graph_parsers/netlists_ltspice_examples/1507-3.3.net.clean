@@ -8,7 +8,7 @@ V1 IN 0 12
 C3 N005 0 .001µ
 C4 N004 0 .025µ
 C5 N001 N003 .22µ
-XU1 N001 IN N003 N002 MP_01 0 OUT N005 LT1507 top=1.815K bot=4.99K
+XU1 N001 IN N003 N002 MP_01 0 OUT N005 LT1507
 Rload OUT 0 3.3
 .model D D
 .lib C:\users\brian\My Documents\LTspiceXVII\lib\cmp\standard.dio

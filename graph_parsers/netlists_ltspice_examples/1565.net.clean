@@ -6,7 +6,7 @@ E1 N002 CMI IN 0 -0.5
 V2 IN 0 PWL(0 -1 10u -1 11u 1) AC 1 0
 V3 CMI 0 2.0
 E2 OUT 0 OUTP OUTM 1
-XU1 N001 N002 N003 0 SDX N004 OUTM OUTP LTC1565 vvar={vvar} fvar={fvar} gvar={gvar}
+XU1 N001 N002 N003 0 SDX N004 OUTM OUTP LTC1565
 .ac oct 100 10e3 5e6
 .param fvar=0 vvar=0 gvar=0
 .step param fvar list  -1 0 1

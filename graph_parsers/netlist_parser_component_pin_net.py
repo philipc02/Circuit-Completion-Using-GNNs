@@ -146,6 +146,9 @@ def netlist_to_netgraph(file_path, use_star_structure=True):
         return None
 
     G = nx.Graph()
+
+    # Dictionary to track which components are connected to each net
+    net_to_components = {}
     
     # For tracking
     added_components = set()
@@ -184,6 +187,12 @@ def netlist_to_netgraph(file_path, use_star_structure=True):
             if len(nets) != 3:
                 print(f"Skipping {element}: unexpected MOSFET pin count {len(nets)}")
                 return None
+            
+        # Track net connections
+        for net in nets:
+            if net not in net_to_components:
+                net_to_components[net] = []
+            net_to_components[net].append(element) # All elements in this list need to be connected later
         
         added_components.add(comp_type)
 
@@ -200,6 +209,14 @@ def netlist_to_netgraph(file_path, use_star_structure=True):
                 # edge from pin to net node
                 G.add_node(str(net), type="net", features=encode_node_features("net"))
                 G.add_edge(pin_node, str(net), kind="net_connection")
+
+            # New: also connect components that share nets -> denser graph
+            for net, components in net_to_components.items():
+                for i in range(len(components)):
+                    for j in range(i+1, len(components)):
+                        comp1 = components[i]
+                        comp2 = components[j]
+                        G.add_edge(comp1, comp2, kind="direct_connection", net=net, weight=1.0)
 
     # verify graph has components
     if G.number_of_nodes() == 0:
@@ -384,8 +401,8 @@ def analyze_dataset(folder):
 if __name__ == "__main__":
     print("Netlist parser running...")
     
-    input_folder = "netlists_analoggenie"
-    output_folder = "graphs_analoggenie/graphs_component_pin_net"
+    input_folder = "netlists_amsnet"
+    output_folder = "graphs_amsnet/graphs_component_pin_net"
     process_folder(input_folder, output_folder)
     remove_duplicate_graphs(output_folder)
     analyze_dataset(output_folder)

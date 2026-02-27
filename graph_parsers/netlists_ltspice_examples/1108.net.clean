@@ -5,7 +5,7 @@ D1 N001 OUT MBRS140
 L1 IN N001 33µ
 R1 OUT N003 753K
 R2 N003 0 250K
-XU1 IN IN N001 0 0 N002 N004 N003 LT1108 top=1K bot=1T
+XU1 IN IN N001 0 0 N002 N004 N003 LT1108
 Rload OUT 0 25
 .model D D
 .lib C:\users\brian\My Documents\LTspiceXVII\lib\cmp\standard.dio

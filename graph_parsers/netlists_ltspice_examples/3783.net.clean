@@ -15,7 +15,7 @@ R6 N008 0 50m
 C4 0 N002 5µ
 R7 N002 N006 40.2K
 R8 N006 0 1.6K
-D1 N002 N001 LXHL-BW02 N=4
+D1 N002 N001 LXHL-BW02
 D5 N003 N002 MBRS340
 .model D D
 .lib C:\users\brian\My Documents\LTspiceXVII\lib\cmp\standard.dio

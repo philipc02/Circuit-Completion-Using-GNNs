@@ -5,7 +5,7 @@ R2 N005 0 63.4K
 L1 IN N001 47µ
 V1 IN 0 3
 V2 N004 0 2
-D1 N002 N003 NSPW500BS N=8
+D1 N002 N003 NSPW500BS
 C1 N002 0 2.2µ
 .model D D
 .lib C:\users\brian\My Documents\LTspiceXVII\lib\cmp\standard.dio

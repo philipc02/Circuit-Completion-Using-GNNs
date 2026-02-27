@@ -3,7 +3,7 @@ V1 IN 0 5
 C2 OUT 0 100µ
 D1 N001 OUT MBRS360
 L1 IN N001 33µ
-XU1 IN IN N001 0 0 N002 N003 OUT LT1108 top=753K bot=87.4K
+XU1 IN IN N001 0 0 N002 N003 OUT LT1108
 Rload OUT 0 50
 .model D D
 .lib C:\users\brian\My Documents\LTspiceXVII\lib\cmp\standard.dio

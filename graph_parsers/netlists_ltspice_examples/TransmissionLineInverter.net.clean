@@ -1,6 +1,6 @@
 * Z:\mnt\design.r\spice\examples\TransmissionLineInverter.asc
-T1 IN 0 0 OUT Td=50n Z0=50
-T2 0 0 OUT 0 Td=30n Z0=150
+T1 IN 0 0 OUT
+T2 0 0 OUT 0
 V1 IN 0 PULSE(0 1 0 1n 1n 10n)
 .tran 0 500n 0 1n
 * This example schematic is supplied for informational/educational purposes only.

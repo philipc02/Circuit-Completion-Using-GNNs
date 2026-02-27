@@ -5,7 +5,7 @@ L2 IN N001 10µ
 V1 IN 0 3.6
 D1 N002 N003 MBR0540
 C1 N003 0 10µ
-D2 N005 0 NSCW100 N=4
+D2 N005 0 NSCW100
 R1 N008 0 100K
 R2 Vout N004 1Meg
 R3 N004 0 324K
@@ -25,7 +25,7 @@ C8 N013 N014 .1µ
 R8 Vout 0 200
 R9 N015 0 6.25K
 R10 N016 0 3.75K
-D3 N007 0 NSCW100 N=4
+D3 N007 0 NSCW100
 .model D D
 .lib C:\users\brian\My Documents\LTspiceXVII\lib\cmp\standard.dio
 .tran 7m startup

@@ -21,7 +21,7 @@ K4 L3 L4 .95
 .params Z=75
 .params Kcup=.08
 .params Lpri=100µ Lsec=.1µ
-Kcup1 L2 L3  {Kcup}
+Kcup1 L2 L3 {Kcup}
 * This example schematic is supplied for informational/educational purposes only.
 .step param Vtune list 0 5 20
 .backanno

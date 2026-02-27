@@ -29,7 +29,7 @@ V1 N001 0 9
 * Specs:\n   .05% THD @ 1KHz .4V p-p output\n   1.9mA current draw(~370 Hr 9V Alkaline life)\n   26.4dB gain 3dB BW: 38Hz to 12KHz\n   Z-out= 387 Ohm @ 1KHz\n   1.2µV input referred noise from 10Hz to 20KHz(with voltage source input)\n   11 Parts: 4 C's, 2 Q's, 7 R's
 .model ElectretMic D(Ron=1.15K Ilimit=400u)
 .model 2N5458 NJF(Beta=488.9u Betatce=-.5 Rd=1 Rs=1 Lambda=3.167m Vto=-2.882
-+
++ Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u Vk=152.2
 + Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=4.284E-18 Af=1)
 .backanno
 .end

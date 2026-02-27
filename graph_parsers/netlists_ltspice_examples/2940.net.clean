@@ -1,7 +1,7 @@
 * Z:\mnt\design.r\spice\examples\2940.asc
 R1 N003 0 10.0K
 R2 LOAD N003 110K
-Rsense IN LOAD 10m pwr=2W
+Rsense IN LOAD 10m
 R5 IMON 0 10.0K
 R4 PMON 0 49.9K
 Vpup N002 0 5

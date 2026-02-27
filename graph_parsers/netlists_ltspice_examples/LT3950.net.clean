@@ -13,7 +13,7 @@ R5 0 N002 41.2k
 R6 N009 N008 62k
 C5 N009 0 270p
 R7 N005 N003 100k
-D2 N007 0 LXHL-BW02 n=8
+D2 N007 0 LXHL-BW02
 .model D D
 .lib C:\users\brian\My Documents\LTspiceXVII\lib\cmp\standard.dio
 .model NMOS NMOS

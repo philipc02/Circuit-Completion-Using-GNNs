@@ -9,9 +9,9 @@ C1 BP N002 .1µ
 C2 LP N003 .1µ
 R6 N005 0 10K
 R7 BP N005 100K
-XU1 N001 N005 HP opamp Aol=100K GBW=10Meg
-XU2 N002 0 BP opamp Aol=100K GBW=10Meg
-XU3 N003 0 LP opamp Aol=100K GBW=10Meg
+XU1 N001 N005 HP opamp
+XU2 N002 0 BP opamp
+XU3 N003 0 LP opamp
 .ac oct 25 1 100K
 .include opamp.sub
 * This example schematic is supplied for informational/educational purposes only.
