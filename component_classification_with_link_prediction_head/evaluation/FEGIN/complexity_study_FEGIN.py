@@ -47,7 +47,7 @@ def run_experiment(representation, layers, seed, output_dir):
 
     cmd = [
         'python3', 'main.py',
-        '--data', 'ltspice_examples',
+        '--data', 'amsnet',
         '--representation', representation,
         '--model', 'FEGIN',
         '--layers', str(layers),
