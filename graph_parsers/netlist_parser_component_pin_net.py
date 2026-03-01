@@ -185,14 +185,14 @@ def netlist_to_netgraph(file_path, use_star_structure=True):
             if len(nets) != 3:
                 print(f"Skipping {element}: unexpected MOSFET pin count {len(nets)}")
                 return None
-            '''
+            
         for net in nets:
             # Add net node (will be added multiple times but thats fine due to same name)
             G.add_node(net, type="net",features=encode_node_features("net"))
             # Add edge between component and net
             edge_attrs = { "kind": "component_net", "connection": "direct", "weight": 1.0}            
             G.add_edge(element, net, **edge_attrs)
-        '''
+        
         added_components.add(comp_type)
 
         if use_star_structure:
@@ -206,10 +206,8 @@ def netlist_to_netgraph(file_path, use_star_structure=True):
                 # edge from pin to component
                 G.add_edge(pin_node, element, kind="component_connection")
                 # edge from pin to net node
-                G.add_node(net, type="net", features=encode_net_features())
-                #G.add_edge(pin_node, str(net), kind="net_connection")
-                edge_attrs = { "kind": "net_connection", "connection": "direct", "weight": 1.0}            
-                G.add_edge(pin_node, net, **edge_attrs)
+                G.add_node(str(net), type="net", features=encode_node_features("net"))
+                G.add_edge(pin_node, str(net), kind="net_connection")
 
 
 
@@ -230,10 +228,6 @@ def netlist_to_netgraph(file_path, use_star_structure=True):
     
     return G
 
-def encode_net_features():
-    return {
-        "node_type_idx": NODE_TYPES.index("net")
-    }
 
 def encode_node_features(node_type, comp_type=None, pin_type=None):
     # second option: store indices, when constructing GNN later in pytorch, we can extract these indices and feed them into embeddings using nn.Embedding
