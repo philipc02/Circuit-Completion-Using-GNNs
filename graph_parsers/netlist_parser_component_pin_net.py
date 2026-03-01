@@ -147,8 +147,6 @@ def netlist_to_netgraph(file_path, use_star_structure=True):
 
     G = nx.Graph()
 
-    # Dictionary to track which components are connected to each net
-    net_to_components = {}
     
     # For tracking
     added_components = set()
@@ -187,13 +185,14 @@ def netlist_to_netgraph(file_path, use_star_structure=True):
             if len(nets) != 3:
                 print(f"Skipping {element}: unexpected MOSFET pin count {len(nets)}")
                 return None
-            
-        # Track net connections
+            '''
         for net in nets:
-            if net not in net_to_components:
-                net_to_components[net] = []
-            net_to_components[net].append(element) # All elements in this list need to be connected later
-        
+            # Add net node (will be added multiple times but thats fine due to same name)
+            G.add_node(net, type="net",features=encode_node_features("net"))
+            # Add edge between component and net
+            edge_attrs = { "kind": "component_net", "connection": "direct", "weight": 1.0}            
+            G.add_edge(element, net, **edge_attrs)
+        '''
         added_components.add(comp_type)
 
         if use_star_structure:
@@ -207,16 +206,12 @@ def netlist_to_netgraph(file_path, use_star_structure=True):
                 # edge from pin to component
                 G.add_edge(pin_node, element, kind="component_connection")
                 # edge from pin to net node
-                G.add_node(str(net), type="net", features=encode_node_features("net"))
-                G.add_edge(pin_node, str(net), kind="net_connection")
+                G.add_node(net, type="net", features=encode_net_features())
+                #G.add_edge(pin_node, str(net), kind="net_connection")
+                edge_attrs = { "kind": "net_connection", "connection": "direct", "weight": 1.0}            
+                G.add_edge(pin_node, net, **edge_attrs)
 
-            # New: also connect components that share nets -> denser graph
-            for net, components in net_to_components.items():
-                for i in range(len(components)):
-                    for j in range(i+1, len(components)):
-                        comp1 = components[i]
-                        comp2 = components[j]
-                        G.add_edge(comp1, comp2, kind="direct_connection", net=net, weight=1.0)
+
 
     # verify graph has components
     if G.number_of_nodes() == 0:
@@ -235,6 +230,10 @@ def netlist_to_netgraph(file_path, use_star_structure=True):
     
     return G
 
+def encode_net_features():
+    return {
+        "node_type_idx": NODE_TYPES.index("net")
+    }
 
 def encode_node_features(node_type, comp_type=None, pin_type=None):
     # second option: store indices, when constructing GNN later in pytorch, we can extract these indices and feed them into embeddings using nn.Embedding
