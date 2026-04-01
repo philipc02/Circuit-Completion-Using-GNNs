@@ -185,14 +185,14 @@ def netlist_to_netgraph(file_path, use_star_structure=True):
             if len(nets) != 3:
                 print(f"Skipping {element}: unexpected MOSFET pin count {len(nets)}")
                 return None
-            
+            '''
         for net in nets:
             # Add net node (will be added multiple times but thats fine due to same name)
             G.add_node(net, type="net",features=encode_node_features("net"))
             # Add edge between component and net
             edge_attrs = { "kind": "component_net", "connection": "direct", "weight": 1.0}            
             G.add_edge(element, net, **edge_attrs)
-        
+        '''
         added_components.add(comp_type)
 
         if use_star_structure:

@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from collections import defaultdict
 
 # Load results
-with open("model_complexity_study_7_analoggenie_lr0.001/aggregated_results.json", "r") as f:
+with open("model_complexity_study_14_amsnet5_cpn2_lr0.001/aggregated_results.json", "r") as f:
     results = json.load(f)
 
 # Group results by representation
@@ -34,5 +34,5 @@ plt.legend(bbox_to_anchor=(1.02, 1), loc="upper left", borderaxespad=0)
 
 plt.tight_layout()
 plt.xticks(range(min(layers), max(layers) + 1))
-plt.savefig("model_complexity_plot_7.png", dpi=300)
+plt.savefig("model_complexity_plot_14.png", dpi=300)
 plt.show()

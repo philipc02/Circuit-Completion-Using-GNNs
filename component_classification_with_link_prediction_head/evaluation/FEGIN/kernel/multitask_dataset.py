@@ -194,20 +194,21 @@ class MultiTaskCircuitDataset(InMemoryDataset):
 
             # TASK 2: Pin Connection Prediction (one example per pin)
                         
-            # Get all pins of this component
-            pin_nodes = [n for n in G.neighbors(comp_node) 
-                        if G.nodes[n].get('type') == 'pin']
-            pin_nodes.sort(key=lambda n: G.nodes[n].get('pin', ''))
 
             pin_predictions = []
             all_candidate_edges = []
             all_edge_labels = []
             pin_positions = []
 
-            for pin_idx, pin_node in enumerate(pin_nodes):
-                if pin_idx >= self.max_pins:  # Only handle up to max_pins = 3
-                    break
-                if self.representation == 'component_pin_net':
+            if self.representation == 'component_pin_net':
+                pin_nodes = [n for n in G.neighbors(comp_node) 
+                        if G.nodes[n].get('type') == 'pin']
+                pin_nodes.sort(key=lambda n: G.nodes[n].get('pin', ''))
+
+                for pin_idx, pin_node in enumerate(pin_nodes):
+                    if pin_idx >= self.max_pins:  # Only handle up to max_pins = 3
+                        break
+                    
                     # Get the net this pin should connect to
                     connected_nets = [n for n in G.neighbors(pin_node) if G.nodes[n].get('type') == 'net']
                     
@@ -223,8 +224,22 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                     
                     # Generate candidate edges from node to all nets
                     candidate_edges, edge_labels = self.generate_candidate_edges(G_pin_masked, target_net)
+                    pin_data = self.convert_graph_to_pyg(G_pin_masked)
+                    if pin_data is not None:
+                        pin_data.pin_position = torch.tensor([pin_idx], dtype=torch.long)
+                        pin_predictions.append(pin_data)
+                        all_candidate_edges.append(candidate_edges)
+                        all_edge_labels.append(edge_labels)
+                        pin_positions.append(pin_idx)
                 
-                elif self.representation == 'component_pin':
+            elif self.representation == 'component_pin':
+                pin_nodes = [n for n in G.neighbors(comp_node) 
+                        if G.nodes[n].get('type') == 'pin']
+                pin_nodes.sort(key=lambda n: G.nodes[n].get('pin', ''))
+
+                for pin_idx, pin_node in enumerate(pin_nodes):
+                    if pin_idx >= self.max_pins:  # Only handle up to max_pins = 3
+                        break
                     # Pin-to-pin connection prediction
                     connected_pins = []
                     for neighbor in G.neighbors(pin_node):
@@ -247,17 +262,51 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                     candidate_edges, edge_labels = self.generate_candidate_edges_to_pins(
                         G_pin_masked, target_node, pin_nodes
                     )
-                else:
-                    # For other representations, skip link prediction
-                    continue
+                    pin_data = self.convert_graph_to_pyg(G_pin_masked)
+                    if pin_data is not None:
+                        pin_data.pin_position = torch.tensor([pin_idx], dtype=torch.long)
+                        pin_predictions.append(pin_data)
+                        all_candidate_edges.append(candidate_edges)
+                        all_edge_labels.append(edge_labels)
+                        pin_positions.append(pin_idx)
+            elif self.representation == 'component_net':
+                # NEW
+                connected_nets = [n for n in G.neighbors(comp_node) if G.nodes[n].get('type') == 'net']
+                connected_nets = connected_nets[:self.max_pins]
 
-                pin_data = self.convert_graph_to_pyg(G_pin_masked)
-                if pin_data is not None:
-                    pin_data.pin_position = torch.tensor([pin_idx], dtype=torch.long)
-                    pin_predictions.append(pin_data)
-                    all_candidate_edges.append(candidate_edges)
-                    all_edge_labels.append(edge_labels)
-                    pin_positions.append(pin_idx)
+                for conn_idx, target_net in enumerate(connected_nets):
+                    G_conn_masked = self.mask_for_component_connection(G, comp_node, target_net)
+                    if G_conn_masked is None or G_conn_masked.number_of_nodes() < 2:
+                        continue
+                    candidate_edges, edge_labels = self.generate_candidate_edges(G_conn_masked, target_net)
+                    conn_data = self.convert_graph_to_pyg(G_conn_masked)
+                    if conn_data is not None:
+                        conn_data.pin_position = torch.tensor([conn_idx], dtype=torch.long)
+                        pin_predictions.append(conn_data)
+                        all_candidate_edges.append(candidate_edges)
+                        all_edge_labels.append(edge_labels)
+                        pin_positions.append(conn_idx)
+
+            elif self.representation == 'component_component':
+                # NEW
+                connected_comps = [n for n in G.neighbors(comp_node) if G.nodes[n].get('type') == 'component']
+                connected_comps = connected_comps[:self.max_pins]
+
+                for conn_idx, target_comp in enumerate(connected_comps):
+                    G_conn_masked = self.mask_for_component_connection(G, comp_node, target_comp)
+                    if G_conn_masked is None or G_conn_masked.number_of_nodes() < 2:
+                        continue
+                    candidate_edges, edge_labels = self.generate_candidate_edges_to_components(
+                        G_conn_masked, target_comp
+                    )
+                    conn_data = self.convert_graph_to_pyg(G_conn_masked)
+                    if conn_data is not None:
+                        conn_data.pin_position = torch.tensor([conn_idx], dtype=torch.long)
+                        pin_predictions.append(conn_data)
+                        all_candidate_edges.append(candidate_edges)
+                        all_edge_labels.append(edge_labels)
+                        pin_positions.append(conn_idx)
+
                     
             if pin_predictions:
                 examples.append({
@@ -295,6 +344,20 @@ class MultiTaskCircuitDataset(InMemoryDataset):
                 edges_to_remove.append((u, v))
         G_masked.remove_edges_from(edges_to_remove)
         
+        return G_masked
+    
+    def mask_for_component_connection(self, G, comp_node, target_neighbor):
+        # Mask edge between component node and target neighbor (net or other component node)
+
+        G_masked = G.copy()
+        if G_masked.has_edge(comp_node, target_neighbor):
+            G_masked.remove_edge(comp_node, target_neighbor)
+        if G_masked.has_edge(target_neighbor, comp_node):
+            G_masked.remove_edge(target_neighbor, comp_node)
+        # Drop any nodes that are now fully isolated (no connections at all)
+        G_masked.remove_nodes_from(list(nx.isolates(G_masked)))
+        if G_masked.number_of_nodes() == 0:
+            return None
         return G_masked
     
     def generate_candidate_edges(self, G_masked, target_net):
@@ -389,6 +452,42 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         edge_labels = torch.tensor(all_labels, dtype=torch.float)
         
         return candidate_edges, edge_labels
+    
+    def generate_candidate_edges_to_components(self, G_masked, target_comp):
+        # component_component: virtual node -> other component nodes.
+
+        target_comp = [target_comp]
+        node_mapping = {node: i for i, node in enumerate(G_masked.nodes())}
+
+        if len(target_comp) == 0 or target_comp[0] not in node_mapping:
+            return torch.zeros((2, 0), dtype=torch.long), torch.zeros(0, dtype=torch.float)
+
+        VIRTUAL_NODE_IDX = -1
+
+        pos_edges = [[VIRTUAL_NODE_IDX, node_mapping[target_comp[0]]]]
+
+        num_neg = int(1 * self.neg_sampling_ratio)
+        negative_candidates = [
+            n for n in G_masked.nodes()
+            if n not in target_comp
+        ]
+        if len(negative_candidates) > num_neg:
+            neg_samples = np.random.choice(negative_candidates, num_neg, replace=False)
+        else:
+            neg_samples = negative_candidates
+
+        neg_edges = [[VIRTUAL_NODE_IDX, node_mapping[n]] for n in neg_samples]
+
+        all_edges = pos_edges + neg_edges
+        all_labels = [1.0] * len(pos_edges) + [0.0] * len(neg_edges)
+
+        if not all_edges:
+            return torch.zeros((2, 0), dtype=torch.long), torch.zeros(0, dtype=torch.float)
+
+        return (
+            torch.tensor(all_edges, dtype=torch.long).t(),
+            torch.tensor(all_labels, dtype=torch.float)
+        )
     
     def convert_graph_to_pyg(self, G):
         if G.number_of_nodes() == 0:

@@ -141,7 +141,7 @@ def process_folder(graph_folder):
         })
     freq_df = pd.DataFrame(freq_rows).sort_values("count", ascending=False)
 
-    with open("graph_statistics_analoggenie_component_pin_net.csv", "w", encoding="utf-8") as f:
+    with open("graph_statistics_analoggenie_component_pin_net_2.csv", "w", encoding="utf-8") as f:
         summary_full.to_csv(f, sep=";", decimal=",")
         f.write("\n\n# Global component class frequencies\n")
         freq_df.to_csv(f, sep=";", index=False, decimal=",")
