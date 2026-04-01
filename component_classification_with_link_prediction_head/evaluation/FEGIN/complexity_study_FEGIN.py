@@ -95,7 +95,7 @@ def run_experiment(representation, layers, seed, output_dir, model, extra_params
     with open(os.path.join(exp_dir, 'output.txt'), 'w') as f:
         f.write(result.stdout)
 
-    f1 = parse_results_from_stdout(result.stdout)
+    f1 = parse_results_from_stdout(result.stdout, model)
 
     return f1
 
