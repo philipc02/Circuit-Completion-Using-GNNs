@@ -355,7 +355,7 @@ class MultiTaskCircuitDataset(InMemoryDataset):
         if G_masked.has_edge(target_neighbor, comp_node):
             G_masked.remove_edge(target_neighbor, comp_node)
         # Drop any nodes that are now fully isolated (no connections at all)
-        G_masked.remove_nodes_from(list(nx.isolates(G_masked)))
+        # G_masked.remove_nodes_from(list(nx.isolates(G_masked)))
         if G_masked.number_of_nodes() == 0:
             return None
         return G_masked
