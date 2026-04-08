@@ -1,0 +1,1122 @@
+[
+  {
+    "representation": "component_component",
+    "layers": 2,
+    "seed": 0,
+    "f1": 0.5666,
+    "edge_auc": 1.0,
+    "combined": 0.6966
+  },
+  {
+    "representation": "component_component",
+    "layers": 2,
+    "seed": 1,
+    "f1": 0.5517,
+    "edge_auc": 1.0,
+    "combined": 0.6862
+  },
+  {
+    "representation": "component_component",
+    "layers": 2,
+    "seed": 2,
+    "f1": 0.6007,
+    "edge_auc": 1.0,
+    "combined": 0.7205
+  },
+  {
+    "representation": "component_component",
+    "layers": 2,
+    "seed": 3,
+    "f1": 0.5417,
+    "edge_auc": 1.0,
+    "combined": 0.6792
+  },
+  {
+    "representation": "component_component",
+    "layers": 2,
+    "seed": 4,
+    "f1": 0.5706,
+    "edge_auc": 1.0,
+    "combined": 0.6994
+  },
+  {
+    "representation": "component_component",
+    "layers": 3,
+    "seed": 0,
+    "f1": 0.563,
+    "edge_auc": 1.0,
+    "combined": 0.6941
+  },
+  {
+    "representation": "component_component",
+    "layers": 3,
+    "seed": 1,
+    "f1": 0.5295,
+    "edge_auc": 1.0,
+    "combined": 0.6706
+  },
+  {
+    "representation": "component_component",
+    "layers": 3,
+    "seed": 2,
+    "f1": 0.5368,
+    "edge_auc": 1.0,
+    "combined": 0.6757
+  },
+  {
+    "representation": "component_component",
+    "layers": 3,
+    "seed": 3,
+    "f1": 0.5323,
+    "edge_auc": 1.0,
+    "combined": 0.6726
+  },
+  {
+    "representation": "component_component",
+    "layers": 3,
+    "seed": 4,
+    "f1": 0.5496,
+    "edge_auc": 1.0,
+    "combined": 0.6848
+  },
+  {
+    "representation": "component_component",
+    "layers": 4,
+    "seed": 0,
+    "f1": 0.5442,
+    "edge_auc": 0.9444,
+    "combined": 0.6643
+  },
+  {
+    "representation": "component_component",
+    "layers": 4,
+    "seed": 1,
+    "f1": 0.5459,
+    "edge_auc": 0.9444,
+    "combined": 0.6655
+  },
+  {
+    "representation": "component_component",
+    "layers": 4,
+    "seed": 2,
+    "f1": 0.5271,
+    "edge_auc": 1.0,
+    "combined": 0.669
+  },
+  {
+    "representation": "component_component",
+    "layers": 4,
+    "seed": 3,
+    "f1": 0.501,
+    "edge_auc": 0.9444,
+    "combined": 0.634
+  },
+  {
+    "representation": "component_component",
+    "layers": 4,
+    "seed": 4,
+    "f1": 0.5345,
+    "edge_auc": 1.0,
+    "combined": 0.6742
+  },
+  {
+    "representation": "component_component",
+    "layers": 5,
+    "seed": 0,
+    "f1": 0.5484,
+    "edge_auc": 1.0,
+    "combined": 0.6839
+  },
+  {
+    "representation": "component_component",
+    "layers": 5,
+    "seed": 1,
+    "f1": 0.511,
+    "edge_auc": 1.0,
+    "combined": 0.6577
+  },
+  {
+    "representation": "component_component",
+    "layers": 5,
+    "seed": 2,
+    "f1": 0.5207,
+    "edge_auc": 1.0,
+    "combined": 0.6645
+  },
+  {
+    "representation": "component_component",
+    "layers": 5,
+    "seed": 3,
+    "f1": 0.4885,
+    "edge_auc": 1.0,
+    "combined": 0.6419
+  },
+  {
+    "representation": "component_component",
+    "layers": 5,
+    "seed": 4,
+    "f1": 0.531,
+    "edge_auc": 1.0,
+    "combined": 0.6717
+  },
+  {
+    "representation": "component_component",
+    "layers": 6,
+    "seed": 0,
+    "f1": 0.5302,
+    "edge_auc": 1.0,
+    "combined": 0.6711
+  },
+  {
+    "representation": "component_component",
+    "layers": 6,
+    "seed": 1,
+    "f1": 0.5296,
+    "edge_auc": 1.0,
+    "combined": 0.6707
+  },
+  {
+    "representation": "component_component",
+    "layers": 6,
+    "seed": 2,
+    "f1": 0.4732,
+    "edge_auc": 1.0,
+    "combined": 0.6312
+  },
+  {
+    "representation": "component_component",
+    "layers": 6,
+    "seed": 3,
+    "f1": 0.531,
+    "edge_auc": 1.0,
+    "combined": 0.6717
+  },
+  {
+    "representation": "component_component",
+    "layers": 6,
+    "seed": 4,
+    "f1": 0.4897,
+    "edge_auc": 1.0,
+    "combined": 0.6428
+  },
+  {
+    "representation": "component_component",
+    "layers": 7,
+    "seed": 0,
+    "f1": 0.5083,
+    "edge_auc": 1.0,
+    "combined": 0.6558
+  },
+  {
+    "representation": "component_component",
+    "layers": 7,
+    "seed": 1,
+    "f1": 0.5114,
+    "edge_auc": 1.0,
+    "combined": 0.658
+  },
+  {
+    "representation": "component_component",
+    "layers": 7,
+    "seed": 2,
+    "f1": 0.5564,
+    "edge_auc": 1.0,
+    "combined": 0.6894
+  },
+  {
+    "representation": "component_component",
+    "layers": 7,
+    "seed": 3,
+    "f1": 0.5067,
+    "edge_auc": 1.0,
+    "combined": 0.6547
+  },
+  {
+    "representation": "component_component",
+    "layers": 7,
+    "seed": 4,
+    "f1": 0.5306,
+    "edge_auc": 1.0,
+    "combined": 0.6714
+  },
+  {
+    "representation": "component_component",
+    "layers": 8,
+    "seed": 0,
+    "f1": 0.4686,
+    "edge_auc": 1.0,
+    "combined": 0.628
+  },
+  {
+    "representation": "component_component",
+    "layers": 8,
+    "seed": 1,
+    "f1": 0.5021,
+    "edge_auc": 1.0,
+    "combined": 0.6515
+  },
+  {
+    "representation": "component_component",
+    "layers": 8,
+    "seed": 2,
+    "f1": 0.5494,
+    "edge_auc": 0.8333,
+    "combined": 0.6346
+  },
+  {
+    "representation": "component_component",
+    "layers": 8,
+    "seed": 3,
+    "f1": 0.5089,
+    "edge_auc": 1.0,
+    "combined": 0.6562
+  },
+  {
+    "representation": "component_component",
+    "layers": 8,
+    "seed": 4,
+    "f1": 0.4608,
+    "edge_auc": 1.0,
+    "combined": 0.6225
+  },
+  {
+    "representation": "component_net",
+    "layers": 2,
+    "seed": 0,
+    "f1": 0.7896,
+    "edge_auc": 1.0,
+    "combined": 0.8527
+  },
+  {
+    "representation": "component_net",
+    "layers": 2,
+    "seed": 1,
+    "f1": 0.7958,
+    "edge_auc": 1.0,
+    "combined": 0.8571
+  },
+  {
+    "representation": "component_net",
+    "layers": 2,
+    "seed": 2,
+    "f1": 0.7844,
+    "edge_auc": 1.0,
+    "combined": 0.8491
+  },
+  {
+    "representation": "component_net",
+    "layers": 2,
+    "seed": 3,
+    "f1": 0.7971,
+    "edge_auc": 1.0,
+    "combined": 0.858
+  },
+  {
+    "representation": "component_net",
+    "layers": 2,
+    "seed": 4,
+    "f1": 0.7814,
+    "edge_auc": 1.0,
+    "combined": 0.8469
+  },
+  {
+    "representation": "component_net",
+    "layers": 3,
+    "seed": 0,
+    "f1": 0.7658,
+    "edge_auc": 1.0,
+    "combined": 0.836
+  },
+  {
+    "representation": "component_net",
+    "layers": 3,
+    "seed": 1,
+    "f1": 0.7643,
+    "edge_auc": 1.0,
+    "combined": 0.835
+  },
+  {
+    "representation": "component_net",
+    "layers": 3,
+    "seed": 2,
+    "f1": 0.7638,
+    "edge_auc": 1.0,
+    "combined": 0.8346
+  },
+  {
+    "representation": "component_net",
+    "layers": 3,
+    "seed": 3,
+    "f1": 0.7619,
+    "edge_auc": 1.0,
+    "combined": 0.8334
+  },
+  {
+    "representation": "component_net",
+    "layers": 3,
+    "seed": 4,
+    "f1": 0.7584,
+    "edge_auc": 1.0,
+    "combined": 0.8309
+  },
+  {
+    "representation": "component_net",
+    "layers": 4,
+    "seed": 0,
+    "f1": 0.755,
+    "edge_auc": 1.0,
+    "combined": 0.8285
+  },
+  {
+    "representation": "component_net",
+    "layers": 4,
+    "seed": 1,
+    "f1": 0.7358,
+    "edge_auc": 1.0,
+    "combined": 0.8151
+  },
+  {
+    "representation": "component_net",
+    "layers": 4,
+    "seed": 2,
+    "f1": 0.736,
+    "edge_auc": 1.0,
+    "combined": 0.8152
+  },
+  {
+    "representation": "component_net",
+    "layers": 4,
+    "seed": 3,
+    "f1": 0.7484,
+    "edge_auc": 1.0,
+    "combined": 0.8239
+  },
+  {
+    "representation": "component_net",
+    "layers": 4,
+    "seed": 4,
+    "f1": 0.7253,
+    "edge_auc": 1.0,
+    "combined": 0.8077
+  },
+  {
+    "representation": "component_net",
+    "layers": 5,
+    "seed": 0,
+    "f1": 0.7311,
+    "edge_auc": 1.0,
+    "combined": 0.8117
+  },
+  {
+    "representation": "component_net",
+    "layers": 5,
+    "seed": 1,
+    "f1": 0.7349,
+    "edge_auc": 1.0,
+    "combined": 0.8144
+  },
+  {
+    "representation": "component_net",
+    "layers": 5,
+    "seed": 2,
+    "f1": 0.7258,
+    "edge_auc": 1.0,
+    "combined": 0.808
+  },
+  {
+    "representation": "component_net",
+    "layers": 5,
+    "seed": 3,
+    "f1": 0.725,
+    "edge_auc": 1.0,
+    "combined": 0.8075
+  },
+  {
+    "representation": "component_net",
+    "layers": 5,
+    "seed": 4,
+    "f1": 0.7465,
+    "edge_auc": 1.0,
+    "combined": 0.8225
+  },
+  {
+    "representation": "component_net",
+    "layers": 6,
+    "seed": 0,
+    "f1": 0.7397,
+    "edge_auc": 1.0,
+    "combined": 0.8178
+  },
+  {
+    "representation": "component_net",
+    "layers": 6,
+    "seed": 1,
+    "f1": 0.7351,
+    "edge_auc": 1.0,
+    "combined": 0.8146
+  },
+  {
+    "representation": "component_net",
+    "layers": 6,
+    "seed": 2,
+    "f1": 0.7219,
+    "edge_auc": 1.0,
+    "combined": 0.8053
+  },
+  {
+    "representation": "component_net",
+    "layers": 6,
+    "seed": 3,
+    "f1": 0.7446,
+    "edge_auc": 1.0,
+    "combined": 0.8212
+  },
+  {
+    "representation": "component_net",
+    "layers": 6,
+    "seed": 4,
+    "f1": 0.7636,
+    "edge_auc": 1.0,
+    "combined": 0.8345
+  },
+  {
+    "representation": "component_net",
+    "layers": 7,
+    "seed": 0,
+    "f1": 0.7156,
+    "edge_auc": 1.0,
+    "combined": 0.8009
+  },
+  {
+    "representation": "component_net",
+    "layers": 7,
+    "seed": 1,
+    "f1": 0.732,
+    "edge_auc": 1.0,
+    "combined": 0.8124
+  },
+  {
+    "representation": "component_net",
+    "layers": 7,
+    "seed": 2,
+    "f1": 0.7122,
+    "edge_auc": 1.0,
+    "combined": 0.7986
+  },
+  {
+    "representation": "component_net",
+    "layers": 7,
+    "seed": 3,
+    "f1": 0.7426,
+    "edge_auc": 1.0,
+    "combined": 0.8198
+  },
+  {
+    "representation": "component_net",
+    "layers": 7,
+    "seed": 4,
+    "f1": 0.7158,
+    "edge_auc": 1.0,
+    "combined": 0.8011
+  },
+  {
+    "representation": "component_net",
+    "layers": 8,
+    "seed": 0,
+    "f1": 0.7056,
+    "edge_auc": 1.0,
+    "combined": 0.7939
+  },
+  {
+    "representation": "component_net",
+    "layers": 8,
+    "seed": 1,
+    "f1": 0.7262,
+    "edge_auc": 1.0,
+    "combined": 0.8083
+  },
+  {
+    "representation": "component_net",
+    "layers": 8,
+    "seed": 2,
+    "f1": 0.7318,
+    "edge_auc": 1.0,
+    "combined": 0.8123
+  },
+  {
+    "representation": "component_net",
+    "layers": 8,
+    "seed": 3,
+    "f1": 0.7035,
+    "edge_auc": 1.0,
+    "combined": 0.7924
+  },
+  {
+    "representation": "component_net",
+    "layers": 8,
+    "seed": 4,
+    "f1": 0.7591,
+    "edge_auc": 1.0,
+    "combined": 0.8314
+  },
+  {
+    "representation": "component_pin",
+    "layers": 2,
+    "seed": 0,
+    "f1": 0.6518,
+    "edge_auc": 1.0,
+    "combined": 0.7562
+  },
+  {
+    "representation": "component_pin",
+    "layers": 2,
+    "seed": 1,
+    "f1": 0.6522,
+    "edge_auc": 1.0,
+    "combined": 0.7565
+  },
+  {
+    "representation": "component_pin",
+    "layers": 2,
+    "seed": 2,
+    "f1": 0.6437,
+    "edge_auc": 1.0,
+    "combined": 0.7506
+  },
+  {
+    "representation": "component_pin",
+    "layers": 2,
+    "seed": 3,
+    "f1": 0.6742,
+    "edge_auc": 1.0,
+    "combined": 0.772
+  },
+  {
+    "representation": "component_pin",
+    "layers": 2,
+    "seed": 4,
+    "f1": 0.6582,
+    "edge_auc": 1.0,
+    "combined": 0.7607
+  },
+  {
+    "representation": "component_pin",
+    "layers": 3,
+    "seed": 0,
+    "f1": 0.6644,
+    "edge_auc": 1.0,
+    "combined": 0.7651
+  },
+  {
+    "representation": "component_pin",
+    "layers": 3,
+    "seed": 1,
+    "f1": 0.6389,
+    "edge_auc": 1.0,
+    "combined": 0.7472
+  },
+  {
+    "representation": "component_pin",
+    "layers": 3,
+    "seed": 2,
+    "f1": 0.6445,
+    "edge_auc": 1.0,
+    "combined": 0.7511
+  },
+  {
+    "representation": "component_pin",
+    "layers": 3,
+    "seed": 3,
+    "f1": 0.6347,
+    "edge_auc": 1.0,
+    "combined": 0.7443
+  },
+  {
+    "representation": "component_pin",
+    "layers": 3,
+    "seed": 4,
+    "f1": 0.6238,
+    "edge_auc": 1.0,
+    "combined": 0.7367
+  },
+  {
+    "representation": "component_pin",
+    "layers": 4,
+    "seed": 0,
+    "f1": 0.6309,
+    "edge_auc": 1.0,
+    "combined": 0.7416
+  },
+  {
+    "representation": "component_pin",
+    "layers": 4,
+    "seed": 1,
+    "f1": 0.6228,
+    "edge_auc": 1.0,
+    "combined": 0.736
+  },
+  {
+    "representation": "component_pin",
+    "layers": 4,
+    "seed": 2,
+    "f1": 0.6279,
+    "edge_auc": 1.0,
+    "combined": 0.7395
+  },
+  {
+    "representation": "component_pin",
+    "layers": 4,
+    "seed": 3,
+    "f1": 0.6211,
+    "edge_auc": 1.0,
+    "combined": 0.7348
+  },
+  {
+    "representation": "component_pin",
+    "layers": 4,
+    "seed": 4,
+    "f1": 0.6227,
+    "edge_auc": 1.0,
+    "combined": 0.7359
+  },
+  {
+    "representation": "component_pin",
+    "layers": 5,
+    "seed": 0,
+    "f1": 0.6267,
+    "edge_auc": 1.0,
+    "combined": 0.7387
+  },
+  {
+    "representation": "component_pin",
+    "layers": 5,
+    "seed": 1,
+    "f1": 0.6096,
+    "edge_auc": 1.0,
+    "combined": 0.7267
+  },
+  {
+    "representation": "component_pin",
+    "layers": 5,
+    "seed": 2,
+    "f1": 0.6296,
+    "edge_auc": 1.0,
+    "combined": 0.7407
+  },
+  {
+    "representation": "component_pin",
+    "layers": 5,
+    "seed": 3,
+    "f1": 0.5942,
+    "edge_auc": 1.0,
+    "combined": 0.7159
+  },
+  {
+    "representation": "component_pin",
+    "layers": 5,
+    "seed": 4,
+    "f1": 0.6429,
+    "edge_auc": 1.0,
+    "combined": 0.75
+  },
+  {
+    "representation": "component_pin",
+    "layers": 6,
+    "seed": 0,
+    "f1": 0.5905,
+    "edge_auc": 1.0,
+    "combined": 0.7134
+  },
+  {
+    "representation": "component_pin",
+    "layers": 6,
+    "seed": 1,
+    "f1": 0.5822,
+    "edge_auc": 1.0,
+    "combined": 0.7076
+  },
+  {
+    "representation": "component_pin",
+    "layers": 6,
+    "seed": 2,
+    "f1": 0.5858,
+    "edge_auc": 1.0,
+    "combined": 0.71
+  },
+  {
+    "representation": "component_pin",
+    "layers": 6,
+    "seed": 3,
+    "f1": 0.6086,
+    "edge_auc": 1.0,
+    "combined": 0.726
+  },
+  {
+    "representation": "component_pin",
+    "layers": 6,
+    "seed": 4,
+    "f1": 0.6016,
+    "edge_auc": 1.0,
+    "combined": 0.7211
+  },
+  {
+    "representation": "component_pin",
+    "layers": 7,
+    "seed": 0,
+    "f1": 0.585,
+    "edge_auc": 1.0,
+    "combined": 0.7095
+  },
+  {
+    "representation": "component_pin",
+    "layers": 7,
+    "seed": 1,
+    "f1": 0.5823,
+    "edge_auc": 1.0,
+    "combined": 0.7076
+  },
+  {
+    "representation": "component_pin",
+    "layers": 7,
+    "seed": 2,
+    "f1": 0.6146,
+    "edge_auc": 1.0,
+    "combined": 0.7302
+  },
+  {
+    "representation": "component_pin",
+    "layers": 7,
+    "seed": 3,
+    "f1": 0.5755,
+    "edge_auc": 1.0,
+    "combined": 0.7028
+  },
+  {
+    "representation": "component_pin",
+    "layers": 7,
+    "seed": 4,
+    "f1": 0.5795,
+    "edge_auc": 1.0,
+    "combined": 0.7057
+  },
+  {
+    "representation": "component_pin",
+    "layers": 8,
+    "seed": 0,
+    "f1": 0.6304,
+    "edge_auc": 1.0,
+    "combined": 0.7413
+  },
+  {
+    "representation": "component_pin",
+    "layers": 8,
+    "seed": 1,
+    "f1": 0.5821,
+    "edge_auc": 1.0,
+    "combined": 0.7075
+  },
+  {
+    "representation": "component_pin",
+    "layers": 8,
+    "seed": 2,
+    "f1": 0.5878,
+    "edge_auc": 1.0,
+    "combined": 0.7115
+  },
+  {
+    "representation": "component_pin",
+    "layers": 8,
+    "seed": 3,
+    "f1": 0.615,
+    "edge_auc": 1.0,
+    "combined": 0.7305
+  },
+  {
+    "representation": "component_pin",
+    "layers": 8,
+    "seed": 4,
+    "f1": 0.5955,
+    "edge_auc": 1.0,
+    "combined": 0.7168
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 2,
+    "seed": 0,
+    "f1": 0.816,
+    "edge_auc": 1.0,
+    "combined": 0.8712
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 2,
+    "seed": 1,
+    "f1": 0.7991,
+    "edge_auc": 1.0,
+    "combined": 0.8593
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 2,
+    "seed": 2,
+    "f1": 0.8199,
+    "edge_auc": 1.0,
+    "combined": 0.8739
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 2,
+    "seed": 3,
+    "f1": 0.799,
+    "edge_auc": 1.0,
+    "combined": 0.8593
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 2,
+    "seed": 4,
+    "f1": 0.7994,
+    "edge_auc": 1.0,
+    "combined": 0.8596
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 3,
+    "seed": 0,
+    "f1": 0.8151,
+    "edge_auc": 1.0,
+    "combined": 0.8706
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 3,
+    "seed": 1,
+    "f1": 0.7976,
+    "edge_auc": 1.0,
+    "combined": 0.8583
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 3,
+    "seed": 2,
+    "f1": 0.7862,
+    "edge_auc": 1.0,
+    "combined": 0.8504
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 3,
+    "seed": 3,
+    "f1": 0.7935,
+    "edge_auc": 1.0,
+    "combined": 0.8554
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 3,
+    "seed": 4,
+    "f1": 0.7781,
+    "edge_auc": 1.0,
+    "combined": 0.8446
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 4,
+    "seed": 0,
+    "f1": 0.8013,
+    "edge_auc": 1.0,
+    "combined": 0.8609
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 4,
+    "seed": 1,
+    "f1": 0.7785,
+    "edge_auc": 1.0,
+    "combined": 0.845
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 4,
+    "seed": 2,
+    "f1": 0.7769,
+    "edge_auc": 1.0,
+    "combined": 0.8439
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 4,
+    "seed": 3,
+    "f1": 0.7947,
+    "edge_auc": 1.0,
+    "combined": 0.8563
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 4,
+    "seed": 4,
+    "f1": 0.7889,
+    "edge_auc": 1.0,
+    "combined": 0.8522
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 5,
+    "seed": 0,
+    "f1": 0.7694,
+    "edge_auc": 1.0,
+    "combined": 0.8386
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 5,
+    "seed": 1,
+    "f1": 0.7771,
+    "edge_auc": 1.0,
+    "combined": 0.844
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 5,
+    "seed": 2,
+    "f1": 0.8082,
+    "edge_auc": 1.0,
+    "combined": 0.8657
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 5,
+    "seed": 3,
+    "f1": 0.7922,
+    "edge_auc": 1.0,
+    "combined": 0.8545
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 5,
+    "seed": 4,
+    "f1": 0.7811,
+    "edge_auc": 1.0,
+    "combined": 0.8468
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 6,
+    "seed": 0,
+    "f1": 0.7873,
+    "edge_auc": 1.0,
+    "combined": 0.8511
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 6,
+    "seed": 1,
+    "f1": 0.7791,
+    "edge_auc": 1.0,
+    "combined": 0.8454
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 6,
+    "seed": 2,
+    "f1": 0.7683,
+    "edge_auc": 1.0,
+    "combined": 0.8378
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 6,
+    "seed": 3,
+    "f1": 0.762,
+    "edge_auc": 1.0,
+    "combined": 0.8334
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 6,
+    "seed": 4,
+    "f1": 0.7688,
+    "edge_auc": 1.0,
+    "combined": 0.8382
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 7,
+    "seed": 0,
+    "f1": 0.7557,
+    "edge_auc": 1.0,
+    "combined": 0.829
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 7,
+    "seed": 1,
+    "f1": 0.741,
+    "edge_auc": 1.0,
+    "combined": 0.8187
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 7,
+    "seed": 2,
+    "f1": 0.7298,
+    "edge_auc": 1.0,
+    "combined": 0.8109
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 7,
+    "seed": 3,
+    "f1": 0.7353,
+    "edge_auc": 1.0,
+    "combined": 0.8147
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 7,
+    "seed": 4,
+    "f1": 0.7291,
+    "edge_auc": 1.0,
+    "combined": 0.8104
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 8,
+    "seed": 0,
+    "f1": 0.7661,
+    "edge_auc": 1.0,
+    "combined": 0.8362
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 8,
+    "seed": 1,
+    "f1": 0.7223,
+    "edge_auc": 1.0,
+    "combined": 0.8056
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 8,
+    "seed": 2,
+    "f1": 0.7752,
+    "edge_auc": 1.0,
+    "combined": 0.8426
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 8,
+    "seed": 3,
+    "f1": 0.7433,
+    "edge_auc": 1.0,
+    "combined": 0.8203
+  },
+  {
+    "representation": "component_pin_net",
+    "layers": 8,
+    "seed": 4,
+    "f1": 0.7264,
+    "edge_auc": 1.0,
+    "combined": 0.8085
+  }
+]
