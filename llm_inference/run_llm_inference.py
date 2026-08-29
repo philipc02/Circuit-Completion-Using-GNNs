@@ -1,13 +1,14 @@
-import os
-from collections import Counter
 import glob
 import json
+import os
 import random
 import re
-from tqdm import tqdm
-import torch
+from collections import Counter
 from datasets import Dataset
 from peft import LoraConfig, prepare_model_for_kbit_training
+from torch import bfloat16, float16
+import torch
+from tqdm import tqdm
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
@@ -16,10 +17,13 @@ from transformers import (
 )
 from trl import SFTTrainer
 
+# Environment & Symlink Safety
+os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
+
 # ---------------------------------------------------------
 # CONFIGURATION
 # ---------------------------------------------------------
-MODEL_ID = "google/gemma-2-2b-it"  # or "meta-llama/Meta-Llama-3.1-8B-Instruct"
+MODEL_ID = "google/gemma-2-2b-it"
 OUTPUT_DIR = "./finetuned_llm_multidataset"
 RANDOM_SEED = 42
 
@@ -35,7 +39,6 @@ COMPONENT_CLASSES = [
     "MOSFET",
 ]
 
-# Folders to process
 DATASET_FOLDERS = [
     "partial_netlists_masala_chai",
     "partial_netlists_analoggenie",
@@ -83,18 +86,15 @@ def load_all_netlist_entries(test_ratio=0.20):
 
     print(f"\nTotal netlists collected: {len(all_files)}")
 
-    # Deterministic shuffle to ensure reproducible train/test split
     random.seed(RANDOM_SEED)
     random.shuffle(all_files)
 
-    # Calculate split boundary (80% Train, 20% Test)
     split_idx = int(len(all_files) * (1 - test_ratio))
     train_files = all_files[:split_idx]
     test_files = all_files[split_idx:]
 
     print(f"Train samples: {len(train_files)} | Test samples: {len(test_files)}")
 
-    # 1. Prepare Training Samples (Only train_files)
     training_samples = []
     for path in train_files:
         try:
@@ -119,7 +119,6 @@ def load_all_netlist_entries(test_ratio=0.20):
             )
             training_samples.append({"text": formatted_prompt})
 
-    # 2. Prepare Evaluation Samples (Only test_files)
     eval_samples = []
     for path in test_files:
         try:
@@ -147,26 +146,29 @@ def load_all_netlist_entries(test_ratio=0.20):
 print("1. Discovering and shuffling datasets...")
 train_samples, eval_samples = load_all_netlist_entries()
 
-# Create HuggingFace Dataset
 hf_dataset = Dataset.from_dict({"text": [s["text"] for s in train_samples]})
 
 # ---------------------------------------------------------
 # STEP 2: QUANTIZATION & MODEL LOADING
 # ---------------------------------------------------------
+use_bf16 = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
+compute_dtype = bfloat16 if use_bf16 else float16
+
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
     bnb_4bit_quant_type="nf4",
-    bnb_4bit_compute_dtype=torch.bfloat16,
+    bnb_4bit_compute_dtype=compute_dtype,
     bnb_4bit_use_double_quant=True,
 )
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, trust_remote_code=True)
 tokenizer.pad_token = tokenizer.eos_token
+tokenizer.padding_side = "right"
 
 model = AutoModelForCausalLM.from_pretrained(
     MODEL_ID,
     quantization_config=bnb_config,
-    device_map={"": 0},  # Forces all layers onto GPU 0 rather than spilling to CPU
+    device_map={"": 0},
     trust_remote_code=True,
 )
 
@@ -194,17 +196,19 @@ peft_config = LoraConfig(
 
 training_args = TrainingArguments(
     output_dir=OUTPUT_DIR,
-    per_device_train_batch_size=4,
-    gradient_accumulation_steps=4,
+    per_device_train_batch_size=2,
+    gradient_accumulation_steps=8,
+    gradient_checkpointing=True,  # Crucial for memory management
     learning_rate=2e-4,
-    logging_steps=10,             # Log loss more frequently to keep progress updating
+    logging_steps=10,
     num_train_epochs=3,
     optim="paged_adamw_8bit",
-    bf16=True,
+    bf16=use_bf16,
+    fp16=not use_bf16,
     save_strategy="epoch",
     report_to="none",
-    disable_tqdm=False,           # Ensures HuggingFace progress bar is enabled
-    logging_first_step=True,      # Log stats immediately on step 1
+    disable_tqdm=False,
+    logging_first_step=True,
 )
 
 trainer = SFTTrainer(
@@ -220,7 +224,6 @@ trainer = SFTTrainer(
 print("\n2. Fine-tuning on combined dataset mixture...")
 trainer.train()
 
-# Save final LoRA adapter
 adapter_dir = os.path.join(OUTPUT_DIR, "final_adapter")
 trainer.model.save_pretrained(adapter_dir)
 tokenizer.save_pretrained(adapter_dir)
@@ -233,7 +236,6 @@ print("\n3. Running inference across all netlists...")
 
 model.eval()
 output_json_path = "llm_predictions_lora_combined.json"
-total = len(eval_samples)
 
 with open(output_json_path, "w") as f:
     f.write("[\n")
@@ -244,7 +246,7 @@ with open(output_json_path, "w") as f:
     for path, cleaned_netlist, gt_label in pbar:
         try:
             prompt = build_prompt(cleaned_netlist)
-            inputs = tokenizer(prompt, return_tensors="pt").to("cuda")
+            inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
 
             with torch.no_grad():
                 outputs = model.generate(
@@ -267,8 +269,9 @@ with open(output_json_path, "w") as f:
             json.dump(entry, f)
             f.flush()
 
-            # Update progress bar status text dynamically
-            pbar.set_postfix({"File": os.path.basename(path), "GT": gt_label, "Pred": pred})
+            pbar.set_postfix(
+                {"File": os.path.basename(path), "GT": gt_label, "Pred": pred}
+            )
 
         except KeyboardInterrupt:
             print("\nInference interrupted by user. Saved partial JSON.")
