@@ -222,19 +222,39 @@ trainer = SFTTrainer(
 )
 
 print("\n2. Fine-tuning on combined dataset mixture...")
-trainer.train()
+#trainer.train()
 
-adapter_dir = os.path.join(OUTPUT_DIR, "final_adapter")
-trainer.model.save_pretrained(adapter_dir)
-tokenizer.save_pretrained(adapter_dir)
-print(f"LoRA Adapter saved to {adapter_dir}")
+#adapter_dir = os.path.join(OUTPUT_DIR, "final_adapter")
+#trainer.model.save_pretrained(adapter_dir)
+#tokenizer.save_pretrained(adapter_dir)
+#print(f"LoRA Adapter saved to {adapter_dir}")
 
 # ---------------------------------------------------------
 # STEP 4: INFERENCE & JSON EXPORT FOR COMBINED EVALUATION
 # ---------------------------------------------------------
 print("\n3. Running inference across all netlists...")
 
-model.eval()
+# Reload trained adapter onto a fresh base model instance to avoid KV cache dtype pollution
+from peft import PeftModel
+
+adapter_dir = os.path.join(OUTPUT_DIR, "final_adapter")
+
+# Free up memory from trainer instance
+del trainer
+del model
+torch.cuda.empty_cache()
+
+# Reload base model & load fine-tuned adapter
+base_model = AutoModelForCausalLM.from_pretrained(
+    MODEL_ID,
+    quantization_config=bnb_config,
+    device_map={"": 0},
+    trust_remote_code=True,
+    torch_dtype=compute_dtype,
+)
+eval_model = PeftModel.from_pretrained(base_model, adapter_dir)
+eval_model.eval()
+
 output_json_path = "llm_predictions_lora_combined.json"
 
 with open(output_json_path, "w") as f:
@@ -246,12 +266,16 @@ with open(output_json_path, "w") as f:
     for path, cleaned_netlist, gt_label in pbar:
         try:
             prompt = build_prompt(cleaned_netlist)
-            inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+            inputs = tokenizer(prompt, return_tensors="pt").to(eval_model.device)
 
             with torch.no_grad():
-                outputs = model.generate(
-                    **inputs, max_new_tokens=32, do_sample=False
-                )
+                with torch.cuda.amp.autocast(dtype=compute_dtype):
+                    outputs = eval_model.generate(
+                        **inputs, 
+                        max_new_tokens=32, 
+                        do_sample=False,
+                        use_cache=False  # Prevents KV cache dtype mismatches in Gemma 2
+                    )
 
             full_out = tokenizer.decode(
                 outputs[0][inputs.input_ids.shape[1] :], skip_special_tokens=True
