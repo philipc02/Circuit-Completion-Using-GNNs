@@ -6,8 +6,8 @@ import re
 from collections import Counter
 from datasets import Dataset
 from peft import LoraConfig, prepare_model_for_kbit_training
-from torch import bfloat16, float16
 import torch
+from torch import bfloat16, float16
 from tqdm import tqdm
 from transformers import (
     AutoModelForCausalLM,
@@ -198,7 +198,7 @@ training_args = TrainingArguments(
     output_dir=OUTPUT_DIR,
     per_device_train_batch_size=2,
     gradient_accumulation_steps=8,
-    gradient_checkpointing=True,  # Crucial for memory management
+    gradient_checkpointing=True,
     learning_rate=2e-4,
     logging_steps=10,
     num_train_epochs=3,
