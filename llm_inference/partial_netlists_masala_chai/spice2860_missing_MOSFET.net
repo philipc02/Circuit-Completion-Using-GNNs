@@ -1,0 +1,17 @@
+spice
+* SPICE Netlist
+VDD 2 0 DC 5
+* Current Sources
+I1 2 5 DC 1m
+I2 3 0 DC 1m
+I_n2 4 0 DC 1m
+* Transistors
+M0 2 2 6 6 NMOS 
+M1 5 4 3 3 NMOS 
+M2 3 2 6 6 NMOS 
+? Missing component
+M4 3 3 2 2 PMOS 
+* Simulation Commands
+*.model NMOS NMOS LEVEL=1
+*.model PMOS PMOS LEVEL=1
+*.end

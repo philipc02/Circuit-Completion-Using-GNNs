@@ -1,0 +1,6 @@
+*SPICE Netlist for circuit 428
+? Missing component
+R1 5 1 1k
+V1 5 2 5V
+.OP
+.END

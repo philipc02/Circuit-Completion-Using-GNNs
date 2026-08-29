@@ -1,0 +1,7 @@
+spice
+* NMOS Transistor
+M1 4 55 3 3 NMOS
+* Resistor
+Rs 3 0 <RESISTANCE_VALUE>
+* Voltage Source
+? Missing component

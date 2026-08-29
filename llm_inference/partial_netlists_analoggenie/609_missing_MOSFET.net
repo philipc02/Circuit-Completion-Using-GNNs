@@ -1,0 +1,4 @@
+? Missing component
+M2 (IOUT2 IB1 VSS VSS) nmos4
+M1 (IOUT1 IB1 VSS VSS) nmos4
+M0 (IB1 IB1 VSS VSS) nmos4

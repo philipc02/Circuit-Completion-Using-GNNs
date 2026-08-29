@@ -1,0 +1,4 @@
+* SPICE Netlist
+? Missing component
+IBIAS 3 2 DC
+VBIAS 2 0 DC

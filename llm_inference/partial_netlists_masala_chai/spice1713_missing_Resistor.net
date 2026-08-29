@@ -1,0 +1,16 @@
+spice
+* SPICE netlist for the circuit
+M1 4 5 7 7 NMOS
+M2 4 2 3 3 NMOS
+RD1 9 4 100k
+RD2 8 4 100k
+RF 4 2 1k
+? Missing component
+CGS1 5 7 1p
+CGS2 2 3 1p
+CGD1 4 5 1p
+CGD2 4 2 1p
+CDB1 4 3 1p
+CDB2 4 3 1p
+Vout 2 0 DC 0
+Vin 5 7 AC 1

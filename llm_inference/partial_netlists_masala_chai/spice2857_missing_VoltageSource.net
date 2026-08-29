@@ -1,0 +1,8 @@
+spice
+* Example SPICE netlist for the given circuit
+I_nRD 5 5 DC 1
+I_n1 3 4 DC 1
+R_D 5 2 1k
+M_1 2 6 4 4 NMOS
+? Missing component
+VB 6 0 DC 1

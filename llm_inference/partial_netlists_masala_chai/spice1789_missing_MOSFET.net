@@ -1,0 +1,6 @@
+? Missing component
+RD net_VDD net_Vout 1k
+R1 net_Vout net_2 1k
+R2 net_2 GND 1k
+VDD net_VDD GND DC 5V
+Vin net_Vin GND DC 1V

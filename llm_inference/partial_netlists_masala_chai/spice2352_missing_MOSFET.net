@@ -1,0 +1,23 @@
+plaintext
+* PMOS Transistors
+MMP1 3 2 2 2 PMOS
+? Missing component
+MMP3 3 2 2 2 PMOS
+MMP4 3 4 2 2 PMOS
+MMP5 5 4 2 2 PMOS
+MMP6 5 4 2 2 PMOS
+MMP7 5 5 9 5 PMOS
+MMP8 5 5 3 5 PMOS
+* NMOS Transistors
+MMN1 6 7 8 8 NMOS
+MMN2 8 7 8 8 NMOS
+MMN3 8 7 8 8 NMOS
+MMN4 9 7 8 8 NMOS
+MMN5 7 7 8 8 NMOS
+MMN6 9 7 8 8 NMOS
+* Current Source
+IBIAS 2 10 DC I_BIAS
+* Voltage Sources
+VDD 3 0 DC V_DD
+VSS 8 0 DC V_SS
+* End of Netlist

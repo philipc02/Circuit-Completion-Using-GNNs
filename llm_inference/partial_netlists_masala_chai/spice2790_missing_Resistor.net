@@ -1,0 +1,20 @@
+* Transistors
+M5 4 6 5 5 PMOS
+M1 3 3 0 0 NMOS
+* Capacitors
+CL 6 0 CL_value
+CX 2 5 CX_value
+* Resistors
+RD 6 0 RD_value
+RS 3 1 RS_value
+? Missing component
+* Voltage Source
+VDD 5 0 DC VDD_value
+* Node mappings:
+* 1: Vin1
+* 2: X (input of current source)
+* 3: Source of M1 and negative terminal of Rs
+* 4: Drain of M5
+* 5: VDD and positive terminal of CX
+* 6: Vout1 and negative terminal of RD
+.end

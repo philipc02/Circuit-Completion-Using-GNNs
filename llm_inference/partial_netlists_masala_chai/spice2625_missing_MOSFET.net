@@ -1,0 +1,16 @@
+spice
+* NMOS: M1, M2, M5
+* PMOS: M3, M4
+* Resistor: R1
+M1 2 2 6 6 NMOS
+M2 2 3 6 6 NMOS
+M3 2 4 5 5 PMOS
+? Missing component
+M5 6 6 0 0 NMOS
+R1 2 6 1k
+VDD 5 0 DC 1.8
+Vin1 2 0 DC 0
+Vin2 3 0 DC 0
+Vb1 6 0 DC 0
+Vb2 4 0 DC 0
+.END

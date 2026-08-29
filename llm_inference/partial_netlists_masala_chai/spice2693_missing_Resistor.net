@@ -1,0 +1,5 @@
+* NMOS Inverter Circuit
+M1 2 4 0 0 NMOS
+? Missing component
+VDD 3 0 DC 5V
+VIN 4 0 DC 0V

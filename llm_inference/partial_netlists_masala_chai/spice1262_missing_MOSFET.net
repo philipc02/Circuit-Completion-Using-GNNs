@@ -1,0 +1,4 @@
+spice
+VDD V_DD 2 DC 1.8V
+? Missing component
+I1 1 0 DC 1mA

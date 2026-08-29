@@ -1,0 +1,15 @@
+spice
+* NMOS Transistors
+? Missing component
+M2 3 Vin2 1 1 NMOS_MODEL
+* PMOS Transistors
+M3 X 2 44 44 PMOS_MODEL
+M4 Vout 3 44 44 PMOS_MODEL
+* Current Source
+Iss 1 0 DC 0.5mA
+* Voltage Source
+VDD 44 0 DC 1.8V
+* Models (example)
+.model NMOS_MODEL NMOS
+.model PMOS_MODEL PMOS
+.end

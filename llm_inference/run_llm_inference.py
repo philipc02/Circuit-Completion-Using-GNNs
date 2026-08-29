@@ -1,92 +1,264 @@
-from transformers import pipeline
-import torch
-import json
+import os
+from collections import Counter
 import glob
-import re, json
+import json
+import random
+import re
+from tqdm import tqdm
+import torch
+from datasets import Dataset
+from peft import LoraConfig, prepare_model_for_kbit_training
+from transformers import (
+    AutoModelForCausalLM,
+    AutoTokenizer,
+    BitsAndBytesConfig,
+    TrainingArguments,
+)
+from trl import SFTTrainer
+
+# ---------------------------------------------------------
+# CONFIGURATION
+# ---------------------------------------------------------
+MODEL_ID = "google/gemma-2-2b-it"  # or "meta-llama/Meta-Llama-3.1-8B-Instruct"
+OUTPUT_DIR = "./finetuned_llm_multidataset"
+RANDOM_SEED = 42
+
+COMPONENT_CLASSES = [
+    "Resistor",
+    "Capacitor",
+    "VoltageSource",
+    "Subcircuit",
+    "CurrentSource",
+    "Inductor",
+    "Diode",
+    "BJT",
+    "MOSFET",
+]
+
+# Folders to process
+DATASET_FOLDERS = [
+    "partial_netlists_masala_chai",
+    "partial_netlists_analoggenie",
+    "partial_netlists_amsnet",
+]
+
 
 def extract_json(s):
-    m = re.search(r'\{.*?\}', s, flags=re.DOTALL)
+    """Extract JSON block from LLM output."""
+    m = re.search(r"\{.*?\}", s, flags=re.DOTALL)
     if not m:
         return None
     try:
         return json.loads(m.group(0))
-    except:
+    except Exception:
         return None
 
 
-MODEL = "meta-llama/Meta-Llama-3.1-8B-Instruct"
-
-device = "cuda" if torch.cuda.is_available() else "cpu"
-
-pipe = pipeline(
-    "text-generation",
-    model=MODEL,
-    model_kwargs={"torch_dtype": torch.bfloat16},
-    device_map="auto"
-)
-
-component_classes = ["Resistor", "Capacitor", "VoltageSource", "Subcircuit", "CurrentSource", "Inductor", "Diode", "BJT", "MOSFET"]
-
-def build_prompt(partial_netlist):
-    return f"""
-You are a circuit design assistant. Identify the missing component in a partial circuit.
+def build_prompt(partial_netlist, target_component=None):
+    """Construct prompt for fine-tuning or inference."""
+    prompt = f"""You are a circuit design assistant. Identify the missing component in a partial circuit.
 
 Partial netlist:
 {partial_netlist}
 
-Component type options: {component_classes}
+Component type options: {COMPONENT_CLASSES}
 
 Respond with ONLY this JSON and nothing else:
-
-{{
-  "prediction": "<component_type>"
-}}
 """
+    if target_component:
+        prompt += f'\n{{\n  "prediction": "{target_component}"\n}}'
+    return prompt
 
-def predict_component(netlist_text):
-    prompt = build_prompt(netlist_text)
 
-    out = pipe(
-        prompt,
-        max_new_tokens=32,
-        do_sample=False,
-        return_full_text=False
-    )
+# ---------------------------------------------------------
+# STEP 1: MULTI-DATASET DISCOVERY, SHUFFLING & TRAIN/TEST SPLIT
+# ---------------------------------------------------------
+def load_all_netlist_entries(test_ratio=0.20):
+    all_files = []
+    for folder in DATASET_FOLDERS:
+        pattern = os.path.join(folder, "*.net")
+        found = glob.glob(pattern)
+        print(f"Found {len(found)} files in '{folder}'")
+        all_files.extend(found)
 
-    full_out = out[0]["generated_text"].strip()
-    print("\n=== RAW MODEL OUTPUT ===")
-    print(full_out)
-    print("========================\n")
+    print(f"\nTotal netlists collected: {len(all_files)}")
 
-    pred_json = extract_json(full_out)
-    if pred_json:
-        return pred_json.get("prediction")
-    else:
-        return None
+    # Deterministic shuffle to ensure reproducible train/test split
+    random.seed(RANDOM_SEED)
+    random.shuffle(all_files)
 
-    
-paths = glob.glob("partial_circuits/*.net")
-total = len(paths)
+    # Calculate split boundary (80% Train, 20% Test)
+    split_idx = int(len(all_files) * (1 - test_ratio))
+    train_files = all_files[:split_idx]
+    test_files = all_files[split_idx:]
 
-with open("llm_predictions.json", "w") as f:
+    print(f"Train samples: {len(train_files)} | Test samples: {len(test_files)}")
+
+    # 1. Prepare Training Samples (Only train_files)
+    training_samples = []
+    for path in train_files:
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                net_txt = f.read()
+        except UnicodeDecodeError:
+            with open(path, "r", encoding="latin-1") as f:
+                net_txt = f.read()
+
+        lines = [l for l in net_txt.splitlines() if l.strip()]
+        cleaned = "\n".join(l for l in lines if l not in {"*", "."})
+
+        target_class = None
+        for cls in COMPONENT_CLASSES:
+            if cls.lower() in path.lower():
+                target_class = cls
+                break
+
+        if target_class:
+            formatted_prompt = build_prompt(
+                cleaned, target_component=target_class
+            )
+            training_samples.append({"text": formatted_prompt})
+
+    # 2. Prepare Evaluation Samples (Only test_files)
+    eval_samples = []
+    for path in test_files:
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                net_txt = f.read()
+        except UnicodeDecodeError:
+            with open(path, "r", encoding="latin-1") as f:
+                net_txt = f.read()
+
+        lines = [l for l in net_txt.splitlines() if l.strip()]
+        cleaned = "\n".join(l for l in lines if l not in {"*", "."})
+
+        target_class = None
+        for cls in COMPONENT_CLASSES:
+            if cls.lower() in path.lower():
+                target_class = cls
+                break
+
+        if target_class:
+            eval_samples.append((path, cleaned, target_class))
+
+    return training_samples, eval_samples
+
+
+print("1. Discovering and shuffling datasets...")
+train_samples, eval_samples = load_all_netlist_entries()
+
+# Create HuggingFace Dataset
+hf_dataset = Dataset.from_dict({"text": [s["text"] for s in train_samples]})
+
+# ---------------------------------------------------------
+# STEP 2: QUANTIZATION & MODEL LOADING
+# ---------------------------------------------------------
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.bfloat16,
+    bnb_4bit_use_double_quant=True,
+)
+
+tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, trust_remote_code=True)
+tokenizer.pad_token = tokenizer.eos_token
+
+model = AutoModelForCausalLM.from_pretrained(
+    MODEL_ID,
+    quantization_config=bnb_config,
+    device_map={"": 0},  # Forces all layers onto GPU 0 rather than spilling to CPU
+    trust_remote_code=True,
+)
+
+model = prepare_model_for_kbit_training(model)
+
+# ---------------------------------------------------------
+# STEP 3: LoRA FINE-TUNING
+# ---------------------------------------------------------
+peft_config = LoraConfig(
+    r=16,
+    lora_alpha=32,
+    target_modules=[
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj",
+    ],
+    lora_dropout=0.05,
+    bias="none",
+    task_type="CAUSAL_LM",
+)
+
+training_args = TrainingArguments(
+    output_dir=OUTPUT_DIR,
+    per_device_train_batch_size=4,
+    gradient_accumulation_steps=4,
+    learning_rate=2e-4,
+    logging_steps=10,             # Log loss more frequently to keep progress updating
+    num_train_epochs=3,
+    optim="paged_adamw_8bit",
+    bf16=True,
+    save_strategy="epoch",
+    report_to="none",
+    disable_tqdm=False,           # Ensures HuggingFace progress bar is enabled
+    logging_first_step=True,      # Log stats immediately on step 1
+)
+
+trainer = SFTTrainer(
+    model=model,
+    train_dataset=hf_dataset,
+    peft_config=peft_config,
+    dataset_text_field="text",
+    max_seq_length=1024,
+    tokenizer=tokenizer,
+    args=training_args,
+)
+
+print("\n2. Fine-tuning on combined dataset mixture...")
+trainer.train()
+
+# Save final LoRA adapter
+adapter_dir = os.path.join(OUTPUT_DIR, "final_adapter")
+trainer.model.save_pretrained(adapter_dir)
+tokenizer.save_pretrained(adapter_dir)
+print(f"LoRA Adapter saved to {adapter_dir}")
+
+# ---------------------------------------------------------
+# STEP 4: INFERENCE & JSON EXPORT FOR COMBINED EVALUATION
+# ---------------------------------------------------------
+print("\n3. Running inference across all netlists...")
+
+model.eval()
+output_json_path = "llm_predictions_lora_combined.json"
+total = len(eval_samples)
+
+with open(output_json_path, "w") as f:
     f.write("[\n")
-
     first = True
 
-    for i, path in enumerate(paths):
+    pbar = tqdm(eval_samples, desc="Evaluating", unit="sample")
+
+    for path, cleaned_netlist, gt_label in pbar:
         try:
-            try:
-                with open(path, "r", encoding="utf-8") as fr:
-                    net_txt = fr.read()
-            except UnicodeDecodeError:
-                with open(path, "r", encoding="latin-1") as fr:
-                    net_txt = fr.read()
+            prompt = build_prompt(cleaned_netlist)
+            inputs = tokenizer(prompt, return_tensors="pt").to("cuda")
 
-            lines = [l for l in net_txt.splitlines() if l.strip()]
-            cleaned = "\n".join(l for l in lines if l not in {"*", "."})
+            with torch.no_grad():
+                outputs = model.generate(
+                    **inputs, max_new_tokens=32, do_sample=False
+                )
 
-            pred = predict_component(cleaned)
-            entry = {"file": path, "pred": pred}
+            full_out = tokenizer.decode(
+                outputs[0][inputs.input_ids.shape[1] :], skip_special_tokens=True
+            ).strip()
+
+            pred_json = extract_json(full_out)
+            pred = pred_json.get("prediction") if pred_json else None
+
+            entry = {"file": path, "ground_truth": gt_label, "pred": pred}
 
             if not first:
                 f.write(",\n")
@@ -95,12 +267,13 @@ with open("llm_predictions.json", "w") as f:
             json.dump(entry, f)
             f.flush()
 
-            print(f"[{i+1}/{total}] {path} → {pred}")
+            # Update progress bar status text dynamically
+            pbar.set_postfix({"File": os.path.basename(path), "GT": gt_label, "Pred": pred})
 
         except KeyboardInterrupt:
-            print("\nStopped by user. JSON so far is valid.")
+            print("\nInference interrupted by user. Saved partial JSON.")
             break
 
     f.write("\n]")
 
-print("Done!")
+print(f"\nCompleted evaluation! Output exported to '{output_json_path}'.")

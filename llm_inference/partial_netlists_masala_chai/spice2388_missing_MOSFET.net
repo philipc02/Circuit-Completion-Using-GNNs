@@ -1,0 +1,23 @@
+* Transistors
+MP1 2 7 2 2 PMOS
+MP2 2 8 2 2 PMOS
+MB11 2 5 2 2 PMOS
+MB12 6 5 2 2 PMOS
+M1 5 3 3 3 NMOS
+? Missing component
+M3 3 3 3 3 NMOS
+M4 3 3 3 3 NMOS
+M5 4 3 3 3 NMOS
+* Current Sources
+I1 2 5 DC 0
+I2 2 6 DC 0
+* Voltage Source
+V_BIAS 2 7 DC 0
+* Capacitors
+C_C 4 5 <value>
+C_L 3 3 <value>
+* Resistor
+R_BIAS 7 2 <value>
+* Voltage Supply
+VDD 2 0 DC <value>
+VSS 3 0 DC 0

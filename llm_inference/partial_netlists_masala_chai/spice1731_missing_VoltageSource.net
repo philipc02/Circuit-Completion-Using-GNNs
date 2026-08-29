@@ -1,0 +1,9 @@
+plaintext
+* BJT Amplifier Circuit
+VCC 1 0 DC 15V
+? Missing component
+RC 1 2 1k
+C1 2 0 10u
+Cin 3 0 1u
+Q1 2 3 0 QNPN
+.model QNPN NPN (IS=1E-15 BF=100 VAF=100)

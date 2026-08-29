@@ -1,0 +1,17 @@
+plaintext
+* SPICE Netlist for given schematic
+* NPN Transistors Q1 and Q2
+Q1 Y X 0 NPN
+Q2 Vout Vb1 Y NPN
+* Resistor
+RS X Vin 10k
+? Missing component
+* Capacitor
+Cmu1 X Y 1u
+* Voltage Source
+VCC VCC 0 DC 15V
+* Voltage at Base Q2
+Vb1 Vb1 0 DC 0.7V
+* Simulation Commands
+.TRAN 1u 10m
+.END

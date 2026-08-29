@@ -1,0 +1,17 @@
+* NMOS (drain, gate, source, body)
+M1 3 Vin1 0 0 NMOS
+? Missing component
+* PMOS (drain, gate, source, body)
+M3 3 Vb1 5 5 PMOS
+M4 5 2 1 1 PMOS
+* NMOS (connected to ground)
+M5 0 Vb2 0 0 NMOS
+* Voltage Definitions
+VDD 1 0 DC VDD_value
+Vin1 Vin1 0 DC Vin1_value
+Vin2 Vin2 0 DC Vin2_value
+Vb1 Vb1 0 DC Vb1_value
+Vb2 Vb2 0 DC Vb2_value
+* Models
+.model NMOS NMOS
+.model PMOS PMOS

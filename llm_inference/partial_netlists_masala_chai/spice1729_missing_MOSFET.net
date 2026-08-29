@@ -1,0 +1,8 @@
+spice
+* NMOS Transistor
+? Missing component
+* Voltage Source
+VDD 2 0 DC VDD
+* Capacitors
+CF 3 2 C_F
+Cin 3 0 C_in

@@ -1,0 +1,12 @@
+spice
+* SPICE Netlist for given schematic
+* Components
+? Missing component
+Rout1 4 2 1000
+Rs 22 2 10k
+ro1 4 2 1k
+ro2 5 2 1k
+Gm2 5 2 VALUE={1/0.001} ; Modeled as conductance
+* Analysis
+.op
+.end

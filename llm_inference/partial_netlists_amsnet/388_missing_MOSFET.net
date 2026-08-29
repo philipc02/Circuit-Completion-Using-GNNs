@@ -1,0 +1,8 @@
+*SPICE Netlist for circuit 388
+C1 0 3 1nF
+C2 4 1 1nF
+? Missing component
+R1 0 3 1k
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+.OP
+.END

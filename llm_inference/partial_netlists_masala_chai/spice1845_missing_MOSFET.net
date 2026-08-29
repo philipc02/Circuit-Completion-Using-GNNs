@@ -1,0 +1,6 @@
+M1 5 1 0 0 NMOS
+? Missing component
+M3 2 5 4 4 PMOS
+R1 Vout 2 1k
+Vin 1 0 DC 0
+Vdd 4 0 DC VDD

@@ -1,0 +1,10 @@
+* SPICE Netlist for the given schematic
+? Missing component
+RC N003 N002 <value>   ; Resistor RC from net 3 to net 2
+VOUT N002 N002         ; Output voltage at net 2
+VB1 N002 0 DC <value>  ; Base voltage for Q2
+VIN N004 0 DC <value>  ; Input voltage for Q1
+Q1 N004 0 0 QN         ; Q1 NPN transistor with collector on net 4
+Q2 N002 N002 0 QN      ; Q2 NPN transistor with collector on net 2
+.model QN NPN(IS=1E-14 BF=100)
+.END

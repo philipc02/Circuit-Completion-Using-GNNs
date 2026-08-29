@@ -1,0 +1,3 @@
+R1 (VIN1 VOUT1) resistor
+R0 (VDD VOUT1) resistor
+? Missing component

@@ -1,0 +1,5 @@
+*SPICE Netlist for circuit 72
+? Missing component
+.MODEL PMOS PMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+.OP
+.END

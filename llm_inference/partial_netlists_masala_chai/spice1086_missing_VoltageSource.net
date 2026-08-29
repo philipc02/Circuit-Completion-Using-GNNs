@@ -1,0 +1,6 @@
+* NMOS Transistor
+M1 4 2 3 3 NMOS
+* Voltage Sources
+V1 2 0 DC VG
+? Missing component
+V3 4 0 DC VD

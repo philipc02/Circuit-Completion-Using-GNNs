@@ -1,0 +1,16 @@
+plaintext
+* BJT Circuit
+VCC N001 0 DC 15
+Vin1 N002 Vin_ground DC 0
+RL1 N001 N003 1k
+RS1 N002 N004 100
+Q1 N004 N003 Vin_ground Qtype
+* NMOS Circuit
+VDD N002 0 DC 15
+Vin2 N005 Vin_ground DC 0
+RL2 N002 N006 1k
+? Missing component
+M1 N007 N006 Vin_ground 0 NMOSmodel
+.model Qtype NPN (IS=1e-14 BF=100)
+.model NMOSmodel NMOS (LEVEL=1 VTO=1)
+.end

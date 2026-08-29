@@ -1,0 +1,13 @@
+spice
+* NMOS M1: Drain=4, Gate=Vin, Source=0
+M1 4 Vin 0 NMOS
+* NMOS M2: Drain=5, Gate=Vb, Source=4
+M2 5 Vb 4 NMOS
+* Current Source I1: Positive terminal=5, Negative terminal=4
+I1 5 4 DC
+* Resistor RD: Node1=4, Node2=3
+RD 4 3 RD_value
+* Voltage source connections
+VDD 5 0 DC VDD_value
+? Missing component
+Vb Vb 0 DC Vb_value

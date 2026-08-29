@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist
+* PMOS Transistor
+? Missing component
+* Voltage Source V_B1
+V_B1 4 5 DC VALUE
+* Voltage Source Vx
+Vx 2 3 DC VALUE
+* Component & Model Definitions
+.MODEL PMOS_MODEL PMOS

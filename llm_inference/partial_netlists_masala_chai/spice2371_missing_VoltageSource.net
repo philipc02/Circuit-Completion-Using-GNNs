@@ -1,0 +1,15 @@
+* NMOS Transistors
+M_MB81 4 9 2 2 NMOS
+M_MB82 4 8 2 2 NMOS
+M_MB82' 7 10 2 2 NMOS
+M_MB83 5 4 2 2 NMOS
+M_MB84 2 5 2 2 NMOS
+M_MB85 5 6 2 2 NMOS
+M_MB86 3 5 2 2 NMOS
+* PMOS Transistors
+M_MU1 5 6 11 11 PMOS
+M_MU2 3 2 11 11 PMOS
+* Voltage Sources
+? Missing component
+VSS 2 0 DC 0
+V_BIAS 7 0 DC 1

@@ -1,0 +1,5 @@
+*SPICE Netlist for circuit 95
+I1 1 2 DC 1mA
+? Missing component
+.OP
+.END

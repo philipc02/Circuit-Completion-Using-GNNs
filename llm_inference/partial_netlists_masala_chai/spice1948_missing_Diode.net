@@ -1,0 +1,15 @@
+* Transistors
+Q1 6 3 7 QNPN
+Q2 5 22 2 QNPN
+* Diodes
+? Missing component
+D2 3 5 D
+* Current Sources
+I1 7 1 DC <value_I1>
+I2 22 2 DC <value_I2>
+* Resistor
+RL 2 4 <value_RL>
+* Voltage Sources
+VCC 7 0 DC <value_VCC>
+VEE 22 0 DC <value_VEE>
+* Note: Replace <value_x> with actual component values

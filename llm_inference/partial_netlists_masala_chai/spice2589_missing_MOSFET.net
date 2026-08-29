@@ -1,0 +1,6 @@
+? Missing component
+M2 4 2 3 3 NMOS
+Iss 3 0 DC
+Vin1_Vin2 3 5 DC
+Vin2_Vin1 4 2 DC
+Vin1p_Vin2 5 0 DC

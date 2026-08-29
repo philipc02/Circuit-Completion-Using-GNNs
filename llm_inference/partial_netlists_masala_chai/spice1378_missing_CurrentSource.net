@@ -1,0 +1,8 @@
+plaintext
+* SPICE Netlist
+VCC 2 0 DC VCC  ; Voltage source VCC between node 2 and ground
+R1 2 1 R1       ; Resistor R1 between node 2 and node 1
+R2 1 0 R2       ; Resistor R2 between node 1 and ground
+? Missing component
+Q1 2 1 3 Q1_NPN ; NPN Transistor Q1, with collector at node 2, base at node 1, emitter at node 3
+.model Q1_NPN NPN

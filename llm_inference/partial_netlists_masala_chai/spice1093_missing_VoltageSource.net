@@ -1,0 +1,5 @@
+* List of components:
+* V1: Voltage source
+* M1: NMOS transistor
+? Missing component
+M1 1 2 3 3 NMOS

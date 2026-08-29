@@ -1,0 +1,4 @@
+? Missing component
+M1 (VOUT1 VIN1 net09 VSS) nmos4
+R3 (net09 VSS) resistor
+R2 (VOUT1 net09) resistor

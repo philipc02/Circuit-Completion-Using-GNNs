@@ -1,0 +1,26 @@
+* PMOS Transistors
+M1 1 4 3 3 PMOS L=1u W=20u
+M2 2 4 1 1 PMOS L=1u W=20u
+M3 3 9 3 3 PMOS L=1u W=80u
+M4 9 4 1 1 PMOS L=1u W=40u
+M5 4 9 3 3 PMOS L=1u W=80u
+M6 5 2 1 1 PMOS L=1u W=20u
+* NMOS Transistors
+M7 6 9 3 3 NMOS L=1u W=128u
+M8 7 3 9 3 NMOS L=1u W=128u
+M9 8 1 3 3 NMOS L=1u W=1u
+? Missing component
+M11 10 2 6 3 NMOS L=1u W=32u
+M12 11 7 3 3 NMOS L=1u W=32u
+M13 12 8 7 3 NMOS L=1u W=64u
+M14 13 6 3 3 NMOS L=1u W=16u
+* Current Sources
+I1 3 9 DC 10uA
+I2 9 2 DC 5uA
+I3 4 3 DC 10uA
+I4 1 2 DC 10uA
+* Resistor
+R1 9 3 20k
+* Voltage Sources
+VDD 4 0 DC VDD
+VSS 9 0 DC VSS

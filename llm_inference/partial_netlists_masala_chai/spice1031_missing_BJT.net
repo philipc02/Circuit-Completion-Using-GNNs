@@ -1,0 +1,9 @@
+* Transistors
+Q1 Vin 3 4 NPN
+? Missing component
+* Resistor
+RC 3 Vout 1000
+* Voltage Source
+VCC 3 0 DC 10
+*Connections
+*Node 2 is ground

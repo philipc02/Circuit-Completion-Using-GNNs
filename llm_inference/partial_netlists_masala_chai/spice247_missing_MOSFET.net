@@ -1,0 +1,12 @@
+* PMOS Transistors
+M23 2 1 12 12 PMOS
+M24 10 5 12 12 PMOS
+* NMOS Transistors
+M21 7 1 2 2 NMOS
+M22 8 3 5 5 NMOS
+? Missing component
+* Voltage Sources
+VDD 12 0 DC VDD
+VSS 4 0 DC -VSS
+VBias 6 0 DC VBIAS4
+* End of Netlist

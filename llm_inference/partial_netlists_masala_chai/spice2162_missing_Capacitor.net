@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+V1 5 3 DC Vin
+Rs 2 5 Rs_value
+? Missing component
+C2 2 3 1/gm2
+.END

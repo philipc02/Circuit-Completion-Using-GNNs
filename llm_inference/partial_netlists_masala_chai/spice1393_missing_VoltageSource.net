@@ -1,0 +1,5 @@
+* Simple NPN Transistor Circuit
+? Missing component
+I1 2 Vout DC 1mA
+Q1 Vout Vin 0 Q1_Model
+.model Q1_Model NPN

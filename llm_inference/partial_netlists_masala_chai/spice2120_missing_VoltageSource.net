@@ -1,0 +1,8 @@
+spice
+* NMOS Circuit
+? Missing component
+VDELTA 1 0 DC DELTA_V_VALUE
+RD 22 2 RD_VALUE
+RS 3 0 RS_VALUE
+M1 2 1 3 3 NMOS_MODEL
+.END

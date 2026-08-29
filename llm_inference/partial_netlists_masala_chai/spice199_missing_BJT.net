@@ -1,0 +1,11 @@
+spice
+* NPN Transistor Q14
+Q14 4 5 4 NPN
+* NPN Transistor Q15
+? Missing component
+* Current Source Ii
+I1 6 0 DC
+* Resistor R
+R1 2 3 Rvalue
+* Voltage Source VCC
+VCC 4 0 DC VCCvalue

@@ -1,0 +1,7 @@
+spice
+* SPICE netlist for the given schematic
+V1 5 0 DC 0
+RS 5 5 1k
+? Missing component
+Q1 4 5 3 NPN
+.INCLUDE model.lib

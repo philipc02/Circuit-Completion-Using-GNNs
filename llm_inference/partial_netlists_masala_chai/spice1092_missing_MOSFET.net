@@ -1,0 +1,7 @@
+spice
+* NMOS Transistor 
+? Missing component
+* Voltage Source
+V1 <Gate_Node> 0 DC 1
+* Model
+.model NMOS NMOS (Level=1)

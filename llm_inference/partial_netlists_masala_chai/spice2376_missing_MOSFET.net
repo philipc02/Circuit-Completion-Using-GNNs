@@ -1,0 +1,27 @@
+* NMOS Transistors (name, drain, gate, source, body)
+M_MB45  6 1 6 6 NMOS
+M_MB35  6 1 6 6 NMOS
+M_MB45' 6 1 6 6 NMOS
+M_MB41  8 1 2 2 NMOS
+M_MB42  9 1 2 2 NMOS
+M_MB43  8 1 3 3 NMOS
+M_MB44  5 1 3 3 NMOS
+M_MB31  2 10 3 3 NMOS
+M_MB32  2 10 3 3 NMOS
+M_MB33  3 11 3 3 NMOS
+M_MB34  3 11 3 3 NMOS
+M_MR2   2 22 2 2 NMOS
+M_MR4   2 22 2 2 NMOS
+M_MR1   2 26 1 1 NMOS
+M_MR3   2 26 1 1 NMOS
+M_MC1   3 26 2 2 NMOS
+M_MC2   3 26 2 2 NMOS
+M_MC3   3 26 2 2 NMOS
+? Missing component
+M_MC5   4 27 4 4 NMOS
+M_MC6   4 27 4 4 NMOS
+* Voltage Sources (name, positive, negative, value)
+V_DD   8 0 DC 1.8
+V_SS   0 4 DC 0
+V_BIAS5 1 0 DC 1.2
+V_BIAS4 2 0 DC 1.2

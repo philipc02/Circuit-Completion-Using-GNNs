@@ -1,0 +1,11 @@
+spice
+* NMOS Transistor
+M1 8 2 3 3 NMOS
+* Resistors
+R1 5 6 R1_VALUE
+R2 4 8 R2_VALUE
+* Voltage Sources (Not explicitly shown in the schematic, assumed)
+? Missing component
+Vin 5 0 DC Vin_VALUE
+Vb 2 0 DC Vb_VALUE
+* End of Netlist

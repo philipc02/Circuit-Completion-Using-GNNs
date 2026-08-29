@@ -1,0 +1,7 @@
+*SPICE Netlist for circuit 357
+I1 VDD 2 DC 1mA
+? Missing component
+R1 3 2 1k
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+.OP
+.END

@@ -1,0 +1,8 @@
+plaintext
+* SPICE netlist
+VDD 2 0 DC <value> 
+RF 2 3 <value>
+RD 2 1 <value>
+? Missing component
+CB 4 5 <value> 
+M1 1 3 6 6 NMOS <model>

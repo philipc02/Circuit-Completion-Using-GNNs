@@ -1,0 +1,13 @@
+spice
+* NMOS transistor M1
+M1 4 3 2 2 NMOS
+* Resistors
+R1 5 3 <R1_value>
+R2 3 2 <R2_value>
+* Current source
+Ix 4 5 DC <Ix_value>
+* Voltage source
+Vx 2 0 DC <Vx_value>
+* Supply voltage
+? Missing component
+.model NMOS NMOS (LEVEL=1)

@@ -1,0 +1,13 @@
+plaintext
+* SPICE Netlist for the Given Schematic
+V1 3 0 DC 2.5V
+* Resistors
+R1 3 4 10k
+R2 4 0 10k
+RE 3 5 RE
+R3 2 0 5k
+* Transistor
+? Missing component
+* Model for NPN Transistor
+.model QMODEL NPN(IS=1e-14 BF=100 VAF=100)
+.END

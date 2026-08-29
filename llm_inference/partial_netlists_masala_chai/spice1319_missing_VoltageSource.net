@@ -1,0 +1,7 @@
+* SPICE Netlist for Inverting Amplifier
+? Missing component
+R1 in 4 1k
+R2 4 0 1k
+C1 2 3 10u
+XOPAMP 4 0 2 OPAMP
+.end

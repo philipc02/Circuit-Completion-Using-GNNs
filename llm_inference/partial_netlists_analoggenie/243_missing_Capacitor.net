@@ -1,0 +1,5 @@
+? Missing component
+C0 (VOUT1 net1) capacitor
+R1 (VIN1 VSS) resistor
+R0 (VDD VOUT1) resistor
+M0 (VOUT1 net1 VIN1 VSS) nmos4

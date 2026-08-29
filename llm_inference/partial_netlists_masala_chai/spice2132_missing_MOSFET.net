@@ -1,0 +1,6 @@
+spice
+* NMOS Devices
+? Missing component
+M2 3 Vb1 2 2 NMOS
+* Resistor
+Rout 3 0 Rout

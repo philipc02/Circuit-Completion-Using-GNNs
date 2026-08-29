@@ -1,0 +1,14 @@
+spice
+*MOSFET Transistor Definitions
+M1 2 Vin1 5 5 NMOS
+M2 2 Vin2 5 5 NMOS
+M3 Vout Vb1 2 2 NMOS
+M4 Vout 2 2 2 NMOS
+M5 Vout Vb2 3 3 PMOS
+? Missing component
+M7 Vb2 3 3 VDD PMOS
+M8 Vout VDD 3 VDD PMOS
+*Current Source
+I1 5 0 DC ISS
+*Voltage Definitions
+VDD VDD 0 DC 5

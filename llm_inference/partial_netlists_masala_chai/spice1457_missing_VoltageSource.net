@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist for the circuit
+IREF N001 VCC DC 1mA
+QREF N002 N003 0 QNPN
+Q1   ICOPY N003 0 QNPN
+.model QNPN NPN(is=1e-15 bf=100)
+? Missing component

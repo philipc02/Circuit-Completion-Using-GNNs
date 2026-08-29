@@ -1,0 +1,4 @@
+? Missing component
+M2 (net13 IREF2 VSS VSS) nmos4
+M1 (IOUT1 IREF1 net13 VSS) nmos4
+M0 (IREF1 IREF1 VSS VSS) nmos4

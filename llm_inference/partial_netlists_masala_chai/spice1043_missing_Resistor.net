@@ -1,0 +1,14 @@
+spice
+* Common-emitter amplifier
+Vcc 3 0 DC 2.5
+* Resistors
+? Missing component
+R2 3 2 100k
+R3 4 0 100
+* Capacitor
+C1 5 2 <Capacitance value>
+* Transistor
+Q1 3 5 4 NPN
+* Voltage input
+Vin 5 0 DC <Input voltage value>
+.end

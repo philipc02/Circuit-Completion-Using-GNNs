@@ -1,0 +1,13 @@
+plaintext
+* SPICE netlist for the schematic
+* Voltage Sources
+Vdd VDD 0 DC 5V
+Vb Vb 0 DC 1.8V
+Vin Vin 0 DC 1.2V
+* Transistors
+? Missing component
+M2 N1 Vb VDD VDD PMOS
+M3 Vout N1 0 0 NMOS
+* Nodes
+* N1: Node connecting M1, M2, and M3 drain
+.end

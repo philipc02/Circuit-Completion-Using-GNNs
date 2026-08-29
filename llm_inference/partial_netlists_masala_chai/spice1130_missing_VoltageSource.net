@@ -1,0 +1,8 @@
+spice
+* PMOS Transistor
+M1 3 3 2 2 PMOS
+* Voltage Sources
+V1 3 0 DC 1.5V
+? Missing component
+.model PMOS PMOS
+.end

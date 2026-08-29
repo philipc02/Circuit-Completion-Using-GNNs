@@ -1,0 +1,39 @@
+* SPICE Netlist for the given schematic
+* Voltage source
+? Missing component
+VBias1 6 0 DC <value>
+VBias2 3 0 DC <value>
+* Transistors
+Q46 6 5 3 NPN
+Q47 4 6 7 NPN
+Q48 5 5 6 NPN
+Q49 7 6 4 NPN
+Q50 5 4 5 NPN
+Q51 4 4 3 NPN
+Q52 5 3 4 NPN
+Q53 5 3 4 NPN
+Q54 8 5 3 NPN
+Q55 5 5 6 NPN
+Q56 8 5 6 NPN
+Q57 3 3 4 NPN
+Q58 5 2 3 NPN
+Q59 8 5 6 NPN
+Q60 8 4 3 NPN
+* Resistors
+R48 6 3 1MEG
+R49 3 8 3K
+R50 5 9 33K
+R51 3 6 33K
+R52 3 7 33K
+R53 6 5 33K
+R54 9 5 33K
+R55 8 3 33K
+R56 8 3 33K
+R57 8 4 33K
+R58 8 2 33K
+R59 8 3 33K
+R60 8 1 33K
+* Capacitors
+C48 4 3 1PF
+C58 2 5 1PF
+* End of netlist

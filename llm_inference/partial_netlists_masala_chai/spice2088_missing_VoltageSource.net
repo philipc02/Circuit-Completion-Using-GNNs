@@ -1,0 +1,13 @@
+spice
+* NMOS Transistor
+M1 2 3 0 0 NMOS_MODEL
+* Voltage Sources
+VDD 2 0 DC X
+? Missing component
+* Resistor
+RD 2 2 1k
+.model NMOS_MODEL NMOS (LEVEL=1)
+* Control statements - example placeholders
+*.op
+*.dc Vin 0 5 0.1
+*.end

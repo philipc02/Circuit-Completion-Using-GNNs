@@ -1,0 +1,14 @@
+spice
+* SPICE Netlist
+VCC 83 0 DC VCC
+VEE 4 0 DC VEE
+Vin1 7 0 DC Vin1
+Vin2 6 0 DC Vin2
+? Missing component
+* Transistors
+M1 3 7 4 4 NMOS
+M2 2 6 4 4 NMOS
+M3 3 3 83 83 PMOS
+M4 2 2 83 83 PMOS
+* Voltage Probes
+VOUT 2 0 DC 0

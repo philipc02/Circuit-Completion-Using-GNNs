@@ -1,0 +1,13 @@
+spice
+* Transistors
+M1 10 11 4 4 NMOS
+? Missing component
+M3 4 4 5 5 PMOS
+M4 2 4 5 5 PMOS
+M6 3 2 5 5 NMOS
+* Resistors
+Rtail 9 7 rtail
+Ro7 8 6 ro7
+* Voltage Sources
+Vdd 6 0 Vdd
+Voa 3 0 Voa

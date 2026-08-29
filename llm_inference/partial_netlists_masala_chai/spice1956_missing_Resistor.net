@@ -1,0 +1,17 @@
+* SPICE Netlist
+* Transistor Components
+Q1 2 2 5 NPN
+Q2 3 2 5 NPN
+Q3 4 2 2 PNP
+Q4 3 3 2 NPN
+* Diode Components
+D1 2 2 Dmodel
+D2 2 3 Dmodel
+* Voltage Sources
+VCC 2 0 DC VCC_value
+VEE 3 0 DC VEE_value
+Vb1 4 0 DC Vb1_value
+Vin 3 0 DC Vin_value
+* Load Resistor
+? Missing component
+.model Dmodel D

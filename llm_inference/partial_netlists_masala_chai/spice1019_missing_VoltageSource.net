@@ -1,0 +1,8 @@
+spice
+* Simple Amplifier Circuit
+VCC 2 0 DC 2.5V
+R1 2 3 50k
+Q1 3 Vin 0 QMODEL
+.model QMODEL NPN (is=1e-14 bf=100)
+* Define the model for a generic NPN BJT if needed.
+? Missing component

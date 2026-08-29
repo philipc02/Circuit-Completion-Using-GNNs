@@ -1,0 +1,4 @@
+Q3 (net10 net4 VSS 0) npn
+Q2 (net4 net4 VSS 0) npn
+Q1 (IOUT1 IIN1 net10 0) npn
+? Missing component

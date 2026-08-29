@@ -1,0 +1,9 @@
+* Node annotations
+* 1 = Vin
+* 2 = VDD (1.8V)
+* 3 = Vout
+* 0 = Ground
+VDD 2 0 DC 1.8V
+? Missing component
+RD 2 3 1k
+M1 3 1 0 0 NMOS

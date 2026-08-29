@@ -1,0 +1,7 @@
+spice
+* Simple MOSFET Circuit
+VDD 2 0 DC 1.8V
+Vin Vin 0 DC 0
+Vb Vb 0 DC 0
+M1 Vout Vin 2 2 PMOS
+? Missing component

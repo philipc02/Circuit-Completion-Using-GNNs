@@ -1,0 +1,7 @@
+spice
+* NMOS Amplifier Circuit
+? Missing component
+RD 3 2 1k
+RS 2 0 500
+VDD 3 0 DC 5V
+VIN 1 0 DC 0V

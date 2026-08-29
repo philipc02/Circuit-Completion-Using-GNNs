@@ -1,0 +1,13 @@
+spice
+* SPICE Netlist
+VCC 4 10 DC VCC
+IIN 6 10 DC IIN
+Q1 5 3 10 NPN
+Q2 4 5 2 NPN
+Q3 2 7 9 NPN
+* Connections
+C1 5 4 DC IC1
+B1 5 3 DC IB2
+E1 2 7 DC IE2
+? Missing component
+.END

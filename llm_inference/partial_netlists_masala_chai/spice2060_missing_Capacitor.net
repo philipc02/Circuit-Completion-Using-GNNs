@@ -1,0 +1,14 @@
+spice
+* MOSFET Device Definitions
+M1 N2 3 0 0 NMOS
+M2 N3 2 N2 NMOS
+M3 Vout C N2 NMOS
+M4 VDD A N2 PMOS
+M5 2 B 3 PMOS
+M6 VDD 2 Vout PMOS
+* Voltage Source
+VDD VDD 0 DC 5V
+* Nets Mapping
+A N2
+B 2
+? Missing component

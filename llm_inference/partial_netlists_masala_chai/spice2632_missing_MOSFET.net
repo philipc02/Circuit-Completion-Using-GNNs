@@ -1,0 +1,15 @@
+spice
+M1 X Vin1 2 4 NMOS
+M2 Y Vin2 2 4 NMOS
+M3 Vout Vb1 1 5 PMOS
+M4 Vout Vin2 3 5 PMOS
+M5 Vout VDD 1 5 PMOS
+? Missing component
+M7 4 Vb 4 0 NMOS
+R1 X Y 1k
+VDD VDD 0 DC 5V
+Vb1 Vb1 0 DC 2.5V
+Vin1 Vin1 0 DC 1.5V
+Vin2 Vin2 0 DC 1.5V
+Vb Vb 0 DC 1V
+.END

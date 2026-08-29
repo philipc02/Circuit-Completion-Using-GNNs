@@ -1,0 +1,6 @@
+plaintext
+* SPICE Netlist
+? Missing component
+M2 4 5 3 3 PMOS
+* Define PMOS model
+.model PMOS PMOS (level=1)

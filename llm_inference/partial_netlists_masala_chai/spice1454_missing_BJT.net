@@ -1,0 +1,14 @@
+* SPICE Netlist for the schematic
+IREF N002 0 DC 1mA
+* Transistors
+* NPN BJT model: .model NPN_MOD NPN (parameters)
+QREF N002 N001 0 NPN_REF
+? Missing component
+* Resistor
+RP N001 N002 1k
+* BJT Models
+.model NPN_REF NPN (Is=1e-15 Bf=100)
+.model NPN_Q1 NPN (Is=1e-15 Bf=100)
+* Voltage Source for VCC
+VCC N003 0 DC 5V
+* End of netlist

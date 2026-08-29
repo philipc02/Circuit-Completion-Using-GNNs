@@ -1,0 +1,15 @@
+plaintext
+* SPICE Netlist for the given circuit
+Vin 4 0 DC 0V
+? Missing component
+C1 2 2 10u
+* Operational Amplifier
+* Ideal Op-Amp, connections:
+* Non-inverting input - node 2
+* Inverting input - node 4
+* Output - Vout
+.subckt opamp 2 4 Vout
+* No specific parameters, ideal op-amp assumed
+.ends opamp
+XOP 2 4 Vout opamp
+* End of Netlist

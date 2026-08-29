@@ -1,0 +1,6 @@
+plaintext
+* NMOS Transistor Circuit
+M1 3 2 2 2 NMOS 
+? Missing component
+*.MODEL NMOS NMOS (Level=1)
+.END

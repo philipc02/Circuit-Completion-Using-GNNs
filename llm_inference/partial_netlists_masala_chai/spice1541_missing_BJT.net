@@ -1,0 +1,21 @@
+spice
+* Transistors
+Q1 6 Vin1 5 NPN
+Q2 6 Vin2 5 NPN
+? Missing component
+Q4 Vout Vb1 6 NPN
+Q5 3 Vb2 Vout NPN
+Q6 B Vb2 3 NPN
+Q7 A Vb3 B NPN
+* Resistor
+R1 A B 1k
+* Current Source
+I1 5 4 DC 10mA
+* Voltage Sources
+Vb1 Vb1 0 DC 1V
+Vb2 Vb2 0 DC 1V
+Vb3 Vb3 0 DC 1V
+Vin1 Vin1 0 DC 0V
+Vin2 Vin2 0 DC 0V
+VCC VCC 0 DC 5V
+* End of Netlist

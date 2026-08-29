@@ -1,0 +1,14 @@
+plaintext
+* SPICE Netlist for the given schematic
+VREF 1 0 DC <value>
+R1 1 2 <value>
+* Q1 is a PMOS: Source=3, Gate=2, Drain=4
+M1 4 2 3 3 PMOS
+* Q2 is an NMOS: Source=5, Gate=4, Drain=0
+? Missing component
+* Dependent Current Source (IX) between nodes 5 and 0
+G1 5 0 V1 <transconductance value>
+* Voltage source from node 2 to 0 representing the op-amp
+E1 2 0 3 2 <gain>
+* Ground nodes
+0 0

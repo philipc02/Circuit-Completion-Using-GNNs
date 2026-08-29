@@ -1,0 +1,8 @@
+plaintext
+* NMOS Transistors
+M1 Vout A 3 3 NMOS
+M2 Vout B 2 2 NMOS
+M3 Vout C 2 2 NMOS
+M4 2 D 3 3 NMOS
+* Connections
+? Missing component

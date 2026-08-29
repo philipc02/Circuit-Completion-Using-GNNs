@@ -1,0 +1,6 @@
+* Transistors
+? Missing component
+M2 2 7 5 5 PMOS
+* Voltage Source
+VDD 5 0 DC <Value>
+* End of netlist

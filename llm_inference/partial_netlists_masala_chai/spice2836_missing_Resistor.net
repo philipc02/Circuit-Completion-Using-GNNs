@@ -1,0 +1,10 @@
+plaintext
+* SPICE Netlist for the given schematic
+V1 3 0 DC 0 AC 1  ; Vin connected to node 3, ground is node 0
+R1 3 2 10k        ; R1 between nodes 3 and 2
+V2 2 5 DC 0       ; Vn,in connected between nodes 2 and 5 (noise source)
+Cin 5 0 1uF       ; Cin between node 5 and ground
+M1 6 5 0 0 NMOS   ; NMOS transistor with drain, gate, source, and body at nodes 6, 5, 0, 0
+? Missing component
+VDD 4 0 DC 5V     ; VDD connected between node 4 and ground
+.END

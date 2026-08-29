@@ -1,0 +1,15 @@
+spice
+* Transistors
+Q1 2 2 6 NPN
+Q2 4 2 2 NPN
+Q3 4 5 4 NPN
+Q4 3 8 4 NPN
+* Current Source
+I_IN 2 0 DC
+* Voltage Source
+? Missing component
+* Resistors
+R1 6 0 
+R3 5 0 
+R4 8 0 
+* Note: Add actual values for current source, voltage source, and resistors as needed.

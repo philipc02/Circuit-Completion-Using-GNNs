@@ -1,0 +1,15 @@
+plaintext
+* SPICE Netlist
+VDD VDD 0 DC 0
+V1 N1 0 DC 2
+V2 N2 0 DC 1
+? Missing component
+M1 Vout N3 N2 N2 NMOS
+R1 VDD Vout 1k
+* Components
+VDD VDD 0 DC 5
+V1 N1 0 DC 2
+? Missing component
+* Analysis
+.op
+.end

@@ -1,0 +1,16 @@
+spice
+* NMOS Transistors
+M1 3 3 2 2 NMOS
+M2 2 2 0 0 NMOS
+* Capacitors
+? Missing component
+C2 2 Vout 1u
+* Resistor
+RG 3 VDD 10k
+* Voltage Sources
+Vin Vin 0 AC 1 0
+VDD VDD 0 DC 5
+* Simulation Commands
+.tran 1n 1u
+.ac dec 10 1k 10M
+.end

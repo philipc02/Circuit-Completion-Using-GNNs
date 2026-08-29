@@ -1,0 +1,26 @@
+plaintext
+* SPICE netlist for the given schematic
+* Power Supplies
+VDD 2 0 DC VDD
+VSS 3 0 DC VSS
+* Current Source
+IBIAS 4 0 DC P4
+* Transistor Definitions
+* PMOS: M<name> <drain> <gate> <source> <body> <model> <L> <W>
+* NMOS: M<name> <drain> <gate> <source> <body> <model> <L> <W>
+* PMOS Transistors
+M_MB61 2 6 2 2 PMOS L=1u W=1u
+M_MB62 2 5 2 2 PMOS L=1u W=1u
+M_MB63 2 2 2 2 PMOS L=1u W=1u
+M_MB64 2 2 2 2 PMOS L=1u W=1u
+M_MB65 2 2 2 2 PMOS L=1u W=1u
+M_MB66 2 2 2 2 PMOS L=1u W=1u
+M_MB72 5 5 2 2 PMOS L=1u W=1u
+* NMOS Transistors
+M_MD1 3 3 2 3 NMOS L=1u W=1u
+M_MD2 4 4 2 3 NMOS L=1u W=1u
+M_MD3 2 2 3 3 NMOS L=1u W=1u
+? Missing component
+M_MB71 4 2 3 3 NMOS L=1u W=1u
+M_MB62' 6 6 3 3 NMOS L=1u W=1u
+* End of netlist

@@ -1,0 +1,7 @@
+plaintext
+* SPICE Netlist
+R1 4 VCC R1_Value
+RC1 4 2 RC_Value
+RC2 4 3 RC_Value
+I1 2 0 I1_Value
+? Missing component

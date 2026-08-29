@@ -4,9 +4,9 @@ import json
 import csv
 from pathlib import Path
 
-SOURCE_DIR = "../graph_parsers/netlists_ltspice_examples/"
-OUT_DIR = "partial_netlists/"
-META_FILE = "metadata.csv"
+SOURCE_DIR = "../graph_parsers/netlists_amsnet/"
+OUT_DIR = "partial_netlists_amsnet/"
+META_FILE = "metadata_amsnet.csv"
 
 Path(OUT_DIR).mkdir(exist_ok=True)
 
@@ -26,7 +26,7 @@ def extract_component_class(line):
 metadata = []
 
 for filepath in os.listdir(SOURCE_DIR):
-    if not filepath.endswith(".net"):
+    if not (filepath.endswith(".net") or filepath.endswith(".cir") or filepath.endswith(".sp")):
         continue
     
     with open(os.path.join(SOURCE_DIR, filepath), "r") as f:
@@ -46,8 +46,15 @@ for filepath in os.listdir(SOURCE_DIR):
     partial = ["? Missing component" if l == target_line else l for l in lines]
 
     # create output filename
-    base = filepath.replace(".net", "")
-    out_name = f"{base}_missing_{target_type}.net"
+    if filepath.endswith(".net"):
+        base = filepath.replace(".net", "")
+        out_name = f"{base}_missing_{target_type}.net"
+    elif filepath.endswith(".sp"):
+        base = filepath.replace(".sp", "")
+        out_name = f"{base}_missing_{target_type}.net"
+    else:
+        base = filepath.replace(".cir", "")
+        out_name = f"{base}_missing_{target_type}.net"
 
     with open(os.path.join(OUT_DIR, out_name), "w") as f:
         for l in partial:

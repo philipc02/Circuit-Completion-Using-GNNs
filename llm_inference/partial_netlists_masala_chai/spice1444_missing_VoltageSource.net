@@ -1,0 +1,14 @@
+spice
+* SPICE netlist for the given schematic
+M1 drain=5 gate=Vin source=0 model=NMOS
+M2 drain=2 gate=Vb1 source=5 model=NMOS
+M3 drain=3 gate=Vb2 source=2 model=NMOS
+M4 drain=Vcc gate=3 source=3 model=PMOS
+Vcc Vcc 0 DC <value>
+Vb1 Vb1 0 DC <value>
+Vb2 Vb2 0 DC <value>
+? Missing component
+* Define MOSFET models here
+.model NMOS NMOS (level=1)
+.model PMOS PMOS (level=1)
+.end

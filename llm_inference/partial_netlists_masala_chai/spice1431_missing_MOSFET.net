@@ -1,0 +1,4 @@
+M1 2 Vb1 3 NMOS
+M2 3 Vb2 4 NMOS
+? Missing component
+Rout 2 0 ROUT

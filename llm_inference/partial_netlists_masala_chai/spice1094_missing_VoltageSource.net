@@ -1,0 +1,9 @@
+spice
+* Netlist for the circuit
+* Voltage Sources
+? Missing component
+V2 2 0 DC 0.2V
+V3 2 0 DC 0.2V
+* MOSFET
+M1 2 4 0 0 NMOS
+* End of Netlist

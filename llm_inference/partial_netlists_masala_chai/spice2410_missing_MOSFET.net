@@ -1,0 +1,6 @@
+spice
+? Missing component
+M2 C B N NMOD
+M3 F C C PMOD
+.model NMOD NMOS
+.model PMOD PMOS

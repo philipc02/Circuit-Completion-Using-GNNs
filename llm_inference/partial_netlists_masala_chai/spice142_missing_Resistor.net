@@ -1,0 +1,17 @@
+* Netlist for the provided circuit
+* Current Sources
+I1 10 4 DC
+I2 11 8 DC
+I3 2 1 DC
+I4 7 5 DC
+Itail 0 9 DC
+* Resistors
+R1 9 10 r1
+R2 5 0 r2
+? Missing component
+R3a 10 6 r3
+R3b 12 6 r4
+R4 1 12 rload 
+* Voltage Source
+Vf 5 0 DC
+.END

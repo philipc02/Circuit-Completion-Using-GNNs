@@ -1,0 +1,9 @@
+spice
+* Nodes: 1: VDD, 2: Vb, 3: Drain_M1, Drain_RD, VDD, 4: Source_M1, Drain_M2, Positive_I1, 5: Vout, 6: Gate_M1, 7: Source_M2, Negative_I1 (Ground), 8: Vin
+M1 3 8 4 4 NMOS
+M2 4 2 7 7 NMOS
+I1 4 7 DC 1A
+RD 3 5 1k
+VDD 3 0 DC 5V
+? Missing component
+Vb 2 0 DC 1V

@@ -1,0 +1,8 @@
+spice
+* Netlist for the given schematic
+* Voltage Source
+vin in 0 DC
+* Capacitor
+c1 in out 5p
+* Resistor
+? Missing component

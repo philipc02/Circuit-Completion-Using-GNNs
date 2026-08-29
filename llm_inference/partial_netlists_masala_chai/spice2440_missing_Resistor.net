@@ -1,0 +1,6 @@
+spice
+I1 2 5 DC 1A
+M1 2 6 6 6 NMOS
+C1 2 3 1uF
+C2 6 6 1uF
+? Missing component

@@ -1,0 +1,9 @@
+spice
+* SPICE netlist for the given schematic
+Q1 Vout Vin 2 NPN
+RL 2 0 1000
+VCC VCC 0 DC 10V
+? Missing component
+* Simulation commands
+.TRAN 1m 100m
+.END

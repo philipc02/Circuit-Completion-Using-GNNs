@@ -1,0 +1,15 @@
+spice
+* SPICE Netlist for the given circuit
+* Voltage Source
+Vcorr 2 0 DC <value>
+* Current Source
+IB2 X 0 DC <value>
+* Resistors
+R1 2 3 <value_R1>
+R2 3 0 <value_R2>
+* Operational Amplifier
+* - Connected in an inverting configuration
+* - Assuming ideal op-amp (power supply connections not shown)
+Xopamp 2 0 Vout 0 opamp
+* Output node
+? Missing component

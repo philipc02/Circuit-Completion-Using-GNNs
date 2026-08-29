@@ -1,0 +1,14 @@
+spice
+* NMOS Transistors
+M1 X 3 0 0 NMOS
+M2 4 2 0 0 NMOS
+M3 3 Vb X X NMOS
+* Current Source
+IREF 2 4 DC <current_value>
+* Resistor
+R1 Y VDD <resistor_value>
+* Capacitor
+? Missing component
+* Voltage Source
+VDD 3 0 DC <voltage_value>
+* Nodes 0: Ground, 2, 3, 4, Vb, Y, X

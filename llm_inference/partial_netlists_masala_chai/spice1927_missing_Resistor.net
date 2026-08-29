@@ -1,0 +1,6 @@
+plaintext
+* NPN Transistor Circuit
+VCC 3 0 DC 5V
+? Missing component
+Q1 3 2 0 NPN
+.model NPN NPN

@@ -1,0 +1,6 @@
+spice
+* Netlist for the given schematic
+? Missing component
+C1 3 4 1uF
+L1 2 0 1uH
+Vout 2 4 DC 0V

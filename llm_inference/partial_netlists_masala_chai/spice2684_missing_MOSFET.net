@@ -1,0 +1,8 @@
+spice
+M1 4 5 8 8 NMOS
+M2 7 6 8 8 NMOS
+? Missing component
+M4 2 2 7 7 PMOS
+Rss 8 0 Rss_value
+Vdd 4 0 Vdd_value
+Vin 5 0 Vin_value

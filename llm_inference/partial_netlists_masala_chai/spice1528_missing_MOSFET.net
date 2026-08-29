@@ -1,0 +1,4 @@
+spice
+M1 0 VTH 5 5 NMOS
+? Missing component
+I1 0 5 DC I_55

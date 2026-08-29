@@ -1,0 +1,4 @@
+* Netlist for the given schematic
+? Missing component
+RD VDD Vout RD
+M1 Vout Vin 0 0 NMOS

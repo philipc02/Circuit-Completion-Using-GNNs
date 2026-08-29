@@ -1,0 +1,21 @@
+spice
+* Differential Amplifier Circuit
+VCC 2 0 DC [VCC_value]
+* Transistors
+Q1 6 5 0 QMODEL
+Q2 3 4 0 QMODEL
+Q3 7 5 2 QMODEL
+? Missing component
+* Resistors
+RC1 7 2 [RC_value]
+RC2 3 2 [RC_value]
+RE 6 6 0 [RE_value]
+* Current Sources
+IEE1 6 0 DC [IEE_value]
+IEE2 6 0 DC [IEE_value]
+* Input Sources
+Vin1 5 0 DC [Vin1_value]
+Vin2 4 0 DC [Vin2_value]
+.model QMODEL NPN(IS=1E-14 BF=100)
+* Control Statements
+.end

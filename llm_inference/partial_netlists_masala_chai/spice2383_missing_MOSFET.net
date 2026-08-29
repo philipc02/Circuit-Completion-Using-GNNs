@@ -1,0 +1,25 @@
+* Transistors
+M_MB35 2 2 2 2 PCH
+M_MB45 5 2 2 2 PCH
+M_MB45' 5 2 2 2 PCH
+M_MB41 2 2 2 2 PCH
+M_MB42 2 2 2 2 PCH
+M_MB43 4 14 2 2 PCH
+M_MB44 2 2 2 2 PCH
+M_MB31 2 2 2 2 NCH
+M_MB32 2 2 2 2 NCH
+M_MB33 2 2 2 2 NCH
+M_MB34 2 2 2 2 NCH
+M_MR1 2 2 2 2 NCH
+M_MR2 2 2 2 2 NCH
+? Missing component
+M_MR4 2 2 2 2 NCH
+M_MC1 2 2 2 2 NCH
+M_MC2 2 2 2 2 NCH
+M_MC3 2 2 2 2 NCH
+M_MC4 2 2 2 2 NCH
+M_MC5 2 2 2 2 NCH
+M_MC6 2 2 2 2 NCH
+* Voltage Supplies (Labels in the image just for understanding)
+V_VDD 2 0 DC 5V
+V_VSS 0 0 DC 0V

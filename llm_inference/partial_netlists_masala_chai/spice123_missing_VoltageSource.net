@@ -1,0 +1,20 @@
+plaintext
+* SPICE Netlist for the Circuit
+* Voltage Sources
+VDD 5 0 DC 1
+? Missing component
+VIN2 4 0 DC 1
+* Current Sources
+IIN1 5 2 DC 1
+IIN2 2 0 DC 1
+* NMOS Transistors: M3, M5, M1 (Assuming default model NMOS)
+M1 6 2 0 0 NMOS W=W L=L
+M3 2 4 0 0 NMOS W=W L=L
+M5 7 7 0 0 NMOS W=1/3W L=L
+* PMOS Transistors: M2, M4, M6 (Assuming default model PMOS)
+M2 2 6 2 2 PMOS W=W L=L
+M4 5 4 2 2 PMOS W=W L=L
+M6 7 5 2 2 PMOS W=W L=L
+* Output
+VOUT 2 0
+* End of Netlist

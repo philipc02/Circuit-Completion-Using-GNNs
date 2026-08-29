@@ -1,0 +1,4 @@
+? Missing component
+I1 2 5 DC <CURRENT_VALUE>
+VDD 4 0 DC <VDD_VALUE>
+Vin 3 0 DC <VIN_VALUE>

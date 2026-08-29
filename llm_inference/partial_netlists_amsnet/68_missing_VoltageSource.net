@@ -1,0 +1,7 @@
+*SPICE Netlist for circuit 68
+I1 1 2 DC 1mA
+? Missing component
+R1 0 1 1k
+R2 0 1 1k
+.OP
+.END

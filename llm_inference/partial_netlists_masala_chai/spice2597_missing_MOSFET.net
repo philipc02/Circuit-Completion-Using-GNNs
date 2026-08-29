@@ -1,0 +1,7 @@
+plaintext
+* MOS Differential Pair Circuit
+? Missing component
+RD1 4 3 1k
+RD2 6 3 1k
+RSS 3 0 1k
+VDD 6 0 DC 5V

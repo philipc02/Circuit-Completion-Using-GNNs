@@ -1,0 +1,15 @@
+plaintext
+* NMOS Transistor
+? Missing component
+* Resistors
+RD 6 2 RD_value
+rO 2 2 ro_value
+RS 3 4 RS_value
+* Voltage Sources
+VDD 6 0 DC VDD_value
+Vb 5 0 DC Vb_value
+Vin 4 0 DC Vin_value
+* Ground
+V0 0 4 0V
+* Model for NMOS
+.model NMOS NMOS (Level=1)

@@ -1,0 +1,9 @@
+plaintext
+* SPICE Netlist
+M1 2 1 0 0 NMOS
+M2 4 3 5 5 PMOS
+RS 1 2 1000
+VDD 5 0 DC 5V
+? Missing component
+Vb1 0 1 DC 1.5V
+Vb2 0 3 DC 3V

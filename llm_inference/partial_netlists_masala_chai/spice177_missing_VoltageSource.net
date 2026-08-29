@@ -1,0 +1,20 @@
+spice
+* Differential Amplifier Circuit
+* Voltage Sources
+V1 4 0 DC 1.3V
+V_SUP 3 0 DC +VSUP
+V_INP 5 0 DC Vi={Vi} AC 1
+V_INN 7 0 DC Vi={Vi} AC 1
+? Missing component
+* Current Source
+I_TAIL 2 5 DC [ITAIL]
+* Transistors
+Q1 5 7 2 NMOS
+Q2 5 6 0 NMOS
+Q3 3 5 7 PMOS
+Q4 3 5 6 PMOS
+Q5 3 3 5 PMOS
+Q6 3 3 5 PMOS
+Q7 3 3 5 PMOS
+Q8 3 3 6 PMOS
+* End of Netlist

@@ -1,0 +1,9 @@
+plaintext
+* SPICE Netlist
+VDD 1 0 DC 5V
+RD 2 1 1k
+CGD 2 5 1p
+? Missing component
+CDB 2 0 1p
+M1 2 5 0 0 NMOS L=1u W=1u
+.end

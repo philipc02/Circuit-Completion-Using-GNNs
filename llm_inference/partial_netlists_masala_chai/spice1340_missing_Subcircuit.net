@@ -1,0 +1,16 @@
+spice
+Vin 1 0 DC 0
+R1 1 3 Rvalue
+M1 5 3 4 4 NMOS
+? Missing component
+* Node Definitions
+* 1 - Positive terminal of Vin
+* 0 - Ground
+* 3 - Node X (between R1 and op-amp input)
+* 4 - Ground (common for OpAmp and source of M1)
+* 5 - Vout (output node of op-amp)
+.model NMOS NMOS (LEVEL=1)
+.subckt OpAmpModel in- in+ out
+* Op-amp model details go here
+.ends OpAmpModel
+.end

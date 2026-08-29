@@ -1,0 +1,25 @@
+spice
+* List of Components
+* Transistors
+M1 Y X 0 0 NMOS
+M3 Vout Vb VDD VDD PMOS
+* Resistor
+R1 VDD 5 RD
+* Voltage Sources
+VDD VDD 0 DC VDD
+Vin X 0 AC Vin
+* Capacitors
+C1 X 0 CGD1*(1+gm1/gm3)
+C2 X Y CGS3 + CGD1*(1+gm3/gm1) + CDBS
+? Missing component
+* Connections
+* Netlist
+M1 2 1 0 0 NMOS
+M3 2 5 3 3 PMOS
+R1 3 5 RD
+VDD 3 0 DC VDD
+Vin 1 0 AC Vin
+C1 1 0 CGD1*(1+gm1/gm3)
+C2 1 2 CGS3+CGD1*(1+gm3/gm1)+CDBS
+C3 2 0 CQD3+CDB3
+.end

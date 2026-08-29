@@ -1,0 +1,16 @@
+spice
+* NMOS Transistor M1
+M1 2 6 4 4 NMOS
+* Voltage Sources
+Vn_in 6 8 DC <value> 
+VDD 5 0 DC <value> 
+* Capacitor
+? Missing component
+* Resistor
+RD 5 2 <value> 
+* Connections
+* Node 3 is connected to VDD
+* Node 2 is connected to Vn1,out
+* Node 4 is ground
+* Node 8 is ground for Vn_in
+.end

@@ -1,0 +1,8 @@
+spice
+* SPICE Netlist
+? Missing component
+I1 3 2 DC [Value_Of_I1]   ; Define the DC value for current source I1
+M1 2 1 0 0 NMOS_MODEL      ; NMOS transistor, Q1
+* Node 2 is both the drain of NMOS and the output node (Vout)
+* Node 1 is Vin, connected to the gate of NMOS
+* Node 0 is ground, connected to the source and body of NMOS

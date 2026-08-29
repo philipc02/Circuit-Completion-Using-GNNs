@@ -1,0 +1,12 @@
+spice
+* SPICE netlist for the given schematic.
+VDD 5 0 DC 1.8
+Vi 8 0 DC 0
+* NMOS transistor M1
+M1 6 8 2 2 NMOS
+* PMOS transistor M2
+? Missing component
+* Model definitions
+.model NMOS NMOS
+.model PMOS PMOS
+.end

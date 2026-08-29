@@ -1,0 +1,5 @@
+M1 2 3 5 5 NMOS
+? Missing component
+RL 2 4 RL_VALUE
+VBIAS 3 6 DC
+VIN 5 5 AC

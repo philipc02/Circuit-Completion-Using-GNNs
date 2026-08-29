@@ -1,0 +1,5 @@
+M1 6 7 2 2 NMOS
+? Missing component
+C1 4 3 1u
+VDD 6 0 DC 5
+VX 7 0 DC 1

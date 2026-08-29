@@ -1,0 +1,14 @@
+spice
+* Components
+V1 1 0 DC VB
+* NMOS Transistors
+M1 4 1 2 2 NMOS
+M2 3 4 2 2 NMOS
+* Current Sources
+? Missing component
+IY 3 0 DC IY
+* Node Definitions
+* 1 - Positive terminal of VB
+* 2 - Ground/Source of NMOS M1 and M2
+* 3 - Drain of NMOS M2
+* 4 - Drain of NMOS M1 and gate of NMOS M2

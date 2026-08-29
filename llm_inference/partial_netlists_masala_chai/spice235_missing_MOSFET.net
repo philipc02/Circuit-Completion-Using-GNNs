@@ -1,0 +1,7 @@
+plaintext
+*SPICE Netlist
+VDD 1 0 DC VDD
+I1 1 3 DC ITAIL
+? Missing component
+VS 3 2 DC VS
+.END

@@ -1,0 +1,8 @@
+* NMOS transistor M1
+M1 out Vin 4 4 NMOS
+* PMOS transistor M2
+M2 3 out 2 3 PMOS
+* Voltage Source VDD
+VDD 3 0 DC 1.8V
+* Voltage Source Vin
+? Missing component

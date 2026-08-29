@@ -1,0 +1,22 @@
+spice
+* SPICE netlist for the given schematic
+M1 2 1 4 4 NMOS
+M2 2 2 3 3 NMOS
+M3 3 7 3 3 NMOS
+? Missing component
+M5 6 3 7 7 PMOS
+M6 10 4 7 7 PMOS
+M7 3 5 6 6 PMOS
+M8 33 6 6 6 PMOS
+M9 5 6 5 5 PMOS
+M10 20 5 5 5 PMOS
+VIN+ 1 0 DC 0
+VIN- 2 0 DC 0
+VDD 5 0 DC 0
+VSS 3 0 DC 0
+VBIAS1 4 0 DC 0
+VBIAS2 6 0 DC 0
+VBIAS3 5 0 DC 0
+VBIAS4 5 0 DC 0
+VCMFB 7 0 DC 0
+* End of netlist

@@ -1,0 +1,11 @@
+* SPICE Netlist
+VDD VDD 0 DC 1.8
+M1 Vout Vb 0 0 NMOS
+M2 Vout Vin VDD VDD PMOS
+? Missing component
+Vb  Vb 0 DC
+* NMOS model
+.model NMOS NMOS 
+* PMOS model
+.model PMOS PMOS 
+.end

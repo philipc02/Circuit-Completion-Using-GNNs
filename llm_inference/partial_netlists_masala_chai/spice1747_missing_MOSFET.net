@@ -1,0 +1,5 @@
+plaintext
+* SPICE netlist for the circuit
+M1 Vout Zin 0 NMOS
+? Missing component
+V1 VDD 0 DC <voltage_value>

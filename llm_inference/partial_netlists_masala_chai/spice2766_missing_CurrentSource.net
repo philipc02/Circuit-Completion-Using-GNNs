@@ -1,0 +1,9 @@
+spice
+* SPICE netlist for the circuit
+M1 5 2 6 6 NMOS
+RS 8 2 1k
+CGS 2 6 1p
+? Missing component
+VDD 3 0 DC {VDD}
+* Connect node labels to reference nodes
+V1 8 0 DC 0V

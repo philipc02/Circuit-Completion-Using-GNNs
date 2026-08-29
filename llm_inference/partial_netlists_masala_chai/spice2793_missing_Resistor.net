@@ -1,0 +1,17 @@
+plaintext
+* List of components
+V1 Vin 3 DC 0
+VDD VDD 4 DC <value>
+? Missing component
+RD VDD B 2 <value>
+CF A B <value>
+M1 B A 4 4 NMOS
+* NMOS transistor
+* M1: Drain B, Gate A, Source 4 (connected to ground)
+* Connections
+* For V1: Positive terminal is connected to Vin, negative terminal to ground (3).
+* For RS: One terminal is connected to Vin, another to node A.
+* For RD: One terminal is connected to VDD, another to node B.
+* For CF: One terminal is connected to node A, another to node B.
+* For M1: Drain is connected to node B, gate to node A, source to ground (4).
+* Please replace <value> with actual values from the schematic.

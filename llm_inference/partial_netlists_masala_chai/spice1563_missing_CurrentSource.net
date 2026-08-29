@@ -1,0 +1,8 @@
+spice
+* NMOS Transistors
+M1 A V_in1 P P NMOS
+M2 B V_in2 P P NMOS
+* Current Source
+? Missing component
+* Voltage Nodes (for reference)
+VThev A B DC 0

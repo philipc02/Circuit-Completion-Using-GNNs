@@ -1,0 +1,5 @@
+plaintext
+V_P 3 6 DC <value_of_VP>
+r02 2 5 <value_of_r02>
+? Missing component
+M2 2 3 5 5 NMOS

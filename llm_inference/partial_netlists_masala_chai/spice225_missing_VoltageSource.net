@@ -1,0 +1,14 @@
+spice
+* Voltage source: V_ic connected to net 3 and ground
+? Missing component
+* Two voltage sources: V_id/2 connected to nets 2 and 3
+V_id_half1 2 3 DC <value>
+V_id_half2 2 3 DC <value>
+* Voltage source: V_DD connected to net 5, with V_dd connected to net 5 and ground
+V_DD 5 0 DC <value>
+* Voltage source: V_SS connected to net 4, with -V_ss connected to net 4 and ground
+V_SS 4 0 DC <value>
+* Op-amp connections assumed for description:
+* Inverting input connected to net 2
+* Non-inverting input connected to net 2
+* Output connected to node 2

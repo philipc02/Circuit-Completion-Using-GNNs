@@ -1,0 +1,26 @@
+spice
+* Transistors
+Q1 2 4 3 NPN
+Q2 3 6 5 NPN
+Q3 2 6 4 NPN
+Q4 4 4 5 NPN
+Q0 5 8 7 NPN
+* Current Source
+I1 2 1 DC 1mA
+* Resistors
+R1 7 8 1k
+R2 7 0 10k
+RL 3 0 8
+* Voltage Sources
+? Missing component
+VEE 0 5 DC 2.5V
+* Nodes
+* 1 - VCC
+* 2 - I1/Q1 Collector
+* 3 - Q1 Emitter and Q2 Collector
+* 4 - Q3 Emitter and Q4 Collector
+* 5 - VEE
+* 6 - Q2 Base and Q3 Base
+* 7 - Q0 Emitter
+* 8 - Vin
+* Others - Ground

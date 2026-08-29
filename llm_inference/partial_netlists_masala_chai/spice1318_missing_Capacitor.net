@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+I1 3 2 DC <value>       * Current Source I_B2 connected between nodes 3 and 2
+R1 3 2 <R1_value>       * Resistor R1 connected between nodes 3 and 2
+? Missing component
+U1 2 2 4 OPAMP          * Operational Amplifier
+.END

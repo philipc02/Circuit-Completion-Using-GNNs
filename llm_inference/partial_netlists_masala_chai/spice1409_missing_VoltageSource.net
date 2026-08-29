@@ -1,0 +1,10 @@
+plaintext
+* SPICE Netlist
+M1 4 1 3 3 NMOS       * Q1 with Drain=4, Gate=1, Source=3
+M2 3 5 0 0 NMOS       * Q2 with Drain=3, Gate=5, Source=0 (Ground)
+I1 2 3 DC 1A          * Current source from Node 2 to Node 3
+? Missing component
+Rout 4 2 ROUT         * Rout connected from Node 4 to Node 2
+Vb1 1 0 DC VB1        * Voltage source for Q1 gate
+Vb2 5 0 DC VB2        * Voltage source for Q2 gate
+.model NMOS NMOS

@@ -1,0 +1,9 @@
+* Resistor Network
+? Missing component
+R2 4 0 200
+* Sources
+Vin Vin 0
+Vout 4 0
+.control
+run
+.endc

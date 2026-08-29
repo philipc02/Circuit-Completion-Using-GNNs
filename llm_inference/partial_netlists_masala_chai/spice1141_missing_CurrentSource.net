@@ -1,0 +1,9 @@
+* NMOS Transistor
+M1 Drain Gate 2 2 NMOS_MODEL
+* Current Source
+? Missing component
+* Voltage Source
+Vx Vx 2 DC 1V  * assuming 1V, change as needed
+* Node Labels
+.node labels
+* Drain, Vx, Gate = Ground

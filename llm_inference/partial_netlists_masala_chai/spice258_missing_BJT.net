@@ -1,0 +1,34 @@
+plaintext
+* SPICE netlist for the provided schematic
+* Voltage Sources
+Vcc 3 0 DC 1.8V
+Vbias1 1 0 DC 0.7V
+Vbias2 6 0 DC 0.7V
+* BJTs
+Q61 8 1 3 QNPN 
+Q62 12 1 10 QNPN 
+Q63 10 33 0 QNPN 
+Q64 2 10 8 QNPN 
+Q65 25 12 2 QNPN 
+? Missing component
+Q71 2 25 18 QPNP 
+Q72 4 25 18 QPNP 
+Q73 33 4 5 QNPN 
+Q74 5 25 6 QNPN 
+Q75 5 2 0 QNPN 
+* Resistors
+R61 1 3 33k
+R62 8 3 1.4k
+R63 33 12 1.2k
+R64 26 25 7.5k
+R65 3 9 33k
+R66 10 9 3.3k
+R70 2 18 1.6k
+R71 5 33 50
+* Capacitors
+C65 10 2 10p
+C66 25 2 3.2p
+* Model Statements
+.model QNPN NPN (Is=1e-14 BF=100)
+.model QPNP PNP (Is=1e-14 BF=50)
+.end

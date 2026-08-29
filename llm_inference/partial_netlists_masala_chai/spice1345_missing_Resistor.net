@@ -1,0 +1,9 @@
+plaintext
+* Netlist for the given circuit
+V1 1 0 DC Vin
+VCC 3 0 DC 2.5
+R1 3 4 500
+? Missing component
+Q1 4 5 2 NPN
+* Op-amp connections
+XOPAMP 1 3 5 OPAMP

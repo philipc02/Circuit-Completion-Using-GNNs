@@ -1,0 +1,12 @@
+* NMOS Transistor Q1: Drain -2, Gate - Vin1, Source - 0
+M1 2 Vin1 0 0 NMOS
+* NMOS Transistor Q3: Drain - Vout, Gate - 2, Source - 0
+M2 Vout 2 0 0 NMOS
+* Resistor R1: Connected between node 2 and ground
+R1 2 0 1k
+* Voltage Source for Vin1
+? Missing component
+* Voltage Source for Vout
+Vout Vout 0 DC 3.3V
+* Model Definitions
+.model NMOS NMOS Level=1

@@ -1,0 +1,19 @@
+* Transistors
+M1 2 3 4 4 NMOS
+M2 2 3 5 5 NMOS
+M1A 7 5 6 6 NMOS
+M2A 7 4 6 6 NMOS
+* Current Sources
+? Missing component
+IBIAS1 7 4 DC
+IBIAS2 7 4 DC
+* Capacitor
+CL 6 0
+* Voltage Sources
+VDD 10 0 DC
+VSS 0 8 DC
+* Input
+VI 3 0
+* Common Current Mirror
+* Assume necessary connections within the block.
+.END

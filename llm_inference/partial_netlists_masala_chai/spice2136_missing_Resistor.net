@@ -1,0 +1,14 @@
+* NMOS transistor where Drain is Y, Gate is X, Source is 0 (ground)
+M1 Y X 0 0 NMOS
+* Resistors
+? Missing component
+RD Y 3  /* Resistance between net Y and VDD */
+R2 2 0  /* Resistance between net 2 and ground */
+* Capacitor
+C1 D 2  /* Capacitance between input D and net 2 */
+* Voltage Source
+VDD 3 0 DC /* DC Voltage source VDD between net 3 and ground */
+* Input
+Vin D 0 SIN(0V 1V 1kHz) /* Example input source - Modify as needed */
+* .model statement for NMOS
+.model NMOS NMOS LEVEL=1

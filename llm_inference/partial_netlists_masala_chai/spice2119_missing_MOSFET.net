@@ -1,0 +1,10 @@
+spice
+* MOSFET Amplifier Circuit
+? Missing component
+RD Vdd Vout 1k
+RS 2 0 500
+Vin Vin 0 DC 1.0V
+Vdd Vdd 0 DC 5.0V
+* NMOS model parameters (example)
+.model NMOS NMOS (Level=1 VTO=0.7 KP=120u)
+.END

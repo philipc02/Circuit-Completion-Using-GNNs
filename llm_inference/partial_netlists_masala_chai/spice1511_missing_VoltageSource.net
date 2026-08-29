@@ -1,0 +1,13 @@
+spice
+* Differential Amplifier Circuit
+Q1 4 8 P NPN
+Q2 2 7 P NPN
+Q3 VCC 4 4 PNP
+Q4 VCC 2 2 PNP
+R1 4 x R_value
+R2 2 x R_value
+I1 P 0 DC IEE_value
+Vin1 8 0 DC Vin1_value
+? Missing component
+VCC VCC 0 DC VCC_value
+*End of Netlist

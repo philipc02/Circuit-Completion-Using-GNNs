@@ -1,0 +1,5 @@
+*SPICE Netlist for circuit 776
+C1 0 1 1nF
+? Missing component
+.OP
+.END

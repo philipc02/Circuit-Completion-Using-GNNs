@@ -1,0 +1,14 @@
+spice
+* Example SPICE Netlist
+? Missing component
+VEE 0 5 DC -1
+Q1 7 3 8 QMOD
+Q2 2 4 7 QMOD
+Q3 7 3 3 QMOD
+Q4 8 3 3 QMOD
+Q5 2 6 7 QMOD
+Q6 7 5 5 QMOD
+Q7 2 2 5 QMOD
+Q8 2 6 7 QMOD
+Q9 2 2 2 QMOD
+.model QMOD NPN

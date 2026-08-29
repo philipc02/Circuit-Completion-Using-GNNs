@@ -1,0 +1,734 @@
+file,ground_truth,removed_line
+0_missing_MOSFET.net,MOSFET,M1 1 2 0 0 NMOS W=1u L=1u
+1_missing_VoltageSource.net,VoltageSource,V1 0 2 5V
+10_missing_MOSFET.net,MOSFET,M1 2 3 0 0 NMOS W=1u L=1u
+100_missing_MOSFET.net,MOSFET,M1 VDD 4 2 2 NMOS W=1u L=1u
+101_missing_MOSFET.net,MOSFET,M1 VDD 0 1 1 NMOS W=1u L=1u
+102_missing_MOSFET.net,MOSFET,M1 VDD 0 3 3 NMOS W=1u L=1u
+103_missing_VoltageSource.net,VoltageSource,V1 3 0 5V
+104_missing_MOSFET.net,MOSFET,M2 1 2 0 0 NMOS W=1u L=1u
+105_missing_MOSFET.net,MOSFET,M1 VDD 4 1 1 NMOS W=1u L=1u
+106_missing_MOSFET.net,MOSFET,M2 0 4 2 2 PMOS W=1u L=1u
+107_missing_MOSFET.net,MOSFET,M3 3 1 0 0 NMOS W=1u L=1u
+108_missing_CurrentSource.net,CurrentSource,I1 1 0 DC 1mA
+109_missing_Resistor.net,Resistor,R1 1 VDD 1k
+11_missing_VoltageSource.net,VoltageSource,V1 3 0 5V
+110_missing_MOSFET.net,MOSFET,M2 1 1 VDD VDD PMOS W=1u L=1u
+111_missing_Capacitor.net,Capacitor,C1 0 4 1nF
+112_missing_MOSFET.net,MOSFET,M1 2 1 4 4 NMOS W=1u L=1u
+113_missing_Capacitor.net,Capacitor,C1 5 2 1nF
+114_missing_Resistor.net,Resistor,R2 4 2 1k
+115_missing_VoltageSource.net,VoltageSource,V1 4 0 5V
+116_missing_Resistor.net,Resistor,R1 0 1 1k
+117_missing_VoltageSource.net,VoltageSource,V1 2 0 5V
+118_missing_MOSFET.net,MOSFET,M1 2 1 5 5 NMOS W=1u L=1u
+12_missing_CurrentSource.net,CurrentSource,I1 1 0 DC 1mA
+120_missing_CurrentSource.net,CurrentSource,I1 VDD 2 DC 1mA
+121_missing_Resistor.net,Resistor,R2 4 3 1k
+122_missing_MOSFET.net,MOSFET,M1 1 2 4 4 NMOS W=1u L=1u
+123_missing_Resistor.net,Resistor,R2 2 1 1k
+124_missing_MOSFET.net,MOSFET,M1 2 1 4 4 NMOS W=1u L=1u
+125_missing_Resistor.net,Resistor,R2 3 VDD 1k
+126_missing_MOSFET.net,MOSFET,M1 2 1 5 5 NMOS W=1u L=1u
+127_missing_MOSFET.net,MOSFET,M2 5 4 0 0 NMOS W=1u L=1u
+128_missing_Resistor.net,Resistor,R1 2 VDD 1k
+129_missing_Resistor.net,Resistor,R1 1 VDD 1k
+13_missing_MOSFET.net,MOSFET,M1 3 6 1 1 NMOS W=1u L=1u
+130_missing_MOSFET.net,MOSFET,M1 2 1 5 5 NMOS W=1u L=1u
+131_missing_MOSFET.net,MOSFET,M2 3 5 0 0 NMOS W=1u L=1u
+132_missing_MOSFET.net,MOSFET,M1 1 0 2 2 NMOS W=1u L=1u
+133_missing_MOSFET.net,MOSFET,M1 1 0 2 2 NMOS W=1u L=1u
+134_missing_MOSFET.net,MOSFET,M2 5 4 0 0 NMOS W=1u L=1u
+135_missing_CurrentSource.net,CurrentSource,I1 VDD 2 DC 1mA
+136_missing_Resistor.net,Resistor,R2 4 2 1k
+138_missing_MOSFET.net,MOSFET,M2 5 1 2 2 NMOS W=1u L=1u
+139_missing_MOSFET.net,MOSFET,M2 4 2 0 0 NMOS W=1u L=1u
+14_missing_Capacitor.net,Capacitor,C4 2 3 1nF
+140_missing_MOSFET.net,MOSFET,M2 5 4 VDD VDD PMOS W=1u L=1u
+141_missing_Resistor.net,Resistor,R1 1 VDD 1k
+142_missing_CurrentSource.net,CurrentSource,I1 VDD 1 DC 1mA
+143_missing_MOSFET.net,MOSFET,M1 5 2 3 3 NMOS W=1u L=1u
+144_missing_MOSFET.net,MOSFET,M1 2 1 3 3 NMOS W=1u L=1u
+145_missing_MOSFET.net,MOSFET,M3 3 2 8 8 PMOS W=1u L=1u
+146_missing_Resistor.net,Resistor,R1 2 VDD 1k
+147_missing_Resistor.net,Resistor,R1 1 VDD 1k
+148_missing_Resistor.net,Resistor,R1 1 VDD 1k
+149_missing_Resistor.net,Resistor,R1 4 VDD 1k
+15_missing_MOSFET.net,MOSFET,M1 3 5 1 1 NMOS W=1u L=1u
+150_missing_Resistor.net,Resistor,R2 2 1 1k
+151_missing_MOSFET.net,MOSFET,M1 2 4 0 0 NMOS W=1u L=1u
+152_missing_MOSFET.net,MOSFET,M1 2 1 0 0 NMOS W=1u L=1u
+153_missing_MOSFET.net,MOSFET,M1 1 4 0 0 NMOS W=1u L=1u
+154_missing_MOSFET.net,MOSFET,M1 3 2 6 6 NMOS W=1u L=1u
+156_missing_MOSFET.net,MOSFET,M3 3 1 VDD VDD PMOS W=1u L=1u
+157_missing_MOSFET.net,MOSFET,M1 3 1 6 6 NMOS W=1u L=1u
+158_missing_MOSFET.net,MOSFET,M2 3 2 0 0 NMOS W=1u L=1u
+159_missing_MOSFET.net,MOSFET,M1 2 1 0 0 NMOS W=1u L=1u
+16_missing_VoltageSource.net,VoltageSource,V1 2 0 5V
+160_missing_MOSFET.net,MOSFET,M1 1 2 VDD VDD PMOS W=1u L=1u
+161_missing_MOSFET.net,MOSFET,M1 3 1 2 2 NMOS W=1u L=1u
+162_missing_VoltageSource.net,VoltageSource,V1 3 0 5V
+163_missing_VoltageSource.net,VoltageSource,V1 4 0 5V
+164_missing_MOSFET.net,MOSFET,M1 6 1 3 3 NMOS W=1u L=1u
+165_missing_VoltageSource.net,VoltageSource,V1 1 0 5V
+166_missing_VoltageSource.net,VoltageSource,V1 3 0 5V
+167_missing_MOSFET.net,MOSFET,M2 2 2 VDD VDD PMOS W=1u L=1u
+168_missing_Resistor.net,Resistor,R1 1 VDD 1k
+169_missing_MOSFET.net,MOSFET,M1 1 2 3 3 NMOS W=1u L=1u
+17_missing_MOSFET.net,MOSFET,M1 2 1 3 3 NMOS W=1u L=1u
+170_missing_MOSFET.net,MOSFET,M1 VDD 1 2 2 NMOS W=1u L=1u
+171_missing_Resistor.net,Resistor,R1 2 1 1k
+172_missing_Resistor.net,Resistor,R1 0 2 1k
+173_missing_MOSFET.net,MOSFET,M1 1 4 6 6 NMOS W=1u L=1u
+174_missing_MOSFET.net,MOSFET,M3 1 1 VDD VDD PMOS W=1u L=1u
+175_missing_MOSFET.net,MOSFET,M3 2 2 VDD VDD PMOS W=1u L=1u
+176_missing_MOSFET.net,MOSFET,M1 3 5 6 6 NMOS W=1u L=1u
+177_missing_MOSFET.net,MOSFET,M2 3 2 0 0 NMOS W=1u L=1u
+178_missing_MOSFET.net,MOSFET,M1 3 1 2 2 NMOS W=1u L=1u
+179_missing_MOSFET.net,MOSFET,M3 6 2 VDD VDD NMOS W=1u L=1u
+18_missing_MOSFET.net,MOSFET,M1 3 1 2 2 NMOS W=1u L=1u
+180_missing_MOSFET.net,MOSFET,M3 2 3 VDD VDD NMOS W=1u L=1u
+181_missing_Capacitor.net,Capacitor,C1 3 VDD 1nF
+182_missing_MOSFET.net,MOSFET,M2 3 2 0 0 NMOS W=1u L=1u
+183_missing_Capacitor.net,Capacitor,C1 3 4 1nF
+184_missing_Resistor.net,Resistor,R1 1 VDD 1k
+185_missing_MOSFET.net,MOSFET,M2 6 2 4 4 NMOS W=1u L=1u
+186_missing_MOSFET.net,MOSFET,M2 4 1 5 5 PMOS W=1u L=1u
+187_missing_Resistor.net,Resistor,R1 1 VDD 1k
+188_missing_Resistor.net,Resistor,R2 2 VDD 1k
+189_missing_CurrentSource.net,CurrentSource,I1 1 0 DC 1mA
+19_missing_MOSFET.net,MOSFET,M1 2 4 1 1 NMOS W=1u L=1u
+190_missing_MOSFET.net,MOSFET,M2 4 3 1 1 NMOS W=1u L=1u
+191_missing_Resistor.net,Resistor,R3 0 1 1k
+192_missing_Resistor.net,Resistor,R1 6 VDD 1k
+193_missing_MOSFET.net,MOSFET,M2 3 7 2 2 NMOS W=1u L=1u
+194_missing_MOSFET.net,MOSFET,M1 6 3 1 1 NMOS W=1u L=1u
+195_missing_CurrentSource.net,CurrentSource,I1 2 0 DC 1mA
+196_missing_CurrentSource.net,CurrentSource,I1 1 0 DC 1mA
+197_missing_Resistor.net,Resistor,R2 2 VDD 1k
+198_missing_Resistor.net,Resistor,R1 0 4 1k
+199_missing_Resistor.net,Resistor,R2 1 VDD 1k
+2_missing_MOSFET.net,MOSFET,M1 0 1 0 0 NMOS W=1u L=1u
+20_missing_Resistor.net,Resistor,R2 9 5 1k
+200_missing_MOSFET.net,MOSFET,M1 1 0 3 3 NMOS W=1u L=1u
+201_missing_Resistor.net,Resistor,R2 3 VDD 1k
+202_missing_VoltageSource.net,VoltageSource,V1 8 0 5V
+203_missing_MOSFET.net,MOSFET,M2 2 6 1 1 NMOS W=1u L=1u
+204_missing_MOSFET.net,MOSFET,M2 1 5 0 0 NMOS W=1u L=1u
+205_missing_VoltageSource.net,VoltageSource,V2 7 0 5V
+206_missing_VoltageSource.net,VoltageSource,V2 9 0 5V
+207_missing_Resistor.net,Resistor,R4 6 VDD 1k
+208_missing_VoltageSource.net,VoltageSource,V2 2 0 5V
+209_missing_CurrentSource.net,CurrentSource,I2 1 0 DC 1mA
+21_missing_Capacitor.net,Capacitor,C2 9 3 1nF
+210_missing_MOSFET.net,MOSFET,M2 3 1 2 2 NMOS W=1u L=1u
+211_missing_Resistor.net,Resistor,R1 1 VDD 1k
+212_missing_Resistor.net,Resistor,R2 1 VDD 1k
+213_missing_Resistor.net,Resistor,R1 2 VDD 1k
+214_missing_Resistor.net,Resistor,R1 4 VDD 1k
+215_missing_Resistor.net,Resistor,R3 0 2 1k
+216_missing_Resistor.net,Resistor,R1 2 VDD 1k
+217_missing_Resistor.net,Resistor,R2 1 VDD 1k
+218_missing_Resistor.net,Resistor,R1 3 VDD 1k
+219_missing_Resistor.net,Resistor,R2 2 VDD 1k
+22_missing_MOSFET.net,MOSFET,M1 VDD VDD 1 1 NMOS W=1u L=1u
+220_missing_CurrentSource.net,CurrentSource,I1 1 0 DC 1mA
+221_missing_MOSFET.net,MOSFET,M3 4 1 VDD 10 10 PMOS W=1u L=1u
+222_missing_Resistor.net,Resistor,R2 1 4 1k
+223_missing_MOSFET.net,MOSFET,M1 1 4 0 0 NMOS W=1u L=1u
+224_missing_CurrentSource.net,CurrentSource,I1 3 0 DC 1mA
+225_missing_Resistor.net,Resistor,R1 4 VDD 1k
+226_missing_MOSFET.net,MOSFET,M8 5 4 18 18 PMOS W=1u L=1u
+228_missing_MOSFET.net,MOSFET,M1 3 7 1 1 NMOS W=1u L=1u
+229_missing_Resistor.net,Resistor,R1 2 VDD 1k
+23_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+230_missing_MOSFET.net,MOSFET,M2 3 6 1 1 NMOS W=1u L=1u
+231_missing_Resistor.net,Resistor,R2 6 VDD 1k
+232_missing_CurrentSource.net,CurrentSource,I1 3 0 DC 1mA
+233_missing_MOSFET.net,MOSFET,M3 6 11 5 5 NMOS W=1u L=1u
+234_missing_MOSFET.net,MOSFET,M3 6 11 5 5 NMOS W=1u L=1u
+235_missing_MOSFET.net,MOSFET,M3 2 7 12 12 NMOS W=1u L=1u
+236_missing_MOSFET.net,MOSFET,M3 13 9 1 1 NMOS W=1u L=1u
+237_missing_MOSFET.net,MOSFET,M2 1 10 3 3 NMOS W=1u L=1u
+238_missing_MOSFET.net,MOSFET,M5 4 2 12 12 PMOS W=1u L=1u
+239_missing_MOSFET.net,MOSFET,M1 4 9 1 1 NMOS W=1u L=1u
+24_missing_VoltageSource.net,VoltageSource,V1 3 0 5V
+240_missing_MOSFET.net,MOSFET,M1 5 10 3 3 NMOS W=1u L=1u
+241_missing_MOSFET.net,MOSFET,M3 1 2 0 0 NMOS W=1u L=1u
+242_missing_MOSFET.net,MOSFET,M3 2 1 0 0 NMOS W=1u L=1u
+243_missing_Resistor.net,Resistor,R1 6 VDD 1k
+244_missing_MOSFET.net,MOSFET,M4 5 3 VDD VDD PMOS W=1u L=1u
+245_missing_MOSFET.net,MOSFET,M3 2 3 0 0 NMOS W=1u L=1u
+246_missing_Resistor.net,Resistor,R1 7 6 1k
+247_missing_Resistor.net,Resistor,R2 2 VDD 1k
+248_missing_MOSFET.net,MOSFET,M1 4 8 1 1 NMOS W=1u L=1u
+249_missing_MOSFET.net,MOSFET,M1 4 3 7 14 14 NMOS W=1u L=1u
+25_missing_MOSFET.net,MOSFET,M1 4 1 5 5 NMOS W=1u L=1u
+250_missing_MOSFET.net,MOSFET,M5 4 2 VDD VDD PMOS W=1u L=1u
+251_missing_CurrentSource.net,CurrentSource,I2 1 0 DC 1mA
+252_missing_MOSFET.net,MOSFET,M1 1 4 0 0 NMOS W=1u L=1u
+253_missing_MOSFET.net,MOSFET,M2 1 3 VDD VDD NMOS W=1u L=1u
+254_missing_MOSFET.net,MOSFET,M4 5 1 VDD VDD PMOS W=1u L=1u
+255_missing_MOSFET.net,MOSFET,M6 3 3 VDD VDD NMOS W=1u L=1u
+256_missing_MOSFET.net,MOSFET,M1 1 4 0 0 NMOS W=1u L=1u
+257_missing_MOSFET.net,MOSFET,M3 VDD 3 6 6 NMOS W=1u L=1u
+258_missing_MOSFET.net,MOSFET,M2 2 1 6 6 NMOS W=1u L=1u
+259_missing_MOSFET.net,MOSFET,M4 7 3 0 0 NMOS W=1u L=1u
+26_missing_VoltageSource.net,VoltageSource,V1 4 0 5V
+260_missing_VoltageSource.net,VoltageSource,V1 7 0 5V
+261_missing_Resistor.net,Resistor,R1 3 1 1k
+262_missing_Resistor.net,Resistor,R1 1 3 1k
+263_missing_MOSFET.net,MOSFET,M1 2 1 3 3 NMOS W=1u L=1u
+264_missing_MOSFET.net,MOSFET,M3 3 1 5 5 NMOS W=1u L=1u
+265_missing_MOSFET.net,MOSFET,M1 3 4 6 6 NMOS W=1u L=1u
+266_missing_CurrentSource.net,CurrentSource,I1 VDD 1 DC 1mA
+267_missing_VoltageSource.net,VoltageSource,V1 2 0 5V
+268_missing_MOSFET.net,MOSFET,M3 1 1 VDD VDD NMOS W=1u L=1u
+269_missing_MOSFET.net,MOSFET,M4 4 3 VDD VDD PMOS W=1u L=1u
+27_missing_VoltageSource.net,VoltageSource,V1 5 0 5V
+270_missing_CurrentSource.net,CurrentSource,I2 2 0 DC 1mA
+271_missing_Resistor.net,Resistor,R2 3 1 1k
+272_missing_CurrentSource.net,CurrentSource,I1 2 0 DC 1mA
+273_missing_Resistor.net,Resistor,R2 1 VDD 1k
+274_missing_MOSFET.net,MOSFET,M4 4 1 VDD VDD PMOS W=1u L=1u
+275_missing_MOSFET.net,MOSFET,M2 1 7 2 2 NMOS W=1u L=1u
+276_missing_MOSFET.net,MOSFET,M3 3 1 0 0 NMOS W=1u L=1u
+277_missing_MOSFET.net,MOSFET,M2 2 8 3 3 NMOS W=1u L=1u
+278_missing_MOSFET.net,MOSFET,M5 5 2 VDD VDD PMOS W=1u L=1u
+279_missing_MOSFET.net,MOSFET,M2 1 8 2 2 NMOS W=1u L=1u
+28_missing_VoltageSource.net,VoltageSource,V2 5 0 5V
+280_missing_MOSFET.net,MOSFET,M4 1 2 VDD VDD PMOS W=1u L=1u
+281_missing_CurrentSource.net,CurrentSource,I1 2 0 DC 1mA
+282_missing_MOSFET.net,MOSFET,M1 3 4 0 0 NMOS W=1u L=1u
+283_missing_MOSFET.net,MOSFET,M1 3 0 5 5 NMOS W=1u L=1u
+284_missing_Resistor.net,Resistor,R1 2 0 1k
+285_missing_MOSFET.net,MOSFET,M2 2 1 VDD VDD PMOS W=1u L=1u
+286_missing_MOSFET.net,MOSFET,M4 5 3 VDD VDD PMOS W=1u L=1u
+287_missing_Resistor.net,Resistor,R1 0 3 1k
+288_missing_MOSFET.net,MOSFET,M1 1 7 3 8 8 NMOS W=1u L=1u
+289_missing_Resistor.net,Resistor,R2 3 1 1k
+29_missing_VoltageSource.net,VoltageSource,V1 1 0 5V
+290_missing_Resistor.net,Resistor,R1 0 2 1k
+291_missing_MOSFET.net,MOSFET,M1 2 2 VDD VDD NMOS W=1u L=1u
+292_missing_MOSFET.net,MOSFET,M3 1 1 VDD VDD NMOS W=1u L=1u
+293_missing_MOSFET.net,MOSFET,M3 1 1 VDD VDD NMOS W=1u L=1u
+294_missing_MOSFET.net,MOSFET,M1 3 5 4 4 NMOS W=1u L=1u
+295_missing_MOSFET.net,MOSFET,M4 5 1 VDD VDD PMOS W=1u L=1u
+296_missing_VoltageSource.net,VoltageSource,V1 2 0 5V
+297_missing_VoltageSource.net,VoltageSource,V2 3 0 5V
+298_missing_Resistor.net,Resistor,R1 3 VDD 1k
+299_missing_Resistor.net,Resistor,R1 3 VDD 1k
+3_missing_VoltageSource.net,VoltageSource,V1 2 0 5V
+30_missing_MOSFET.net,MOSFET,M1 VDD 2 1 1 NMOS W=1u L=1u
+300_missing_Capacitor.net,Capacitor,C1 6 1 1nF
+301_missing_CurrentSource.net,CurrentSource,I1 VDD 3 DC 1mA
+302_missing_MOSFET.net,MOSFET,M4 5 1 0 0 NMOS W=1u L=1u
+303_missing_Resistor.net,Resistor,R1 1 VDD 1k
+304_missing_MOSFET.net,MOSFET,M2 2 1 VDD VDD PMOS W=1u L=1u
+305_missing_Capacitor.net,Capacitor,C1 8 1 1nF
+306_missing_Resistor.net,Resistor,R2 9 3 1k
+307_missing_Resistor.net,Resistor,R2 3 4 1k
+308_missing_MOSFET.net,MOSFET,M1 2 1 0 0 NMOS W=1u L=1u
+309_missing_MOSFET.net,MOSFET,M2 2 1 VDD VDD PMOS W=1u L=1u
+31_missing_VoltageSource.net,VoltageSource,V1 2 0 5V
+310_missing_MOSFET.net,MOSFET,M2 2 1 3 3 PMOS W=1u L=1u
+311_missing_CurrentSource.net,CurrentSource,I1 VDD 3 DC 1mA
+312_missing_VoltageSource.net,VoltageSource,V1 7 0 5V
+313_missing_VoltageSource.net,VoltageSource,V1 8 0 5V
+314_missing_Resistor.net,Resistor,R1 5 VDD 1k
+315_missing_MOSFET.net,MOSFET,M2 VDD 5 1 1 NMOS W=1u L=1u
+316_missing_MOSFET.net,MOSFET,M1 3 3 0 0 NMOS W=1u L=1u
+317_missing_MOSFET.net,MOSFET,M1 VDD 2 3 3 NMOS W=1u L=1u
+318_missing_MOSFET.net,MOSFET,M2 3 6 0 0 NMOS W=1u L=1u
+319_missing_MOSFET.net,MOSFET,M1 3 6 2 2 NMOS W=1u L=1u
+32_missing_MOSFET.net,MOSFET,M1 2 1 3 3 NMOS W=1u L=1u
+320_missing_MOSFET.net,MOSFET,M2 5 8 4 4 NMOS W=1u L=1u
+321_missing_MOSFET.net,MOSFET,M2 3 1 0 0 NMOS W=1u L=1u
+322_missing_MOSFET.net,MOSFET,M1 1 1 0 0 NMOS W=1u L=1u
+323_missing_MOSFET.net,MOSFET,M2 3 1 0 0 NMOS W=1u L=1u
+324_missing_MOSFET.net,MOSFET,M2 3 1 0 0 NMOS W=1u L=1u
+325_missing_Resistor.net,Resistor,R2 1 VDD 1k
+326_missing_MOSFET.net,MOSFET,M3 2 1 VDD VDD NMOS W=1u L=1u
+327_missing_MOSFET.net,MOSFET,M1 VDD 3 1 1 NMOS W=1u L=1u
+328_missing_VoltageSource.net,VoltageSource,V1 5 0 5V
+329_missing_Resistor.net,Resistor,R2 4 3 1k
+33_missing_VoltageSource.net,VoltageSource,V1 1 0 5V
+330_missing_Resistor.net,Resistor,R2 4 3 1k
+331_missing_VoltageSource.net,VoltageSource,V1 2 0 5V
+332_missing_MOSFET.net,MOSFET,M1 6 3 4 4 NMOS W=1u L=1u
+333_missing_MOSFET.net,MOSFET,M1 4 4 0 0 NMOS W=1u L=1u
+334_missing_Resistor.net,Resistor,R1 3 VDD 1k
+335_missing_MOSFET.net,MOSFET,M1 5 5 0 0 NMOS W=1u L=1u
+336_missing_MOSFET.net,MOSFET,M2 5 2 0 6 6 NMOS W=1u L=1u
+337_missing_Resistor.net,Resistor,R1 4 VDD 1k
+338_missing_Resistor.net,Resistor,R1 4 VDD 1k
+339_missing_MOSFET.net,MOSFET,M1 1 1 0 0 NMOS W=1u L=1u
+34_missing_VoltageSource.net,VoltageSource,V1 4 0 5V
+340_missing_MOSFET.net,MOSFET,M2 4 2 0 0 NMOS W=1u L=1u
+341_missing_Resistor.net,Resistor,R1 1 VDD 1k
+342_missing_MOSFET.net,MOSFET,M3 5 2 4 4 NMOS W=1u L=1u
+343_missing_Resistor.net,Resistor,R1 6 VDD 1k
+344_missing_Capacitor.net,Capacitor,C1 3 4 1nF
+345_missing_MOSFET.net,MOSFET,M2 4 1 VDD VDD NMOS W=1u L=1u
+346_missing_MOSFET.net,MOSFET,M1 1 5 0 6 6 NMOS W=1u L=1u
+347_missing_MOSFET.net,MOSFET,M1 1 2 0 0 NMOS W=1u L=1u
+348_missing_MOSFET.net,MOSFET,M1 6 8 2 2 NMOS W=1u L=1u
+349_missing_MOSFET.net,MOSFET,M3 1 1 VDD VDD NMOS W=1u L=1u
+35_missing_VoltageSource.net,VoltageSource,V1 4 0 5V
+350_missing_MOSFET.net,MOSFET,M3 3 4 0 0 NMOS W=1u L=1u
+351_missing_MOSFET.net,MOSFET,M2 7 1 5 5 NMOS W=1u L=1u
+352_missing_CurrentSource.net,CurrentSource,I1 2 0 DC 1mA
+353_missing_MOSFET.net,MOSFET,M3 3 3 VDD VDD NMOS W=1u L=1u
+354_missing_CurrentSource.net,CurrentSource,I1 2 0 DC 1mA
+355_missing_MOSFET.net,MOSFET,M1 1 6 2 2 NMOS W=1u L=1u
+356_missing_Resistor.net,Resistor,R1 5 2 1k
+357_missing_Resistor.net,Resistor,R1 3 2 1k
+358_missing_MOSFET.net,MOSFET,M1 2 1 3 3 NMOS W=1u L=1u
+359_missing_Resistor.net,Resistor,R2 2 4 1k
+36_missing_VoltageSource.net,VoltageSource,V1 4 0 5V
+360_missing_Resistor.net,Resistor,R2 5 3 1k
+361_missing_Resistor.net,Resistor,R2 5 2 1k
+362_missing_MOSFET.net,MOSFET,M1 2 1 0 0 NMOS W=1u L=1u
+363_missing_Capacitor.net,Capacitor,C2 0 3 1nF
+364_missing_MOSFET.net,MOSFET,M1 3 2 0 0 NMOS W=1u L=1u
+365_missing_Resistor.net,Resistor,R1 1 VDD 1k
+366_missing_MOSFET.net,MOSFET,M1 2 1 0 0 NMOS W=1u L=1u
+367_missing_Resistor.net,Resistor,R1 2 VDD 1k
+368_missing_CurrentSource.net,CurrentSource,I1 1 0 DC 1mA
+369_missing_MOSFET.net,MOSFET,M1 VDD 1 2 2 NMOS W=1u L=1u
+37_missing_MOSFET.net,MOSFET,M1 2 1 4 4 PMOS W=1u L=1u
+370_missing_Capacitor.net,Capacitor,C1 1 2 1nF
+371_missing_VoltageSource.net,VoltageSource,V1 1 0 5V
+372_missing_Capacitor.net,Capacitor,C1 2 1 1nF
+373_missing_Capacitor.net,Capacitor,C2 3 4 1nF
+374_missing_VoltageSource.net,VoltageSource,V1 5 0 5V
+375_missing_Resistor.net,Resistor,R2 1 2 1k
+376_missing_MOSFET.net,MOSFET,M1 VDD 1 2 2 NMOS W=1u L=1u
+377_missing_Capacitor.net,Capacitor,C2 0 1 1nF
+38_missing_MOSFET.net,MOSFET,M1 VDD VDD 2 2 NMOS W=1u L=1u
+383_missing_Capacitor.net,Capacitor,C1 0 2 1nF
+384_missing_Resistor.net,Resistor,R2 3 VDD 1k
+385_missing_MOSFET.net,MOSFET,M1 3 2 0 0 NMOS W=1u L=1u
+386_missing_Resistor.net,Resistor,R2 1 VDD 1k
+387_missing_Capacitor.net,Capacitor,C2 2 0 1nF
+388_missing_MOSFET.net,MOSFET,M1 1 4 0 0 NMOS W=1u L=1u
+389_missing_MOSFET.net,MOSFET,M4 2 1 VDD VDD PMOS W=1u L=1u
+39_missing_VoltageSource.net,VoltageSource,V1 5 0 5V
+393_missing_MOSFET.net,MOSFET,M1 3 3 VDD 6 6 NMOS W=1u L=1u
+394_missing_Resistor.net,Resistor,R3 6 7 1k
+395_missing_Resistor.net,Resistor,R1 3 VDD 1k
+396_missing_MOSFET.net,MOSFET,M1 3 5 0 0 NMOS W=1u L=1u
+397_missing_MOSFET.net,MOSFET,M1 2 7 0 0 NMOS W=1u L=1u
+398_missing_VoltageSource.net,VoltageSource,V1 4 0 5V
+4_missing_VoltageSource.net,VoltageSource,V1 3 0 5V
+40_missing_Resistor.net,Resistor,R1 0 2 1k
+401_missing_MOSFET.net,MOSFET,M1 1 2 0 0 NMOS W=1u L=1u
+402_missing_Capacitor.net,Capacitor,C1 2 1 1nF
+403_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+404_missing_Resistor.net,Resistor,R2 0 2 1k
+405_missing_Resistor.net,Resistor,R2 7 2 1k
+406_missing_MOSFET.net,MOSFET,M1 2 1 0 0 NMOS W=1u L=1u
+407_missing_MOSFET.net,MOSFET,M1 2 1 0 0 NMOS W=1u L=1u
+408_missing_MOSFET.net,MOSFET,M1 2 1 3 3 NMOS W=1u L=1u
+409_missing_MOSFET.net,MOSFET,M2 2 1 0 0 NMOS W=1u L=1u
+41_missing_MOSFET.net,MOSFET,M1 2 1 0 0 NMOS W=1u L=1u
+410_missing_CurrentSource.net,CurrentSource,I1 VDD 3 DC 1mA
+411_missing_MOSFET.net,MOSFET,M2 1 2 0 0 NMOS W=1u L=1u
+412_missing_CurrentSource.net,CurrentSource,I2 1 0 DC 1mA
+413_missing_CurrentSource.net,CurrentSource,I2 1 0 DC 1mA
+414_missing_CurrentSource.net,CurrentSource,I2 2 0 DC 1mA
+415_missing_CurrentSource.net,CurrentSource,I2 2 0 DC 1mA
+416_missing_CurrentSource.net,CurrentSource,I2 1 0 DC 1mA
+417_missing_Capacitor.net,Capacitor,C1 4 1 1nF
+418_missing_MOSFET.net,MOSFET,M3 4 1 VDD VDD PMOS W=1u L=1u
+419_missing_Resistor.net,Resistor,R1 3 2 1k
+42_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+420_missing_Capacitor.net,Capacitor,C1 1 2 1nF
+421_missing_MOSFET.net,MOSFET,M1 1 8 3 3 NMOS W=1u L=1u
+422_missing_MOSFET.net,MOSFET,M1 8 1 10 17 17 NMOS W=1u L=1u
+423_missing_Capacitor.net,Capacitor,C1 0 2 1nF
+424_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+425_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+426_missing_Capacitor.net,Capacitor,C1 5 VDD 1nF
+427_missing_Resistor.net,Resistor,R1 2 1 1k
+428_missing_VoltageSource.net,VoltageSource,V1 5 2 5V
+429_missing_Resistor.net,Resistor,R1 5 1 1k
+43_missing_MOSFET.net,MOSFET,M1 VDD 1 2 2 NMOS W=1u L=1u
+430_missing_CurrentSource.net,CurrentSource,I1 1 2 DC 1mA
+431_missing_Resistor.net,Resistor,R1 1 2 1k
+432_missing_Resistor.net,Resistor,R2 4 1 1k
+433_missing_CurrentSource.net,CurrentSource,I1 1 2 DC 1mA
+434_missing_CurrentSource.net,CurrentSource,I1 VDD 2 DC 1mA
+437_missing_MOSFET.net,MOSFET,M1 1 3 0 0 NMOS W=1u L=1u
+438_missing_MOSFET.net,MOSFET,M1 1 0 0 0 NMOS W=1u L=1u
+439_missing_MOSFET.net,MOSFET,M1 1 3 0 0 NMOS W=1u L=1u
+44_missing_MOSFET.net,MOSFET,M1 1 2 4 4 NMOS W=1u L=1u
+444_missing_Capacitor.net,Capacitor,C1 0 2 1nF
+445_missing_CurrentSource.net,CurrentSource,I1 VDD 1 DC 1mA
+446_missing_CurrentSource.net,CurrentSource,I1 2 0 DC 1mA
+447_missing_MOSFET.net,MOSFET,M1 1 2 0 0 NMOS W=1u L=1u
+449_missing_Resistor.net,Resistor,R1 2 1 1k
+45_missing_CurrentSource.net,CurrentSource,I1 3 0 DC 1mA
+450_missing_MOSFET.net,MOSFET,M1 1 5 3 3 NMOS W=1u L=1u
+451_missing_MOSFET.net,MOSFET,M1 1 3 0 0 NMOS W=1u L=1u
+452_missing_CurrentSource.net,CurrentSource,I1 1 2 DC 1mA
+453_missing_MOSFET.net,MOSFET,M1 0 0 0 0 NMOS W=1u L=1u
+454_missing_CurrentSource.net,CurrentSource,I1 1 2 DC 1mA
+455_missing_VoltageSource.net,VoltageSource,V1 6 0 5V
+456_missing_MOSFET.net,MOSFET,M1 0 0 0 0 NMOS W=1u L=1u
+457_missing_VoltageSource.net,VoltageSource,V1 10 0 5V
+458_missing_MOSFET.net,MOSFET,M1 2 4 0 0 NMOS W=1u L=1u
+459_missing_Resistor.net,Resistor,R1 0 2 1k
+46_missing_MOSFET.net,MOSFET,M1 3 1 0 0 NMOS W=1u L=1u
+460_missing_MOSFET.net,MOSFET,M2 1 2 VDD VDD PMOS W=1u L=1u
+461_missing_MOSFET.net,MOSFET,M1 2 5 0 0 NMOS W=1u L=1u
+463_missing_Capacitor.net,Capacitor,C1 0 2 1nF
+464_missing_Capacitor.net,Capacitor,C1 0 2 1nF
+465_missing_MOSFET.net,MOSFET,M1 1 2 4 4 NMOS W=1u L=1u
+466_missing_CurrentSource.net,CurrentSource,I1 VDD 4 DC 1mA
+467_missing_CurrentSource.net,CurrentSource,I1 VDD 4 DC 1mA
+469_missing_CurrentSource.net,CurrentSource,I1 VDD 3 DC 1mA
+47_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+470_missing_MOSFET.net,MOSFET,M1 2 1 4 4 NMOS W=1u L=1u
+471_missing_CurrentSource.net,CurrentSource,I1 VDD 1 DC 1mA
+472_missing_MOSFET.net,MOSFET,M2 3 1 0 0 NMOS W=1u L=1u
+474_missing_MOSFET.net,MOSFET,M2 2 1 0 0 NMOS W=1u L=1u
+476_missing_MOSFET.net,MOSFET,M1 2 1 5 5 NMOS W=1u L=1u
+477_missing_CurrentSource.net,CurrentSource,I1 3 4 DC 1mA
+479_missing_Resistor.net,Resistor,R2 2 VDD 1k
+48_missing_MOSFET.net,MOSFET,M1 2 1 3 3 NMOS W=1u L=1u
+481_missing_MOSFET.net,MOSFET,M2 4 9 2 2 NMOS W=1u L=1u
+482_missing_Resistor.net,Resistor,R2 1 VDD 1k
+483_missing_Resistor.net,Resistor,R2 1 VDD 1k
+484_missing_MOSFET.net,MOSFET,M1 1 3 2 2 NMOS W=1u L=1u
+486_missing_MOSFET.net,MOSFET,M2 3 3 2 2 NMOS W=1u L=1u
+487_missing_MOSFET.net,MOSFET,M2 2 1 VDD VDD PMOS W=1u L=1u
+488_missing_MOSFET.net,MOSFET,M2 4 7 2 2 NMOS W=1u L=1u
+49_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+495_missing_MOSFET.net,MOSFET,M2 1 0 2 2 NMOS W=1u L=1u
+496_missing_MOSFET.net,MOSFET,M1 1 3 0 0 NMOS W=1u L=1u
+497_missing_Resistor.net,Resistor,R1 1 VDD 1k
+498_missing_MOSFET.net,MOSFET,M2 1 4 0 0 NMOS W=1u L=1u
+499_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+5_missing_MOSFET.net,MOSFET,M1 2 1 0 0 NMOS W=1u L=1u
+50_missing_MOSFET.net,MOSFET,M1 1 3 0 0 NMOS W=1u L=1u
+500_missing_Resistor.net,Resistor,R1 2 VDD 1k
+501_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+502_missing_MOSFET.net,MOSFET,M1 2 1 0 0 NMOS W=1u L=1u
+503_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+505_missing_MOSFET.net,MOSFET,M1 1 2 0 0 NMOS W=1u L=1u
+506_missing_MOSFET.net,MOSFET,M1 1 3 4 4 NMOS W=1u L=1u
+507_missing_Resistor.net,Resistor,R1 0 1 1k
+508_missing_Resistor.net,Resistor,R1 3 2 1k
+509_missing_Resistor.net,Resistor,R1 0 4 1k
+51_missing_Capacitor.net,Capacitor,C1 2 1 1nF
+510_missing_MOSFET.net,MOSFET,M1 2 1 4 4 NMOS W=1u L=1u
+511_missing_MOSFET.net,MOSFET,M1 2 5 0 0 NMOS W=1u L=1u
+512_missing_Resistor.net,Resistor,R1 4 2 1k
+513_missing_Resistor.net,Resistor,R1 4 1 1k
+514_missing_Resistor.net,Resistor,R1 1 VDD 1k
+515_missing_MOSFET.net,MOSFET,M3 3 1 VDD VDD PMOS W=1u L=1u
+516_missing_Resistor.net,Resistor,R2 5 1 1k
+517_missing_MOSFET.net,MOSFET,M1 1 2 3 3 NMOS W=1u L=1u
+518_missing_Resistor.net,Resistor,R2 2 1 1k
+519_missing_Resistor.net,Resistor,R1 1 VDD 1k
+52_missing_Capacitor.net,Capacitor,C1 2 1 1nF
+520_missing_Resistor.net,Resistor,R2 1 VDD 1k
+521_missing_MOSFET.net,MOSFET,M2 3 1 2 2 PMOS W=1u L=1u
+522_missing_Resistor.net,Resistor,R1 1 VDD 1k
+523_missing_MOSFET.net,MOSFET,M1 VDD 2 3 3 NMOS W=1u L=1u
+524_missing_CurrentSource.net,CurrentSource,I1 1 0 DC 1mA
+525_missing_MOSFET.net,MOSFET,M4 2 2 VDD VDD NMOS W=1u L=1u
+526_missing_MOSFET.net,MOSFET,M2 1 6 2 2 NMOS W=1u L=1u
+527_missing_MOSFET.net,MOSFET,M1 1 3 4 4 NMOS W=1u L=1u
+528_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+529_missing_MOSFET.net,MOSFET,M2 2 1 5 5 PMOS W=1u L=1u
+53_missing_VoltageSource.net,VoltageSource,V1 1 0 5V
+530_missing_MOSFET.net,MOSFET,M1 3 8 11 11 NMOS W=1u L=1u
+531_missing_MOSFET.net,MOSFET,M4 3 1 0 0 NMOS W=1u L=1u
+532_missing_CurrentSource.net,CurrentSource,I1 VDD 1 DC 1mA
+533_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+534_missing_Resistor.net,Resistor,R1 6 4 1k
+535_missing_MOSFET.net,MOSFET,M1 1 3 0 0 NMOS W=1u L=1u
+536_missing_CurrentSource.net,CurrentSource,I1 VDD 1 DC 1mA
+538_missing_Capacitor.net,Capacitor,C1 2 1 1nF
+539_missing_CurrentSource.net,CurrentSource,I1 VDD 1 DC 1mA
+54_missing_Capacitor.net,Capacitor,C1 1 2 1nF
+540_missing_Capacitor.net,Capacitor,C1 1 2 1nF
+541_missing_Capacitor.net,Capacitor,C1 4 2 1nF
+542_missing_MOSFET.net,MOSFET,M2 3 4 0 0 NMOS W=1u L=1u
+544_missing_Capacitor.net,Capacitor,C1 2 1 1nF
+545_missing_Capacitor.net,Capacitor,C2 0 2 1nF
+546_missing_MOSFET.net,MOSFET,M1 1 3 0 0 NMOS W=1u L=1u
+547_missing_MOSFET.net,MOSFET,M1 2 1 4 4 NMOS W=1u L=1u
+548_missing_Resistor.net,Resistor,R1 1 VDD 1k
+549_missing_MOSFET.net,MOSFET,M2 VDD 2 3 3 NMOS W=1u L=1u
+55_missing_Capacitor.net,Capacitor,C1 1 2 1nF
+550_missing_Resistor.net,Resistor,R1 2 VDD 1k
+554_missing_MOSFET.net,MOSFET,M3 1 2 VDD VDD PMOS W=1u L=1u
+555_missing_MOSFET.net,MOSFET,M1 1 2 3 3 NMOS W=1u L=1u
+556_missing_Capacitor.net,Capacitor,C2 0 2 1nF
+557_missing_Capacitor.net,Capacitor,C2 0 2 1nF
+558_missing_Capacitor.net,Capacitor,C2 0 4 1nF
+559_missing_Capacitor.net,Capacitor,C1 0 3 1nF
+56_missing_Capacitor.net,Capacitor,C2 3 2 1nF
+560_missing_Resistor.net,Resistor,R1 2 VDD 1k
+561_missing_VoltageSource.net,VoltageSource,V1 6 0 5V
+562_missing_Resistor.net,Resistor,R1 1 VDD 1k
+564_missing_Resistor.net,Resistor,R1 0 4 1k
+565_missing_Resistor.net,Resistor,R2 2 1 1k
+566_missing_Resistor.net,Resistor,R3 0 4 1k
+567_missing_MOSFET.net,MOSFET,M1 1 5 0 0 NMOS W=1u L=1u
+568_missing_Resistor.net,Resistor,R2 0 1 1k
+569_missing_MOSFET.net,MOSFET,M1 1 3 6 6 NMOS W=1u L=1u
+57_missing_MOSFET.net,MOSFET,M2 5 1 3 3 NMOS W=1u L=1u
+570_missing_Capacitor.net,Capacitor,C1 4 2 1nF
+576_missing_Resistor.net,Resistor,R2 0 3 1k
+577_missing_Resistor.net,Resistor,R6 4 0 1k
+578_missing_CurrentSource.net,CurrentSource,I1 0 2 DC 1mA
+579_missing_MOSFET.net,MOSFET,M1 2 1 0 0 NMOS W=1u L=1u
+580_missing_MOSFET.net,MOSFET,M1 1 2 0 0 NMOS W=1u L=1u
+581_missing_MOSFET.net,MOSFET,M1 1 3 0 0 NMOS W=1u L=1u
+582_missing_Resistor.net,Resistor,R1 1 VDD 1k
+583_missing_Resistor.net,Resistor,R1 3 VDD 1k
+584_missing_CurrentSource.net,CurrentSource,I1 0 3 DC 1mA
+585_missing_Resistor.net,Resistor,R3 4 2 1k
+586_missing_Resistor.net,Resistor,R1 1 VDD 1k
+587_missing_Resistor.net,Resistor,R1 0 1 1k
+588_missing_Resistor.net,Resistor,R2 0 2 1k
+589_missing_MOSFET.net,MOSFET,M1 VDD 3 2 2 NMOS W=1u L=1u
+59_missing_MOSFET.net,MOSFET,M1 VDD VDD 1 1 NMOS W=1u L=1u
+590_missing_CurrentSource.net,CurrentSource,I1 1 0 DC 1mA
+591_missing_Resistor.net,Resistor,R2 3 2 1k
+592_missing_Resistor.net,Resistor,R1 2 VDD 1k
+593_missing_CurrentSource.net,CurrentSource,I1 1 2 DC 1mA
+594_missing_CurrentSource.net,CurrentSource,I1 VDD 1 DC 1mA
+595_missing_Resistor.net,Resistor,R2 1 VDD 1k
+596_missing_Resistor.net,Resistor,R4 4 7 1k
+597_missing_MOSFET.net,MOSFET,M2 2 0 3 3 NMOS W=1u L=1u
+598_missing_MOSFET.net,MOSFET,M1 1 2 0 0 NMOS W=1u L=1u
+599_missing_Resistor.net,Resistor,R4 4 2 1k
+6_missing_CurrentSource.net,CurrentSource,I1 1 0 DC 1mA
+60_missing_MOSFET.net,MOSFET,M2 1 3 2 2 PMOS W=1u L=1u
+600_missing_Capacitor.net,Capacitor,C1 1 4 1nF
+601_missing_MOSFET.net,MOSFET,M1 2 3 0 0 NMOS W=1u L=1u
+602_missing_Resistor.net,Resistor,R1 2 VDD 1k
+604_missing_Resistor.net,Resistor,R2 0 1 1k
+605_missing_VoltageSource.net,VoltageSource,V1 4 0 5V
+606_missing_VoltageSource.net,VoltageSource,V1 4 0 5V
+607_missing_Resistor.net,Resistor,R3 0 2 1k
+608_missing_MOSFET.net,MOSFET,M1 VDD 2 1 1 NMOS W=1u L=1u
+609_missing_MOSFET.net,MOSFET,M1 1 3 0 0 NMOS W=1u L=1u
+61_missing_VoltageSource.net,VoltageSource,V1 6 0 5V
+610_missing_Resistor.net,Resistor,R1 5 1 1k
+611_missing_MOSFET.net,MOSFET,M1 VDD 3 1 1 NMOS W=1u L=1u
+612_missing_MOSFET.net,MOSFET,M1 2 1 0 0 NMOS W=1u L=1u
+613_missing_MOSFET.net,MOSFET,M1 1 2 0 0 NMOS W=1u L=1u
+614_missing_MOSFET.net,MOSFET,M1 1 2 5 5 NMOS W=1u L=1u
+615_missing_Resistor.net,Resistor,R3 4 2 1k
+616_missing_MOSFET.net,MOSFET,M4 3 6 VDD VDD PMOS W=1u L=1u
+617_missing_Resistor.net,Resistor,R2 0 3 1k
+618_missing_Resistor.net,Resistor,R4 3 1 1k
+619_missing_MOSFET.net,MOSFET,M2 2 1 VDD VDD PMOS W=1u L=1u
+62_missing_MOSFET.net,MOSFET,M1 VDD 3 1 1 NMOS W=1u L=1u
+620_missing_MOSFET.net,MOSFET,M1 2 1 0 0 NMOS W=1u L=1u
+621_missing_MOSFET.net,MOSFET,M1 1 2 0 0 NMOS W=1u L=1u
+622_missing_Resistor.net,Resistor,R3 6 4 1k
+624_missing_Resistor.net,Resistor,R1 1 VDD 1k
+625_missing_MOSFET.net,MOSFET,M4 4 1 VDD VDD PMOS W=1u L=1u
+626_missing_MOSFET.net,MOSFET,M3 4 2 VDD 11 11 PMOS W=1u L=1u
+627_missing_MOSFET.net,MOSFET,M1 3 3 2 2 NMOS W=1u L=1u
+63_missing_MOSFET.net,MOSFET,M1 1 2 0 0 NMOS W=1u L=1u
+631_missing_MOSFET.net,MOSFET,M4 1 1 2 2 NMOS W=1u L=1u
+632_missing_MOSFET.net,MOSFET,M2 5 4 0 0 NMOS W=1u L=1u
+633_missing_CurrentSource.net,CurrentSource,I1 VDD 3 DC 1mA
+634_missing_CurrentSource.net,CurrentSource,I1 1 0 DC 1mA
+635_missing_MOSFET.net,MOSFET,M1 2 5 0 0 NMOS W=1u L=1u
+636_missing_MOSFET.net,MOSFET,M1 4 1 10 11 11 NMOS W=1u L=1u
+639_missing_MOSFET.net,MOSFET,M4 4 7 0 0 PMOS W=1u L=1u
+64_missing_MOSFET.net,MOSFET,M1 1 3 0 0 NMOS W=1u L=1u
+640_missing_MOSFET.net,MOSFET,M2 2 3 0 0 PMOS W=1u L=1u
+641_missing_Resistor.net,Resistor,R1 3 0 1k
+642_missing_MOSFET.net,MOSFET,M1 6 36 39 43 43 NMOS W=1u L=1u
+643_missing_MOSFET.net,MOSFET,M7 14 2 VDD VDD PMOS W=1u L=1u
+645_missing_MOSFET.net,MOSFET,M8 8 7 VDD VDD PMOS W=1u L=1u
+647_missing_MOSFET.net,MOSFET,M8 5 7 VDD VDD PMOS W=1u L=1u
+649_missing_VoltageSource.net,VoltageSource,V1 1 0 5V
+65_missing_Resistor.net,Resistor,R2 0 1 1k
+650_missing_VoltageSource.net,VoltageSource,V1 1 0 5V
+651_missing_CurrentSource.net,CurrentSource,I1 VDD 3 DC 1mA
+652_missing_CurrentSource.net,CurrentSource,I2 2 0 DC 1mA
+654_missing_MOSFET.net,MOSFET,M7 7 5 10 10 PMOS W=1u L=1u
+655_missing_Resistor.net,Resistor,R2 2 VDD 1k
+656_missing_MOSFET.net,MOSFET,M2 1 1 3 3 NMOS W=1u L=1u
+657_missing_MOSFET.net,MOSFET,M4 3 7 VDD VDD PMOS W=1u L=1u
+659_missing_CurrentSource.net,CurrentSource,I1 VDD 2 DC 1mA
+66_missing_VoltageSource.net,VoltageSource,V1 4 0 5V
+664_missing_MOSFET.net,MOSFET,M1 3 2 0 0 NMOS W=1u L=1u
+669_missing_MOSFET.net,MOSFET,M7 3 6 0 0 NMOS W=1u L=1u
+67_missing_Resistor.net,Resistor,R1 1 VDD 1k
+670_missing_Resistor.net,Resistor,R1 2 0 1k
+671_missing_MOSFET.net,MOSFET,M14 6 16 VDD VDD PMOS W=1u L=1u
+672_missing_MOSFET.net,MOSFET,M16 6 2 VDD VDD PMOS W=1u L=1u
+673_missing_MOSFET.net,MOSFET,M16 11 24 9 33 33 PMOS W=1u L=1u
+674_missing_Resistor.net,Resistor,R2 1 4 1k
+675_missing_MOSFET.net,MOSFET,M2 4 8 1 1 NMOS W=1u L=1u
+676_missing_MOSFET.net,MOSFET,M3 5 8 3 3 NMOS W=1u L=1u
+677_missing_MOSFET.net,MOSFET,M3 2 1 VDD VDD PMOS W=1u L=1u
+678_missing_Resistor.net,Resistor,R1 1 0 1k
+68_missing_VoltageSource.net,VoltageSource,V1 5 0 5V
+680_missing_MOSFET.net,MOSFET,M1 5 3 13 13 NMOS W=1u L=1u
+681_missing_Resistor.net,Resistor,R1 2 7 1k
+682_missing_MOSFET.net,MOSFET,M7 7 4 0 0 NMOS W=1u L=1u
+683_missing_MOSFET.net,MOSFET,M4 2 7 1 1 NMOS W=1u L=1u
+684_missing_CurrentSource.net,CurrentSource,I1 1 0 DC 1mA
+685_missing_Capacitor.net,Capacitor,C1 2 1 1nF
+686_missing_CurrentSource.net,CurrentSource,I1 4 0 DC 1mA
+687_missing_MOSFET.net,MOSFET,M1 3 1 VDD VDD NMOS W=1u L=1u
+689_missing_MOSFET.net,MOSFET,M1 3 5 4 4 NMOS W=1u L=1u
+69_missing_MOSFET.net,MOSFET,M1 1 3 0 0 NMOS W=1u L=1u
+690_missing_MOSFET.net,MOSFET,M1 1 8 4 4 NMOS W=1u L=1u
+692_missing_MOSFET.net,MOSFET,M5 12 11 VDD 18 18 PMOS W=1u L=1u
+693_missing_Capacitor.net,Capacitor,C1 0 2 1nF
+694_missing_MOSFET.net,MOSFET,M4 22 5 0 0 NMOS W=1u L=1u
+695_missing_MOSFET.net,MOSFET,M7 3 30 VDD VDD NMOS W=1u L=1u
+696_missing_MOSFET.net,MOSFET,M1 2 3 1 1 NMOS W=1u L=1u
+697_missing_MOSFET.net,MOSFET,M6 9 11 2 2 PMOS W=1u L=1u
+698_missing_MOSFET.net,MOSFET,M1 4 7 VDD 11 11 NMOS W=1u L=1u
+699_missing_Capacitor.net,Capacitor,C1 0 2 1nF
+7_missing_MOSFET.net,MOSFET,M1 2 1 VDD VDD PMOS W=1u L=1u
+70_missing_Resistor.net,Resistor,R1 2 VDD 1k
+700_missing_MOSFET.net,MOSFET,M2 1 2 VDD VDD PMOS W=1u L=1u
+701_missing_MOSFET.net,MOSFET,M1 1 6 0 0 NMOS W=1u L=1u
+702_missing_MOSFET.net,MOSFET,M3 3 3 VDD VDD PMOS W=1u L=1u
+703_missing_MOSFET.net,MOSFET,M1 10 8 0 14 14 NMOS W=1u L=1u
+704_missing_MOSFET.net,MOSFET,M3 7 12 4 4 NMOS W=1u L=1u
+705_missing_MOSFET.net,MOSFET,M1 18 19 0 20 20 NMOS W=1u L=1u
+706_missing_MOSFET.net,MOSFET,M4 4 1 VDD VDD PMOS W=1u L=1u
+707_missing_Capacitor.net,Capacitor,C2 0 5 1nF
+708_missing_MOSFET.net,MOSFET,M1 6 3 15 16 16 NMOS W=1u L=1u
+709_missing_MOSFET.net,MOSFET,M2 18 6 0 19 19 NMOS W=1u L=1u
+71_missing_MOSFET.net,MOSFET,M1 1 1 3 3 NMOS W=1u L=1u
+710_missing_MOSFET.net,MOSFET,M11 9 1 8 8 PMOS W=1u L=1u
+711_missing_MOSFET.net,MOSFET,M7 7 2 VDD VDD PMOS W=1u L=1u
+712_missing_MOSFET.net,MOSFET,M8 6 3 VDD VDD PMOS W=1u L=1u
+713_missing_CurrentSource.net,CurrentSource,I1 VDD 3 DC 1mA
+714_missing_MOSFET.net,MOSFET,M7 3 8 2 2 PMOS W=1u L=1u
+715_missing_MOSFET.net,MOSFET,M1 5 2 0 10 10 NMOS W=1u L=1u
+716_missing_MOSFET.net,MOSFET,M7 7 4 VDD VDD PMOS W=1u L=1u
+717_missing_MOSFET.net,MOSFET,M7 4 5 VDD VDD PMOS W=1u L=1u
+718_missing_MOSFET.net,MOSFET,M3 2 8 4 4 NMOS W=1u L=1u
+719_missing_CurrentSource.net,CurrentSource,I1 5 0 DC 1mA
+72_missing_MOSFET.net,MOSFET,M1 1 1 2 2 PMOS W=1u L=1u
+720_missing_MOSFET.net,MOSFET,M7 18 1 VDD VDD PMOS W=1u L=1u
+721_missing_MOSFET.net,MOSFET,M8 4 15 20 21 21 PMOS W=1u L=1u
+722_missing_Capacitor.net,Capacitor,C1 1 VDD 1nF
+723_missing_Resistor.net,Resistor,R1 0 1 1k
+724_missing_VoltageSource.net,VoltageSource,V1 6 0 5V
+725_missing_Capacitor.net,Capacitor,C2 6 3 1nF
+726_missing_MOSFET.net,MOSFET,M4 4 2 VDD VDD PMOS W=1u L=1u
+727_missing_MOSFET.net,MOSFET,M3 3 5 0 0 NMOS W=1u L=1u
+728_missing_MOSFET.net,MOSFET,M1 1 3 0 0 NMOS W=1u L=1u
+729_missing_MOSFET.net,MOSFET,M1 1 4 6 6 NMOS W=1u L=1u
+73_missing_VoltageSource.net,VoltageSource,V1 3 0 5V
+730_missing_MOSFET.net,MOSFET,M4 2 2 VDD VDD PMOS W=1u L=1u
+732_missing_Capacitor.net,Capacitor,C1 0 2 1nF
+733_missing_Capacitor.net,Capacitor,C2 3 2 1nF
+734_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+735_missing_CurrentSource.net,CurrentSource,I1 4 0 DC 1mA
+736_missing_MOSFET.net,MOSFET,M1 2 8 3 3 NMOS W=1u L=1u
+737_missing_MOSFET.net,MOSFET,M2 3 7 VDD VDD PMOS W=1u L=1u
+738_missing_MOSFET.net,MOSFET,M4 6 12 4 4 NMOS W=1u L=1u
+739_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+74_missing_Resistor.net,Resistor,R1 4 1 1k
+740_missing_Capacitor.net,Capacitor,C2 0 6 1nF
+741_missing_Capacitor.net,Capacitor,C2 0 4 1nF
+743_missing_MOSFET.net,MOSFET,M1 1 2 0 0 NMOS W=1u L=1u
+744_missing_CurrentSource.net,CurrentSource,I1 15 0 DC 1mA
+745_missing_MOSFET.net,MOSFET,M1 1 3 0 0 NMOS W=1u L=1u
+746_missing_MOSFET.net,MOSFET,M6 4 9 0 0 NMOS W=1u L=1u
+747_missing_MOSFET.net,MOSFET,M3 7 2 16 16 NMOS W=1u L=1u
+749_missing_Resistor.net,Resistor,R3 8 1 1k
+75_missing_MOSFET.net,MOSFET,M1 1 3 4 4 NMOS W=1u L=1u
+751_missing_Resistor.net,Resistor,R1 3 4 1k
+752_missing_MOSFET.net,MOSFET,M2 5 2 1 1 NMOS W=1u L=1u
+753_missing_MOSFET.net,MOSFET,M4 13 12 3 3 NMOS W=1u L=1u
+754_missing_MOSFET.net,MOSFET,M5 19 15 5 5 NMOS W=1u L=1u
+755_missing_MOSFET.net,MOSFET,M4 12 2 23 23 NMOS W=1u L=1u
+756_missing_Capacitor.net,Capacitor,C2 0 2 1nF
+76_missing_VoltageSource.net,VoltageSource,V1 3 0 5V
+760_missing_MOSFET.net,MOSFET,M1 3 2 0 6 6 NMOS W=1u L=1u
+761_missing_MOSFET.net,MOSFET,M2 3 4 0 0 NMOS W=1u L=1u
+762_missing_MOSFET.net,MOSFET,M4 3 3 VDD VDD PMOS W=1u L=1u
+764_missing_MOSFET.net,MOSFET,M1 1 3 6 6 NMOS W=1u L=1u
+765_missing_MOSFET.net,MOSFET,M2 1 1 2 2 NMOS W=1u L=1u
+767_missing_CurrentSource.net,CurrentSource,I2 1 0 DC 1mA
+768_missing_MOSFET.net,MOSFET,M3 3 2 VDD VDD PMOS W=1u L=1u
+769_missing_MOSFET.net,MOSFET,M6 1 1 VDD VDD PMOS W=1u L=1u
+77_missing_MOSFET.net,MOSFET,M1 VDD VDD 1 1 NMOS W=1u L=1u
+770_missing_MOSFET.net,MOSFET,M1 4 1 VDD VDD PMOS W=1u L=1u
+771_missing_MOSFET.net,MOSFET,M1 4 2 1 1 NMOS W=1u L=1u
+772_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+773_missing_MOSFET.net,MOSFET,M1 4 2 1 1 NMOS W=1u L=1u
+774_missing_MOSFET.net,MOSFET,M1 4 2 1 1 NMOS W=1u L=1u
+775_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+776_missing_Resistor.net,Resistor,R1 3 1 1k
+777_missing_MOSFET.net,MOSFET,M1 4 2 1 1 NMOS W=1u L=1u
+778_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+779_missing_Capacitor.net,Capacitor,C1 0 2 1nF
+78_missing_MOSFET.net,MOSFET,M1 VDD VDD 2 2 NMOS W=1u L=1u
+780_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+784_missing_Capacitor.net,Capacitor,C1 0 1 1nF
+785_missing_MOSFET.net,MOSFET,M2 2 4 2 2 NMOS W=1u L=1u
+786_missing_MOSFET.net,MOSFET,M2 4 1 2 2 PMOS W=1u L=1u
+787_missing_MOSFET.net,MOSFET,M1 6 3 8 10 10 NMOS W=1u L=1u
+788_missing_CurrentSource.net,CurrentSource,I1 1 0 DC 1mA
+79_missing_MOSFET.net,MOSFET,M2 1 1 VDD VDD PMOS W=1u L=1u
+790_missing_Resistor.net,Resistor,R1 0 2 1k
+791_missing_Capacitor.net,Capacitor,C3 0 2 1nF
+792_missing_Resistor.net,Resistor,R1 2 1 1k
+796_missing_Capacitor.net,Capacitor,C2 0 1 1nF
+797_missing_MOSFET.net,MOSFET,M3 3 1 VDD 25 25 PMOS W=1u L=1u
+8_missing_CurrentSource.net,CurrentSource,I1 VDD 1 DC 1mA
+80_missing_MOSFET.net,MOSFET,M2 1 1 VDD VDD PMOS W=1u L=1u
+800_missing_Resistor.net,Resistor,R1 1 VDD 1k
+801_missing_MOSFET.net,MOSFET,M2 1 6 2 2 NMOS W=1u L=1u
+802_missing_MOSFET.net,MOSFET,M1 1 2 4 4 NMOS W=1u L=1u
+803_missing_MOSFET.net,MOSFET,M1 3 4 5 5 NMOS W=1u L=1u
+804_missing_Resistor.net,Resistor,R2 0 4 1k
+805_missing_Resistor.net,Resistor,R4 9 2 1k
+806_missing_Resistor.net,Resistor,R3 4 3 1k
+807_missing_MOSFET.net,MOSFET,M1 VDD VDD 2 2 NMOS W=1u L=1u
+808_missing_CurrentSource.net,CurrentSource,I1 2 0 DC 1mA
+81_missing_MOSFET.net,MOSFET,M1 2 4 0 0 NMOS W=1u L=1u
+811_missing_Resistor.net,Resistor,R2 3 VDD 1k
+813_missing_CurrentSource.net,CurrentSource,I1 1 0 DC 1mA
+815_missing_MOSFET.net,MOSFET,M2 2 2 0 0 NMOS W=1u L=1u
+816_missing_MOSFET.net,MOSFET,M5 10 3 4 4 NMOS W=1u L=1u
+817_missing_MOSFET.net,MOSFET,M3 3 2 12 12 NMOS W=1u L=1u
+818_missing_MOSFET.net,MOSFET,M1 1 1 0 0 NMOS W=1u L=1u
+819_missing_MOSFET.net,MOSFET,M2 2 1 0 0 NMOS W=1u L=1u
+82_missing_Resistor.net,Resistor,R1 0 1 1k
+820_missing_Resistor.net,Resistor,R1 2 VDD 1k
+821_missing_MOSFET.net,MOSFET,M2 3 2 0 0 NMOS W=1u L=1u
+822_missing_MOSFET.net,MOSFET,M1 2 1 0 10 10 NMOS W=1u L=1u
+823_missing_Resistor.net,Resistor,R2 6 VDD 1k
+824_missing_MOSFET.net,MOSFET,M4 3 1 VDD VDD PMOS W=1u L=1u
+83_missing_Resistor.net,Resistor,R1 1 VDD 1k
+84_missing_MOSFET.net,MOSFET,M1 2 4 0 0 NMOS W=1u L=1u
+85_missing_MOSFET.net,MOSFET,M2 2 1 VDD VDD PMOS W=1u L=1u
+86_missing_MOSFET.net,MOSFET,M1 3 1 0 0 NMOS W=1u L=1u
+87_missing_MOSFET.net,MOSFET,M1 1 4 0 0 NMOS W=1u L=1u
+88_missing_Resistor.net,Resistor,R1 1 VDD 1k
+89_missing_Resistor.net,Resistor,R2 0 4 1k
+9_missing_VoltageSource.net,VoltageSource,V1 2 0 5V
+90_missing_MOSFET.net,MOSFET,M1 1 3 4 4 NMOS W=1u L=1u
+91_missing_Resistor.net,Resistor,R1 1 VDD 1k
+92_missing_Resistor.net,Resistor,R1 2 1 1k
+93_missing_MOSFET.net,MOSFET,M1 3 0 1 1 NMOS W=1u L=1u
+94_missing_Resistor.net,Resistor,R3 0 1 1k
+95_missing_CurrentSource.net,CurrentSource,I1 1 2 DC 1mA
+96_missing_MOSFET.net,MOSFET,M1 1 3 4 4 NMOS W=1u L=1u
+97_missing_MOSFET.net,MOSFET,M1 VDD 3 1 1 NMOS W=1u L=1u
+98_missing_MOSFET.net,MOSFET,M1 VDD 1 2 2 NMOS W=1u L=1u
+99_missing_CurrentSource.net,CurrentSource,I1 1 0 DC 1mA

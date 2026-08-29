@@ -1,0 +1,9 @@
+plaintext
+* NMOS Amplifier Circuit
+? Missing component
+RG 1 2  R_value
+RS 3 0  R_value
+M1 3 1 0 0 NMOS_MODEL
+* Analysis Commands
+*.op
+*.end

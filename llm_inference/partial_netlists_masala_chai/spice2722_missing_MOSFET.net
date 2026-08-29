@@ -1,0 +1,12 @@
+spice
+* NMOS Transistors
+M1 4 2 7 7 NMOS
+? Missing component
+M3 4 6 7 7 NMOS
+* Resistors
+R1_left 5 7 R1_value
+R1_right 3 7 R1_value
+* Voltage Source
+VDD 3 0 DC VDD_value
+* Models
+.model NMOS NMOS

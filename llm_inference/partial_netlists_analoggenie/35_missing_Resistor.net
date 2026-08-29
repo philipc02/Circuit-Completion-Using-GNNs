@@ -1,0 +1,3 @@
+? Missing component
+M0 (net02 VB1 VSS VSS) nmos4
+M1 (VOUT1 VIN1 net02 VSS) nmos4

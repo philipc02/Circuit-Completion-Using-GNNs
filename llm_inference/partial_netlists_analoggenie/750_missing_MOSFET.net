@@ -1,0 +1,4 @@
+C0 (net3 VSS) capacitor
+? Missing component
+M0 (VIN1 VCLK1 net3 VSS) nmos4
+R0 (VOUT1 VSS) resistor

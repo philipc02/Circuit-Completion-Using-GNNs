@@ -1,0 +1,12 @@
+spice
+* SPICE Netlist
+VDD 2 0 DC 1.8
+RG Vin 2 1k
+RS X 0 1k
+? Missing component
+C1 X Vout 1u
+* NMOS Transistor
+* M1: (Drain, Gate, Source, Body)
+M1 X Vin 0 0 NMOS
+.model NMOS NMOS (LEVEL=1)
+.end

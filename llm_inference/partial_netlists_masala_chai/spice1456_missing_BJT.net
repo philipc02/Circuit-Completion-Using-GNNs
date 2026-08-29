@@ -1,0 +1,8 @@
+plaintext
+* SPICE netlist for the given schematic
+Qref 2 2 0 QNPN  ; Q_REF: Collector at 2, Base at 2, Emitter at 0
+? Missing component
+Iref 5 2 DC ???  ; I_REF: Positive terminal at 5, Negative terminal at 2
+Vcc 5 0 DC ???   ; V_CC: Positive terminal at 5, Negative terminal at 0
+.model QNPN NPN
+.end

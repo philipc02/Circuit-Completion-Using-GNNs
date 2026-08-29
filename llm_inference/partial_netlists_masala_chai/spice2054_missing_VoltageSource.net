@@ -1,0 +1,11 @@
+spice
+*MOSFETs
+M4 3 A VDD VDD PMOS
+M3 VOUT B 2 2 NMOS
+*Voltage Source
+? Missing component
+*Nodes
+* A -> 2
+* B -> 2
+* VDD -> 3
+* VOUT -> VOUT

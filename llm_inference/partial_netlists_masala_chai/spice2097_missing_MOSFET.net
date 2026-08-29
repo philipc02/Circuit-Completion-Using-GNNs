@@ -1,0 +1,8 @@
+spice
+* NMOS Amplifier Circuit SPICE Netlist
+VDD 4 0 DC 1.8
+RG 2 1 20k
+RD 4 2 1k
+RS 3 1 200
+? Missing component
+.END

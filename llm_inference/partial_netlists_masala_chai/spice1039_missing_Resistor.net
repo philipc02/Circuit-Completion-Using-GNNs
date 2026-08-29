@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+Vcc 4 0 DC Vcc_value
+MP1 2 4 4 4 PMOS_MODEL
+MN1 3 2 0 0 NMOS_MODEL
+? Missing component

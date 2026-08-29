@@ -1,0 +1,19 @@
+spice
+* SPICE Netlist for the given circuit
+* Voltage Sources
+? Missing component
+V2 3 0 DC VTH
+* Resistor
+R1 4 3 R1_value
+* MOSFET
+M1 3 3 2 2 PMOS_model
+* Op-amp
+* Assuming an ideal op-amp for simplicity
+* The op-amp positive terminal is connected to VTH (node 3)
+* The negative terminal is connected to node 3 as well
+* Output node is connected to Vout (node 3)
+* The op-amp itself may not be directly represented in simple SPICE without a defined model. 
+* Therefore, the op-amp connections here are described, but additional modelling might be necessary.
+* Connections from the annotated net image
+* Node assignments:
+* Node 2 represents the connection between the source of M1 and the output of the op-amp

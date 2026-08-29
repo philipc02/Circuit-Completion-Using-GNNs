@@ -1,0 +1,16 @@
+* SPICE Netlist
+VCC 5 0 DC 12V
+IREF 5 6 DC 1mA
+? Missing component
+M_Q1 2 2 4 4 NMOS
+C_VX 2 3 1nF
+* Connections
+* 1: VCC
+* 2: VX
+* 3: Ground
+* 4: Q1 Terminal
+* 5: IREF source
+* 6: IREF destination
+.model PMOS PMOS (Level=1 VTO=-0.7)
+.model NMOS NMOS (Level=1 VTO=0.7)
+.end

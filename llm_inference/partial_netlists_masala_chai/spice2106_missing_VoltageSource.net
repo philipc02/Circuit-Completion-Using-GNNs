@@ -1,0 +1,8 @@
+spice
+* SPICE Netlist for the Given Circuit
+? Missing component
+G1 3 4 Value={gm*V(4,5)}
+RD 3 2 RD
+R2 2 5 0
+* Control voltage is from net 4 to ground
+.END

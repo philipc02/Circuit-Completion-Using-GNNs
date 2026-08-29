@@ -1,0 +1,4 @@
+? Missing component
+C0 (VOUT2 VSS) capacitor
+R1 (VSS VOUT1) resistor
+R0 (VOUT2 VIN1) resistor

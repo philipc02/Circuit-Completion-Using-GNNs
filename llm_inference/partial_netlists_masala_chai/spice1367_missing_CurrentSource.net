@@ -1,0 +1,10 @@
+* Netlist
+V1 Vin 0 DC 0
+M1 2 Vin 0 0 NMOS
+? Missing component
+R1 4 3 0.001
+* Connections
+* Node 2 is the node for all Q1 terminals except the gate
+* Node 3 is connected to GND
+* Node 4 is connected to Iout
+.END

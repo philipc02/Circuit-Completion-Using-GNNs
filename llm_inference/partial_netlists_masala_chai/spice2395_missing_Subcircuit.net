@@ -1,0 +1,29 @@
+spice
+* Transistor Definitions
+* PMOS Transistors: MB2, MB3
+.subckt PMOS D G S
+M_PMOS D G S S PMOS_MODEL
+.ends PMOS
+* NMOS Transistors: MC1, MC2, MC3, MC4, MC5, MC6
+.subckt NMOS D G S
+M_NMOS D G S S NMOS_MODEL
+.ends NMOS
+* Circuit Implementation
+? Missing component
+XMB3 5 3 5 PMOS
+XMC1 2 3 2 NMOS
+XMC2 3 3 2 NMOS
+XMC3 3 3 2 NMOS
+XMC4 5 3 2 NMOS
+XMC5 2 3 2 NMOS
+XMC6 3 3 2 NMOS
+* Voltage Sources
+V_VDD 5 0 DC V_DD
+V_VSS 2 0 DC V_SS
+V_VBIASA 4 0 DC V_BIASA
+V_VOUT- 2 0 DC V_OUT-
+V_VOUT+ 2 0 DC V_OUT+
+V_VREF_CM 3 0 DC V_REF_CM
+* Current Source
+I_CMFB 2 0 AC I_CMFB
+.end

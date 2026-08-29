@@ -1,0 +1,5 @@
+spice
+* SPICE netlist
+? Missing component
+r_O 4 3 100k
+R_L 2 0 1k

@@ -1,0 +1,25 @@
+spice
+* SPICE Netlist
+* Voltage sources
+VCC 3 0 DC <value>  ; VCC positive rail
+VEE 0 2 DC <value>  ; VEE negative rail
+Vb1 3 3 DC <value>  ; DC bias voltage
+* Transistors
+? Missing component
+Q2 5 2 2 NPN
+Q3 3 3 2 NPN
+Q4 2 2 2 NPN
+* Diodes
+D1 3 2 DMODEL
+D2 3 2 DMODEL
+* Resistors
+R1 2 0 <value>
+R2 2 0 <value>
+RL 5 0 <value>
+* Operational Amplifier
+A1 0 2 2 2 OPAMPMODEL
+* Model Declarations
+.model NPN NPN
+.model DMODEL D
+.model OPAMPMODEL OPAMP
+.end

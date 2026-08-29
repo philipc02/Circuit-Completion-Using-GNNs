@@ -1,0 +1,4 @@
+? Missing component
+M0 (net06 VB1 IIN1 VSS) nmos4
+R0 (VSS VOUT1) resistor
+R1 (net06 VDD) resistor

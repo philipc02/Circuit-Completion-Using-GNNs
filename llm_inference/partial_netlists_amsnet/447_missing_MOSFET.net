@@ -1,0 +1,7 @@
+*SPICE Netlist for circuit 447
+? Missing component
+V1 2 0 5V
+R1 2 1 1k
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+.OP
+.END

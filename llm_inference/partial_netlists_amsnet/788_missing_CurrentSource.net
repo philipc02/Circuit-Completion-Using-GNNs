@@ -1,0 +1,7 @@
+*SPICE Netlist for circuit 788
+? Missing component
+V1 4 0 5V
+R2 4 1 1k
+R1 0 1 1k
+.OP
+.END

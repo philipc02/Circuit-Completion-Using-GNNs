@@ -1,0 +1,5 @@
+spice
+* SPICE Netlist
+? Missing component
+RF 2 3 RF
+V1 3 2 DC 1/gm1

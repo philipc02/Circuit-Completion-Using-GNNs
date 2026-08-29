@@ -1,0 +1,13 @@
+spice
+* PMOS Transistors
+M1 7 6 7 7 PMOS L=Wp W=Lp
+M2 7 22 23 7 PMOS L=Wp W=Lp
+* NMOS Transistors
+M3 23 3 3 3 NMOS L=Wn W=Ln
+M4 4 3 3 3 NMOS L=Wn W=Ln
+M5 6 3 3 3 NMOS L=Wn W=Ln
+* Current Source
+IREF 4 3 DC <value_of_IREF>
+* Voltage Source
+? Missing component
+* End of Netlist

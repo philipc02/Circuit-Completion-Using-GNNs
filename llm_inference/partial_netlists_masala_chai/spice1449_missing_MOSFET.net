@@ -1,0 +1,13 @@
+plaintext
+* NMOS Transistors
+M1 2 Vb1 0 NMOS
+M2 Vout Vin 2 NMOS
+? Missing component
+* PMOS Transistor
+M4 VDD Vb4 3 PMOS
+* Nodes identification
+VDD VDD 0 DC 5
+Vb1 Vb1 0 DC 1.5
+Vb2 Vin 0 DC 1.8
+Vb3 Vb3 0 DC 2.0
+Vb4 Vb4 0 DC 2.5

@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist for the Circuit
+VCC 3 2 DC 10V      ; Voltage source simulating Vcc
+I1 3 2 DC 1mA       ; Current Source
+R1 2 5 1k           ; Resistor R1
+? Missing component
+RS 4 0 1k           ; Resistor RS
+Q1 2 5 4 NPN        ; NPN Transistor Q1
+.model NPN NPN (IS=1E-14 BF=100)
+.end

@@ -1,0 +1,19 @@
+plaintext
+* Transistors
+Q1 Y X 0 Q1_Model
+Q2 3 2 0 Q2_Model
+* Resistors
+? Missing component
+RL Vout 3 1k
+* Voltage Sources
+Vin Vin 0 DC 0
+Vcc VCC 0 DC 15
+Vb1 2 0 DC 5
+* Capacitors
+Cpi1 X 0 2*Cmu1
+Cpi2 Y 0 Ccs1+Cpi2+2*Cmu1
+Cmu2 Vout 2 Ccs2+Cmu2
+* Models
+.model Q1_Model NPN(IS=1E-14 BF=100)
+.model Q2_Model NPN(IS=1E-14 BF=100)
+* End of netlist

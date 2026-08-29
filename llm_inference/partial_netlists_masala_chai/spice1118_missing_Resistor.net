@@ -1,0 +1,7 @@
+plaintext
+* NMOS Transistor
+M1 net1 net2 0 0 NMOS
+* Resistor
+? Missing component
+* Voltage Source
+V1 VDD 0 1.8

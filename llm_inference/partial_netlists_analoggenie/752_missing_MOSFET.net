@@ -1,0 +1,5 @@
+R0 (VOUT1 VSS) resistor
+C0 (net11 VSS) capacitor
+M2 (net11 VCLK2 net11 VSS) nmos4
+? Missing component
+M1 (VDD net11 VOUT1 VSS) nmos4

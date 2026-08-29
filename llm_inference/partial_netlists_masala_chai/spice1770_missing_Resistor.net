@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+Vin 1 0 DC Vin
+? Missing component
+E1 2 3 0 1 Av
+Rout 2 0 Rout

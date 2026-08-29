@@ -1,0 +1,12 @@
+spice
+* Netlist for the given schematic
+? Missing component
+IY 5 2 DC <value_IY> ; Current source IY between nodes 5 and 2
+Gm2 3 2 V1 2 <value_gm2> ; Transconductance amplifier, V1 is control voltage
+Rro2 4 2 <value_ro2> ; Resistor r_o2 between nodes 4 and 2
+* Node assignments
+* 1 - OPAMP positive input
+* 2 - Ground and loop common node
+* 3 - Current source gm2 node
+* 4 - Mosfet output node
+* 5 - Voltage source node

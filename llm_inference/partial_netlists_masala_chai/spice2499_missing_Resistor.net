@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+V1 3 5 DC Vin_eq
+? Missing component
+R2 3 2 Req
+M1 4 Vb 2 2 NMOS
+.END

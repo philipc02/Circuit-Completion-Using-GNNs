@@ -1,0 +1,6 @@
+* Example SPICE Netlist
+VDD 2 0 DC 5V
+RD 2 3 1k
+M1 3 5 0 0 NMOS_MODEL
+M2 3 4 0 0 NMOS_MODEL
+? Missing component

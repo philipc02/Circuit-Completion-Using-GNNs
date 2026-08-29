@@ -1,0 +1,10 @@
+spice
+* NMOS Transistor
+M1 2 1 5 5 NMOS
+* Current Source
+? Missing component
+* Resistor
+RL 3 4 1k
+* Voltage Sources
+VCC 2 0 DC 5V
+VEE 5 0 DC -5V

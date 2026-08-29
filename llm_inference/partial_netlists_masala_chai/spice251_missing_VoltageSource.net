@@ -1,0 +1,14 @@
+spice
+* SPICE Netlist
+VCC 2 0 DC 10V
+VBias1 3 0 DC 1V
+IBIAS 3 0 DC 1mA
+? Missing component
+VR2 5 6 DC 5V
+Q1 4 3 5 QMODEL
+Q2 6 4 5 QMODEL
+Q5 4 2 3 QMODEL
+R1 5 4 1k
+R2 5 6 1k
+.model QMODEL NPN (IS=1e-14 BF=100 VAF=100)
+.end

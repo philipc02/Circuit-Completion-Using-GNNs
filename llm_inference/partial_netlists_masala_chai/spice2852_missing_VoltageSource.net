@@ -1,0 +1,8 @@
+plaintext
+* SPICE netlist for the given schematic
+? Missing component
+In_M1 2 0 DC <value> ; Current source In_M1 connected between node 2 and ground
+RD 3 5 <value>       ; Resistor RD connected between nodes 3 and 5
+CL 5 0 <value>       ; Capacitor CL connected between node 5 and ground
+* Additional parameters
+* .param value=<value as per requirement>

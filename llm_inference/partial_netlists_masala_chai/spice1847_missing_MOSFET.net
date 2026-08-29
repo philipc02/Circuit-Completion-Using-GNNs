@@ -1,0 +1,16 @@
+spice
+* Transistors
+M1  3 4 0 0 NMOS
+M2  6 2 0 0 NMOS
+? Missing component
+* Current Sources
+Iin 0 4 DC Iin_value
+ISS 5 0 DC ISS_value
+* Voltage Source
+VDD 53 0 DC VDD_value
+* Resistor
+RF  6 5 RF_value
+* Node Voltage Labels
+* 0 = Ground
+* 53 = VDD
+* 5 = Vout

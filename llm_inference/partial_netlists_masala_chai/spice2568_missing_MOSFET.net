@@ -1,0 +1,9 @@
+plaintext
+* NMOS Common-Source Amplifier
+? Missing component
+RD 5 4  RD_VALUE
+VDD 7 5 DC VDD_VALUE
+VOUT 2 4
+* Model Declaration
+.model NMOS NMOS_MODEL
+* End of Netlist

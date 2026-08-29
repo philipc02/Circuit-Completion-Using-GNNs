@@ -1,0 +1,5 @@
+spice
+M1 3 4 4 NMOS
+? Missing component
+V_X 3 0 DC Value_X
+.model NMOS NMOS Level=1

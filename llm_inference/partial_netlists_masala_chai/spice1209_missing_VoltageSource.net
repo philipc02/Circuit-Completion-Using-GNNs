@@ -1,0 +1,9 @@
+spice
+* SPICE Netlist for the circuit
+? Missing component
+R1 2 3 50k
+R2 3 2 1k
+M1 3 2 4 4 NMOS
+* NMOS Model
+.model NMOS NMOS (Level=1)
+.end

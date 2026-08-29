@@ -1,0 +1,5 @@
+plaintext
+Vin 1 0 DC 0
+? Missing component
+Gm 3 0 (1,0)
+Rout 3 2 1000

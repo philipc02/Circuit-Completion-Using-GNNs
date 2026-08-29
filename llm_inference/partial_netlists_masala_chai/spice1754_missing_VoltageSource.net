@@ -1,0 +1,9 @@
+plaintext
+* SPICE Netlist for the Amplifier Circuit
+? Missing component
+VIN VIN 0 DC 0V
+RC 2 VCC 1000
+RB 3 VIN 1000
+Q1 2 3 0 NPN
+.model NPN NPN
+.END

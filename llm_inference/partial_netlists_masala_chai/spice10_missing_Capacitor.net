@@ -1,0 +1,16 @@
+* SPICE Netlist
+* Resistors
+R1 1 2 rb
+R2 2 6 rmu
+R3 7 0 rpi
+R4 9 5 ro
+R5 5 0 rc
+R6 10 0 ralpha
+* Capacitors
+C1 1 3 Cpi
+C2 2 6 Cmu
+? Missing component
+* Voltage Source
+V1 7 3 DC 0
+* Dependent Current Source
+G1 6 0 8 7 gm

@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+M1 2 Vb1 0 NMOS
+? Missing component
+VDD 3 0 DC <VDD_value>
+Rout 2 0 <Rout_value>
+* Voltage and resistances are placeholders and need specific values.

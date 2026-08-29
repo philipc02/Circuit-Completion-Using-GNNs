@@ -1,0 +1,10 @@
+* SPICE Netlist for Schematic
+* NMOS Transistor
+M1 3 IN 4 4 NMOS_Model
+* Diode
+D1 4 OUT Diode_Model
+* Current Source
+? Missing component
+* Models (example)
+.model NMOS_Model NMOS
+.model Diode_Model D

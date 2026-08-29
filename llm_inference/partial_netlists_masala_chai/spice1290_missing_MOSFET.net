@@ -1,0 +1,12 @@
+spice
+* Netlist for the schematic
+* Voltage Source
+VDD VDD 0 DC 1.8V
+* PMOS Transistor
+M2 Vout VDD VDD VDD PMOS W=W2 L=0.18
+* NMOS Transistor
+? Missing component
+* Models
+.model PMOS PMOS
+.model NMOS NMOS
+.ends

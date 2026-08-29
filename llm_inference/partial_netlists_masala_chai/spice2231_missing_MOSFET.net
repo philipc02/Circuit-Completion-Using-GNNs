@@ -1,0 +1,4 @@
+plaintext
+M2 Net2 Vb Vdd Vdd PMOS
+M1 Vout Vin Net3 Net3 NMOS
+? Missing component

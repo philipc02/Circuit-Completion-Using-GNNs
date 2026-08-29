@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+M1 6 7 5 5 NMOS W=W1 L=L
+? Missing component
+* Define Models
+.model NMOS NMOS

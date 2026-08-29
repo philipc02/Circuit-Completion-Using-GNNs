@@ -1,0 +1,20 @@
+spice
+* SPICE Netlist
+* Voltage Supply
+VDD 4 0 DC 5V
+* Current Sources
+I1 4 1 DC 1mA
+? Missing component
+* Resistors
+RD 4 3 1k
+* Capacitors
+Co 2 0 10p
+* NMOS Transistors
+M0 2 3 0 0 NMOS
+M1 3 5 0 0 NMOS
+M2 5 6 0 0 NMOS
+* Input
+Vin 3 0 DC 0V
+* Control Voltage
+Vb 5 0 DC 1.2V
+* End of netlist

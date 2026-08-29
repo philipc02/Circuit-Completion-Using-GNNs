@@ -1,0 +1,18 @@
+plaintext
+* Example SPICE Netlist
+* Voltage Sources
+Vin 2 0 DC 0
+VDD 3 0 DC 1.8
+* Capacitors
+C1_1 2 6 1u
+C1_2 4 0 1u
+* Current Source
+I1 4 0 DC 1m
+* Resistors
+R1 6 3 1k
+? Missing component
+* MOSFET
+M1 4 2 0 0 NMOS
+* Analysis
+.op
+.end

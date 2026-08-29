@@ -1,0 +1,5 @@
+*SPICE Netlist for circuit 430
+? Missing component
+R1 1 2 1k
+.OP
+.END

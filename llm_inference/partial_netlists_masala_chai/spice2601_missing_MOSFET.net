@@ -1,0 +1,13 @@
+* NMOS Transistors
+M1 3 2 5 5 NMOS
+? Missing component
+* Resistors 
+RD 4 3 RD
+RD_delta 33 3 RD_delta
+RSS 5 0 RSS
+* Voltage Sources
+Vin_DM 2 3 DC 0
+Vin_CM 1 3 DC 0
+VDD 4 0 DC VDD
+* Model Definitions
+.model NMOS nmos

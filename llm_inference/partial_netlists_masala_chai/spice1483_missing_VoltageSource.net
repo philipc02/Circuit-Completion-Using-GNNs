@@ -1,0 +1,5 @@
+* SPICE netlist
+? Missing component
+I1 VDD Vout DC 1mA
+M1 Vout Vin 0 0 NMOS
+M2 Vout Vb VDD VDD PMOS

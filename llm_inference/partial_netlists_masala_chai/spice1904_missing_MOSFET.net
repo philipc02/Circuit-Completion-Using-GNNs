@@ -1,0 +1,19 @@
+spice
+* SPICE Netlist
+* Capacitors
+C1 6 7
+C2 4 7
+* Inductors
+L1 5 7
+L2 2 8
+* Resistors
+Rp1 5 7
+Rp2 2 8
+* NMOS Transistors
+? Missing component
+M2 2 3 3 3 NMOS
+* Current Source
+Iss 3 0 DC <value>
+* Voltage Supply
+VDD 7 0 DC <value>
+* End of netlist

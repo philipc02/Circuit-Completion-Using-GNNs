@@ -1,0 +1,7 @@
+spice
+*MOSFET Netlist
+*.model PMOS PMOS L=XXX W=XXX
+*.model NMOS NMOS L=XXX W=XXX
+? Missing component
+M2 2 4 5 5 NMOS
+*.end

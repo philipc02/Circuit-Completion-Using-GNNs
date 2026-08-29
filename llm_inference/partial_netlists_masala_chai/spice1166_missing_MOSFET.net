@@ -1,0 +1,8 @@
+* NMOS and PMOS Transistor Circuit
+? Missing component
+M2 Vout 3 VCC VCC PMOS  * Q2 PMOS: Drain (VCC), Gate (3), Source (Vout)
+* Voltage source and termination for simulation
+Vin Vin 0 DC 0
+VCC VCC 0 DC Vdd  * Vdd for the PMOS
+Vout Vout 0 DC 0
+.END

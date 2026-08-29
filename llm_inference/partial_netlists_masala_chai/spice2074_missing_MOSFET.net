@@ -1,0 +1,5 @@
+*MOSFET Circuit
+M1 4 A 3 3 NMOS
+M2 4 B 2 2 NMOS
+? Missing component
+.END

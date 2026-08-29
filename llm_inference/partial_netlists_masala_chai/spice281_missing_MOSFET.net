@@ -1,0 +1,26 @@
+spice
+* Transistors
+M1 2 1 9 9 PMOS
+M2 3 3 2 2 PMOS
+M3 2 3 9 9 PMOS
+M4 3 10 9 9 PMOS
+M5 2 9 9 PMOS
+M6 3 1 2 PMOS
+M7 9 2 9 9 PMOS
+M8 2 10 9 9 PMOS
+? Missing component
+M10 3 5 9 9 NMOS
+M11 1 10 9 9 NMOS
+M12 2 4 9 9 NMOS
+* Current Sources
+IB1 1 9 DC [value]
+IB2 4 9 DC [value]
+ID2 2 3 DC [value]
+* Voltage Source
+VDD 2 9 DC [value]
+* Other components (Resistors)
+R13 2 2 3k
+R14 2 5 3k
+R9 3 9 3k
+R10 3 9 3k
+.END

@@ -1,0 +1,10 @@
+plaintext
+* SPICE Netlist
+M2 2 3 4 4 PMOS
+M1 2 1 0 0 NMOS
+? Missing component
+Vb 3 0 DC 1.8V
+Vin 1 0 DC 1.5V
+*.model PMOS PMOS (LEVEL=1)
+*.model NMOS NMOS (LEVEL=1)
+.end

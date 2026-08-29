@@ -1,0 +1,6 @@
+C0 (VDD VOUT1) capacitor
+C1 (VOUT1 IIN1) capacitor
+? Missing component
+R1 (IIN1 VSS) resistor
+R0 (VDD VOUT1) resistor
+L0 (VDD VOUT1) inductor

@@ -1,0 +1,3 @@
+Q0 (VDD VIN1 net2 0) npn
+? Missing component
+R0 (net2 VSS) resistor

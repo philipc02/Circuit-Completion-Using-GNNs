@@ -1,0 +1,5 @@
+Iin 5 0 DC <value>   ; Current source from node 5 to ground (provide the current value)
+C1 5 2 <capacitance> ; Capacitor between nodes 5 and 2
+R1 2 3 <resistance>  ; Resistor between nodes 2 and 3 (node 3 is ground)
+? Missing component
+Vout 2 6             ; Output node 6 connected to node 2

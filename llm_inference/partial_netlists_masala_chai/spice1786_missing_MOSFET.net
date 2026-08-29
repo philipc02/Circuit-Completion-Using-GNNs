@@ -1,0 +1,13 @@
+spice
+* Example NMOS circuit
+VDD 2 0 DC 5V
+? Missing component
+M2 3 3 4 4 NMOS
+RD1 2 3 1K
+RD2 3 6 1K
+RF1 6 4 1K
+RF2 4 0 1K
+Vin 5 0 DC 0V
+* Assume NMOS model exists as NMOS
+.model NMOS NMOS(Level=1 VTO=1.0 KP=100u)
+.ends

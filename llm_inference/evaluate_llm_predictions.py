@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.metrics import classification_report, confusion_matrix, f1_score, accuracy_score
 
 
-with open("llm_predictions.json", "r") as f:
+with open("llm_predictions_masala_chai.json", "r") as f:
     data = json.load(f)
 
 df = pd.DataFrame(data)

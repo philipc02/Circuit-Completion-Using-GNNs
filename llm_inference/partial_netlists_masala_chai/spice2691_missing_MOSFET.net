@@ -1,0 +1,15 @@
+spice
+* Transistor Definitions
+M1 3 1 2 2 NMOS
+M2 6 1 2 2 NMOS
+M3 4 3 5 5 PMOS
+? Missing component
+M5 4 4 5 5 PMOS
+* Current Sources
+I_B 5 0 DC 1A
+I_SS 2 0 DC 1A
+* Voltage Source
+V_CM 1 0 DC 1V
+* Voltage Supply
+V_DD 4 0 DC 5V
+* End of netlist

@@ -1,0 +1,18 @@
+plaintext
+* SPICE Netlist
+.param VDD=5V
+* PMOS transistor
+M4 4 3 1 1 PMOS
+* Resistors
+RGMP 1 3 1/gmP
+RX 5 2 RX
+* Capacitors
+CE 3 2 CE
+? Missing component
+* Current Source
+IX 2 5 DC IX
+* Voltage Source
+VX 5 2 DC VX
+* Load
+ROP 4 0 ROP
+VDD 1 0 DC VDD

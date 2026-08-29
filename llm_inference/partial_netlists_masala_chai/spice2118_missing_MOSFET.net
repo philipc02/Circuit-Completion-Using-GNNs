@@ -1,0 +1,11 @@
+plaintext
+* MOSFET Definitions
+M1 2 1 3 3 NMOS
+? Missing component
+* Voltage Sources
+VDD 5 0 DC VDD
+* Node Annotations
+* 1 = Vin
+* 2 = Vout
+* 3 = Ground
+.end

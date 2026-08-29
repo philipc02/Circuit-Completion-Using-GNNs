@@ -1,0 +1,15 @@
+* SPICE netlist for the schematic
+* Node Definitions:
+* 1: r_pi2 to g_m2 v_pi2 node
+* 2: r_pi2 to voltage source node
+* 3: positive supply rail
+* 4: r_o2 to ground
+* 5: g_m2 v_pi2 to i_t node
+* 6: node for control voltage v_pi2
+* 7: between r_pi2 and i_t
+I1 3 5 DC 0
+V1 6 9 DC v3
+? Missing component
+R2 5 4 r_o2
+R3 1 0 1/g_m1
+G1 5 1 6 0 g_m2

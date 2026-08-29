@@ -1,0 +1,6 @@
+plaintext
+* SPICE netlist for the given schematic
+M1 3 0 2 2 NMOS
+? Missing component
+V2 2 0 DC 0.3
+* End of netlist

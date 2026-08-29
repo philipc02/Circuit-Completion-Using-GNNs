@@ -1,0 +1,11 @@
+spice
+* NMOS Amplifier Circuit
+M1 3 4 2 2 NMOS
+? Missing component
+Vin 5 6 DC Vin
+RS 5 2 RS
+RD 3 VDD RD
+RG 4 Vb RG
+* Model Definitions
+.model NMOS NMOS (...)
+* Specify any other necessary parameters or controls here

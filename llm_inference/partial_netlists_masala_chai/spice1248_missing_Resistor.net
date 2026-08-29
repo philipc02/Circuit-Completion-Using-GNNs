@@ -1,0 +1,5 @@
+spice
+Vin 2 0 DC 0
+VB 2 3
+M1 2 3 4 4 NMOS
+? Missing component

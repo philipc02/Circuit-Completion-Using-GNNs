@@ -1,0 +1,17 @@
+spice
+* Components
+M1 2 3 0 0 NMOS
+V1 3 0 DC 0
+Vin 5 0 DC
+VDD 4 0 DC
+RS 5 2 1000
+? Missing component
+CGD 2 4 1p
+CGS 2 0 1p
+* Nodes
+* 0 - Ground
+* 2 - Connection between RS, RD, M1, CGD, CGS
+* 3 - Positive terminal of V1
+* 4 - VDD and one terminal of RD
+* 5 - Positive terminal of Vin
+.END

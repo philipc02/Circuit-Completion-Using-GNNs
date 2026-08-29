@@ -1,0 +1,7 @@
+*SPICE Netlist for circuit 586
+I1 1 0 DC 1mA
+R3 0 2 1k
+R2 2 1 1k
+? Missing component
+.OP
+.END

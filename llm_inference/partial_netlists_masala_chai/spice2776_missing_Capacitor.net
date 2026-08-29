@@ -1,0 +1,22 @@
+spice
+* SPICE Netlist
+* Components Identification
+* Voltage Source
+V_in 2 0 DC
+* Resistors
+R_S 2 6
+R_D 44 3
+* Capacitors
+C_GS1 2 0
+C_GD1 3 2
+? Missing component
+C_GD2_2 3 2
+C_DB1_CS_B2 9 0
+C_DB2_CL 3 0
+* Voltage Source
+V_DD 44 0 DC
+* NMOS Transistor
+M1 7 2 9 NCH
+* PMOS Transistor
+M2 3 3 7 PCH
+.end

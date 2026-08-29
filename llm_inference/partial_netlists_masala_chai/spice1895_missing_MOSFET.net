@@ -1,0 +1,5 @@
+plaintext
+M1 5 10 4 4 NMOS
+M2 9 2 4 4 NMOS
+? Missing component
+M4 3 23 4 4 NMOS

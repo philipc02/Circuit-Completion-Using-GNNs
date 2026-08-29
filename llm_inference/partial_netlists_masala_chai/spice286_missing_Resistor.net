@@ -1,0 +1,15 @@
+plaintext
+* SPICE Netlist
+V1 1 10 DC 0
+RS 10 1 1k
+RX 10 3 1k
+RIN 3 2 1k
+CIN 2 5 1uF
+CF 1 4 1uF
+? Missing component
+I1 4 2 DC 0
+G1 6 5 V1 0 gm
+RLOAD 6 4 1k
+* Assume gm = gm value given or assumed
+* Ground
+E 5 0 DC 0

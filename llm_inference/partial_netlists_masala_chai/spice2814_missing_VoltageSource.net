@@ -1,0 +1,15 @@
+plaintext
+* Transistor M1: PMOS
+M1 Vout Vb2 Vb1 Vb1 PMOS
+* Transistor M2: NMOS
+M2 Vb1 Vin 2 2 NMOS
+* Current Source I1
+I1 Vout VDD 1mA
+* Current Source I2
+I2 Vin 0 1mA
+* Voltage Source VDD
+? Missing component
+* Resistor RS
+RS Vin 2 1k
+* Define Nets
+.nodeset V(VDD) 5V V(Vin) 0V V(Vout) 0V V(Vb1) 0V V(Vb2) 0V

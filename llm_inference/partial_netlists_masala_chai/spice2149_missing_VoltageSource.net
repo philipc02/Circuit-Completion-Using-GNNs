@@ -1,0 +1,8 @@
+plaintext
+* NMOS Amplifier Circuit
+M1 Vout Vin Vb Vb NMOS_MODEL
+RD VDD Vout 1000
+VDD VDD 0 DC 5
+Vb Vb 0 DC 1.5
+Vin Vin 0
+? Missing component

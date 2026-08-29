@@ -1,0 +1,5 @@
+plaintext
+I1 2 X DC  # Current source I1 from VCC to X
+? Missing component
+RC1 X 0 50 # Resistor RC1 from X to ground
+RC2 Y 0 50 # Resistor RC2 from Y to ground

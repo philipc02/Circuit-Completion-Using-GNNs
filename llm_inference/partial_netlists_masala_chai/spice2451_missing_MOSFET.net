@@ -1,0 +1,4 @@
+spice
+? Missing component
+M2 5 3 6 6 NMOS
+VGS 3 6 DC <value>  ; Define appropriate voltage value for VGS

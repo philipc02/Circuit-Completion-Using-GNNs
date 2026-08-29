@@ -1,0 +1,9 @@
+spice
+* SPICE Netlist
+VDD 2 0 DC VDD_value
+? Missing component
+Cin 5 Vin Cin_value
+C1 4 0 C1_value
+RF 6 5 RF_value
+M1 6 5 3 3 NMOS_Model
+M2 4 6 2 2 NMOS_Model

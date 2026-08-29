@@ -1,0 +1,7 @@
+*SPICE Netlist for circuit 432
+? Missing component
+I2 3 6 DC 1mA
+R1 1 4 1k
+R2 4 1 1k
+.OP
+.END

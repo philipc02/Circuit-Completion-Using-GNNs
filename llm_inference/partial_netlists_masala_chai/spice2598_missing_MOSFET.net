@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist Example
+? Missing component
+RD2 VDD Vout 2
+RSS 2 0 2
+VDD VDD 0 DC VDD_VALUE

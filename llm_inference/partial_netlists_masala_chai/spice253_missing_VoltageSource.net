@@ -1,0 +1,28 @@
+plaintext
+* SPICE Netlist for the provided schematic
+* Voltage Sources
+VCC 7 0 DC 15
+? Missing component
+* Resistors
+R1 33 7 1k
+R2 8 7 1k
+R3 3 33 1k
+R4 3 0 1k
+R5 9 0 1k
+R6 0 9 1k
+R7 5 0 1k
+R8 7 3 1k
+R9 8 33 1k
+R10 8 7 1k
+* NPN BJTs
+Q1 6 2 9 NPN
+Q2 6 3 5 NPN
+Q3 3 3 5 NPN
+Q4 3 3 5 NPN
+Q5 9 2 0 NPN
+Q6 7 3 5 NPN
+Q7 7 3 5 NPN
+Q8 33 3 5 NPN
+Q9 8 3 5 NPN
+Q10 8 3 5 NPN
+* End of Netlist

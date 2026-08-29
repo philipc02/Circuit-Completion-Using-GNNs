@@ -1,0 +1,8 @@
+* Example SPICE Netlist
+VCC 5 0 DC 12V
+I1 5 2 DC 1A
+Q1 2 3 4 NPN
+? Missing component
+R2 4 0 1k
+CB 2 0 10uF
+VIN 3 0 DC 5V

@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist for the given circuit
+? Missing component
+Ix 1 2 DC 1mA
+C1 2 0 1uF
+.model NMOS NMOS

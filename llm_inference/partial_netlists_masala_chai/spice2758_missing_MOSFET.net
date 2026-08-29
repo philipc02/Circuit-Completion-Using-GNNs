@@ -1,0 +1,18 @@
+* SPICE Netlist for the Given Schematic
+* NMOS Transistor
+? Missing component
+* Voltage Source
+V1 7 0 DC Vin
+* Current Source
+I1 4 3 DC I1
+* Resistor
+R1 7 2 Rs
+* Capacitors
+C1 2 3 CGD
+C2 2 0 CGS
+C3 3 0 CDB
+* Voltage Source for VDD
+VDD 4 0 DC VDD
+* Model Definition
+.model NMOS NMOS LEVEL=1
+.end

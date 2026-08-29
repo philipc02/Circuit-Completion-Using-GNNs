@@ -1,0 +1,4 @@
+? Missing component
+M2 (VOUT1 net03 VSS VSS) nmos4
+C0 (net03 VOUT1) capacitor
+C1 (VSS net03) capacitor

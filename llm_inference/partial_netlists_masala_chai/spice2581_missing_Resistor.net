@@ -1,0 +1,8 @@
+spice
+* SPICE Netlist
+VDD 3 0 DC 5V
+VT 4 2 DC 1V
+? Missing component
+RT 6 4 5k
+M2 2 6 2 2 NMOS_MODEL
+.end

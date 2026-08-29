@@ -1,0 +1,22 @@
+spice
+* SPICE Netlist
+* Voltage Sources
+VDD 6 0 DC <value>  ; Define the voltage value accordingly
+Vin 7 0 DC <value>  ; Define the voltage value accordingly
+* Current Sources
+? Missing component
+* NMOS Transistors
+M1 3 7 5 5 NMOS_MODEL
+M2 3 2 5 5 NMOS_MODEL
+* PMOS Transistors
+M3 6 3 6 6 PMOS_MODEL
+M4 6 4 6 6 PMOS_MODEL
+* Resistors
+R1 4 2 <value>  ; Define the resistance value accordingly
+R2 2 0 <value>  ; Define the resistance value accordingly
+* Voltage across R2
+VF 2 0
+* Model Definitions (Replace with actual models)
+.model NMOS_MODEL NMOS
+.model PMOS_MODEL PMOS
+.end

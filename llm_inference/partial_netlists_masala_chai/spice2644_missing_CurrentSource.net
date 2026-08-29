@@ -1,0 +1,5 @@
+spice
+? Missing component
+MREF 2 4 0 0 NMOS W=WREF ; NMOS M_REF
+M2 3 4 0 0 NMOS W=2*WREF ; NMOS M_2
+VDD 2 0 DC VDD   ; VDD connected to node 2

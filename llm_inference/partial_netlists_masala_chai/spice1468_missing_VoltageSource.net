@@ -1,0 +1,6 @@
+* NMOS Transistor connected in cascade
+M1 0 Vb1 22 22 NMOS
+M2 22 Vb2 3 3 NMOS
+Rout 0 n 1000
+Vb1 Vb1 0 DC 5
+? Missing component

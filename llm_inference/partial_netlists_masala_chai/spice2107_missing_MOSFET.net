@@ -1,0 +1,11 @@
+spice
+* SPICE Netlist for the given circuit
+* Voltage Source
+VDD VDD 0 DC 1.8
+* Resistor
+RD VDD Vout 1k
+* NMOS Transistor
+? Missing component
+* Model Definition
+.model NMOS NMOS
+.end

@@ -1,0 +1,13 @@
+plaintext
+* Differential Amplifier Circuit
+VCC 3 0 DC 2.5V
+VIN1 2 0 DC 2V
+? Missing component
+I1 P 0 DC IEE
+RC1 5 3 RC
+RC2 3 3 RC
+Q1 5 2 P Q1_MODEL
+Q2 3 4 P Q2_MODEL
+.model Q1_MODEL NPN
+.model Q2_MODEL NPN
+.END

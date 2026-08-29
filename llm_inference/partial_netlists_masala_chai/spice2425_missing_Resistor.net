@@ -1,0 +1,9 @@
+* Netlist for given schematic
+Vdd 2 0 DC 10
+Vx 4 0 DC 5
+Ix 2 Vdd DC 1m
+R1 3 2 1k
+? Missing component
+M1 2 2 4 4 NMOS L=1u W=2u
+.model NMOS NMOS (LEVEL=1)
+.end

@@ -1,0 +1,6 @@
+spice
+* SPICE Netlist
+V1 2 4 DC
+? Missing component
+C1 3 4 1p
+.END

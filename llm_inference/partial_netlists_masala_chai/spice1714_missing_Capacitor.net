@@ -1,0 +1,13 @@
+plaintext
+* SPICE Netlist
+* NMOS Transistor
+M1 3 2 4 4 NMOS
+* Capacitors
+? Missing component
+C2 2 4 CGS1
+C3 3 4 CDB1_plus_CGS2_plus_1_minus_Av2_CGD2
+* Resistors
+R1 3 5 RD1_parallel_Rin2
+* Current Source
+I1 5 0 Iin
+* End of netlist

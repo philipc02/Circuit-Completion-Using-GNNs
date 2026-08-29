@@ -1,0 +1,4 @@
+Q0 (VOUT1 net5 VSS 0) npn
+? Missing component
+R1 (net5 VSS) resistor
+R0 (VDD VOUT1) resistor

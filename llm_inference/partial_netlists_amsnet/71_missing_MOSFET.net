@@ -1,0 +1,5 @@
+*SPICE Netlist for circuit 71
+? Missing component
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+.OP
+.END

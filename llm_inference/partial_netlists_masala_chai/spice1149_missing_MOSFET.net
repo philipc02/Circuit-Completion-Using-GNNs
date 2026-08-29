@@ -1,0 +1,7 @@
+spice
+* Simple NMOS Circuit
+VDD 2 0 DC 1.8V
+R1 2 3 500
+? Missing component
+VIN 1 0 DC 0V
+* End of netlist

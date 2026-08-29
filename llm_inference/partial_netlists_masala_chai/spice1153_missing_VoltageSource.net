@@ -1,0 +1,14 @@
+spice
+* SPICE Netlist
+* Voltage source
+VDD 4 0 DC 1.8
+* Voltage source Vx
+? Missing component
+* Current source
+IX 4 2 DC 0
+* NMOS Transistors
+M1_1 4 3 3 3 NMOS L=0.18u W=5u
+M1_2 2 3 3 3 NMOS L=0.18u W=5u
+* Model definition for NMOS
+.model NMOS NMOS (LEVEL=1)
+.end

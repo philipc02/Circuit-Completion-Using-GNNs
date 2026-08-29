@@ -1,0 +1,5 @@
+plaintext
+* SPICE Netlist
+V1 3 5 DC Vg
+? Missing component
+* Nodes: Drain Gate Source Body

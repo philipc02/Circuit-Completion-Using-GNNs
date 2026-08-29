@@ -1,0 +1,11 @@
+plaintext
+* SPICE Netlist
+* PMOS and NMOS schematic
+M2 3 1 5 PMOS
+? Missing component
+* Voltage sources and nodes
+VDD 5 0 DC 5V
+Vb 1 0 DC 1.8V
+Vin 4 0 DC 1.2V
+* Output node
+Vout 2 0

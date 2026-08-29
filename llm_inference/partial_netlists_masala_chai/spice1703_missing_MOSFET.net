@@ -1,0 +1,18 @@
+plaintext
+* Transistor Definitions
+M1 3 2 0 0 NMOS
+M2 4 3 0 0 NMOS
+? Missing component
+M4 4 2 7 7 PMOS
+* Current Source
+I1 0 3 ISS
+* Resistors
+R1 2 7 RD
+R2 4 7 RD
+R3 2 0 RS
+R4 4 0 RS
+* Voltage Source
+V1 7 0 VDD
+* Capacitor
+C1 4 0 Co
+* End of Netlist

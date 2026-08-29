@@ -1,0 +1,8 @@
+* PMOS Amplifier Circuit
+M1 2 3 0 0 PMOS
+RD 2 VDD 1k
+RO 2 3 100k
+RS Vin 2 50
+? Missing component
+Vin Vin 0 AC 1V
+VB 3 0 DC 2.5V

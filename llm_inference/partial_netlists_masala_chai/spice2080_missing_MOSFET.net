@@ -1,0 +1,18 @@
+spice
+* Component Definitions
+VDD VDD 0 DC 1.8V
+* Transistor Definitions
+? Missing component
+M2 5 3 0 0 NMOS
+M3 3 2 4 4 PMOS
+M4 5 3 3 3 PMOS
+* Node Definitions
+* 1: VDD
+* 2: Vin
+* 3: Common Source, Drain of M1 & M2
+* 4: Drain of M3
+* 5: Vout
+*.model Definitions for NMOS and PMOS
+.model NMOS NMOS (Level=1)
+.model PMOS PMOS (Level=1)
+* End of Netlist

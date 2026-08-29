@@ -1,0 +1,6 @@
+plaintext
+? Missing component
+V1 1 0 DC Vb1
+Rout 5 3 Rout_value
+Gm2 2 3 VALUE = {1/g_m2}
+R02 2 3 ro2_value

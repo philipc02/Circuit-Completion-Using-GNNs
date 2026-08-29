@@ -1,0 +1,5 @@
+*SPICE Netlist for circuit 685
+? Missing component
+R1 5 1 1k
+.OP
+.END

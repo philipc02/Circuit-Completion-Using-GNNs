@@ -1,0 +1,11 @@
+spice
+* Amplifier Circuit
+Cpi 7 3 Cpi
+Cmu 2 3 Cmu
+CC2 5 4 CC2
+? Missing component
+RS 1 7 RS
+RL 5 4 RL
+Gm 3 2 Vpi gm
+Vpi 2 3 dc 0
+Vin 1 3 dc 0 ac 1

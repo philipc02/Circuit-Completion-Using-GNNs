@@ -1,0 +1,25 @@
+* Example SPICE netlist for the provided schematic
+? Missing component
+* Resistors
+R1 1 4 10k
+R2 5 3 10k
+R3 4 6 10k
+R4 6 2 10k
+* Capacitors
+C1 6 5 1u
+C2 3 2 1u
+* Op-Amps
+* Assuming ideal op-amps
+XU1 4 5 0 OpAmp
+XU2 5 3 0 OpAmp
+* Inverter (modeled as an ideal inverter with gain -1)
+* Assuming you have a defined subcircuit for an ideal inverter
+XINV 2 X Inverter
+.ends
+* Subcircuit definitions for ideal components
+.subckt OpAmp + - out
+* Define your op-amp model here
+.ends OpAmp
+.subckt Inverter in out
+* Define your inverter model here
+.ends Inverter

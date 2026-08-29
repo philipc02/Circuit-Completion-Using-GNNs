@@ -1,0 +1,16 @@
+spice
+*MOSFET Differential Pair Netlist
+*PMOS Transistor
+M2 2 5 4 4 PMOS L=1u W=1u
+*NMOS Transistor
+M1 2 5 3 3 NMOS L=1u W=1u
+*Voltage Source
+VDD 4 0 DC 5V
+*Input Voltage
+? Missing component
+*.model parameters (example values)
+.model PMOS PMOS (LEVEL=1 KP=30u VTO=-0.7)
+.model NMOS NMOS (LEVEL=1 KP=50u VTO=1)
+*Simulation Commands
+*.op
+*.end

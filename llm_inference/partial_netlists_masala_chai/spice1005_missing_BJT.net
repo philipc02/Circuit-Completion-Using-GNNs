@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist for given schematic
+VCC 1 0 DC 2.5
+RB 4 1 1k
+RP 2 1 500
+? Missing component
+.model QNPN NPN

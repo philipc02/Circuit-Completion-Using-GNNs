@@ -1,0 +1,6 @@
+*SPICE Netlist for circuit 605
+? Missing component
+R1 4 1 1k
+R2 1 1 1k
+.OP
+.END

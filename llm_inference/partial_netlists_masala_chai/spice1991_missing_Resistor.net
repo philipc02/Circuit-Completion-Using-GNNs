@@ -1,0 +1,4 @@
+* SPICE Netlist
+Vin 1 0 DC 0           * Voltage source Vin
+? Missing component
+C1 2 0 1uF             * Capacitor C1 between nodes 2 and 0

@@ -1,0 +1,32 @@
+* NMOS Transistors
+MN1 N3 VIN+ N7 VSS NMOS_Model
+? Missing component
+M5 N3 VOUT- N8 VSS NMOS_Model
+M7 N3 VOUT N9 VSS NMOS_Model
+M9 N9 VBIAS3 VDD VSS NMOS_Model
+* PMOS Transistors
+MP1 N7 VIN+ N2 VDD PMOS_Model
+MP2 N7 VIN- N2 VDD PMOS_Model
+MB1 N3 VBIAS4 VDD VDD PMOS_Model
+MB2 N3 VBIAS5 VDD VDD PMOS_Model
+M3 N8 VCMFB VDD VSS PMOS_Model
+M4 N8 VOUT+ VDD VSS PMOS_Model
+M6 N9 VBIAS2 VDD VSS PMOS_Model
+M8 N9 VBIAS1 VDD VSS PMOS_Model
+M10 N9 VBIAS3 VDD VSS PMOS_Model
+* Voltage Sources
+VDD VDD 0 DC 1.8V
+VSS VSS 0 DC 0V
+* Bias Voltages
+VBIAS1 VBIAS1 0 DC VBIAS1_value
+VBIAS2 VBIAS2 0 DC VBIAS2_value
+VBIAS3 VBIAS3 0 DC VBIAS3_value
+VBIAS4 VBIAS4 0 DC VBIAS4_value
+VBIAS5 VBIAS5 0 DC VBIAS5_value
+VCMFB VCMFB 0 DC VCMFB_value
+* Input Voltages
+VIN+ VIN+ 0 DC VIN+_value
+VIN- VIN- 0 DC VIN-_value
+* Notes:
+* Ensure NMOS_Model and PMOS_Model are defined in your model library.
+* Adjust voltage values as per your design requirements.

@@ -1,0 +1,12 @@
+spice
+* NMOS and PMOS transistors
+M1 Y X 0 0 NMOS
+M2 V_DD V_b Y V_DD PMOS
+* Resistors
+R_L V_DD V_out 1k  ; assume 1k Ohm, specify the actual value as needed
+R_S V_in X 1k      ; assume 1k Ohm, specify the actual value as needed
+* Capacitors
+? Missing component
+* Voltage source
+V_DD V_DD 0 DC 5V   ; assume 5V, specify the actual value as needed
+* End of netlist

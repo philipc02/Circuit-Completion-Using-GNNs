@@ -1,0 +1,20 @@
+spice
+* SPICE netlist for the given schematic
+* NMOS transistors
+M1 2 4 1 1 NMOS
+M3 4 2 3 3 NMOS
+M5 3 1 9 9 NMOS
+* PMOS transistors
+M2 4 6 8 8 PMOS
+M4 4 5 3 3 PMOS
+M6 3 2 9 9 PMOS
+* Resistors
+RD1 7 4  RD
+RD2 4 4  RD
+* Current Source
+? Missing component
+* Voltage definitions
+VDD 7 0 DC
+Vcont 4 0 DC
+Vin 2 0 AC
+.END

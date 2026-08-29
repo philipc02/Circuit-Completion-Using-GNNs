@@ -1,0 +1,5 @@
+*SPICE Netlist for circuit 95
+? Missing component
+R1 2 1 1k
+.OP
+.END

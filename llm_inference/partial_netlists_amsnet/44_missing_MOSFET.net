@@ -1,0 +1,7 @@
+*SPICE Netlist for circuit 44
+C1 0 1 1nF
+I1 4 0 DC 1mA
+? Missing component
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+.OP
+.END

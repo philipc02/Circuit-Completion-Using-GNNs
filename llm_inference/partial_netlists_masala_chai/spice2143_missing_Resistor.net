@@ -1,0 +1,15 @@
+* Nodes: 
+* 1 - Drain of M1
+* 2 - Source of M1, Ground
+* 3 - Gate of M1
+* 4 - Vin
+* 5 - Ground
+* 6 - Ground
+* 7 - Vout 
+Vin 4 5 DC 0
+M1 1 3 2 2 NMOS_MODEL
+? Missing component
+Rap 7 2 8
+* Model for NMOS (example parameters, replace as needed)
+.model NMOS_MODEL NMOS (level=1)
+.end

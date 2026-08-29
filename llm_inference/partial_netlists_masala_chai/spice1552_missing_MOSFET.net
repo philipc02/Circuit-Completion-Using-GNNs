@@ -1,0 +1,15 @@
+plaintext
+* Differential Amplifier
+? Missing component
+M2 3 7 2 2 NMOS
+Vcm 4 0 DC VCM
+Vdeltav 7 0 DC DV
+Iss 2 0 DC Iss
+Rd 6 5 RD
+Rdelta 2 3 R_D_plus_Delta
+Rss 2 4 RSS
+* Connections
+Vdd 6 0 DC VDD
+* Control Voltages
+Vout1 5 0
+Vout2 3 0

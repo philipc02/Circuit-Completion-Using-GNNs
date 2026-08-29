@@ -1,0 +1,6 @@
+*SPICE Netlist for circuit 103
+V1 3 0 5V
+R1 0 1 1k
+? Missing component
+.OP
+.END

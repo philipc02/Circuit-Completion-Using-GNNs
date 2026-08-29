@@ -1,0 +1,7 @@
+*SPICE Netlist for circuit 25
+? Missing component
+V1 4 0 5V
+V2 5 0 5V
+.MODEL NMOS NMOS (LEVEL=1 VTO=1 KP=1.0e-4 LAMBDA=0.02)
+.OP
+.END

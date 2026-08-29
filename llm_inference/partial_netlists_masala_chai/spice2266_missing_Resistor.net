@@ -1,0 +1,9 @@
+plaintext
+* SPICE Netlist
+VDD VDD 0 DC 1.8V
+* Transistors
+M1 net2 Vin 0 0 NMOS
+M2 Vout Vb net2 net2 PMOS 
+* Resistor
+? Missing component
+.ends

@@ -1,0 +1,5 @@
+spice
+* RC Circuit
+Vin Vin 0 DC 0V
+C1 Vin 2 1uF
+? Missing component

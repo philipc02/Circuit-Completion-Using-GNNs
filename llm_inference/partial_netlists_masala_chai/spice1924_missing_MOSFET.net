@@ -1,0 +1,19 @@
+* NMOS Transistor
+? Missing component
+* PMOS Transistor
+M2 3 1 2 2 PMOS
+* Resistor
+RF 2 3 RF_value
+* Capacitors
+CA 1 2 C_value_A
+CB 2 4 C_value_B
+* Voltage Source
+VDD 3 0 VDD_value
+* Nets
+* 1 is X
+* 2 is RF/M1/C_B node
+* 3 is VDD node
+* 4 is Ground
+.model NMOS NMOS
+.model PMOS PMOS
+.end

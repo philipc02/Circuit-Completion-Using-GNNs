@@ -1,0 +1,6 @@
+plaintext
+* NMOS Circuit
+M1 Vout Vin 0 0 NMOS
+RD VDD Vout 1k
+? Missing component
+.end

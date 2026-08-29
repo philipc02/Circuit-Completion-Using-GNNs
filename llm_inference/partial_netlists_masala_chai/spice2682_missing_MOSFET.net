@@ -1,0 +1,10 @@
+spice
+* SPICE Netlist for the Circuit
+M1 1 6 4 4 NMOS
+M2 5 4 5 5 NMOS
+M3 3 2 3 3 PMOS
+? Missing component
+R_RSS 4 GND RSS
+VDD 2 0 DC VDD
+VIN_CM 6 0 DC Vin,CM
+* End of Netlist

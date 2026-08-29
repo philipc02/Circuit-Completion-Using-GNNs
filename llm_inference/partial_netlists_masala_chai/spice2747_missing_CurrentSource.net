@@ -1,0 +1,14 @@
+spice
+* SPICE Netlist for the given circuit
+VDD VDD 0 DC 1.5
+* MOSFETs
+M1 X +1.5V 5 5 NMOS
+M2 Y X 4 4 NMOS
+M3 X 2 VDD VDD PMOS
+M4 Y 2 VDD VDD PMOS
+* Current Source
+? Missing component
+* Capacitor
+C1 2 VDD C1_VALUE
+* Voltage Source
+V1 +1.5V 0 DC 1.5

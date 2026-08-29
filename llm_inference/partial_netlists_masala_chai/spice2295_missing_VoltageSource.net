@@ -1,0 +1,9 @@
+spice
+* Components identified:
+* D1, D2: Diodes
+* R1: Resistor (1 kΩ)
+? Missing component
+D1 in out D
+D2 out in D
+R1 out 0 1k
+.end

@@ -1,0 +1,4 @@
+M1 4 3 7 7 NMOS
+? Missing component
+VDD 5 6 DC 5V
+* Assuming NMOS and PMOS models are defined elsewhere

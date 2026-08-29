@@ -1,0 +1,13 @@
+plaintext
+* SPICE Netlist
+? Missing component
+M2 3 8 2 2 NMOS
+M3 4 4 6 6 PMOS
+M4 5 4 4 4 PMOS
+I1 4 0 DC I1_VALUE
+ISS 3 0 DC ISS_VALUE
+R1 6 8 R1_VALUE
+VDD 6 0 DC VDD_VALUE
+VOUT 5 0 DC VOUT_VALUE
+.model NMOS NMOS
+.model PMOS PMOS

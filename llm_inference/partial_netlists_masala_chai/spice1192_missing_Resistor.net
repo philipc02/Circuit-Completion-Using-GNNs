@@ -1,0 +1,11 @@
+plaintext
+* SPICE Netlist
+* Voltage Source
+V1 Vin 0 DC
+* Resistor 1/gm
+R1 Vin N001 1/gm
+* Resistor RL || rO
+? Missing component
+* Output Node
+* Vout is connected to node N001
+.END

@@ -1,0 +1,15 @@
+spice
+* NMOS Differential Amplifier Example
+* Voltage Source
+VDD 2 0 DC {VDD_VALUE}
+* Resistors
+? Missing component
+R2 4 0 {R2_VALUE}
+RD 2 3 {RD_VALUE}
+* NMOS transistor
+M1 3 X 0 0 NMOS_MODEL
+* Additional nodes
+X 4 0
+* Model parameter (example, replace with specific model details)
+.model NMOS_MODEL NMOS (LEVEL=1)
+.END

@@ -1,0 +1,21 @@
+spice
+*MOSFET Differential Pair Circuit
+* NMOS Transistors
+M1 2 Vin1 ISS ISS NMOS
+M2 3 Vin2 ISS ISS NMOS
+* PMOS Transistors
+M3 25 2 VDD VDD PMOS
+M4 Vout 3 VDD VDD PMOS
+* Resistor
+? Missing component
+* Current Source
+I1 ISS 0 DC I
+* Voltages
+VDD VDD 0 DC VDD
+* .MODEL and .PARAM (Assuming specific modeling parameters)
+.model NMOS NMOS
+.model PMOS PMOS
+.param R=1k
+.param I=1mA
+.param VDD=5V
+.end

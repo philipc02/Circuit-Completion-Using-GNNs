@@ -1,0 +1,18 @@
+spice
+* Example SPICE netlist
+VDD 1 0 DC 5
+VSS 10 0 DC 0
+* PMOS Transistors
+M_MU1 4 2 1 1 PMOS
+M_MU2 6 22 1 1 PMOS
+* NMOS Transistors
+M_MB62 2 3 3 3 NMOS
+M_MB62' 3 BIAS_N3 3 3 NMOS
+M_MB61 3 3 10 10 NMOS
+M_MB63 4 3 10 10 NMOS
+M_MB65 5 3 4 4 NMOS
+M_MB66 6 3 11 11 NMOS
+M_MB64 11 3 10 10 NMOS
+* Control Voltages
+? Missing component
+VIN22 22 0 DC 0

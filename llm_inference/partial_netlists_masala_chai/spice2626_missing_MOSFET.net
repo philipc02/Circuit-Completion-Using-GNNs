@@ -1,0 +1,17 @@
+plaintext
+* MOSFET Differential Amplifier
+* Transistors
+M1 6 3 9 9 NMOS
+? Missing component
+M3 5 7 5 5 PMOS
+M4 5 8 5 5 PMOS
+M5 9 4 0 0 NMOS
+* Resistors
+R1 7 6
+R2 8 6
+* Voltage Sources
+VDD 5 0 DC VDD
+Vin1 3 0 DC Vin1
+Vin2 2 0 DC Vin2
+Vb 4 0 DC Vb
+* End of Netlist

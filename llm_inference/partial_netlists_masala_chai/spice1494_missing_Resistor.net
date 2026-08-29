@@ -1,0 +1,15 @@
+spice
+* Differential Amplifier Circuit
+VCC 33 0 DC 5V
+* Resistors
+? Missing component
+RC2 1 33 1k
+* Current source
+I_EE 3 0 DC 1mA
+* Transistors
+Q1 3 2 3 NPN
+Q2 1 2 3 NPN
+* Inputs
+Vin1 2 0 DC 0V
+Vin2 2 0 DC 0V
+.END

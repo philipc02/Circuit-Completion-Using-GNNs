@@ -1,0 +1,5 @@
+? Missing component
+M1 (VIN1 IB1 VSS VSS) nmos4
+M0 (IB1 IB1 VSS VSS) nmos4
+C0 (IB1 VSS) capacitor
+R0 (VDD VOUT1) resistor

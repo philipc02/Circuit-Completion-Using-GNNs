@@ -1,0 +1,7 @@
+plaintext
+* SPICE Netlist
+Vin 3 0 DC 0
+C1 X 0 
+R1 2 0 
+? Missing component
+* End of netlist

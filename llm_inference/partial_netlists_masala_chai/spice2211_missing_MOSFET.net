@@ -1,0 +1,14 @@
+plaintext
+* PMOS Transistor M1
+M1 2 3 2 PMOS W=WL L=L
+* PMOS Transistor M2
+? Missing component
+* Voltage Source VDD
+VDD 44 0 DC VDD_value
+* Voltage Source VB
+VB 2 0 DC VB_value
+* Current Source IX
+IX 3 0 DC IX_value
+* Current Source IY
+IY 4 0 DC IY_value
+* End of Netlist

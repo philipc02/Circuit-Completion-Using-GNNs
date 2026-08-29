@@ -1,0 +1,5 @@
+plaintext
+* SPICE Netlist
+? Missing component
+Rthev 2 3 1/gm
+Rs 3 4 Rs

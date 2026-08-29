@@ -1,0 +1,14 @@
+spice
+* NMOS Transistors
+M1 X Vin 5 5 NMOS
+M2 Vout X 6 6 NMOS
+* Resistors
+RD_left 2 X 2k
+? Missing component
+* Capacitors
+CL_left X 0 1p
+CL_right Vout 0 1p
+* Voltage Source
+VDD 2 0 DC 5V
+* Model Definitions
+.model NMOS NMOS level=1

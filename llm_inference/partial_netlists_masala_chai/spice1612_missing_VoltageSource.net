@@ -1,0 +1,13 @@
+plaintext
+M1 Vout Vin1 4 4 NMOS
+M2 Vout Vin2 4 4 NMOS
+M3 Vb1 Vout VDD VDD PMOS
+M4 Vout VDD VDD VDD PMOS
+M5 4 Vb2 0 0 NMOS
+M6 4 Vb3 0 0 NMOS
+VDD VDD 0 DC 5
+? Missing component
+Vin2 Vin2 0 DC 0
+Vb1 Vb1 0 DC 0
+Vb2 Vb2 0 DC 0
+Vb3 Vb3 0 DC 0

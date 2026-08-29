@@ -1,0 +1,20 @@
+spice
+* Netlist for the given schematic
+*** Voltage and Current Sources ***
+VDD 4 0 DC VDD
+IB 3 4 DC IB
+*** Resistors ***
+RD 4 1 RD
+R1 5 X R1
+*** Capacitor ***
+Cin X 1 Cin
+*** NMOS Transistors ***
+M1 1 X 2 2 NMOS
+M2 2 5 0 0 NMOS
+*** PMOS Transistors ***
+M3 3 2 3 3 PMOS
+? Missing component
+*** Additional Definitions ***
+.model NMOS nmos
+.model PMOS pmos
+.end

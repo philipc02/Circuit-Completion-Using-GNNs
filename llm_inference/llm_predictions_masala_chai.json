@@ -1,0 +1,22 @@
+[
+{"file": "partial_netlists_masala_chai\\spice1000_missing_Resistor.net", "pred": "Capacitor"},
+{"file": "partial_netlists_masala_chai\\spice1001_missing_BJT.net", "pred": "Capacitor"},
+{"file": "partial_netlists_masala_chai\\spice1002_missing_Resistor.net", "pred": "Capacitor"},
+{"file": "partial_netlists_masala_chai\\spice1005_missing_BJT.net", "pred": "BJT"},
+{"file": "partial_netlists_masala_chai\\spice1006_missing_Resistor.net", "pred": "Capacitor"},
+{"file": "partial_netlists_masala_chai\\spice1008_missing_Resistor.net", "pred": "VoltageSource"},
+{"file": "partial_netlists_masala_chai\\spice1009_missing_Resistor.net", "pred": "Resistor"},
+{"file": "partial_netlists_masala_chai\\spice100_missing_CurrentSource.net", "pred": "Resistor"},
+{"file": "partial_netlists_masala_chai\\spice1010_missing_MOSFET.net", "pred": "VoltageSource"},
+{"file": "partial_netlists_masala_chai\\spice1011_missing_BJT.net", "pred": "BJT"},
+{"file": "partial_netlists_masala_chai\\spice1012_missing_Resistor.net", "pred": "Capacitor"},
+{"file": "partial_netlists_masala_chai\\spice1013_missing_BJT.net", "pred": "Capacitor"},
+{"file": "partial_netlists_masala_chai\\spice1014_missing_Resistor.net", "pred": "Capacitor"},
+{"file": "partial_netlists_masala_chai\\spice1018_missing_Resistor.net", "pred": "Capacitor"},
+{"file": "partial_netlists_masala_chai\\spice1019_missing_VoltageSource.net", "pred": "Capacitor"},
+{"file": "partial_netlists_masala_chai\\spice1020_missing_VoltageSource.net", "pred": "VoltageSource"},
+{"file": "partial_netlists_masala_chai\\spice1021_missing_VoltageSource.net", "pred": "Capacitor"},
+{"file": "partial_netlists_masala_chai\\spice1022_missing_VoltageSource.net", "pred": "VoltageSource"},
+{"file": "partial_netlists_masala_chai\\spice1023_missing_VoltageSource.net", "pred": "Capacitor"},
+{"file": "partial_netlists_masala_chai\\spice1024_missing_VoltageSource.net", "pred": "Resistor"}
+]

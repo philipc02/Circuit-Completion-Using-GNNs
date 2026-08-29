@@ -1,0 +1,15 @@
+spice
+* NMOS transistor M1
+M1 2 3 0 0 NMOS
+* PMOS transistor M2
+? Missing component
+* Voltage source
+VDD 4 0 DC 1.8V
+* Input voltage
+Vin 3 0 DC
+* Output node
+* Vout is connected to node 2
+* Model definitions (assuming default models for simplicity)
+.model NMOS NMOS
+.model PMOS PMOS
+.end

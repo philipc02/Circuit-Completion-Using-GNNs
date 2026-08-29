@@ -1,0 +1,10 @@
+*SPICE Netlist for circuit 359
+C1 0 2 1nF
+C2 0 1 1nF
+C3 4 1 1nF
+? Missing component
+V1 5 0 5V
+R1 2 1 1k
+R3 5 2 1k
+.OP
+.END

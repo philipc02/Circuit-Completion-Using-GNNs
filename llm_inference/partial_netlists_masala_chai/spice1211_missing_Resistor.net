@@ -1,0 +1,8 @@
+spice
+* NMOS Amplifier Circuit
+V1 2 0 DC 1.8
+? Missing component
+R2 2 4 1k
+R3 4 0 100
+M1 3 4 4 4 NMOS
+.model NMOS NMOS (Level=1)

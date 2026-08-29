@@ -1,0 +1,6 @@
+plaintext
+* SPICE Netlist
+Vi 3 0 DC 0V
+RS 3 6 1k ; Replace 1k with actual resistance value if known
+? Missing component
+RL 4 5 1k ; Replace 1k with actual resistance value if known

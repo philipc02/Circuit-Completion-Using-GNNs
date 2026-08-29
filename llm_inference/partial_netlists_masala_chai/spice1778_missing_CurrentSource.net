@@ -1,0 +1,10 @@
+spice
+*MOSFET Model
+.model NMOS NMOS
+* NMOS Transistor
+M1 2 4 3 3 NMOS
+* Current Source
+? Missing component
+* Ground
+VSS 0 0 DC 0V
+*End of netlist

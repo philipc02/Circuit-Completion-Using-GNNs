@@ -1,0 +1,16 @@
+spice
+* SPICE Netlist
+* Voltage Sources
+VDD 4 0 DC 1.8V
+Vin Vin 0 DC 0V
+* NMOS Transistor
+? Missing component
+* Resistors
+R1 4 3 1k
+R2 3 0 1k
+RD 4 Vout 1k
+RS 2 0 1k
+* Capacitors
+C1 Vin 3 1uF
+* Model Definitions
+.model NMOS nmos level=1

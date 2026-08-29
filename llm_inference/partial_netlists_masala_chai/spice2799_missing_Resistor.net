@@ -1,0 +1,23 @@
+* Components:
+* V1: Voltage source
+* IX: Current source
+* gmV1: Voltage-controlled current source
+* RG, RS, RD: Resistors
+* Voltage source
+V1 4 2 DC 0
+* Current source
+IX 3 4 DC 0
+* Voltage-controlled current source
+G1 5 2 4 0 gmV1
+* Resistors
+RG 8 4 RG_VALUE
+RS 2 2 RS_VALUE
+? Missing component
+* Ground connections
+VSS 2 0 DC 0
+* Nodes:
+* 3: Positive terminal of IX
+* 4: V1 positive and one side of RG
+* 5: RD and one side of gmV1
+* 6: Ground for RD
+.END

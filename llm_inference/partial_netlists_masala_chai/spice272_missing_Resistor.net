@@ -1,0 +1,7 @@
+* SPICE netlist for the circuit
+V1 4 0 DC Vin
+? Missing component
+R2 2 3  R2_value
+Rx 2 5  Rx_value
+* Op-amp modeled as a voltage-controlled voltage source
+E1 3 0 2 5  Aol ; Aol is the open-loop gain

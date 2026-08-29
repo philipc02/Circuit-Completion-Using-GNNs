@@ -1,0 +1,12 @@
+plaintext
+* SPICE Netlist
+* Current Source
+I_REF 3 0 DC
+* Transistors
+? Missing component
+Q2 4 2 0 QMOD
+Q3 4 2 0 QMOD
+* Models
+.model QMOD NPN
+* Voltage Source
+VCC 4 0 DC

@@ -1,0 +1,11 @@
+plaintext
+VDD 2 0 DC [Voltage Value]
+VinCM1 5 0 DC [Voltage Value] 
+VinCM2 4 0 DC [Voltage Value]
+Vb 1 0 DC [Voltage Value]
+RD1 2 6 [Resistance Value]
+RD2 2 3 [Resistance Value]
+M1 7 5 1 1 NMOS
+M2 4 2 1 1 NMOS
+? Missing component
+.END

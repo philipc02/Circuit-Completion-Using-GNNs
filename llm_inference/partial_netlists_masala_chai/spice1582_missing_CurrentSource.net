@@ -1,0 +1,16 @@
+spice
+* Differential Amplifier Circuit
+VCC 2 0 DC 10V
+I1 4 2 DC 1mA
+? Missing component
+IEE 3 0 DC 2mA
+Q1 Vout Vin1 3 QMODEL
+Q2 Vout Vin2 3 QMODEL
+.model QMODEL NPN (Is=1e-14 Bf=100)
+Vin1 Vin1 0 DC 0.7V
+Vin2 Vin2 0 DC 0.6V
+* Define nodes:
+* 2: VCC
+* 3: P (Common node for tail current source)
+* 4: Connection to top current source I1
+.end

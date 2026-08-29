@@ -1,0 +1,18 @@
+spice
+*SPICE netlist for given schematic
+* PMOS Transistor M1
+? Missing component
+* NMOS Transistor M2
+M2 4 3 0 0 NMOS
+* PMOS Transistor M3
+M3 2 Vb 2 2 PMOS
+* Supply Voltage
+VDD 2 0 DC 5
+* Input Voltage
+Vin 3 0 DC 0
+* Bias Voltage
+Vb 0 0 DC 0
+* .model declarations should be added as needed for PMOS and NMOS
+*.model PMOS PMOS(...)
+*.model NMOS NMOS(...)
+.end

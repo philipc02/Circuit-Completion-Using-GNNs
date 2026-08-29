@@ -1,0 +1,21 @@
+plaintext
+* Differential Amplifier Circuit
+********** NMOS Transistors **********
+* M1 - NMOS
+M1 3 3 5 NMOS L=1u W=1u
+* M2 - NMOS
+? Missing component
+********** PMOS Transistors **********
+* M3 - PMOS
+M3 3 2 2 PMOS L=1u W=1u
+* M4 - PMOS
+M4 4 1 2 PMOS L=1u W=1u
+********** Resistor **********
+* RSS
+RSS 5 0 1k
+********** Voltage Supplies **********
+* VDD Supply
+VDD 2 0 DC 5V
+* Input Common Mode Voltage
+V_IN_CM 3 0 DC 1V
+********** End of Netlist **********

@@ -1,0 +1,7 @@
+spice
+* NMOS transistor M1
+? Missing component
+* Voltage Source
+V1 3 0 1V
+* Model definitions
+.model NMOS NMOS level=1

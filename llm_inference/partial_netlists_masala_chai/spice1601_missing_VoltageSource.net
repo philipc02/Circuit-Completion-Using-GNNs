@@ -1,0 +1,25 @@
+spice
+* Differential Amplifier Circuit
+* Voltage Sources
+VDD 6 0 DC VDD
+* Resistors
+RS1 5 6 RS
+RS2 4 6 RS
+RSS 3 0 RSS
+* Transistors
+* NMOS - M1 and M2
+M1 3 2 3 3 NMOS
+M2 3 4 3 3 NMOS
+* PMOS - M3 and M4
+M3 5 2 5 5 PMOS
+M4 4 2 6 6 PMOS
+* Current Sources
+I1 3 0 DC ISET1
+I2 3 0 DC ISET2
+* Inputs
+? Missing component
+Vin2 4 0 DC Vin2
+* Model Definition
+.model NMOS NMOS
+.model PMOS PMOS
+.end

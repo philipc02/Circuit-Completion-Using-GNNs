@@ -1,0 +1,12 @@
+spice
+* SPICE Netlist
+VDD 3 0 DC 5V
+? Missing component
+R1 3 4 1k
+RD 3 2 1k
+R2 4 0 1k
+RS 2 0 500
+M1 2 4 0 0 NMOS
+C1 in 4 10uF
+.model NMOS NMOS(L=1u W=1u)
+.end

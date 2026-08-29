@@ -1,0 +1,9 @@
+spice
+* NMOS Inverter Circuit
+? Missing component
+RD 2 3 1k
+CL 3 0 1uF
+VDD 2 0 DC 5V
+Vin Vin 0 DC 0V
+.model NMOS NMOS (LEVEL=1)
+.end

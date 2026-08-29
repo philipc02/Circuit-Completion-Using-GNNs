@@ -1,0 +1,5 @@
+plaintext
+M1 4 3 5 5 NMOS
+? Missing component
+R_S 5 0 VALUE
+R_D 4 2 VALUE

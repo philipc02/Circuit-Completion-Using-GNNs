@@ -1,0 +1,6 @@
+* Netlist for schematic
+? Missing component
+M2 VCC Vb Vout Vout PMOS
+VCC VCC 0 DC 5V
+Vin Vin 0 DC 1V
+Vb Vb 0 DC 1V

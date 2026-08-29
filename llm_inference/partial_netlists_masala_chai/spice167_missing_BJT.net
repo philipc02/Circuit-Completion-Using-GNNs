@@ -1,0 +1,7 @@
+plaintext
+* SPICE Netlist
+Q1 3 2 2 NPN
+? Missing component
+I1 5 3 DC
+I2 5 4 DC
+VDD 5 0 DC

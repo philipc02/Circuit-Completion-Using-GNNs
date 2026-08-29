@@ -1,0 +1,15 @@
+* Nodes are labeled in the second image and used to identify connections
+VDD 3 0 DC 5V
+I1 3 2 DC 1mA
+* M1 is an NMOS: drain connected to net 2, gate to Vb, source to net (Vin and Rs)
+M1 2 Vb Vin 0 NMOS
+* M2 is a PMOS: drain connected to Vout and net 2, gate to net 2, source to ground
+M2 Vout 2 0 0 PMOS
+* Resistor Rs connected between Vin and net linked to M1
+Rs Vin Vin_net 10k
+* Define nodes
+? Missing component
+Vb 2 0 DC 1.5V
+* Analysis
+.tran 1n 100n
+.end

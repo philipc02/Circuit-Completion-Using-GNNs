@@ -1,0 +1,10 @@
+spice
+? Missing component
+M2 10 8 2 2 NMOS
+M3 6 3 3 3 PMOS
+M4 2 3 2 2 PMOS
+M6 5 2 7 7 NMOS
+Rtail 4 10 rtail
+Ro7 7 3 ro7
+Vdd 4 0 DC Vdd
+Vob 5 0 DC 0

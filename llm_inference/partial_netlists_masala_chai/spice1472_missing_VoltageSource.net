@@ -1,0 +1,12 @@
+spice
+* SPICE Netlist
+M1 N_3 Vin 0 0 NMOS
+M2 N_2 Vb1 N_3 0 NMOS
+M3 Vout Vb2 N_2 0 NMOS
+M4 VDD Vb3 Vout Vout PMOS
+VDD VDD 0 DC <supply_voltage>
+? Missing component
+* Model definitions
+.model NMOS NMOS (Level=1)
+.model PMOS PMOS (Level=1)
+.end

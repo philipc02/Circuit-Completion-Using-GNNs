@@ -1,0 +1,18 @@
+plaintext
+* SPICE Netlist
+VCC VCC 0 DC 2.5
+* Resistors
+RB1 7 3 100k
+RC 6 52 1k
+RB2 52 2 50k
+RE 2 0 1k
+Rn2 3 3 1k
+* Capacitors
+C1 VIN 3 200n
+C2 3 2 200n
+* NPN Transistors
+Q1 3 4 0 NPN
+Q2 52 2 0 NPN
+* Voltage Source
+? Missing component
+.END

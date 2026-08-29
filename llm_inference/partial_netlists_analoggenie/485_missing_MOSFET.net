@@ -1,0 +1,6 @@
+L0 (IB1 net5) inductor
+? Missing component
+M1 (VOUT2 VIN2 IB1 VSS) nmos4
+R0 (VDD VOUT1) resistor
+R1 (VDD VOUT2) resistor
+C1 (net5 VSS) capacitor

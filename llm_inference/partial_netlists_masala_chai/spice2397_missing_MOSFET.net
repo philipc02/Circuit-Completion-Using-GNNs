@@ -1,0 +1,20 @@
+* NMOS: Drain, Gate, Source, Body (Body = Source if not mentioned)
+* PMOS: Drain, Gate, Source, Body (Body = Source if not mentioned)
+* Voltage Sources
+VDD 1 0 DC
+VSS 11 0 DC
+* Current Sources
+IBIAS_N3 3 0 DC 
+* PMOS Transistors
+MU1 2 4 1 1 PMOS
+MU2 6 5 2 2 PMOS
+* Other MOSFETs (Assuming the indicated type by schematic for MB62 and MB62', MB61, MB65, MB63)
+MB62 3 0 3 3 MOS
+MB62' 3 0 3 3 MOS
+? Missing component
+MB65 4 0 3 3 MOS
+MB63 8 0 3 3 MOS
+* NMOS Transistors
+MB66 6 7 11 11 NMOS
+MB64 10 9 11 11 NMOS
+* End of Netlist

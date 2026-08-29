@@ -1,0 +1,23 @@
+spice
+* SPICE Netlist for the given schematic
+VDD 5 0 DC {VDD_value}
+? Missing component
+RD2 5 2 {RD2_value}
+M1 7 4 8 8 NMOS
+M2 2 3 8 8 NMOS
+ISS 8 0 DC {ISS_value}
+* Nodes:
+* 0  - Ground
+* 5  - VDD
+* 6  - Node between RD1 and M1 drain
+* 7  - Vout1
+* 2  - Node between RD2 and M2 drain
+* 3  - Vin2
+* 4  - Vin1
+* 8  - Common source node (connected to ISS and source of M1, M2)
+* Parameters (to be defined):
+* .param VDD_value = 
+* .param RD1_value = 
+* .param RD2_value = 
+* .param ISS_value = 
+.end

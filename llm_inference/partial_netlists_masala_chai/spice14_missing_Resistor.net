@@ -1,0 +1,9 @@
+spice
+* SPICE netlist for the given circuit
+C1 6 7 Cgs
+G1 2 3 6 7 gm
+? Missing component
+* Node assignments
+* G = 6
+* S = 2
+* D = 8

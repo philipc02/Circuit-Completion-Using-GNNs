@@ -1,0 +1,17 @@
+spice
+* NMOS transistor
+? Missing component
+* PMOS transistor
+M2 3 5 4 4 PMOS
+* Resistors
+RD1 3 0 100k
+RD2 2 4 100k
+* Voltage Source
+VDD 2 0 DC 5V
+* Additional input sources if needed
+Vin 6 0 AC 1V
+Vb 5 0 DC 1V
+* Analysis commands
+.control
+run
+.endc

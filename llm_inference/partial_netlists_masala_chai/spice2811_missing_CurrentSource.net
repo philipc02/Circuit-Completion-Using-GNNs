@@ -1,0 +1,19 @@
+spice
+* Components
+* NMOS: M1, M2
+* Current Sources: I1, I2
+* Resistor: RS
+* Voltage Sources
+VDD 3 0 DC <value>
+* Resistor
+RS 2 1 <value>
+* NMOS Transistors
+M1 3 3 0 0 NMOS
+M2 3 2 0 0 NMOS
+* Current Sources
+? Missing component
+I2 2 0 DC <value>
+* Connections
+Vin 1 0 DC <value>
+* Model Definitions
+.model NMOS nmos (parameters)

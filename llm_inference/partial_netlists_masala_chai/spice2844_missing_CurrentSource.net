@@ -1,0 +1,6 @@
+* SPICE netlist for the given schematic
+V_RF 5 4 DC V_RF_VALUE
+I_n_out 4 2 DC I_n_out_VALUE
+? Missing component
+RF 5 3 RF_VALUE
+M1 5 4 6 6 NMOS_MODEL

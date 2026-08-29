@@ -1,0 +1,7 @@
+spice
+* SPICE Netlist
+M1 2 Vin 0 0 NMOS
+M2 Vout 2 VDD VDD PMOS
+? Missing component
+VDD VDD 0 DC 5
+Vin Vin 0 DC 1

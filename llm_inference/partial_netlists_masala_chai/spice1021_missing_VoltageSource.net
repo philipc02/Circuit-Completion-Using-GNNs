@@ -1,0 +1,8 @@
+* NPN Transistor Amplifier
+VCC 2 0 DC 10V
+Vin Vin 0 DC 0V
+RC 2 3 1k
+Q1 3 Vin 0 NPN
+? Missing component
+.model NPN NPN
+.end

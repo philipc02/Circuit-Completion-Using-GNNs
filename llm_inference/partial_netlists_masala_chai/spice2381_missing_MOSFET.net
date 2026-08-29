@@ -1,0 +1,23 @@
+spice
+* NMOS Transistors
+M1 2 7 2 2 NMOS W=15 L=0.5
+M2 2 2 22 22 NMOS W=15 L=0.5
+M3 2 2 22 22 NMOS W=5 L=0.5
+M4 2 2 22 22 NMOS W=5 L=0.5
+M5 2 22 22 22 NMOS W=3 L=0.5
+M6 2 22 22 22 NMOS W=3 L=0.5
+* PMOS Transistors
+M7 3 5 8 8 PMOS W=20 L=1
+M8 3 8 8 8 PMOS W=20 L=1
+M9 3 10 10 10 PMOS W=20 L=1
+? Missing component
+M11 2 9 9 9 PMOS W=20 L=1
+M12 2 8 8 8 PMOS W=20 L=1
+M13 3 7 7 7 PMOS W=40 L=1
+M14 3 6 6 6 PMOS W=40 L=1
+* Current Source
+I1 7 0 DC 5uA
+* Voltage Sources
+V1 9 0 DC V_DD
+V2 22 0 DC V_SS
+V3 2 0 DC V_CMFB

@@ -1,0 +1,7 @@
+*SPICE Netlist for circuit 74
+I1 1 4 DC 1mA
+I2 1 4 DC 1mA
+V1 4 0 5V
+? Missing component
+.OP
+.END

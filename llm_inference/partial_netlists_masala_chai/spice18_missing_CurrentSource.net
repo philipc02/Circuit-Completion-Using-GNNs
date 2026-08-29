@@ -1,0 +1,5 @@
+spice
+* NMOS Transistor
+M1 1 6 3 3 NMOS
+* Current Source
+? Missing component

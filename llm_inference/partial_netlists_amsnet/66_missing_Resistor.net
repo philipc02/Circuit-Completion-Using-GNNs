@@ -1,0 +1,6 @@
+*SPICE Netlist for circuit 66
+I1 1 2 DC 1mA
+V1 4 0 5V
+? Missing component
+.OP
+.END

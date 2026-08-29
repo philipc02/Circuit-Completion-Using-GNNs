@@ -1,0 +1,19 @@
+spice
+* SPICE Netlist
+* Voltage Source
+VDD 3 0 DC VDD_value
+* Current Source
+ISS 7 0 DC ISS_value
+* NMOS Transistors
+M1 5 2 7 7 NMOS_model
+M2 6 5 7 7 NMOS_model
+* PMOS Transistors
+M3 5 3 3 3 PMOS_model
+M4 6 8 3 3 PMOS_model
+* Capacitors
+CE 3 0 CE_value
+? Missing component
+* Model Definitions
+.model NMOS_model NMOS
+.model PMOS_model PMOS
+* End of Netlist
